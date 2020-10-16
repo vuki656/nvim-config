@@ -20,6 +20,7 @@ set mouse=a				" Enables mouse scrolling
 
 call plug#begin()
 
+Plug 'tpope/vim-fugitive'		" Awesome git integration
 Plug 'sheerun/vim-polyglot'      	" Better syntax highlighting
 Plug 'vim-airline/vim-airline'   	" Line at the bottom with useful info
 Plug 'joshdick/onedark.vim'      	" Onedark color scheme
@@ -28,6 +29,8 @@ Plug 'leafgarland/typescript-vim'  	" TypeScript syntax
 Plug 'jparise/vim-graphql'              " GraphQL syntax
 Plug 'jiangmiao/auto-pairs'             " Automatically add closing bracket
 Plug 'airblade/vim-gitgutter'		" Show git diff in side column
+
+Plug 'ThePrimeagen/vim-be-good'		" Practice game
 
 call plug#end()
 
