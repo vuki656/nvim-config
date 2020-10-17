@@ -43,6 +43,8 @@ let g:airline#extensions#hunks#enabled=0 			" Remove number of diff lines in fil
 let g:airline_section_a=airline#section#create(['mode'])	" Display only mode in section A
 let g:airline_section_z='%{strftime("%H:%M")}'      		" Display hour:minute in section Z
 let g:airline_section_y='%-0.30{getcwd()}'			" Display current working directory
+let g:airline_section_x=''					" Remove everything from section X
+let g:airline_skip_empty_sections = 1				" Don't display empty sections
 let g:airline#extensions#whitespace#checks=[]			" Remove the trailing whitespace notification
 
 colorscheme onedark
