@@ -23,6 +23,7 @@ call plug#begin()
 Plug 'tpope/vim-fugitive'		" Awesome git integration
 Plug 'sheerun/vim-polyglot'      	" Better syntax highlighting
 Plug 'vim-airline/vim-airline'   	" Line at the bottom with useful info
+Plug 'vim-airline/vim-airline-themes'   " Enable airline themes
 Plug 'joshdick/onedark.vim'      	" Onedark color scheme
 Plug 'pangloss/vim-javascript'   	" JavaScript support
 Plug 'leafgarland/typescript-vim'  	" TypeScript syntax
@@ -34,5 +35,7 @@ Plug 'ThePrimeagen/vim-be-good'		" Practice game
 
 call plug#end()
 
-colorscheme onedark
+let g:airline_theme='onedark'		" Set airline font
+let g:airline_powerline_fonts = 1       " Enable airline powerline fonts (emojis)
 
+colorscheme onedark
