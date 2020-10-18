@@ -42,6 +42,7 @@ let mapleader = " "						 " Set leader key to space
 let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } } " Open FZF in a centered window
 let g:NERDTreeGitStatusUseNerdFonts = 1				 " Enable nerd fonts in tree view
 let g:NERDTreeShowHidden=1					 " Show hidden files/dirs in tree view
+let g:rg_derive_root='true'
 
 " Airline config
 let g:airline_theme='onedark'					 " Set color scheme 
@@ -59,9 +60,11 @@ autocmd vimenter * NERDTree					 " Automatically open nerd tree when buffer open
 colorscheme onedark
 
 " Search git files with FZF
-nnoremap <leader>p :GFiles<CR>					 
+nnoremap <leader>p :FZF<CR>					 
+
 " Toggle tree view
 nnoremap <leader>1 :NERDTreeToggle<CR>
+
 nnoremap <Up> <Nop>
 nnoremap <Down> <Nop>
 nnoremap <Left> <Nop>

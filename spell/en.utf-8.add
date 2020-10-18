@@ -22,3 +22,4 @@ RemindersCard
 RemindersEditDialog
 dirs
 nvim
+relativenumber
