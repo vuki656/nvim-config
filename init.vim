@@ -13,7 +13,7 @@ set termguicolors						" Set the given color scheme from init file
 set nowrap							" Don't wrap text if it goes out of view
 set mouse=a							" Enables mouse scrolling
 set noswapfile							" Disable swap files
-set cmdheight=2							" Display command line in 2 rows
+set cursorline							" Highlight line you are on
 
 call plug#begin()
 
@@ -55,15 +55,17 @@ let g:airline_section_y=''					 " Remove everything from section X
 let g:airline#extensions#whitespace#checks=[]		 	 " Remove the trailing whitespace notification
 let g:airline_skip_empty_sections=1			 	 " Don't display empty sections
 
-autocmd vimenter * NERDTree					 " Automatically open nerd tree when buffer open
-
 colorscheme onedark
 
 " Search git files with FZF
-nnoremap <leader>p :FZF<CR>					 
+nnoremap <leader>p :GFiles<CR>
 
 " Toggle tree view
 nnoremap <leader>1 :NERDTreeToggle<CR>
+
+" Move line up/down
+xnoremap K :move '<-2<CR>gv-gv
+xnoremap J :move '>+1<CR>gv-gv
 
 nnoremap <Up> <Nop>
 nnoremap <Down> <Nop>
