@@ -16,3 +16,9 @@ powerline
 Autcompletion
 config
 fzf
+NotificationProvider
+RemindersAddDialog
+RemindersCard
+RemindersEditDialog
+dirs
+nvim

@@ -1,12 +1,7 @@
 syntax on
 filetype plugin on
 
-" Unmap arrow keys
-noremap <Up> <Nop>
-noremap <Down> <Nop>
-noremap <Left> <Nop>
-noremap <Right> <Nop>
-
+set clipboard=unnamedplus					" Sync nvim clipboard with sys clipboard
 set number                      				" Show current line number
 set relativenumber               				" Show line number relative to line you are on
 set incsearch                    				" Enables search results as you type
@@ -18,6 +13,7 @@ set termguicolors						" Set the given color scheme from init file
 set nowrap							" Don't wrap text if it goes out of view
 set mouse=a							" Enables mouse scrolling
 set noswapfile							" Disable swap files
+set cmdheight=2							" Display command line in 2 rows
 
 call plug#begin()
 
@@ -34,26 +30,39 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }		" Base fzf package
 Plug 'junegunn/fzf.vim'						" Vim fzf adaptation
 Plug 'airblade/vim-gitgutter'				 	" Show git diff in side column
 Plug 'valloric/youcompleteme'				 	" Autcompletion
-
+Plug 'preservim/nerdtree'					" Sidebar tree view
+Plug 'Xuyuanp/nerdtree-git-plugin'				" Display git diff is tree view
+Plug 'ryanoasis/vim-devicons'					" Display more icons
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'			" Highlight files in tree view by color
 Plug 'ThePrimeagen/vim-be-good'				 	" Practice game
 
 call plug#end()
 
 let mapleader = " "						 " Set leader key to space
 let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } } " Open FZF in a centered window
+let g:NERDTreeGitStatusUseNerdFonts = 1				 " Enable nerd fonts in tree view
+let g:NERDTreeShowHidden=1					 " Show hidden files/dirs in tree view
 
 " Airline config
-let g:airline_theme='onedark'					 " Set font
-let g:airline_powerline_fonts = 1         			 " Enable fonts (emojis)
+let g:airline_theme='onedark'					 " Set color scheme 
+let g:airline_powerline_fonts=1         			 " Enable fonts (emojis)
 let g:airline#extensions#hunks#enabled=0 			 " Remove number of diff lines in file 
 let g:airline_section_a=airline#section#create(['mode'])	 " Display only mode in section A
 let g:airline_section_z='%{strftime(" %H:%M")}'      		 " Display hour:minute in section Z
-let g:airline_section_y=' %-0.30{getcwd()}'			 " Display current working directory
 let g:airline_section_x=''					 " Remove everything from section X
-let g:airline_skip_empty_sections = 1			 	 " Don't display empty sections
+let g:airline_section_y=''					 " Remove everything from section X
 let g:airline#extensions#whitespace#checks=[]		 	 " Remove the trailing whitespace notification
+let g:airline_skip_empty_sections=1			 	 " Don't display empty sections
+
+autocmd vimenter * NERDTree					 " Automatically open nerd tree when buffer open
 
 colorscheme onedark
 
-" Open FZF finder
-nnoremap <leader>p :FZF<CR>
+" Search git files with FZF
+nnoremap <leader>p :GFiles<CR>					 
+" Toggle tree view
+nnoremap <leader>1 :NERDTreeToggle<CR>
+nnoremap <Up> <Nop>
+nnoremap <Down> <Nop>
+nnoremap <Left> <Nop>
+nnoremap <Right> <Nop>
