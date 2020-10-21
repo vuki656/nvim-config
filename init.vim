@@ -21,14 +21,10 @@ Plug 'tpope/vim-fugitive'					" Awesome git integration
 Plug 'vim-airline/vim-airline'   				" Enable airline (bottom bar with useful info)
 Plug 'vim-airline/vim-airline-themes'				" Enable airline themes 
 Plug 'joshdick/onedark.vim'      				" Onedark color scheme
-Plug 'pangloss/vim-javascript'   				" JavaScript support
-Plug 'leafgarland/typescript-vim'  				" TypeScript syntax
-Plug 'jparise/vim-graphql'    	                		" GraphQL syntax
 Plug 'jiangmiao/auto-pairs'         				" Automatically add closing bracket
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }		" Base fzf package
 Plug 'junegunn/fzf.vim'						" Vim fzf adaptation
 Plug 'airblade/vim-gitgutter'				 	" Show git diff in side column
-Plug 'valloric/youcompleteme'				 	" Autcompletion
 Plug 'preservim/nerdtree'					" Sidebar tree view
 Plug 'Xuyuanp/nerdtree-git-plugin'				" Display git diff is tree view
 Plug 'ryanoasis/vim-devicons'					" Display more icons
