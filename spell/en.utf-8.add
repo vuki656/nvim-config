@@ -23,3 +23,7 @@ RemindersEditDialog
 dirs
 nvim
 relativenumber
+set
+Intellisense
+JS
+JSX
