@@ -22,6 +22,7 @@ set expandtab                                               " Convert tab to spa
 call plug#begin()
 
 Plug 'tpope/vim-fugitive'                                       " Awesome git integration
+Plug 'sheerun/vim-polyglot'                                     " Syntax highlighting 
 Plug 'vim-airline/vim-airline'                                  " Enable airline (bottom bar with useful info)
 Plug 'vim-airline/vim-airline-themes'                           " Enable airline themes 
 Plug 'joshdick/onedark.vim'                                     " Onedark color scheme
@@ -35,9 +36,9 @@ Plug 'Xuyuanp/nerdtree-git-plugin'                              " Display git di
 Plug 'ryanoasis/vim-devicons'                                   " Display more icons
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'                  " Highlight files in tree view by color
 Plug 'ThePrimeagen/vim-be-good'                                 " Practice game
-Plug 'neoclide/coc.nvim', {'branch': 'release'}                 " Intellisense 
+Plug 'neoclide/coc.nvim', {'branch': 'release'}                 " Intellisense
+Plug 'rakr/vim-one'
 
-Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 let mapleader = " "                                                " Set leader key to space
@@ -47,7 +48,7 @@ let g:NERDTreeShowHidden=1                                         " Show hidden
 let g:smoothie_update_interval=50                                  " Set scroll speed 
 
 " Airline config
-let g:airline_theme='onedark'                                      " Set color scheme 
+let g:airline_theme='one'                                      " Set color scheme 
 let g:airline_powerline_fonts=1                                    " Enable fonts (emojis)
 let g:airline#extensions#hunks#enabled=0                           " Remove number of diff lines in file 
 let g:airline_section_a=airline#section#create(['mode'])           " Display only mode in section A
@@ -57,7 +58,7 @@ let g:airline_section_y=''                                         " Remove ever
 let g:airline#extensions#whitespace#checks=[]                      " Remove the trailing whitespace notification
 let g:airline_skip_empty_sections=1                                " Don't display empty sections
 
-colorscheme onedark
+colorscheme one
 
 " Search git files with FZF
 nnoremap <leader>p :GFiles<CR>
@@ -70,7 +71,7 @@ nnoremap <leader>1 :NERDTreeToggle<CR>
 
 " Move line up/down
 xnoremap K :move '<-2<CR>gv-gv
-xnoremap J :move '>+1<CR>gv-gv
+xnoremap J :move '>+1<CR>gv-gv 
 
 " Enter command mode
 inoremap jj <ESC>
