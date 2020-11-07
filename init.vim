@@ -60,7 +60,6 @@ let g:airline_skip_empty_sections=1                                " Don't displ
 
 colorscheme one
 
-
 " Search git files with FZF
 nnoremap <leader>p :GFiles<CR>
 
