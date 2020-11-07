@@ -48,7 +48,7 @@ let g:NERDTreeShowHidden=1                                         " Show hidden
 let g:smoothie_update_interval=50                                  " Set scroll speed 
 
 " Airline config
-let g:airline_theme='one'                                      " Set color scheme 
+let g:airline_theme='one'                                          " Set color scheme 
 let g:airline_powerline_fonts=1                                    " Enable fonts (emojis)
 let g:airline#extensions#hunks#enabled=0                           " Remove number of diff lines in file 
 let g:airline_section_a=airline#section#create(['mode'])           " Display only mode in section A
@@ -59,6 +59,7 @@ let g:airline#extensions#whitespace#checks=[]                      " Remove the 
 let g:airline_skip_empty_sections=1                                " Don't display empty sections
 
 colorscheme one
+
 
 " Search git files with FZF
 nnoremap <leader>p :GFiles<CR>
@@ -81,3 +82,34 @@ nnoremap <Down> <Nop>
 nnoremap <Left> <Nop>
 nnoremap <Right> <Nop>
 
+" On <F3> display color group of the word cursor is on
+map <F3> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")<CR>
+
+" Syntax color overrides
+call one#highlight('typescriptImport', 'C678DD', '', 'none')
+call one#highlight('typescriptBraces', 'ABB2BF', '', 'none')
+call one#highlight('typescriptExport', 'C678DD', '', 'none')
+call one#highlight('typescriptVariable', 'C678DD', '', 'none')
+call one#highlight('typescriptVariableDeclaration', '61AFEF', '', 'none')
+call one#highlight('typescriptTypeReference', 'E5C07F', '', 'none')
+call one#highlight('typescriptDestructureVariable', 'ABB2BF', '', 'none')
+call one#highlight('typescriptCall', 'D19A66', '', 'none')
+call one#highlight('typescriptFuncCallArg', 'D19A66', '', 'none')
+call one#highlight('typescriptAsyncFuncKeyword', 'C678DD', '', 'none')
+call one#highlight('typescriptObjectLabel', 'E06C75', '', 'none')
+call one#highlight('typescriptDOMStorageMethod', '61AFEF', '', 'none')
+call one#highlight('typescriptGlobal', 'ABB2BF', '', 'none')
+call one#highlight('typescriptBoolean', 'C678DD', '', 'none')
+call one#highlight('typescriptDestructureLabel', 'E06C75', '', 'none')
+call one#highlight('typescriptArrowFunc', 'ABB2BF', '', 'none')
+call one#highlight('typescriptPredefinedType', 'C678DD', '', 'none')
+call one#highlight('typescriptNull', 'C678DD', '', 'none')
+call one#highlight('typescriptUnion', 'ABB2BF', '', 'none')
+call one#highlight('typescriptArrayMethod', '61AFEF', '', 'none')
+call one#highlight('typescriptBinaryOp', '61AFEF', '', 'none')
+call one#highlight('jsxAttrib', 'D19A66', '', 'none')
+call one#highlight('jsxBraces', 'ABB2BF', '', 'none')
+call one#highlight('jsxEqual', '98C379', '', 'none')
+call one#highlight('jsxComponentName', 'E06C75', '', 'none')
+call one#highlight('jsxOpenPunct', 'ABB2BF', '', 'none')
+call one#highlight('jsxCloseString', 'ABB2BF', '', 'none')
