@@ -1,6 +1,7 @@
 " ====== GENERAL =====
 let g:smoothie_update_interval=50                                  " Set scroll speed 
 let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }   " Open FZF in a centered window
+let g:indentLine_color_gui="#3b4048"                               " Set indent guideline line color
 
 " ===== AIRLINE ======
 let g:airline_theme='one'                                          " Set color scheme 

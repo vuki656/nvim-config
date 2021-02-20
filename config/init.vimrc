@@ -26,5 +26,6 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'                  " Tree coloring 
 Plug 'psliwka/vim-smoothie'                                     " Smooth scrolling
 Plug 'jiangmiao/auto-pairs'                                     " Automatically add closing bracket
 Plug 'airblade/vim-rooter'                                      " Change working dir to project root (enables nerdtree to be opened in project root)
+Plug 'Yggdroot/indentLine'                                      " Indent guide lines
 
 call plug#end()
