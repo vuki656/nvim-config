@@ -31,3 +31,25 @@ autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_
 
 " Start NERDTree and put the cursor back in the other window.
 autocmd VimEnter * NERDTree | wincmd p
+
+" ===== COC ===========
+let g:coc_global_extensions = [
+            \'coc-spell-checker',
+            \'coc-css',
+            \'coc-cssmodules',
+            \'coc-diagnostic',
+            \'coc-eslint',
+            \'coc-git',
+            \'coc-highlight',
+            \'coc-html',
+            \'coc-htmlhint',
+            \'coc-html-css-support',
+            \'coc-json',
+            \'coc-markdownlint',
+            \'coc-prisma',
+            \'coc-spell-checker',
+            \'coc-tsserver',
+            \'coc-xml',
+            \'coc-yaml',
+            \'coc-yank',
+            \]

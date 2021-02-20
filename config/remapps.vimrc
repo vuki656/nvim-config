@@ -18,3 +18,6 @@ inoremap <silent><expr> <c-space> coc#refresh()
 
 " Coc spellsheck 
 nmap <leader>a <Plug>(coc-codeaction-selected)
+
+nnoremap <silent> <leader>y  :<C-u>CocList -A --normal yank<cr>
+
