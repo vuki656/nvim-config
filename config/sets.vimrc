@@ -8,7 +8,6 @@ set relativenumber                                          " Show line number r
 set incsearch                                               " Enables search results as you type
 set smartindent                                             " Enable smart indenting
 set nohlsearch                                              " Don't highlight search after search finished
-set spell spelllang=en_us                                   " Enable spell check and set language
 set signcolumn=yes                                          " Auto show sign column (for git diff)
 set updatetime=50                                           " Time after the buffer is saved
 set hidden                                                  " Preserve closed buffers with changes
@@ -25,5 +24,4 @@ set expandtab                                               " Convert tab to spa
 set splitright                                              " Open new buffers to the right
 set splitbelow                                              " Open new buffers to the bottom
 
-let mapleader = " "                                                " Set leader key to space
 

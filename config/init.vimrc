@@ -2,7 +2,11 @@ call plug#begin()
 
 " ====== CORE =============
 Plug 'sheerun/vim-polyglot'                                     " Syntax highlighting 
-Plug 'neoclide/coc.nvim', {'branch': 'release'}                 " Intellisense
+
+" ====== COC ==============
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }               " Intellisense
+Plug 'kevinoid/vim-jsonc'                                       " Intellisense for coc config file 
+Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/rpc' }   " FZF COC integration
 
 " ====== SEARCH ===========
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }             " Base fzf package
