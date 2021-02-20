@@ -21,5 +21,4 @@ set shiftwidth=4                                            " Correctly indent l
 set expandtab                                               " Convert tab to spaces
 
 let mapleader = " "                                                " Set leader key to space
-let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }   " Open FZF in a centered window
 
