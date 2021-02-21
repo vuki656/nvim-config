@@ -19,8 +19,8 @@ let g:airline_skip_empty_sections=1                                " Don't displ
 " ===== NERDTREE =====
 let g:NERDTreeShowHidden=1                                         " Show hidden files/dirs in tree view 
 let g:NERDTreeMinimalUI=1                                          " Remove clutter
-let g:NERDTreeGitStatusUseNerdFonts = 1                            " Use hacked font icons for git status 
-let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
+let g:NERDTreeGitStatusUseNerdFonts=1                              " Use hacked font icons for git status 
+let g:WebDevIconsNerdTreeAfterGlyphPadding=' '                     " Set the spacing after icons
 
 " Automatically close nvim if NERDTree is only thing left open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif

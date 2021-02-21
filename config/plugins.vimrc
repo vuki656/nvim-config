@@ -2,6 +2,7 @@ call plug#begin()
 
 " ====== CORE =============
 Plug 'sheerun/vim-polyglot'                                     " Syntax highlighting 
+Plug 'tpope/vim-fugitive'                                       " Git command integration directly into vim
 
 " ====== COC ==============
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }               " Intellisense
