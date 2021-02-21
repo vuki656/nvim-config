@@ -1,12 +1,6 @@
 " Enter command mode
 inoremap jj <ESC>
 
-" Find current buffer in tree view
-nnoremap <leader>o :NERDTreeFind<CR>
-
-" Toggle tree view
-nnoremap <leader>1 :NERDTreeToggle<CR>
-
 " Search git files with FZF
 nnoremap <leader>p :GFiles<CR>
 
@@ -14,7 +8,7 @@ nnoremap <leader>p :GFiles<CR>
 nnoremap <leader>r <C-^>
 
 " Open clipboard history
-nnoremap <silent> <leader>y  :<C-u>CocList -A --normal yank<cr>
+nnoremap <silent> <leader>t  :<C-u>CocList -A --normal yank<cr>
 
 " Move lines up and down with CTRL+J/K
 nnoremap <C-j> :m .+1<CR>==
@@ -26,10 +20,21 @@ nnoremap <M-j> <C-w>j
 nnoremap <M-k> <C-w>k
 nnoremap <M-l> <C-w>l
 
-" ===== COC =====
+" ===== NERDTREE =====
+
+" Find current buffer in tree view
+nnoremap <leader>o :NERDTreeFind<CR>
+
+" Toggle tree view
+nnoremap <leader>1 :NERDTreeToggle<CR>
+
+" Reload nerdtree (get new files) on cursor focus
+autocmd BufEnter NERD_tree_* | execute 'normal R'
+
+" ===== COC ==========
 
 " Open spellcheck popup
-nmap <leader>a <Plug>(coc-codeaction-selected)
+nmap <leader>c <Plug>(coc-codeaction-selected)<CR>
 
 " Open auto-complete popup 
 inoremap <silent><expr> <c-space> coc#refresh()
