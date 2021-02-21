@@ -1,5 +1,6 @@
 {
     "eslint.autoFixOnSave": true,
+    "diagnostic.checkCurrentLine": true,
     "cSpell.userWords": [
       "Xuyuanp",
       "Yggdroot",

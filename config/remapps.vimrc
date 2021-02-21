@@ -13,12 +13,6 @@ nnoremap <leader>p :GFiles<CR>
 " Rotate between the last 2 files
 nnoremap <leader>r <C-^>
 
-" Open auto-complete popup 
-inoremap <silent><expr> <c-space> coc#refresh()
-
-" Coc spellcheck 
-nmap <leader>a <Plug>(coc-codeaction-selected)
-
 " Open clipboard history
 nnoremap <silent> <leader>y  :<C-u>CocList -A --normal yank<cr>
 
@@ -31,4 +25,16 @@ nnoremap <M-h> <C-w>h
 nnoremap <M-j> <C-w>j
 nnoremap <M-k> <C-w>k
 nnoremap <M-l> <C-w>l
+
+" ===== COC =====
+
+" Open spellcheck popup
+nmap <leader>a <Plug>(coc-codeaction-selected)
+
+" Open auto-complete popup 
+inoremap <silent><expr> <c-space> coc#refresh()
+
+" Navigate suggestions with Tab/Shift+Tab
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
