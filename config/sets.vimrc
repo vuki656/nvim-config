@@ -1,7 +1,7 @@
 syntax on
 filetype plugin on
 colorscheme one
-
+kk
 set clipboard=unnamedplus                                   " Sync nvim clipboard with sys clipboard
 set number                                                  " Show current line number
 set relativenumber                                          " Show line number relative to line you are on
