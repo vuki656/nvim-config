@@ -1,6 +1,13 @@
 {
     "eslint.autoFixOnSave": true,
     "diagnostic.checkCurrentLine": true,
+    "diagnostic.infoSign": "⚡",
+    "diagnostic.hintSign": "⚡",
+    "diagnostic.warningSign": "⚠️",
+    "diagnostic.errorSign": "🚫",
+    "diagnostic.enable": true,
+    "diagnostic.highlightOffset": 9999999,
+    "diagnostic.refreshOnInsertMode": true,
     "coc.preferences.formatOnSaveFiletypes": [
         "prisma"
     ],
@@ -44,11 +51,14 @@
       "kevinoid",
       "kosayoda",
       "neoclide",
+      "nerdtreehidecwd",
+      "nerdtreehidetirslashes",
       "postgres",
       "psliwka",
       "rakr",
       "require'nvim",
       "sheerun",
+      "struct",
       "tiagofumo",
       "tpope",
       "typegraphql",

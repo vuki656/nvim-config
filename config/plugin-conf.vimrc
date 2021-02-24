@@ -4,6 +4,16 @@ let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }   " Open FZF in
 let g:indentLine_color_gui="#3b4048"                               " Set indent guideline line color
 let g:smoothie_base_speed=15                                       " Set smoothie scroll speed 
 let mapleader = " "                                                " Set leader key to space
+highlight! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg     " Hide ~ chars from side menus
+
+" ====== GITGUTTER ===
+" Customize indicator characters
+let g:gitgutter_sign_added = '▊'
+let g:gitgutter_sign_modified = '▊'
+let g:gitgutter_sign_removed = '▊'
+let g:gitgutter_sign_removed_first_line = '▊'
+let g:gitgutter_sign_removed_above_and_below = '▊'
+let g:gitgutter_sign_modified_removed = '▊'
 
 " ===== AIRLINE ======
 let g:airline_theme='one'                                          " Set color scheme 
@@ -17,13 +27,20 @@ let g:airline_section_x=" "
 let g:airline_section_y=" "
 let g:airline_section_z='%{strftime(" %H:%M")}'                   " Display hour:minute in section Z
 
+
 " ===== NERDTREE =====
 let g:NERDTreeMinimalUI=1                                          " Remove clutter
 let g:NERDTreeGitStatusUseNerdFonts=1                              " Use hacked font icons for git status 
 let g:WebDevIconsDefaultFolderSymbolColor="#abb2bf"                " Set folder colors to white
 let g:DevIconsEnableFoldersOpenClose=1                             " Enable folder open/close icon change
-
 highlight Directory guifg=#abb2bf                                  " Set folder name to white
+
+
+" Remove / from folder names
+augroup nerdtreehidetirslashes
+	autocmd!
+	autocmd FileType nerdtree syntax match NERDTreeDirSlash #/$# containedin=NERDTreeDir conceal contained
+augroup end
 
 " Remove arrows
 let g:NERDTreeDirArrowExpandable = ''
@@ -52,7 +69,6 @@ let g:coc_global_extensions = [
             \'coc-cssmodules',
             \'coc-diagnostic',
             \'coc-eslint',
-            \'coc-git',
             \'coc-highlight',
             \'coc-html',
             \'coc-docker',
@@ -79,6 +95,14 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+
+" Customize COC gutter sign and underline colors
+highlight! CocErrorSign guifg=#d1666a
+highlight! CocInfoSign guibg=#353b45
+highlight! CocWarningSign guifg=#d1cd66
+highlight CocUnderline gui=undercurl term=undercurl
+highlight CocErrorHighlight guifg=#e06c75 gui=undercurl term=undercurl
+highlight CocWarningHighlight guifg=#e5c07b gui=undercurl term=undercurl
 
 " FAT C/P => CHCEK WHAT YOU DONT NEED 
 "  TextEdit might fail if hidden is not set.
