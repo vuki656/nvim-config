@@ -31,6 +31,7 @@ Plug 'psliwka/vim-smoothie'                                     " Smooth scrolli
 Plug 'jiangmiao/auto-pairs'                                     " Automatically add closing bracket
 Plug 'airblade/vim-rooter'                                      " Change working dir to project root (enables nerdtree to be opened in project root)
 Plug 'Yggdroot/indentLine'                                      " Indent guide lines
+Plug 'mbbill/undotree'                                          " Better undo history
 
 " ===== OTHER ==============
 Plug 'pantharshit00/vim-prisma'                                 " Prisma support

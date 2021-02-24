@@ -3,6 +3,7 @@ let g:smoothie_update_interval=50                                  " Set scroll 
 let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }   " Open FZF in a centered window
 let g:indentLine_color_gui="#3b4048"                               " Set indent guideline line color
 let g:smoothie_base_speed=15                                       " Set smoothie scroll speed 
+let g:undotree_SetFocusWhenToggle = 1                              " Autofocus undotree on open 
 let mapleader = " "                                                " Set leader key to space
 highlight! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg     " Hide ~ chars from side menus
 
@@ -65,6 +66,8 @@ augroup nerdtreehidecwd
 	autocmd FileType nerdtree setlocal conceallevel=3 | syntax match NERDTreeHideCWD #^[</].*$# conceal
 augroup end
 
+" ===== UNDOTREE ====== 
+
 " ===== COC ===========
 let g:coc_global_extensions = [
             \'coc-spell-checker',
@@ -104,7 +107,7 @@ highlight CocUnderline gui=undercurl term=undercurl
 highlight CocErrorHighlight guifg=#e06c75 gui=undercurl term=undercurl
 highlight CocWarningHighlight guifg=#e5c07b gui=undercurl term=undercurl
 
-" FAT C/P => CHCEK WHAT YOU DONT NEED 
+" FAT C/P => CHECK WHAT YOU DONT NEED 
 "  TextEdit might fail if hidden is not set.
 set hidden
 

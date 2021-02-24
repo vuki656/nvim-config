@@ -1,7 +1,7 @@
 syntax on
 filetype plugin on
 colorscheme one
-kk
+
 set clipboard=unnamedplus                                   " Sync nvim clipboard with sys clipboard
 set number                                                  " Show current line number
 set relativenumber                                          " Show line number relative to line you are on
@@ -16,6 +16,8 @@ set termguicolors                                           " Set the given colo
 set nowrap                                                  " Don't wrap text if it goes out of view
 set mouse=a                                                 " Enables mouse scrolling
 set noswapfile                                              " Disable swap files
+set undodir=undodir                                         " Set undodir location
+set undofile                                                " Enable undo files
 set cursorline                                              " Highlight line you are on
 set scroll=15                                               " Set number of lines to scroll 
 set tabstop=4                                               " Convert tab to 4 spaces
@@ -23,5 +25,4 @@ set shiftwidth=4                                            " Correctly indent l
 set expandtab                                               " Convert tab to spaces
 set splitright                                              " Open new buffers to the right
 set splitbelow                                              " Open new buffers to the bottom
-
 
