@@ -23,10 +23,14 @@ let g:airline#extensions#whitespace#checks=[]                      " Remove the 
 let g:airline_skip_empty_sections=1                                " Don't display empty sections
 let g:airline_section_a=airline#section#create(['mode'])           " Display only mode in section A
 let g:airline_section_c=" "                                        " Empty C section
-let g:airline_section_x=" "
-let g:airline_section_y=" "
+let g:airline_section_x=" "                                        " Empty X Section
 let g:airline_section_z='%{strftime(" %H:%M")}'                   " Display hour:minute in section Z
 
+" Organize sections
+let g:airline#extensions#default#layout = [
+      \ [ 'a', 'b', 'c' ],
+      \ [ 'x', 'z', 'error', 'warning' ]
+      \ ]
 
 " ===== NERDTREE =====
 let g:NERDTreeMinimalUI=1                                          " Remove clutter
@@ -34,7 +38,6 @@ let g:NERDTreeGitStatusUseNerdFonts=1                              " Use hacked 
 let g:WebDevIconsDefaultFolderSymbolColor="#abb2bf"                " Set folder colors to white
 let g:DevIconsEnableFoldersOpenClose=1                             " Enable folder open/close icon change
 highlight Directory guifg=#abb2bf                                  " Set folder name to white
-
 
 " Remove / from folder names
 augroup nerdtreehidetirslashes
@@ -97,9 +100,6 @@ function! s:check_back_space() abort
 endfunction
 
 " Customize COC gutter sign and underline colors
-highlight! CocErrorSign guifg=#d1666a
-highlight! CocInfoSign guibg=#353b45
-highlight! CocWarningSign guifg=#d1cd66
 highlight CocUnderline gui=undercurl term=undercurl
 highlight CocErrorHighlight guifg=#e06c75 gui=undercurl term=undercurl
 highlight CocWarningHighlight guifg=#e5c07b gui=undercurl term=undercurl
@@ -108,25 +108,8 @@ highlight CocWarningHighlight guifg=#e5c07b gui=undercurl term=undercurl
 "  TextEdit might fail if hidden is not set.
 set hidden
 
-" Some servers have issues with backup files, see #649.
-set nobackup
-set nowritebackup
-
-" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
-" delays and poor user experience.
-set updatetime=300
-
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
-
-" Always show the signcolumn, otherwise it would shift the text each time
-" diagnostics appear/become resolved.
-if has("patch-8.1.1564")
-  " Recently vim can merge signcolumn and number column into one
-  set signcolumn=number
-else
-  set signcolumn=yes
-endif
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
