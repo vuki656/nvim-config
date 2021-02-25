@@ -9,6 +9,7 @@ let g:indentLine_color_gui="#3b4048"                               " Set indent 
 let g:smoothie_base_speed=15                                       " Set smoothie scroll speed 
 let g:undotree_SetFocusWhenToggle = 1                              " Autofocus undotree on open 
 let mapleader = " "                                                " Set leader key to space
+let g:undotree_SplitWidth = 40                                     " Set undotree width
 
 " Hide ~ chars from side menus
 highlight! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg     
