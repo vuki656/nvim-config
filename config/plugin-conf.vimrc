@@ -1,14 +1,25 @@
-" ====== GENERAL =====
+" #####################################################################################
+" #----------------------------------- GENERAL ---------------------------------------#
+" #####################################################################################
+
+
 let g:smoothie_update_interval=50                                  " Set scroll speed 
 let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }   " Open FZF in a centered window
 let g:indentLine_color_gui="#3b4048"                               " Set indent guideline line color
 let g:smoothie_base_speed=15                                       " Set smoothie scroll speed 
 let g:undotree_SetFocusWhenToggle = 1                              " Autofocus undotree on open 
 let mapleader = " "                                                " Set leader key to space
-highlight! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg     " Hide ~ chars from side menus
 
-" ====== GITGUTTER ===
-" Customize indicator characters
+" Hide ~ chars from side menus
+highlight! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg     
+
+
+" #####################################################################################
+" #----------------------------------- GITGUTTER -------------------------------------#
+" #####################################################################################
+
+
+" Customize indicator characters (mimic intellij side bars with diff colors depending on status )
 let g:gitgutter_sign_added = '▊'
 let g:gitgutter_sign_modified = '▊'
 let g:gitgutter_sign_removed = '▊'
@@ -16,7 +27,13 @@ let g:gitgutter_sign_removed_first_line = '▊'
 let g:gitgutter_sign_removed_above_and_below = '▊'
 let g:gitgutter_sign_modified_removed = '▊'
 
-" ===== AIRLINE ======
+
+
+" #####################################################################################
+" #----------------------------------- AIRLINE ---------------------------------------#
+" #####################################################################################
+
+
 let g:airline_theme='one'                                          " Set color scheme 
 let g:airline_powerline_fonts=1                                    " Enable fonts (emojis)
 let g:airline#extensions#hunks#enabled=0                           " Remove number of diff lines in file 
@@ -33,22 +50,27 @@ let g:airline#extensions#default#layout = [
       \ [ 'x', 'z', 'error', 'warning' ]
       \ ]
 
-" ===== NERDTREE =====
+
+" #####################################################################################
+" #----------------------------------- NERDTREE --------------------------------------#
+" #####################################################################################
+
+
 let g:NERDTreeMinimalUI=1                                          " Remove clutter
 let g:NERDTreeGitStatusUseNerdFonts=1                              " Use hacked font icons for git status 
 let g:WebDevIconsDefaultFolderSymbolColor="#abb2bf"                " Set folder colors to white
 let g:DevIconsEnableFoldersOpenClose=1                             " Enable folder open/close icon change
-highlight Directory guifg=#abb2bf                                  " Set folder name to white
+let g:NERDTreeDirArrowExpandable = ''                              " Remove open state arrow
+let g:NERDTreeDirArrowCollapsible = ''                             " Remove closed state arrow
+
+" Set folder name to white
+highlight Directory guifg=#abb2bf
 
 " Remove / from folder names
 augroup nerdtreehidetirslashes
 	autocmd!
 	autocmd FileType nerdtree syntax match NERDTreeDirSlash #/$# containedin=NERDTreeDir conceal contained
 augroup end
-
-" Remove arrows
-let g:NERDTreeDirArrowExpandable = ''
-let g:NERDTreeDirArrowCollapsible = ''
 
 " Automatically close nvim if NERDTree is only thing left open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -60,15 +82,18 @@ autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_
 " Start NERDTree and put the cursor back in the other window.
 autocmd VimEnter * NERDTree | wincmd p
 
-" Remove top path
+" Remove top path section
 augroup nerdtreehidecwd
 	autocmd!
 	autocmd FileType nerdtree setlocal conceallevel=3 | syntax match NERDTreeHideCWD #^[</].*$# conceal
 augroup end
 
-" ===== UNDOTREE ====== 
 
-" ===== COC ===========
+" #####################################################################################
+" #----------------------------------- COC -------------------------------------------#
+" #####################################################################################
+
+
 let g:coc_global_extensions = [
             \'coc-spell-checker',
             \'coc-css',
@@ -90,24 +115,19 @@ let g:coc_global_extensions = [
             \'coc-yank',
             \]
 
-" Auto insert coc suggestion onto the line
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-" Customize COC gutter sign and underline colors
+" Set the coc error/warn underline to curly line
 highlight CocUnderline gui=undercurl term=undercurl
+
+" Set the error underline to custom red
 highlight CocErrorHighlight guifg=#e06c75 gui=undercurl term=undercurl
+
+" Set the warning underline to custom yellow
 highlight CocWarningHighlight guifg=#e5c07b gui=undercurl term=undercurl
 
-" FAT C/P => CHECK WHAT YOU DONT NEED 
+
+" #####################################################################################
+" #----------------------- COC TRASH THAT NEEDS TO BE CHECKED ------------------------#
+" #####################################################################################
 "  TextEdit might fail if hidden is not set.
 set hidden
 
