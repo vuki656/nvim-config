@@ -2,11 +2,8 @@
 " #----------------------------------- GENERAL ---------------------------------------#
 " #####################################################################################
 
-
-let g:smoothie_update_interval=50                                  " Set scroll speed 
 let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }   " Open FZF in a centered window
 let g:indentLine_color_gui="#3b4048"                               " Set indent guideline line color
-let g:smoothie_base_speed=15                                       " Set smoothie scroll speed 
 let g:undotree_SetFocusWhenToggle = 1                              " Autofocus undotree on open 
 let mapleader = " "                                                " Set leader key to space
 let g:undotree_SplitWidth = 40                                     " Set undotree width
@@ -16,18 +13,28 @@ highlight! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
 
 
 " #####################################################################################
+" #----------------------------------- VIM SMOOTHIE ----------------------------------#
+" #####################################################################################
+
+
+let g:smoothie_break_on_reverse = "true"
+let g:smoothie_base_speed = 20
+let g:smoothie_update_interval = 30
+let g:smoothie_speed_exponentiation_factor = 1.1
+
+
+" #####################################################################################
 " #----------------------------------- GITGUTTER -------------------------------------#
 " #####################################################################################
 
 
-" Customize indicator characters (mimic intellij side bars with diff colors depending on status )
+" Customize indicator characters (mimic intellij side bars with diff colors depending on status)
 let g:gitgutter_sign_added = '▊'
 let g:gitgutter_sign_modified = '▊'
 let g:gitgutter_sign_removed = '▊'
 let g:gitgutter_sign_removed_first_line = '▊'
 let g:gitgutter_sign_removed_above_and_below = '▊'
 let g:gitgutter_sign_modified_removed = '▊'
-
 
 
 " #####################################################################################
@@ -104,6 +111,7 @@ let g:coc_global_extensions = [
             \'coc-highlight',
             \'coc-html',
             \'coc-docker',
+            \'coc-fzf-preview',
             \'coc-htmlhint',
             \'coc-html-css-support',
             \'coc-json',

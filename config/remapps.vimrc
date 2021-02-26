@@ -2,12 +2,8 @@
 " #----------------------------------- GENERAL ---------------------------------------#
 " #####################################################################################
 
-
 " Enter command mode
 inoremap jj <ESC>
-
-" Search git files with FZF
-nnoremap <leader>p :GFiles<CR>
 
 " Rotate between the last 2 files
 nnoremap <leader>r <C-^>
@@ -28,6 +24,18 @@ nnoremap <M-l> <C-w>l
 " Open/close undotree and open/close nerdtree
 nnoremap <leader>u :NERDTreeToggle<CR> :UndotreeToggle<CR>
 
+" #####################################################################################
+" #----------------------------------- SEARCH ----------------------------------------#
+" #####################################################################################
+
+" Search git files
+nnoremap <leader>p :GFiles<CR>
+
+" Search all files 
+nnoremap <leader>[ :Files<CR>
+
+" Search in files
+nnoremap <leader>s :Rg<CR>
 
 " #####################################################################################
 " #----------------------------------- NERDTREE --------------------------------------#
