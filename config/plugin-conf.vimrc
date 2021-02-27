@@ -27,6 +27,8 @@ let g:smoothie_speed_exponentiation_factor = 1.1
 " #----------------------------------- STARTIFY --------------------------------------#
 " #####################################################################################
 
+" Set project root on switch
+let g:startify_change_to_vcs_root = 0
 
 " Categories to display
 let g:startify_lists = [

@@ -24,7 +24,6 @@ nnoremap <C-l> <C-w>l
 nnoremap <M-j> <C-w>j
 nnoremap <M-k> <C-w>k
 
-" Empty folder name color is blue
 " Open/close undotree and open/close nerdtree
 nnoremap <leader>u :NvimTreeToggle<CR> :UndotreeToggle<CR>
 

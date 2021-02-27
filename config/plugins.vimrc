@@ -33,11 +33,11 @@ Plug 'vim-airline/vim-airline'                                  " Enable airline
 Plug 'vim-airline/vim-airline-themes'                           " Enable airline themes 
 
 " #####################################################################################
-" #----------------------------------- NERDTREE --------------------------------------#
+" #----------------------------------- FILE TREE -------------------------------------#
 " #####################################################################################
 
-Plug 'kyazdani42/nvim-web-devicons' " for file icons
-Plug 'kyazdani42/nvim-tree.lua'
+Plug 'kyazdani42/nvim-tree.lua'                                 " Tree
+Plug 'kyazdani42/nvim-web-devicons'                             " Icons
 
 " #####################################################################################
 " #----------------------------------- QUALITY OF LIFE -------------------------------#
