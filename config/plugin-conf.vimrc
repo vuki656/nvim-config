@@ -24,6 +24,24 @@ let g:smoothie_speed_exponentiation_factor = 1.1
 
 
 " #####################################################################################
+" #----------------------------------- STARTIFY --------------------------------------#
+" #####################################################################################
+
+
+" Categories to display
+let g:startify_lists = [
+       \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+       \ { 'type': 'files',     'header': ['   Recent']         },
+       \ ]
+
+" Bookmarked projects
+let g:startify_bookmarks = [
+       \ { 'q': '~/.config/nvim/config/plugin-conf.vimrc' },
+       \ { 'w': '~/Projects/campfire-api/package.json' },
+       \ ]
+
+
+" #####################################################################################
 " #----------------------------------- GITGUTTER -------------------------------------#
 " #####################################################################################
 
@@ -60,11 +78,11 @@ let g:airline#extensions#default#layout = [
 
 
 " #####################################################################################
-" #----------------------------------- NERDTREE --------------------------------------#
+" #----------------------------------- FILE TREE -------------------------------------#
 " #####################################################################################
 
 let g:nvim_tree_side = 'left'                                           " Set position
-let g:nvim_tree_auto_open = 1
+let g:nvim_tree_auto_open = 1                                           " Auto open on start
 let g:nvim_tree_auto_close = 1                                          " Auto close if tree is last buffer 
 let g:nvim_tree_ignore = [ '.git' ]                                     " Hide dirs
 let g:nvim_tree_follow = 1                                              " Follow the opened buffer
@@ -97,6 +115,7 @@ highlight NvimTreeGitNew guifg=#437e54
 highlight NvimTreeGitRenamed guifg=#ff8f00
 highlight NvimTreeGitDirty guifg=#60aae0
 highlight NvimTreeFolderName guifg=#a5afbe
+highlight NvimTreeEmptyFolderName guifg=#a5afbe
 highlight NvimTreeFolderIcon guifg=#a5afbe
 
 " Prevent cursor from displaying over the icons

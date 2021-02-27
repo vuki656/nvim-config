@@ -6,7 +6,10 @@
 inoremap jj <ESC>
 
 " Rotate between the last 2 files
-nnoremap <leader>r <C-^>
+nnoremap <leader>8 <C-^>
+
+" Open open start screen
+nnoremap <leader>b :Startify<CR>
 
 " Open clipboard history
 nnoremap <silent> <leader>t  :<C-u>CocList -A --normal yank<cr>
@@ -21,8 +24,9 @@ nnoremap <C-l> <C-w>l
 nnoremap <M-j> <C-w>j
 nnoremap <M-k> <C-w>k
 
+" Empty folder name color is blue
 " Open/close undotree and open/close nerdtree
-nnoremap <leader>u :NERDTreeToggle<CR> :UndotreeToggle<CR>
+nnoremap <leader>u :NvimTreeToggle<CR> :UndotreeToggle<CR>
 
 " #####################################################################################
 " #----------------------------------- SEARCH ----------------------------------------#
@@ -38,22 +42,18 @@ nnoremap <leader>[ :Files<CR>
 nnoremap <leader>s :Rg<CR>
 
 " #####################################################################################
-" #----------------------------------- NERDTREE --------------------------------------#
+" #----------------------------------- FILE TREE -------------------------------------#
 " #####################################################################################
 
 " Toggle tree view
 nnoremap <C-n> :NvimTreeToggle<CR>
 
 " Find current buffer in tree
-nnoremap <leader>o :NvimTreeFindFile<CR>
+nnoremap <leader>o :NvimTreeFindFile<CR> :NvimTreeRefresh<CR>
 
 " #####################################################################################
 " #----------------------------------- COC -------------------------------------------#
 " #####################################################################################
-
-
-" Open spellcheck popup
-nmap <leader>c <Plug>(coc-codeaction-selected)<CR>
 
 " Open auto-complete popup 
 inoremap <silent><expr> <c-space> coc#refresh()

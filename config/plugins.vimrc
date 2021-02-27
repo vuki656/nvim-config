@@ -48,6 +48,7 @@ Plug 'airblade/vim-rooter'                                      " Change working
 Plug 'Yggdroot/indentLine'                                      " Indent guide lines
 Plug 'psliwka/vim-smoothie'                                     " Smooth scrolling
 Plug 'tpope/vim-commentary'                                     " Comment code blocks 
+Plug 'mhinz/vim-startify'                                       " Nice looking home screen
 
 " #####################################################################################
 " #----------------------------------- OTHER -----------------------------------------#
