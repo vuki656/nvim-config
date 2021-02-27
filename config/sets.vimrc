@@ -16,7 +16,7 @@ set termguicolors                                           " Set the given colo
 set nowrap                                                  " Don't wrap text if it goes out of view
 set mouse=a                                                 " Enables mouse scrolling
 set noswapfile                                              " Disable swap files
-set undodir=undodir                                         " Set undodir location
+set undodir=~/.vim/undodir                                  " Set undodir location
 set undofile                                                " Enable undo files
 set cursorline                                              " Highlight line you are on
 set scroll=15                                               " Set number of lines to scroll 

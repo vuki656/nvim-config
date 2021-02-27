@@ -63,38 +63,49 @@ let g:airline#extensions#default#layout = [
 " #----------------------------------- NERDTREE --------------------------------------#
 " #####################################################################################
 
+let g:nvim_tree_side = 'left'                                           " Set position
+let g:nvim_tree_auto_open = 1
+let g:nvim_tree_auto_close = 1                                          " Auto close if tree is last buffer 
+let g:nvim_tree_ignore = [ '.git' ]                                     " Hide dirs
+let g:nvim_tree_follow = 1                                              " Follow the opened buffer
+let g:nvim_tree_hide_dotfiles = 1                                       " Hide dotfiles
+let g:nvim_tree_git_hl = 1                                              " Highlight files depending on git status
+let g:nvim_tree_disable_netrw = 1                                       " Disable nvim default tree 
 
-let g:NERDTreeMinimalUI=1                                          " Remove clutter
-let g:NERDTreeGitStatusUseNerdFonts=1                              " Use hacked font icons for git status 
-let g:WebDevIconsDefaultFolderSymbolColor="#abb2bf"                " Set folder colors to white
-let g:DevIconsEnableFoldersOpenClose=1                             " Enable folder open/close icon change
-let g:NERDTreeDirArrowExpandable = ''                              " Remove open state arrow
-let g:NERDTreeDirArrowCollapsible = ''                             " Remove closed state arrow
+" Set which icons groups to display
+let g:nvim_tree_show_icons = {
+    \ 'git': 0,
+    \ 'folders': 1,
+    \ 'files': 1,
+    \ }
 
-" Set folder name to white
-highlight Directory guifg=#abb2bf
+" Custom icon mapping
+let g:nvim_tree_icons = {
+    \ 'default': '',
+    \ 'symlink': '',
+    \ 'folder': {
+    \   'default': "",
+    \   'open': "",
+    \   'empty_open': "",
+    \   'empty': "",
+    \   'symlink': "",
+    \   }
+    \ }
 
-" Remove / from folder names
-augroup nerdtreehidetirslashes
-	autocmd!
-	autocmd FileType nerdtree syntax match NERDTreeDirSlash #/$# containedin=NERDTreeDir conceal contained
-augroup end
+" Custom colors
+highlight NvimTreeGitNew guifg=#437e54
+highlight NvimTreeGitRenamed guifg=#ff8f00
+highlight NvimTreeGitDirty guifg=#60aae0
+highlight NvimTreeFolderName guifg=#a5afbe
+highlight NvimTreeFolderIcon guifg=#a5afbe
 
-" Automatically close nvim if NERDTree is only thing left open
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-" If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree
-autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
-    \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
-
-" Start NERDTree and put the cursor back in the other window.
-autocmd VimEnter * NERDTree | wincmd p
-
-" Remove top path section
-augroup nerdtreehidecwd
-	autocmd!
-	autocmd FileType nerdtree setlocal conceallevel=3 | syntax match NERDTreeHideCWD #^[</].*$# conceal
-augroup end
+" Prevent cursor from displaying over the icons
+augroup HideCursor
+  au!
+  au WinLeave,FileType NvimTree set guicursor=n-v-c-sm:block,i-ci-ve:ver2u,r-cr-o:hor20,
+  au WinEnter,FileType NvimTree set guicursor=n-c-v:block-Cursor/Cursor-blinkon0,
+augroup END
+au FileType NvimTree hi Cursor blend=100
 
 
 " #####################################################################################

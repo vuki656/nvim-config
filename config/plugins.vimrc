@@ -36,10 +36,8 @@ Plug 'vim-airline/vim-airline-themes'                           " Enable airline
 " #----------------------------------- NERDTREE --------------------------------------#
 " #####################################################################################
 
-Plug 'preservim/nerdtree'                                       " Tree
-Plug 'Xuyuanp/nerdtree-git-plugin'                              " Tree git diff 
-Plug 'ryanoasis/vim-devicons'                                   " Tree icons 
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'                  " Tree coloring by file type
+Plug 'kyazdani42/nvim-web-devicons' " for file icons
+Plug 'kyazdani42/nvim-tree.lua'
 
 " #####################################################################################
 " #----------------------------------- QUALITY OF LIFE -------------------------------#
@@ -49,6 +47,7 @@ Plug 'jiangmiao/auto-pairs'                                     " Automatically 
 Plug 'airblade/vim-rooter'                                      " Change working dir to project root (enables nerdtree to be opened in project root)
 Plug 'Yggdroot/indentLine'                                      " Indent guide lines
 Plug 'psliwka/vim-smoothie'                                     " Smooth scrolling
+Plug 'tpope/vim-commentary'                                     " Comment code blocks 
 
 " #####################################################################################
 " #----------------------------------- OTHER -----------------------------------------#

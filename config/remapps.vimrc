@@ -41,16 +41,11 @@ nnoremap <leader>s :Rg<CR>
 " #----------------------------------- NERDTREE --------------------------------------#
 " #####################################################################################
 
-
-" Find current buffer in tree view
-nnoremap <leader>o :NERDTreeFind<CR>
-
 " Toggle tree view
-nnoremap <leader>1 :NERDTreeToggle<CR>
+nnoremap <C-n> :NvimTreeToggle<CR>
 
-" Reload nerdtree (get new files) on cursor focus
-autocmd BufEnter NERD_tree_* | execute 'normal R'
-
+" Find current buffer in tree
+nnoremap <leader>o :NvimTreeFindFile<CR>
 
 " #####################################################################################
 " #----------------------------------- COC -------------------------------------------#
