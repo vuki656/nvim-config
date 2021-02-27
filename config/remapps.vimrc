@@ -16,10 +16,10 @@ nnoremap <C-j> :m .+1<CR>==
 nnoremap <C-k> :m .-2<CR>==
 
 " Navigate buffers 
-nnoremap <M-h> <C-w>h
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
 nnoremap <M-j> <C-w>j
 nnoremap <M-k> <C-w>k
-nnoremap <M-l> <C-w>l
 
 " Open/close undotree and open/close nerdtree
 nnoremap <leader>u :NERDTreeToggle<CR> :UndotreeToggle<CR>
