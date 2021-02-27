@@ -27,21 +27,23 @@ let g:smoothie_speed_exponentiation_factor = 1.1
 " #----------------------------------- STARTIFY --------------------------------------#
 " #####################################################################################
 
-" Set project root on switch
-let g:startify_change_to_vcs_root = 0
 
 " Categories to display
 let g:startify_lists = [
        \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+       \ { 'type': 'dir',       'header': ['   Project '. getcwd()] },
        \ { 'type': 'files',     'header': ['   Recent']         },
        \ ]
 
 " Bookmarked projects
 let g:startify_bookmarks = [
-       \ { 'q': '~/.config/nvim/config/plugin-conf.vimrc' },
-       \ { 'w': '~/Projects/campfire-api/package.json' },
+       \ { 'w': '~/.config/nvim/config/plugin-conf.vimrc' },
+       \ { 'e': '~/Projects/campfire-api/package.json' },
        \ ]
 
+let g:startify_skiplist = [
+        \ '\plugged',
+        \ ]
 
 " #####################################################################################
 " #----------------------------------- GITGUTTER -------------------------------------#
@@ -88,7 +90,6 @@ let g:nvim_tree_auto_open = 1                                           " Auto o
 let g:nvim_tree_auto_close = 1                                          " Auto close if tree is last buffer 
 let g:nvim_tree_ignore = [ '.git' ]                                     " Hide dirs
 let g:nvim_tree_follow = 1                                              " Follow the opened buffer
-let g:nvim_tree_hide_dotfiles = 1                                       " Hide dotfiles
 let g:nvim_tree_git_hl = 1                                              " Highlight files depending on git status
 let g:nvim_tree_disable_netrw = 1                                       " Disable nvim default tree 
 
