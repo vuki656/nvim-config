@@ -9,7 +9,7 @@ set incsearch                                               " Enables search res
 set smartindent                                             " Enable smart indenting
 set nohlsearch                                              " Don't highlight search after search finished
 set signcolumn=yes                                          " Auto show sign column (for git diff)
-set updatetime=50                                           " Time after the buffer is saved
+set updatetime=300                                          " Time after the buffer is saved
 set hidden                                                  " Preserve closed buffers with changes
 set scrolloff=10                                            " When 10 lines from top/bottom start scrolling
 set termguicolors                                           " Set the given color scheme from init file

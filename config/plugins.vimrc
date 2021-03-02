@@ -48,12 +48,14 @@ Plug 'airblade/vim-rooter'                                      " Change working
 Plug 'Yggdroot/indentLine'                                      " Indent guide lines
 Plug 'psliwka/vim-smoothie'                                     " Smooth scrolling
 Plug 'tpope/vim-commentary'                                     " Comment code blocks 
+Plug '907th/vim-auto-save'                                      " Autosave
 Plug 'mhinz/vim-startify'                                       " Nice looking home screen
 
 " #####################################################################################
-" #----------------------------------- OTHER -----------------------------------------#
+" #----------------------------------- SYNTAX SUPPORT --------------------------------#
 " #####################################################################################
 
 Plug 'pantharshit00/vim-prisma'                                 " Prisma support
+Plug 'jparise/vim-graphql'                                      " Graphql support
 
 call plug#end()

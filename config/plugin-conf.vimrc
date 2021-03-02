@@ -27,23 +27,26 @@ let g:smoothie_speed_exponentiation_factor = 1.1
 " #----------------------------------- STARTIFY --------------------------------------#
 " #####################################################################################
 
+ let g:startify_files_number = 5                " Number of files to display for each group
 
 " Categories to display
 let g:startify_lists = [
        \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
-       \ { 'type': 'dir',       'header': ['   Project '. getcwd()] },
-       \ { 'type': 'files',     'header': ['   Recent']         },
+       \ { 'type': 'dir',       'header': ['   Recent Project Files'. getcwd()] },
+       \ { 'type': 'files',     'header': ['   Recent Files']         },
        \ ]
 
 " Bookmarked projects
 let g:startify_bookmarks = [
-       \ { 'w': '~/.config/nvim/config/plugin-conf.vimrc' },
-       \ { 'e': '~/Projects/campfire-api/package.json' },
+       \ { 'w': '~/.config/nvim/' },
+       \ { 'e': '~/Projects/campfire-api/' },
        \ ]
 
+" Don't display the following categories
 let g:startify_skiplist = [
         \ '\plugged',
         \ ]
+
 
 " #####################################################################################
 " #----------------------------------- GITGUTTER -------------------------------------#
@@ -70,8 +73,8 @@ let g:airline#extensions#hunks#enabled=0                           " Remove numb
 let g:airline#extensions#whitespace#checks=[]                      " Remove the trailing whitespace notification
 let g:airline_skip_empty_sections=1                                " Don't display empty sections
 let g:airline_section_a=airline#section#create(['mode'])           " Display only mode in section A
-let g:airline_section_c=" "                                        " Empty C section
 let g:airline_section_x=" "                                        " Empty X Section
+let g:airline_section_c = '%t'                                     " Display file name in section C
 let g:airline_section_z='%{strftime(" %H:%M")}'                   " Display hour:minute in section Z
 
 " Organize sections
@@ -85,11 +88,10 @@ let g:airline#extensions#default#layout = [
 " #----------------------------------- FILE TREE -------------------------------------#
 " #####################################################################################
 
+let g:nvim_tree_indent_markers = 1
 let g:nvim_tree_side = 'left'                                           " Set position
-let g:nvim_tree_auto_open = 1                                           " Auto open on start
 let g:nvim_tree_auto_close = 1                                          " Auto close if tree is last buffer 
 let g:nvim_tree_ignore = [ '.git' ]                                     " Hide dirs
-let g:nvim_tree_follow = 1                                              " Follow the opened buffer
 let g:nvim_tree_git_hl = 1                                              " Highlight files depending on git status
 let g:nvim_tree_disable_netrw = 1                                       " Disable nvim default tree 
 
@@ -129,6 +131,15 @@ augroup HideCursor
 augroup END
 au FileType NvimTree hi Cursor blend=100
 
+
+" #####################################################################################
+" #----------------------------------- AUTO SAVE -------------------------------------#
+" #####################################################################################
+
+let g:auto_save = 1                                                 " Enable 
+let g:auto_save_events = ["CursorHold"]                             " Events that trigger save
+let g:auto_save_silent = 1                                          " Don't display a notification after save 
+let g:auto_save_write_all_buffers = 1                               " Save all open buffers
 
 " #####################################################################################
 " #----------------------------------- COC -------------------------------------------#
@@ -275,22 +286,6 @@ if has('nvim-0.4.0') || has('patch-8.2.0750')
   vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
 endif
 
-" Use CTRL-S for selections ranges.
-" Requires 'textDocument/selectionRange' support of language server.
-nmap <silent> <C-s> <Plug>(coc-range-select)
-xmap <silent> <C-s> <Plug>(coc-range-select)
-
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
-
-" Add `:Fold` command to fold current buffer.
-command! -nargs=? Fold :call     CocAction('fold', <f-args>)
-
-" Add `:OR` command for organize imports of the current buffer.
-command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
-
-" Add (Neo)Vim's native statusline support.
-" NOTE: Please see `:h coc-status` for integrations with external plugins that
-" provide custom statusline: lightline.vim, vim-airline.
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
