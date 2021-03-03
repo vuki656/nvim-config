@@ -26,3 +26,6 @@ set expandtab                                               " Convert tab to spa
 set splitright                                              " Open new buffers to the right
 set splitbelow                                              " Open new buffers to the bottom
 
+" Required for COC
+set hidden
+set shortmess+=c
