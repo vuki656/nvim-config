@@ -57,7 +57,7 @@ nnoremap <leader>9 :NvimTreeToggle<CR> :NvimTreeToggle<CR> :NvimTreeFindFile<CR>
 " #----------------------------------- COC -------------------------------------------#
 " #####################################################################################
 
-" Applying codeAction to the selected region (a key is base key)
+" Applying codeAction to the selected region ("a" is base key)
 " => aw => current word
 " => ap => current paragraph
 " => many others in doc

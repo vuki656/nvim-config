@@ -53,7 +53,7 @@ let g:startify_skiplist = [
 " #####################################################################################
 
 
-" Customize indicator characters (they will be destinguished by color) 
+" Customize indicator characters (state will be destinguished by color) 
 let g:gitgutter_sign_added = '▊'
 let g:gitgutter_sign_modified = '▊'
 let g:gitgutter_sign_removed = '▊'

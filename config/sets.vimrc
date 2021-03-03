@@ -10,7 +10,6 @@ set smartindent                                             " Enable smart inden
 set nohlsearch                                              " Don't highlight search after search finished
 set signcolumn=yes                                          " Auto show sign column (for git diff)
 set updatetime=300                                          " Time after the buffer is saved
-set hidden                                                  " Preserve closed buffers with changes
 set scrolloff=10                                            " When 10 lines from top/bottom start scrolling
 set termguicolors                                           " Set the given color scheme from init file
 set nowrap                                                  " Don't wrap text if it goes out of view
@@ -27,5 +26,5 @@ set splitright                                              " Open new buffers t
 set splitbelow                                              " Open new buffers to the bottom
 
 " Required for COC
-set hidden
 set shortmess+=c
+set hidden                                                  " Preserve closed buffers with changes
