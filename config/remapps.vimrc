@@ -97,6 +97,9 @@ nmap <leader>ac  <Plug>(coc-codeaction)
 " Apply AutoFix to problem on the current line
 nmap <leader>qf  <Plug>(coc-fix-current)
 
+" Use enter to autoselect the first autocomplete action and put it in buffer
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+
 " COC `:Format` command to format current buffer
 command! -nargs=0 Format :call CocAction('format')
 
