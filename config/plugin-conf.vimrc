@@ -166,6 +166,7 @@ let g:coc_global_extensions = [
             \'coc-xml',
             \'coc-yaml',
             \'coc-yank',
+            \'coc-tabnine',
             \]
 
 " Set the coc error/warn underline to curly line
