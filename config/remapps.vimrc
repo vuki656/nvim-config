@@ -37,7 +37,7 @@ nnoremap <leader>p :GFiles<CR>
 " Search all files 
 nnoremap <leader>[ :Files<CR>
 
-" Search in files
+" Search/Find in files
 nnoremap <leader>s :Rg<CR>
 
 " #####################################################################################
@@ -74,12 +74,15 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 " Use <c-space> to trigger completion
 inoremap <silent><expr> <c-space> coc#refresh()
 
+" Fix eslint issues
+nnoremap <leader>ef :CocCommand eslint.executeAutofix<CR>
+
 " Use `[g` and `]g` to navigate diagnostics
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " Go to definition
-nmap <silent> gd <Plug>(coc-definition)    
+nmap <silent>gd <Plug>(coc-definition)    
 
 " See all variable references
 nmap <silent> gr <Plug>(coc-references)

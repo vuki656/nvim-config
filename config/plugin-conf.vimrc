@@ -40,6 +40,7 @@ let g:startify_lists = [
 let g:startify_bookmarks = [
        \ { 'w': '~/.config/nvim/' },
        \ { 'e': '~/Projects/campfire-api/' },
+       \ { 'r': '~/Projects/campfire-web/' },
        \ ]
 
 " Don't display the following categories
@@ -123,14 +124,6 @@ highlight NvimTreeFolderName guifg=#a5afbe
 highlight NvimTreeEmptyFolderName guifg=#a5afbe
 highlight NvimTreeFolderIcon guifg=#a5afbe
 
-" Prevent cursor from displaying over the icons
-augroup HideCursor
-  au!
-  au WinLeave,FileType NvimTree set guicursor=n-v-c-sm:block,i-ci-ve:ver2u,r-cr-o:hor20,
-  au WinEnter,FileType NvimTree set guicursor=n-c-v:block-Cursor/Cursor-blinkon0,
-augroup END
-au FileType NvimTree hi Cursor blend=100
-
 
 " #####################################################################################
 " #----------------------------------- AUTO SAVE -------------------------------------#
@@ -144,7 +137,6 @@ let g:auto_save_write_all_buffers = 1                               " Save all o
 " #####################################################################################
 " #----------------------------------- COC -------------------------------------------#
 " #####################################################################################
-
 
 let g:coc_global_extensions = [
             \'coc-spell-checker',
@@ -166,7 +158,6 @@ let g:coc_global_extensions = [
             \'coc-xml',
             \'coc-yaml',
             \'coc-yank',
-            \'coc-tabnine',
             \]
 
 " Set the coc error/warn underline to curly line
