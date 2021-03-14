@@ -11,7 +11,7 @@ Plug 'rakr/vim-one'                                             " Theme
 Plug 'airblade/vim-gitgutter'                                   " Show git diff in side column
 
 " #####################################################################################
-" #----------------------------------- COC -------------------------------------------#
+" #----------------------------------- LSP -------------------------------------------#
 " #####################################################################################
 
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }               " Intellisense
@@ -48,7 +48,6 @@ Plug 'airblade/vim-rooter'                                      " Change working
 Plug 'Yggdroot/indentLine'                                      " Indent guide lines
 Plug 'psliwka/vim-smoothie'                                     " Smooth scrolling
 Plug 'tpope/vim-commentary'                                     " Comment code blocks 
-Plug '907th/vim-auto-save'                                      " Autosave
 Plug 'mhinz/vim-startify'                                       " Nice looking home screen
 
 " #####################################################################################

@@ -82,10 +82,10 @@ nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " Go to definition
-nmap <silent>gd <Plug>(coc-definition)    
+nmap <silent><leader>gd <Plug>(coc-definition)    
 
 " See all variable references
-nmap <silent> gr <Plug>(coc-references)
+nmap <silent><leader>gr <Plug>(coc-references)
 
 " Rename local variable instance 
 nmap <leader>rn <Plug>(coc-rename)

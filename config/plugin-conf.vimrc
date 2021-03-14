@@ -89,6 +89,7 @@ let g:airline#extensions#default#layout = [
 " #----------------------------------- FILE TREE -------------------------------------#
 " #####################################################################################
 
+
 let g:nvim_tree_indent_markers = 1
 let g:nvim_tree_side = 'left'                                           " Set position
 let g:nvim_tree_auto_close = 1                                          " Auto close if tree is last buffer 
@@ -126,17 +127,9 @@ highlight NvimTreeFolderIcon guifg=#a5afbe
 
 
 " #####################################################################################
-" #----------------------------------- AUTO SAVE -------------------------------------#
-" #####################################################################################
-
-let g:auto_save = 1                                                 " Enable 
-let g:auto_save_events = ["CursorHold"]                             " Events that trigger save
-let g:auto_save_silent = 1                                          " Don't display a notification after save 
-let g:auto_save_write_all_buffers = 1                               " Save all open buffers
-
-" #####################################################################################
 " #----------------------------------- COC -------------------------------------------#
 " #####################################################################################
+
 
 let g:coc_global_extensions = [
             \'coc-spell-checker',
