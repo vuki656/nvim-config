@@ -2,6 +2,9 @@
 " #----------------------------------- GENERAL ---------------------------------------#
 " #####################################################################################
 
+" Exit with Q
+command! Q :q
+
 " Enter command mode
 inoremap jj <ESC>
 
@@ -31,14 +34,11 @@ nnoremap <leader>u :NvimTreeToggle<CR> :UndotreeToggle<CR>
 " #----------------------------------- SEARCH ----------------------------------------#
 " #####################################################################################
 
-" Search git files
-nnoremap <leader>p :GFiles<CR>
+" Find files
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
 
-" Search all files 
-nnoremap <leader>[ :Files<CR>
-
-" Search/Find in files
-nnoremap <leader>s :Rg<CR>
+" Find text in files
+nnoremap <leader>ft <cmd>Telescope live_grep<cr>
 
 " #####################################################################################
 " #----------------------------------- FILE TREE -------------------------------------#
@@ -82,7 +82,7 @@ nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " Go to definition
-nmap <silent><leader>gd <Plug>(coc-definition)    
+nmap <silent><leader>gd <Plug>(coc-definition)
 
 " See all variable references
 nmap <silent><leader>gr <Plug>(coc-references)

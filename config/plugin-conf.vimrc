@@ -31,9 +31,9 @@ let g:smoothie_speed_exponentiation_factor = 1.1
 
 " Categories to display
 let g:startify_lists = [
-       \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
-       \ { 'type': 'dir',       'header': ['   Recent Project Files'. getcwd()] },
-       \ { 'type': 'files',     'header': ['   Recent Files']         },
+       \ { 'type': 'bookmarks', 'header': ['   Bookmarks ']      },
+       \ { 'type': 'dir',       'header': ['   Recent Project Files '. getcwd()] },
+       \ { 'type': 'files',     'header': ['   Recent Files ']         },
        \ ]
 
 " Bookmarked projects
@@ -89,8 +89,7 @@ let g:airline#extensions#default#layout = [
 " #----------------------------------- FILE TREE -------------------------------------#
 " #####################################################################################
 
-
-let g:nvim_tree_indent_markers = 1
+let g:nvim_tree_indent_markers = 1                                      " Enable indent lines
 let g:nvim_tree_side = 'left'                                           " Set position
 let g:nvim_tree_auto_close = 1                                          " Auto close if tree is last buffer 
 let g:nvim_tree_ignore = [ '.git' ]                                     " Hide dirs
@@ -146,11 +145,11 @@ let g:coc_global_extensions = [
             \'coc-json',
             \'coc-markdownlint',
             \'coc-prisma',
-            \'coc-spell-checker',
             \'coc-tsserver',
             \'coc-xml',
             \'coc-yaml',
             \'coc-yank',
+            \'coc-lua'
             \]
 
 " Set the coc error/warn underline to curly line

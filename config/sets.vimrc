@@ -24,6 +24,7 @@ set shiftwidth=4                                            " Correctly indent l
 set expandtab                                               " Convert tab to spaces
 set splitright                                              " Open new buffers to the right
 set splitbelow                                              " Open new buffers to the bottom
+set background=dark                                         " Set background to be dark
 
 " Required for COC
 set shortmess+=c

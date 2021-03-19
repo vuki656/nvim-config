@@ -21,9 +21,9 @@ Plug 'kevinoid/vim-jsonc'                                       " Intellisense f
 " #----------------------------------- SEARCH ----------------------------------------#
 " #####################################################################################
 
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }             " Base fzf package
-Plug 'junegunn/fzf.vim'                                         " Vim fzf adaptation
-
+Plug 'nvim-telescope/telescope.nvim'                             " Base
+Plug 'nvim-lua/popup.nvim'                                       " Required helper
+Plug 'nvim-lua/plenary.nvim'                                     " Required helper
 
 " #####################################################################################
 " #----------------------------------- AIRLINE ---------------------------------------#

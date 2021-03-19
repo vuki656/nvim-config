@@ -10,18 +10,12 @@
     // #----------------------------------- SUGGESTIONS -----------------------------------#
     // #####################################################################################
     "suggest.enablePreselect": true,
-    "suggest.maxPreviewWidth": 100,
     "suggest.removeDuplicateItems": true,
-    "suggest.enablePreview": true,
     // #####################################################################################
     // #----------------------------------- DIAGNOSTICS -----------------------------------#
     // #####################################################################################
     "diagnostic.enable": true,
     "diagnostic.checkCurrentLine": true,
-    "diagnostic.refreshOnInsertMode": true,
-    "diagnostic.messageTarget": "float",
-    "diagnostic.maxWindowWidth": 100,
-    "diagnostic.maxWindowHeight": 100,
     "diagnostic.infoSign": "",
     "diagnostic.hintSign": "",
     "diagnostic.warningSign": "",
@@ -64,6 +58,8 @@
       "Formik",
       "Lilita",
       "Mgmnt",
+      "NEXTAUTH",
+      "Numpad",
       "Shougo",
       "Untracked",
       "Xuyuanp",
@@ -103,6 +99,7 @@
       "rakr",
       "require'nvim",
       "rimac",
+      "scrollback",
       "sheerun",
       "startify",
       "struct",
