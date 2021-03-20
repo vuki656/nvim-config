@@ -40,6 +40,9 @@ nnoremap <leader>ff <cmd>Telescope find_files<cr>
 " Find text in files
 nnoremap <leader>ft <cmd>Telescope live_grep<cr>
 
+" Find git branches
+nnoremap <leader>fb <cmd>Telescope git_branches<cr>
+
 " #####################################################################################
 " #----------------------------------- FILE TREE -------------------------------------#
 " #####################################################################################
