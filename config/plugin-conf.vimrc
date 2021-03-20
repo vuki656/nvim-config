@@ -43,7 +43,7 @@ let g:startify_bookmarks = [
        \ { 'r': '~/Projects/campfire-web/' },
        \ ]
 
-" Don't display the following categories
+" Don't display the following directories
 let g:startify_skiplist = [
         \ '\plugged',
         \ ]
@@ -61,7 +61,6 @@ let g:gitgutter_sign_removed = '▊'
 let g:gitgutter_sign_removed_first_line = '▊'
 let g:gitgutter_sign_removed_above_and_below = '▊'
 let g:gitgutter_sign_modified_removed = '▊'
-
 
 " #####################################################################################
 " #----------------------------------- AIRLINE ---------------------------------------#
@@ -134,7 +133,6 @@ let g:coc_global_extensions = [
             \'coc-spell-checker',
             \'coc-css',
             \'coc-cssmodules',
-            \'coc-diagnostic',
             \'coc-eslint',
             \'coc-highlight',
             \'coc-html',

@@ -98,6 +98,7 @@
       "psliwka",
       "rakr",
       "require'nvim",
+      "require'telescope",
       "rimac",
       "scrollback",
       "sheerun",
