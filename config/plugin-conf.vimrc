@@ -137,7 +137,6 @@ let g:coc_global_extensions = [
             \'coc-highlight',
             \'coc-html',
             \'coc-docker',
-            \'coc-fzf-preview',
             \'coc-htmlhint',
             \'coc-html-css-support',
             \'coc-json',
