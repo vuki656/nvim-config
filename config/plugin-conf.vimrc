@@ -124,59 +124,59 @@ highlight NvimTreeEmptyFolderName guifg=#a5afbe
 highlight NvimTreeFolderIcon guifg=#a5afbe
 
 
-" #####################################################################################
-" #----------------------------------- COC -------------------------------------------#
-" #####################################################################################
+" " #####################################################################################
+" " #----------------------------------- COC -------------------------------------------#
+" " #####################################################################################
 
 
-let g:coc_global_extensions = [
-            \'coc-spell-checker',
-            \'coc-css',
-            \'coc-cssmodules',
-            \'coc-eslint',
-            \'coc-highlight',
-            \'coc-html',
-            \'coc-docker',
-            \'coc-htmlhint',
-            \'coc-html-css-support',
-            \'coc-json',
-            \'coc-markdownlint',
-            \'coc-prisma',
-            \'coc-tsserver',
-            \'coc-xml',
-            \'coc-yaml',
-            \'coc-yank',
-            \'coc-lua'
-            \]
+" let g:coc_global_extensions = [
+"             \'coc-spell-checker',
+"             \'coc-css',
+"             \'coc-cssmodules',
+"             \'coc-eslint',
+"             \'coc-highlight',
+"             \'coc-html',
+"             \'coc-docker',
+"             \'coc-htmlhint',
+"             \'coc-html-css-support',
+"             \'coc-json',
+"             \'coc-markdownlint',
+"             \'coc-prisma',
+"             \'coc-tsserver',
+"             \'coc-xml',
+"             \'coc-yaml',
+"             \'coc-yank',
+"             \'coc-lua'
+"             \]
 
-" Set the coc error/warn underline to curly line
-highlight CocUnderline gui=undercurl term=undercurl
+" " Set the coc error/warn underline to curly line
+" highlight CocUnderline gui=undercurl term=undercurl
 
-" Set the error underline to custom red
-highlight CocErrorHighlight guifg=#e06c75 gui=undercurl term=undercurl
+" " Set the error underline to custom red
+" highlight CocErrorHighlight guifg=#e06c75 gui=undercurl term=undercurl
 
-" Set the warning underline to custom yellow
-highlight CocWarningHighlight guifg=#e5c07b gui=undercurl term=undercurl
+" " Set the warning underline to custom yellow
+" highlight CocWarningHighlight guifg=#e5c07b gui=undercurl term=undercurl
 
-" Highlight the symbol and its references when holding the cursor.
-autocmd CursorHold * silent call CocActionAsync('highlight')
+" " Highlight the symbol and its references when holding the cursor.
+" autocmd CursorHold * silent call CocActionAsync('highlight')
 
-" #####################################################################################
-" #----------------------- COC TRASH THAT NEEDS TO BE CHECKED ------------------------#
-" #####################################################################################
+" " #####################################################################################
+" " #----------------------- COC TRASH THAT NEEDS TO BE CHECKED ------------------------#
+" " #####################################################################################
 
-" Use tab for trigger completion with characters ahead and navigate.
-" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-" other plugin before putting this into your config.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+" " Use tab for trigger completion with characters ahead and navigate.
+" " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" " other plugin before putting this into your config.
+" inoremap <silent><expr> <TAB>
+"       \ pumvisible() ? "\<C-n>" :
+"       \ <SID>check_back_space() ? "\<TAB>" :
+"       \ coc#refresh()
+" inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
+" function! s:check_back_space() abort
+"   let col = col('.') - 1
+"   return !col || getline('.')[col - 1]  =~# '\s'
+" endfunction
 
 

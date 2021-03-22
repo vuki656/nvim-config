@@ -56,74 +56,74 @@ nnoremap <leader>o :NvimTreeFindFile<CR> :NvimTreeRefresh<CR>
 " Collapse all dirs, focus only the opened buffer, and put cursor back to buffer
 nnoremap <leader>9 :NvimTreeToggle<CR> :NvimTreeToggle<CR> :NvimTreeFindFile<CR> :execute "normal! \<C-w>l"<CR>
 
-" #####################################################################################
-" #----------------------------------- COC -------------------------------------------#
-" #####################################################################################
+" " #####################################################################################
+" " #----------------------------------- COC -------------------------------------------#
+" " #####################################################################################
 
-" Applying codeAction to the selected region ("a" is base key)
-" => aw => current word
-" => ap => current paragraph
-" => many others in doc
-xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
+" " Applying codeAction to the selected region ("a" is base key)
+" " => aw => current word
+" " => ap => current paragraph
+" " => many others in doc
+" xmap <leader>a  <Plug>(coc-codeaction-selected)
+" nmap <leader>a  <Plug>(coc-codeaction-selected)
 
-" Open auto-complete popup 
-inoremap <silent><expr> <c-space> coc#refresh()
+" " Open auto-complete popup 
+" inoremap <silent><expr> <c-space> coc#refresh()
 
-" Navigate auto-complete suggestions popup
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" " Navigate auto-complete suggestions popup
+" inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
-" Use <c-space> to trigger completion
-inoremap <silent><expr> <c-space> coc#refresh()
+" " Use <c-space> to trigger completion
+" inoremap <silent><expr> <c-space> coc#refresh()
 
-" Fix eslint issues
-nnoremap <leader>ef :CocCommand eslint.executeAutofix<CR>
+" " Fix eslint issues
+" nnoremap <leader>ef :CocCommand eslint.executeAutofix<CR>
 
-" Use `[g` and `]g` to navigate diagnostics
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
+" " Use `[g` and `]g` to navigate diagnostics
+" nmap <silent> [g <Plug>(coc-diagnostic-prev)
+" nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
-" Go to definition
-nmap <silent><leader>gd <Plug>(coc-definition)
+" " Go to definition
+" nmap <silent><leader>gd <Plug>(coc-definition)
 
-" See all variable references
-nmap <silent><leader>gr <Plug>(coc-references)
+" " See all variable references
+" nmap <silent><leader>gr <Plug>(coc-references)
 
-" Rename local variable instance 
-nmap <leader>rn <Plug>(coc-rename)
+" " Rename local variable instance 
+" nmap <leader>rn <Plug>(coc-rename)
 
-" Format selected code
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+" " Format selected code
+" xmap <leader>f  <Plug>(coc-format-selected)
+" nmap <leader>f  <Plug>(coc-format-selected)
 
-" Open COC fix box for all file problems
-nmap <leader>ac  <Plug>(coc-codeaction)
+" " Open COC fix box for all file problems
+" nmap <leader>ac  <Plug>(coc-codeaction)
 
-" Apply AutoFix to problem on the current line
-nmap <leader>qf  <Plug>(coc-fix-current)
+" " Apply AutoFix to problem on the current line
+" nmap <leader>qf  <Plug>(coc-fix-current)
 
-" Use enter to autoselect the first autocomplete action and put it in buffer
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+" " Use enter to autoselect the first autocomplete action and put it in buffer
+" inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
-" COC `:Format` command to format current buffer
-command! -nargs=0 Format :call CocAction('format')
+" " COC `:Format` command to format current buffer
+" command! -nargs=0 Format :call CocAction('format')
 
-" COC Formatter setup
-augroup mygroup
-  autocmd!
-  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-augroup end
+" " COC Formatter setup
+" augroup mygroup
+"   autocmd!
+"   autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+"   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+" augroup end
 
-" Use K to show documentation in preview window
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  elseif (coc#rpc#ready())
-    call CocActionAsync('doHover')
-  else
-    execute '!' . &keywordprg . " " . expand('<cword>')
-  endif
-endfunction
+" " Use K to show documentation in preview window
+" nnoremap <silent> K :call <SID>show_documentation()<CR>
+" function! s:show_documentation()
+"   if (index(['vim','help'], &filetype) >= 0)
+"     execute 'h '.expand('<cword>')
+"   elseif (coc#rpc#ready())
+"     call CocActionAsync('doHover')
+"   else
+"     execute '!' . &keywordprg . " " . expand('<cword>')
+"   endif
+" endfunction

@@ -14,8 +14,16 @@ Plug 'airblade/vim-gitgutter'                                   " Show git diff 
 " #----------------------------------- LSP -------------------------------------------#
 " #####################################################################################
 
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }               " Intellisense
-Plug 'kevinoid/vim-jsonc'                                       " Intellisense for coc config file 
+
+" #####################################################################################
+" #----------------------------------- LSP -------------------------------------------#
+" #####################################################################################
+
+" Plug 'neoclide/coc.nvim', { 'branch': 'release' }               " Intellisense
+" Plug 'kevinoid/vim-jsonc'                                       " Intellisense for coc config file 
+
+Plug 'neovim/nvim-lsp'
+Plug 'neovim/nvim-lspconfig'
 
 " #####################################################################################
 " #----------------------------------- SEARCH ----------------------------------------#
@@ -58,3 +66,15 @@ Plug 'pantharshit00/vim-prisma'                                 " Prisma support
 Plug 'jparise/vim-graphql'                                      " Graphql support
 
 call plug#end()
+
+lua require'lspconfig'.tsserver.setup{}
+lua require'lspconfig'.yamlls.setup{}
+lua require'lspconfig'.cssls.setup{}
+lua require'lspconfig'.diagnosticls.setup{}
+lua require'lspconfig'.dockerls.setup{}
+lua require'lspconfig'.graphql.setup{}
+lua require'lspconfig'.html.setup{}
+lua require'lspconfig'.jsonls.setup{}
+lua require'lspconfig'.vimls.setup{}
+lua require'lspconfig'.yamlls.setup{}
+lua require'lspconfig'.bashls.setup{}
