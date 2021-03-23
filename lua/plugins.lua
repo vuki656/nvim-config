@@ -20,5 +20,6 @@ return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
   use 'kyazdani42/nvim-tree.lua'
   use 'neovim/nvim-lspconfig'
-  use 'hrsh7th/nvim-compe'
+  use 'nvim-treesitter/nvim-treesitter'
+  use 'rakr/vim-one'
 end)

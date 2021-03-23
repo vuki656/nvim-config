@@ -24,12 +24,15 @@ option('shiftwidth', 4)                             -- Correct block indentation
 option('expandtab', true)                           -- Convert tabs to spaces
 option('splitright', true)                          -- Open new buffers to the right
 option('splitbelow', true)                          -- Open new buffers to the bottom
+option('termguicolors', true)                       -- Enable colorschemes
 
-win_option(0, 'cursorline', true)                   -- Don't wrap text
+win_option(0, 'cursorline', true)                   -- Highlight cursor line
 win_option(0, 'wrap', false)                        -- Don't wrap text
 win_option(0, 'number', true)                       -- Display sidebar numbers
 win_option(0, 'relativenumber', true)               -- Display sidebar numbers relative 
 
+-- To be converted
+vim.cmd('colorscheme one')
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- PLUGIN REQUIRED --------------------------------------
