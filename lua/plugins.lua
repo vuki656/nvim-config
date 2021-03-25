@@ -23,5 +23,7 @@ return require('packer').startup(function()
     use 'nvim-treesitter/nvim-treesitter'
     use 'rakr/vim-one'
     use 'psliwka/vim-smoothie'
+    use 'glepnir/lspsaga.nvim'
+    use 'hrsh7th/nvim-compe'
     use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }
 end)

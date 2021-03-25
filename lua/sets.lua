@@ -1,4 +1,5 @@
 local option = vim.api.nvim_set_option
+local set = vim.o
 local win_option = vim.api.nvim_win_set_option
 local global = vim.g
 
@@ -32,6 +33,10 @@ win_option(0, 'relativenumber', true)               -- Display sidebar numbers r
 
 -- To be converted
 vim.cmd('colorscheme one')
+
+
+-- New API
+set.completeopt = "menuone,noselect"
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- PLUGIN REQUIRED --------------------------------------
