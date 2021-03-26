@@ -8,6 +8,7 @@ require('plugins.gitsigns')
 require('plugins.smoothie')
 require('plugins.lspsaga')
 require('plugins.compe')
+require('plugins.galaxyline')
 
 require('lsp.init')
 require('lsp.bash')
