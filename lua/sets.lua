@@ -1,6 +1,4 @@
-local option = vim.api.nvim_set_option
 local set = vim.o
-local win_option = vim.api.nvim_win_set_option
 local global = vim.g
 
 ------------------------------------------------------------------------------------------
@@ -9,39 +7,33 @@ local global = vim.g
 
 global.mapleader = ' '                              -- Set leader
 
-option('clipboard', 'unnamedplus')                  -- Sync system and nvim clipboards
-option('incsearch', true)                           -- Incremental search
-option('smartindent', true)                         -- Smart indenting
-option('signcolumn', 'yes')                         -- Always show sign column
-option('updatetime', 300)                           -- Update time
-option('scrolloff', 10)                             -- When 10 lines from window edge, start scrolling
-option('mouse', 'a')                                -- Enable mouse scrolling
-option('swapfile', false)                           -- Disable swap files
-option('undofile', true)                            -- Enable undo files
-option('scroll', 15)                                -- Scroll line amount
-option('tabstop', 4)                                -- Convert tab to 4 spaces
-option('shiftwidth', 4)                             -- Correct block indentation
-option('expandtab', true)                           -- Convert tabs to spaces
-option('splitright', true)                          -- Open new buffers to the right
-option('splitbelow', true)                          -- Open new buffers to the bottom
-option('termguicolors', true)                       -- Enable colorschemes
+set.cursorline = true
+set.wrap = false
+set.number = true
+set.relativenumber = true
+set.clipboard = 'unnamedplus'
+set.incsearch = true
+set.smartindent = true
+set.signcolumn = 'yes'
+set.incsearch = true
+set.updatetime = 300
+set.scrolloff = 10
+set.mouse = 'a'
+set.swapfile = false
+set.undofile = true
+set.scroll = 15
+set.tabstop = 4
+set.shiftwidth = 4
+set.expandtab = true
+set.splitright = true
+set.splitbelow = true
+set.termguicolors =  true
 
-win_option(0, 'cursorline', true)                   -- Highlight cursor line
-win_option(0, 'wrap', false)                        -- Don't wrap text
-win_option(0, 'number', true)                       -- Display sidebar numbers
-win_option(0, 'relativenumber', true)               -- Display sidebar numbers relative 
-
--- To be converted
 vim.cmd('colorscheme one')
-
-
--- New API
-set.completeopt = "menuone,noselect"
-
 ------------------------------------------------------------------------------------------
 ----------------------------------- PLUGIN REQUIRED --------------------------------------
 ------------------------------------------------------------------------------------------
 
 -- nvim-compee
-option('completeopt', 'menuone,noselect')
+set.completeopt = "menuone,noselect"
 
