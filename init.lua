@@ -9,6 +9,7 @@ require('plugins.smoothie')
 require('plugins.lspsaga')
 require('plugins.compe')
 require('plugins.galaxyline')
+require('plugins.startify')
 
 require('lsp.init')
 require('lsp.bash')

@@ -22,6 +22,7 @@ return require('packer').startup(function()
     use 'kyazdani42/nvim-tree.lua'
     use {"glepnir/galaxyline.nvim"}
     use 'neovim/nvim-lspconfig'
+    use 'mhinz/vim-startify'
     use 'nvim-treesitter/nvim-treesitter'
     use {"kyazdani42/nvim-web-devicons"}
     use 'rakr/vim-one'
