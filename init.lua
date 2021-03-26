@@ -1,7 +1,7 @@
 require('plugins')
-require('remaps')
 require('plugins')
 require('sets')
+require('remaps')
 require('colorscheme')
 
 require('plugins.gitsigns')
@@ -13,6 +13,7 @@ require('plugins.startify')
 require('plugins.telescope')
 require('plugins.autopairs')
 require('plugins.lspkind')
+require('plugins.tree')
 
 require('lsp.bash')
 require('lsp.css')

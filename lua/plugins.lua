@@ -25,7 +25,6 @@ return require('packer').startup(function()
     use 'windwp/nvim-autopairs'
     use 'alvan/vim-closetag'
     use 'kyazdani42/nvim-tree.lua'
-    use {"lukas-reineke/indent-blankline.nvim", branch = 'lua'}
     use {"glepnir/galaxyline.nvim"}
     use 'neovim/nvim-lspconfig'
     use 'airblade/vim-rooter'
