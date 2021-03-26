@@ -1,4 +1,5 @@
 local set = vim.o
+local set_window = vim.wo
 local global = vim.g
 
 ------------------------------------------------------------------------------------------
@@ -8,13 +9,9 @@ local global = vim.g
 global.mapleader = ' '                              -- Set leader
 
 set.cursorline = true
-set.wrap = false
-set.number = true
-set.relativenumber = true
 set.clipboard = 'unnamedplus'
 set.incsearch = true
 set.smartindent = true
-set.signcolumn = 'yes'
 set.incsearch = true
 set.updatetime = 300
 set.scrolloff = 10
@@ -27,7 +24,12 @@ set.shiftwidth = 4
 set.expandtab = true
 set.splitright = true
 set.splitbelow = true
-set.termguicolors =  true
+set.termguicolors = true
+
+set_window.relativenumber = true
+set_window.signcolumn = 'yes'
+set_window.number = true
+set_window.wrap = false
 
 vim.cmd('colorscheme one')
 ------------------------------------------------------------------------------------------
@@ -37,3 +39,5 @@ vim.cmd('colorscheme one')
 -- nvim-compee
 set.completeopt = "menuone,noselect"
 
+-- fix-cursor-hold
+vim.cmd('let g:cursorhold_updatetime = 100')
