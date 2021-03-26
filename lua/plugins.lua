@@ -19,9 +19,16 @@ end
 return require('packer').startup(function()
     use 'wbthomason/packer.nvim'
     use 'tpope/vim-fugitive'
+    use 'onsails/lspkind-nvim'
+    use {"tweekmonster/startuptime.vim"}
+    use 'tpope/vim-commentary'
+    use 'windwp/nvim-autopairs'
+    use 'alvan/vim-closetag'
     use 'kyazdani42/nvim-tree.lua'
+    use {"lukas-reineke/indent-blankline.nvim", branch = 'lua'}
     use {"glepnir/galaxyline.nvim"}
     use 'neovim/nvim-lspconfig'
+    use 'airblade/vim-rooter'
     use 'mhinz/vim-startify'
     use 'nvim-treesitter/nvim-treesitter'
     use {"kyazdani42/nvim-web-devicons"}
