@@ -18,6 +18,7 @@ end
 
 return require('packer').startup(function()
     use 'wbthomason/packer.nvim'
+    use 'tpope/vim-fugitive'
     use 'kyazdani42/nvim-tree.lua'
     use {"glepnir/galaxyline.nvim"}
     use 'neovim/nvim-lspconfig'
@@ -29,4 +30,8 @@ return require('packer').startup(function()
     use 'hrsh7th/nvim-compe'
     use 'antoinemadec/FixCursorHold.nvim'
     use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }
+    use {
+        'nvim-telescope/telescope.nvim',
+        requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
+    }
 end)
