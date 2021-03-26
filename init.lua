@@ -14,6 +14,7 @@ require('plugins.telescope')
 require('plugins.autopairs')
 require('plugins.lspkind')
 require('plugins.tree')
+require('plugins.dev-icons')
 
 require('lsp.bash')
 require('lsp.css')
