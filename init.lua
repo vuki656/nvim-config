@@ -1,7 +1,7 @@
-require('colorscheme')
 require('sets')
 require('remaps')
 require('plugins')
+require('colorscheme')
 
 require('plugins.autopairs')
 require('plugins.compe')

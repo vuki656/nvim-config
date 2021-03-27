@@ -17,10 +17,10 @@ vim.g.nvim_tree_icons = {
     default = "",
     symlink = "",
     folder = {
-        default = "",
-        open = "",
-        empty_open = "",
-        empty = "",
+        default = "",
+        open = "ﱮ",
+        empty_open = "ﱮ",
+        empty = "",
         symlink = "",
     }
 }
@@ -37,7 +37,7 @@ vim.cmd([[
     highlight NvimTreeGitRenamed guifg=#61afef
     highlight NvimTreeGitDirty guifg=#61afef
 
-    highlight NvimTreeIndentMarker guifg=#a5afbe
+    highlight NvimTreeIndentMarker guifg=#333840
     highlight NvimTreeFolderName guifg=#a5afbe
     highlight NvimTreeEmptyFolderName guifg=#a5afbe
     highlight NvimTreeFolderIcon guifg=#a5afbe

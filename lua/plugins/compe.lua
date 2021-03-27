@@ -32,7 +32,7 @@ vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 -- CTRL + Space to open the suggestion dialog
 vim.api.nvim_set_keymap("i", "<C-Space>", "compe#complete()", {expr = true})
 
--- Enter to select suggestion dialoig item
+-- Enter to select suggestion dialog item
 vim.api.nvim_set_keymap("i", "<CR>", "compe#confirm('<CR>')", {expr = true})
 
 -- Close suggestion dialog

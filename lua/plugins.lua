@@ -32,6 +32,7 @@ return require('packer').startup(function()
     use 'nvim-treesitter/nvim-treesitter'
     use {"kyazdani42/nvim-web-devicons"}
     use 'rakr/vim-one'
+    use 'nvim-treesitter/playground'
     use 'psliwka/vim-smoothie'
     use 'glepnir/lspsaga.nvim'
     use 'hrsh7th/nvim-compe'
