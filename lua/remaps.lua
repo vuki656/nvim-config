@@ -4,8 +4,11 @@ local remap = vim.api.nvim_set_keymap
 ----------------------------------- GENERAL ----------------------------------------------
 ------------------------------------------------------------------------------------------
 
--- Remap Q to q when using comand mode
+-- Remap Q to q
 remap('c', 'Q', 'q', { noremap = true, silent = true })
+
+-- Remap W to w 
+remap('c', 'W', 'w', { noremap = true, silent = true })
 
 -- Go to normal mode with jj
 remap('i', 'jj', '<ESC>', { noremap = true, silent = true })

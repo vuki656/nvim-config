@@ -110,11 +110,6 @@ require'nvim-web-devicons'.setup {
     color = "#72b823",
     name = "Nvmrc",
   },
-  [".md"] = {
-    icon = "",
-    color = "#72b823",
-    name = "Markdown",
-  },
  };
 }
 

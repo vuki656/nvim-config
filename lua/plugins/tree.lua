@@ -16,13 +16,6 @@ vim.g.nvim_tree_ignore = {
 vim.g.nvim_tree_icons = {
     default = "",
     symlink = "",
-    git = {
-        unstaged = "✗",
-        staged = "✓",
-        unmerged = "",
-        renamed = "➜",
-        untracked = "★"
-    },
     folder = {
         default = "",
         open = "",
@@ -40,16 +33,12 @@ vim.g.nvim_tree_show_icons = {
 }
 
 vim.cmd([[
-    highlight NvimTreeGitNew guifg=#98c379
-    highlight NvimTreeGitRenamed guifg=#ff8f00
-    highlight NvimTreeGitDirty guifg=#60aae0
+    highlight NvimTreeGitNew guifg=#bfea69
+    highlight NvimTreeGitRenamed guifg=#61afef
+    highlight NvimTreeGitDirty guifg=#61afef
+
+    highlight NvimTreeIndentMarker guifg=#a5afbe
     highlight NvimTreeFolderName guifg=#a5afbe
     highlight NvimTreeEmptyFolderName guifg=#a5afbe
     highlight NvimTreeFolderIcon guifg=#a5afbe
 ]])
-
-------------------------------------------------------------------------------------------
------------------------------------ REMAPS -----------------------------------------------
-------------------------------------------------------------------------------------------
-
-
