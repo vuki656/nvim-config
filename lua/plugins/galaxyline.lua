@@ -1,4 +1,4 @@
-colors1 = require('utils.colors')
+colors = require('utils.colors')
 
 local gl = require("galaxyline")
 local gls = gl.section
@@ -11,6 +11,7 @@ gls.left[1] = {
             return ' ' .. '  ' .. os.date('%H:%M') .. ' ' 
         end,
         highlight = {colors.background, colors.green},
+        condition = buffer_not_empty,
         separator = " ",
         separator_highlight = {colors.lightBackground, colors.lightBackground}
     }
