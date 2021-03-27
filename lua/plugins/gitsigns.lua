@@ -1,3 +1,5 @@
+colors = require('utils.colors')
+
 require('gitsigns').setup {
   signs = {
     add          = {hl = 'GitSignsAdd'   , text = '█', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'},
@@ -8,8 +10,6 @@ require('gitsigns').setup {
   },
 }
 
-vim.cmd([[
-    highlight GitSignsAdd guifg=#98c379
-    highlight GitSignsChange guifg=#d19a66
-    highlight GitSignsDelete guifg=#e06c75
-]])
+vim.cmd([[highlight! GitSignsAdd guifg=]]     .. colors.green)
+vim.cmd([[highlight! GitSignsChange guifg=]]  .. colors.orange)
+vim.cmd([[highlight! GitSignsDelete guifg=]]  .. colors.red)

@@ -35,7 +35,17 @@ set_window.wrap = false
 vim.cmd([[
     colorscheme one
     syntax on
+    set noshowmode  
+    set noshowcmd 
 ]])
+
+-- Hide ~ from sign column
+vim.cmd("hi EndOfBuffer guifg=#282c34")
+
+
+-- Skinny buffer separator
+vim.cmd("hi VertSplit guibg=NONE")
+
 ------------------------------------------------------------------------------------------
 ----------------------------------- PLUGIN REQUIRED --------------------------------------
 ------------------------------------------------------------------------------------------

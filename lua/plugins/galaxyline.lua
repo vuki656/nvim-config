@@ -1,140 +1,83 @@
+colors1 = require('utils.colors')
+
 local gl = require("galaxyline")
 local gls = gl.section
+
 gl.short_line_list = {" "}
 
-local colors = {
-    bg = "#282c34",
-    line_bg = "#282c34",
-    fg = "#D8DEE9",
-    fg_green = "#65a380",
-    yellow = "#A3BE8C",
-    cyan = "#22262C",
-    darkblue = "#61afef",
-    green = "#BBE67E",
-    orange = "#FF8800",
-    purple = "#252930",
-    magenta = "#c678dd",
-    blue = "#22262C",
-    red = "#DF8890",
-    lightbg = "#3C4048",
-    nord = "#81A1C1",
-    greenYel = "#EBCB8B"
-}
-
-local checkwidth = function()
-    local squeeze_width = vim.fn.winwidth(0) / 2
-    if squeeze_width > 40 then
-        return true
-    end
-    return false
-end
-
 gls.left[1] = {
-    leftRounded = {
+    ViMode = {
         provider = function()
-            return ""
+            return " "
         end,
-        highlight = {colors.nord, colors.bg}
+        highlight = {colors.green, colors.green},
+        separator = " ",
+        separator_highlight = {colors.lightBackground, colors.lightBackground}
     }
 }
 
 gls.left[2] = {
-    ViMode = {
-        provider = function()
-            return "  "
-        end,
-        highlight = {colors.bg, colors.nord},
-        separator = " ",
-        separator_highlight = {colors.lightbg, colors.lightbg}
+    FileIcon = {
+        provider = "FileIcon",
+        condition = buffer_not_empty,
+        highlight = {require("galaxyline.provider_fileinfo").get_file_icon_color, colors.lightBackground}
     }
 }
 
 gls.left[3] = {
-    FileIcon = {
-        provider = "FileIcon",
+    FileName = {
+        provider = {"FileName"},
         condition = buffer_not_empty,
-        highlight = {require("galaxyline.provider_fileinfo").get_file_icon_color, colors.lightbg}
+        highlight = {colors.white, colors.lightBackground},
+        separator = " ",
+        separator_highlight = {colors.white, colors.lightBackground},
     }
 }
 
 gls.left[4] = {
-    FileName = {
-        provider = {"FileName", "FileSize"},
+    DiffAdd = {
+        provider = "DiffAdd",
         condition = buffer_not_empty,
-        highlight = {colors.fg, colors.lightbg}
+        icon = "  ",
+        highlight = {colors.green}
     }
 }
 
 gls.left[5] = {
-    teech = {
-        provider = function()
-            return ""
-        end,
-        separator = " ",
-        highlight = {colors.lightbg, colors.bg}
+    DiffModified = {
+        provider = "DiffModified",
+        condition = buffer_not_empty,
+        condition = checkwidth,
+        icon = "  ",
+        highlight = {colors.orange}
     }
 }
 
 gls.left[6] = {
-    DiffAdd = {
-        provider = "DiffAdd",
+    DiffRemove = {
+        provider = "DiffRemove",
+        condition = buffer_not_empty,
         condition = checkwidth,
-        icon = "   ",
-        highlight = {colors.greenYel, colors.line_bg}
+        icon = "  ",
+        highlight = {colors.red}
     }
 }
 
 gls.left[7] = {
-    DiffModified = {
-        provider = "DiffModified",
-        condition = checkwidth,
-        icon = " ",
-        highlight = {colors.orange, colors.line_bg}
+    DiagnosticError = {
+        provider = "DiagnosticError",
+        condition = buffer_not_empty,
+        icon = "  ",
+        highlight = {colors.red}
     }
 }
 
 gls.left[8] = {
-    DiffRemove = {
-        provider = "DiffRemove",
-        condition = checkwidth,
-        icon = " ",
-        highlight = {colors.red, colors.line_bg}
-    }
-}
-
-gls.left[9] = {
-    LeftEnd = {
-        provider = function()
-            return " "
-        end,
-        separator = " ",
-        separator_highlight = {colors.line_bg, colors.line_bg},
-        highlight = {colors.line_bg, colors.line_bg}
-    }
-}
-
-gls.left[10] = {
-    DiagnosticError = {
-        provider = "DiagnosticError",
-        icon = "  ",
-        highlight = {colors.red, colors.bg}
-    }
-}
-
-gls.left[11] = {
-    Space = {
-        provider = function()
-            return " "
-        end,
-        highlight = {colors.line_bg, colors.line_bg}
-    }
-}
-
-gls.left[12] = {
     DiagnosticWarn = {
         provider = "DiagnosticWarn",
+        condition = buffer_not_empty,
         icon = "  ",
-        highlight = {colors.blue, colors.bg}
+        highlight = {colors.orange}
     }
 }
 
@@ -144,7 +87,7 @@ gls.right[1] = {
             return "   "
         end,
         condition = require("galaxyline.provider_vcs").check_git_workspace,
-        highlight = {colors.green, colors.line_bg}
+        highlight = {colors.green}
     }
 }
 
@@ -152,18 +95,7 @@ gls.right[2] = {
     GitBranch = {
         provider = "GitBranch",
         condition = require("galaxyline.provider_vcs").check_git_workspace,
-        highlight = {colors.green, colors.line_bg}
-    }
-}
-
-gls.right[3] = {
-    right_LeftRounded = {
-        provider = function()
-            return ""
-        end,
-        separator = " ",
-        separator_highlight = {colors.bg, colors.bg},
-        highlight = {colors.red, colors.bg}
+        highlight = {colors.greeng}
     }
 }
 
@@ -171,34 +103,18 @@ gls.right[4] = {
     SiMode = {
         provider = function()
             local alias = {
-                n = "NORMAL",
-                i = "INSERT",
-                c = "COMMAND",
-                V = "VISUAL",
-                [""] = "VISUAL",
-                v = "VISUAL",
-                R = "REPLACE"
+                n = " NORMAL ",
+                i = " INSERT ",
+                c = " COMMAND ",
+                V = " VISUAL ",
+                [""] = " VISUAL ",
+                v = " VISUAL ",
+                R = " REPLACE "
             }
             return alias[vim.fn.mode()]
         end,
-        highlight = {colors.bg, colors.red}
-    }
-}
-
-gls.right[5] = {
-    PerCent = {
-        provider = "LinePercent",
+        highlight = {colors.background, colors.red},
         separator = " ",
-        separator_highlight = {colors.red, colors.red},
-        highlight = {colors.bg, colors.fg}
     }
 }
 
-gls.right[6] = {
-    rightRounded = {
-        provider = function()
-            return ""
-        end,
-        highlight = {colors.fg, colors.bg}
-    }
-}

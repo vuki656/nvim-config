@@ -1,3 +1,5 @@
+colors = require('utils.colors')
+
 require'nvim-treesitter.configs'.setup {
     ensure_installed = "maintained",
     highlight = {
@@ -5,16 +7,7 @@ require'nvim-treesitter.configs'.setup {
     },
 }
 
-local colors = {
-    purple = '#be89dd',
-    yellow = '#d8bf7a',
-    blue = '#5096cb',
-    white = "#a5afbe",
-    orange = "#d19a66",
-    red = '#e06c73'
-}
-
-vim.cmd([[highlight! TSKeyword              guifg=]] .. colors.purple)
+vim.cmd([[highlight! TSKeyword              guifg=]] .. colors.red)
 vim.cmd([[highlight! TSInclude              guifg=]] .. colors.purple)
 vim.cmd([[highlight! TSKeywordOperator      guifg=]] .. colors.purple)
 vim.cmd([[highlight! TSBoolean              guifg=]] .. colors.purple)
@@ -22,7 +15,6 @@ vim.cmd([[highlight! TSConstBuiltin         guifg=]] .. colors.purple)
 vim.cmd([[highlight! TSTypeBuiltin          guifg=]] .. colors.purple)
 vim.cmd([[highlight! TSVariable             guifg=]] .. colors.white)
 vim.cmd([[highlight! TSNamespace            guifg=]] .. colors.white)
-vim.cmd([[highlight! TSFunction             guifg=]] .. colors.white)
 vim.cmd([[highlight! TSConstructor          guifg=]] .. colors.yellow)
 vim.cmd([[highlight! TSParameter            guifg=]] .. colors.orange)
 

@@ -1,3 +1,5 @@
+colors = require('utils.colors')
+
 ------------------------------------------------------------------------------------------
 ----------------------------------- CONFIGURATION ----------------------------------------
 ------------------------------------------------------------------------------------------
@@ -32,13 +34,10 @@ vim.g.nvim_tree_show_icons = {
     files = 1
 }
 
-vim.cmd([[
-    highlight NvimTreeGitNew guifg=#bfea69
-    highlight NvimTreeGitRenamed guifg=#61afef
-    highlight NvimTreeGitDirty guifg=#61afef
-
-    highlight NvimTreeIndentMarker guifg=#333840
-    highlight NvimTreeFolderName guifg=#a5afbe
-    highlight NvimTreeEmptyFolderName guifg=#a5afbe
-    highlight NvimTreeFolderIcon guifg=#a5afbe
-]])
+vim.cmd([[highlight! NvimTreeGitNew guifg=]]            .. colors.green)
+vim.cmd([[highlight! NvimTreeGitRenamed guifg=]]        .. colors.yellow)
+vim.cmd([[highlight! NvimTreeGitDirty guifg=]]          .. colors.yellow)
+vim.cmd([[highlight! NvimTreeIndentMarker guifg=]]      .. colors.transparent)
+vim.cmd([[highlight! NvimTreeFolderName guifg=]]        .. colors.white)
+vim.cmd([[highlight! NvimTreeEmptyFolderName guifg=]]   .. colors.white)
+vim.cmd([[highlight! NvimTreeFolderIcon guifg=]]        .. colors.white)
