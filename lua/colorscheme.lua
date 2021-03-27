@@ -7,7 +7,7 @@ require'nvim-treesitter.configs'.setup {
     },
 }
 
-vim.cmd([[highlight! TSKeyword              guifg=]] .. colors.red)
+vim.cmd([[highlight! TSKeyword              guifg=]] .. colors.purple)
 vim.cmd([[highlight! TSInclude              guifg=]] .. colors.purple)
 vim.cmd([[highlight! TSKeywordOperator      guifg=]] .. colors.purple)
 vim.cmd([[highlight! TSBoolean              guifg=]] .. colors.purple)

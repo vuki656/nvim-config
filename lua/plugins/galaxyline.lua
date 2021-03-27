@@ -8,9 +8,9 @@ gl.short_line_list = {" "}
 gls.left[1] = {
     ViMode = {
         provider = function()
-            return " "
+            return ' ' .. '  ' .. os.date('%H:%M') .. ' ' 
         end,
-        highlight = {colors.green, colors.green},
+        highlight = {colors.background, colors.green},
         separator = " ",
         separator_highlight = {colors.lightBackground, colors.lightBackground}
     }
