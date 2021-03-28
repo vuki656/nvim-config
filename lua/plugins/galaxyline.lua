@@ -3,15 +3,14 @@ colors = require('utils.colors')
 local gl = require("galaxyline")
 local gls = gl.section
 
-gl.short_line_list = {" "}
+gl.short_line_list = {'NvimTree', 'packer'}
 
 gls.left[1] = {
-    ViMode = {
+    Time = {
         provider = function()
             return ' ' .. '  ' .. os.date('%H:%M') .. ' ' 
         end,
         highlight = {colors.background, colors.green},
-        condition = buffer_not_empty,
         separator = " ",
         separator_highlight = {colors.lightBackground, colors.lightBackground}
     }
@@ -119,3 +118,18 @@ gls.right[4] = {
     }
 }
 
+gls.short_line_left[1] = {
+  BufferType = {
+    provider = 'FileTypeName',
+    separator = ' ',
+    separator_highlight = {'NONE',colors.bg},
+    highlight = {colors.blue,colors.bg,'bold'}
+  }
+}
+
+gls.short_line_right[1] = {
+  BufferIcon = {
+    provider= 'BufferIcon',
+    highlight = {colors.fg,colors.bg}
+  }
+}
