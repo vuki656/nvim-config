@@ -12,7 +12,7 @@ gls.left[1] = {
         end,
         highlight = {colors.background, colors.green},
         separator = " ",
-        separator_highlight = {colors.lightBackground, colors.lightBackground}
+        separator_highlight = {colors.lightBackground, colors.background}
     }
 }
 
@@ -20,7 +20,7 @@ gls.left[2] = {
     FileIcon = {
         provider = "FileIcon",
         condition = buffer_not_empty,
-        highlight = {require("galaxyline.provider_fileinfo").get_file_icon_color, colors.lightBackground}
+        highlight = {require("galaxyline.provider_fileinfo").get_file_icon_color, colors.background}
     }
 }
 
@@ -28,9 +28,9 @@ gls.left[3] = {
     FileName = {
         provider = {"FileName"},
         condition = buffer_not_empty,
-        highlight = {colors.white, colors.lightBackground},
+        highlight = {colors.white, colors.background},
         separator = " ",
-        separator_highlight = {colors.white, colors.lightBackground},
+        separator_highlight = {colors.white, colors.background},
     }
 }
 
