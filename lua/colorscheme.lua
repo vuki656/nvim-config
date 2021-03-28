@@ -27,3 +27,6 @@ vim.cmd([[highlight! TSPunctSpecial         guifg=]] .. colors.white)
 -- JSX
 vim.cmd([[highlight! TSTagDelimiter         guifg=]] .. colors.white)
 vim.cmd([[highlight! TSTag                  guifg=]] .. colors.red)
+
+-- Editor
+vim.cmd([[highlight! StatusLineNC           guifg=]] .. colors.background)
