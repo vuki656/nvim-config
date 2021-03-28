@@ -5,6 +5,9 @@ local remap = vim.api.nvim_set_keymap
 ------------------------------------------------------------------------------------------
 
 -- Remap Q to q
+remap('n', '<leader>ef', ':lua vim.lsp.buf.formatting()<CR>', { noremap = true, silent = true })
+
+-- Remap Q to q
 remap('c', 'Q', 'q', { noremap = true, silent = true })
 
 -- Remap W to w 
