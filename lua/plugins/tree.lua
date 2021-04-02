@@ -11,7 +11,8 @@ vim.g.nvim_tree_git_hl = 1                                           -- Display 
 vim.g.nvim_tree_ignore = {
     ".git",
     "node_modules",
-    ".cache"
+    ".cache",
+    ".idea"
 }    
 
 -- Custom icons 
