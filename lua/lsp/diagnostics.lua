@@ -43,3 +43,4 @@ nvim_lsp.diagnosticls.setup {
     }
   }
 }
+

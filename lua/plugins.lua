@@ -24,7 +24,7 @@ return require('packer').startup(function()
     use 'tpope/vim-commentary'
     use 'windwp/nvim-autopairs'
     use 'alvan/vim-closetag'
-    use {'kyazdani42/nvim-tree.lua', config = 'vim.cmd "doautocmd NvimTree BufEnter *"'}
+    use 'kyazdani42/nvim-tree.lua'
     use {"glepnir/galaxyline.nvim"}
     use 'neovim/nvim-lspconfig'
     use 'airblade/vim-rooter'
