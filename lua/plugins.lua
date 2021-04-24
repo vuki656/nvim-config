@@ -24,6 +24,7 @@ return require('packer').startup(function()
     use 'tpope/vim-commentary'
     use 'windwp/nvim-autopairs'
     use 'alvan/vim-closetag'
+    use 'jose-elias-alvarez/nvim-lsp-ts-utils'
     use 'kyazdani42/nvim-tree.lua'
     use {"glepnir/galaxyline.nvim"}
     use 'neovim/nvim-lspconfig'
