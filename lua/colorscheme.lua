@@ -17,6 +17,7 @@ vim.cmd([[highlight! TSVariable             guifg=]] .. colors.white)
 vim.cmd([[highlight! TSNamespace            guifg=]] .. colors.white)
 vim.cmd([[highlight! TSConstructor          guifg=]] .. colors.yellow)
 vim.cmd([[highlight! TSParameter            guifg=]] .. colors.orange)
+vim.cmd([[highlight! TSProperty             guifg=]] .. colors.red)
 
 -- Punctuaction
 vim.cmd([[highlight! TSPunctBracket         guifg=]] .. colors.white)
