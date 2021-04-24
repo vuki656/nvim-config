@@ -4,7 +4,7 @@ require('utils.colors')
 ----------------------------------- CONFIGURATION ----------------------------------------
 ------------------------------------------------------------------------------------------
 
-vim.g.nvim_tree_highlight_opened_files = 0                           -- Don't highlight opened files/folders
+vim.g.nvim_tree_highlight_opened_files = false                       -- Don't highlight opened files/folders
 vim.g.nvim_tree_indent_markers = 1                                   -- Display indent markers
 vim.g.nvim_tree_git_hl = 1                                           -- Display git status in file names
 
@@ -43,3 +43,4 @@ vim.cmd([[highlight NvimTreeIndentMarker        guifg=]] .. colors.transparent)
 vim.cmd([[highlight NvimTreeFolderName          guifg=]] .. colors.white)
 vim.cmd([[highlight NvimTreeEmptyFolderName     guifg=]] .. colors.white)
 vim.cmd([[highlight NvimTreeFolderIcon          guifg=]] .. colors.white)
+vim.cmd([[highlight NvimTreeOpenedFolderName    guifg=]] .. colors.white)
