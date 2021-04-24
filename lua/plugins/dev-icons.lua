@@ -52,7 +52,7 @@ require'nvim-web-devicons'.setup {
   },
   ["index.ts"] = {
     icon = "",
-    color = "#ffb300",
+    color = "#a5afbe",
     name = "IndexTs",
   },
   [".eslintrc.json"] = {
