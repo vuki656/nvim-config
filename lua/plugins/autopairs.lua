@@ -1,0 +1,9 @@
+require('nvim-autopairs').setup()
+
+
+
+
+
+
+
+
