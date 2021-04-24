@@ -1,18 +1,17 @@
 colors = require('utils.colors')
 
-local g = require("galaxyline")
+local plugin = require("galaxyline")
 local vcs = require('galaxyline.provider_vcs')
 local file = require('galaxyline.provider_fileinfo')
 
-local gs = g.section
+local section = plugin.section
 
-g.short_line_list = {
+plugin.short_line_list = {
     'NvimTree',
     'packer'
 }
 
-
-gs.left[1] = {
+section.left[1] = {
     GitIcon = {
         provider = function()
             return "   "
@@ -25,7 +24,7 @@ gs.left[1] = {
     }
 }
 
-gs.left[2] = {
+section.left[2] = {
     GitBranch = {
         provider = "GitBranch",
         separator = " ",
@@ -41,7 +40,7 @@ gs.left[2] = {
     }
 }
 
-gs.left[3] = {
+section.left[3] = {
     FileIcon = {
         provider = "FileIcon",
         condition = buffer_not_empty,
@@ -52,7 +51,7 @@ gs.left[3] = {
     }
 }
 
-gs.left[4] = {
+section.left[4] = {
     FileName = {
         provider = "FileName",
         condition = buffer_not_empty,
@@ -68,7 +67,7 @@ gs.left[4] = {
     }
 }
 
-gs.left[5] = {
+section.left[5] = {
     DiffAdd = {
         provider = "DiffAdd",
         condition = buffer_not_empty,
@@ -77,7 +76,7 @@ gs.left[5] = {
     }
 }
 
-gs.left[6] = {
+section.left[6] = {
     DiffModified = {
         provider = "DiffModified",
         condition = buffer_not_empty,
@@ -87,7 +86,7 @@ gs.left[6] = {
     }
 }
 
-gs.left[7] = {
+section.left[7] = {
     DiffRemove = {
         provider = "DiffRemove",
         condition = buffer_not_empty,
@@ -97,7 +96,7 @@ gs.left[7] = {
     }
 }
 
-gs.left[8] = {
+section.left[8] = {
     DiagnosticError = {
         provider = "DiagnosticError",
         condition = buffer_not_empty,
@@ -106,7 +105,7 @@ gs.left[8] = {
     }
 }
 
-gs.left[9] = {
+section.left[9] = {
     DiagnosticWarn = {
         provider = "DiagnosticWarn",
         condition = buffer_not_empty,
@@ -115,7 +114,7 @@ gs.left[9] = {
     }
 }
 
-gs.right[1] = {
+section.right[1] = {
     SiMode = {
         provider = function()
             local alias = {
@@ -138,7 +137,7 @@ gs.right[1] = {
     }
 }
 
-gs.right[2] = {
+section.right[2] = {
     Time = {
         provider = function()
             return ' ' .. '  ' .. os.date('%H:%M') .. ' '
@@ -150,7 +149,7 @@ gs.right[2] = {
     }
 }
 
-gs.short_line_left[1] = {
+section.short_line_left[1] = {
   BufferType = {
     provider = 'FileTypeName',
     separator = ' ',
@@ -166,7 +165,7 @@ gs.short_line_left[1] = {
   }
 }
 
-gs.short_line_right[1] = {
+section.short_line_right[1] = {
   BufferIcon = {
     provider= 'BufferIcon',
     highlight = {
