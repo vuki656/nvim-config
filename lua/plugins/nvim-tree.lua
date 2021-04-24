@@ -1,7 +1,9 @@
 require('utils.colors')
 
+local remap = vim.api.nvim_set_keymap 
+
 ------------------------------------------------------------------------------------------
------------------------------------ CONFIGURATION ----------------------------------------
+----------------------------------- CONFIG -----------------------------------------------
 ------------------------------------------------------------------------------------------
 
 vim.g.nvim_tree_highlight_opened_files = false                       -- Don't highlight opened files/folders
@@ -36,6 +38,10 @@ vim.g.nvim_tree_show_icons = {
     files = 1
 }
 
+------------------------------------------------------------------------------------------
+----------------------------------- COLORS -----------------------------------------------
+------------------------------------------------------------------------------------------
+
 vim.cmd([[highlight NvimTreeGitNew              guifg=]] .. colors.green)
 vim.cmd([[highlight NvimTreeGitRenamed          guifg=]] .. colors.yellow)
 vim.cmd([[highlight NvimTreeGitDirty            guifg=]] .. colors.yellow)
@@ -44,3 +50,17 @@ vim.cmd([[highlight NvimTreeFolderName          guifg=]] .. colors.white)
 vim.cmd([[highlight NvimTreeEmptyFolderName     guifg=]] .. colors.white)
 vim.cmd([[highlight NvimTreeFolderIcon          guifg=]] .. colors.white)
 vim.cmd([[highlight NvimTreeOpenedFolderName    guifg=]] .. colors.white)
+
+------------------------------------------------------------------------------------------
+----------------------------------- REMAPS -----------------------------------------------
+------------------------------------------------------------------------------------------
+
+-- Toggle file tree
+remap('n', '<C-n>', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
+
+-- Find opened file in tree
+remap('n', '<leader>o', ':NvimTreeFindFile<CR>', { noremap = true, silent = true })
+
+-- Collapse all dirs, focus only the opened buffer, and put cursor back to buffer
+remap('n', '<leader>9', ':NvimTreeToggle<CR> :NvimTreeToggle<CR> :NvimTreeFindFile<CR>', { noremap = true, silent = true })
+
