@@ -11,7 +11,7 @@ require('colorscheme')
 ------------------------------------------------------------------------------------------
 require('plugins.nvim-tree')
 require('plugins.autopairs')
-require('plugins.compe')
+require('plugins.nvim-compe')
 require('plugins.dev-icons')
 require('plugins.galaxyline')
 require('plugins.gitsigns')
