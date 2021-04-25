@@ -1,3 +1,5 @@
+require('utils.colors')
+
 ------------------------------------------------------------------------------------------
 ----------------------------------- SETUP ------------------------------------------------
 ------------------------------------------------------------------------------------------
@@ -35,3 +37,11 @@ vim.api.nvim_set_keymap("n", "<leader>cd", ":Lspsaga show_line_diagnostics<CR>",
 -- Go to next/previous diagnostic
 vim.api.nvim_set_keymap("n", "[e", ":Lspsaga diagnostic_jump_next<CR>", { noremap = true, })
 vim.api.nvim_set_keymap("n", "]e", ":Lspsaga diagnostic_jump_prev<CR>", { noremap = true, })
+
+------------------------------------------------------------------------------------------
+----------------------------------- COLORS -----------------------------------------------
+------------------------------------------------------------------------------------------
+
+vim.cmd([[highlight LspSagaCodeActionBorder              guifg=]] .. colors.blue)
+vim.cmd([[highlight LspSagaCodeActionTitle               guifg=]] .. colors.red .. " gui='bold'")
+vim.cmd([[highlight DiagnosticError                      guifg=]] .. colors.red)

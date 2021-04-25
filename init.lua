@@ -34,4 +34,5 @@ require('lsp.lua')
 require('lsp.ts')
 require('lsp.vim')
 require('lsp.yaml')
+require('lsp.diagnostics')
 

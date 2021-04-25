@@ -1,46 +1,26 @@
-local nvim_lsp = require "lspconfig"
+require('utils.colors')
 
-nvim_lsp.diagnosticls.setup {
-  filetypes = {"javascript", "javascriptreact", "typescript", "typescriptreact", "css"},
-  init_options = {
-    filetypes = {
-      javascript = "eslint",
-      typescript = "eslint",
-      javascriptreact = "eslint",
-      typescriptreact = "eslint"
-    },
-    linters = {
-      eslint = {
-        sourceName = "eslint",
-        command = "./node_modules/.bin/eslint",
-        rootPatterns = {
-          ".eslitrc.js",
-          "package.json"
-        },
-        debounce = 5,
-        args = {
-          "--cache",
-          "--stdin",
-          "--stdin-filename",
-          "%filepath",
-          "--format",
-          "json"
-        },
-        parseJson = {
-          errorsRoot = "[0].messages",
-          line = "line",
-          column = "column",
-          endLine = "endLine",
-          endColumn = "endColumn",
-          message = "${message} [${ruleId}]",
-          security = "severity"
-        },
-        securities = {
-          [2] = "error",
-          [1] = "warning"
-        }
-      }
-    }
+------------------------------------------------------------------------------------------
+----------------------------------- SETUP ------------------------------------------------
+------------------------------------------------------------------------------------------
+
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+  vim.lsp.diagnostic.on_publish_diagnostics, {
+    signs = false                                       -- Disable LSP signs
   }
-}
+)
+
+------------------------------------------------------------------------------------------
+----------------------------------- COLORS -----------------------------------------------
+------------------------------------------------------------------------------------------
+
+vim.cmd([[highlight LspDiagnosticsDefaultError              guifg=]] .. colors.red)
+vim.cmd([[highlight LspDiagnosticsDefaultWarning            guifg=]] .. colors.yellow)
+vim.cmd([[highlight LspDiagnosticsDefaultInformation        guifg=]] .. colors.blue)
+vim.cmd([[highlight LspDiagnosticsDefaultHint               guifg=]] .. colors.orange)
+
+vim.cmd([[highlight LspDiagnosticsUnderlineError            guifg=]] .. colors.red)
+vim.cmd([[highlight LspDiagnosticsUnderlineWarning          guifg=]] .. colors.yellow)
+vim.cmd([[highlight LspDiagnosticsUnderlineInformation      guifg=]] .. colors.blue)
+vim.cmd([[highlight LspDiagnosticsUnderlineHint             guifg=]] .. colors.orange)
 

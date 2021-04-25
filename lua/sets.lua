@@ -31,7 +31,6 @@ set_window.signcolumn = 'yes'
 set_window.number = true
 set_window.wrap = false
 
-
 vim.cmd([[
     colorscheme one
     syntax on
