@@ -24,7 +24,6 @@ return require('packer').startup(function()
     use 'tpope/vim-commentary'
     use 'windwp/nvim-autopairs'
     use 'alvan/vim-closetag'
-    use 'jose-elias-alvarez/nvim-lsp-ts-utils'
     use 'kyazdani42/nvim-tree.lua'
     use 'neovim/nvim-lspconfig'
     use 'airblade/vim-rooter'
@@ -37,6 +36,10 @@ return require('packer').startup(function()
     use 'glepnir/lspsaga.nvim'
     use 'hrsh7th/nvim-compe'
     use 'antoinemadec/FixCursorHold.nvim'
+    use { 
+        'jose-elias-alvarez/nvim-lsp-ts-utils',
+        branch = 'develop'
+    } 
     use {
         'glepnir/galaxyline.nvim',
         requires = { 'kyazdani42/nvim-web-devicons' }

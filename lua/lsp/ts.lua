@@ -21,12 +21,6 @@ nvim_lsp.tsserver.setup {
             format_on_save = false,
         }
 
-        -- no default maps, so you may want to define some here
-        vim.api.nvim_buf_set_keymap(bufnr, "n", "gs", ":TSLspOrganize<CR>", {silent = true})
-        vim.api.nvim_buf_set_keymap(bufnr, "n", "qq", ":TSLspFixCurrent<CR>", {silent = true})
-        vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", ":TSLspRenameFile<CR>", {silent = true})
-        vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", ":TSLspImportAll<CR>", {silent = true})
+        ts_utils.setup_client(client)
     end
 }
-
-vim.lsp.buf_request = ts_utils.buf_request
