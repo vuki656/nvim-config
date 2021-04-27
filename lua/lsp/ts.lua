@@ -3,8 +3,6 @@ local ts_utils = require("nvim-lsp-ts-utils")
 
 nvim_lsp.tsserver.setup {
     on_attach = function(client, bufnr)
-        client.resolved_capabilities.document_formatting = false
-
         ts_utils.setup {
             eslint_bin = "eslint_d",
             eslint_args = {"-f", "json", "--stdin", "--stdin-filename", "$FILENAME"},
