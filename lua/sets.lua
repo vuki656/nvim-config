@@ -22,6 +22,7 @@ set.expandtab = true                                -- Enables tab to space conv
 set.splitright = true                               -- Preffer opening new buffers to the right
 set.splitbelow = true                               -- Preffer opening new buffers below
 set.termguicolors = true                            -- Enable nvim set colors 
+set.hidden = true                                   -- Enable changing buffers without saving
 
 set_window.relativenumber = true                    -- Show relative line numbers in the sidebar
 set_window.signcolumn = 'yes'                       -- Show sidebar

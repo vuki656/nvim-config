@@ -7,7 +7,8 @@ require('utils.colors')
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
     signs = false,                                    -- Disable LSP signs
-    underline = true                                  -- Underline diagnostics
+    underline = true,                                 -- Underline diagnostics
+    virtual_text = false,                             -- Hide virtual text
   }
 )
 

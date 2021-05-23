@@ -36,10 +36,7 @@ return require('packer').startup(function()
     use 'glepnir/lspsaga.nvim'
     use 'hrsh7th/nvim-compe'
     use 'antoinemadec/FixCursorHold.nvim'
-    use { 
-        'jose-elias-alvarez/nvim-lsp-ts-utils',
-        branch = 'develop'
-    } 
+    use 'jose-elias-alvarez/nvim-lsp-ts-utils'
     use {
         'glepnir/galaxyline.nvim',
         requires = { 'kyazdani42/nvim-web-devicons' }
