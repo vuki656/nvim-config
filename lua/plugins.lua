@@ -38,6 +38,11 @@ return require('packer').startup(function()
     use 'antoinemadec/FixCursorHold.nvim'
     use 'jose-elias-alvarez/nvim-lsp-ts-utils'
     use {
+        'iamcco/markdown-preview.nvim',
+        run = function() vim.fn['mkdp#util#install']() end,
+        ft = {'markdown'}
+    }
+    use {
         'glepnir/galaxyline.nvim',
         requires = { 'kyazdani42/nvim-web-devicons' }
     }
