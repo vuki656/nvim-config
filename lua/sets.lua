@@ -23,7 +23,7 @@ set.splitright = true                               -- Preffer opening new buffe
 set.splitbelow = true                               -- Preffer opening new buffers below
 set.termguicolors = true                            -- Enable nvim set colors 
 set.hidden = true                                   -- Enable changing buffers without saving
-set.scrolloff = 15
+set.scrolloff = 15                                  --  Scroll offset
 
 set_window.relativenumber = true                    -- Show relative line numbers in the sidebar
 set_window.signcolumn = 'yes'                       -- Show sidebar
@@ -35,6 +35,7 @@ vim.cmd([[
     syntax on
     set noshowmode  
     set noshowcmd 
+    set nohlsearch
 ]])
 
 -- Hide ~ from sign column
