@@ -20,6 +20,7 @@ require('plugins.lspsaga')
 require('plugins.smoothie')
 require('plugins.startify')
 require('plugins.telescope')
+require('plugins.indentLine')
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- LSPs -------------------------------------------------

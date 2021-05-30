@@ -37,6 +37,7 @@ return require('packer').startup(function()
     use 'hrsh7th/nvim-compe'
     use 'antoinemadec/FixCursorHold.nvim'
     use 'jose-elias-alvarez/nvim-lsp-ts-utils'
+    use 'Yggdroot/indentLine'
     use {
         'iamcco/markdown-preview.nvim',
         run = function() vim.fn['mkdp#util#install']() end,
