@@ -17,40 +17,31 @@ end
 ------------------------------------------------------------------------------------------
 
 return require('packer').startup(function()
-    use 'wbthomason/packer.nvim'
-    use 'tpope/vim-fugitive'
-    use 'onsails/lspkind-nvim'
-    use 'tweekmonster/startuptime.vim'
-    use 'tpope/vim-commentary'
-    use 'windwp/nvim-autopairs'
     use 'alvan/vim-closetag'
-    use 'kyazdani42/nvim-tree.lua'
-    use 'neovim/nvim-lspconfig'
     use 'airblade/vim-rooter'
-    use 'mhinz/vim-startify'
-    use 'nvim-treesitter/nvim-treesitter'
-    use 'kyazdani42/nvim-web-devicons'
-    use 'rakr/vim-one'
-    use 'nvim-treesitter/playground'
-    use 'psliwka/vim-smoothie'
-    use 'glepnir/lspsaga.nvim'
-    use 'hrsh7th/nvim-compe'
     use 'antoinemadec/FixCursorHold.nvim'
-    use 'jose-elias-alvarez/nvim-lsp-ts-utils'
-    use 'Yggdroot/indentLine'
+    use 'glepnir/lspsaga.nvim'
+    use {
+        'glepnir/galaxyline.nvim',
+        requires = { 'kyazdani42/nvim-web-devicons' }
+    }
+    use 'hrsh7th/nvim-compe'
     use {
         'iamcco/markdown-preview.nvim',
         run = function() vim.fn['mkdp#util#install']() end,
         ft = {'markdown'}
     }
-    use {
-        'glepnir/galaxyline.nvim',
-        requires = { 'kyazdani42/nvim-web-devicons' }
-    }
+    use 'jose-elias-alvarez/nvim-lsp-ts-utils'
+    use 'kyazdani42/nvim-tree.lua'
+    use 'kyazdani42/nvim-web-devicons'
     use {
         'lewis6991/gitsigns.nvim',
         requires = { 'nvim-lua/plenary.nvim' }
     }
+    use 'mhinz/vim-startify'
+    use 'neovim/nvim-lspconfig'
+    use 'nvim-treesitter/nvim-treesitter'
+    use 'nvim-treesitter/playground'
     use {
         'nvim-telescope/telescope.nvim',
         requires = {
@@ -58,4 +49,13 @@ return require('packer').startup(function()
             {'nvim-lua/plenary.nvim'}
         }
     }
+    use 'onsails/lspkind-nvim'
+    use 'psliwka/vim-smoothie'
+    use 'rakr/vim-one'
+    use 'tpope/vim-fugitive'
+    use 'tpope/vim-commentary'
+    use 'tweekmonster/startuptime.vim'
+    use 'wbthomason/packer.nvim'
+    use 'windwp/nvim-autopairs'
+    use 'Yggdroot/indentLine'
 end)
