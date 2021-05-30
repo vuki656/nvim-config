@@ -33,7 +33,6 @@ return require('packer').startup(function()
     }
     use 'jose-elias-alvarez/nvim-lsp-ts-utils'
     use 'kyazdani42/nvim-tree.lua'
-    use 'kyazdani42/nvim-web-devicons'
     use {
         'lewis6991/gitsigns.nvim',
         requires = { 'nvim-lua/plenary.nvim' }
