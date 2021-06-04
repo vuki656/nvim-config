@@ -23,6 +23,8 @@ require('plugins.smoothie')                                          -- Better s
 require('plugins.startify')                                          -- Start screen
 require('plugins.telescope')                                         -- Finder
 require('plugins.indentLine')                                        -- Indent lines
+require('plugins.trouble')                                           -- Issue list
+require('plugins.todo-comments')                                     -- TODO comments finder
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- LSPs -------------------------------------------------
