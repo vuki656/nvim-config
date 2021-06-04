@@ -38,6 +38,12 @@ vim.api.nvim_set_keymap("n", "<leader>cd", ":Lspsaga show_line_diagnostics<CR>",
 vim.api.nvim_set_keymap("n", "[e", ":Lspsaga diagnostic_jump_next<CR>", { noremap = true, })
 vim.api.nvim_set_keymap("n", "]e", ":Lspsaga diagnostic_jump_prev<CR>", { noremap = true, })
 
+-- Show line diagnostics on hover
+vim.cmd([[
+    autocmd CursorHold * lua require'lspsaga.diagnostic'.show_line_diagnostics()
+    autocmd CursorHoldI * lua require'lspsaga.diagnostic'.show_line_diagnostics()
+]])
+
 ------------------------------------------------------------------------------------------
 ----------------------------------- COLORS -----------------------------------------------
 ------------------------------------------------------------------------------------------
