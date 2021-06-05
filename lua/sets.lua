@@ -23,7 +23,8 @@ set.splitright = true                               -- Preffer opening new buffe
 set.splitbelow = true                               -- Preffer opening new buffers below
 set.termguicolors = true                            -- Enable nvim set colors 
 set.hidden = true                                   -- Enable changing buffers without saving
-set.scrolloff = 15                                  --  Scroll offset
+set.scrolloff = 15                                  -- Scroll offset
+set.scroll = 15                                     -- Scroll amount
 
 set_window.relativenumber = true                    -- Show relative line numbers in the sidebar
 set_window.signcolumn = 'yes'                       -- Show sidebar
