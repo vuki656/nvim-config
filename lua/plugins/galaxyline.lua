@@ -3,17 +3,17 @@
 -- Link: https://github.com/glepnir/galaxyline.nvim
 
 local colors = require('utils.colors')
-local plugin = require("galaxyline")
+local galaxy_line = require("galaxyline")
 local vcs = require('galaxyline.provider_vcs')
 local file = require('galaxyline.provider_fileinfo')
 
-local section = plugin.section
+local section = galaxy_line.section
 
 ------------------------------------------------------------------------------------------
 ------------------------------------ SETUP -----------------------------------------------
 ------------------------------------------------------------------------------------------
 
-plugin.short_line_list = {
+galaxy_line.short_line_list = {
     'NvimTree',
     'packer'
 }
