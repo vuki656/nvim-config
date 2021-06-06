@@ -1,12 +1,11 @@
+-- Name: Autopairs
+-- Description: Autopair brackes
+-- Link: https://github.com/windwp/nvim-autopairs
+
+local autopairs = require('nvim-autopairs')
+
 ------------------------------------------------------------------------------------------
 ----------------------------------- SETUP ------------------------------------------------
 ------------------------------------------------------------------------------------------
-require('nvim-autopairs').setup()
 
-
-
-
-
-
-
-
+autopairs.setup()
