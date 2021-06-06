@@ -1,4 +1,4 @@
--- Name: Which-key
+-- Name: Which Key
 -- Description: Key combo suggestion on typing 
 -- Link: https://github.com/folke/which-key.nvim
 

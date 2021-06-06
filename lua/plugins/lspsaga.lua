@@ -1,4 +1,4 @@
--- Name: Lspsaga
+-- Name: LSP Saga
 -- Description: LSP utils wrapper 
 -- Link: https://github.com/glepnir/lspsaga.nvim
 

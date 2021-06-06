@@ -1,10 +1,16 @@
+-- Name: Todo Comments
+-- Description: Finder 
+-- Link: https://github.com/nvim-telescope/telescope.nvim
+
 local remap = vim.api.nvim_set_keymap 
+
+local todo_comments = require('todo-comments')
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- SETUP ------------------------------------------------
 ------------------------------------------------------------------------------------------
 
-require("todo-comments").setup {
+todo_comments.setup {
     signs = false
 }
 
@@ -13,4 +19,4 @@ require("todo-comments").setup {
 ------------------------------------------------------------------------------------------
 
 -- Open todos in telescope picker
-remap('n', '<leader>t', ':TodoTelescope<CR>', { noremap = true, silent = true })
+remap('n', '<leader>pt', ':TodoTelescope<CR>', { noremap = true, silent = true })
