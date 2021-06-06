@@ -1,3 +1,7 @@
+-- Name: Smoothiec
+-- Description: Smoother scrolling
+-- Link: https://github.com/psliwka/vim-smoothie
+
 local option = vim.api.nvim_set_var
 
 ------------------------------------------------------------------------------------------
