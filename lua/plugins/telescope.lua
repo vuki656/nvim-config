@@ -1,3 +1,7 @@
+-- Name: Telescope
+-- Description: Finder 
+-- Link: https://github.com/nvim-telescope/telescope.nvim
+
 local actions = require('telescope.actions')
 local telescope = require("telescope")
 

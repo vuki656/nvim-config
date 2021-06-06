@@ -1,3 +1,7 @@
+-- Name: Lspsaga
+-- Description: LSP utils wrapper 
+-- Link: https://github.com/glepnir/lspsaga.nvim
+
 require('utils.colors')
 
 ------------------------------------------------------------------------------------------
