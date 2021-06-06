@@ -1,10 +1,15 @@
-colors = require('utils.colors')
+-- Name: Git Signs
+-- Description: Git status in sidebar
+-- Link: https://github.com/lewis6991/gitsigns.nvim
+
+local git_signs = require('gitsigns')
+local colors = require('utils.colors')
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- SETUP ------------------------------------------------
 ------------------------------------------------------------------------------------------
 
-require('gitsigns').setup {
+git_signs.setup {
   signs = {
     add          = { hl = 'GitSignsAdd'   , text = '█', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'    },
     change       = { hl = 'GitSignsChange', text = '█', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn' },
