@@ -18,7 +18,7 @@ end
 
 return require('packer').startup(function()
     use 'windwp/nvim-ts-autotag'
-    use 'ygm2/rooter.nvim'
+    use 'airblade/vim-rooter'
     use 'antoinemadec/FixCursorHold.nvim'
     use 'folke/todo-comments.nvim'
     use 'folke/which-key.nvim'
