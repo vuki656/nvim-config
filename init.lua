@@ -43,3 +43,8 @@ require('lsp.vim')
 require('lsp.yaml')
 require('lsp.diagnostics')
 
+require'nvim-treesitter.configs'.setup {
+  autotag = {
+    enable = true,
+  }
+}
