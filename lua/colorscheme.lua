@@ -5,6 +5,9 @@ require'nvim-treesitter.configs'.setup {
     highlight = {
         enable = true 
     },
+    autotag = {
+        enable = true,
+    }
 }
 
 vim.cmd([[highlight! TSKeyword              guifg=]] .. colors.purple)
