@@ -1,4 +1,4 @@
-require('utils.colors')
+local colors = require('utils.colors')
 
 local remap = vim.api.nvim_set_keymap 
 
