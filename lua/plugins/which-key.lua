@@ -11,6 +11,6 @@ local which_key = require('which-key')
 which_key.setup {
     layout = {
         width = { max = 200 }, 
-        spacing = 5, 
+        spacing = 5,  
     },
 }
