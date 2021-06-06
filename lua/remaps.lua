@@ -21,8 +21,5 @@ remap('n', '<C-l>', '<C-w>l', { noremap = true, silent = true })
 remap('n', '<C-j>', '<C-w>j', { noremap = true, silent = true })
 remap('n', '<C-k>', '<C-w>k', { noremap = true, silent = true })
 
--- Display treesitter highlight group
-remap('n', '<leader>1', ':TSHighlightCapturesUnderCursor<CR>', { noremap = true, silent = true })
-
 -- Open markdown preview in chrome
 remap('n', '<leader>mp', ':MarkdownPreviewToggle<CR>', { noremap = true, silent = true })

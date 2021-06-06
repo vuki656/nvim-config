@@ -25,6 +25,7 @@ require('plugins.telescope')
 require('plugins.indent-line')
 require('plugins.todo-comments')
 require('plugins.which-key')
+require('plugins.harpoon')
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- LSPs -------------------------------------------------

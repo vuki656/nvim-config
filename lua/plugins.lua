@@ -56,6 +56,7 @@ return require('packer').startup(function()
     use 'rakr/vim-one'
     use 'tpope/vim-fugitive'
     use 'tpope/vim-commentary'
+    use 'ThePrimeagen/harpoon'
     use 'tweekmonster/startuptime.vim'
     use 'wbthomason/packer.nvim'
     use 'windwp/nvim-autopairs'

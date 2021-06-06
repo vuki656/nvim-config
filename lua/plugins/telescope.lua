@@ -30,7 +30,7 @@ telescope.load_extension('fzy_native')
 remap("n", "<leader>pf", ":Telescope git_files shorten_path=true<CR>", { noremap = true, silent = true })
 
 -- Find text in project
-remap("n", "<leader>pt", ":Telescope live_grep shorten_path=true<CR>", { noremap = true, silent = true })
+remap("n", "<leader>ps", ":Telescope live_grep shorten_path=true<CR>", { noremap = true, silent = true })
 
 ----------------------------------- LSP --------------------------------------------------
 
