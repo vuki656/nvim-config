@@ -1,5 +1,8 @@
-colors = require('utils.colors')
+-- Name: Galaxy Line
+-- Description: Staus line
+-- Link: https://github.com/glepnir/galaxyline.nvim
 
+local colors = require('utils.colors')
 local plugin = require("galaxyline")
 local vcs = require('galaxyline.provider_vcs')
 local file = require('galaxyline.provider_fileinfo')
@@ -7,7 +10,7 @@ local file = require('galaxyline.provider_fileinfo')
 local section = plugin.section
 
 ------------------------------------------------------------------------------------------
------------------------------------ CONFIG -----------------------------------------------
+------------------------------------ SETUP -----------------------------------------------
 ------------------------------------------------------------------------------------------
 
 plugin.short_line_list = {
