@@ -1,3 +1,7 @@
+-- Name: Nvim Tree
+-- Description: File tree
+-- Link: https://github.com/kyazdani42/nvim-tree.lua
+--
 local colors = require('utils.colors')
 
 local remap = vim.api.nvim_set_keymap 
@@ -58,8 +62,4 @@ vim.cmd([[highlight NvimTreeOpenedFolderName    guifg=]] .. colors.white)
 remap('n', '<C-n>', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
 
 -- Find opened file in tree
-remap('n', '<leader>o', ':NvimTreeFindFile<CR>', { noremap = true, silent = true })
-
--- Collapse all dirs, focus only the opened buffer, and put cursor back to buffer
-remap('n', '<leader>9', ':NvimTreeToggle<CR> :NvimTreeToggle<CR> :NvimTreeFindFile<CR>', { noremap = true, silent = true })
-
+remap('n', '<leader>to', ':NvimTreeFindFile<CR>', { noremap = true, silent = true })
