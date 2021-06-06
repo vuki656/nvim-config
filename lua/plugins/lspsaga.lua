@@ -18,12 +18,6 @@ lsp_saga.init_lsp_saga {
     },
 }
 
--- Show line diagnostics on hover
-vim.cmd([[
-    autocmd CursorHold * lua require'lspsaga.diagnostic'.show_line_diagnostics()
-    autocmd CursorHoldI * lua require'lspsaga.diagnostic'.show_line_diagnostics()
-]])
-
 ------------------------------------------------------------------------------------------
 ----------------------------------- REMAPS -----------------------------------------------
 ------------------------------------------------------------------------------------------
@@ -34,6 +28,9 @@ vim.api.nvim_set_keymap("v", "<leader>ca", ":<C-U>Lspsaga range_code_action<CR>"
 
 -- Show doc
 vim.api.nvim_set_keymap("n", "K", "<cmd>lua require('lspsaga.hover').render_hover_doc()<CR>", { noremap = true, })
+
+-- Show line diagnostics
+vim.api.nvim_set_keymap("n", "J", "<cmd>lua require('lspsaga.diagnostic').show_line_diagnostics()<CR>", { noremap = true, })
 
 -- Scroll doc
 vim.api.nvim_set_keymap("n", "<C-f>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>", { noremap = true, })
