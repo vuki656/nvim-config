@@ -31,3 +31,11 @@ vim.cmd([[highlight! TSTag                  guifg=]] .. colors.red)
 
 -- Editor
 vim.cmd([[highlight! StatusLineNC           guifg=]] .. colors.background)
+
+-- LSP Signs
+vim.cmd([[
+    sign define LspDiagnosticsSignError text= texthl=LspDiagnosticsSignError 
+    sign define LspDiagnosticsSignWarning text= texthl=LspDiagnosticsSignWarning 
+    sign define LspDiagnosticsSignInformation text= texthl=LspDiagnosticsSignInformation 
+    sign define LspDiagnosticsSignHint text= texthl=LspDiagnosticsSignHint 
+]])

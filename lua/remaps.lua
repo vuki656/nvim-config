@@ -3,14 +3,11 @@ local remap = vim.api.nvim_set_keymap
 -- Format file
 remap('n', '<leader>ef', ':lua vim.lsp.buf.formatting()<CR>', { noremap = true, silent = true })
 
--- Remap Q to q
-remap('c', 'Q', 'q', { noremap = true, silent = true })
-
--- Remap W to w 
-remap('c', 'W', 'w', { noremap = true, silent = true })
-
 -- Go to normal mode with jj
 remap('i', 'jj', '<ESC>', { noremap = true, silent = true })
+
+-- Go to normal mode with kk
+remap('i', 'kk', '<ESC>', { noremap = true, silent = true })
 
 -- Rotate between last 2 opened files
 remap('n', '<leader>8', '<C-^>', { noremap = true, silent = true })
