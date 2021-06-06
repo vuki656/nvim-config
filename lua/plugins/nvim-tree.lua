@@ -1,7 +1,7 @@
 -- Name: Nvim Tree
 -- Description: File tree
 -- Link: https://github.com/kyazdani42/nvim-tree.lua
---
+
 local colors = require('utils.colors')
 
 local remap = vim.api.nvim_set_keymap 

@@ -22,7 +22,7 @@ require('plugins.lspsaga')
 require('plugins.smoothie')
 require('plugins.startify')
 require('plugins.telescope')
-require('plugins.indentLine')
+require('plugins.indent-line')
 require('plugins.todo-comments')
 require('plugins.which-key')
 
