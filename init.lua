@@ -24,6 +24,7 @@ require('plugins.startify')
 require('plugins.telescope')
 require('plugins.indentLine')
 require('plugins.todo-comments')
+require('plugins.which-key')
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- LSPs -------------------------------------------------

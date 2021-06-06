@@ -1,5 +1,8 @@
 local remap = vim.api.nvim_set_keymap 
 
+-- ReSource lua file
+remap('n', '<leader>sf', ':luafil %<CR>', { noremap = true, silent = true })
+
 -- Format file
 remap('n', '<leader>ef', ':lua vim.lsp.buf.formatting()<CR>', { noremap = true, silent = true })
 
