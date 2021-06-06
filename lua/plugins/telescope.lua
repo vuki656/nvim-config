@@ -1,5 +1,4 @@
 local actions = require('telescope.actions')
-local trouble = require("trouble.providers.telescope")
 local telescope = require("telescope")
 
 local remap = vim.api.nvim_set_keymap
@@ -15,15 +14,21 @@ require('telescope').setup{
     shorten_path=true 
 }
 
+require('telescope').load_extension('fzy_native')
+
 ------------------------------------------------------------------------------------------
 ----------------------------------- REMAPS -----------------------------------------------
 ------------------------------------------------------------------------------------------
+
+----------------------------------- FIND -------------------------------------------------
 
 -- Find git files in project
 remap("n", "<leader>pf", "<cmd>Telescope git_files shorten_path=true<cr>", { noremap = true, silent = true })
 
 -- Find text in project
 remap("n", "<leader>pt", "<cmd>Telescope live_grep shorten_path=true<cr>", { noremap = true, silent = true })
+
+----------------------------------- LSP --------------------------------------------------
 
 -- Find document diagnostics
 remap("n", "<leader>pd", "<cmd>lua require('telescope.builtin').lsp_document_diagnostics()<CR>", { noremap = true, silent = true })
@@ -37,5 +42,14 @@ remap("n", "<leader>pr", "<cmd>lua require('telescope.builtin').lsp_references()
 -- Find definitions
 remap("n", "<leader>pi", "<cmd>lua require('telescope.builtin').lsp_definitions()<CR>", { noremap = true, silent = true })
 
--- TODO: git pickerrs
--- TODO: vim pickers
+----------------------------------- GIT --------------------------------------------------
+
+-- List branches
+remap("n", "<leader>gb", "<cmd>lua require('telescope.builtin').git_branches()<CR>", { noremap = true, silent = true })
+
+-- List branch commits
+remap("n", "<leader>gc", "<cmd>lua require('telescope.builtin').git_commits()<CR>", { noremap = true, silent = true })
+
+-- List file commits
+remap("n", "<leader>gfc", "<cmd>lua require('telescope.builtin').git_bcommits()<CR>", { noremap = true, silent = true })
+
