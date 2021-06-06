@@ -2,13 +2,14 @@
 -- Description: LSP utils wrapper 
 -- Link: https://github.com/glepnir/lspsaga.nvim
 
-require('utils.colors')
+local colors = require('utils.colors')
+local lsp_saga = require('lspsaga')
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- SETUP ------------------------------------------------
 ------------------------------------------------------------------------------------------
 
-require('lspsaga').init_lsp_saga {
+lsp_saga.init_lsp_saga {
     use_saga_diagnostic_sign = false,
     code_action_icon = '',
     border_style = "round",
