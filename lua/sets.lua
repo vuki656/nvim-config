@@ -50,8 +50,6 @@ vim.cmd("hi VertSplit guibg=NONE")
 ----------------------------------- PLUGIN REQUIRED --------------------------------------
 ------------------------------------------------------------------------------------------
 
--- nvim-compee
-set.completeopt = "menuone,noselect"
 
 -- fix-cursor-hold
 vim.cmd('let g:cursorhold_updatetime = 100')
