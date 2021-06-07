@@ -12,6 +12,7 @@ local remap = vim.api.nvim_set_keymap
 
 vim.g.nvim_tree_indent_markers = 1                                   -- Display indent markers
 vim.g.nvim_tree_git_hl = 1                                           -- Display git status in file names
+vim.g.nvim_tree_update_cwd = 0                                       -- Don't update cwd on 
 
 -- Don't show listed dirs
 vim.g.nvim_tree_ignore = {
@@ -19,7 +20,7 @@ vim.g.nvim_tree_ignore = {
     "node_modules",
     ".cache",
     ".idea"
-}    
+}
 
 -- Custom icons 
 vim.g.nvim_tree_icons = {
