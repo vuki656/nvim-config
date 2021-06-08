@@ -1,11 +1,10 @@
 ------------------------------------------------------------------------------------------
 ----------------------------------- CORE -------------------------------------------------
 ------------------------------------------------------------------------------------------
-
-require('plugins')
-require('sets')
-require('remaps')
-require('colorscheme')
+require("plugins")
+require("sets")
+require("remaps")
+require("colorscheme")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- PLUGINS ----------------------------------------------
@@ -26,19 +25,20 @@ require('plugins.indent-line')
 require('plugins.todo-comments')
 require('plugins.which-key')
 require('plugins.harpoon')
+require('plugins.formatter')
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- LSPs -------------------------------------------------
 ------------------------------------------------------------------------------------------
 
-require('lsp.bash')
-require('lsp.css')
-require('lsp.docker')
-require('lsp.graphql')
-require('lsp.html')
-require('lsp.json')
-require('lsp.lua')
-require('lsp.ts')
-require('lsp.vim')
-require('lsp.yaml')
-require('lsp.diagnostics')
+require("lsp.bash")
+require("lsp.css")
+require("lsp.docker")
+require("lsp.graphql")
+require("lsp.html")
+require("lsp.json")
+require("lsp.lua")
+require("lsp.ts")
+require("lsp.vim")
+require("lsp.yaml")
+require("lsp.diagnostics")

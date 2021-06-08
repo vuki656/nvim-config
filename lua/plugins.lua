@@ -17,6 +17,7 @@ end
 ------------------------------------------------------------------------------------------
 
 return require('packer').startup(function()
+    use 'mhartington/formatter.nvim'
     use 'windwp/nvim-ts-autotag'
     use 'airblade/vim-rooter'
     use 'antoinemadec/FixCursorHold.nvim'
