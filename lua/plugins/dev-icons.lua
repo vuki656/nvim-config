@@ -1,13 +1,13 @@
 -- Name: Dev Icons
 -- Description: Custom icons
 -- Link: https://github.com/kyazdani42/nvim-web-devicons
-
-local icons = require('nvim-web-devicons')
+local icons = require("nvim-web-devicons")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- SETUP ------------------------------------------------
 ------------------------------------------------------------------------------------------
 
+-- LuaFormatter off
 icons.setup {
     override = {
         ["yarn.lock"] = {
@@ -122,4 +122,4 @@ icons.setup {
         },
     }
 }
-    
+-- LuaFormatter on

@@ -1,11 +1,10 @@
 -- Name: Galaxy Line
 -- Description: Staus line
 -- Link: https://github.com/glepnir/galaxyline.nvim
-
-local colors = require('utils.colors')
+local colors = require("utils.colors")
 local galaxy_line = require("galaxyline")
-local vcs = require('galaxyline.provider_vcs')
-local file = require('galaxyline.provider_fileinfo')
+local vcs = require("galaxyline.provider_vcs")
+local file = require("galaxyline.provider_fileinfo")
 
 local section = galaxy_line.section
 
@@ -13,10 +12,7 @@ local section = galaxy_line.section
 ------------------------------------ SETUP -----------------------------------------------
 ------------------------------------------------------------------------------------------
 
-galaxy_line.short_line_list = {
-    'NvimTree',
-    'packer'
-}
+galaxy_line.short_line_list = { "NvimTree", "packer" }
 
 section.left[1] = {
     GitIcon = {
@@ -24,11 +20,8 @@ section.left[1] = {
             return "   "
         end,
         condition = vcs.check_git_workspace,
-        highlight = {
-            colors.blue,
-            colors.background
-        }
-    }
+        highlight = { colors.blue, colors.background },
+    },
 }
 
 section.left[2] = {
@@ -36,42 +29,27 @@ section.left[2] = {
         provider = "GitBranch",
         separator = " ",
         condition = vcs.check_git_workspace,
-        highlight = {
-            colors.blue,
-            colors.background
-        },
-        separator_highlight = { 
-            nil,
-            colors.background
-        },
-    }
+        highlight = { colors.blue, colors.background },
+        separator_highlight = { nil, colors.background },
+    },
 }
 
 section.left[3] = {
     FileIcon = {
         provider = "FileIcon",
         condition = buffer_not_empty,
-        highlight = {
-            file.get_file_icon_color,
-            colors.background
-        },
-    }
+        highlight = { file.get_file_icon_color, colors.background },
+    },
 }
 
 section.left[4] = {
     FileName = {
         provider = "FileName",
         condition = buffer_not_empty,
-        highlight = {
-            colors.white,
-            colors.background
-        },
+        highlight = { colors.white, colors.background },
         separator = " ",
-        separator_highlight = {
-            colors.white,
-            colors.background
-        },
-    }
+        separator_highlight = { colors.white, colors.background },
+    },
 }
 
 section.left[5] = {
@@ -79,8 +57,8 @@ section.left[5] = {
         provider = "DiffAdd",
         condition = buffer_not_empty,
         icon = "  ",
-        highlight = { colors.green }
-    }
+        highlight = { colors.green },
+    },
 }
 
 section.left[6] = {
@@ -89,8 +67,8 @@ section.left[6] = {
         condition = buffer_not_empty,
         condition = checkwidth,
         icon = "  ",
-        highlight = { colors.orange }
-    }
+        highlight = { colors.orange },
+    },
 }
 
 section.left[7] = {
@@ -99,8 +77,8 @@ section.left[7] = {
         condition = buffer_not_empty,
         condition = checkwidth,
         icon = "  ",
-        highlight = { colors.red }
-    }
+        highlight = { colors.red },
+    },
 }
 
 section.left[8] = {
@@ -108,8 +86,8 @@ section.left[8] = {
         provider = "DiagnosticError",
         condition = buffer_not_empty,
         icon = "  ",
-        highlight = { colors.red }
-    }
+        highlight = { colors.red },
+    },
 }
 
 section.left[9] = {
@@ -117,8 +95,8 @@ section.left[9] = {
         provider = "DiagnosticWarn",
         condition = buffer_not_empty,
         icon = "  ",
-        highlight = { colors.orange }
-    }
+        highlight = { colors.orange },
+    },
 }
 
 section.right[1] = {
@@ -131,53 +109,37 @@ section.right[1] = {
                 V = " VISUAL ",
                 [""] = " VISUAL ",
                 v = " VISUAL ",
-                R = " REPLACE "
+                R = " REPLACE ",
             }
 
             return alias[vim.fn.mode()]
         end,
-        highlight = {
-            colors.background,
-            colors.red
-        },
+        highlight = { colors.background, colors.red },
         separator = " ",
-    }
+    },
 }
 
 section.right[2] = {
     Time = {
         provider = function()
-            return ' ' .. '  ' .. os.date('%H:%M') .. ' '
+            return " " .. "  " .. os.date("%H:%M") .. " "
         end,
-        highlight = {
-            colors.background,
-            colors.green
-        },
-    }
+        highlight = { colors.background, colors.green },
+    },
 }
 
 section.short_line_left[1] = {
-  BufferType = {
-    provider = 'FileTypeName',
-    separator = ' ',
-    separator_highlight = {
-        nil,
-        colors.backgroud
+    BufferType = {
+        provider = "FileTypeName",
+        separator = " ",
+        separator_highlight = { nil, colors.backgroud },
+        highlight = { colors.blue, colors.background, "bold" },
     },
-    highlight = {
-        colors.blue,
-        colors.background,
-        'bold'
-    }
-  }
 }
 
 section.short_line_right[1] = {
-  BufferIcon = {
-    provider= 'BufferIcon',
-    highlight = {
-        colors.white,
-        colors.background
-    }
-  }
+    BufferIcon = {
+        provider = "BufferIcon",
+        highlight = { colors.white, colors.background },
+    },
 }

@@ -19,7 +19,7 @@ formatter.setup(
                         args = {
                             "-i",
                             "-c",
-                            "~/code-style-configs/config.yaml",
+                            "~/code-style-configs/lua.yaml",
                         },
                         stdin = true,
                     }

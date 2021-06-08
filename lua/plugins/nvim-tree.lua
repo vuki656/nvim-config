@@ -1,46 +1,30 @@
 -- Name: Nvim Tree
 -- Description: File tree
 -- Link: https://github.com/kyazdani42/nvim-tree.lua
+local colors = require("utils.colors")
 
-local colors = require('utils.colors')
-
-local remap = vim.api.nvim_set_keymap 
+local remap = vim.api.nvim_set_keymap
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- CONFIG -----------------------------------------------
 ------------------------------------------------------------------------------------------
 
-vim.g.nvim_tree_indent_markers = 1                                   -- Display indent markers
-vim.g.nvim_tree_git_hl = 1                                           -- Display git status in file names
-vim.g.nvim_tree_update_cwd = 0                                       -- Don't update cwd on 
+vim.g.nvim_tree_indent_markers = 1 -- Display indent markers
+vim.g.nvim_tree_git_hl = 1 -- Display git status in file names
+vim.g.nvim_tree_update_cwd = 0 -- Don't update cwd on
 
 -- Don't show listed dirs
-vim.g.nvim_tree_ignore = {
-    ".git",
-    "node_modules",
-    ".cache",
-    ".idea"
-}
+vim.g.nvim_tree_ignore = { ".git", "node_modules", ".cache", ".idea" }
 
--- Custom icons 
+-- Custom icons
 vim.g.nvim_tree_icons = {
     default = "",
     symlink = "",
-    folder = {
-        default = "",
-        open = "ﱮ",
-        empty_open = "ﱮ",
-        empty = "",
-        symlink = "",
-    }
+    folder = { default = "", open = "ﱮ", empty_open = "ﱮ", empty = "", symlink = "" },
 }
 
 -- Set where git appears
-vim.g.nvim_tree_show_icons = {
-    git = 0,
-    folders = 1,
-    files = 1
-}
+vim.g.nvim_tree_show_icons = { git = 0, folders = 1, files = 1 }
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- COLORS -----------------------------------------------
@@ -60,7 +44,7 @@ vim.cmd([[highlight NvimTreeOpenedFolderName    guifg=]] .. colors.white)
 ------------------------------------------------------------------------------------------
 
 -- Toggle file tree
-remap('n', '<C-n>', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
+remap("n", "<C-n>", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
 
 -- Find opened file in tree
-remap('n', '<leader>to', ':NvimTreeFindFile<CR>', { noremap = true, silent = true })
+remap("n", "<leader>to", ":NvimTreeFindFile<CR>", { noremap = true, silent = true })

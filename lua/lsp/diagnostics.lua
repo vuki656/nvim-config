@@ -1,15 +1,15 @@
-require('utils.colors')
+require("utils.colors")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- SETUP ------------------------------------------------
 ------------------------------------------------------------------------------------------
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-  vim.lsp.diagnostic.on_publish_diagnostics, {
-    signs = false,                                    -- Disable LSP signs
-    underline = true,                                 -- Underline diagnostics
-    virtual_text = false,                             -- Hide virtual text
-  }
+    vim.lsp.diagnostic.on_publish_diagnostics, {
+        signs = false, -- Disable LSP signs
+        underline = true, -- Underline diagnostics
+        virtual_text = false, -- Hide virtual text
+    }
 )
 
 ------------------------------------------------------------------------------------------
@@ -25,4 +25,3 @@ vim.cmd([[highlight LspDiagnosticsUnderlineError            guifg=]] .. colors.r
 vim.cmd([[highlight LspDiagnosticsUnderlineWarning          guifg=]] .. colors.yellow)
 vim.cmd([[highlight LspDiagnosticsUnderlineInformation      guifg=]] .. colors.blue)
 vim.cmd([[highlight LspDiagnosticsUnderlineHint             guifg=]] .. colors.orange)
-

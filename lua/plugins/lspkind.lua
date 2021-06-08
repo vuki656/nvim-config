@@ -1,8 +1,7 @@
 -- Name: Lsp Kind
 -- Description: Autosuggestion icons
 -- Link: https://github.com/onsails/lspkind-nvim
-
-local lspkind = require('lspkind')
+local lspkind = require("lspkind")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- SETUP ------------------------------------------------

@@ -1,8 +1,6 @@
 -- Name: Telescope
--- Description: Finder 
+-- Description: Finder
 -- Link: https://github.com/nvim-telescope/telescope.nvim
-
-local actions = require('telescope.actions')
 local telescope = require("telescope")
 
 local remap = vim.api.nvim_set_keymap
@@ -11,14 +9,14 @@ local remap = vim.api.nvim_set_keymap
 ----------------------------------- SETUP ------------------------------------------------
 ------------------------------------------------------------------------------------------
 
-telescope.setup{
+telescope.setup {
     -- FIXME: Currently doesent work when setup here => https://github.com/nvim-telescope/telescope.nvim/issues/895#issuecomment-855367980
     -- Should be fixed here: https://github.com/nvim-telescope/telescope.nvim/pull/839
     -- When fixed, remove shorten_path = true sufix from git files and text pickers below
-    shorten_path=true 
+    shorten_path = true,
 }
 
-telescope.load_extension('fzy_native')
+telescope.load_extension("fzy_native")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- REMAPS -----------------------------------------------
@@ -56,4 +54,3 @@ remap("n", "<leader>gc", ":Telescope git_commits<CR>", { noremap = true, silent 
 
 -- List file commits
 remap("n", "<leader>gfc", ":Telescope git_bcommits<CR>", { noremap = true, silent = true })
-

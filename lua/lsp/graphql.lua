@@ -1,1 +1,1 @@
-require'lspconfig'.graphql.setup{}
+require"lspconfig".graphql.setup {}
