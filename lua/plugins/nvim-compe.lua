@@ -2,11 +2,15 @@
 -- Description: Autocompletion
 -- Link: https://github.com/hrsh7th/nvim-compe
 
+local compe = require('compe')
+
+local remap = vim.api.nvim_set_keymap 
+
 ------------------------------------------------------------------------------------------
 ----------------------------------- SETUP ------------------------------------------------
 ------------------------------------------------------------------------------------------
 
-require'compe'.setup {
+compe.setup {
   enabled = true;
   autocomplete = true;
   debug = false;
@@ -36,21 +40,21 @@ vim.o.completeopt = "menuone,noselect"
 ------------------------------------------------------------------------------------------
 
 -- Tab to navigate forward in suggestion dialog
-vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
-vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
+remap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
+remap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
 
 -- Shift + Tab to navigate backwards in suggestion dialog
-vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
-vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
+remap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
+remap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 
 -- CTRL + Space to open the suggestion dialog
-vim.api.nvim_set_keymap("i", "<C-Space>", "compe#complete()", {expr = true})
+remap("i", "<C-Space>", "compe#complete()", {expr = true})
 
 -- Enter to select suggestion dialog item
-vim.api.nvim_set_keymap("i", "<CR>", "compe#confirm('<CR>')", {expr = true})
+remap("i", "<CR>", "compe#confirm('<CR>')", {expr = true})
 
 -- Close suggestion dialog
-vim.api.nvim_set_keymap("i", "<C-e>", "compe#close('<C-e>')", {expr = true})
+remap("i", "<C-e>", "compe#close('<C-e>')", {expr = true})
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- CONFIG -----------------------------------------------
