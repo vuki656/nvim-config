@@ -37,7 +37,6 @@ section.left[2] = {
 section.left[3] = {
     FileIcon = {
         provider = "FileIcon",
-        condition = buffer_not_empty,
         highlight = { file.get_file_icon_color, colors.background },
     },
 }
@@ -45,7 +44,6 @@ section.left[3] = {
 section.left[4] = {
     FileName = {
         provider = "FileName",
-        condition = buffer_not_empty,
         highlight = { colors.white, colors.background },
         separator = " ",
         separator_highlight = { colors.white, colors.background },
@@ -55,7 +53,6 @@ section.left[4] = {
 section.left[5] = {
     DiffAdd = {
         provider = "DiffAdd",
-        condition = buffer_not_empty,
         icon = "  ",
         highlight = { colors.green },
     },
@@ -64,8 +61,6 @@ section.left[5] = {
 section.left[6] = {
     DiffModified = {
         provider = "DiffModified",
-        condition = buffer_not_empty,
-        condition = checkwidth,
         icon = "  ",
         highlight = { colors.orange },
     },
@@ -74,8 +69,6 @@ section.left[6] = {
 section.left[7] = {
     DiffRemove = {
         provider = "DiffRemove",
-        condition = buffer_not_empty,
-        condition = checkwidth,
         icon = "  ",
         highlight = { colors.red },
     },
@@ -84,7 +77,6 @@ section.left[7] = {
 section.left[8] = {
     DiagnosticError = {
         provider = "DiagnosticError",
-        condition = buffer_not_empty,
         icon = "  ",
         highlight = { colors.red },
     },
@@ -93,7 +85,6 @@ section.left[8] = {
 section.left[9] = {
     DiagnosticWarn = {
         provider = "DiagnosticWarn",
-        condition = buffer_not_empty,
         icon = "  ",
         highlight = { colors.orange },
     },
@@ -138,8 +129,5 @@ section.short_line_left[1] = {
 }
 
 section.short_line_right[1] = {
-    BufferIcon = {
-        provider = "BufferIcon",
-        highlight = { colors.white, colors.background },
-    },
+    BufferIcon = { provider = "BufferIcon", highlight = { colors.white, colors.background } },
 }
