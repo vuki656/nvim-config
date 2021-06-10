@@ -31,7 +31,7 @@ nvim_lsp.tsserver.setup {
 ------------------------------------------------------------------------------------------
 
 -- Apply first lsp fix
-remap("n", "<leader>lf", ":TSLspFixCurrent<CR>", { noremap = true, silent = true })
+remap("n", "<leader>qf", ":TSLspFixCurrent<CR>", { noremap = true, silent = true })
 
 -- Rename file
 remap("n", "<leader>fr", ":TSLspRenameFile<CR>", { noremap = true, silent = true })
