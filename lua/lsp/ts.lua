@@ -19,6 +19,7 @@ nvim_lsp.tsserver.setup {
             format_on_save = false,
         }
 
+        client.resolved_capabilities.document_formatting = false
         ts_utils.setup_client(client)
     end,
 }

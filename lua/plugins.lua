@@ -33,7 +33,7 @@ return require("packer").startup(
             end,
             ft = { "markdown" },
         }
-        use "jose-elias-alvarez/nvim-lsp-ts-utils"
+        use { "jose-elias-alvarez/nvim-lsp-ts-utils", requires = { "/jose-elias-alvarez/null-ls.nvim" } }
         use "kyazdani42/nvim-tree.lua"
         use { "lewis6991/gitsigns.nvim", requires = { "nvim-lua/plenary.nvim" } }
         use "mhinz/vim-startify"
