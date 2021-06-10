@@ -35,7 +35,7 @@ formatter.setup(
 
 -- Format code
 remap(
-    "n", "<leader>f",
+    "n", "<leader>ff",
     ":FormatWrite<CR>",
     { silent = true, noremap = true }
 )

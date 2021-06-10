@@ -38,5 +38,5 @@ vim.cmd(
         sign define LspDiagnosticsSignWarning text= texthl=LspDiagnosticsSignWarning 
         sign define LspDiagnosticsSignInformation text= texthl=LspDiagnosticsSignInformation 
         sign define LspDiagnosticsSignHint text= texthl=LspDiagnosticsSignHint 
-]]
+    ]]
 )
