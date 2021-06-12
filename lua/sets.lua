@@ -33,12 +33,13 @@ set_window.wrap = false -- Disables line wrapping
 
 vim.cmd(
     [[
-    colorscheme one
-    syntax on
-    set noshowmode  
-    set noshowcmd 
-    set nohlsearch
-]]
+        colorscheme one
+        syntax on
+        set noshowmode  
+        set noshowcmd 
+        set nohlsearch
+        set nrformats=
+    ]]
 )
 
 -- Hide ~ from sign column
