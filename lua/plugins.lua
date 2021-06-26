@@ -17,14 +17,15 @@ end
 
 return require("packer").startup(
     function()
-        use "mhartington/formatter.nvim"
-        use "windwp/nvim-ts-autotag"
         use "airblade/vim-rooter"
         use "antoinemadec/FixCursorHold.nvim"
         use "folke/todo-comments.nvim"
         use "folke/which-key.nvim"
         use "glepnir/lspsaga.nvim"
-        use { "glepnir/galaxyline.nvim", requires = { "kyazdani42/nvim-web-devicons" } }
+        use { 
+            "glepnir/galaxyline.nvim",
+            requires = { "kyazdani42/nvim-web-devicons" }
+        }
         use "hrsh7th/nvim-compe"
         use {
             "iamcco/markdown-preview.nvim",
@@ -33,10 +34,17 @@ return require("packer").startup(
             end,
             ft = { "markdown" },
         }
-        use { "jose-elias-alvarez/nvim-lsp-ts-utils", requires = { "/jose-elias-alvarez/null-ls.nvim" } }
+        use { 
+            "jose-elias-alvarez/nvim-lsp-ts-utils",
+            requires = { "/jose-elias-alvarez/null-ls.nvim" }
+        }
         use "kyazdani42/nvim-tree.lua"
-        use { "lewis6991/gitsigns.nvim", requires = { "nvim-lua/plenary.nvim" } }
+        use { 
+            "lewis6991/gitsigns.nvim",
+            requires = { "nvim-lua/plenary.nvim" }
+        }
         use "mhinz/vim-startify"
+        use "mhartington/formatter.nvim"
         use "neovim/nvim-lspconfig"
         use "nvim-treesitter/nvim-treesitter"
         use "nvim-treesitter/playground"
@@ -56,6 +64,7 @@ return require("packer").startup(
         use "ThePrimeagen/harpoon"
         use "tweekmonster/startuptime.vim"
         use "wbthomason/packer.nvim"
+        use "windwp/nvim-ts-autotag"
         use "windwp/nvim-autopairs"
         use "Yggdroot/indentLine"
     end
