@@ -7,7 +7,20 @@ local remap = vim.api.nvim_set_keymap
 ----------------------------------- SETUP ------------------------------------------------
 ------------------------------------------------------------------------------------------
 
-vim.g.startify_lists = { { type = "dir", header = { "   MRU - Project" } }, { type = "files", header = { "   MRU" } } }
+-- Catefories to display
+vim.g.startify_lists = { 
+    {
+        type = "dir",
+        header = { "   MRU - Project" }
+    },
+    {
+        type = "files",
+        header = { "   MRU" }
+    }
+}
+
+-- Start list at 1
+vim.cmd("let g:startify_custom_indices = map(range(1,100), 'string(v:val)')")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- REMAPS -----------------------------------------------
