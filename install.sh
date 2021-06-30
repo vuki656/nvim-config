@@ -1,3 +1,5 @@
+#!/bin/sh
+
 npm i -g vscode-css-languageserver-bin
 npm i -g bash-language-server
 npm i -g diagnostic-languageserver
