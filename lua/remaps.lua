@@ -23,3 +23,12 @@ remap("n", "<C-k>", "<C-w>k", { noremap = true, silent = true })
 
 -- Open markdown preview in chrome
 remap("n", "<leader>mp", ":MarkdownPreviewToggle<CR>", { noremap = true, silent = true })
+
+-- Insert empty line below
+remap("n", "gj", "o<Esc>", { noremap = true, silent = true })
+
+-- Insert empty line above
+remap("n", "gk", "O<Esc>", { noremap = true, silent = true })
+
+-- Delete everything on the line
+remap("n", "<leader>d", "<S-s><Esc>", { noremap = true, silent = true })
