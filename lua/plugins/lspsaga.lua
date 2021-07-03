@@ -46,6 +46,12 @@ remap("n", "[d", ":Lspsaga diagnostic_jump_next<CR>", { noremap = true })
 ----------------------------------- COLORS -----------------------------------------------
 ------------------------------------------------------------------------------------------
 
-vim.cmd([[highlight LspSagaCodeActionBorder              guifg=]] .. colors.blue)
-vim.cmd([[highlight LspSagaCodeActionTitle               guifg=]] .. colors.red .. " gui='bold'")
-vim.cmd([[highlight DiagnosticError                      guifg=]] .. colors.red)
+-- Code action propmt
+vim.cmd([[highlight LspSagaCodeActionBorder              guifg=]] .. colors.red)
+vim.cmd([[highlight LspSagaCodeActionTitle               guifg=]] .. colors.green .. " gui='bold'")
+vim.cmd([[highlight LspSagaCodeActionTruncateLine        guifg=]] .. colors.red)
+vim.cmd([[highlight LspSagaCodeActionContent             guifg=]] .. colors.green)
+
+-- Rename propt
+vim.cmd([[highlight LspSagaRenameBorder        guifg=]] .. colors.red)
+vim.cmd([[highlight LspSagaRenamePromptPrefix  guifg=]] .. colors.green)
