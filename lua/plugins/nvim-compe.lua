@@ -23,7 +23,12 @@ compe.setup {
     max_menu_width = 100,
     documentation = true,
 
-    source = { path = true, buffer = true, calc = true, nvim_lsp = true, nvim_lua = true },
+    source = { 
+        path = true,
+        buffer = true,
+        calc = true,
+        vsnip = true;
+    },
 }
 
 vim.o.completeopt = "menuone,noselect"

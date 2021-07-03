@@ -3,6 +3,17 @@ local ts_utils = require("nvim-lsp-ts-utils")
 
 local remap = vim.api.nvim_set_keymap
 
+-- Snippets support
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+capabilities.textDocument.completion.completionItem.resolveSupport = {
+  properties = {
+    'documentation',
+    'detail',
+    'additionalTextEdits',
+  }
+}
+
 nvim_lsp.tsserver.setup {
     on_attach = function(client)
         ts_utils.setup {
@@ -24,6 +35,7 @@ nvim_lsp.tsserver.setup {
         client.resolved_capabilities.document_formatting = false
         ts_utils.setup_client(client)
     end,
+    capabilities = capabilities,
 }
 
 ------------------------------------------------------------------------------------------

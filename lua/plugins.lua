@@ -28,6 +28,10 @@ return require("packer").startup(
         }
         use "hrsh7th/nvim-compe"
         use {
+            "hrsh7th/vim-vsnip",
+            requires = "hrsh7th/vim-vsnip-integ"
+        }
+        use {
             "iamcco/markdown-preview.nvim",
             run = function()
                 vim.fn["mkdp#util#install"]()
