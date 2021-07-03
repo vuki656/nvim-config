@@ -62,6 +62,7 @@ return require("packer").startup(
         }
         use "onsails/lspkind-nvim"
         use "psliwka/vim-smoothie"
+        use "Pocco81/AutoSave.nvim"
         use "rakr/vim-one"
         use "tpope/vim-fugitive"
         use "tpope/vim-commentary"

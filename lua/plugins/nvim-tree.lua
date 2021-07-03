@@ -48,3 +48,6 @@ remap("n", "<C-n>", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
 
 -- Find opened file in tree
 remap("n", "<leader>to", ":NvimTreeFindFile<CR>", { noremap = true, silent = true })
+
+-- Refresh tree
+remap("n", "<leader>tr", ":NvimTreeRefresh<CR>", { noremap = true, silent = true })

@@ -1,3 +1,7 @@
+-- Name:
+-- Description: Autocompletion
+-- Link: https://github.com/hrsh7th/vim-vsnip
+
 vim.g.vsnip_snippet_dir = '~/.config/nvim/lua/plugins/snippet'          -- Display indent markers
 
 -- Navigate to next snippet placeholder with tab

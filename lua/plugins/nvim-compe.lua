@@ -1,6 +1,7 @@
 -- Name: Compe
 -- Description: Autocompletion
 -- Link: https://github.com/hrsh7th/nvim-compe
+
 local compe = require("compe")
 
 local remap = vim.api.nvim_set_keymap
