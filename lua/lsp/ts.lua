@@ -48,3 +48,5 @@ remap("n", "<leader>qf", ":TSLspFixCurrent<CR>", { noremap = true, silent = true
 -- Rename file
 remap("n", "<leader>fr", ":TSLspRenameFile<CR>", { noremap = true, silent = true })
 
+-- Import all
+remap("n", "<leader>fi", ":TSLspImportAll<CR>", { noremap = true, silent = true })
