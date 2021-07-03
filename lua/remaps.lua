@@ -4,7 +4,7 @@ local remap = vim.api.nvim_set_keymap
 remap("n", "<leader>sf", ":luafil %<CR>", { noremap = true, silent = true })
 
 -- Format file
-remap("n", "<leader>ff", ":lua vim.lsp.buf.formatting()<CR>", { noremap = true, silent = true })
+remap("n", "<leader>ef", ":lua vim.lsp.buf.formatting()<CR>", { noremap = true, silent = true })
 
 -- Go to normal mode with jj
 remap("i", "jj", "<ESC>", { noremap = true, silent = true })

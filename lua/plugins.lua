@@ -20,7 +20,6 @@ return require("packer").startup(
         use "airblade/vim-rooter"
         use "antoinemadec/FixCursorHold.nvim"
         use "folke/todo-comments.nvim"
-        use "folke/which-key.nvim"
         use "glepnir/lspsaga.nvim"
         use { 
             "glepnir/galaxyline.nvim",
