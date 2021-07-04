@@ -52,6 +52,9 @@ vim.cmd([[highlight LspSagaCodeActionTitle               guifg=]] .. colors.gree
 vim.cmd([[highlight LspSagaCodeActionTruncateLine        guifg=]] .. colors.red)
 vim.cmd([[highlight LspSagaCodeActionContent             guifg=]] .. colors.green)
 
+-- Doc propmt
+vim.cmd([[highlight LspSagaDocTruncateLine               guifg=]] .. colors.red)
+
 -- Rename propt
 vim.cmd([[highlight LspSagaRenameBorder        guifg=]] .. colors.red)
 vim.cmd([[highlight LspSagaRenamePromptPrefix  guifg=]] .. colors.green)
