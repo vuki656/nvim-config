@@ -41,6 +41,12 @@
       "}"
     ]
   },
+  "Console": {
+    "prefix": ["clg"],
+    "body": [
+      "console.log($0)",
+    ]
+  },
   "Export": {
     "prefix": ["ea"],
     "body": [
