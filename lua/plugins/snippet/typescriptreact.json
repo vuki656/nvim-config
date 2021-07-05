@@ -24,33 +24,5 @@
       "    )",
       "}"
     ]
-  },
-  "Arrow Function": {
-    "prefix": ["fn"],
-    "body": [
-      "const $1 = ($2) => {",
-      "    $0",
-      "}"
-    ]
-  },
-  "Type": {
-    "prefix": ["et"],
-    "body": [
-      "export type $1 = {",
-      "    $0",
-      "}"
-    ]
-  },
-  "Console": {
-    "prefix": ["clg"],
-    "body": [
-      "console.log($0)",
-    ]
-  },
-  "Export": {
-    "prefix": ["ea"],
-    "body": [
-      "export * from '$0'"
-    ]
   }
 }
