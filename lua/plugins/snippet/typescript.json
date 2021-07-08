@@ -24,7 +24,7 @@
   "Export": {
     "prefix": ["ea"],
     "body": [
-      "export * from '$0'"
+      "export * from './$0'"
     ]
   }
 }
