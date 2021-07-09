@@ -5,13 +5,11 @@
 ################################################################################################ 
 
 install_lsps() {
-    npm i -g vscode-css-languageserver-bin -y
     npm i -g bash-language-server -y
     npm i -g diagnostic-languageserver -y
     npm i -g dockerfile-language-server-nodejs -y
     npm i -g graphql-language-service-cli -y
-    npm i -g vscode-html-languageserver-bin -y
-    npm i -g vscode-json-languageserver -y
+    npm i -g vscode-langservers-extracted -y
     npm i -g typescript typescript-language-server -y
     npm i -g vim-language-server -y
     npm i -g yaml-language-server -y
