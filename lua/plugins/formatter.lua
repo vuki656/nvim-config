@@ -12,6 +12,15 @@ local remap = vim.api.nvim_set_keymap
 
 formatter.setup({
     filetype = {
+        sh = {
+            function()
+                return {
+                    exe = "beautysh",
+                    args = { vim.api.nvim_buf_get_name(0) },
+                    stdin = false,
+                }
+            end,
+        },
         lua = {
             function()
                 return {
