@@ -1,6 +1,7 @@
 -- Name: Indent Line
 -- Description: Indent guidelines
 -- Link: https://github.com/Yggdroot/indentLine
+
 local colors = require("utils.colors")
 
 ------------------------------------------------------------------------------------------

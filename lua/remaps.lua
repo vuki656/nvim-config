@@ -38,4 +38,9 @@ remap("n", "<C-s>", "<C-w><", { noremap = true, silent = true })
 remap("n", "<C-a>", "<C-w>>", { noremap = true, silent = true })
 
 -- Send codegen command to other tmux window
-remap("n", "<leader>yc", ":!tmux send-keys -t \"QIA Dashboard\":TERM.1 \"yarn codegen\" C-m <CR><CR>", { noremap = true, silent = true })
+remap(
+    "n",
+    "<leader>yc",
+    ':!tmux send-keys -t "QIA Dashboard":TERM.1 "yarn codegen" C-m <CR><CR>',
+    { noremap = true, silent = true }
+)

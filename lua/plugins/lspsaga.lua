@@ -1,5 +1,5 @@
 -- Name: LSP Saga
--- Description: LSP utils wrapper 
+-- Description: LSP utils wrapper
 -- Link: https://github.com/glepnir/lspsaga.nvim
 local colors = require("utils.colors")
 local lsp_saga = require("lspsaga")
@@ -10,12 +10,12 @@ local remap = vim.api.nvim_set_keymap
 ----------------------------------- SETUP ------------------------------------------------
 ------------------------------------------------------------------------------------------
 
-lsp_saga.init_lsp_saga {
+lsp_saga.init_lsp_saga({
     use_saga_diagnostic_sign = false,
     code_action_icon = "",
     border_style = "round",
     finder_action_keys = { open = "<CR>" },
-}
+})
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- REMAPS -----------------------------------------------

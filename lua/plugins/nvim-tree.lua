@@ -9,18 +9,33 @@ local remap = vim.api.nvim_set_keymap
 ----------------------------------- CONFIG -----------------------------------------------
 ------------------------------------------------------------------------------------------
 
-vim.g.nvim_tree_indent_markers = 1          -- Display indent markers
-vim.g.nvim_tree_git_hl = 1                  -- Display git status in file names
-vim.g.nvim_tree_auto_open = 1               -- Auto open tree
+-- Display indent markers
+vim.g.nvim_tree_indent_markers = 1
+
+-- Display git status in file names
+vim.g.nvim_tree_git_hl = 1
+
+-- Auto open tree
+vim.g.nvim_tree_auto_open = 1
 
 -- Don't show listed dirs
-vim.g.nvim_tree_ignore = { ".git", ".cache", ".idea" }
+vim.g.nvim_tree_ignore = {
+    ".git",
+    ".cache",
+    ".idea",
+}
 
 -- Custom icons
 vim.g.nvim_tree_icons = {
     default = "",
     symlink = "",
-    folder = { default = "", open = "ﱮ", empty_open = "ﱮ", empty = "", symlink = "" },
+    folder = {
+        default = "",
+        open = "ﱮ",
+        empty_open = "ﱮ",
+        empty = "",
+        symlink = "",
+    },
 }
 
 -- Set where git appears

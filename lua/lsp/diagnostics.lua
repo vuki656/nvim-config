@@ -1,20 +1,17 @@
 local colors = require("utils.colors")
-local null_ls = require('null-ls')
+local null_ls = require("null-ls")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- SETUP ------------------------------------------------
 ------------------------------------------------------------------------------------------
 
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-    vim.lsp.diagnostic.on_publish_diagnostics, {
-        signs = false, -- Disable LSP signs
-        underline = true, -- Underline diagnostics
-        virtual_text = false, -- Hide virtual text
-    }
-)
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+    signs = false, -- Disable LSP signs
+    underline = true, -- Underline diagnostics
+    virtual_text = false, -- Hide virtual text
+})
 
-
-null_ls.setup {}
+null_ls.setup({})
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- COLORS -----------------------------------------------

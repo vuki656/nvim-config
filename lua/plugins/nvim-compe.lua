@@ -10,7 +10,7 @@ local remap = vim.api.nvim_set_keymap
 ----------------------------------- SETUP ------------------------------------------------
 ------------------------------------------------------------------------------------------
 
-compe.setup {
+compe.setup({
     enabled = true,
     autocomplete = true,
     debug = false,
@@ -30,7 +30,7 @@ compe.setup {
         max_height = math.floor(vim.o.lines * 0.3),
         min_height = 1,
     },
-    source = { 
+    source = {
         path = true,
         buffer = true,
         calc = true,
@@ -38,7 +38,7 @@ compe.setup {
         nvim_lsp = true,
         nvim_lua = true,
     },
-}
+})
 
 vim.o.completeopt = "menuone,noselect"
 
@@ -62,7 +62,6 @@ remap("i", "<CR>", "compe#confirm('<CR>')", { expr = true })
 
 -- Close suggestion dialog
 remap("i", "<C-e>", "compe#close('<C-e>')", { expr = true })
-
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- COLORS -----------------------------------------------

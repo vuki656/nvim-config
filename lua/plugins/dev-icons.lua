@@ -1,44 +1,44 @@
 -- Name: Dev Icons
 -- Description: Custom icons
 -- Link: https://github.com/kyazdani42/nvim-web-devicons
+
 local icons = require("nvim-web-devicons")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- SETUP ------------------------------------------------
 ------------------------------------------------------------------------------------------
 
--- LuaFormatter off
-icons.setup {
+icons.setup({
     override = {
         ["yarn.lock"] = {
             icon = "",
             color = "#cc3534",
-            name = "YarnLock"
+            name = "YarnLock",
         },
         ["package.json"] = {
             icon = "",
             color = "#cc3534",
-            name = "PackageJson"
+            name = "PackageJson",
         },
         [".npmrc"] = {
             icon = "",
             color = "#cc3534",
-            name = "PackageJson"
+            name = "PackageJson",
         },
         [".env"] = {
             icon = "﬛",
             color = "#e79627",
-            name = "Env"
+            name = "Env",
         },
         [".env.example"] = {
             icon = "﬛",
             color = "#e79627",
-            name = "EnvExample"
+            name = "EnvExample",
         },
         [".env.local"] = {
             icon = "﬛",
             color = "#e79627",
-            name = "EnvLocal"
+            name = "EnvLocal",
         },
         ["js"] = {
             icon = "",
@@ -115,6 +115,5 @@ icons.setup {
             color = "#72b823",
             name = "Nvmrc",
         },
-    }
-}
--- LuaFormatter on
+    },
+})

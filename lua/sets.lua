@@ -31,16 +31,15 @@ set_window.signcolumn = "yes" -- Show sidebar
 set_window.number = true -- Show current line number
 set_window.wrap = false -- Disables line wrapping
 
-vim.cmd(
-    [[
+vim.cmd([[
         colorscheme one
         syntax on
         set noshowmode  
         set noshowcmd 
         set nohlsearch
         set nrformats=
-    ]]
-)
+        set formatoptions-=cro
+]])
 
 -- Hide ~ from sign column
 vim.cmd("hi EndOfBuffer guifg=#282c34")

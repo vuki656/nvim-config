@@ -1,10 +1,10 @@
 colors = require("utils.colors")
 
-require"nvim-treesitter.configs".setup {
+require("nvim-treesitter.configs").setup({
     ensure_installed = "maintained",
     highlight = { enable = true },
     autotag = { enable = true },
-}
+})
 
 vim.cmd([[highlight! TSKeyword              guifg=]] .. colors.purple)
 vim.cmd([[highlight! TSInclude              guifg=]] .. colors.purple)
@@ -32,11 +32,9 @@ vim.cmd([[highlight! TSTag                  guifg=]] .. colors.red)
 vim.cmd([[highlight! StatusLineNC           guifg=]] .. colors.background)
 
 -- LSP Signs
-vim.cmd(
-    [[
+vim.cmd([[
         sign define LspDiagnosticsSignError text= texthl=LspDiagnosticsSignError 
         sign define LspDiagnosticsSignWarning text= texthl=LspDiagnosticsSignWarning 
         sign define LspDiagnosticsSignInformation text= texthl=LspDiagnosticsSignInformation 
         sign define LspDiagnosticsSignHint text= texthl=LspDiagnosticsSignHint 
-    ]]
-)
+    ]])
