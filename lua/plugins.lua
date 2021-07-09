@@ -39,7 +39,7 @@ return require("packer").startup(
         }
         use { 
             "jose-elias-alvarez/nvim-lsp-ts-utils",
-            requires = { "/jose-elias-alvarez/null-ls.nvim" }
+            requires = { "jose-elias-alvarez/null-ls.nvim" }
         }
         use "kyazdani42/nvim-tree.lua"
         use { 
