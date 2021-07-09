@@ -48,6 +48,7 @@ return require("packer").startup(
         }
         use "mhinz/vim-startify"
         use "mhartington/formatter.nvim"
+        use "mbbill/undotree"
         use "neovim/nvim-lspconfig"
         use "nvim-treesitter/nvim-treesitter"
         use "nvim-treesitter/playground"

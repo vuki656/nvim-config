@@ -26,6 +26,7 @@ require("plugins.todo-comments")
 require("plugins.harpoon")
 require("plugins.formatter")
 require("plugins.vsnip")
+require("plugins.undotree")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- LSPs -------------------------------------------------

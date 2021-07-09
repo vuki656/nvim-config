@@ -36,3 +36,4 @@ remap("n", "<leader>d", "<S-s><Esc>", { noremap = true, silent = true })
 -- Shift buffer size horizontaly
 remap("n", "<C-s>", "<C-w><", { noremap = true, silent = true })
 remap("n", "<C-a>", "<C-w>>", { noremap = true, silent = true })
+
