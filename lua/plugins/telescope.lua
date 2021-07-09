@@ -9,12 +9,11 @@ local remap = vim.api.nvim_set_keymap
 ----------------------------------- SETUP ------------------------------------------------
 ------------------------------------------------------------------------------------------
 
-telescope.setup {
-    -- FIXME: Currently doesent work when setup here => https://github.com/nvim-telescope/telescope.nvim/issues/895#issuecomment-855367980
-    -- Should be fixed here: https://github.com/nvim-telescope/telescope.nvim/pull/839
-    -- When fixed, remove shorten_path = true sufix from git files and text pickers below
-    shorten_path = true,
-}
+telescope.setup({
+    defaults = {
+        path_display = { "tail" },
+    },
+})
 
 telescope.load_extension("fzy_native")
 
@@ -25,10 +24,10 @@ telescope.load_extension("fzy_native")
 ----------------------------------- FIND -------------------------------------------------
 
 -- Find git files in project
-remap("n", "<leader>pf", ":Telescope git_files shorten_path=true<CR>", { noremap = true, silent = true })
+remap("n", "<leader>pf", ":Telescope git_files<CR>", { noremap = true, silent = true })
 
 -- Find text in project
-remap("n", "<leader>ps", ":Telescope live_grep shorten_path=true<CR>", { noremap = true, silent = true })
+remap("n", "<leader>ps", ":Telescope live_grep<CR>", { noremap = true, silent = true })
 
 ----------------------------------- LSP --------------------------------------------------
 
