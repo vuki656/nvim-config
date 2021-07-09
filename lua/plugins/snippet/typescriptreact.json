@@ -1,28 +1,32 @@
 {
-  "Function Component with Props": {
-    "prefix": ["rfp"],
-    "body": [
-      "import * as React from 'react'",
-      "",
-      "export const $1: React.FunctionComponent<$2> = (props) => {",
-      "    const { $3 } = props",
-      "",
-      "    return (",
-      "        $0",
-      "    )",
-      "}"
-    ]
-  },
-  "Function Component": {
-    "prefix": ["rfc"],
-    "body": [
-      "import * as React from 'react'",
-      "",
-      "export const $1: React.FunctionComponent = () => {",
-      "    return (",
-      "        $0",
-      "    )",
-      "}"
-    ]
-  }
+    "Function Component with Props": {
+        "prefix": [
+            "rfp"
+        ],
+        "body": [
+            "import * as React from 'react'",
+            "",
+            "export const $1: React.FunctionComponent<$2> = (props) => {",
+            "    const { $3 } = props",
+            "",
+            "    return (",
+            "        $0",
+            "    )",
+            "}"
+        ]
+    },
+    "Function Component": {
+        "prefix": [
+            "rfc"
+        ],
+        "body": [
+            "import * as React from 'react'",
+            "",
+            "export const $1: React.FunctionComponent = () => {",
+            "    return (",
+            "        $0",
+            "    )",
+            "}"
+        ]
+    }
 }
