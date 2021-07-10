@@ -209,3 +209,16 @@ libjpeg
 zlib
 libxtst
 ueberzug
+nodev
+cleana
+autoclean
+autoremove
+cleanb
+upgradea
+upgradeb
+xargs
+egrep
+tput
+bashrc
+linuxbrew
+shellenv
