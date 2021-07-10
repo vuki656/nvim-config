@@ -45,6 +45,9 @@ vars.remap.fn("n", "<leader>d", "<S-s><Esc>", vars.remap.opts)
 ------------------------------------------------------------------------------------------
 
 -- ReSource lua file
+vars.remap.fn("n", "<leader>qq", ":qa<CR>", vars.remap.opts)
+
+-- ReSource lua file
 vars.remap.fn("n", "<leader>rs", ":luafile %<CR>", vars.remap.opts)
 
 -- Format file
