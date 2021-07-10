@@ -9,13 +9,13 @@ local vars = require('utils.vars')
 ------------------------------------------------------------------------------------------
 
 -- Fix current
-vars.remap.fn("n", "<leader>sf", "Zl", vars.remap.opts)
+vars.remap.fn("n", "<leader>sf", "Zl", {})
 
 -- Exclude word
-vars.remap.fn("n", "<leader>sa", "Zg", vars.remap.opts)
+vars.remap.fn("n", "<leader>sa", "Zg", {})
 
 -- Go to next mistake
-vars.remap.fn("n", "<leader>sn", "ZN", vars.remap.opts)
+vars.remap.fn("n", "<leader>sn", "ZN", {})
 
 -- Go to previous mistake
-vars.remap.fn("n", "<leader>sp", "ZP", vars.remap.opts)
+vars.remap.fn("n", "<leader>sp", "ZP", {})
