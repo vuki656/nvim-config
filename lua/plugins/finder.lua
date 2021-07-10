@@ -1,9 +1,9 @@
 -- Name: Telescope
 -- Description: Finder
 -- Link: https://github.com/nvim-telescope/telescope.nvim
-local telescope = require("telescope")
 
-local remap = vim.api.nvim_set_keymap
+local telescope = require("telescope")
+local vars = require("utils.vars")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- SETUP ------------------------------------------------
@@ -24,32 +24,32 @@ telescope.load_extension("fzy_native")
 ----------------------------------- FIND -------------------------------------------------
 
 -- Find git files in project
-remap("n", "<leader>pf", ":Telescope git_files<CR>", { noremap = true, silent = true })
+vars.remap.fn("n", "<leader>pf", ":Telescope git_files<CR>", vars.remap.opts)
 
 -- Find text in project
-remap("n", "<leader>ps", ":Telescope live_grep<CR>", { noremap = true, silent = true })
+vars.remap.fn("n", "<leader>ps", ":Telescope live_grep<CR>", vars.remap.opts)
 
 ----------------------------------- LSP --------------------------------------------------
 
 -- Find document diagnostics
-remap("n", "<leader>pd", ":Telescope lsp_document_diagnostics<CR>", { noremap = true, silent = true })
+vars.remap.fn("n", "<leader>pd", ":Telescope lsp_document_diagnostics<CR>", vars.remap.opts)
 
 -- Find project diagnostics
-remap("n", "<leader>pad", ":Telescope lsp_workspace_diagnostics<CR>", { noremap = true, silent = true })
+vars.remap.fn("n", "<leader>pad", ":Telescope lsp_workspace_diagnostics<CR>", vars.remap.opts)
 
 -- Find references
-remap("n", "<leader>pr", ":Telescope lsp_references<CR>", { noremap = true, silent = true })
+vars.remap.fn("n", "<leader>pr", ":Telescope lsp_references<CR>", vars.remap.opts)
 
 -- Find definitions
-remap("n", "<leader>pi", ":Telescope lsp_definitions<CR>", { noremap = true, silent = true })
+vars.remap.fn("n", "<leader>pi", ":Telescope lsp_definitions<CR>", vars.remap.opts)
 
 ----------------------------------- GIT --------------------------------------------------
 
 -- List branches
-remap("n", "<leader>gb", ":Telescope git_branches<CR>", { noremap = true, silent = true })
+vars.remap.fn("n", "<leader>gb", ":Telescope git_branches<CR>", vars.remap.opts)
 
 -- List branch commits
-remap("n", "<leader>gc", ":Telescope git_commits<CR>", { noremap = true, silent = true })
+vars.remap.fn("n", "<leader>gc", ":Telescope git_commits<CR>", vars.remap.opts)
 
 -- List file commits
-remap("n", "<leader>gfc", ":Telescope git_bcommits<CR>", { noremap = true, silent = true })
+vars.remap.fn("n", "<leader>gfc", ":Telescope git_bcommits<CR>", vars.remap.opts)

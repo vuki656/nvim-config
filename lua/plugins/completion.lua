@@ -3,8 +3,7 @@
 -- Link: https://github.com/hrsh7th/nvim-compe
 
 local compe = require("compe")
-
-local remap = vim.api.nvim_set_keymap
+local vars = require("utils.vars")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- SETUP ------------------------------------------------
@@ -47,21 +46,21 @@ vim.o.completeopt = "menuone,noselect"
 ------------------------------------------------------------------------------------------
 
 -- Tab to navigate forward in suggestion dialog
-remap("i", "<Tab>", "v:lua.tab_complete()", { expr = true })
-remap("s", "<Tab>", "v:lua.tab_complete()", { expr = true })
+vars.remap.fn("i", "<Tab>", "v:lua.tab_complete()", { expr = true })
+vars.remap.fn("s", "<Tab>", "v:lua.tab_complete()", { expr = true })
 
 -- Shift + Tab to navigate backwards in suggestion dialog
-remap("i", "<S-Tab>", "v:lua.s_tab_complete()", { expr = true })
-remap("s", "<S-Tab>", "v:lua.s_tab_complete()", { expr = true })
+vars.remap.fn("i", "<S-Tab>", "v:lua.s_tab_complete()", { expr = true })
+vars.remap.fn("s", "<S-Tab>", "v:lua.s_tab_complete()", { expr = true })
 
 -- CTRL + Space to open the suggestion dialog
-remap("i", "<C-Space>", "compe#complete()", { expr = true })
+vars.remap.fn("i", "<C-Space>", "compe#complete()", { expr = true })
 
 -- Enter to select suggestion dialog item
-remap("i", "<CR>", "compe#confirm('<CR>')", { expr = true })
+vars.remap.fn("i", "<CR>", "compe#confirm('<CR>')", { expr = true })
 
 -- Close suggestion dialog
-remap("i", "<C-e>", "compe#close('<C-e>')", { expr = true })
+vars.remap.fn("i", "<C-e>", "compe#close('<C-e>')", { expr = true })
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- COLORS -----------------------------------------------

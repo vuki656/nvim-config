@@ -1,10 +1,10 @@
 -- Name: LSP Saga
 -- Description: LSP utils wrapper
 -- Link: https://github.com/glepnir/lspsaga.nvim
-local colors = require("utils.colors")
 local lsp_saga = require("lspsaga")
 
-local remap = vim.api.nvim_set_keymap
+local colors = require("utils.colors")
+local vars = require("utils.utils")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- SETUP ------------------------------------------------
@@ -22,25 +22,25 @@ lsp_saga.init_lsp_saga({
 ------------------------------------------------------------------------------------------
 
 -- Show code actions
-remap("n", "<leader>ca", ":Lspsaga code_action<CR>", { noremap = true })
-remap("v", "<leader>ca", ":<C-U>Lspsaga range_code_action<CR>", { noremap = true })
+vars.remap.fn("n", "<leader>ca", ":Lspsaga code_action<CR>", vars.remap.opts)
+vars.remap.fn("v", "<leader>ca", ":<C-U>Lspsaga range_code_action<CR>", vars.remap.opts)
 
 -- Show doc
-remap("n", "K", "<cmd>lua require('lspsaga.hover').render_hover_doc()<CR>", { noremap = true })
+vars.remap.fn("n", "K", "<cmd>lua require('lspsaga.hover').render_hover_doc()<CR>", vars.remap.opts)
 
 -- Show line diagnostics
-remap("n", "J", "<cmd>lua require('lspsaga.diagnostic').show_line_diagnostics()<CR>", { noremap = true })
+vars.remap.fn("n", "J", "<cmd>lua require('lspsaga.diagnostic').show_line_diagnostics()<CR>", vars.remap.opts)
 
 -- Scroll doc
-remap("n", "<C-f>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>", { noremap = true })
-remap("n", "<C-b>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>", { noremap = true })
+vars.remap.fn("n", "<C-f>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>", vars.remap.opts)
+vars.remap.fn("n", "<C-b>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>", vars.remap.opts)
 
 -- Rename
-remap("n", "<leader>rn", " <cmd>lua require('lspsaga.rename').rename()<CR>", { noremap = true })
+vars.remap.fn("n", "<leader>rn", " <cmd>lua require('lspsaga.rename').rename()<CR>", vars.remap.opts)
 
 -- Go to next/previous diagnostic
-remap("n", "]d", ":Lspsaga diagnostic_jump_prev<CR>", { noremap = true })
-remap("n", "[d", ":Lspsaga diagnostic_jump_next<CR>", { noremap = true })
+vars.remap.fn("n", "]d", ":Lspsaga diagnostic_jump_prev<CR>", vars.remap.opts)
+vars.remap.fn("n", "[d", ":Lspsaga diagnostic_jump_next<CR>", vars.remap.opts)
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- COLORS -----------------------------------------------

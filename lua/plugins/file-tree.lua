@@ -1,9 +1,9 @@
 -- Name: Nvim Tree
 -- Description: File tree
 -- Link: https://github.com/kyazdani42/nvim-tree.lua
-local colors = require("utils.colors")
 
-local remap = vim.api.nvim_set_keymap
+local colors = require("utils.colors")
+local vars = require("utils.vars")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- CONFIG -----------------------------------------------
@@ -59,10 +59,10 @@ vim.cmd([[highlight NvimTreeOpenedFolderName    guifg=]] .. colors.white)
 ------------------------------------------------------------------------------------------
 
 -- Toggle file tree
-remap("n", "<C-n>", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
+vars.remap.fn("n", "<C-n>", ":NvimTreeToggle<CR>", vars.remap.opts)
 
 -- Find opened file in tree
-remap("n", "<leader>to", ":NvimTreeFindFile<CR>", { noremap = true, silent = true })
+vars.remap.fn("n", "<leader>to", ":NvimTreeFindFile<CR>", vars.remap.opts)
 
 -- Refresh tree
-remap("n", "<leader>tr", ":NvimTreeRefresh<CR>", { noremap = true, silent = true })
+vars.remap.fn("n", "<leader>tr", ":NvimTreeRefresh<CR>", vars.remap.opts)

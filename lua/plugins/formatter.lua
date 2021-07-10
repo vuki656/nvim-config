@@ -4,7 +4,7 @@
 
 local formatter = require("formatter")
 
-local remap = vim.api.nvim_set_keymap
+local vars = require('utils.vars')
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- SETUP ------------------------------------------------
@@ -43,4 +43,4 @@ formatter.setup({
 ------------------------------------------------------------------------------------------
 
 -- Format code
-remap("n", "<leader>ff", ":FormatWrite<CR>", { silent = true, noremap = true })
+vars.remap.fn("n", "<leader>ff", ":FormatWrite<CR>", vars.remap.opts)

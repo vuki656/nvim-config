@@ -2,10 +2,11 @@
 -- Description: Status line
 -- Link: https://github.com/glepnir/galaxyline.nvim
 
-local colors = require("utils.colors")
 local galaxy_line = require("galaxyline")
 local vcs = require("galaxyline.provider_vcs")
 local file = require("galaxyline.provider_fileinfo")
+
+local colors = require("utils.colors")
 
 local section = galaxy_line.section
 

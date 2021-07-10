@@ -2,7 +2,7 @@
 -- Description: Multiple undo history view
 -- Link: https://github.com/mbbill/undotreelocal
 
-remap = vim.api.nvim_set_keymap
+local vars = require("utils.vars")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- SETUP ------------------------------------------------
@@ -25,7 +25,7 @@ vim.g.undotree_SetFocusWhenToggle = 1
 ------------------------------------------------------------------------------------------
 
 -- Close undotree
-remap("n", "<leader>uo", ":NvimTreeClose<CR> :UndotreeToggle<CR>", { noremap = true, silent = true })
+vars.remap.fn("n", "<leader>uo", ":NvimTreeClose<CR> :UndotreeToggle<CR>", vars.remap.opts)
 
 -- Open undotree
-remap("n", "<leader>uc", ":UndotreeToggle<CR> :NvimTreeOpen<CR> ", { noremap = true, silent = true })
+vars.remap.fn("n", "<leader>uc", ":UndotreeToggle<CR> :NvimTreeOpen<CR> ", vars.remap.opts)

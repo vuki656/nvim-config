@@ -2,20 +2,20 @@
 -- Description: Spell check
 -- Link: https://github.com/kamykn/spelunker.vim
 
-local remap = vim.api.nvim_set_keymap
+local vars = require('utils.vars')
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- REMAPS -----------------------------------------------
 ------------------------------------------------------------------------------------------
 
 -- Fix current
-remap("n", "<leader>sf", "Zl", {})
+vars.remap.fn("n", "<leader>sf", "Zl", vars.remap.opts)
 
 -- Exclude word
-remap("n", "<leader>sa", "Zg", {})
+vars.remap.fn("n", "<leader>sa", "Zg", vars.remap.opts)
 
 -- Go to next mistake
-remap("n", "<leader>sn", "ZN", {})
+vars.remap.fn("n", "<leader>sn", "ZN", vars.remap.opts)
 
 -- Go to previous mistake
-remap("n", "<leader>sp", "ZP", {})
+vars.remap.fn("n", "<leader>sp", "ZP", vars.remap.opts)

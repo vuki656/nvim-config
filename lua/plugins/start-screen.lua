@@ -2,7 +2,7 @@
 -- Description: Start screen
 -- Link: https://github.com/mhinz/vim-startify
 
-local remap = vim.api.nvim_set_keymap
+local vars = require('utils.vars')
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- SETUP ------------------------------------------------
@@ -28,4 +28,4 @@ vim.cmd("let g:startify_custom_indices = map(range(1,100), 'string(v:val)')")
 ------------------------------------------------------------------------------------------
 
 -- Open startify
-remap("n", "<leader>b", ":Startify<CR>", { noremap = true, silent = true })
+vars.remap.fn("n", "<leader>b", ":Startify<CR>", vars.remap.opts)
