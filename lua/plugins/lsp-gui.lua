@@ -4,7 +4,7 @@
 local lsp_saga = require("lspsaga")
 
 local colors = require("utils.colors")
-local vars = require("utils.utils")
+local vars = require("utils.vars")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- SETUP ------------------------------------------------
