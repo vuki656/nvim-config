@@ -40,6 +40,11 @@ icons.setup({
             color = "#e79627",
             name = "EnvLocal",
         },
+        [".babelrc"] = {
+            icon = "",
+            color = "#e79627",
+            name = "EnvLocal",
+        },
         ["js"] = {
             icon = "",
             color = "#ffcb6b",
