@@ -1,35 +1,88 @@
-local set = vim.o
+local set_buffer = vim.o
 local set_window = vim.wo
-local global = vim.g
+local set_global = vim.g
 
 ------------------------------------------------------------------------------------------
------------------------------------ GENERAL ----------------------------------------------
+----------------------------------- GLOBAL -----------------------------------------------
 ------------------------------------------------------------------------------------------
 
-global.mapleader = " " -- Set leader
+-- Set leader
+set_global.mapleader = " "
 
-set.clipboard = "unnamedplus"                                           -- Sync nvim clipboard with sys clipboard
-set.cursorline = true -- Highlight line you are on
-set.incsearch = true -- Enables search results as you type
-set.smartindent = true -- Enables smart indenting
-set.updatetime = 300 -- Time after the buffer is saved
-set.mouse = "a" -- Enables moues scroll
-set.swapfile = false -- Disables swap files
-set.undofile = true -- Enables undo files
-set.tabstop = 4 -- Convert tab to 4 spaces
-set.shiftwidth = 4 -- Correctly indent lines inside blocks
-set.expandtab = true -- Enables tab to space conversion
-set.splitright = true -- Preffer opening new buffers to the right
-set.splitbelow = true -- Preffer opening new buffers below
-set.termguicolors = true -- Enable nvim set colors
-set.hidden = true -- Enable changing buffers without saving
-set.scrolloff = 15 -- Scroll offset
-set.scroll = 15 -- Scroll amount
+------------------------------------------------------------------------------------------
+----------------------------------- BUFFER -----------------------------------------------
+------------------------------------------------------------------------------------------
 
-set_window.relativenumber = true -- Show relative line numbers in the sidebar
-set_window.signcolumn = "yes" -- Show sidebar
-set_window.number = true -- Show current line number
-set_window.wrap = false -- Disables line wrapping
+-- Sync nvim clipboard with sys clipboard
+set_buffer.clipboard = "unnamedplus"
+
+-- Highlight line you are on
+set_buffer.cursorline = true
+
+-- Enables search results as you type
+set_buffer.incsearch = true
+
+-- Enables smart indenting
+set_buffer.smartindent = true
+
+-- Time after the buffer is saved
+set_buffer.updatetime = 300
+
+-- Enables moues scroll
+set_buffer.mouse = "a"
+
+-- Disables swap files
+set_buffer.swapfile = false
+
+-- Enables undo files
+set_buffer.undofile = true
+
+-- Convert tab to 4 spaces
+set_buffer.tabstop = 4
+
+-- Correctly indent lines inside blocks
+set_buffer.shiftwidth = 4
+
+-- Enables tab to space conversion
+set_buffer.expandtab = true
+
+-- Preffer opening new buffers to the right
+set_buffer.splitright = true
+
+-- Preffer opening new buffers below
+set_buffer.splitbelow = true
+
+-- Enable nvim set colors
+set_buffer.termguicolors = true
+
+-- Enable changing buffers without saving
+set_buffer.hidden = true
+
+-- Scroll offset
+set_buffer.scrolloff = 15
+
+-- Scroll amount
+set_buffer.scroll = 15
+
+------------------------------------------------------------------------------------------
+----------------------------------- WINDOW -----------------------------------------------
+------------------------------------------------------------------------------------------
+
+-- Show relative line numbers in the sidebar
+set_window.relativenumber = true
+
+-- Show sidebar
+set_window.signcolumn = "yes"
+
+-- Show current line number
+set_window.number = true
+
+-- Disables line wrapping
+set_window.wrap = false
+
+------------------------------------------------------------------------------------------
+------------------------------------ MISC ------------------------------------------------
+------------------------------------------------------------------------------------------
 
 vim.cmd([[
         colorscheme one

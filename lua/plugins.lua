@@ -34,10 +34,7 @@ return packer.startup(function(use)
     })
     use({
         "iamcco/markdown-preview.nvim",
-        run = function()
-            vim.fn["mkdp#util#install"]()
-        end,
-        ft = { "markdown" },
+        run = [[sh -c 'cd app && rm yarn.lock && yarn install']],
     })
     use({
         "jose-elias-alvarez/nvim-lsp-ts-utils",

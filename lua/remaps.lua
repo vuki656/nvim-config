@@ -1,46 +1,63 @@
-local remap = vim.api.nvim_set_keymap
+local vars = require('utils.vars')
 
--- ReSource lua file
-remap("n", "<leader>sf", ":luafile %<CR>", { noremap = true, silent = true })
-
--- Format file
-remap("n", "<leader>ef", ":lua vim.lsp.buf.formatting()<CR>", { noremap = true, silent = true })
-
--- Go to normal mode with jj
-remap("i", "jj", "<ESC>", { noremap = true, silent = true })
-
--- Go to normal mode with kk
-remap("i", "kk", "<ESC>", { noremap = true, silent = true })
+------------------------------------------------------------------------------------------
+----------------------------------- NAVIGATION -------------------------------------------
+------------------------------------------------------------------------------------------
 
 -- Rotate between last 2 opened files
-remap("n", "<leader>8", "<C-^>", { noremap = true, silent = true })
+vars.remap.fn("n", "<leader>ro", "<C-^>", vars.remap.opts)
 
 -- Buffer navigation with hjkl
-remap("n", "<C-h>", "<C-w>h", { noremap = true, silent = true })
-remap("n", "<C-l>", "<C-w>l", { noremap = true, silent = true })
-remap("n", "<C-j>", "<C-w>j", { noremap = true, silent = true })
-remap("n", "<C-k>", "<C-w>k", { noremap = true, silent = true })
+vars.remap.fn("n", "<C-h>", "<C-w>h", vars.remap.opts)
+vars.remap.fn("n", "<C-l>", "<C-w>l", vars.remap.opts)
+vars.remap.fn("n", "<C-j>", "<C-w>j", vars.remap.opts)
+vars.remap.fn("n", "<C-k>", "<C-w>k", vars.remap.opts)
 
--- Open markdown preview in chrome
-remap("n", "<leader>mp", ":MarkdownPreviewToggle<CR>", { noremap = true, silent = true })
-
--- Insert empty line below
-remap("n", "gj", "o<Esc>", { noremap = true, silent = true })
-
--- Insert empty line above
-remap("n", "gk", "O<Esc>", { noremap = true, silent = true })
-
--- Delete everything on the line
-remap("n", "<leader>d", "<S-s><Esc>", { noremap = true, silent = true })
+------------------------------------------------------------------------------------------
+----------------------------------- BUFFER -----------------------------------------------
+------------------------------------------------------------------------------------------
 
 -- Shift buffer size horizontally
-remap("n", "<C-s>", "<C-w><", { noremap = true, silent = true })
-remap("n", "<C-a>", "<C-w>>", { noremap = true, silent = true })
+vars.remap.fn("n", "<C-s>", "<C-w><", vars.remap.opts)
+vars.remap.fn("n", "<C-a>", "<C-w>>", vars.remap.opts)
 
--- Send codegen command to other tmux window
-remap(
+------------------------------------------------------------------------------------------
+----------------------------------- LINE -------------------------------------------------
+------------------------------------------------------------------------------------------
+
+-- Go to normal mode with jj
+vars.remap.fn("i", "jj", "<ESC>", vars.remap.opts)
+
+-- Go to normal mode with kk
+vars.remap.fn("i", "kk", "<ESC>", vars.remap.opts)
+
+-- Insert empty line below
+vars.remap.fn("n", "gj", "o<Esc>", vars.remap.opts)
+
+-- Insert empty line above
+vars.remap.fn("n", "gk", "O<Esc>", vars.remap.opts)
+
+-- Delete everything on the line
+vars.remap.fn("n", "<leader>d", "<S-s><Esc>", vars.remap.opts)
+
+------------------------------------------------------------------------------------------
+----------------------------------- MISC -------------------------------------------------
+------------------------------------------------------------------------------------------
+
+-- ReSource lua file
+vars.remap.fn("n", "<leader>rs", ":luafile %<CR>", vars.remap.opts)
+
+-- Format file
+vars.remap.fn("n", "<leader>ef", ":lua vim.lsp.buf.formatting()<CR>", vars.remap.opts)
+
+------------------------------------------------------------------------------------------
+----------------------------------- TMUX PIPES -------------------------------------------
+------------------------------------------------------------------------------------------
+
+-- Send codegen
+vars.remap.fn(
     "n",
     "<leader>yc",
     ':!tmux send-keys -t "QIA Dashboard":TERM.1 "yarn codegen" C-m <CR><CR>',
-    { noremap = true, silent = true }
+    vars.remap.opts
 )

@@ -29,6 +29,9 @@ require("plugins.formatter")
 require("plugins.vsnip")
 require("plugins.undotree")
 require("plugins.spellcheck")
+require("plugins.plugin-manager")
+require("plugins.markdown-preview")
+require("plugins.auto-save")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- LSPs -------------------------------------------------

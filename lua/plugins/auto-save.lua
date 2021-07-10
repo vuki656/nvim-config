@@ -4,4 +4,4 @@
 
 local autosave = require("autosave")
 
-autosave.setup()
+autosave.setup({})
