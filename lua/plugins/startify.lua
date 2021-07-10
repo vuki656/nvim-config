@@ -8,7 +8,7 @@ local remap = vim.api.nvim_set_keymap
 ----------------------------------- SETUP ------------------------------------------------
 ------------------------------------------------------------------------------------------
 
--- Catefories to display
+-- Categories to display
 vim.g.startify_lists = {
     {
         type = "dir",

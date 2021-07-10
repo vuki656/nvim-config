@@ -1,7 +1,7 @@
 local remap = vim.api.nvim_set_keymap
 
 -- ReSource lua file
-remap("n", "<leader>sf", ":luafil %<CR>", { noremap = true, silent = true })
+remap("n", "<leader>sf", ":luafile %<CR>", { noremap = true, silent = true })
 
 -- Format file
 remap("n", "<leader>ef", ":lua vim.lsp.buf.formatting()<CR>", { noremap = true, silent = true })
@@ -33,7 +33,7 @@ remap("n", "gk", "O<Esc>", { noremap = true, silent = true })
 -- Delete everything on the line
 remap("n", "<leader>d", "<S-s><Esc>", { noremap = true, silent = true })
 
--- Shift buffer size horizontaly
+-- Shift buffer size horizontally
 remap("n", "<C-s>", "<C-w><", { noremap = true, silent = true })
 remap("n", "<C-a>", "<C-w>>", { noremap = true, silent = true })
 

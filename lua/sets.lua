@@ -8,7 +8,7 @@ local global = vim.g
 
 global.mapleader = " " -- Set leader
 
-set.clipboard = "unnamedplus" -- Sync nvim clipbard with sys clipboard
+set.clipboard = "unnamedplus"                                           -- Sync nvim clipboard with sys clipboard
 set.cursorline = true -- Highlight line you are on
 set.incsearch = true -- Enables search results as you type
 set.smartindent = true -- Enables smart indenting

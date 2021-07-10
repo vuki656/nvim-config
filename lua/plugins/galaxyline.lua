@@ -1,5 +1,5 @@
 -- Name: Galaxy Line
--- Description: Staus line
+-- Description: Status line
 -- Link: https://github.com/glepnir/galaxyline.nvim
 local colors = require("utils.colors")
 local galaxy_line = require("galaxyline")
@@ -123,7 +123,7 @@ section.short_line_left[1] = {
     BufferType = {
         provider = "FileTypeName",
         separator = " ",
-        separator_highlight = { nil, colors.backgroud },
+        separator_highlight = { nil, colors.background },
         highlight = { colors.blue, colors.background, "bold" },
     },
 }

@@ -28,6 +28,7 @@ require("plugins.harpoon")
 require("plugins.formatter")
 require("plugins.vsnip")
 require("plugins.undotree")
+require("plugins.spellcheck")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- LSPs -------------------------------------------------

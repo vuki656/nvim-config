@@ -44,6 +44,7 @@ return packer.startup(function(use)
         requires = { "jose-elias-alvarez/null-ls.nvim" },
     })
     use("kyazdani42/nvim-tree.lua")
+    use("kamykn/spelunker.vim")
     use({
         "lewis6991/gitsigns.nvim",
         requires = { "nvim-lua/plenary.nvim" },
@@ -64,7 +65,7 @@ return packer.startup(function(use)
     })
     use("onsails/lspkind-nvim")
     use("psliwka/vim-smoothie")
-    use("Pocco81/AutoSave.nvim")
+    use("pocco81/autosave.nvim")
     use("rakr/vim-one")
     use("tpope/vim-fugitive")
     use("tpope/vim-commentary")
