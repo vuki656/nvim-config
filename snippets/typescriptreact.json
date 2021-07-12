@@ -28,5 +28,13 @@
             "    )",
             "}"
         ]
+    },
+    "Props": {
+        "prefix": [
+            "pps"
+        ],
+        "body": [
+            "const { $0 } = props"
+        ]
     }
 }
