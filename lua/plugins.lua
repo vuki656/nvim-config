@@ -50,6 +50,7 @@ return packer.startup(function(use)
     use("mhartington/formatter.nvim")
     use("mbbill/undotree")
     use("neovim/nvim-lspconfig")
+    use("nvim-treesitter/nvim-treesitter")
     use("nvim-treesitter/playground")
     use({
         "nvim-telescope/telescope.nvim",
