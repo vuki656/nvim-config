@@ -64,3 +64,11 @@ vars.remap.fn(
     ':!tmux send-keys -t "QIA Dashboard":TERM.1 "yarn codegen" C-m <CR><CR>',
     vars.remap.opts
 )
+
+-- Send install
+vars.remap.fn(
+    "n",
+    "<leader>yi",
+    ':!tmux send-keys -t "QIA Dashboard":TERM.1 "yarn" C-m <CR><CR>',
+    vars.remap.opts
+)
