@@ -34,5 +34,15 @@
         "body": [
             "export * from './$0'"
         ]
+    },
+    "Zod Object": {
+        "prefix": [
+            "zco"
+        ],
+        "body": [
+            "export const $0 = zc.object({",
+                "$1",
+            "})"
+        ]
     }
 }
