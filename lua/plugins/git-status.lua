@@ -1,7 +1,9 @@
 -- Name: Git Signs
 -- Description: Git status in sidebar
 -- Link: https://github.com/lewis6991/gitsigns.nvim
+
 local git_signs = require("gitsigns")
+
 local colors = require("utils.colors")
 
 ------------------------------------------------------------------------------------------
@@ -42,6 +44,7 @@ git_signs.setup({
         },
     },
     current_line_blame = true,
+    current_line_blame_delay = 300,
 })
 
 ------------------------------------------------------------------------------------------

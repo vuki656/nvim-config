@@ -1,6 +1,7 @@
 -- Name: LSP Saga
 -- Description: LSP utils wrapper
 -- Link: https://github.com/glepnir/lspsaga.nvim
+
 local lsp_saga = require("lspsaga")
 
 local colors = require("utils.colors")
