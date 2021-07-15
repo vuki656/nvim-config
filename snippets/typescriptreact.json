@@ -29,6 +29,16 @@
             "}"
         ]
     },
+    "useEffect": {
+        "prefix": [
+            "ruf"
+        ],
+        "body": [
+            "React.useEffect(() => {",
+            "   $0",
+            "}, [])"
+        ]
+    },
     "Props": {
         "prefix": [
             "pps"
