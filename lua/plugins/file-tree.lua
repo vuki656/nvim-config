@@ -25,7 +25,8 @@ vim.g.nvim_tree_ignore = {
     ".idea",
 }
 
-vim.g.nvim_tree_width = 40 
+-- Set file tree width
+vim.g.nvim_tree_width = 40
 
 -- Custom icons
 vim.g.nvim_tree_icons = {
