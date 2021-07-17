@@ -4,7 +4,7 @@
 
 local formatter = require("formatter")
 
-local vars = require('utils.vars')
+local vars = require("utils.vars")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- SETUP ------------------------------------------------
@@ -33,6 +33,20 @@ formatter.setup({
         json = {
             function()
                 vim.lsp.buf.range_formatting({}, { 0, 0 }, { vim.fn.line("$"), 0 })
+            end,
+        },
+        javascript = {
+            function()
+                return {
+                    exe = "prettier",
+                    args = {
+                        "--stdin-filepath",
+                        vim.api.nvim_buf_get_name(0),
+                        "--no-semi",
+                        "--tab-width=4",
+                    },
+                    stdin = true,
+                }
             end,
         },
     },
