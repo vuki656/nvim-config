@@ -49,6 +49,20 @@ formatter.setup({
                 }
             end,
         },
+        typescript = {
+            function()
+                return {
+                    exe = "prettier",
+                    args = {
+                        "--stdin-filepath",
+                        vim.api.nvim_buf_get_name(0),
+                        "--no-semi",
+                        "--tab-width=4",
+                    },
+                    stdin = true,
+                }
+            end,
+        },
     },
 })
 
