@@ -41,7 +41,7 @@
     },
     "Props": {
         "prefix": [
-            "pps"
+            "cp"
         ],
         "body": [
             "const { $0 } = props"
