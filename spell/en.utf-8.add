@@ -1149,3 +1149,6 @@ dmain
 dclient
 pgpassword
 psql
+startswith
+concat
+deepcopy
