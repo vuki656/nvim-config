@@ -1152,3 +1152,17 @@ psql
 startswith
 concat
 deepcopy
+compreply
+cword
+tablespace
+foreignkeys
+primarykeys
+uniqueconstraints
+storedprocedure
+xxxxxx
+xxxxx
+unescape
+tilder
+compgen
+compopt
+nospace
