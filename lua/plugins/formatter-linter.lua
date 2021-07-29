@@ -22,7 +22,7 @@ null_ls.config({
 
         -- Diagnostics
         diagnostics.hadolint,
-        diagnostics.eslint,
+        -- diagnostics.eslint,
         diagnostics.markdownlint,
     },
 })
