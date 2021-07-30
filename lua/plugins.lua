@@ -20,7 +20,6 @@ end
 
 return packer.startup(function(use)
     use("airblade/vim-rooter")
-    use("antoinemadec/FixCursorHold.nvim")
     use("folke/todo-comments.nvim")
     use("glepnir/lspsaga.nvim")
     use({
