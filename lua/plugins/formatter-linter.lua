@@ -13,12 +13,35 @@ local vars = require("utils.vars")
 local formatter = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 
--- TODO: Prettier
--- TODO: Shfmt (pass flag to use spaces instead of default tabs)
+local prettier_formatter = formatter.prettier.with({
+    filetypes = {
+        "javascript",
+        "javascriptreact",
+        "vue",
+        "css",
+        "html",
+        "json",
+        "yaml",
+        "markdown",
+    },
+    args = {
+        "--stdin-filepath",
+        "$FILENAME",
+        "--no-semi",
+        "--tab-width=4",
+    },
+})
+
+local shfmt_formatter = formatter.shfmt.with({
+    args = { "-i=4" },
+})
+
 null_ls.config({
     sources = {
         -- Formatters
         formatter.stylua,
+        prettier_formatter,
+        shfmt_formatter,
 
         -- Diagnostics
         diagnostics.shellcheck,
