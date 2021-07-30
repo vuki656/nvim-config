@@ -47,7 +47,6 @@ return packer.startup(function(use)
         requires = { "nvim-lua/plenary.nvim" },
     })
     use("mhinz/vim-startify")
-    use("mhartington/formatter.nvim")
     use("mbbill/undotree")
     use("neovim/nvim-lspconfig")
     use("nvim-treesitter/nvim-treesitter")
