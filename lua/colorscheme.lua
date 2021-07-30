@@ -4,6 +4,7 @@ require("nvim-treesitter.configs").setup({
     ensure_installed = "maintained",
     highlight = { enable = true },
     autotag = { enable = true },
+    indent = { enable = true },
 })
 
 vim.cmd([[highlight! TSKeyword              guifg=]] .. colors.purple)

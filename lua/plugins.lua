@@ -29,7 +29,7 @@ return packer.startup(function(use)
     use("hrsh7th/nvim-compe")
     use({
         "hrsh7th/vim-vsnip",
-        requires = "hrsh7th/vim-vsnip-integ",
+        requires = { "hrsh7th/vim-vsnip-integ" },
     })
     use({
         "iamcco/markdown-preview.nvim",
@@ -40,7 +40,10 @@ return packer.startup(function(use)
         requires = { "jose-elias-alvarez/null-ls.nvim" },
     })
     use("jose-elias-alvarez/null-ls.nvim")
-    use("kyazdani42/nvim-tree.lua")
+    use({
+        "kyazdani42/nvim-tree.lua",
+        requires = { "kyazdani42/nvim-web-devicons" },
+    })
     use("kamykn/spelunker.vim")
     use({
         "lewis6991/gitsigns.nvim",
@@ -65,6 +68,11 @@ return packer.startup(function(use)
     use("rakr/vim-one")
     use("tpope/vim-commentary")
     use("ThePrimeagen/harpoon")
+    use({
+        "vhyrro/neorg",
+        requires = "nvim-lua/plenary.nvim",
+        branch = "unstable",
+    })
     use("wakatime/vim-wakatime")
     use("wbthomason/packer.nvim")
     use("windwp/nvim-ts-autotag")
