@@ -11,7 +11,6 @@ install_lsps() {
     npm i -g graphql-language-service-cli -y
     npm i -g vscode-langservers-extracted -y
     npm i -g typescript typescript-language-server -y
-    npm i -g vim-language-server -y
     npm i -g yaml-language-server -y
 }
 
