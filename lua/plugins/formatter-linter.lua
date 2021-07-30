@@ -15,13 +15,13 @@ local diagnostics = null_ls.builtins.diagnostics
 
 -- TODO: Prettier
 -- TODO: Shfmt (pass flag to use spaces instead of default tabs)
--- TODO: shellcheck
 null_ls.config({
     sources = {
         -- Formatters
         formatter.stylua,
 
         -- Diagnostics
+        diagnostics.shellcheck,
         diagnostics.hadolint,
         diagnostics.eslint,
         diagnostics.markdownlint,
