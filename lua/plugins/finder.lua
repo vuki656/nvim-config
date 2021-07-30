@@ -46,10 +46,10 @@ vars.remap.fn("n", "<leader>pi", ":Telescope lsp_definitions<CR>", vars.remap.op
 ----------------------------------- GIT --------------------------------------------------
 
 -- List branches
-vars.remap.fn("n", "<leader>gb", ":Telescope git_branches<CR>", vars.remap.opts)
+vars.remap.fn("n", "<leader>gba", ":Telescope git_branches<CR>", vars.remap.opts)
 
 -- List branch commits
-vars.remap.fn("n", "<leader>gc", ":Telescope git_commits<CR>", vars.remap.opts)
+vars.remap.fn("n", "<leader>gbc", ":Telescope git_commits<CR>", vars.remap.opts)
 
 -- List file commits
 vars.remap.fn("n", "<leader>gfc", ":Telescope git_bcommits<CR>", vars.remap.opts)
