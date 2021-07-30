@@ -40,6 +40,7 @@ return packer.startup(function(use)
         "jose-elias-alvarez/nvim-lsp-ts-utils",
         requires = { "jose-elias-alvarez/null-ls.nvim" },
     })
+    use("jose-elias-alvarez/null-ls.nvim")
     use("kyazdani42/nvim-tree.lua")
     use("kamykn/spelunker.vim")
     use({
