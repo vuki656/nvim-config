@@ -2,7 +2,7 @@
 -- Description: Spell check
 -- Link: https://github.com/kamykn/spelunker.vim
 
-local vars = require('utils.vars')
+local vars = require("utils.vars")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- REMAPS -----------------------------------------------

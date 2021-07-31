@@ -4,7 +4,7 @@ local module = {
             noremap = true,
             silent = true,
         },
-        fn = vim.api.nvim_set_keymap
+        fn = vim.api.nvim_set_keymap,
     },
 }
 

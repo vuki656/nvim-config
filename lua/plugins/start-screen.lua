@@ -2,7 +2,7 @@
 -- Description: Start screen
 -- Link: https://github.com/mhinz/vim-startify
 
-local vars = require('utils.vars')
+local vars = require("utils.vars")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- SETUP ------------------------------------------------

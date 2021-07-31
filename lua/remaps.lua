@@ -1,4 +1,4 @@
-local vars = require('utils.vars')
+local vars = require("utils.vars")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- NAVIGATION -------------------------------------------
@@ -66,9 +66,4 @@ vars.remap.fn(
 )
 
 -- Send install
-vars.remap.fn(
-    "n",
-    "<leader>yi",
-    ':!tmux send-keys -t "QIA Dashboard":TERM.1 "yarn" C-m <CR><CR>',
-    vars.remap.opts
-)
+vars.remap.fn("n", "<leader>yi", ':!tmux send-keys -t "QIA Dashboard":TERM.1 "yarn" C-m <CR><CR>', vars.remap.opts)
