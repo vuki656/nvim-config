@@ -48,6 +48,7 @@ null_ls.config({
         diagnostics.hadolint,
         diagnostics.eslint,
         diagnostics.markdownlint,
+        diagnostics.selene,
     },
 })
 
