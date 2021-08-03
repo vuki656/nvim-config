@@ -49,6 +49,7 @@ null_ls.config({
         diagnostics.eslint,
         diagnostics.markdownlint,
         diagnostics.selene,
+        diagnostics.teal,
     },
 })
 
