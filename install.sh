@@ -21,7 +21,7 @@ install_lsps() {
 install_nvim() {
     sudo apt install ninja-build gettext libtool libtool-bin autoconf automake cmake g++ pkg-config unzip -y
 
-    cd ~/
+    cd ~/ || return
     git clone https://github.com/neovim/neovim
     cd neovim && make -j4
     sudo make install
@@ -31,15 +31,15 @@ install_nvim() {
 #----------------------------------------------------------------------------------------------#
 ################################################################################################
 
-if [ $1 == 'a' ]; then
+if [ "$1" = 'a' ]; then
     install_lsps
     install_nvim
 fi
 
-if [ $1 == 'l' ]; then
+if [ "$1" = 'l' ]; then
     install_lsps
 fi
 
-if [ $1 == 'n' ]; then
+if [ "$1" = 'n' ]; then
     install_nvim
 fi
