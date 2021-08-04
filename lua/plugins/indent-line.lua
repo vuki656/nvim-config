@@ -1,12 +1,12 @@
--- Name: Indent Line
+-- Name: Indent Blank Line
 -- Description: Indent guidelines
--- Link: https://github.com/Yggdroot/indentLine
-
-local colors = require("utils.colors")
+-- Link: https://github.com/lukas-reineke/indent-blankline.nvim
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- SETUP ------------------------------------------------
 ------------------------------------------------------------------------------------------
 
-vim.g.indentLine_color_gui = colors.transparent
-vim.g.indentLine_char = "▏"
+require("indent_blankline").setup {
+    char = "▏",
+    buftype_exclude = {"terminal"}
+}
