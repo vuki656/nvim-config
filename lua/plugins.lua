@@ -78,4 +78,6 @@ return packer.startup(function(use)
     use("wbthomason/packer.nvim")
     use("windwp/nvim-ts-autotag")
     use("windwp/nvim-autopairs")
+
+    use("~/Projects/package-info.nvim")
 end)
