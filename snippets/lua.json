@@ -1,0 +1,10 @@
+{
+    "Print": {
+        "prefix": [
+            "vpr"
+        ],
+        "body": [
+            "print(vim.inspect($0))"
+        ]
+    }
+}
