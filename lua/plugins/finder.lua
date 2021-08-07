@@ -53,3 +53,7 @@ vars.remap.fn("n", "<leader>gbc", ":Telescope git_commits<CR>", vars.remap.opts)
 
 -- List file commits
 vars.remap.fn("n", "<leader>gfc", ":Telescope git_bcommits<CR>", vars.remap.opts)
+
+----------------------------------- LSP --------------------------------------------------
+
+vars.remap.fn("n", "<leader>gh", ":Telescope help_tags<CR>", vars.remap.opts)
