@@ -15,14 +15,9 @@ vim.g.nvim_tree_indent_markers = 1
 -- Display git status in file names
 vim.g.nvim_tree_git_hl = 1
 
--- Auto open tree
-vim.g.nvim_tree_auto_open = 1
-
 -- Don't show listed dirs
 vim.g.nvim_tree_ignore = {
     ".git",
-    ".cache",
-    ".idea",
 }
 
 -- Set file tree width
