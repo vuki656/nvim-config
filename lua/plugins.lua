@@ -69,6 +69,7 @@ return packer.startup(function(use)
     use("rakr/vim-one")
     use("tpope/vim-commentary")
     use("ThePrimeagen/harpoon")
+    use("vuki656/package-info.nvim")
     use({
         "vhyrro/neorg",
         requires = "nvim-lua/plenary.nvim",
@@ -78,6 +79,4 @@ return packer.startup(function(use)
     use("wbthomason/packer.nvim")
     use("windwp/nvim-ts-autotag")
     use("windwp/nvim-autopairs")
-
-    use("~/Projects/package-info.nvim")
 end)
