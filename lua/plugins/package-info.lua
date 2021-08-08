@@ -16,15 +16,8 @@ package_info.setup({
 ----------------------------------- REMAPS -----------------------------------------------
 ------------------------------------------------------------------------------------------
 
-vim.api.nvim_set_keymap(
-    "n",
-    "<leader>nc",
-    ":lua require('package-info').clear()<CR>",
-    { silent = true, noremap = true }
-)
-vim.api.nvim_set_keymap(
-    "n",
-    "<leader>nd",
-    ":lua require('package-info').display()<CR>",
-    { silent = true, noremap = true }
-)
+-- Show package versions
+vim.api.nvim_set_keymap("n", "<leader>ns", ":lua require('package-info').show()<CR>", { silent = true, noremap = true })
+
+-- Hide package versions
+vim.api.nvim_set_keymap("n", "<leader>nc", ":lua require('package-info').hide()<CR>", { silent = true, noremap = true })
