@@ -13,7 +13,7 @@ local vars = require("utils.vars")
 local formatter = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 
-local prettier_formatter = formatter.prettier.with({
+local formatter_prettier = formatter.prettier.with({
     filetypes = {
         "javascript",
         "javascriptreact",
@@ -22,7 +22,6 @@ local prettier_formatter = formatter.prettier.with({
         "html",
         "json",
         "yaml",
-        "markdown",
     },
     args = {
         "--stdin-filepath",
@@ -32,7 +31,7 @@ local prettier_formatter = formatter.prettier.with({
     },
 })
 
-local shfmt_formatter = formatter.shfmt.with({
+local formatter_shfmt = formatter.shfmt.with({
     args = { "-i=4" },
 })
 
@@ -40,8 +39,8 @@ null_ls.config({
     sources = {
         -- Formatters
         formatter.stylua,
-        prettier_formatter,
-        shfmt_formatter,
+        formatter_prettier,
+        formatter_shfmt,
 
         -- Diagnostics
         diagnostics.shellcheck,
