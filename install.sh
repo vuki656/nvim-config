@@ -13,7 +13,7 @@ install_lsps() {
     npm i -g typescript typescript-language-server -y
 
     yarn global add yaml-language-server -y
-    luarocks install --dev teal-language-server -y
+    luarocks install --dev teal-language-server
 }
 
 ################################################################################################
