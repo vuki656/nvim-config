@@ -49,6 +49,7 @@ null_ls.config({
         diagnostics.markdownlint,
         diagnostics.selene,
         diagnostics.teal,
+        diagnostics.write_good,
     },
 })
 
