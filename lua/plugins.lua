@@ -19,7 +19,9 @@ end
 ------------------------------------------------------------------------------------------
 
 return packer.startup(function(use)
-    use("airblade/vim-rooter")
+    use({
+        "ahmedkhalf/project.nvim",
+    })
     use("folke/todo-comments.nvim")
     use("glepnir/lspsaga.nvim")
     use({
