@@ -43,6 +43,12 @@ vars.remap.fn("n", "gk", "O<Esc>", vars.remap.opts)
 -- Delete everything on the line
 vars.remap.fn("n", "<leader>d", "<S-s><Esc>", vars.remap.opts)
 
+-- Go to start of line
+vars.remap.fn("n", "H", "^", vars.remap.opts)
+
+-- Go to end of line
+vars.remap.fn("n", "L", "$", vars.remap.opts)
+
 ------------------------------------------------------------------------------------------
 ----------------------------------- MISC -------------------------------------------------
 ------------------------------------------------------------------------------------------
