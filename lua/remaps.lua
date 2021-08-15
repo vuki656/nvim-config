@@ -22,7 +22,7 @@ vars.remap.fn("n", "<C-s>", "<C-w><", vars.remap.opts)
 vars.remap.fn("n", "<C-a>", "<C-w>>", vars.remap.opts)
 
 -- Remap ESC to also clear search highlight
-vars.remap.fn("n", "<esc>", ":noh<CR><esc>", vars.remap.opts)
+vars.remap.fn("n", "<BS>", ":noh<CR>", vars.remap.opts)
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- LINE -------------------------------------------------
