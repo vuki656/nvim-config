@@ -89,7 +89,6 @@ vim.cmd([[
         syntax on
         set noshowmode  
         set noshowcmd 
-        set nohlsearch
         set nrformats=
         set formatoptions-=cro
 ]])
