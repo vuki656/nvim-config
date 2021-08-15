@@ -24,6 +24,12 @@ vars.remap.fn("n", "<C-a>", "<C-w>>", vars.remap.opts)
 -- Remap ESC to also clear search highlight
 vars.remap.fn("n", "<BS>", ":noh<CR>", vars.remap.opts)
 
+-- Center the next search result in buffer
+vars.remap.fn("n", "n", "nzzzv", vars.remap.opts)
+
+-- Center the previous search result in buffer
+vars.remap.fn("n", "N", "Nzzzv", vars.remap.opts)
+
 ------------------------------------------------------------------------------------------
 ----------------------------------- LINE -------------------------------------------------
 ------------------------------------------------------------------------------------------
@@ -48,6 +54,21 @@ vars.remap.fn("n", "H", "^", vars.remap.opts)
 
 -- Go to end of line
 vars.remap.fn("n", "L", "$", vars.remap.opts)
+
+-- Highlight until the end of the line
+vars.remap.fn("n", "V", "v$", vars.remap.opts)
+
+-- Highlight end of line
+vars.remap.fn("n", "vv", "V", vars.remap.opts)
+
+-- Remove the line below without visiting it
+vars.remap.fn("n", "dJ", "jddk", vars.remap.opts)
+
+-- Remove the line above without visiting it
+vars.remap.fn("n", "dK", "kdd", vars.remap.opts)
+
+-- Inline line by line and keep position
+vars.remap.fn("n", "J", "J0", vars.remap.opts)
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- MISC -------------------------------------------------

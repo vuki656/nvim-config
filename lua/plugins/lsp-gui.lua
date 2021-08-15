@@ -27,10 +27,10 @@ vars.remap.fn("n", "<leader>ca", ":Lspsaga code_action<CR>", vars.remap.opts)
 vars.remap.fn("v", "<leader>ca", ":<C-U>Lspsaga range_code_action<CR>", vars.remap.opts)
 
 -- Show doc
-vars.remap.fn("n", "K", "<cmd>lua require('lspsaga.hover').render_hover_doc()<CR>", vars.remap.opts)
+vars.remap.fn("n", "<C-k>", "<cmd>lua require('lspsaga.hover').render_hover_doc()<CR>", vars.remap.opts)
 
 -- Show line diagnostics
-vars.remap.fn("n", "J", "<cmd>lua require('lspsaga.diagnostic').show_line_diagnostics()<CR>", vars.remap.opts)
+vars.remap.fn("n", "<C-j>", "<cmd>lua require('lspsaga.diagnostic').show_line_diagnostics()<CR>", vars.remap.opts)
 
 -- Scroll doc
 vars.remap.fn("n", "<C-f>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>", vars.remap.opts)
