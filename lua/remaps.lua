@@ -35,10 +35,10 @@ vars.remap.fn("i", "jj", "<ESC>", vars.remap.opts)
 vars.remap.fn("i", "kk", "<ESC>", vars.remap.opts)
 
 -- Insert empty line below
-vars.remap.fn("n", "gj", "o<Esc>", vars.remap.opts)
+vars.remap.fn("n", "gj", "o<Esc>'[k", vars.remap.opts)
 
 -- Insert empty line above
-vars.remap.fn("n", "gk", "O<Esc>", vars.remap.opts)
+vars.remap.fn("n", "gk", "O<Esc>j", vars.remap.opts)
 
 -- Delete everything on the line
 vars.remap.fn("n", "<leader>d", "<S-s><Esc>", vars.remap.opts)
