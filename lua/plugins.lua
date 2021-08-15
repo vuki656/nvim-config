@@ -19,9 +19,7 @@ end
 ------------------------------------------------------------------------------------------
 
 return packer.startup(function(use)
-    use({
-        "ahmedkhalf/project.nvim",
-    })
+    use("ahmedkhalf/project.nvim")
     use("folke/todo-comments.nvim")
     use("glepnir/lspsaga.nvim")
     use({

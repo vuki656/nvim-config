@@ -3,6 +3,7 @@
 -- Link: https://github.com/jose-elias-alvarez/null-ls.nvim
 
 local null_ls = require("null-ls")
+local lspconfig = require("lspconfig")
 
 local vars = require("utils.vars")
 
@@ -53,7 +54,7 @@ null_ls.config({
     },
 })
 
-require("lspconfig")["null-ls"].setup({})
+lspconfig["null-ls"].setup({})
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- REMAPS -----------------------------------------------
