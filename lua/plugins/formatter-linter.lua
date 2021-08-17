@@ -61,4 +61,4 @@ lspconfig["null-ls"].setup({})
 ------------------------------------------------------------------------------------------
 
 -- Format code
-vars.remap.fn("n", "<leader>ff", ":lua vim.lsp.buf.formatting()<CR>", vars.remap.opts)
+vars.remap.fn("n", "<leader>f", ":lua vim.lsp.buf.formatting()<CR>", vars.remap.opts)
