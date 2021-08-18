@@ -8,4 +8,3 @@
 2. `cd nvim-config`
 3. `chmod +x install.sh`
 4. `./install.sh a`
-
