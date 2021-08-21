@@ -21,7 +21,6 @@ local formatter_prettier = formatter.prettier.with({
         "vue",
         "css",
         "html",
-        "json",
         "yaml",
     },
     args = {
@@ -40,6 +39,7 @@ null_ls.config({
     sources = {
         -- Formatters
         formatter.stylua,
+        formatter.prismaFmt,
         formatter_prettier,
         formatter_shfmt,
 
@@ -48,7 +48,7 @@ null_ls.config({
         diagnostics.hadolint,
         diagnostics.eslint,
         diagnostics.markdownlint,
-        diagnostics.selene,
+        -- diagnostics.selene,
         diagnostics.teal,
         diagnostics.write_good,
     },
