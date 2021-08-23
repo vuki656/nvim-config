@@ -36,7 +36,6 @@ compe.setup({
         vsnip = true,
         nvim_lsp = true,
         nvim_lua = true,
-        neorg = true,
         spell = true,
     },
 })
