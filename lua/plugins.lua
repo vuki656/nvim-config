@@ -41,6 +41,7 @@ return packer.startup(function(use)
         requires = { "jose-elias-alvarez/null-ls.nvim" },
     })
     use("jose-elias-alvarez/null-ls.nvim")
+    use("karb94/neoscroll.nvim")
     use({
         "kyazdani42/nvim-tree.lua",
         requires = { "kyazdani42/nvim-web-devicons" },
@@ -64,7 +65,6 @@ return packer.startup(function(use)
     })
     use("onsails/lspkind-nvim")
     use("lukas-reineke/indent-blankline.nvim")
-    use("psliwka/vim-smoothie")
     use("pocco81/autosave.nvim")
     use("rakr/vim-one")
     use("tpope/vim-commentary")
