@@ -11,6 +11,7 @@ install_lsps() {
     npm i -g graphql-language-service-cli -y
     npm i -g vscode-langservers-extracted -y
     npm i -g typescript typescript-language-server -y
+    npm i -g @prisma/language-server -y
 
     yarn global add yaml-language-server -y
     luarocks install --dev teal-language-server
