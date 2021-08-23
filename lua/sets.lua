@@ -99,6 +99,7 @@ vim.cmd([[
         set spelllang=en
         set spelloptions=camel
         set spellfile=$HOME/.config/nvim/spell/en.utf-8.add
+        set spellcapcheck=
 ]])
 
 -- Hide ~ from sign column
