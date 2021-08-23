@@ -95,8 +95,6 @@ vim.cmd([[
         set noshowcmd 
         set nrformats=
         set formatoptions-=cro
-
-        
         set spell
         set spelllang=en
         set spelloptions=camel

@@ -75,7 +75,6 @@ return packer.startup(function(use)
         requires = "nvim-lua/plenary.nvim",
         branch = "unstable",
     })
-    use("wakatime/vim-wakatime")
     use("wbthomason/packer.nvim")
     use("windwp/nvim-ts-autotag")
     use("windwp/nvim-autopairs")
