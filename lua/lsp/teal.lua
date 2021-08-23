@@ -1,5 +1,5 @@
 local lspconfig = require("lspconfig")
-local configs = require("lspconfig/configs") 
+local configs = require("lspconfig/configs")
 
 if not lspconfig.teal then
     configs.teal = {
