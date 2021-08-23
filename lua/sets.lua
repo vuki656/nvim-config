@@ -46,10 +46,10 @@ set_buffer.shiftwidth = 4
 -- Enables tab to space conversion
 set_buffer.expandtab = true
 
--- Preffer opening new buffers to the right
+-- Prefer opening new buffers to the right
 set_buffer.splitright = true
 
--- Preffer opening new buffers below
+-- Prefer opening new buffers below
 set_buffer.splitbelow = true
 
 -- Enable nvim set colors
@@ -64,7 +64,7 @@ set_buffer.scrolloff = 15
 -- Scroll amount
 set_buffer.scroll = 15
 
--- Ignore casee when searching
+-- Ignore case when searching
 set_buffer.ignorecase = true
 
 ------------------------------------------------------------------------------------------
@@ -87,6 +87,7 @@ set_window.wrap = false
 ------------------------------------ MISC ------------------------------------------------
 ------------------------------------------------------------------------------------------
 
+-- TODO: convert spelling to code options
 vim.cmd([[
         colorscheme one
         syntax on
@@ -94,6 +95,12 @@ vim.cmd([[
         set noshowcmd 
         set nrformats=
         set formatoptions-=cro
+
+        
+        set spell
+        set spelllang=en
+        set spelloptions=camel
+        set spellfile=$HOME/.config/nvim/spell/en.utf-8.add
 ]])
 
 -- Hide ~ from sign column
