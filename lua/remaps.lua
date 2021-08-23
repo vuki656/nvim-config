@@ -49,12 +49,6 @@ vars.remap.fn("n", "gk", "O<Esc>j", vars.remap.opts)
 -- Delete everything on the line
 vars.remap.fn("n", "<leader>d", "<S-s><Esc>", vars.remap.opts)
 
--- Go to start of line
-vars.remap.fn("n", "H", "^", vars.remap.opts)
-
--- Go to end of line
-vars.remap.fn("n", "L", "$", vars.remap.opts)
-
 -- Highlight until the end of the line
 vars.remap.fn("n", "V", "v$", vars.remap.opts)
 
@@ -93,6 +87,25 @@ vars.remap.fn("n", "zp", "[s", vars.remap.opts)
 -- Open word fix suggestions
 vars.remap.fn("n", "zf", "z=", vars.remap.opts)
 
+------------------------------------------------------------------------------------------
+----------------------------------- LSP --------------------------------------------------
+------------------------------------------------------------------------------------------
+
+-- Show doc
+vars.remap.fn("n", "L", "<cmd>lua vim.lsp.buf.hover()<cr>", vars.remap.opts)
+
+-- Show diagnostics
+vars.remap.fn("n", "K", ":lua vim.lsp.diagnostic.show_line_diagnostics()<CR>", vars.remap.opts)
+
+-- Show code actions
+vars.remap.fn("n", "ga", "<cmd>lua vim.lsp.buf.code_action()<CR>", vars.remap.opts)
+
+-- Rename
+vars.remap.fn("n", "<leader>rn", " :lua vim.lsp.buf.rename()", vars.remap.opts)
+
+-- Go to next/previous diagnostic
+vars.remap.fn("n", "]d", ":lua vim.lsp.diagnostic.goto_next()<CR>", vars.remap.opts)
+vars.remap.fn("n", "[d", ":lua vim.lsp.diagnostic.goto_prev()<CR>", vars.remap.opts)
 
 -----------------------------------------------------------------------------------------
 ----------------------------------- TMUX PIPES -------------------------------------------
