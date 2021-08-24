@@ -587,3 +587,14 @@ bg
 c379
 conf
 tpm
+qia
+supertest
+ramda
+cuid
+bcrypt
+winston
+typeorm
+typedi
+sdk
+sourcemaps
+tsc
