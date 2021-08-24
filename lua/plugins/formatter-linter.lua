@@ -46,7 +46,7 @@ null_ls.config({
         -- Diagnostics
         diagnostics.shellcheck,
         diagnostics.hadolint,
-        diagnostics.eslint,
+        -- diagnostics.eslint,
         diagnostics.markdownlint,
         -- diagnostics.selene,
         diagnostics.teal,
