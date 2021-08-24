@@ -578,3 +578,12 @@ cr
 goto
 ga
 autocmd
+wildignorecase
+setw
+openbsd
+man1
+fg
+bg
+c379
+conf
+tpm
