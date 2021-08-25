@@ -8,3 +8,7 @@
 2. `cd nvim-config`
 3. `chmod +x install.sh`
 4. `./install.sh a`
+
+## Notes
+
+- When changing node version, all global `NPM` packages have to be reinstalled.

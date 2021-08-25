@@ -17,19 +17,28 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
 nvim_lsp.tsserver.setup({
     on_attach = function(client)
         ts_utils.setup({
-            eslint_bin = "eslint_d",
-            eslint_args = { "-f", "json", "--stdin", "--stdin-filename", "$FILENAME" },
+            eslint_enable_code_actions = true,
             eslint_enable_disable_comments = true,
+            eslint_disable_if_no_config = true,
+            eslint_bin = "eslint_d",
             eslint_enable_diagnostics = true,
+            eslint_show_rule_id = true,
             enable_formatting = true,
+            update_imports_on_move = true,
             formatter = "eslint_d",
+            eslint_args = {
+                "-f",
+                "json",
+                "--stdin",
+                "--stdin-filename",
+                "$FILENAME",
+            },
             formatter_args = {
                 "--fix-to-stdout",
                 "--stdin",
                 "--stdin-filename",
                 "$FILENAME",
             },
-            format_on_save = false,
         })
 
         client.resolved_capabilities.document_formatting = false
