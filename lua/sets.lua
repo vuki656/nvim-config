@@ -70,6 +70,9 @@ set_buffer.ignorecase = true
 -- Ignore case when searching
 set_buffer.wildignorecase = true
 
+-- Search with cases sensitive only if search query isn't the same case
+set_buffer.smartcase = true
+
 ------------------------------------------------------------------------------------------
 ----------------------------------- WINDOW -----------------------------------------------
 ------------------------------------------------------------------------------------------
