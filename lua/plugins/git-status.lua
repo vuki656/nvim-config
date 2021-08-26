@@ -43,8 +43,9 @@ git_signs.setup({
             linehl = "GitSignsChangeLn",
         },
     },
-    current_line_blame = true,
-    current_line_blame_delay = 1000,
+    current_line_blame_opts = ({
+        delay = 300,
+    }),
 })
 
 ------------------------------------------------------------------------------------------
