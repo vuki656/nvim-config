@@ -74,6 +74,9 @@ vars.remap.fn("n", "<leader>rs", ":luafile %<CR>", vars.remap.opts)
 -- Format file
 vars.remap.fn("n", "<leader>ef", ":lua vim.lsp.buf.formatting()<CR>", vars.remap.opts)
 
+-- Resource spell file
+vars.remap.fn("n", "<leader>sr", ":mkspell ./spell/en.utf-8.add<CR>", vars.remap.opts)
+
 ------------------------------------------------------------------------------------------
 ----------------------------------- SPELLCHECK -------------------------------------------
 ------------------------------------------------------------------------------------------

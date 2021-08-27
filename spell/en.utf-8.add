@@ -820,3 +820,5 @@ shopt
 oq
 posix
 elif
+mkspell
+sr
