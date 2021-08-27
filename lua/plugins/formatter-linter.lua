@@ -22,12 +22,12 @@ local formatter_prettier = formatter.prettier.with({
         "css",
         "html",
         "yaml",
+        "markdown",
+        "json"
     },
     args = {
         "--stdin-filepath",
-        "$FILENAME",
-        "--no-semi",
-        "--tab-width=4",
+        "$FILENAME"
     },
 })
 
