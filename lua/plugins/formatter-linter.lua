@@ -47,7 +47,6 @@ null_ls.config({
         diagnostics.shellcheck,
         diagnostics.hadolint,
         diagnostics.markdownlint,
-        -- diagnostics.selene, FIXME: broken on latest
         diagnostics.teal,
         diagnostics.write_good,
     },
