@@ -822,3 +822,4 @@ posix
 elif
 mkspell
 sr
+setlocal
