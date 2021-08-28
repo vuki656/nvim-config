@@ -115,6 +115,9 @@ vim.cmd([[
 
         " Don't check if line starts with capital letter
         set spellcapcheck=
+
+        " Number of spell suggestions
+        set spellsuggest+=7
         
         " Don't continue comment when adding a new line above/under comment 
         autocmd BufNewFile,BufRead * setlocal formatoptions-=ro
