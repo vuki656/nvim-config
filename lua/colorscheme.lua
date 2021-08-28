@@ -5,6 +5,14 @@ require("nvim-treesitter.configs").setup({
     highlight = { enable = true },
     autotag = { enable = true },
     indent = { enable = true },
+    incremental_selection = {
+        enable = true,
+        keymaps = {
+            init_selection = "<C-w>",
+            node_incremental = "<C-w>",
+            node_decremental = "<C-e>",
+        },
+    },
 })
 
 vim.cmd([[highlight! TSKeyword              guifg=]] .. colors.purple)
