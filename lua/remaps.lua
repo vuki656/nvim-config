@@ -121,3 +121,41 @@ vars.remap.fn("n", "<leader>rs", ":luafile %<CR>", vars.remap.opts)
 
 -- Resource spell file
 vars.remap.fn("n", "<leader>sr", ":mkspell ./spell/en.utf-8.add<CR>", vars.remap.opts)
+
+-- Take the word under cursor and put it into a print statement on the line below
+function print_word()
+    local filetype = vim.bo.filetype
+
+    local current_word = vim.fn.expand("<cword>")
+    local current_line = vim.api.nvim_win_get_cursor(0)
+    local current_line_number = vim.inspect(current_line[1])
+
+    if filetype == "lua" then
+        vim.api.nvim_buf_set_lines(
+            0,
+            tonumber(current_line_number),
+            tonumber(current_line_number),
+            false,
+            { "print(vim.inspect('" .. tostring(current_word) .. ": ', " .. current_word .. "))" }
+        )
+
+        vim.fn.execute("lua vim.lsp.buf.formatting()")
+    elseif
+        filetype == "javascript"
+        or filetype == "typescript"
+        or filetype == "typescriptreact"
+        or filetype == "javascriptreact"
+    then
+        vim.api.nvim_buf_set_lines(
+            0,
+            tonumber(current_line_number),
+            tonumber(current_line_number),
+            false,
+            { "console.log('" .. tostring(current_word) .. ": ', " .. current_word .. ")" }
+        )
+
+        vim.fn.execute("lua vim.lsp.buf.formatting()")
+    end
+end
+
+vim.api.nvim_set_keymap("n", "<leader>wp", ":lua print_word()<CR>", { noremap = true, silent = true })
