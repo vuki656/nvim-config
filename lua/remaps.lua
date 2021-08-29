@@ -65,19 +65,6 @@ vars.remap.fn("n", "dK", "kdd", vars.remap.opts)
 vars.remap.fn("n", "J", "J0", vars.remap.opts)
 
 ------------------------------------------------------------------------------------------
------------------------------------ MISC -------------------------------------------------
-------------------------------------------------------------------------------------------
-
--- ReSource lua file
-vars.remap.fn("n", "<leader>rs", ":luafile %<CR>", vars.remap.opts)
-
--- Format file
-vars.remap.fn("n", "<leader>ef", ":lua vim.lsp.buf.formatting()<CR>", vars.remap.opts)
-
--- Resource spell file
-vars.remap.fn("n", "<leader>sr", ":mkspell ./spell/en.utf-8.add<CR>", vars.remap.opts)
-
-------------------------------------------------------------------------------------------
 ----------------------------------- SPELLCHECK -------------------------------------------
 ------------------------------------------------------------------------------------------
 
@@ -124,3 +111,13 @@ vars.remap.fn(
 
 -- Send install
 vars.remap.fn("n", "<leader>yi", ':!tmux send-keys -t "QIA Dashboard":TERM.1 "yarn" C-m <CR><CR>', vars.remap.opts)
+
+------------------------------------------------------------------------------------------
+----------------------------------- MISC -------------------------------------------------
+------------------------------------------------------------------------------------------
+
+-- ReSource lua file
+vars.remap.fn("n", "<leader>rs", ":luafile %<CR>", vars.remap.opts)
+
+-- Resource spell file
+vars.remap.fn("n", "<leader>sr", ":mkspell ./spell/en.utf-8.add<CR>", vars.remap.opts)
