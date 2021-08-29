@@ -836,3 +836,6 @@ tm
 keymaps
 esc
 jk
+nui
+zindex
+winblend

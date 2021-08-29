@@ -73,5 +73,6 @@ return packer.startup(function(use)
     use("windwp/nvim-ts-autotag")
     use("windwp/nvim-autopairs")
 
-    use('~/Projects/test.nvim')
+    use("MunifTanjim/nui.nvim")
+    use("~/Projects/test.nvim")
 end)
