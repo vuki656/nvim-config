@@ -9,6 +9,7 @@ local autosave = require("autosave")
 ------------------------------------------------------------------------------------------
 
 autosave.setup({
+    execution_message = "",
     events = {
         "InsertLeave",
         "TextChanged",
