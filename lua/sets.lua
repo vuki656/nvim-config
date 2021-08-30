@@ -93,7 +93,7 @@ set_window.wrap = false
 ------------------------------------ MISC ------------------------------------------------
 ------------------------------------------------------------------------------------------
 
--- TODO: convert spelling to code options
+-- TODO: convert to lua
 vim.cmd([[
         " Set colorscheme
         colorscheme one

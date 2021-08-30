@@ -21,6 +21,7 @@ end
 return packer.startup(function(use)
     use("lewis6991/impatient.nvim")
 
+    use("AckslD/nvim-neoclip.lua")
     use("akinsho/nvim-toggleterm.lua")
     use("ahmedkhalf/project.nvim")
     use("folke/todo-comments.nvim")
