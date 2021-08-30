@@ -30,7 +30,7 @@ vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
 
 ----------------------------------- LAZYGIT ----------------------------------------------
 
-local lazygit = Terminal:new({
+local terminal_git = Terminal:new({
     cmd = "lazygit",
     dir = "git_dir",
     direction = "float",
@@ -43,20 +43,46 @@ local lazygit = Terminal:new({
     end,
     on_close = function()
         vim.cmd(":NvimTreeRefresh")
-        vim.cmd(":e")
+        vim.cmd(":Gitsigns refresh")
     end,
     hidden = true,
 })
 
 function toggle_git()
-    lazygit:toggle()
+    terminal_git:toggle()
 end
 
 vim.api.nvim_set_keymap("n", "<leader>lg", ":lua toggle_git()<CR>", { noremap = true, silent = true })
 
+----------------------------------- LAZYDOCKER ----------------------------------------------
+
+local terminal_docker = Terminal:new({
+    cmd = "lazydocker",
+    dir = "git_dir",
+    direction = "float",
+    float_opts = {
+        border = "single",
+    },
+    on_open = function(terminal)
+        vim.cmd("startinsert!")
+        vim.api.nvim_buf_set_keymap(terminal.bufnr, "n", "q", ":close<CR>", { noremap = true, silent = true })
+    end,
+    on_close = function()
+        vim.cmd(":NvimTreeRefresh")
+        vim.cmd(":Gitsigns refresh")
+    end,
+    hidden = true,
+})
+
+function toggle_docker()
+    terminal_docker:toggle()
+end
+
+vim.api.nvim_set_keymap("n", "<leader>ld", ":lua toggle_docker()<CR>", { noremap = true, silent = true })
+
 ----------------------------------- BASIC ----------------------------------------------
 
-local terminal = Terminal:new({
+local terminal_main = Terminal:new({
     dir = "git_dir",
     direction = "float",
     float_opts = {
@@ -69,7 +95,8 @@ local terminal = Terminal:new({
 })
 
 function toggle_term()
-    terminal:toggle()
+    terminal_main:toggle()
 end
 
 vim.api.nvim_set_keymap("n", "<leader>tm", ":lua toggle_term()<CR>", { noremap = true, silent = true })
+
