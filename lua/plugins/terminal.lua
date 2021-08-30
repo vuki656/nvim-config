@@ -171,4 +171,3 @@ function toggle_yarn_codegen()
 end
 
 vim.api.nvim_set_keymap("n", "<leader>tcg", ":lua toggle_yarn_codegen()<CR>", { noremap = true, silent = true })
-

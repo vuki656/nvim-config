@@ -11,7 +11,7 @@ require("colorscheme")
 ----------------------------------- PLUGINS ----------------------------------------------
 ------------------------------------------------------------------------------------------
 
-require('impatient')
+require("impatient")
 require("plugins.notifications")
 
 require("plugins.auto-pairs")
