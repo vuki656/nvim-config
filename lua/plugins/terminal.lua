@@ -100,3 +100,75 @@ end
 
 vim.api.nvim_set_keymap("n", "<leader>tm", ":lua toggle_term()<CR>", { noremap = true, silent = true })
 
+---------------------------------- YARN PIPES -------------------------------------------
+
+-- ************ yarn install
+
+local yarn_terminal_output = ""
+
+local terminal_yarn = Terminal:new({
+    count = 3,
+    dir = "git_dir",
+    cmd = "yarn",
+    close_on_exit = true,
+    on_stdout = function(_, stdout)
+        yarn_terminal_output = yarn_terminal_output .. table.concat(stdout)
+
+        if table.concat(stdout) == "" then
+            local is_error = string.find(yarn_terminal_output, "Failed with errors") ~= nil
+            local is_success = string.find(yarn_terminal_output, "success") ~= nil
+                or string.find(yarn_terminal_output, "Done") ~= nil
+
+            if is_error then
+                vim.notify("`yarn install` failed", "error", { title = "Install" })
+            elseif is_success then
+                vim.notify("`yarn install` finished successfully", "info", { title = "Install" })
+            else
+                vim.notify("`yarn install` finished unexpectedly", "warn", { title = "Install" })
+            end
+        end
+    end,
+})
+
+function toggle_yarn()
+    vim.notify("Running `yarn install`", "debug", { title = "Install" })
+
+    terminal_yarn:toggle()
+    terminal_yarn:toggle()
+end
+
+vim.api.nvim_set_keymap("n", "<leader>tci", ":lua toggle_yarn()<CR>", { noremap = true, silent = true })
+
+-- ************ yarn codegen
+
+local yarn_codegen_terminal_output = ""
+
+local terminal_yarn_codegen = Terminal:new({
+    count = 3,
+    dir = "git_dir",
+    cmd = "yarn codegen",
+    close_on_exit = true,
+    on_stdout = function(_, stdout)
+        yarn_codegen_terminal_output = yarn_codegen_terminal_output .. table.concat(stdout)
+
+        if table.concat(stdout) == "" then
+            local is_error = string.find(yarn_codegen_terminal_output, "error") ~= nil
+
+            if is_error then
+                vim.notify("`yarn codegen` failed", "error", { title = "Codegen" })
+            else
+                vim.notify("`yarn codegen` finished successfully", "info", { title = "Codegen" })
+            end
+        end
+    end,
+})
+
+function toggle_yarn_codegen()
+    vim.notify("Running `yarn codegen`.", "debug", { title = "Codegen" })
+
+    terminal_yarn_codegen:toggle()
+    terminal_yarn_codegen:toggle()
+end
+
+vim.api.nvim_set_keymap("n", "<leader>tcg", ":lua toggle_yarn_codegen()<CR>", { noremap = true, silent = true })
+

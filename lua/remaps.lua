@@ -97,21 +97,6 @@ vars.remap.fn("n", "<leader>rn", " :lua vim.lsp.buf.rename()<CR>", vars.remap.op
 vars.remap.fn("n", "]d", ":lua vim.lsp.diagnostic.goto_next()<CR>", vars.remap.opts)
 vars.remap.fn("n", "[d", ":lua vim.lsp.diagnostic.goto_prev()<CR>", vars.remap.opts)
 
------------------------------------------------------------------------------------------
------------------------------------ TMUX PIPES -------------------------------------------
-------------------------------------------------------------------------------------------
-
--- Send codegen
-vars.remap.fn(
-    "n",
-    "<leader>yc",
-    ':!tmux send-keys -t "QIA Dashboard":TERM.1 "yarn codegen" C-m <CR><CR>',
-    vars.remap.opts
-)
-
--- Send install
-vars.remap.fn("n", "<leader>yi", ':!tmux send-keys -t "QIA Dashboard":TERM.1 "yarn" C-m <CR><CR>', vars.remap.opts)
-
 ------------------------------------------------------------------------------------------
 ----------------------------------- MISC -------------------------------------------------
 ------------------------------------------------------------------------------------------
