@@ -95,17 +95,38 @@ set_window.wrap = false
 
 -- TODO: convert spelling to code options
 vim.cmd([[
+        " Set colorscheme
         colorscheme one
+
+        " Enable syntax
         syntax on
-        set noshowmode  
+
+        " Enable spellcheck
+        set spell
+
+        " Spelling language
+        set spelllang=en
+
+        " Support camel case spelling
+        set spelloptions=camel
+
+        " Spell file location
+        set spellfile=$HOME/.config/nvim/spell/en.utf-8.add
+
+        " Don't check if line starts with capital letter
+        set spellcapcheck=
+
+        " Number of spell suggestions
+        set spellsuggest+=7
+        
+        " Don't continue comment when adding a new line above/under comment 
+        autocmd BufNewFile,BufRead * setlocal formatoptions-=ro
+
+        " TODO: document
+        set noshowmode
         set noshowcmd 
         set nrformats=
-        set formatoptions-=cro
-        set spell
-        set spelllang=en
-        set spelloptions=camel
-        set spellfile=$HOME/.config/nvim/spell/en.utf-8.add
-        set spellcapcheck=
+
 ]])
 
 -- Hide ~ from sign column

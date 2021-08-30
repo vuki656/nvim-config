@@ -14,22 +14,20 @@ local vars = require("utils.vars")
 local formatter = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 
-local formatter_prettier = formatter.prettier.with({
-    filetypes = {
-        "javascript",
-        "javascriptreact",
+local prettier = {
+    files = {
         "vue",
         "css",
         "html",
         "yaml",
+        "markdown",
+        "json",
     },
     args = {
         "--stdin-filepath",
         "$FILENAME",
-        "--no-semi",
-        "--tab-width=4",
     },
-})
+}
 
 local formatter_shfmt = formatter.shfmt.with({
     args = { "-i=4" },
@@ -40,16 +38,37 @@ null_ls.config({
         -- Formatters
         formatter.stylua,
         formatter.prismaFmt,
-        formatter_prettier,
         formatter_shfmt,
 
         -- Diagnostics
         diagnostics.shellcheck,
         diagnostics.hadolint,
         diagnostics.markdownlint,
-        -- diagnostics.selene, FIXME: broken on latest
         diagnostics.teal,
         diagnostics.write_good,
+
+        -- If eslint config exists use eslint, else use prettier
+        require("null-ls.helpers").conditional(function(utils)
+            local has_eslint = utils.root_has_file(".eslintrc.js") or utils.root_has_file(".eslintrc.json")
+
+            if has_eslint then
+                return formatter.prettier.with({
+                    filetypes = prettier.files,
+                    args = prettier.args,
+                })
+            else
+                return formatter.prettier.with({
+                    filetypes = {
+                        unpack(prettier.files),
+                        "javascript",
+                        "javascriptreact",
+                        "typescript",
+                        "typescriptreact",
+                    },
+                    args = prettier.args,
+                })
+            end
+        end),
     },
 })
 

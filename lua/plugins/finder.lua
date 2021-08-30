@@ -45,15 +45,20 @@ vars.remap.fn("n", "<leader>pi", ":Telescope lsp_definitions<CR>", vars.remap.op
 
 ----------------------------------- GIT --------------------------------------------------
 
--- List branches
+-- Find branches
 vars.remap.fn("n", "<leader>gba", ":Telescope git_branches<CR>", vars.remap.opts)
 
--- List branch commits
+-- Find branch commits
 vars.remap.fn("n", "<leader>gbc", ":Telescope git_commits<CR>", vars.remap.opts)
 
--- List file commits
+-- Find file commits
 vars.remap.fn("n", "<leader>gfc", ":Telescope git_bcommits<CR>", vars.remap.opts)
 
------------------------------------ LSP --------------------------------------------------
+----------------------------------- MISC --------------------------------------------------
 
+-- Find vim man pages
 vars.remap.fn("n", "<leader>gh", ":Telescope help_tags<CR>", vars.remap.opts)
+
+-- Find neovim remaps 
+vars.remap.fn("n", "<leader>gr", ":Telescope remaps<CR>", vars.remap.opts)
+
