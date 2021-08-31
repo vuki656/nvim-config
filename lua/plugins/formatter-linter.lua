@@ -37,7 +37,7 @@ null_ls.config({
     sources = {
         -- Formatters
         formatter.stylua,
-        formatter.prismaFmt,
+        -- formatter.prismaFmt,
         formatter.fixjson,
         formatter_shfmt,
 

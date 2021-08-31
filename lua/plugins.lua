@@ -19,6 +19,7 @@ end
 ------------------------------------------------------------------------------------------
 
 return packer.startup(function(use)
+    use("pantharshit00/vim-prisma")
     use("lewis6991/impatient.nvim")
 
     use("AckslD/nvim-neoclip.lua")
