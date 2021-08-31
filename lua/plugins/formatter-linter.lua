@@ -38,6 +38,7 @@ null_ls.config({
         -- Formatters
         formatter.stylua,
         formatter.prismaFmt,
+        formatter.fixjson,
         formatter_shfmt,
 
         -- Diagnostics
@@ -46,6 +47,7 @@ null_ls.config({
         diagnostics.markdownlint,
         diagnostics.teal,
         diagnostics.write_good,
+        diagnostics.codespell,
 
         -- If eslint config exists use eslint, else use prettier
         require("null-ls.helpers").conditional(function(utils)
