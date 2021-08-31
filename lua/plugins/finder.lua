@@ -24,15 +24,12 @@ telescope.load_extension("fzy_native")
 ----------------------------------- FIND -------------------------------------------------
 
 -- Find git files in project
-vars.remap.fn("n", "<leader>pf", ":Telescope git_files<CR>", vars.remap.opts)
+vars.remap.fn("n", "<leader>pf", ":Telescope find_files<CR>", vars.remap.opts)
 
 -- Find text in project
 vars.remap.fn("n", "<leader>ps", ":Telescope live_grep<CR>", vars.remap.opts)
 
 ----------------------------------- LSP --------------------------------------------------
-
--- Find document diagnostics
-vars.remap.fn("n", "<leader>pd", ":Telescope lsp_document_diagnostics<CR>", vars.remap.opts)
 
 -- Find project diagnostics
 vars.remap.fn("n", "<leader>pad", ":Telescope lsp_workspace_diagnostics<CR>", vars.remap.opts)
@@ -45,20 +42,13 @@ vars.remap.fn("n", "<leader>pi", ":Telescope lsp_definitions<CR>", vars.remap.op
 
 ----------------------------------- GIT --------------------------------------------------
 
--- Find branches
-vars.remap.fn("n", "<leader>gba", ":Telescope git_branches<CR>", vars.remap.opts)
-
--- Find branch commits
-vars.remap.fn("n", "<leader>gbc", ":Telescope git_commits<CR>", vars.remap.opts)
-
 -- Find file commits
-vars.remap.fn("n", "<leader>gfc", ":Telescope git_bcommits<CR>", vars.remap.opts)
+vars.remap.fn("n", "<leader>fh", ":Telescope git_bcommits<CR>", vars.remap.opts)
 
 ----------------------------------- MISC --------------------------------------------------
 
 -- Find vim man pages
 vars.remap.fn("n", "<leader>gh", ":Telescope help_tags<CR>", vars.remap.opts)
 
--- Find neovim remaps 
+-- Find neovim remaps
 vars.remap.fn("n", "<leader>gr", ":Telescope remaps<CR>", vars.remap.opts)
-

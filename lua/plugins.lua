@@ -19,6 +19,9 @@ end
 ------------------------------------------------------------------------------------------
 
 return packer.startup(function(use)
+    use("lewis6991/impatient.nvim")
+
+    use("AckslD/nvim-neoclip.lua")
     use("akinsho/nvim-toggleterm.lua")
     use("ahmedkhalf/project.nvim")
     use("folke/todo-comments.nvim")
@@ -66,6 +69,7 @@ return packer.startup(function(use)
     use("lukas-reineke/indent-blankline.nvim")
     use("pocco81/autosave.nvim")
     use("rakr/vim-one")
+    use("rcarriga/nvim-notify")
     use("tpope/vim-commentary")
     use("ThePrimeagen/harpoon")
     use("vuki656/package-info.nvim")
@@ -73,6 +77,6 @@ return packer.startup(function(use)
     use("windwp/nvim-ts-autotag")
     use("windwp/nvim-autopairs")
 
-    use("MunifTanjim/nui.nvim")
-    use("~/Projects/test.nvim")
+    -- use("dstein64/vim-startuptime")
+    -- use("~/Projects/test.nvim")
 end)

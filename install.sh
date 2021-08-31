@@ -12,8 +12,8 @@ install_lsps() {
     npm i -g vscode-langservers-extracted -y
     npm i -g typescript typescript-language-server -y
     npm i -g @prisma/language-server -y
+    npm i -g yaml-language-server -y
 
-    yarn global add yaml-language-server -y
     luarocks install --dev teal-language-server
 }
 
