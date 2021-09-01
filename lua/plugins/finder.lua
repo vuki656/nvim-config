@@ -51,4 +51,4 @@ vars.remap.fn("n", "<leader>fh", ":Telescope git_bcommits<CR>", vars.remap.opts)
 vars.remap.fn("n", "<leader>gh", ":Telescope help_tags<CR>", vars.remap.opts)
 
 -- Find neovim remaps
-vars.remap.fn("n", "<leader>gr", ":Telescope remaps<CR>", vars.remap.opts)
+vars.remap.fn("n", "<leader>gr", ":Telescope keymaps<CR>", vars.remap.opts)
