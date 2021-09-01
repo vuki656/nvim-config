@@ -12,12 +12,11 @@ require("colorscheme")
 ------------------------------------------------------------------------------------------
 
 require("impatient")
-require("plugins.notifications")
 
+require("plugins.notifications")
 require("plugins.auto-pairs")
 require("plugins.auto-save")
 require("plugins.bookmarks")
-require("plugins.clipboard")
 require("plugins.completion-icons")
 require("plugins.completion")
 require("plugins.file-tree")
