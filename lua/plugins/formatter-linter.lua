@@ -21,7 +21,6 @@ local prettier = {
         "html",
         "yaml",
         "markdown",
-        "json",
     },
     args = {
         "--stdin-filepath",
