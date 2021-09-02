@@ -19,6 +19,3 @@ vars.remap.fn("n", "<leader>sn", "ZN", {})
 
 -- Go to previous mistake
 vars.remap.fn("n", "<leader>sp", "ZP", {})
-
--- Add all
-vars.remap.fn("n", "<leader>se", ":SpelunkerAddAll<CR>", {})
