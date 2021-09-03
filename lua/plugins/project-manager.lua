@@ -13,6 +13,15 @@ local vars = require("utils.vars")
 
 project.setup({
     patterns = { ".git", "yarn.lock" },
+    exclude_dirs = {
+        "~/IdeaProjects/oem-dashboard/packages/*",
+        "~/IdeaProjects/qia-dashboard/packages/*",
+        "~/Projects/clones/*",
+        "~/.nvm",
+        "~/lsps/*",
+        "~/.config/awesome/awesome-wm-widgets",
+        "~/lua-language-server",
+    },
 })
 
 telescope.load_extension("projects")
