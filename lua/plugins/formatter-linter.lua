@@ -14,20 +14,6 @@ local vars = require("utils.vars")
 local formatter = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 
-local prettier = {
-    files = {
-        "vue",
-        "css",
-        "html",
-        "yaml",
-        "markdown",
-    },
-    args = {
-        "--stdin-filepath",
-        "$FILENAME",
-    },
-}
-
 local formatter_shfmt = formatter.shfmt.with({
     args = { "-i=4" },
 })
@@ -36,7 +22,6 @@ null_ls.config({
     sources = {
         -- Formatters
         formatter.stylua,
-        -- formatter.prismaFmt,
         formatter.fixjson,
         formatter_shfmt,
 
@@ -54,19 +39,35 @@ null_ls.config({
 
             if has_eslint then
                 return formatter.prettier.with({
-                    filetypes = prettier.files,
-                    args = prettier.args,
+                    files = {
+                        "vue",
+                        "css",
+                        "html",
+                        "yaml",
+                        "markdown",
+                    },
+                    args = {
+                        "--stdin-filepath",
+                        "$FILENAME",
+                    },
                 })
             else
                 return formatter.prettier.with({
-                    filetypes = {
-                        unpack(prettier.files),
+                    files = {
+                        "vue",
+                        "css",
+                        "html",
+                        "yaml",
+                        "markdown",
                         "javascript",
                         "javascriptreact",
                         "typescript",
                         "typescriptreact",
                     },
-                    args = prettier.args,
+                    args = {
+                        "--stdin-filepath",
+                        "$FILENAME",
+                    },
                 })
             end
         end),
