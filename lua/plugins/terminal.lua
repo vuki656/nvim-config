@@ -42,6 +42,7 @@ local terminal_git = Terminal:new({
         vim.api.nvim_buf_set_keymap(terminal.bufnr, "n", "q", ":close<CR>", { noremap = true, silent = true })
     end,
     on_close = function()
+        vim.cmd(":e")
         vim.cmd(":NvimTreeRefresh")
         vim.cmd(":Gitsigns refresh")
     end,

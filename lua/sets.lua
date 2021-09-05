@@ -126,7 +126,6 @@ vim.cmd([[
         set noshowmode
         set noshowcmd 
         set nrformats=
-
 ]])
 
 -- Hide ~ from sign column
