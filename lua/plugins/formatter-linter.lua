@@ -30,7 +30,9 @@ null_ls.config({
         diagnostics.hadolint,
         diagnostics.markdownlint,
         diagnostics.teal,
-        diagnostics.write_good,
+        diagnostics.write_good.with({
+            extra_args = { "--no-passive" },
+        }),
 
         -- If eslint config exists use eslint, else use prettier
         require("null-ls.helpers").conditional(function(utils)
