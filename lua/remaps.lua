@@ -79,6 +79,7 @@ vars.remap.fn("n", "zf", "z=1<CR> :w<CR> :e<CR>", vars.remap.opts)
 
 -- Opens word fixed suggestions
 vars.remap.fn("n", "zl", "z=", vars.remap.opts)
+
 ------------------------------------------------------------------------------------------
 ----------------------------------- LSP --------------------------------------------------
 ------------------------------------------------------------------------------------------
@@ -123,7 +124,7 @@ function print_word()
             tonumber(current_line_number),
             tonumber(current_line_number),
             false,
-            { "print(vim.inspect('" .. tostring(current_word) .. ": ', " .. current_word .. "))" }
+            { "print(vim.inspect(" .. current_word .. "))" }
         )
 
         vim.fn.execute("lua vim.lsp.buf.formatting()")
