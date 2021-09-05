@@ -74,9 +74,11 @@ vars.remap.fn("n", "zn", "]s", vars.remap.opts)
 -- Go to previous misspell
 vars.remap.fn("n", "zp", "[s", vars.remap.opts)
 
--- Open word fix suggestions
-vars.remap.fn("n", "zf", "z=", vars.remap.opts)
+-- Auto select first fix suggestion
+vars.remap.fn("n", "zf", "z=1<CR> :w<CR> :e<CR>", vars.remap.opts)
 
+-- Opens word fixed suggestions
+vars.remap.fn("n", "zl", "z=", vars.remap.opts)
 ------------------------------------------------------------------------------------------
 ----------------------------------- LSP --------------------------------------------------
 ------------------------------------------------------------------------------------------
