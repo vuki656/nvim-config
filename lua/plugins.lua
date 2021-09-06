@@ -72,7 +72,11 @@ return packer.startup(function(use)
     use("rcarriga/nvim-notify")
     use("tpope/vim-commentary")
     use("ThePrimeagen/harpoon")
-    use("vuki656/package-info.nvim")
+    use({
+        "vuki656/package-info.nvim",
+        branch = "develop",
+        requires = { "MunifTanjim/nui.nvim" },
+    })
     use("wbthomason/packer.nvim")
     use("windwp/nvim-ts-autotag")
     use("windwp/nvim-autopairs")

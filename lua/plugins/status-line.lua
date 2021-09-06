@@ -5,6 +5,7 @@
 local galaxy_line = require("galaxyline")
 local vcs = require("galaxyline.provider_vcs")
 local file = require("galaxyline.provider_fileinfo")
+local package = require("package-info")
 
 local colors = require("utils.colors")
 
@@ -89,6 +90,14 @@ section.left[9] = {
         provider = "DiagnosticWarn",
         icon = "  ",
         highlight = { colors.orange },
+    },
+}
+
+section.left[10] = {
+    PackageInfoStatus = {
+        provider = function()
+            return package.get_status()
+        end,
     },
 }
 
