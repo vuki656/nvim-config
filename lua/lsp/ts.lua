@@ -1,10 +1,11 @@
 local nvim_lsp = require("lspconfig")
 local ts_utils = require("nvim-lsp-ts-utils")
+local cmp = require("cmp_nvim_lsp")
 
 local remap = vim.api.nvim_set_keymap
 
--- Snippets support
 local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = cmp.update_capabilities(capabilities)
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 capabilities.textDocument.completion.completionItem.resolveSupport = {
     properties = {

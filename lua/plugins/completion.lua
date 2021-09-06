@@ -1,109 +1,92 @@
--- Name: Compe
+-- Name: Cmp
 -- Description: Autocompletion
--- Link: https://github.com/hrsh7th/nvim-compe
+-- Link: https://github.com/hrsh7th/nvim-cmp
 
-local compe = require("compe")
-local vars = require("utils.vars")
+local cmp = require("cmp")
+local minsnip = require("minsnip")
+local lspkind = require("lspkind")
 
-------------------------------------------------------------------------------------------
------------------------------------ SETUP ------------------------------------------------
-------------------------------------------------------------------------------------------
+local colors = require("utils.colors")
 
-compe.setup({
-    enabled = true,
-    autocomplete = true,
-    debug = false,
-    min_length = 1,
-    preselect = "enable",
-    throttle_time = 80,
-    source_timeout = 200,
-    incomplete_delay = 400,
-    max_abbr_width = 100,
-    max_kind_width = 100,
-    max_menu_width = 100,
-    documentation = {
-        border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-        winhighlight = "NormalFloat:CompeDocumentation,FloatBorder:CompeDocumentationBorder",
-        max_width = 120,
-        min_width = 60,
-        max_height = math.floor(vim.o.lines * 0.3),
-        min_height = 1,
+--------------------------------------------------------------------------------------------
+------------------------------------- SETUP ------------------------------------------------
+--------------------------------------------------------------------------------------------
+
+-- Fix tabbing
+vim.o.completeopt = "menuone,noselect"
+
+cmp.setup({
+    mapping = {
+        ["<C-Space>"] = cmp.mapping.complete(),
+        ["<C-e>"] = cmp.mapping.close(),
+        ["<CR>"] = cmp.mapping.confirm({
+            behavior = cmp.ConfirmBehavior.Replace,
+            select = true,
+        }),
+        ["<Tab>"] = function(fallback)
+            if vim.fn.pumvisible() == 1 then
+                vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<C-n>", true, true, true), "n")
+            elseif not minsnip.jump() then
+                fallback()
+            end
+        end,
+        ["<S-Tab>"] = function(fallback)
+            if vim.fn.pumvisible() == 1 then
+                vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<C-p>", true, true, true), "n")
+            elseif not minsnip.jump_backwards() then
+                fallback()
+            end
+        end,
     },
-    source = {
-        path = true,
-        buffer = true,
-        calc = true,
-        vsnip = true,
-        nvim_lsp = true,
-        nvim_lua = true,
-        spell = true,
+    formatting = {
+        format = function(_, vim_item)
+            vim_item.kind = lspkind.presets.default[vim_item.kind] .. " " .. vim_item.kind
+
+            return vim_item
+        end,
+    },
+    snippet = {
+        expand = function(args)
+            minsnip.expand_anonymous(args.body)
+        end,
+    },
+    sources = {
+        {
+            name = "nvim_lsp",
+            max_item_count = 5,
+        },
+        {
+            name = "nvim_lua",
+            max_item_count = 5,
+        },
+        {
+            name = "buffer",
+            max_item_count = 5,
+            opts = {
+                get_bufnrs = function()
+                    return vim.api.nvim_list_bufs()
+                end,
+            },
+        },
+        {
+            name = "spell",
+            max_item_count = 5,
+        },
+        {
+            name = "path",
+            max_item_count = 5,
+        },
+        {
+            name = "minsnip",
+            max_item_count = 5,
+        },
     },
 })
 
-vim.o.completeopt = "menuone,noselect"
+--------------------------------------------------------------------------------------------
+------------------------------------- COLORS -----------------------------------------------
+--------------------------------------------------------------------------------------------
 
-------------------------------------------------------------------------------------------
------------------------------------ REMAPS -----------------------------------------------
-------------------------------------------------------------------------------------------
-
--- Tab to navigate forward in suggestion dialog
-vars.remap.fn("i", "<Tab>", "v:lua.tab_complete()", { expr = true })
-vars.remap.fn("s", "<Tab>", "v:lua.tab_complete()", { expr = true })
-
--- Shift + Tab to navigate backwards in suggestion dialog
-vars.remap.fn("i", "<S-Tab>", "v:lua.s_tab_complete()", { expr = true })
-vars.remap.fn("s", "<S-Tab>", "v:lua.s_tab_complete()", { expr = true })
-
--- CTRL + Space to open the suggestion dialog
-vars.remap.fn("i", "<C-Space>", "compe#complete()", { expr = true })
-
--- Enter to select suggestion dialog item
-vars.remap.fn("i", "<CR>", "compe#confirm('<CR>')", { expr = true })
-
--- Close suggestion dialog
-vars.remap.fn("i", "<C-e>", "compe#close('<C-e>')", { expr = true })
-
-------------------------------------------------------------------------------------------
------------------------------------ COLORS -----------------------------------------------
-------------------------------------------------------------------------------------------
-
--- Selected item
+---- Selected item
 vim.cmd([[highlight PmenuSel           guibg=]] .. colors.green)
 vim.cmd([[highlight PmenuSel           guifg=]] .. colors.background)
-
-------------------------------------------------------------------------------------------
------------------------------------ CONFIG -----------------------------------------------
-------------------------------------------------------------------------------------------
-
------------------------------ TAB RESULT NAVIGATION --------------------------------------
-local call_command = function(string)
-    return vim.api.nvim_replace_termcodes(string, true, true, true)
-end
-
-local check_back_space = function()
-    local column = vim.fn.col(".") - 1
-
-    if column == 0 or vim.fn.getline("."):sub(column, column):match("%s") then
-        return true
-    else
-        return false
-    end
-end
-
-_G.tab_complete = function()
-    if vim.fn.pumvisible() == 1 then
-        return call_command("<C-n>")
-    elseif check_back_space() then
-        return call_command("<Tab>")
-    else
-        return vim.fn["compe#complete"]()
-    end
-end
-
-_G.s_tab_complete = function()
-    if vim.fn.pumvisible() == 1 then
-        return call_command("<C-p>")
-    else
-        return call_command("<S-Tab>")
-    end
-end

@@ -29,11 +29,17 @@ return packer.startup(function(use)
         "glepnir/galaxyline.nvim",
         requires = { "kyazdani42/nvim-web-devicons" },
     })
-    use("hrsh7th/nvim-compe")
     use({
-        "hrsh7th/vim-vsnip",
-        requires = { "hrsh7th/vim-vsnip-integ" },
+        "hrsh7th/nvim-cmp",
+        requires = {
+            "hrsh7th/cmp-nvim-lsp",
+            "hrsh7th/cmp-buffer",
+            "hrsh7th/cmp-path",
+            "hrsh7th/cmp-nvim-lua",
+            "f3fora/cmp-spell",
+        },
     })
+    use("jose-elias-alvarez/minsnip.nvim")
     use({
         "iamcco/markdown-preview.nvim",
         run = [[sh -c 'cd app && rm yarn.lock && yarn install']],
