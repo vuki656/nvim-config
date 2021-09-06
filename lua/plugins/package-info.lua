@@ -33,3 +33,6 @@ vim.api.nvim_set_keymap("n", "<leader>ni", ":lua require('package-info').install
 
 -- Reinstall dependencies
 vim.api.nvim_set_keymap("n", "<leader>nr", ":lua require('package-info').reinstall()<CR>", { silent = true, noremap = true })
+
+-- Install a different package version
+vim.api.nvim_set_keymap("n", "<leader>np", ":lua require('package-info').change_version()<CR>", { silent = true, noremap = true })
