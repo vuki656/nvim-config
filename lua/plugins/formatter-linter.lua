@@ -38,7 +38,7 @@ null_ls.config({
 
             if has_eslint then
                 return formatter.prettier.with({
-                    files = {
+                    filetypes = {
                         "vue",
                         "css",
                         "html",
@@ -52,7 +52,7 @@ null_ls.config({
                 })
             else
                 return formatter.prettier.with({
-                    files = {
+                    filetypes = {
                         "vue",
                         "css",
                         "html",
