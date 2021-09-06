@@ -4,6 +4,8 @@
 
 local package_info = require("package-info")
 
+local vars = require("utils.vars")
+
 ------------------------------------------------------------------------------------------
 ----------------------------------- SETUP ------------------------------------------------
 ------------------------------------------------------------------------------------------
@@ -17,22 +19,22 @@ package_info.setup({
 ------------------------------------------------------------------------------------------
 
 -- Show package versions
-vim.api.nvim_set_keymap("n", "<leader>ns", ":lua require('package-info').show({ force = true })<CR>", { silent = true, noremap = true })
+vars.remap.fn("n", "<leader>ns", ":lua require('package-info').show({ force = true })<CR>", vars.remap.opts)
 
 -- Hide package versions
-vim.api.nvim_set_keymap("n", "<leader>nc", ":lua require('package-info').hide()<CR>", { silent = true, noremap = true })
+vars.remap.fn("n", "<leader>nc", ":lua require('package-info').hide()<CR>", vars.remap.opts)
 
 -- Update package on line
-vim.api.nvim_set_keymap("n", "<leader>nu", ":lua require('package-info').update()<CR>", { silent = true, noremap = true })
+vars.remap.fn("n", "<leader>nu", ":lua require('package-info').update()<CR>", vars.remap.opts)
 
 -- Delete package on line
-vim.api.nvim_set_keymap("n", "<leader>nd", ":lua require('package-info').delete()<CR>", { silent = true, noremap = true })
+vars.remap.fn("n", "<leader>nd", ":lua require('package-info').delete()<CR>", vars.remap.opts)
 
 -- Install a new package
-vim.api.nvim_set_keymap("n", "<leader>ni", ":lua require('package-info').install()<CR>", { silent = true, noremap = true })
+vars.remap.fn("n", "<leader>ni", ":lua require('package-info').install()<CR>", vars.remap.opts)
 
 -- Reinstall dependencies
-vim.api.nvim_set_keymap("n", "<leader>nr", ":lua require('package-info').reinstall()<CR>", { silent = true, noremap = true })
+vars.remap.fn("n", "<leader>nr", ":lua require('package-info').reinstall()<CR>", vars.remap.opts)
 
 -- Install a different package version
-vim.api.nvim_set_keymap("n", "<leader>np", ":lua require('package-info').change_version()<CR>", { silent = true, noremap = true })
+vars.remap.fn("n", "<leader>np", ":lua require('package-info').change_version()<CR>", vars.remap.opts)
