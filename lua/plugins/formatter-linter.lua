@@ -44,6 +44,7 @@ null_ls.config({
                         "html",
                         "yaml",
                         "markdown",
+                        "json",
                     },
                     args = {
                         "--stdin-filepath",
@@ -58,6 +59,7 @@ null_ls.config({
                         "html",
                         "yaml",
                         "markdown",
+                        "json",
                         "javascript",
                         "javascriptreact",
                         "typescript",
