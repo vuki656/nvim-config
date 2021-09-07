@@ -8,5 +8,5 @@
 
 require("indent_blankline").setup({
     char = "▏",
-    filetype_exclude = { "startify", "packer" },
+    filetype_exclude = { "alpha", "packer" },
 })

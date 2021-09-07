@@ -30,6 +30,10 @@ return packer.startup(function(use)
         requires = { "kyazdani42/nvim-web-devicons" },
     })
     use({
+        "goolord/alpha-nvim",
+        requires = { "kyazdani42/nvim-web-devicons" },
+    })
+    use({
         "hrsh7th/nvim-cmp",
         requires = {
             "hrsh7th/cmp-nvim-lsp",
@@ -58,7 +62,6 @@ return packer.startup(function(use)
         "lewis6991/gitsigns.nvim",
         requires = { "nvim-lua/plenary.nvim" },
     })
-    use("mhinz/vim-startify")
     use("mbbill/undotree")
     use("neovim/nvim-lspconfig")
     use("nvim-treesitter/nvim-treesitter")
