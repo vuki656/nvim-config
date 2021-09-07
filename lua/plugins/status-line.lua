@@ -1,144 +1,195 @@
--- Name: Galaxy Line
--- Description: Status line
--- Link: https://github.com/glepnir/galaxyline.nvim
-
-local galaxy_line = require("galaxyline")
-local vcs = require("galaxyline.provider_vcs")
-local file = require("galaxyline.provider_fileinfo")
+local lsp = require("feline.providers.lsp")
 local package = require("package-info")
 
 local colors = require("utils.colors")
 
-local section = galaxy_line.section
+local properties = {
+    force_inactive = {
+        filetypes = {
+            "NvimTree",
+            "packer",
+            "alpha",
+            "qf",
+            "help",
+        },
+        buftypes = { "terminal" },
+        bufnames = {},
+    },
+}
 
-------------------------------------------------------------------------------------------
------------------------------------- SETUP -----------------------------------------------
-------------------------------------------------------------------------------------------
+local components = {
+    active = {},
+    inactive = {},
+}
 
-galaxy_line.short_line_list = { "NvimTree", "packer" }
+components.active[1] = {
+    {
+        provider = "git_branch",
+        hl = {
+            fg = colors.background,
+            bg = colors.blue,
+            style = "bold",
+        },
+        right_sep = function()
+            local val = {
+                hl = {
+                    fg = colors.background,
+                    bg = colors.blue,
+                },
+            }
 
-section.left[1] = {
-    GitIcon = {
-        provider = function()
-            return "   "
+            -- Hide if no git status
+            if vim.b.gitsigns_status_dict then
+                val.str = " "
+            else
+                val.str = ""
+            end
+
+            return val
         end,
-        condition = vcs.check_git_workspace,
-        highlight = { colors.blue, colors.background },
-    },
-}
+        left_sep = function()
+            local val = {
+                hl = {
+                    fg = colors.background,
+                    bg = colors.blue,
+                },
+            }
 
-section.left[2] = {
-    GitBranch = {
-        provider = "GitBranch",
-        separator = " ",
-        condition = vcs.check_git_workspace,
-        highlight = { colors.blue, colors.background },
-        separator_highlight = { nil, colors.background },
-    },
-}
+            -- Hide if no git status
+            if vim.b.gitsigns_status_dict then
+                val.str = " "
+            else
+                val.str = ""
+            end
 
-section.left[3] = {
-    FileIcon = {
-        provider = "FileIcon",
-        highlight = { file.get_file_icon_color, colors.background },
+            return val
+        end,
     },
-}
-
-section.left[4] = {
-    FileName = {
-        provider = "FileName",
-        highlight = { colors.white, colors.background },
-        separator = " ",
-        separator_highlight = { colors.white, colors.background },
+    {
+        provider = "file_info",
+        hl = {
+            fg = colors.white,
+            bg = colors.background,
+        },
+        left_sep = {
+            {
+                str = " ",
+                hl = {
+                    bg = colors.background,
+                },
+            },
+        },
     },
-}
-
-section.left[5] = {
-    DiffAdd = {
-        provider = "DiffAdd",
-        icon = "  ",
-        highlight = { colors.green },
+    {
+        provider = "    ",
+        hl = {
+            fg = colors.white,
+            bg = colors.background,
+        },
     },
-}
-
-section.left[6] = {
-    DiffModified = {
-        provider = "DiffModified",
-        icon = "  ",
-        highlight = { colors.orange },
+    {
+        provider = "diagnostic_errors",
+        enabled = function()
+            return lsp.diagnostics_exist("Error")
+        end,
+        hl = {
+            bg = colors.background,
+            fg = colors.red,
+        },
     },
-}
-
-section.left[7] = {
-    DiffRemove = {
-        provider = "DiffRemove",
-        icon = "  ",
-        highlight = { colors.red },
+    {
+        provider = "diagnostic_warnings",
+        enabled = function()
+            return lsp.diagnostics_exist("Warning")
+        end,
+        hl = {
+            bg = colors.background,
+            fg = colors.yellow,
+        },
     },
-}
-
-section.left[8] = {
-    DiagnosticError = {
-        provider = "DiagnosticError",
-        icon = "  ",
-        highlight = { colors.red },
+    {
+        provider = "diagnostic_hints",
+        enabled = function()
+            return lsp.diagnostics_exist("Hint")
+        end,
+        hl = {
+            fg = colors.orange,
+            bg = colors.background,
+        },
     },
-}
-
-section.left[9] = {
-    DiagnosticWarn = {
-        provider = "DiagnosticWarn",
-        icon = "  ",
-        highlight = { colors.orange },
+    {
+        provider = "diagnostic_info",
+        enabled = function()
+            return lsp.diagnostics_exist("Information")
+        end,
+        hl = {
+            bg = colors.background,
+            fg = colors.blue,
+        },
     },
-}
-
-section.left[10] = {
-    PackageInfoStatus = {
+    {
+        provider = "    ",
+        hl = {
+            fg = colors.white,
+            bg = colors.background,
+        },
+    },
+    {
+        provider = "git_diff_added",
+        hl = {
+            fg = colors.green,
+            bg = colors.background,
+        },
+    },
+    {
+        provider = "git_diff_changed",
+        hl = {
+            fg = colors.orange,
+            bg = colors.background,
+        },
+    },
+    {
+        provider = "git_diff_removed",
+        hl = {
+            fg = colors.red,
+            bg = colors.background,
+        },
+    },
+    {
         provider = function()
             return package.get_status()
         end,
+        hl = {
+            fg = colors.white,
+            bg = colors.background,
+        },
     },
 }
 
-section.right[1] = {
-    SiMode = {
+components.active[2] = {
+    {
         provider = function()
-            local alias = {
-                n = " NORMAL ",
-                i = " INSERT ",
-                c = " COMMAND ",
-                V = " VISUAL ",
-                [""] = " VISUAL ",
-                v = " VISUAL ",
-                R = " REPLACE ",
-            }
-
-            return alias[vim.fn.mode()]
+            return "  " .. os.date("%H:%M") .. " "
         end,
-        highlight = { colors.background, colors.red },
-        separator = " ",
+        hl = {
+            bg = colors.green,
+            fg = colors.background,
+        },
     },
 }
 
-section.right[2] = {
-    Time = {
-        provider = function()
-            return " " .. "  " .. os.date("%H:%M") .. " "
-        end,
-        highlight = { colors.background, colors.green },
+components.inactive[1] = {
+    {
+        provider = "",
+        hl = {
+            bg = colors.background,
+        },
     },
 }
 
-section.short_line_left[1] = {
-    BufferType = {
-        provider = "FileTypeName",
-        separator = " ",
-        separator_highlight = { nil, colors.background },
-        highlight = { colors.blue, colors.background, "bold" },
-    },
-}
-
-section.short_line_right[1] = {
-    BufferIcon = { provider = "BufferIcon", highlight = { colors.white, colors.background } },
-}
+require("feline").setup({
+    default_bg = colors.background,
+    default_fg = colors.white,
+    components = components,
+    properties = properties,
+})

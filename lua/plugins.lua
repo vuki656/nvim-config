@@ -24,11 +24,11 @@ return packer.startup(function(use)
 
     use("akinsho/nvim-toggleterm.lua")
     use("ahmedkhalf/project.nvim")
-    use("folke/todo-comments.nvim")
     use({
-        "glepnir/galaxyline.nvim",
+        "famiu/feline.nvim",
         requires = { "kyazdani42/nvim-web-devicons" },
     })
+    use("folke/todo-comments.nvim")
     use({
         "goolord/alpha-nvim",
         requires = { "kyazdani42/nvim-web-devicons" },

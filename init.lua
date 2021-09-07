@@ -33,10 +33,10 @@ require("plugins.scroll")
 require("plugins.snippets")
 require("plugins.spellcheck")
 require("plugins.start-screen")
-require("plugins.status-line")
 require("plugins.terminal")
 require("plugins.todo-comments")
 require("plugins.undo-tree")
+require("plugins.status-line")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- LSPs -------------------------------------------------
