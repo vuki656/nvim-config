@@ -40,6 +40,9 @@ vars.remap.fn("i", "jj", "<ESC>", vars.remap.opts)
 -- Go to normal mode with jk
 vars.remap.fn("i", "jk", "<ESC>", vars.remap.opts)
 
+-- Go to normal mode with jk
+vars.remap.fn("i", "kj", "<ESC>", vars.remap.opts)
+
 -- Go to normal mode with kk
 vars.remap.fn("i", "kk", "<ESC>", vars.remap.opts)
 
