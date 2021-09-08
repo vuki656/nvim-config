@@ -157,7 +157,7 @@ components.active[1] = {
     },
     {
         provider = function()
-            return package.get_status()
+            return "   " .. package.get_status()
         end,
         hl = {
             fg = colors.white,
