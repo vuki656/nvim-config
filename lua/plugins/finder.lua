@@ -12,6 +12,7 @@ local vars = require("utils.vars")
 telescope.setup({
     defaults = {
         path_display = { "tail" },
+        file_ignore_patterns = { "node_modules", "yarn.lock", ".next", ".idea", ".yarn" },
     },
 })
 
