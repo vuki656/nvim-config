@@ -8,5 +8,5 @@
 
 require("indent_blankline").setup({
     char = "▏",
-    filetype_exclude = { "alpha", "packer" },
+    filetype_exclude = { "NvimTree", "alpha", "packer" },
 })
