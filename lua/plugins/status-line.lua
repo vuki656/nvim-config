@@ -3,20 +3,6 @@ local package = require("package-info")
 
 local colors = require("utils.colors")
 
-local properties = {
-    force_inactive = {
-        filetypes = {
-            "NvimTree",
-            "packer",
-            "alpha",
-            "qf",
-            "help",
-        },
-        buftypes = { "terminal" },
-        bufnames = {},
-    },
-}
-
 local components = {
     active = {},
     inactive = {},
@@ -188,8 +174,16 @@ components.inactive[1] = {
 }
 
 require("feline").setup({
-    default_bg = colors.background,
-    default_fg = colors.white,
     components = components,
-    properties = properties,
+    force_inactive = {
+        filetypes = {
+            "NvimTree",
+            "packer",
+            "alpha",
+            "qf",
+            "help",
+        },
+        buftypes = { "terminal" },
+        bufnames = {},
+    },
 })
