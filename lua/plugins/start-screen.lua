@@ -1,6 +1,6 @@
--- Name: Startify
--- Description: Start screen
--- Link: https://github.com/mhinz/vim-startify
+-- Name: Alpha
+-- Descriptions: Start screen
+-- Link: https://github.com/goolord/alpha-nvim
 
 local vars = require("utils.vars")
 local alpha = require("alpha")
