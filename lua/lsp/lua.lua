@@ -22,7 +22,7 @@ require("lspconfig").sumneko_lua.setup({
             completion = { enable = true, callSnippet = "Both" },
             diagnostics = {
                 enable = true,
-                globals = { "vim", "describe", "it" },
+                globals = { "vim", "describe", "it", "awesome", "client", "mouse", "screen", "root" },
                 disable = { "lowercase-global" },
             },
             workspace = {
