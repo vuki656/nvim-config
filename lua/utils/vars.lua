@@ -1,11 +1,11 @@
-local module = {
-    remap = {
-        opts = {
-            noremap = true,
-            silent = true,
-        },
-        fn = vim.api.nvim_set_keymap,
+local M = {}
+
+M.remap = {
+    opts = {
+        noremap = true,
+        silent = true,
     },
+    fn = vim.api.nvim_set_keymap,
 }
 
-return module
+return M
