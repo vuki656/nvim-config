@@ -7,87 +7,94 @@ local set_global = vim.g
 ------------------------------------------------------------------------------------------
 
 -- Set leader
-set_global.mapleader = " "
-
-------------------------------------------------------------------------------------------
------------------------------------ BUFFER -----------------------------------------------
-------------------------------------------------------------------------------------------
+vim.g.mapleader = " "
 
 -- Sync nvim clipboard with sys clipboard
-set_buffer.clipboard = "unnamedplus"
+vim.opt.clipboard = "unnamedplus"
 
 -- Highlight line you are on
-set_buffer.cursorline = true
+vim.opt.cursorline = true
 
 -- Enables search results as you type
-set_buffer.incsearch = true
+vim.opt.incsearch = true
 
 -- Enables smart indenting
-set_buffer.smartindent = true
+vim.opt.smartindent = true
 
 -- Time after the buffer is saved
-set_buffer.updatetime = 300
+vim.opt.updatetime = 300
 
 -- Enables moues scroll
-set_buffer.mouse = "a"
+vim.opt.mouse = "a"
 
 -- Disables swap files
-set_buffer.swapfile = false
+vim.opt.swapfile = false
 
 -- Enables undo files
-set_buffer.undofile = true
+vim.opt.undofile = true
 
 -- Convert tab to 4 spaces
-set_buffer.tabstop = 4
+vim.opt.tabstop = 4
 
 -- Correctly indent lines inside blocks
-set_buffer.shiftwidth = 4
+vim.opt.shiftwidth = 4
 
 -- Enables tab to space conversion
-set_buffer.expandtab = true
+vim.opt.expandtab = true
 
 -- Prefer opening new buffers to the right
-set_buffer.splitright = true
+vim.opt.splitright = true
 
 -- Prefer opening new buffers below
-set_buffer.splitbelow = true
+vim.opt.splitbelow = true
 
 -- Enable nvim set colors
-set_buffer.termguicolors = true
+vim.opt.termguicolors = true
 
 -- Enable changing buffers without saving
-set_buffer.hidden = true
+vim.opt.hidden = true
 
 -- Scroll offset
-set_buffer.scrolloff = 15
+vim.opt.scrolloff = 15
 
 -- Scroll amount
-set_buffer.scroll = 15
+vim.opt.scroll = 15
 
 -- Ignore case when searching
-set_buffer.ignorecase = true
+vim.opt.ignorecase = true
 
 -- Ignore case when searching
-set_buffer.wildignorecase = true
+vim.opt.wildignorecase = true
 
 -- Search with cases sensitive only if search query isn't the same case
-set_buffer.smartcase = true
-
-------------------------------------------------------------------------------------------
------------------------------------ WINDOW -----------------------------------------------
-------------------------------------------------------------------------------------------
+vim.opt.smartcase = true
 
 -- Show relative line numbers in the sidebar
-set_window.relativenumber = true
+vim.opt.relativenumber = true
 
 -- Show sidebar
-set_window.signcolumn = "yes"
+vim.opt.signcolumn = "yes"
 
 -- Show current line number
-set_window.number = true
+vim.opt.number = true
 
 -- Disables line wrapping
-set_window.wrap = false
+vim.opt.wrap = false
+
+-- Enable spellcheck
+vim.opt.spell = true
+
+-- Spelling language
+vim.opt.spelllang = "en"
+
+-- Don't check if line starts with capital letter
+vim.opt.spellcapcheck = ""
+
+-- Number of spell suggestions
+vim.opt.spellsuggest = "7"
+
+-- Support camel case spelling
+vim.opt.spelloptions = "camel"
 
 ------------------------------------------------------------------------------------------
 ------------------------------------ MISC ------------------------------------------------
@@ -101,31 +108,11 @@ vim.cmd([[
         " Enable syntax
         syntax on
 
-        " Enable spellcheck
-        set spell
-
-        " Spelling language
-        set spelllang=en
-
-        " Support camel case spelling
-        set spelloptions=camel
-
         " Spell file location
         set spellfile=$HOME/.config/nvim/spell/en.utf-8.add
-
-        " Don't check if line starts with capital letter
-        set spellcapcheck=
-
-        " Number of spell suggestions
-        set spellsuggest+=7
         
         " Don't continue comment when adding a new line above/under comment 
         autocmd BufNewFile,BufRead * setlocal formatoptions-=ro
-
-        " TODO: document
-        set noshowmode
-        set noshowcmd 
-        set nrformats=
 ]])
 
 -- Hide ~ from sign column
