@@ -1263,3 +1263,12 @@ wibar
 textbox
 cairo
 rect
+cb
+unref
+Ipc
+dns
+Errno
+fd
+Uint8
+onread
+ipv6
