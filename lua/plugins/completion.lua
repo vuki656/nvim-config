@@ -17,20 +17,20 @@ vim.o.completeopt = "menuone,noselect"
 
 cmp.setup({
     mapping = {
-        ["<C-Space>"] = cmp.mapping.complete(),
-        ["<C-e>"] = cmp.mapping.close(),
+        ["<C-SPACE>"] = cmp.mapping.complete(),
+        ["<C-E>"] = cmp.mapping.close(),
         ["<CR>"] = cmp.mapping.confirm({
             behavior = cmp.ConfirmBehavior.Replace,
             select = true,
         }),
-        ["<Tab>"] = function(fallback)
+        ["<TAB>"] = function(fallback)
             if vim.fn.pumvisible() == 1 then
                 vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<C-n>", true, true, true), "n")
             elseif not minsnip.jump() then
                 fallback()
             end
         end,
-        ["<S-Tab>"] = function(fallback)
+        ["<S-TAB>"] = function(fallback)
             if vim.fn.pumvisible() == 1 then
                 vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<C-p>", true, true, true), "n")
             elseif not minsnip.jump_backwards() then
