@@ -26,6 +26,12 @@ function _G.set_terminal_keymaps()
     vim.api.nvim_buf_set_keymap(0, "t", "<C-l>", [[<C-\><C-n><C-W>l]], opts)
 end
 
+local reload = function()
+    vim.cmd(":NvimTreeRefresh")
+    vim.cmd(":Gitsigns refresh")
+    vim.cmd(":e")
+end
+
 vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
 
 ----------------------------------- LAZYGIT ----------------------------------------------
@@ -42,9 +48,7 @@ local terminal_git = Terminal:new({
         vim.api.nvim_buf_set_keymap(terminal.bufnr, "n", "q", ":close<CR>", { noremap = true, silent = true })
     end,
     on_close = function()
-        vim.cmd(":e")
-        vim.cmd(":NvimTreeRefresh")
-        vim.cmd(":Gitsigns refresh")
+        reload()
     end,
     hidden = true,
 })
@@ -69,8 +73,7 @@ local terminal_docker = Terminal:new({
         vim.api.nvim_buf_set_keymap(terminal.bufnr, "n", "q", ":close<CR>", { noremap = true, silent = true })
     end,
     on_close = function()
-        vim.cmd(":NvimTreeRefresh")
-        vim.cmd(":Gitsigns refresh")
+        reload()
     end,
     hidden = true,
 })
@@ -90,7 +93,7 @@ local terminal_main = Terminal:new({
         border = "single",
     },
     on_close = function()
-        vim.cmd(":e")
+        reload()
     end,
     hidden = true,
 })
