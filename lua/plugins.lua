@@ -21,7 +21,6 @@ end
 return packer.startup(function(use)
     use("pantharshit00/vim-prisma")
     use("lewis6991/impatient.nvim")
-
     use("akinsho/nvim-toggleterm.lua")
     use("ahmedkhalf/project.nvim")
     use({
@@ -89,7 +88,6 @@ return packer.startup(function(use)
     use("wbthomason/packer.nvim")
     use("windwp/nvim-ts-autotag")
     use("windwp/nvim-autopairs")
-
     -- use("dstein64/vim-startuptime")
     -- use("~/Projects/test.nvim")
 end)
