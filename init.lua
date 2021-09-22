@@ -14,11 +14,9 @@ require("colorscheme")
 require("impatient")
 
 require("plugins.notifications")
-require("plugins.auto-pairs")
 require("plugins.auto-save")
 require("plugins.bookmarks")
 require("plugins.completion-icons")
-require("plugins.completion")
 require("plugins.file-tree")
 require("plugins.finder")
 require("plugins.formatter-linter")
@@ -36,6 +34,10 @@ require("plugins.terminal")
 require("plugins.todo-comments")
 require("plugins.undo-tree")
 require("plugins.status-line")
+
+-- Order required
+require("plugins.auto-pairs")
+require("plugins.completion")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- LSPs -------------------------------------------------
