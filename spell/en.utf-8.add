@@ -1391,3 +1391,14 @@ prebuild
 rimraf
 cov
 brk
+POC
+keyof
+prettierrc
+schemastore
+lerna
+stylelintrc
+stylelint
+poc
+atlassianlabs
+atlascode
+yarnrc
