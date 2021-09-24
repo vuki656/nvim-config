@@ -1,19 +1,9 @@
 local nvim_lsp = require("lspconfig")
 local ts_utils = require("nvim-lsp-ts-utils")
-local cmp = require("cmp_nvim_lsp")
+
+local capabilities = require("lsp.capabilities")
 
 local remap = vim.api.nvim_set_keymap
-
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = cmp.update_capabilities(capabilities)
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-capabilities.textDocument.completion.completionItem.resolveSupport = {
-    properties = {
-        "documentation",
-        "detail",
-        "additionalTextEdits",
-    },
-}
 
 nvim_lsp.tsserver.setup({
     on_attach = function(client)

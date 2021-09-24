@@ -1,17 +1,7 @@
 local sumneko_root_path = os.getenv("HOME") .. "/lua-language-server"
 local sumneko_binary = sumneko_root_path .. "/bin/Linux/lua-language-server"
-local cmp = require("cmp_nvim_lsp")
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = cmp.update_capabilities(capabilities)
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-capabilities.textDocument.completion.completionItem.resolveSupport = {
-    properties = {
-        "documentation",
-        "detail",
-        "additionalTextEdits",
-    },
-}
+local capabilities = require("lsp.capabilities")
 
 require("lspconfig").sumneko_lua.setup({
     capabilities = capabilities,
