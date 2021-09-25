@@ -110,6 +110,9 @@ vars.remap.fn("n", "[d", ":lua vim.lsp.diagnostic.goto_prev()<CR>", vars.remap.o
 ----------------------------------- MISC -------------------------------------------------
 ------------------------------------------------------------------------------------------
 
+-- ReSource lua file
+vars.remap.fn("n", "<leader>cw", "g<C-g>", vars.remap.opts)
+
 -- Go to normal mode with ESC in terminal
 vim.cmd(":tnoremap <Esc> <C-\\><C-n>")
 
