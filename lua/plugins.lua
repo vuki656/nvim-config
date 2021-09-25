@@ -56,6 +56,7 @@ return packer.startup(function(use)
     use({
         "kyazdani42/nvim-tree.lua",
         requires = { "kyazdani42/nvim-web-devicons" },
+        commit = "d7f73b5ae9c8fa85535c32e2861c2cb97df5d56b"
     })
     use({
         "lewis6991/gitsigns.nvim",
