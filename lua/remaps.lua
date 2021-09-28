@@ -97,7 +97,7 @@ vars.remap.fn("n", "L", "<cmd>lua vim.lsp.buf.hover()<CR>", vars.remap.opts)
 vars.remap.fn("n", "K", ":lua vim.lsp.diagnostic.show_line_diagnostics()<CR>", vars.remap.opts)
 
 -- Show code actions
-vars.remap.fn("n", "ga", "<cmd>lua vim.lsp.buf.code_action()<CR>", vars.remap.opts)
+vars.remap.fn("n", "ga", ":CodeActionMenu<CR>", vars.remap.opts)
 
 -- Rename
 vars.remap.fn("n", "<leader>rn", " :lua vim.lsp.buf.rename()<CR>", vars.remap.opts)
