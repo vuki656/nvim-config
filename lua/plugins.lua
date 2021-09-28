@@ -19,6 +19,10 @@ end
 ------------------------------------------------------------------------------------------
 
 return packer.startup(function(use)
+    use({
+        "weilbith/nvim-code-action-menu",
+        cmd = "CodeActionMenu",
+    })
     use("pantharshit00/vim-prisma")
     use("lewis6991/impatient.nvim")
     use("akinsho/nvim-toggleterm.lua")
@@ -56,7 +60,7 @@ return packer.startup(function(use)
     use({
         "kyazdani42/nvim-tree.lua",
         requires = { "kyazdani42/nvim-web-devicons" },
-        commit = "d7f73b5ae9c8fa85535c32e2861c2cb97df5d56b"
+        commit = "d7f73b5ae9c8fa85535c32e2861c2cb97df5d56b",
     })
     use({
         "lewis6991/gitsigns.nvim",
