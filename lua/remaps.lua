@@ -86,6 +86,9 @@ vars.remap.fn("n", "zf", "z=1<CR> :w<CR> :e<CR>", vars.remap.opts)
 -- Opens word fixed suggestions
 vars.remap.fn("n", "zl", "z=", vars.remap.opts)
 
+-- Go to first misspell, fix it and go back to the end of line in insert mode
+vars.remap.fn("n", "lf", "[s z=1<CR> :w<CR> :e<CR> A", vars.remap.opts)
+
 ------------------------------------------------------------------------------------------
 ----------------------------------- LSP --------------------------------------------------
 ------------------------------------------------------------------------------------------
