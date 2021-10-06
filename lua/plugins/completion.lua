@@ -39,11 +39,7 @@ cmp.setup({
         end,
     },
     formatting = {
-        format = function(_, vim_item)
-            vim_item.kind = lspkind.presets.default[vim_item.kind] .. " " .. vim_item.kind
-
-            return vim_item
-        end,
+        format = lspkind.cmp_format(),
     },
     snippet = {
         expand = function(args)
@@ -53,7 +49,7 @@ cmp.setup({
     sources = {
         {
             name = "minsnip",
-            max_item_count = 5,
+            max_item_count = 1,
         },
         {
             name = "nvim_lsp",
