@@ -18,22 +18,21 @@ vim.o.completeopt = "menuone,noselect"
 cmp.setup({
     mapping = {
         ["<C-SPACE>"] = cmp.mapping.complete(),
-        ["<C-E>"] = cmp.mapping.close(),
         ["<CR>"] = cmp.mapping.confirm({
             behavior = cmp.ConfirmBehavior.Replace,
             select = true,
         }),
         ["<TAB>"] = function(fallback)
-            if vim.fn.pumvisible() == 1 then
-                vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<C-n>", true, true, true), "n")
-            elseif not minsnip.jump() then
+            if cmp.visible() then
+                cmp.select_next_item()
+            else
                 fallback()
             end
         end,
         ["<S-TAB>"] = function(fallback)
-            if vim.fn.pumvisible() == 1 then
-                vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<C-p>", true, true, true), "n")
-            elseif not minsnip.jump_backwards() then
+            if cmp.visible() then
+                cmp.select_prev_item()
+            else
                 fallback()
             end
         end,
