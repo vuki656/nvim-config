@@ -50,6 +50,11 @@ icons.setup({
             color = "#ffcb6b",
             name = "Js",
         },
+        ["ts"] = {
+            icon = "ﯤ",
+            color = "#497eb9",
+            name = "Ts",
+        },
         ["jsx"] = {
             icon = "",
             color = "#61d9fa",
