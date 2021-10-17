@@ -19,6 +19,8 @@ end
 ------------------------------------------------------------------------------------------
 
 return packer.startup(function(use)
+    use("williamboman/nvim-lsp-installer")
+    use("TovarishFin/vim-solidity")
     use({
         "weilbith/nvim-code-action-menu",
         cmd = "CodeActionMenu",

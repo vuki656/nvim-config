@@ -1,5 +1,9 @@
-local capabilities = require("lsp.capabilities")
+local lsp_installer = require("nvim-lsp-installer")
 
-require("lspconfig").solang.setup({
-    capabilities = capabilities,
-})
+lsp_installer.on_server_ready(function(server)
+    local opts = {}
+
+    server:setup(opts)
+
+    vim.cmd([[ do User LspAttachBuffers ]])
+end)
