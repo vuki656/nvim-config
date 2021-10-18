@@ -1483,3 +1483,6 @@ bmp
 gif
 br
 py
+tailwindcss
+tokenizer
+autoprefixer
