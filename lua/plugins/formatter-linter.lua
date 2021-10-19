@@ -14,22 +14,20 @@ local vars = require("utils.vars")
 local formatter = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 
-local formatter_shfmt = formatter.shfmt.with({
-    args = { "-i=4" },
-})
-
 null_ls.config({
     sources = {
         -- Formatters
         formatter.stylua,
         formatter.fixjson,
-        formatter_shfmt,
+        formatter.markdownlint,
+        formatter.shfmt.with({ args = { "-i=4" } }),
 
         -- Diagnostics
         diagnostics.shellcheck,
         diagnostics.hadolint,
         diagnostics.markdownlint,
         diagnostics.teal,
+        diagnostics.yamllint,
         diagnostics.write_good.with({ extra_args = { "--no-passive" } }),
 
         -- If eslint config exists use eslint, else use prettier
