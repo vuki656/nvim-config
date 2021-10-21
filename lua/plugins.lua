@@ -19,6 +19,7 @@ end
 ------------------------------------------------------------------------------------------
 
 return packer.startup(function(use)
+    use("RRethy/vim-illuminate")
     use("williamboman/nvim-lsp-installer")
     use("TovarishFin/vim-solidity")
     use({
@@ -94,6 +95,5 @@ return packer.startup(function(use)
     use("wbthomason/packer.nvim")
     use("windwp/nvim-ts-autotag")
     use("windwp/nvim-autopairs")
-    -- use("dstein64/vim-startuptime")
-    -- use("~/Projects/test.nvim")
+    use("dstein64/vim-startuptime")
 end)
