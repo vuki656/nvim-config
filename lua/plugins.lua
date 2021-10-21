@@ -45,7 +45,6 @@ return packer.startup(function(use)
             "hrsh7th/cmp-buffer",
             "hrsh7th/cmp-path",
             "hrsh7th/cmp-nvim-lua",
-            "f3fora/cmp-spell",
         },
     })
     use("jose-elias-alvarez/minsnip.nvim")

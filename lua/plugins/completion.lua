@@ -68,10 +68,6 @@ cmp.setup({
             },
         },
         {
-            name = "spell",
-            max_item_count = 5,
-        },
-        {
             name = "path",
             max_item_count = 15,
         },
