@@ -68,7 +68,7 @@ vars.remap.fn("n", "dJ", "jddk", vars.remap.opts)
 vars.remap.fn("n", "dK", "kdd", vars.remap.opts)
 
 -- Inline line by line and keep position
-vars.remap.fn("n", "J", "J0", vars.remap.opts)
+vars.remap.fn("n", "J", "mzJ`z", vars.remap.opts)
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- SPELLCHECK -------------------------------------------
