@@ -97,7 +97,7 @@ vars.remap.fn("n", "lf", "[s z=1<CR> :w<CR> :e<CR> A", vars.remap.opts)
 vars.remap.fn("n", "L", "<cmd>lua vim.lsp.buf.hover()<CR>", vars.remap.opts)
 
 -- Show diagnostics
-vars.remap.fn("n", "K", ":lua vim.lsp.diagnostic.show_line_diagnostics()<CR>", vars.remap.opts)
+vars.remap.fn("n", "K", ":lua vim.diagnostic.open_float(0, { scope='line' })<CR>", vars.remap.opts)
 
 -- Show code actions
 vars.remap.fn("n", "ga", ":CodeActionMenu<CR>", vars.remap.opts)
