@@ -92,7 +92,7 @@ return packer.startup(function(use)
     use("wbthomason/packer.nvim")
     use({
         "weilbith/nvim-code-action-menu",
-        cmd = "codeactionmenu",
+        cmd = "CodeActionMenu",
     })
     use("windwp/nvim-ts-autotag")
     use("windwp/nvim-autopairs")
