@@ -2,11 +2,13 @@
 -- Description: Indent guidelines
 -- Link: https://github.com/lukas-reineke/indent-blankline.nvim
 
+local indent_blankline = require("indent_blankline")
+
 ------------------------------------------------------------------------------------------
 ----------------------------------- SETUP ------------------------------------------------
 ------------------------------------------------------------------------------------------
 
-require("indent_blankline").setup({
+indent_blankline.setup({
     char = "▏",
     filetype_exclude = { "NvimTree", "alpha", "packer" },
 })

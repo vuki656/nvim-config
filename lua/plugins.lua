@@ -19,16 +19,9 @@ end
 ------------------------------------------------------------------------------------------
 
 return packer.startup(function(use)
-    use("williamboman/nvim-lsp-installer")
-    use("TovarishFin/vim-solidity")
-    use({
-        "weilbith/nvim-code-action-menu",
-        cmd = "CodeActionMenu",
-    })
-    use("pantharshit00/vim-prisma")
-    use("lewis6991/impatient.nvim")
     use("akinsho/nvim-toggleterm.lua")
     use("ahmedkhalf/project.nvim")
+    use("dstein64/vim-startuptime")
     use({
         "famiu/feline.nvim",
         requires = { "kyazdani42/nvim-web-devicons" },
@@ -45,7 +38,6 @@ return packer.startup(function(use)
             "hrsh7th/cmp-buffer",
             "hrsh7th/cmp-path",
             "hrsh7th/cmp-nvim-lua",
-            "f3fora/cmp-spell",
         },
     })
     use("jose-elias-alvarez/minsnip.nvim")
@@ -68,7 +60,10 @@ return packer.startup(function(use)
         "lewis6991/gitsigns.nvim",
         requires = { "nvim-lua/plenary.nvim" },
     })
+    use("lewis6991/impatient.nvim")
     use("mbbill/undotree")
+    use("max397574/better-escape.nvim")
+    use("numtostr/comment.nvim")
     use("neovim/nvim-lspconfig")
     use("nvim-treesitter/nvim-treesitter")
     use("nvim-treesitter/playground")
@@ -85,16 +80,21 @@ return packer.startup(function(use)
     use("pocco81/autosave.nvim")
     use("rakr/vim-one")
     use("rcarriga/nvim-notify")
-    use("tpope/vim-commentary")
-    use("ThePrimeagen/harpoon")
+    use("theprimeagen/harpoon")
+    use("tovarishfin/vim-solidity")
+    use("rrethy/vim-illuminate")
+    use("pantharshit00/vim-prisma")
     use({
         "vuki656/package-info.nvim",
         branch = "develop",
-        requires = { "MunifTanjim/nui.nvim" },
+        requires = { "muniftanjim/nui.nvim" },
     })
     use("wbthomason/packer.nvim")
+    use({
+        "weilbith/nvim-code-action-menu",
+        cmd = "CodeActionMenu",
+    })
     use("windwp/nvim-ts-autotag")
     use("windwp/nvim-autopairs")
-    -- use("dstein64/vim-startuptime")
-    -- use("~/Projects/test.nvim")
+    use("williamboman/nvim-lsp-installer")
 end)
