@@ -10,6 +10,10 @@ require("lspconfig").jsonls.setup({
         json = {
             schemas = {
                 {
+                    fileMatch = { "*.migration.json" },
+                    url = "https://json.schemastore.org/liquibase-3.2.json",
+                },
+                {
                     fileMatch = { "package.json" },
                     url = "https://json.schemastore.org/package.json",
                 },
@@ -46,4 +50,3 @@ require("lspconfig").jsonls.setup({
         },
     },
 })
-
