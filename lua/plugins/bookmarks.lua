@@ -1,6 +1,6 @@
--- Name: Lsp Kind
--- Description: Autosuggestion icons
--- Link: https://github.com/onsails/lspkind-nvim
+-- Name: Harpoon
+-- Description: Bookmarking
+-- Link: https://github.com/ThePrimeagen/harpoon
 
 local harpoon = require("harpoon")
 local vars = require("utils.vars")
