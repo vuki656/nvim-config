@@ -11,8 +11,7 @@ require("colorscheme")
 ----------------------------------- PLUGINS ----------------------------------------------
 ------------------------------------------------------------------------------------------
 
--- TODO: currently broken
--- require("impatient")
+require("impatient")
 
 require("plugins.notifications")
 require("plugins.auto-save")
