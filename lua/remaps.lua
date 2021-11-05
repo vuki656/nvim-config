@@ -141,8 +141,6 @@ function print_word()
             false,
             { "print(vim.inspect(" .. current_word .. "))" }
         )
-
-        vim.fn.execute("lua vim.lsp.buf.formatting()")
     elseif
         filetype == "javascript"
         or filetype == "typescript"
@@ -156,8 +154,6 @@ function print_word()
             false,
             { "console.log('" .. tostring(current_word) .. ": ', " .. current_word .. ")" }
         )
-
-        vim.fn.execute("lua vim.lsp.buf.formatting()")
     end
 end
 
