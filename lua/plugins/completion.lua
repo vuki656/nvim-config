@@ -5,6 +5,7 @@
 local cmp = require("cmp")
 local minsnip = require("minsnip")
 local lspkind = require("lspkind")
+local buffer = require("cmp_buffer")
 
 local colors = require("utils.colors")
 
@@ -35,16 +36,8 @@ cmp.setup({
     },
     sources = {
         {
-            name = "minsnip",
-            max_item_count = 1,
-        },
-        {
             name = "nvim_lsp",
             max_item_count = 50,
-        },
-        {
-            name = "nvim_lua",
-            max_item_count = 20,
         },
         {
             name = "buffer",
@@ -56,8 +49,23 @@ cmp.setup({
             },
         },
         {
+            name = "minsnip",
+            max_item_count = 1,
+        },
+        {
             name = "path",
             max_item_count = 15,
+        },
+        {
+            name = "nvim_lua",
+            max_item_count = 20,
+        },
+        sorting = {
+            comparators = {
+                function(...)
+                    return buffer:compare_locality(...)
+                end,
+            },
         },
     },
 })
