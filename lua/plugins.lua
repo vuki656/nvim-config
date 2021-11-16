@@ -89,7 +89,7 @@ return packer.startup(function(use)
     use("pantharshit00/vim-prisma")
     use({
         "vuki656/package-info.nvim",
-        branch = "master",
+        branch = "develop",
         requires = { "muniftanjim/nui.nvim" },
     })
     use("wbthomason/packer.nvim")
