@@ -31,44 +31,45 @@ null_ls.config({
         diagnostics.write_good.with({ extra_args = { "--no-passive" } }),
 
         -- If eslint config exists use eslint, else use prettier
-        require("null-ls.helpers").conditional(function(utils)
-            local has_eslint = utils.root_has_file(".eslintrc.js") or utils.root_has_file(".eslintrc.json")
+        require("null-ls.helpers").conditional(function()
+            -- local has_eslint = utils.root_has_file(".eslintrc.js") or utils.root_has_file(".eslintrc.json")
 
-            if has_eslint then
-                return formatter.prettier.with({
-                    filetypes = {
-                        "vue",
-                        "css",
-                        "html",
-                        "yaml",
-                        "markdown",
-                        "json",
-                    },
-                    args = {
-                        "--stdin-filepath",
-                        "$FILENAME",
-                    },
-                })
-            else
-                return formatter.prettier.with({
-                    filetypes = {
-                        "vue",
-                        "css",
-                        "html",
-                        "yaml",
-                        "markdown",
-                        "json",
-                        "javascript",
-                        "javascriptreact",
-                        "typescript",
-                        "typescriptreact",
-                    },
-                    args = {
-                        "--stdin-filepath",
-                        "$FILENAME",
-                    },
-                })
-            end
+            -- TODO: fix conditional
+            return formatter.prettier.with({
+                filetypes = {
+                    "vue",
+                    "css",
+                    "html",
+                    "yaml",
+                    "markdown",
+                    "json",
+                },
+                args = {
+                    "--stdin-filepath",
+                    "$FILENAME",
+                },
+            })
+            -- if has_eslint then
+            -- else
+            --     return formatter.prettier.with({
+            --         filetypes = {
+            --             "vue",
+            --             "css",
+            --             "html",
+            --             "yaml",
+            --             "markdown",
+            --             "json",
+            --             "javascript",
+            --             "javascriptreact",
+            --             "typescript",
+            --             "typescriptreact",
+            --         },
+            --         args = {
+            --             "--stdin-filepath",
+            --             "$FILENAME",
+            --         },
+            --     })
+            -- end
         end),
     },
 })
