@@ -42,6 +42,32 @@ vim.g.nvim_tree_show_icons = { git = 0, folders = 1, files = 1 }
 -- Don't highlight any files
 vim.g.nvim_tree_special_files = {}
 
+----------------------------------- TREE COLLAPSE ----------------------------------------------
+
+local function collapse_tree_node(node)
+    local entries = node.entries
+
+    if not entries then
+        return
+    end
+
+    for _, entry in pairs(entries) do
+        collapse_tree_node(entry)
+    end
+
+    node.open = false
+end
+
+function collapse_tree()
+    local lib = require("nvim-tree.lib")
+
+    collapse_tree_node(lib.Tree)
+
+    lib.refresh_tree()
+end
+
+vim.api.nvim_set_keymap("n", "<leader>Tc", ":lua collapse_tree()<CR>", { noremap = true, silent = true })
+
 ------------------------------------------------------------------------------------------
 ----------------------------------- COLORS -----------------------------------------------
 ------------------------------------------------------------------------------------------
