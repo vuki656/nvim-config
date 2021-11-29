@@ -1612,3 +1612,9 @@ ruleset
 Rulesets
 modify
 Additional
+Punctuator
+loc
+requireindex
+estree
+ESLint
+TSESTree
