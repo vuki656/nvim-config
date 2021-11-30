@@ -4,7 +4,14 @@ local colors = require("utils.colors")
 ----------------------------------- SETUP ------------------------------------------------
 ------------------------------------------------------------------------------------------
 
+-- TODO: remove
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+    signs = false, -- Disable LSP signs
+    underline = true, -- Underline diagnostics
+    virtual_text = false, -- Hide virtual text
+})
+
+vim.diagnostic.config({
     signs = false, -- Disable LSP signs
     underline = true, -- Underline diagnostics
     virtual_text = false, -- Hide virtual text
@@ -14,6 +21,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
 ----------------------------------- COLORS -----------------------------------------------
 ------------------------------------------------------------------------------------------
 
+-- TODO: figure out what these were replaced with
 vim.cmd([[highlight LspDiagnosticsDefaultError              guifg=]] .. colors.red)
 vim.cmd([[highlight LspDiagnosticsDefaultWarning            guifg=]] .. colors.yellow)
 vim.cmd([[highlight LspDiagnosticsDefaultInformation        guifg=]] .. colors.blue)
