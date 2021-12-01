@@ -21,13 +21,12 @@ vim.diagnostic.config({
 ----------------------------------- COLORS -----------------------------------------------
 ------------------------------------------------------------------------------------------
 
--- TODO: figure out what these were replaced with
-vim.cmd([[highlight LspDiagnosticsDefaultError              guifg=]] .. colors.red)
-vim.cmd([[highlight LspDiagnosticsDefaultWarning            guifg=]] .. colors.yellow)
-vim.cmd([[highlight LspDiagnosticsDefaultInformation        guifg=]] .. colors.blue)
-vim.cmd([[highlight LspDiagnosticsDefaultHint               guifg=]] .. colors.orange)
+vim.cmd([[highlight DiagnosticDefaultError              guifg=]] .. colors.red)
+vim.cmd([[highlight DiagnosticDefaultWarning            guifg=]] .. colors.yellow)
+vim.cmd([[highlight DiagnosticDefaultInformation        guifg=]] .. colors.blue)
+vim.cmd([[highlight DiagnosticDefaultHint               guifg=]] .. colors.orange)
 
-vim.cmd([[highlight LspDiagnosticsUnderlineError            guifg=]] .. colors.red)
-vim.cmd([[highlight LspDiagnosticsUnderlineWarning          guifg=]] .. colors.yellow)
-vim.cmd([[highlight LspDiagnosticsUnderlineInformation      guifg=]] .. colors.blue)
-vim.cmd([[highlight LspDiagnosticsUnderlineHint             guifg=]] .. colors.orange)
+vim.cmd([[highlight DiagnosticUnderlineError            guifg=]] .. colors.red)
+vim.cmd([[highlight DiagnosticUnderlineWarning          guifg=]] .. colors.yellow)
+vim.cmd([[highlight DiagnosticUnderlineInformation      guifg=]] .. colors.blue)
+vim.cmd([[highlight DiagnosticUnderlineHint             guifg=]] .. colors.orange)
