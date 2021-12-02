@@ -22,6 +22,7 @@ return packer.startup(function(use)
     use("akinsho/nvim-toggleterm.lua")
     use("ahmedkhalf/project.nvim")
     use("dstein64/vim-startuptime")
+    use("dstein64/nvim-scrollview")
     use({
         "famiu/feline.nvim",
         requires = { "kyazdani42/nvim-web-devicons" },
