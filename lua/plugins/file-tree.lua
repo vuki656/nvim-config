@@ -66,7 +66,7 @@ function collapse_tree()
     lib.refresh_tree()
 end
 
-vim.api.nvim_set_keymap("n", "<leader>Tc", ":lua collapse_tree()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>tk", ":lua collapse_tree()<CR>", { noremap = true, silent = true })
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- COLORS -----------------------------------------------
