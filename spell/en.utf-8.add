@@ -1623,3 +1623,4 @@ estree
 ESLint
 TSESTree
 scrollview
+cmdline
