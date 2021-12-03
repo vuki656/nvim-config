@@ -8,7 +8,48 @@ local components = {
     inactive = {},
 }
 
+local name = ""
+
+-- Get git repo name
+if name == "" then
+    vim.fn.jobstart("git remote get-url origin | xargs basename -s .git", {
+        on_stdout = function(_, stdout)
+            name = name .. table.concat(stdout)
+        end,
+    })
+end
+
 components.active[1] = {
+    {
+        provider = function()
+            if name == "" then
+                return ""
+            end
+
+            return " " .. name
+        end,
+        hl = {
+            fg = colors.background,
+            bg = colors.red,
+            style = "bold",
+        },
+        right_sep = function()
+            return {
+                str = " ",
+                hl = {
+                    bg = colors.red,
+                },
+            }
+        end,
+        left_sep = function()
+            return {
+                str = " ",
+                hl = {
+                    bg = colors.red,
+                },
+            }
+        end,
+    },
     {
         provider = "git_branch",
         hl = {
