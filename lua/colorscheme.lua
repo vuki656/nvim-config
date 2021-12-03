@@ -1,6 +1,9 @@
+local headlines = require("headlines")
+local treesitter_configs = require("nvim-treesitter.configs")
+
 colors = require("utils.colors")
 
-require("nvim-treesitter.configs").setup({
+treesitter_configs.setup({
     ensure_installed = "all",
     highlight = { enable = true },
     autotag = { enable = true },
@@ -14,6 +17,9 @@ require("nvim-treesitter.configs").setup({
         },
     },
 })
+
+-- Doc files header highlights
+headlines.setup()
 
 vim.cmd([[highlight! TSKeyword              guifg=]] .. colors.purple)
 vim.cmd([[highlight! TSInclude              guifg=]] .. colors.purple)
