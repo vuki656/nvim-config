@@ -102,9 +102,6 @@ vars.remap.fn("n", "K", ":lua vim.diagnostic.open_float(0, { scope='line' })<CR>
 -- Show code actions
 vars.remap.fn("n", "ga", ":CodeActionMenu<CR>", vars.remap.opts)
 
--- Rename
-vars.remap.fn("n", "<leader>rn", " :lua vim.lsp.buf.rename()<CR>", vars.remap.opts)
-
 -- Go to next/previous diagnostic
 vars.remap.fn("n", "]d", ":lua vim.lsp.diagnostic.goto_next()<CR>", vars.remap.opts)
 vars.remap.fn("n", "[d", ":lua vim.lsp.diagnostic.goto_prev()<CR>", vars.remap.opts)

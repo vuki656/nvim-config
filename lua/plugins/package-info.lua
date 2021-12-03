@@ -34,8 +34,5 @@ vars.remap.fn("n", "<leader>nd", ":lua require('package-info').delete()<CR>", va
 -- Install a new package
 vars.remap.fn("n", "<leader>ni", ":lua require('package-info').install()<CR>", vars.remap.opts)
 
--- Reinstall dependencies
-vars.remap.fn("n", "<leader>nr", ":lua require('package-info').reinstall()<CR>", vars.remap.opts)
-
 -- Install a different package version
 vars.remap.fn("n", "<leader>np", ":lua require('package-info').change_version()<CR>", vars.remap.opts)

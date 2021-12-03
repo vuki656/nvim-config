@@ -2,10 +2,12 @@
 -- Description: Smoother scrolling
 -- Link: https://github.com/karb94/neoscroll
 
+local neoscroll = require("neoscroll")
+
 ------------------------------------------------------------------------------------------
 ------------------------------------ SETUP -----------------------------------------------
 ------------------------------------------------------------------------------------------
 
-require("neoscroll").setup({
+neoscroll.setup({
     easing_function = "sine",
 })
