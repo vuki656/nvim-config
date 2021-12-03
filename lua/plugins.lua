@@ -86,6 +86,12 @@ return packer.startup(function(use)
     })
     use("onsails/lspkind-nvim")
     use("lukas-reineke/indent-blankline.nvim")
+    use({
+        "lukas-reineke/headlines.nvim",
+        config = function()
+            require("headlines").setup()
+        end,
+    })
     use("pocco81/autosave.nvim")
     use("rakr/vim-one")
     use("rcarriga/nvim-notify")

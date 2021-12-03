@@ -19,13 +19,11 @@ null_ls.config({
         -- Formatters
         formatter.stylua,
         formatter.fixjson,
-        formatter.markdownlint,
         formatter.shfmt.with({ args = { "-i=4" } }),
 
         -- Diagnostics
         diagnostics.shellcheck,
         diagnostics.hadolint,
-        diagnostics.markdownlint,
         diagnostics.yamllint,
         diagnostics.write_good.with({ extra_args = { "--no-passive" } }),
 
