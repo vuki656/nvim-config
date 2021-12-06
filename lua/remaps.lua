@@ -96,6 +96,9 @@ vars.remap.fn("n", "lf", "[s z=1<CR> :w<CR> :e<CR> A", vars.remap.opts)
 -- Show doc
 vars.remap.fn("n", "L", "<cmd>lua vim.lsp.buf.hover()<CR>", vars.remap.opts)
 
+-- Rename
+vars.remap.fn("n", "<leader>rn", " :lua vim.lsp.buf.rename()<CR>", vars.remap.opts)
+
 -- Show diagnostics
 vars.remap.fn("n", "K", ":lua vim.diagnostic.open_float(0, { scope='line' })<CR>", vars.remap.opts)
 
