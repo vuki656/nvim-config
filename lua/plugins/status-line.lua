@@ -58,38 +58,22 @@ components.active[1] = {
             style = "bold",
         },
         right_sep = function()
-            local val = {
+            return {
+                str = " ",
                 hl = {
                     fg = colors.background,
                     bg = colors.blue,
                 },
             }
-
-            -- Hide if no git status
-            if vim.b.gitsigns_status_dict then
-                val.str = " "
-            else
-                val.str = ""
-            end
-
-            return val
         end,
         left_sep = function()
-            local val = {
+            return {
+                str = " ",
                 hl = {
                     fg = colors.background,
                     bg = colors.blue,
                 },
             }
-
-            -- Hide if no git status
-            if vim.b.gitsigns_status_dict then
-                val.str = " "
-            else
-                val.str = ""
-            end
-
-            return val
         end,
     },
     {
