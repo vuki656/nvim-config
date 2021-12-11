@@ -33,7 +33,7 @@ vars.remap.fn("n", "<leader>ps", ":Telescope live_grep<CR>", vars.remap.opts)
 ----------------------------------- LSP --------------------------------------------------
 
 -- Find project diagnostics
-vars.remap.fn("n", "<leader>pad", ":Telescope lsp_workspace_diagnostics<CR>", vars.remap.opts)
+vars.remap.fn("n", "<leader>pad", ":Telescope diagnostics<CR>", vars.remap.opts)
 
 -- Find references
 vars.remap.fn("n", "<leader>pr", ":Telescope lsp_references<CR>", vars.remap.opts)
