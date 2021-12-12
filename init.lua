@@ -18,12 +18,10 @@ require("plugins.auto-save")
 require("plugins.bookmarks")
 require("plugins.completion-icons")
 require("plugins.commenting")
-require("plugins.file-tree")
 require("plugins.finder")
 require("plugins.word-highlight")
 require("plugins.formatter-linter")
 require("plugins.git-status")
-require("plugins.icons")
 require("plugins.indent-line")
 require("plugins.markdown-preview")
 require("plugins.mode-switch-fix")
@@ -40,8 +38,12 @@ require("plugins.undo-tree")
 require("plugins.status-line")
 
 -- Order required
+
 require("plugins.auto-pairs")
 require("plugins.completion")
+
+require("plugins.icons")
+require("plugins.file-tree")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- LSPs -------------------------------------------------

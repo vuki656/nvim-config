@@ -15,14 +15,6 @@ vim.g.nvim_tree_indent_markers = 1
 -- Display git status in file names
 vim.g.nvim_tree_git_hl = 1
 
--- Don't show listed dirs
-vim.g.nvim_tree_ignore = {
-    ".git",
-}
-
--- Set file tree width
-vim.g.nvim_tree_width = 40
-
 -- Custom icons
 vim.g.nvim_tree_icons = {
     default = "",
@@ -41,6 +33,15 @@ vim.g.nvim_tree_show_icons = { git = 0, folders = 1, files = 1 }
 
 -- Don't highlight any files
 vim.g.nvim_tree_special_files = {}
+
+require("nvim-tree").setup({
+    view = {
+        width = 40,
+    },
+    filters = {
+        custom = { ".git" },
+    },
+})
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- COLORS -----------------------------------------------
@@ -63,7 +64,7 @@ vim.cmd([[highlight NvimTreeOpenedFolderName    guifg=]] .. colors.white)
 vars.remap.fn("n", "<C-n>", ":NvimTreeToggle<CR>", vars.remap.opts)
 
 -- Find opened file in tree
-vars.remap.fn("n", "<leader>to", ":NvimTreeFindFile<CR>", vars.remap.opts)
+vars.remap.fn("n", "<leader>to", ":NvimTreeOpen<CR> :NvimTreeFindFile<CR>", vars.remap.opts)
 
 -- Refresh tree
 vars.remap.fn("n", "<leader>tr", ":NvimTreeRefresh<CR>", vars.remap.opts)
