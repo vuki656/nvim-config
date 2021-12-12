@@ -29,10 +29,6 @@ return packer.startup(function(use)
     })
     use("folke/todo-comments.nvim")
     use({
-        "filipdutescu/renamer.nvim",
-        requires = { "nvim-lua/plenary.nvim" },
-    })
-    use({
         "goolord/alpha-nvim",
         requires = { "kyazdani42/nvim-web-devicons" },
     })
