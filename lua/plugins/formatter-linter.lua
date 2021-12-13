@@ -3,7 +3,6 @@
 -- Link: https://github.com/jose-elias-alvarez/null-ls.nvim
 
 local null_ls = require("null-ls")
-local lspconfig = require("lspconfig")
 
 local vars = require("utils.vars")
 
@@ -14,7 +13,7 @@ local vars = require("utils.vars")
 local formatter = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 
-null_ls.config({
+null_ls.setup({
     sources = {
         -- Formatters
         formatter.stylua,
@@ -69,8 +68,6 @@ null_ls.config({
         end),
     },
 })
-
-lspconfig["null-ls"].setup({})
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- REMAPS -----------------------------------------------
