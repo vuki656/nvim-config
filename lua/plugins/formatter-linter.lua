@@ -12,6 +12,7 @@ local vars = require("utils.vars")
 
 local formatter = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
+local actions = null_ls.builtins.code_actions
 
 null_ls.setup({
     sources = {
@@ -19,12 +20,17 @@ null_ls.setup({
         formatter.stylua,
         formatter.fixjson,
         formatter.shfmt.with({ args = { "-i=4" } }),
+        formatter.eslint_d,
 
         -- Diagnostics
         diagnostics.shellcheck,
         diagnostics.hadolint,
         diagnostics.yamllint,
         diagnostics.write_good.with({ extra_args = { "--no-passive" } }),
+        diagnostics.eslint_d,
+
+        -- Code Actions
+        actions.eslint_d,
 
         -- If eslint config exists use eslint, else use prettier
         require("null-ls.helpers").conditional(function(utils)
