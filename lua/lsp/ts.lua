@@ -2,7 +2,7 @@ local nvim_lsp = require("lspconfig")
 
 local capabilities = require("lsp.capabilities")
 
-local remap = vim.api.nvim_set_keymap
+local vars = require("utils.vars")
 
 nvim_lsp.tsserver.setup({
     on_attach = function(client)
@@ -16,10 +16,10 @@ nvim_lsp.tsserver.setup({
 ------------------------------------------------------------------------------------------
 
 -- Apply first lsp fix
-remap("n", "<leader>qf", ":TSLspFixCurrent<CR>", { noremap = true, silent = true })
+vars.remap.fn("n", "<leader>qf", ":TSLspFixCurrent<CR>",vars.remap.opts)
 
 -- Rename file
-remap("n", "<leader>fr", ":TSLspRenameFile<CR>", { noremap = true, silent = true })
+vars.remap.fn("n", "<leader>fr", ":TSLspRenameFile<CR>", vars.remap.opts)
 
 -- Import all
-remap("n", "<leader>fi", ":TSLspImportAll<CR>", { noremap = true, silent = true })
+vars.remap.fn("n", "<leader>fi", ":TSLspImportAll<CR>", vars.remap.opts)
