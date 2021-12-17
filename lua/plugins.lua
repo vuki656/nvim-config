@@ -55,6 +55,7 @@ return packer.startup(function(use)
         "jose-elias-alvarez/null-ls.nvim",
         requires = { "nvim-lua/plenary.nvim" },
     })
+    use("kazhala/close-buffers.nvim")
     use("karb94/neoscroll.nvim")
     use({
         "kyazdani42/nvim-tree.lua",

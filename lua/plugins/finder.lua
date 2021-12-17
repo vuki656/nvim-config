@@ -3,6 +3,7 @@
 -- Link: https://github.com/nvim-telescope/telescope.nvim
 
 local telescope = require("telescope")
+
 local vars = require("utils.vars")
 
 ------------------------------------------------------------------------------------------
