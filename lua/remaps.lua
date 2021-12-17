@@ -21,7 +21,7 @@ vars.remap.fn("n", "<C-k>", "<C-w>k", vars.remap.opts)
 vars.remap.fn("n", "<C-s>", "<C-w><", vars.remap.opts)
 vars.remap.fn("n", "<C-a>", "<C-w>>", vars.remap.opts)
 
--- Remap ESC to also clear search highlight
+-- Remap backspace to also clear search highlight
 vars.remap.fn("n", "<BS>", ":noh<CR>", vars.remap.opts)
 
 -- Center the next search result in buffer
@@ -113,7 +113,7 @@ vars.remap.fn("n", "[d", ":lua vim.lsp.diagnostic.goto_prev()<CR>", vars.remap.o
 ----------------------------------- MISC -------------------------------------------------
 ------------------------------------------------------------------------------------------
 
--- ReSource lua file
+-- Display word count in current buffer
 vars.remap.fn("n", "<leader>cw", "g<C-g>", vars.remap.opts)
 
 -- Go to normal mode with ESC in terminal

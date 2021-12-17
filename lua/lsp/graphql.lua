@@ -1,5 +1,7 @@
-local capabilities = require("lsp.capabilities")
+local lsp_config = require("lspconfig")
 
-require("lspconfig").graphql.setup({
+local capabilities = require("lsp.utils.capabilities")
+
+lsp_config.graphql.setup({
     capabilities = capabilities,
 })

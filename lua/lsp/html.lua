@@ -1,5 +1,7 @@
-local capabilities = require("lsp.capabilities")
+local lsp_config = require("lspconfig")
 
-require("lspconfig").html.setup({
+local capabilities = require("lsp.utils.capabilities")
+
+lsp_config.html.setup({
     capabilities = capabilities,
 })

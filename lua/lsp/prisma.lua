@@ -1,2 +1,0 @@
--- Broken
--- require("lspconfig").prismals.setup({})

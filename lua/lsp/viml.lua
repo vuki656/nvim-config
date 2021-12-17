@@ -1,5 +1,7 @@
-local capabilities = require("lsp.capabilities")
+local lsp_config = require("lspconfig")
 
-require("lspconfig").vimls.setup({
+local capabilities = require("lsp.utils.capabilities")
+
+lsp_config.vimls.setup({
     capabilities = capabilities,
 })

@@ -61,13 +61,13 @@ minsnip.setup({
     log = function()
         return js("console.log($0)")
     end,
-    slog = function ()
+    slog = function()
         return js("console.log('$0')")
     end,
     ea = function()
         return js("export * from './$0'")
     end,
-    arr = function ()
+    arr = function()
         return js([[
             ($1) => {
                 $0

@@ -50,7 +50,6 @@ require("plugins.file-tree")
 ----------------------------------- LSPs -------------------------------------------------
 ------------------------------------------------------------------------------------------
 
-require("lsp.solidity")
 require("lsp.bash")
 require("lsp.css")
 require("lsp.docker")
@@ -59,8 +58,6 @@ require("lsp.html")
 require("lsp.json")
 require("lsp.lua")
 require("lsp.ts")
-require("lsp.teal")
 require("lsp.yaml")
-require("lsp.prisma")
-require("lsp.tailwind")
-require("lsp.diagnostics")
+
+require("lsp.utils.diagnostics")

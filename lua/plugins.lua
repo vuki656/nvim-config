@@ -48,10 +48,6 @@ return packer.startup(function(use)
         run = [[sh -c 'cd app && rm yarn.lock && yarn install']],
     })
     use({
-        "jose-elias-alvarez/nvim-lsp-ts-utils",
-        requires = { "jose-elias-alvarez/null-ls.nvim" },
-    })
-    use({
         "jose-elias-alvarez/null-ls.nvim",
         requires = { "nvim-lua/plenary.nvim" },
     })
@@ -74,7 +70,6 @@ return packer.startup(function(use)
     })
     use("neovim/nvim-lspconfig")
     use("nvim-treesitter/nvim-treesitter")
-    use("nvim-treesitter/playground")
     use({
         "nvim-telescope/telescope.nvim",
         requires = {
@@ -90,9 +85,7 @@ return packer.startup(function(use)
     use("rakr/vim-one")
     use("rcarriga/nvim-notify")
     use("theprimeagen/harpoon")
-    use("tovarishfin/vim-solidity")
     use("rrethy/vim-illuminate")
-    use("pantharshit00/vim-prisma")
     use({
         "vuki656/package-info.nvim",
         requires = { "muniftanjim/nui.nvim" },

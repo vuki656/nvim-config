@@ -1,9 +1,11 @@
+local lsp_config = require("lspconfig")
+
 local sumneko_root_path = os.getenv("HOME") .. "/lua-language-server"
 local sumneko_binary = sumneko_root_path .. "/bin/Linux/lua-language-server"
 
-local capabilities = require("lsp.capabilities")
+local capabilities = require("lsp.utils.capabilities")
 
-require("lspconfig").sumneko_lua.setup({
+lsp_config.sumneko_lua.setup({
     capabilities = capabilities,
     cmd = { sumneko_binary, "-E", sumneko_root_path .. "/main.lua" },
     settings = {

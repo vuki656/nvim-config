@@ -1,8 +1,10 @@
-local capabilities = require("lsp.capabilities")
+local lsp_config = require("lspconfig")
+
+local capabilities = require("lsp.utils.capabilities")
 
 local extension = ".{yml,yaml}"
 
-require("lspconfig").yamlls.setup({
+lsp_config.yamlls.setup({
     capabilities = capabilities,
     schemas = {
         ["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] = {
