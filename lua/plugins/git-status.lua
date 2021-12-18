@@ -61,5 +61,6 @@ set_highlight({
         { group = "GitSignsAdd", foreground = colors.green },
         { group = "GitSignsChange", foreground = colors.orange },
         { group = "GitSignsDelete", foreground = colors.red },
+        { group = "GitSignsCurrentLineBlame", foreground = colors.grey, background = colors.grey_light },
     },
 })

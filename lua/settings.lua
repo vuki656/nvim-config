@@ -100,17 +100,14 @@ vim.opt.spelloptions = "camel"
 
 -- TODO: convert to lua
 vim.cmd([[
-        " Set colorscheme
-        colorscheme one
+    " Enable syntax
+    syntax on
 
-        " Enable syntax
-        syntax on
-
-        " Spell file location
-        set spellfile=$HOME/.config/nvim/spell/en.utf-8.add
-        
-        " Don't continue comment when adding a new line above/under comment 
-        autocmd BufNewFile,BufRead * setlocal formatoptions-=ro
+    " Spell file location
+    set spellfile=$HOME/.config/nvim/spell/en.utf-8.add
+    
+    " Don't continue comment when adding a new line above/under comment 
+    autocmd BufNewFile,BufRead * setlocal formatoptions-=ro
 ]])
 
 -- Ignore capitalized word misspelled
@@ -121,7 +118,6 @@ vim.cmd([[
 
     autocmd BufRead,BufNewFile * :call IgnoreCamelCaseSpell()
 ]])
-
 
 set_highlight({
     list = {

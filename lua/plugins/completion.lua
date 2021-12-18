@@ -89,7 +89,8 @@ cmp.setup.cmdline("/", {
 ------------------------------------- COLORS -----------------------------------------------
 --------------------------------------------------------------------------------------------
 
-set_highlight(
-    -- Selected item
-    { group = "PmenuSel", background = colors.green, foreground = colors.background }
-)
+set_highlight({
+    list = {
+        { group = "CmpItemKindDefault", foreground = colors.blue },
+    },
+})

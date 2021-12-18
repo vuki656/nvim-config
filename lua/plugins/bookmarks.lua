@@ -35,7 +35,7 @@ set_keymap({
         },
         {
             key = "<LEADER>mf",
-            actions = '<CMD>lua require("harpoon.ui").add_file()<CR>',
+            actions = '<CMD>lua require("harpoon.mark").add_file()<CR>',
             description = "Mark currently opened buffer",
         },
     },
