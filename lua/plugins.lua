@@ -83,6 +83,10 @@ return packer.startup(function(use)
     use("pocco81/autosave.nvim")
     use("rakr/vim-one")
     use("rcarriga/nvim-notify")
+    use({
+        "ruifm/gitlinker.nvim",
+        requires = "nvim-lua/plenary.nvim",
+    })
     use("theprimeagen/harpoon")
     use("rrethy/vim-illuminate")
     use({

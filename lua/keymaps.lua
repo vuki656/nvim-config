@@ -11,7 +11,7 @@ set_keymap({
         {
             key = "<LEADER>ro",
             actions = "<C-^>",
-            description = "Rotate between last 2 opened files",
+            description = "Rotate between last 2 opened buffers",
         },
         {
             key = "<C-h>",
