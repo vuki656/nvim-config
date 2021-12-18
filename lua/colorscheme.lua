@@ -25,6 +25,8 @@ headlines.setup()
 
 set_highlight({
     list = {
+        { group = "SpellBad", gui = "undercurl,bold" },
+
         { group = "TSKeyword", foreground = colors.purple },
         { group = "TSInclude", foreground = colors.purple },
         { group = "TSKeywordOperator", foreground = colors.purple },
@@ -52,5 +54,3 @@ set_highlight({
         { group = "StatusLineNC", foreground = colors.red },
     },
 })
-
-

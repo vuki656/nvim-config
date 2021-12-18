@@ -113,6 +113,16 @@ vim.cmd([[
         autocmd BufNewFile,BufRead * setlocal formatoptions-=ro
 ]])
 
+-- Ignore capitalized word misspelled
+vim.cmd([[
+    fun! IgnoreCamelCaseSpell()
+        syn match myExCapitalWords +\<\w*[A-Z]\K*\>+ contains=@NoSpell
+    endfun
+
+    autocmd BufRead,BufNewFile * :call IgnoreCamelCaseSpell()
+]])
+
+
 set_highlight({
     list = {
         -- Hide ~ from sign column
