@@ -5,19 +5,19 @@
 --     background - background color
 --     foreground - foreground color
 -- }
-function apply_highlight(options)
+function apply_highlight(properties)
     local background = ""
     local foreground = ""
 
-    if options.background ~= nil then
-        background = " guibg=" .. options.background .. " "
+    if properties.background ~= nil then
+        background = " guibg=" .. properties.background .. " "
     end
 
-    if options.foreground ~= nil then
-        foreground = " guifg=" .. options.foreground .. " "
+    if properties.foreground ~= nil then
+        foreground = " guifg=" .. properties.foreground .. " "
     end
 
-    vim.cmd("highlight! " .. options.group .. background .. foreground)
+    vim.cmd("highlight! " .. properties.group .. background .. foreground)
 end
 
 --- Sets the given highlight group or list of groups with the given colors
@@ -28,16 +28,16 @@ end
 --     foreground - foreground color
 --     list -- list of object containing the above 3 properties
 -- }
-return function(options)
+return function(properties)
     -- Set a single highlight
-    if options.list == nil then
-        apply_highlight(options)
+    if properties.list == nil then
+        apply_highlight(properties)
 
         return
     end
 
     -- Set a list of highlights
-    for _, value in ipairs(options.list) do
+    for _, value in ipairs(properties.list) do
         apply_highlight(value)
     end
 end

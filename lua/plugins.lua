@@ -63,7 +63,6 @@ return packer.startup(function(use)
     })
     use("lewis6991/impatient.nvim")
     use("mbbill/undotree")
-    use("max397574/better-escape.nvim")
     use({
         "numtostr/comment.nvim",
         requires = { "joosepalviste/nvim-ts-context-commentstring" },
