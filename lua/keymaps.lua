@@ -1,6 +1,6 @@
 local set_keymap = require("utils.set_keymap")
 
-require("remaps.print_word")
+require("keymaps.print_word")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- NAVIGATION -------------------------------------------
