@@ -4,7 +4,7 @@
 
 local todo_comments = require("todo-comments")
 
-local vars = require("utils.vars")
+local set_keymap = require("utils.set_keymap")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- SETUP ------------------------------------------------
@@ -13,8 +13,11 @@ local vars = require("utils.vars")
 todo_comments.setup({ signs = false })
 
 ------------------------------------------------------------------------------------------
------------------------------------ REMAPS -----------------------------------------------
+----------------------------------- KEYMAPS ----------------------------------------------
 ------------------------------------------------------------------------------------------
 
--- Open todos in telescope picker
-vars.remap.fn("n", "<leader>pt", ":TodoTelescope<CR>", vars.remap.opts)
+set_keymap({
+    key = "<LEADER>pt",
+    actions = "<CMD>TodoTelescope<CR>",
+    description = "Open TODOs in telescope picker",
+})

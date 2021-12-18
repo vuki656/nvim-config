@@ -2,17 +2,23 @@
 -- Description: Plugin manager
 -- Link: https://github.com/wbthomason/packer.nvim
 
-local vars = require("utils.vars")
+local set_keymap = require("utils.set_keymap")
 
 ------------------------------------------------------------------------------------------
------------------------------------ REMAPS -----------------------------------------------
+----------------------------------- KEYMAPS ----------------------------------------------
 ------------------------------------------------------------------------------------------
 
--- Validate/install plugins
-vars.remap.fn("n", "<leader>pas", ":PackerSync<CR>", vars.remap.opts)
-
--- Remove no longer installed
-vars.remap.fn("n", "<leader>pac", ":PackerClean<CR>", vars.remap.opts)
-
--- See list of installed plugins
-vars.remap.fn("n", "<leader>pal", ":PackerStatus<CR>", vars.remap.opts)
+set_keymap({
+    list = {
+        {
+            key = "<LEADER>pas",
+            actions = "<CMD>PackerSync<CR>",
+            description = "Validate/Install all plugins",
+        },
+        {
+            key = "<LEADER>pal",
+            actions = "<CMD>PackerStatus<CR>",
+            description = "List all installed plugins",
+        },
+    },
+})

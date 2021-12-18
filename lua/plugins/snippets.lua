@@ -4,7 +4,7 @@
 
 local minsnip = require("minsnip")
 
-local vars = require("utils.vars")
+local set_keymap = require("utils.set_keymap")
 
 ------------------------------------------------------------------------------------------
 ------------------------------------ SETUP -----------------------------------------------
@@ -116,11 +116,22 @@ minsnip.setup({
 })
 
 ------------------------------------------------------------------------------------------
------------------------------------ REMAPS -----------------------------------------------
+----------------------------------- KEYMAPS ----------------------------------------------
 ------------------------------------------------------------------------------------------
 
--- Go to next place in snippet
-vars.remap.fn("i", "<C-k>", "<cmd> lua require('minsnip').jump()<CR>", vars.remap.opts)
-
--- Go to previous place in snippet
-vars.remap.fn("i", "<C-j>", "<cmd> lua require('minsnip').jump_backwards()<CR>", vars.remap.opts)
+set_keymap({
+    list = {
+        {
+            modes = "i",
+            key = "<C-k>",
+            actions = "<CMD>lua require('minsnip').jump()<CR>",
+            description = "Go to next place in the snippet",
+        },
+        {
+            modes = "i",
+            key = "<C-j>",
+            actions = "<CMD>lua require('minsnip').jump_backwards()<CR>",
+            description = "Go to previous place in the snippet",
+        },
+    },
+})

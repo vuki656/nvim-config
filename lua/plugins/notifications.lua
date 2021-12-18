@@ -27,11 +27,9 @@ set_highlight({
         { group = "NotifyERRORBorder", foreground = colors.red },
         { group = "NotifyERRORIcon", foreground = colors.red },
         { group = "NotifyERRORTitle", foreground = colors.red },
-
         { group = "NotifyWARNBorder", foreground = colors.orange },
         { group = "NotifyWARNIcon", foreground = colors.orange },
         { group = "NotifyWARNTitle", foreground = colors.orange },
-
         { group = "NotifyINFOBorder", foreground = colors.green },
         { group = "NotifyINFOIcon", foreground = colors.green },
         { group = "NotifyINFOTitle", foreground = colors.green },

@@ -4,7 +4,7 @@
 
 local telescope = require("telescope")
 
-local vars = require("utils.vars")
+local set_keymap = require("utils.set_keymap")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- SETUP ------------------------------------------------
@@ -20,37 +20,40 @@ telescope.setup({
 telescope.load_extension("fzy_native")
 
 ------------------------------------------------------------------------------------------
------------------------------------ REMAPS -----------------------------------------------
+----------------------------------- KEYMAPS ----------------------------------------------
 ------------------------------------------------------------------------------------------
 
------------------------------------ FIND -------------------------------------------------
-
--- Find git files in project
-vars.remap.fn("n", "<leader>pf", ":Telescope find_files<CR>", vars.remap.opts)
-
--- Find text in project
-vars.remap.fn("n", "<leader>ps", ":Telescope live_grep<CR>", vars.remap.opts)
-
------------------------------------ LSP --------------------------------------------------
-
--- Find project diagnostics
-vars.remap.fn("n", "<leader>pad", ":Telescope diagnostics<CR>", vars.remap.opts)
-
--- Find references
-vars.remap.fn("n", "<leader>pr", ":Telescope lsp_references<CR>", vars.remap.opts)
-
--- Find definitions
-vars.remap.fn("n", "<leader>pi", ":Telescope lsp_definitions<CR>", vars.remap.opts)
-
------------------------------------ GIT --------------------------------------------------
-
--- Find file commits
-vars.remap.fn("n", "<leader>fh", ":Telescope git_bcommits<CR>", vars.remap.opts)
-
------------------------------------ MISC --------------------------------------------------
-
--- Find vim man pages
-vars.remap.fn("n", "<leader>gh", ":Telescope help_tags<CR>", vars.remap.opts)
-
--- Find neovim remaps
-vars.remap.fn("n", "<leader>gr", ":Telescope keymaps<CR>", vars.remap.opts)
+set_keymap({
+    list = {
+        {
+            key = "<LEADER>pf",
+            actions = "<CMD>Telescope find_files<CR>",
+            description = "Find git files in project",
+        },
+        {
+            key = "<LEADER>ps",
+            actions = "<CMD>Telescope live_grep<CR>",
+            description = "Find text in projects",
+        },
+        {
+            key = "<LEADER>pad",
+            actions = "<CMD>Telescope diagnostics<CR>",
+            description = "Find project diagnostics (errors, warnings...)",
+        },
+        {
+            key = "<LEADER>pr",
+            actions = "<CMD>Telescope lsp_references<CR>",
+            description = "Find variable references in project",
+        },
+        {
+            key = "<LEADER>pi",
+            actions = "<CMD>Telescope lsp_definitions<CR>",
+            description = "Find variable definitions/implementations in project",
+        },
+        {
+            key = "<LEADER>gh",
+            actions = "<CMD>Telescope help_tags<CR>",
+            description = "Find vim manual pages",
+        },
+    },
+})

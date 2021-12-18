@@ -2,11 +2,14 @@
 -- Description: Markdown preview
 -- Link: https://github.com/iamcco/markdown-preview.nvim
 
-local vars = require("utils.vars")
+local set_keymap = require("utils.set_keymap")
 
 ------------------------------------------------------------------------------------------
------------------------------------ REMAPS -----------------------------------------------
+----------------------------------- KEYMAPS ----------------------------------------------
 ------------------------------------------------------------------------------------------
 
--- Toggle preview
-vars.remap.fn("n", "<leader>mp", ":MarkdownPreviewToggle<CR>", vars.remap.opts)
+set_keymap({
+    key = "<LEADER>mp",
+    actions = "<CMD>MarkdownPreviewToggle<CR>",
+    description = "Toggle markdown preview in browse",
+})

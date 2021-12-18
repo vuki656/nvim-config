@@ -3,8 +3,8 @@
 -- Link: https://github.com/kyazdani42/nvim-tree.lua
 
 local colors = require("utils.colors")
-local vars = require("utils.vars")
 local set_highlight = require("utils.set_highlight")
+local set_keymap = require("utils.set_keymap")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- CONFIG -----------------------------------------------
@@ -68,19 +68,10 @@ set_highlight({
 })
 
 ------------------------------------------------------------------------------------------
------------------------------------ REMAPS -----------------------------------------------
+----------------------------------- KEYMAPS ----------------------------------------------
 ------------------------------------------------------------------------------------------
 
--- Toggle file tree
-vars.remap.fn("n", "<C-n>", ":NvimTreeToggle<CR>", vars.remap.opts)
-
--- Find opened file in tree
-vars.remap.fn("n", "<leader>to", ":NvimTreeOpen<CR> :NvimTreeFindFile<CR>", vars.remap.opts)
-
--- Refresh tree
-vars.remap.fn("n", "<leader>tr", ":NvimTreeRefresh<CR>", vars.remap.opts)
-
------------------------------------ TREE COLLAPSE ----------------------------------------------
+----------------------------------- TREE COLLAPSE ----------------------------------------
 
 local function collapse_tree_node(node)
     local entries = node.entries
@@ -104,4 +95,41 @@ function collapse_tree()
     lib.refresh_tree()
 end
 
-vim.api.nvim_set_keymap("n", "<leader>tk", ":lua collapse_tree()<CR>", { noremap = true, silent = true })
+------------------------------------------------------------------------------------------
+
+set_keymap({
+    list = {
+        {
+            key = "<C-n>",
+            actions = "<CMD>NvimTreeToggle<CR>",
+            description = "Toggle file tree",
+        },
+        {
+            key = "<LEADER>to",
+            actions = {
+                "<CMD>NvimTreeOpen<CR>",
+                "<CMD>NvimTreeFindFile<CR>",
+            },
+            description = "Find opened file in tree",
+        },
+        {
+            key = "<LEADER>tr",
+            actions = "<CMD>NvimTreeRefresh<CR>",
+            description = "Refresh tree (git, nodes...)",
+        },
+        {
+            key = "<LEADER>tk",
+            actions = "<CMD>lua collapse_tree()<CR>",
+            description = "Collapse all tree nodes",
+        },
+        {
+            key = "<LEADER>tp",
+            actions = {
+                "<CMD>lua collapse_tree()<CR>",
+                "<CMD>NvimTreeOpen<CR>",
+                "<CMD>NvimTreeFindFile<CR>",
+            },
+            description = "Collapse all tree nodes and focus opened buffer",
+        },
+    },
+})

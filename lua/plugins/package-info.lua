@@ -4,7 +4,7 @@
 
 local package_info = require("package-info")
 
-local vars = require("utils.vars")
+local set_keymap = require("utils.set_keymap")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- SETUP ------------------------------------------------
@@ -16,23 +16,40 @@ package_info.setup({
 })
 
 ------------------------------------------------------------------------------------------
------------------------------------ REMAPS -----------------------------------------------
+----------------------------------- KEYMAPS ----------------------------------------------
 ------------------------------------------------------------------------------------------
 
--- Show package versions
-vars.remap.fn("n", "<leader>ns", ":lua require('package-info').show({ force = true })<CR>", vars.remap.opts)
-
--- Hide package versions
-vars.remap.fn("n", "<leader>nc", ":lua require('package-info').hide()<CR>", vars.remap.opts)
-
--- Update package on line
-vars.remap.fn("n", "<leader>nu", ":lua require('package-info').update()<CR>", vars.remap.opts)
-
--- Delete package on line
-vars.remap.fn("n", "<leader>nd", ":lua require('package-info').delete()<CR>", vars.remap.opts)
-
--- Install a new package
-vars.remap.fn("n", "<leader>ni", ":lua require('package-info').install()<CR>", vars.remap.opts)
-
--- Install a different package version
-vars.remap.fn("n", "<leader>np", ":lua require('package-info').change_version()<CR>", vars.remap.opts)
+set_keymap({
+    list = {
+        {
+            key = "<LEADER>ns",
+            actions = "<CMD>lua PackageInfoShowForce<CR>",
+            description = "Show package versions",
+        },
+        {
+            key = "<LEADER>nc",
+            actions = "<CMD>lua PackageInfoHide<CR>",
+            description = "Hide package versions",
+        },
+        {
+            key = "<LEADER>nu",
+            actions = "<CMD>lua PackageInfoUpdate<CR>",
+            description = "Update package on current line",
+        },
+        {
+            key = "<LEADER>nd",
+            actions = "<CMD>lua PackageInfoDelete<CR>",
+            description = "Delete package on current line",
+        },
+        {
+            key = "<LEADER>ni",
+            actions = "<CMD>lua PackageInfoInstall<CR>",
+            description = "Install a new package",
+        },
+        {
+            key = "<LEADER>np",
+            actions = "<CMD>lua PackageInfoChangeVersion<CR>",
+            description = "Install a different package version",
+        },
+    },
+})

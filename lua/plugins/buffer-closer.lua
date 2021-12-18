@@ -4,7 +4,7 @@
 
 local close_buffers = require("close_buffers")
 
-local vars = require("utils.vars")
+local set_keymap = require("utils.set_keymap")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- SETUP ------------------------------------------------
@@ -15,8 +15,11 @@ close_buffers.setup({
 })
 
 ------------------------------------------------------------------------------------------
------------------------------------ REMAPS -----------------------------------------------
+----------------------------------- KEYMAPS ----------------------------------------------
 ------------------------------------------------------------------------------------------
 
--- Delete/kill all inactive buffers
-vars.remap.fn("n", "<leader>ki", ":lua require('close_buffers').delete({ type = 'hidden' })<CR>", vars.remap.opts)
+set_keymap({
+    key = "<LEADER>ki",
+    actions = "<CMD>lua require('close_buffers').delete({ type = 'hidden' })<CR>",
+    description = "Delete/kill all inactive buffers",
+})

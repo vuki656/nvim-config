@@ -5,7 +5,7 @@
 local project = require("project_nvim")
 local telescope = require("telescope")
 
-local vars = require("utils.vars")
+local set_keymap = require("utils.set_keymap")
 
 ------------------------------------------------------------------------------------------
 ------------------------------------ SETUP -----------------------------------------------
@@ -30,8 +30,11 @@ project.setup({
 telescope.load_extension("projects")
 
 ------------------------------------------------------------------------------------------
------------------------------------ REMAPS -----------------------------------------------
+----------------------------------- KEYMAPS ----------------------------------------------
 ------------------------------------------------------------------------------------------
 
--- Validate/install plugins
-vars.remap.fn("n", "<leader>gp", ":Telescope projects<CR>", vars.remap.opts)
+set_keymap({
+    key = "<LEADER>gp",
+    actions = "<CMD>Telescope projects<CR>",
+    description = "List all visited projects",
+})

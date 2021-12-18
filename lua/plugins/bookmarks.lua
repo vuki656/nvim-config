@@ -3,7 +3,8 @@
 -- Link: https://github.com/ThePrimeagen/harpoon
 
 local harpoon = require("harpoon")
-local vars = require("utils.vars")
+
+local set_keymap = require("utils.set_keymap")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- SETUP ------------------------------------------------
@@ -17,19 +18,25 @@ harpoon.setup({
 })
 
 ------------------------------------------------------------------------------------------
------------------------------------ REMAPS -----------------------------------------------
+----------------------------------- KEYMAPS ----------------------------------------------
 ------------------------------------------------------------------------------------------
 
--- Navigate to file by X index
-vars.remap.fn("n", "<leader>1", ':lua require("harpoon.ui").nav_file(1)<CR>', vars.remap.opts)
-vars.remap.fn("n", "<leader>2", ':lua require("harpoon.ui").nav_file(2)<CR>', vars.remap.opts)
-vars.remap.fn("n", "<leader>3", ':lua require("harpoon.ui").nav_file(3)<CR>', vars.remap.opts)
-vars.remap.fn("n", "<leader>4", ':lua require("harpoon.ui").nav_file(4)<CR>', vars.remap.opts)
-vars.remap.fn("n", "<leader>5", ':lua require("harpoon.ui").nav_file(5)<CR>', vars.remap.opts)
-vars.remap.fn("n", "<leader>6", ':lua require("harpoon.ui").nav_file(6)<CR>', vars.remap.opts)
-
--- Open list of tagged files
-vars.remap.fn("n", "<leader>ms", ':lua require("harpoon.ui").toggle_quick_menu()<CR>', vars.remap.opts)
-
--- Mark current file
-vars.remap.fn("n", "<leader>mf", ':lua require("harpoon.mark").add_file()<CR>', vars.remap.opts)
+set_keymap({
+    list = {
+        { key = "<LEADER>1", actions = '<CMD>lua require("harpoon.ui").nav_file(1)<CR>' },
+        { key = "<LEADER>2", actions = '<CMD>lua require("harpoon.ui").nav_file(2)<CR>' },
+        { key = "<LEADER>3", actions = '<CMD>lua require("harpoon.ui").nav_file(3)<CR>' },
+        { key = "<LEADER>4", actions = '<CMD>lua require("harpoon.ui").nav_file(4)<CR>' },
+        { key = "<LEADER>5", actions = '<CMD>lua require("harpoon.ui").nav_file(5)<CR>' },
+        {
+            key = "<LEADER>ms",
+            actions = '<CMD>lua require("harpoon.ui").toggle_quick_menu()<CR>',
+            description = "Open marked files list",
+        },
+        {
+            key = "<LEADER>mf",
+            actions = '<CMD>lua require("harpoon.ui").add_file()<CR>',
+            description = "Mark currently opened buffer",
+        },
+    },
+})

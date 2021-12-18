@@ -2,9 +2,10 @@
 -- Descriptions: Start screen
 -- Link: https://github.com/goolord/alpha-nvim
 
-local vars = require("utils.vars")
 local alpha = require("alpha")
 local opts = require("alpha.themes.startify").opts
+
+local set_keymap = require("utils.set_keymap")
 
 --------------------------------------------------------------------------------------------
 ------------------------------------- SETUP ------------------------------------------------
@@ -13,8 +14,11 @@ local opts = require("alpha.themes.startify").opts
 alpha.setup(opts)
 
 --------------------------------------------------------------------------------------------
-------------------------------------- REMAPS -----------------------------------------------
+------------------------------------- KEYMAPS ----------------------------------------------
 --------------------------------------------------------------------------------------------
 
----- Open startify
-vars.remap.fn("n", "<leader>b", ":Alpha<CR>", vars.remap.opts)
+set_keymap({
+    key = "<LEADER>b",
+    actions = "<CMD>Alpha<CR>",
+    description = "Open start screen",
+})
