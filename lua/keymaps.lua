@@ -246,6 +246,11 @@ set_keymap({
             description = "Resource current lua buffer",
         },
         {
+            key = "<LEADER>sw",
+            actions = "<CMD>set wrap<CR>",
+            description = "Enable wrapping in the buffer",
+        },
+        {
             key = "<LEADER>sr",
             actions = "<CMD>mkspell ./spell/en.utf-8.add<CR>",
             description = "Recreate spell database file",
