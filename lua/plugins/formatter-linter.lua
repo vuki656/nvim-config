@@ -31,6 +31,7 @@ null_ls.setup({
 
         -- Code Actions
         actions.eslint_d,
+        actions.gitsigns,
 
         -- If eslint config exists use eslint, else use prettier
         require("null-ls.helpers").conditional(function(utils)
