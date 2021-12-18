@@ -8,6 +8,7 @@ local lspkind = require("lspkind")
 local buffer = require("cmp_buffer")
 
 local colors = require("utils.colors")
+local set_highlight = require("utils.set_highlight")
 
 --------------------------------------------------------------------------------------------
 ------------------------------------- SETUP ------------------------------------------------
@@ -88,6 +89,7 @@ cmp.setup.cmdline("/", {
 ------------------------------------- COLORS -----------------------------------------------
 --------------------------------------------------------------------------------------------
 
----- Selected item
-vim.cmd([[highlight PmenuSel           guibg=]] .. colors.green)
-vim.cmd([[highlight PmenuSel           guifg=]] .. colors.background)
+set_highlight(
+    -- Selected item
+    { group = "PmenuSel", background = colors.green, foreground = colors.background }
+)

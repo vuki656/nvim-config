@@ -6,6 +6,7 @@ local git_signs = require("gitsigns")
 
 local colors = require("utils.colors")
 local vars = require("utils.vars")
+local set_highlight = require("utils.set_highlight")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- SETUP ------------------------------------------------
@@ -62,6 +63,10 @@ vars.remap.fn("n", "<leader>hR", ":lua require('gitsigns').reset_buffer()<CR>", 
 ----------------------------------- COLORS -----------------------------------------------
 ------------------------------------------------------------------------------------------
 
-vim.cmd([[highlight! GitSignsAdd        guifg=]] .. colors.green)
-vim.cmd([[highlight! GitSignsChange     guifg=]] .. colors.orange)
-vim.cmd([[highlight! GitSignsDelete     guifg=]] .. colors.red)
+set_highlight({
+    list = {
+        { group = "GitSignsAdd", foreground = colors.green },
+        { group = "GitSignsChange", foreground = colors.orange },
+        { group = "GitSignsDelete", foreground = colors.red },
+    },
+})

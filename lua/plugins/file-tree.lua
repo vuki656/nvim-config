@@ -4,6 +4,7 @@
 
 local colors = require("utils.colors")
 local vars = require("utils.vars")
+local set_highlight = require("utils.set_highlight")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- CONFIG -----------------------------------------------
@@ -48,14 +49,18 @@ require("nvim-tree").setup({
 ----------------------------------- COLORS -----------------------------------------------
 ------------------------------------------------------------------------------------------
 
-vim.cmd([[highlight NvimTreeGitNew              guifg=]] .. colors.green)
-vim.cmd([[highlight NvimTreeGitRenamed          guifg=]] .. colors.yellow)
-vim.cmd([[highlight NvimTreeGitDirty            guifg=]] .. colors.yellow)
-vim.cmd([[highlight NvimTreeIndentMarker        guifg=]] .. colors.transparent)
-vim.cmd([[highlight NvimTreeFolderName          guifg=]] .. colors.white)
-vim.cmd([[highlight NvimTreeEmptyFolderName     guifg=]] .. colors.white)
-vim.cmd([[highlight NvimTreeFolderIcon          guifg=]] .. colors.white)
-vim.cmd([[highlight NvimTreeOpenedFolderName    guifg=]] .. colors.white)
+set_highlight({
+    list = {
+        { group = "NvimTreeGitNew", foreground = colors.green },
+        { group = "NvimTreeGitRenamed", foreground = colors.yellow },
+        { group = "NvimTreeGitDirty", foreground = colors.yellow },
+        { group = "NvimTreeIndentMarker", foreground = colors.transparent },
+        { group = "NvimTreeFolderName", foreground = colors.white },
+        { group = "NvimTreeEmptyFolderName", foreground = colors.white },
+        { group = "NvimTreeFolderIcon", foreground = colors.white },
+        { group = "NvimTreeOpenedFolderName", foreground = colors.white },
+    },
+})
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- REMAPS -----------------------------------------------

@@ -5,6 +5,7 @@
 local notify = require("notify")
 
 local colors = require("utils.colors")
+local set_highlight = require("utils.set_highlight")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- SETUP ------------------------------------------------
@@ -21,15 +22,18 @@ vim.notify = notify
 ----------------------------------- COLORS -----------------------------------------------
 ------------------------------------------------------------------------------------------
 
--- Notifications
-vim.cmd([[highlight! NotifyERRORBorder               guifg=]] .. colors.red)
-vim.cmd([[highlight! NotifyERRORIcon                 guifg=]] .. colors.red)
-vim.cmd([[highlight! NotifyERRORTitle                guifg=]] .. colors.red)
+set_highlight({
+    list = {
+        { group = "NotifyERRORBorder", foreground = colors.red },
+        { group = "NotifyERRORIcon", foreground = colors.red },
+        { group = "NotifyERRORTitle", foreground = colors.red },
 
-vim.cmd([[highlight! NotifyWARNBorder                guifg=]] .. colors.orange)
-vim.cmd([[highlight! NotifyWARNIcon                  guifg=]] .. colors.orange)
-vim.cmd([[highlight! NotifyWARNTitle                 guifg=]] .. colors.orange)
+        { group = "NotifyWARNBorder", foreground = colors.orange },
+        { group = "NotifyWARNIcon", foreground = colors.orange },
+        { group = "NotifyWARNTitle", foreground = colors.orange },
 
-vim.cmd([[highlight! NotifyINFOBorder                guifg=]] .. colors.green)
-vim.cmd([[highlight! NotifyINFOIcon                  guifg=]] .. colors.green)
-vim.cmd([[highlight! NotifyINFOTitle                 guifg=]] .. colors.green)
+        { group = "NotifyINFOBorder", foreground = colors.green },
+        { group = "NotifyINFOIcon", foreground = colors.green },
+        { group = "NotifyINFOTitle", foreground = colors.green },
+    },
+})

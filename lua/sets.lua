@@ -1,3 +1,5 @@
+local set_highlight = require("utils.set_highlight")
+
 ------------------------------------------------------------------------------------------
 ----------------------------------- GLOBAL -----------------------------------------------
 ------------------------------------------------------------------------------------------
@@ -111,11 +113,15 @@ vim.cmd([[
         autocmd BufNewFile,BufRead * setlocal formatoptions-=ro
 ]])
 
--- Hide ~ from sign column
-vim.cmd("hi EndOfBuffer guifg=#282c34")
+set_highlight({
+    list = {
+        -- Hide ~ from sign column
+        { group = "EndOfBuffer", foreground = "#282c34" },
 
--- Skinny buffer separator
-vim.cmd("hi VertSplit guibg=NONE")
+        -- Skinny buffer separator
+        { group = "VertSplit", background = "NONE" },
+    },
+})
 
 -- Fix cursor hold
 vim.cmd("let g:cursorhold_updatetime = 100")

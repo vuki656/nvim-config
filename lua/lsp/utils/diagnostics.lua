@@ -1,4 +1,5 @@
 local colors = require("utils.colors")
+local set_highlight = require("utils.set_highlight")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- SETUP ------------------------------------------------
@@ -14,14 +15,18 @@ vim.diagnostic.config({
 ----------------------------------- COLORS -----------------------------------------------
 ------------------------------------------------------------------------------------------
 
--- In code colors
-vim.cmd([[highlight DiagnosticUnderlineError            guifg=]] .. colors.red)
-vim.cmd([[highlight DiagnosticUnderlineWarning          guifg=]] .. colors.yellow)
-vim.cmd([[highlight DiagnosticUnderlineInformation      guifg=]] .. colors.blue)
-vim.cmd([[highlight DiagnosticUnderlineHint             guifg=]] .. colors.orange)
+set_highlight({
+    list = {
+        -- In code colors
+        { group = "DiagnosticUnderlineError", foreground = colors.red },
+        { group = "DiagnosticUnderlineWarning", foreground = colors.yellow },
+        { group = "DiagnosticUnderlineInformation", foreground = colors.blue },
+        { group = "DiagnosticUnderlineHint", foreground = colors.orange },
 
--- Float colors
-vim.cmd([[highlight DiagnosticFloatingError            guifg=]] .. colors.red)
-vim.cmd([[highlight DiagnosticFloatingWarn             guifg=]] .. colors.yellow)
-vim.cmd([[highlight DiagnosticFloatingInfo             guifg=]] .. colors.blue)
-vim.cmd([[highlight DiagnosticFloatingHint             guifg=]] .. colors.orange)
+        -- Floating window colors
+        { group = "DiagnosticFloatingError", foreground = colors.red },
+        { group = "DiagnosticFloatingWarn", foreground = colors.yellow },
+        { group = "DiagnosticFloatingInfo", foreground = colors.blue },
+        { group = "DiagnosticFloatingHint", foreground = colors.orange },
+    },
+})

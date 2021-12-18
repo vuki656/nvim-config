@@ -1,6 +1,8 @@
 local headlines = require("headlines")
 local treesitter_configs = require("nvim-treesitter.configs")
 
+local set_highlight = require("utils.set_highlight")
+
 colors = require("utils.colors")
 
 treesitter_configs.setup({
@@ -21,28 +23,34 @@ treesitter_configs.setup({
 -- Doc files header highlights
 headlines.setup()
 
-vim.cmd([[highlight! TSKeyword              guifg=]] .. colors.purple)
-vim.cmd([[highlight! TSInclude              guifg=]] .. colors.purple)
-vim.cmd([[highlight! TSKeywordOperator      guifg=]] .. colors.purple)
-vim.cmd([[highlight! TSBoolean              guifg=]] .. colors.purple)
-vim.cmd([[highlight! TSConstBuiltin         guifg=]] .. colors.purple)
-vim.cmd([[highlight! TSTypeBuiltin          guifg=]] .. colors.purple)
-vim.cmd([[highlight! TSVariable             guifg=]] .. colors.white)
-vim.cmd([[highlight! TSNamespace            guifg=]] .. colors.white)
-vim.cmd([[highlight! TSConstructor          guifg=]] .. colors.yellow)
-vim.cmd([[highlight! TSParameter            guifg=]] .. colors.orange)
-vim.cmd([[highlight! TSProperty             guifg=]] .. colors.red)
-vim.cmd([[highlight! TSLabel                guifg=]] .. colors.red)
+set_highlight({
+    list = {
+        { group = "TSKeyword", foreground = colors.purple },
+        { group = "TSInclude", foreground = colors.purple },
+        { group = "TSKeywordOperator", foreground = colors.purple },
+        { group = "TSBoolean", foreground = colors.purple },
+        { group = "TSConstBuiltin", foreground = colors.purple },
+        { group = "TSTypeBuiltin", foreground = colors.purple },
+        { group = "TSVariable", foreground = colors.white },
+        { group = "TSNamespace", foreground = colors.white },
+        { group = "TSConstructor", foreground = colors.yellow },
+        { group = "TSParameter", foreground = colors.orange },
+        { group = "TSProperty", foreground = colors.red },
+        { group = "TSLabel", foreground = colors.red },
 
--- Punctuation
-vim.cmd([[highlight! TSPunctBracket         guifg=]] .. colors.white)
-vim.cmd([[highlight! TSOperator             guifg=]] .. colors.white)
-vim.cmd([[highlight! TSPunctDelimiter       guifg=]] .. colors.white)
-vim.cmd([[highlight! TSPunctSpecial         guifg=]] .. colors.white)
+        -- Punctuation
+        { group = "TSPunctBracket", foreground = colors.white },
+        { group = "TSOperator", foreground = colors.white },
+        { group = "TSPunctDelimiter", foreground = colors.white },
+        { group = "TSPunctSpecial", foreground = colors.white },
 
--- JSX
-vim.cmd([[highlight! TSTagDelimiter         guifg=]] .. colors.white)
-vim.cmd([[highlight! TSTag                  guifg=]] .. colors.red)
+        -- JSX
+        { group = "TSTagDelimiter", foreground = colors.white },
+        { group = "TSTag", foreground = colors.red },
 
--- Editor
-vim.cmd([[highlight! StatusLineNC           guifg=]] .. colors.background)
+        -- Editor
+        { group = "StatusLineNC", foreground = colors.red },
+    },
+})
+
+
