@@ -31,7 +31,7 @@ set_keymap({
         },
         {
             key = "<LEADER>ld",
-            actions = "<CMD>lua toggle_git_window()<CR>",
+            actions = "<CMD>lua toggle_docker_window()<CR>",
             description = "Open a floating buffer with lazydocker",
         },
         {
