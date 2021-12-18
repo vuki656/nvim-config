@@ -14,6 +14,8 @@ require("colorscheme")
 require("impatient")
 
 require("plugins.notifications")
+
+require("plugins.action-menu")
 require("plugins.auto-save")
 require("plugins.bookmarks")
 require("plugins.buffer-closer")

@@ -10,5 +10,10 @@ local indent_blankline = require("indent_blankline")
 
 indent_blankline.setup({
     char = "▏",
-    filetype_exclude = { "NvimTree", "alpha", "packer" },
+    filetype_exclude = {
+        "NvimTree",
+        "alpha",
+        "packer",
+        "code-action-menu-menu",
+    },
 })
