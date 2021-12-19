@@ -25,7 +25,7 @@ return packer.startup(function(use)
     use("dstein64/vim-startuptime")
     use("dstein64/nvim-scrollview")
     use({
-        "famiu/feline.nvim",
+        "feline-nvim/feline.nvim",
         requires = { "kyazdani42/nvim-web-devicons" },
     })
     use("folke/todo-comments.nvim")
