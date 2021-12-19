@@ -6,7 +6,7 @@ require("plugins")
 require("settings")
 require("keymaps")
 require("treesitter")
-require("colorscheme.setup")
+require("colorscheme")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- PLUGINS ----------------------------------------------
