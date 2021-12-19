@@ -10,7 +10,8 @@ local colors = {
     orange = "#d19a66",
     red = "#ef596f",
     grey = "#5c6370",
-    grey_light = "#2c323c",
+    grey_light = "#3e4452",
+    grey_lighter = "#2c323c",
 }
 
 return colors

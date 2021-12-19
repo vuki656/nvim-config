@@ -2,6 +2,9 @@
 -- Description: Scrollbar
 -- Link: https://github.com/dstein64/nvim-scrollview
 
+local set_highlight = require("utils.set_highlight")
+local colors = require("utils.colors")
+
 ------------------------------------------------------------------------------------------
 ----------------------------------- CONFIG -----------------------------------------------
 ------------------------------------------------------------------------------------------
@@ -11,3 +14,5 @@ vim.g.scrollview_excluded_filetypes = {
     "NvimTree",
     "alpha",
 }
+
+set_highlight({ group = "ScrollView", background = colors.background_light })

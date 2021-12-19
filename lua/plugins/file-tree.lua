@@ -64,6 +64,7 @@ set_highlight({
         { group = "NvimTreeEmptyFolderName", foreground = colors.white },
         { group = "NvimTreeFolderIcon", foreground = colors.white },
         { group = "NvimTreeOpenedFolderName", foreground = colors.white },
+        { group = "NvimTreeRootFolder", foreground = colors.white },
     },
 })
 

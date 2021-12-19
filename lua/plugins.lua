@@ -19,6 +19,7 @@ end
 ------------------------------------------------------------------------------------------
 
 return packer.startup(function(use)
+    use("folke/tokyonight.nvim")
     use("akinsho/nvim-toggleterm.lua")
     use("ahmedkhalf/project.nvim")
     use("dstein64/vim-startuptime")
