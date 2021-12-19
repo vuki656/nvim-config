@@ -5,7 +5,6 @@
 require("plugins")
 require("settings")
 require("keymaps")
-require("treesitter")
 require("colorscheme")
 
 ------------------------------------------------------------------------------------------
@@ -38,6 +37,7 @@ require("plugins.snippets")
 require("plugins.start-screen")
 require("plugins.startup-time")
 require("plugins.terminal")
+require("plugins.treesitter")
 require("plugins.todo-comments")
 require("plugins.undo-tree")
 require("plugins.status-line")
