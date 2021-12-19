@@ -8,13 +8,13 @@ local components = {
     inactive = {},
 }
 
-local name = ""
+local repo_name = ""
 
 -- Get git repo name
-if name == "" then
+if repo_name == "" then
     vim.fn.jobstart("git remote get-url origin | xargs basename -s .git", {
         on_stdout = function(_, stdout)
-            name = name .. table.concat(stdout)
+            repo_name = repo_name .. table.concat(stdout)
         end,
     })
 end
@@ -22,11 +22,11 @@ end
 components.active[1] = {
     {
         provider = function()
-            if name == "" then
+            if repo_name == "" then
                 return ""
             end
 
-            return " " .. name
+            return " " .. repo_name
         end,
         hl = {
             fg = colors.background,

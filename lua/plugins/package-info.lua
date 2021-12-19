@@ -23,32 +23,32 @@ set_keymap({
     list = {
         {
             key = "<LEADER>ns",
-            actions = "<CMD>lua PackageInfoShowForce<CR>",
+            actions = "<CMD>PackageInfoShowForce<CR>",
             description = "Show package versions",
         },
         {
             key = "<LEADER>nc",
-            actions = "<CMD>lua PackageInfoHide<CR>",
+            actions = "<CMD>PackageInfoHide<CR>",
             description = "Hide package versions",
         },
         {
             key = "<LEADER>nu",
-            actions = "<CMD>lua PackageInfoUpdate<CR>",
+            actions = "<CMD>PackageInfoUpdate<CR>",
             description = "Update package on current line",
         },
         {
             key = "<LEADER>nd",
-            actions = "<CMD>lua PackageInfoDelete<CR>",
+            actions = "<CMD>PackageInfoDelete<CR>",
             description = "Delete package on current line",
         },
         {
             key = "<LEADER>ni",
-            actions = "<CMD>lua PackageInfoInstall<CR>",
+            actions = "<CMD>PackageInfoInstall<CR>",
             description = "Install a new package",
         },
         {
             key = "<LEADER>np",
-            actions = "<CMD>lua PackageInfoChangeVersion<CR>",
+            actions = "<CMD>PackageInfoChangeVersion<CR>",
             description = "Install a different package version",
         },
     },

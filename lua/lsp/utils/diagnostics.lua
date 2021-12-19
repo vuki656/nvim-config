@@ -28,5 +28,11 @@ set_highlight({
         { group = "DiagnosticFloatingWarn", foreground = colors.yellow },
         { group = "DiagnosticFloatingInfo", foreground = colors.blue },
         { group = "DiagnosticFloatingHint", foreground = colors.orange },
+
+        -- General purpose colors
+        { group = "DiagnosticError", foreground = colors.red },
+        { group = "DiagnosticWarn", foreground = colors.yellow },
+        { group = "DiagnosticInfo", foreground = colors.blue },
+        { group = "DiagnosticHint", foreground = colors.orange },
     },
 })

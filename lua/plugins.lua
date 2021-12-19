@@ -69,6 +69,7 @@ return packer.startup(function(use)
     })
     use("neovim/nvim-lspconfig")
     use("nvim-treesitter/nvim-treesitter")
+    use("nvim-treesitter/playground")
     use({
         "nvim-telescope/telescope.nvim",
         requires = {
@@ -83,6 +84,10 @@ return packer.startup(function(use)
     use("pocco81/autosave.nvim")
     use("rakr/vim-one")
     use("rcarriga/nvim-notify")
+    use({
+        "ruifm/gitlinker.nvim",
+        requires = "nvim-lua/plenary.nvim",
+    })
     use("theprimeagen/harpoon")
     use("rrethy/vim-illuminate")
     use({
