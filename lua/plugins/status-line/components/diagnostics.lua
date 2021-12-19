@@ -2,8 +2,8 @@ local lsp = require("feline.providers.lsp")
 
 local colors = require("utils.colors")
 
-local diagnostics = {
-    {
+return {
+    errors = {
         provider = "diagnostic_errors",
         enabled = function()
             return lsp.diagnostics_exist("Error")
@@ -13,7 +13,8 @@ local diagnostics = {
             fg = colors.red,
         },
     },
-    {
+    warnings = {
+        icon = "  ",
         provider = "diagnostic_warnings",
         enabled = function()
             return lsp.diagnostics_exist("Warning")
@@ -23,17 +24,18 @@ local diagnostics = {
             fg = colors.yellow,
         },
     },
-    {
+    hints = {
+        icon = "  ",
         provider = "diagnostic_hints",
         enabled = function()
             return lsp.diagnostics_exist("Hint")
         end,
         hl = {
-            fg = colors.orange,
+            fg = colors.blue,
             bg = colors.background,
         },
     },
-    {
+    info = {
         provider = "diagnostic_info",
         enabled = function()
             return lsp.diagnostics_exist("Information")
@@ -44,5 +46,3 @@ local diagnostics = {
         },
     },
 }
-
-return unpack(diagnostics)

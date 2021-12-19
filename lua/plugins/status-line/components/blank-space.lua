@@ -1,7 +1,7 @@
 local colors = require("utils.colors")
 
 return {
-    provider = "  ",
+    provider = "    ",
     hl = {
         fg = colors.white,
         bg = colors.background,
