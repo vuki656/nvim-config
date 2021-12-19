@@ -83,7 +83,6 @@ return packer.startup(function(use)
     use("lukas-reineke/indent-blankline.nvim")
     use("lukas-reineke/headlines.nvim")
     use("pocco81/autosave.nvim")
-    use("rakr/vim-one")
     use("rcarriga/nvim-notify")
     use({
         "ruifm/gitlinker.nvim",
