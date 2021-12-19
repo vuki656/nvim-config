@@ -11,11 +11,11 @@ local colors = require("utils.colors")
 
 set_highlight({
     list = {
-        { group = "StartupTimeHeader", foreground = colors. white },
-        { group = "StartupTimeTime", foreground = colors. blue },
-        { group = "StartupTimePercent", foreground = colors. blue },
-        { group = "StartupTimeSourcingEvent", foreground = colors. orange },
-        { group = "StartupTimeOtherEvent", foreground = colors. red },
-        { group = "StartupTimeStartupValue", foreground = colors. red, gui = "bold" },
+        { group = "StartupTimeHeader", foreground = colors.white },
+        { group = "StartupTimeTime", foreground = colors.blue },
+        { group = "StartupTimePercent", foreground = colors.blue },
+        { group = "StartupTimeSourcingEvent", foreground = colors.orange },
+        { group = "StartupTimeOtherEvent", foreground = colors.red },
+        { group = "StartupTimeStartupValue", foreground = colors.red, gui = "bold" },
     },
 })

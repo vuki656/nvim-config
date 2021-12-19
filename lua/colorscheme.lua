@@ -36,7 +36,7 @@ set_highlight({
         { group = "MatchParen", foreground = red, background = background },
         { group = "ErrorMsg", foreground = red, background = background },
         { group = "Whitespace", foreground = background_light },
-        { group = "Label", foreground = background_light },
+        { group = "Label", foreground = red },
 
         -- Vim Documentation
         { group = "Statement", foreground = purple },
