@@ -18,7 +18,7 @@ set_highlight({
     list = {
         -- Editor
         { group = "Search", foreground = background, background = orange },
-        { group = "Comment", foreground = grey, background = background },
+        { group = "Comment", foreground = grey },
         { group = "Constant", foreground = green },
         { group = "Type", foreground = orange },
         { group = "Operator", foreground = white },
@@ -50,6 +50,7 @@ set_highlight({
         { group = "TSConstant", foreground = orange },
         { group = "TSNumber", foreground = orange },
         { group = "TSString", foreground = green },
+        { group = "TSMethod", foreground = blue },
         { group = "TSField", foreground = red },
         { group = "TSKeywordFunction", foreground = red },
         { group = "TSTitle", foreground = red },
