@@ -1,6 +1,6 @@
 # NVIM Configuration
 
-<img src="https://github.com/vuki656/vuki656/blob/master/media/nvim-config/screen.png" width=500>
+<img src="https://github.com/vuki656/vuki656/blob/master/media/nvim-config/screen.png" width=1000>
 
 ## Project Structure
 
@@ -11,8 +11,8 @@
     │   ├── plugins                         # Plugin configuration files
     │   ├── utils                           # Shared project utilities
     │   │   ├── keymaps                     # More complex keymaps
-    │   │   ├── set_highlight.lua           # Highlight setting utility
-    │   │   └── set_keymap.lua              # Keymap setting utility
+    │   │   ├── set-highlight.lua           # Highlight setting utility
+    │   │   └── set-keymap.lua              # Keymap setting utility
     │   ├── colorscheme.lua                 # Editor color configuration
     │   ├── keymaps.lua                     # Editor keymaps
     │   ├── plugins.lua                     # Installed plugins
