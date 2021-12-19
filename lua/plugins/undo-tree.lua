@@ -2,7 +2,7 @@
 -- Description: Multiple undo history view
 -- Link: https://github.com/mbbill/undotreelocal
 
-local set_keymap = require("utils.set_keymap")
+local set_keymap = require("utils.set-keymap")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- SETUP ------------------------------------------------

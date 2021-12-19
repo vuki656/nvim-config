@@ -4,7 +4,7 @@
 
 local minsnip = require("minsnip")
 
-local set_keymap = require("utils.set_keymap")
+local set_keymap = require("utils.set-keymap")
 
 ------------------------------------------------------------------------------------------
 ------------------------------------ SETUP -----------------------------------------------

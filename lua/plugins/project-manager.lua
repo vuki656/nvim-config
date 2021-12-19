@@ -5,7 +5,7 @@
 local project = require("project_nvim")
 local telescope = require("telescope")
 
-local set_keymap = require("utils.set_keymap")
+local set_keymap = require("utils.set-keymap")
 
 ------------------------------------------------------------------------------------------
 ------------------------------------ SETUP -----------------------------------------------
@@ -27,6 +27,7 @@ project.setup({
     },
 })
 
+-- Hook the plugin up with telescope
 telescope.load_extension("projects")
 
 ------------------------------------------------------------------------------------------

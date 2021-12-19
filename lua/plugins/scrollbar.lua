@@ -2,7 +2,7 @@
 -- Description: Scrollbar
 -- Link: https://github.com/dstein64/nvim-scrollview
 
-local set_highlight = require("utils.set_highlight")
+local set_highlight = require("utils.set-highlight")
 local colors = require("utils.colors")
 
 ------------------------------------------------------------------------------------------

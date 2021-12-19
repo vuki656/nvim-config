@@ -1,7 +1,6 @@
-local headlines = require("headlines")
 local treesitter_configs = require("nvim-treesitter.configs")
 
-local set_keymap = require("utils.set_keymap")
+local set_keymap = require("utils.set-keymap")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- SETUP ------------------------------------------------

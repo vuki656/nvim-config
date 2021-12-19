@@ -1,5 +1,5 @@
 -- Name: Lsp Kind
--- Description: Autosuggestion icons
+-- Description: Autocompletion icons
 -- Link: https://github.com/onsails/lspkind-nvim
 
 local lspkind = require("lspkind")

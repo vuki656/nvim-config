@@ -2,7 +2,7 @@
 -- Description: Plugin manager
 -- Link: https://github.com/wbthomason/packer.nvim
 
-local set_keymap = require("utils.set_keymap")
+local set_keymap = require("utils.set-keymap")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- KEYMAPS ----------------------------------------------

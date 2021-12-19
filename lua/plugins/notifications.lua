@@ -5,7 +5,7 @@
 local notify = require("notify")
 
 local colors = require("utils.colors")
-local set_highlight = require("utils.set_highlight")
+local set_highlight = require("utils.set-highlight")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- SETUP ------------------------------------------------
@@ -16,6 +16,7 @@ notify.setup({
     timeout = 3000,
 })
 
+-- Pipe all vim.notify notifications to notify plugin
 vim.notify = notify
 
 ------------------------------------------------------------------------------------------

@@ -2,7 +2,7 @@
 -- Description: Markdown preview
 -- Link: https://github.com/iamcco/markdown-preview.nvim
 
-local set_keymap = require("utils.set_keymap")
+local set_keymap = require("utils.set-keymap")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- KEYMAPS ----------------------------------------------

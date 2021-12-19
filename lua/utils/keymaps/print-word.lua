@@ -1,4 +1,4 @@
-local set_keymap = require("utils.set_keymap")
+local set_keymap = require("utils.set-keymap")
 
 set_keymap({
     key = "<LEADER>wp",

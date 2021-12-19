@@ -2,7 +2,7 @@
 -- Descriptions: Nvim startup time profiler
 -- Link: https://github.com/dstein64/vim-startuptime
 
-local set_highlight = require("utils.set_highlight")
+local set_highlight = require("utils.set-highlight")
 local colors = require("utils.colors")
 
 ------------------------------------------------------------------------------------------

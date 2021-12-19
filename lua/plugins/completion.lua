@@ -8,7 +8,7 @@ local lspkind = require("lspkind")
 local buffer = require("cmp_buffer")
 
 local colors = require("utils.colors")
-local set_highlight = require("utils.set_highlight")
+local set_highlight = require("utils.set-highlight")
 
 --------------------------------------------------------------------------------------------
 ------------------------------------- SETUP ------------------------------------------------
@@ -89,8 +89,4 @@ cmp.setup.cmdline("/", {
 ------------------------------------- COLORS -----------------------------------------------
 --------------------------------------------------------------------------------------------
 
-set_highlight({
-    list = {
-        { group = "CmpItemKindDefault", foreground = colors.blue },
-    },
-})
+set_highlight({ group = "CmpItemKindDefault", foreground = colors.blue })

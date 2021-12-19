@@ -1,4 +1,4 @@
-local set_highlight = require("utils.set_highlight")
+local set_highlight = require("utils.set-highlight")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- GLOBAL -----------------------------------------------

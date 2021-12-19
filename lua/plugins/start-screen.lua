@@ -5,7 +5,7 @@
 local alpha = require("alpha")
 local opts = require("alpha.themes.startify").opts
 
-local set_keymap = require("utils.set_keymap")
+local set_keymap = require("utils.set-keymap")
 
 --------------------------------------------------------------------------------------------
 ------------------------------------- SETUP ------------------------------------------------

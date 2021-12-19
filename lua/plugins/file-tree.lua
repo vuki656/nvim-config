@@ -3,8 +3,10 @@
 -- Link: https://github.com/kyazdani42/nvim-tree.lua
 
 local colors = require("utils.colors")
-local set_highlight = require("utils.set_highlight")
-local set_keymap = require("utils.set_keymap")
+local set_highlight = require("utils.set-highlight")
+local set_keymap = require("utils.set-keymap")
+
+require("utils.keymaps.collapse-tree")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- CONFIG -----------------------------------------------
@@ -35,7 +37,7 @@ vim.g.nvim_tree_show_icons = { git = 0, folders = 1, files = 1 }
 -- Don't highlight any files
 vim.g.nvim_tree_special_files = {}
 
--- Has to be imported here because of the compatibility with the old config
+-- NOTE: Has to be imported here because of the compatibility with the old config
 require("nvim-tree").setup({
     view = {
         width = 40,
@@ -70,32 +72,6 @@ set_highlight({
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- KEYMAPS ----------------------------------------------
-------------------------------------------------------------------------------------------
-
------------------------------------ TREE COLLAPSE ----------------------------------------
-
-local function collapse_tree_node(node)
-    local entries = node.entries
-
-    if not entries then
-        return
-    end
-
-    for _, entry in pairs(entries) do
-        collapse_tree_node(entry)
-    end
-
-    node.open = false
-end
-
-function collapse_tree()
-    local lib = require("nvim-tree.lib")
-
-    collapse_tree_node(lib.Tree)
-
-    lib.refresh_tree()
-end
-
 ------------------------------------------------------------------------------------------
 
 set_keymap({

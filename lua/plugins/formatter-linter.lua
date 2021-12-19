@@ -3,8 +3,9 @@
 -- Link: https://github.com/jose-elias-alvarez/null-ls.nvim
 
 local null_ls = require("null-ls")
+local null_ls_helpers = require("null-ls.helpers")
 
-local set_keymap = require("utils.set_keymap")
+local set_keymap = require("utils.set-keymap")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- SETUP ------------------------------------------------
@@ -26,7 +27,6 @@ null_ls.setup({
         diagnostics.shellcheck,
         diagnostics.hadolint,
         diagnostics.yamllint,
-        diagnostics.write_good.with({ extra_args = { "--no-passive" } }),
         diagnostics.eslint_d,
 
         -- Code Actions
@@ -34,7 +34,7 @@ null_ls.setup({
         actions.gitsigns,
 
         -- If eslint config exists use eslint, else use prettier
-        require("null-ls.helpers").conditional(function(utils)
+        null_ls_helpers.conditional(function(utils)
             local has_eslint = utils.root_has_file(".eslintrc.js") or utils.root_has_file(".eslintrc.json")
 
             if has_eslint then
