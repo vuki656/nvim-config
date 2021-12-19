@@ -27,7 +27,7 @@ set_highlight({
         { group = "Normal", background = background },
         { group = "StatusLineNC", foreground = red },
         { group = "SignColumn", background = background },
-        { group = "SpellBad", gui = "undercurl,bold" },
+        { group = "SpellBad", options = "undercurl,bold" },
         { group = "PMenu", foreground = white, background = grey_lighter },
         { group = "PmenuSel", background = colors.green, foreground = colors.background },
         { group = "LineNr", background = background, foreground = grey },

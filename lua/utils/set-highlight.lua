@@ -18,8 +18,8 @@ function apply_highlight(properties)
         foreground = " guifg=" .. properties.foreground .. " "
     end
 
-    if properties.gui ~= nil then
-        gui = " gui=" .. properties.gui .. " "
+    if properties.options ~= nil then
+        gui = " gui=" .. properties.options .. " "
     end
 
     vim.cmd("highlight! " .. properties.group .. background .. foreground .. gui)

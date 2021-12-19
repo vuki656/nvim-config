@@ -16,6 +16,6 @@ set_highlight({
         { group = "StartupTimePercent", foreground = colors.blue },
         { group = "StartupTimeSourcingEvent", foreground = colors.orange },
         { group = "StartupTimeOtherEvent", foreground = colors.red },
-        { group = "StartupTimeStartupValue", foreground = colors.red, gui = "bold" },
+        { group = "StartupTimeStartupValue", foreground = colors.red, options = "bold" },
     },
 })
