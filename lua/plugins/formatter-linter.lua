@@ -15,6 +15,43 @@ local formatter = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 local actions = null_ls.builtins.code_actions
 
+local prettier_options = {
+    filetypes = {
+        "vue",
+        "css",
+        "html",
+        "yaml",
+        "markdown",
+        "json",
+    },
+    args = {
+        "--stdin-filepath",
+        "$FILENAME",
+    },
+}
+
+-- If eslint config exists don't use prettier for js/ts files
+local prettier = null_ls_helpers.conditional(function(utils)
+    local has_eslint = utils.root_has_file(".eslintrc.js") or utils.root_has_file(".eslintrc.json")
+
+    if has_eslint then
+        return formatter.prettier.with({
+            filetypes = prettier_options.filetypes,
+            args = prettier_options.args,
+        })
+    else
+        return formatter.prettier.with({
+            filetypes = vim.tbl_deep_extend("force", prettier_options.filetypes, {
+                "javascript",
+                "javascriptreact",
+                "typescript",
+                "typescriptreact",
+            }),
+            args = prettier_options.args,
+        })
+    end
+end)
+
 null_ls.setup({
     sources = {
         -- Formatters
@@ -33,46 +70,7 @@ null_ls.setup({
         actions.eslint_d,
         actions.gitsigns,
 
-        -- If eslint config exists use eslint, else use prettier
-        null_ls_helpers.conditional(function(utils)
-            local has_eslint = utils.root_has_file(".eslintrc.js") or utils.root_has_file(".eslintrc.json")
-
-            if has_eslint then
-                return formatter.prettier.with({
-                    filetypes = {
-                        "vue",
-                        "css",
-                        "html",
-                        "yaml",
-                        "markdown",
-                        "json",
-                    },
-                    args = {
-                        "--stdin-filepath",
-                        "$FILENAME",
-                    },
-                })
-            else
-                return formatter.prettier.with({
-                    filetypes = {
-                        "vue",
-                        "css",
-                        "html",
-                        "yaml",
-                        "markdown",
-                        "json",
-                        "javascript",
-                        "javascriptreact",
-                        "typescript",
-                        "typescriptreact",
-                    },
-                    args = {
-                        "--stdin-filepath",
-                        "$FILENAME",
-                    },
-                })
-            end
-        end),
+        prettier,
     },
 })
 
