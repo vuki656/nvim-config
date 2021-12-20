@@ -42,8 +42,6 @@ require("plugins.todo-comments")
 require("plugins.undo-tree")
 require("plugins.status-line")
 
--- Order required
-
 require("plugins.auto-pairs")
 require("plugins.completion")
 

@@ -27,6 +27,7 @@ set_highlight({
         { group = "Normal", background = background },
         { group = "StatusLineNC", foreground = red },
         { group = "SignColumn", background = background },
+        { group = "EndOfBuffer", foreground = background },
         { group = "SpellBad", options = "undercurl,bold" },
         { group = "PMenu", foreground = white, background = grey_lighter },
         { group = "PmenuSel", background = colors.green, foreground = colors.background },
@@ -38,7 +39,7 @@ set_highlight({
         { group = "Whitespace", foreground = background_light },
         { group = "Label", foreground = red },
 
-        -- Vim Documentation
+        -- Documentation
         { group = "Statement", foreground = purple },
         { group = "PreProc", foreground = grey },
         { group = "Identifier", foreground = red },

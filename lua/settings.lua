@@ -1,5 +1,3 @@
-local set_highlight = require("utils.set-highlight")
-
 ------------------------------------------------------------------------------------------
 ----------------------------------- GLOBAL -----------------------------------------------
 ------------------------------------------------------------------------------------------
@@ -118,16 +116,6 @@ vim.cmd([[
 
     autocmd BufRead,BufNewFile * :call IgnoreCamelCaseSpell()
 ]])
-
-set_highlight({
-    list = {
-        -- Hide ~ from sign column
-        { group = "EndOfBuffer", foreground = "#282c34" },
-
-        -- Skinny buffer separator
-        { group = "VertSplit", background = "NONE" },
-    },
-})
 
 -- Fix cursor hold
 vim.cmd("let g:cursorhold_updatetime = 100")
