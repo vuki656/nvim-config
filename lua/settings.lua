@@ -110,7 +110,7 @@ vim.cmd([[
     autocmd BufNewFile,BufRead * setlocal formatoptions-=ro
 ]])
 
--- Ignore capitalized word misspelled
+-- Ignore capitalized word misspelling
 vim.cmd([[
     fun! IgnoreCamelCaseSpell()
         syn match myExCapitalWords +\<\w*[A-Z]\K*\>+ contains=@NoSpell
