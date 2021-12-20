@@ -17,7 +17,7 @@ return {
         icon = "  ",
         provider = "diagnostic_warnings",
         enabled = function()
-            return lsp.diagnostics_exist("Warning")
+            return lsp.diagnostics_exist("Warn")
         end,
         hl = {
             bg = colors.background,
@@ -38,7 +38,7 @@ return {
     info = {
         provider = "diagnostic_info",
         enabled = function()
-            return lsp.diagnostics_exist("Information")
+            return lsp.diagnostics_exist("Info")
         end,
         hl = {
             bg = colors.background,
