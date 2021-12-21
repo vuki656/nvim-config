@@ -1,4 +1,4 @@
-local colors = {
+return {
     transparent = "#333840",
     background = "#282c34",
     background_light = "#3C4048",
@@ -13,5 +13,3 @@ local colors = {
     grey_light = "#3e4452",
     grey_lighter = "#2c323c",
 }
-
-return colors
