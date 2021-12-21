@@ -92,6 +92,11 @@ vim.opt.spellsuggest = "7"
 -- Support camel case spelling
 vim.opt.spelloptions = "camel"
 
+-- Where to show short messages
+vim.opt.shortmess = {
+    W = true, -- Dont show [w] or written when writing
+}
+
 ------------------------------------------------------------------------------------------
 ------------------------------------ MISC ------------------------------------------------
 ------------------------------------------------------------------------------------------
