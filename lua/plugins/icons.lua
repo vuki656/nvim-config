@@ -70,8 +70,13 @@ icons.setup({
             color = "#a5afbe",
             name = "IndexTs",
         },
+        ["gql"] = {
+            icon = "爵",
+            color = "#a5afbe",
+            name = "Graphql",
+        },
         [".eslintrc.json"] = {
-            icon = "難",
+            icon = "",
             color = "#7963e6",
             name = "EslintRc",
         },
