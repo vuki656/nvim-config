@@ -74,7 +74,6 @@ return packer.startup(function(use)
     use({
         "nvim-telescope/telescope.nvim",
         requires = {
-            { "nvim-lua/popup.nvim" },
             { "nvim-lua/plenary.nvim" },
             { "nvim-telescope/telescope-fzy-native.nvim" },
         },
@@ -83,6 +82,14 @@ return packer.startup(function(use)
     use("lukas-reineke/indent-blankline.nvim")
     use("lukas-reineke/headlines.nvim")
     use("pocco81/autosave.nvim")
+    use({
+        "pwntester/octo.nvim",
+        requires = {
+            { "nvim-telescope/telescope.nvim" },
+            { "nvim-lua/plenary.nvim" },
+            { "kyazdani42/nvim-web-devicons" },
+        },
+    })
     use("rcarriga/nvim-notify")
     use({
         "ruifm/gitlinker.nvim",
