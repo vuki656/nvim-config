@@ -1,5 +1,5 @@
 -- Name: Undotree
--- Description: Multiple undo history view
+-- Description: Multiple undo history viewer and navigator
 -- Link: https://github.com/mbbill/undotreelocal
 
 local set_keymap = require("utils.set-keymap")

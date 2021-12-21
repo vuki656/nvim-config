@@ -1,3 +1,7 @@
+-- Name: Treesitter Nvim
+-- Description: Treesitter proxy for nvim
+-- Link: https://github.com/nvim-treesitter/nvim-treesitter
+
 local treesitter_configs = require("nvim-treesitter.configs")
 
 local set_keymap = require("utils.set-keymap")

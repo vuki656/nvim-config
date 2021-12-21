@@ -1,5 +1,5 @@
 -- Name: Telescope
--- Description: Finder
+-- Description: Everything finder
 -- Link: https://github.com/nvim-telescope/telescope.nvim
 
 local telescope = require("telescope")

@@ -1,5 +1,5 @@
 -- Name: Package Info
--- Description: Display outdated package versions in package.json
+-- Description: Display outdated package versions in package.json and package manager
 -- Link: https://github.com/vuki656/package-info.nvim
 
 local package_info = require("package-info")

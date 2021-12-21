@@ -1,5 +1,5 @@
 -- Name: Git Signs
--- Description: Git status in sidebar
+-- Description: Git line status in sidebar
 -- Link: https://github.com/lewis6991/gitsigns.nvim
 
 local git_signs = require("gitsigns")

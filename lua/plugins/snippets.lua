@@ -1,5 +1,5 @@
 -- Name: Minisnip
--- Description: Snippets
+-- Description: Snippets engine
 -- Link: https://github.com/jose-elias-alvarez/minsnip.nvim
 
 local minsnip = require("minsnip")

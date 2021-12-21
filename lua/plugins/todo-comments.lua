@@ -1,5 +1,5 @@
 -- Name: Todo Comments
--- Description: Finder
+-- Description: todo/other comment finder/highlighter
 -- Link: https://github.com/nvim-telescope/telescope.nvim
 
 local todo_comments = require("todo-comments")

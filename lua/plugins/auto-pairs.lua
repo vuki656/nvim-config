@@ -1,5 +1,5 @@
 -- Name: Autopairs
--- Description: Autopair brackes
+-- Description: Automatically add closing brackets
 -- Link: https://github.com/windwp/nvim-autopairs
 
 local autopairs = require("nvim-autopairs")

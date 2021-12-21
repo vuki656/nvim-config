@@ -1,5 +1,5 @@
 -- Name: Packer
--- Description: Plugin manager
+-- Description: Nvim plugin manager
 -- Link: https://github.com/wbthomason/packer.nvim
 
 local set_keymap = require("utils.set-keymap")

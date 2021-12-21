@@ -1,5 +1,5 @@
 -- Name: Markdown Preview
--- Description: Markdown preview
+-- Description: Markdown file preview in the browser
 -- Link: https://github.com/iamcco/markdown-preview.nvim
 
 local set_keymap = require("utils.set-keymap")

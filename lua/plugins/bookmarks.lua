@@ -1,5 +1,5 @@
 -- Name: Harpoon
--- Description: Bookmarking
+-- Description: Bookmark and jump to files
 -- Link: https://github.com/ThePrimeagen/harpoon
 
 local harpoon = require("harpoon")

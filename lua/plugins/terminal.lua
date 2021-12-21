@@ -1,5 +1,5 @@
 -- Name: Toggleterm
--- Description: Builtin Terminal Navigator
+-- Description: Builtin terminal navigator
 -- Link: https://github.com/akinsho/nvim-toggleterm.lua
 
 local toggleterm = require("toggleterm")

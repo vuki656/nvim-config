@@ -1,5 +1,5 @@
--- Name: Comment
--- Description: Commenting plugin
+-- Name: Close Buffers
+-- Description: Kill inactive buffers
 -- Link: https://github.com/numToStr/Comment.nvim
 
 local close_buffers = require("close_buffers")

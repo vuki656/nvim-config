@@ -1,5 +1,5 @@
 -- Name: Comment
--- Description: Commenting plugin
+-- Description: Code commenting
 -- Link: https://github.com/numToStr/Comment.nvim
 
 local comment = require("Comment")

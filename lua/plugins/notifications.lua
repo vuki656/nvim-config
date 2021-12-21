@@ -1,5 +1,5 @@
 -- Name: Notify
--- Description: Notification handler
+-- Description: Nvim notification handler
 -- Link: https://github.com/rcarriga/nvim-notify
 
 local notify = require("notify")
