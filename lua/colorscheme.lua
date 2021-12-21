@@ -32,7 +32,7 @@ set_highlight({
         { group = "PMenu", foreground = white, background = grey_lighter },
         { group = "PmenuSel", background = colors.green, foreground = colors.background },
         { group = "LineNr", background = background, foreground = grey },
-        { group = "VertSplit", background = background, foreground = background },
+        { group = "VertSplit", background = background_light, foreground = background },
         { group = "Visual", background = grey_light },
         { group = "MatchParen", foreground = red, background = background },
         { group = "ErrorMsg", foreground = red, background = background },
