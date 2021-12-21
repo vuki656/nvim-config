@@ -25,7 +25,7 @@ set_highlight({
         { group = "CursorLine", background = grey_lighter },
         { group = "CursorLineNr", foreground = white },
         { group = "Normal", background = background },
-        { group = "StatusLineNC", foreground = red },
+        { group = "StatusLineNC", foreground = background },
         { group = "SignColumn", background = background },
         { group = "EndOfBuffer", foreground = background },
         { group = "SpellBad", options = "undercurl,bold" },
@@ -36,8 +36,11 @@ set_highlight({
         { group = "Visual", background = grey_light },
         { group = "MatchParen", foreground = red, background = background },
         { group = "ErrorMsg", foreground = red, background = background },
+        { group = "WarningMsg", foreground = orange, background = background },
         { group = "Whitespace", foreground = background_light },
         { group = "Label", foreground = red },
+        { group = "Question", foreground = green, background = background },
+        { group = "SpecialKey", foreground = orange, background = background },
 
         -- Documentation
         { group = "Statement", foreground = purple },

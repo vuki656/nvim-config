@@ -23,7 +23,7 @@ set_highlight({
         { group = "DiagnosticUnderlineInformation", foreground = colors.blue },
         { group = "DiagnosticUnderlineHint", foreground = colors.orange },
 
-        -- Floating window colors
+        -- Floating buffer colors
         { group = "DiagnosticFloatingError", foreground = colors.red },
         { group = "DiagnosticFloatingWarn", foreground = colors.yellow },
         { group = "DiagnosticFloatingInfo", foreground = colors.blue },
