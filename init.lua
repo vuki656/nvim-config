@@ -6,6 +6,7 @@ require("plugins")
 require("settings")
 require("keymaps")
 require("colorscheme")
+require("lsp")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- PLUGINS ----------------------------------------------
@@ -53,15 +54,5 @@ require("plugins.file-tree")
 ------------------------------------------------------------------------------------------
 ----------------------------------- LSPs -------------------------------------------------
 ------------------------------------------------------------------------------------------
-
-require("lsp.bash")
-require("lsp.css")
-require("lsp.docker")
-require("lsp.graphql")
-require("lsp.html")
-require("lsp.json")
-require("lsp.lua")
-require("lsp.ts")
-require("lsp.yaml")
 
 require("lsp.utils.diagnostics")

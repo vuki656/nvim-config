@@ -89,6 +89,7 @@ return require("packer").startup(function(use)
         "weilbith/nvim-code-action-menu",
         cmd = "CodeActionMenu",
     })
+    use("williamboman/nvim-lsp-installer")
     use("windwp/nvim-ts-autotag")
     use("windwp/nvim-autopairs")
 end)
