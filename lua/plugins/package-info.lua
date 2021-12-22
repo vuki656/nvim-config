@@ -11,7 +11,7 @@ local set_keymap = require("utils.set-keymap")
 ------------------------------------------------------------------------------------------
 
 package_info.setup({
-    autostart = true,
+    autostart = false,
     hide_unstable_versions = true,
 })
 
