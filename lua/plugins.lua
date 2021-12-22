@@ -10,7 +10,6 @@ return require("packer").startup(function(use)
     use({
         "feline-nvim/feline.nvim",
         requires = { "kyazdani42/nvim-web-devicons" },
-        branch = "develop",
     })
     use("folke/todo-comments.nvim")
     use({
