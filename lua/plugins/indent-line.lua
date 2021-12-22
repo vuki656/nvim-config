@@ -15,5 +15,6 @@ indent_blankline.setup({
         "alpha",
         "packer",
         "code-action-menu-menu",
+        "lsp-installer",
     },
 })

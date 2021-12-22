@@ -10,7 +10,6 @@ return require("packer").startup(function(use)
     use({
         "feline-nvim/feline.nvim",
         requires = { "kyazdani42/nvim-web-devicons" },
-        branch = "develop",
     })
     use("folke/todo-comments.nvim")
     use({
@@ -90,6 +89,7 @@ return require("packer").startup(function(use)
         "weilbith/nvim-code-action-menu",
         cmd = "CodeActionMenu",
     })
+    use("williamboman/nvim-lsp-installer")
     use("windwp/nvim-ts-autotag")
     use("windwp/nvim-autopairs")
 end)
