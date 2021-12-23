@@ -1,5 +1,5 @@
 -- Name: Nvim LSP Installer
--- Description: LSP Installer
+-- Description: Language server installer
 -- Link: https://github.com/williamboman/nvim-lsp-installer
 
 local lsp_installer = require("nvim-lsp-installer")
@@ -17,7 +17,7 @@ local setup_yaml_server = require("lsp.servers.yaml")
 ----------------------------------- SETUP ------------------------------------------------
 ------------------------------------------------------------------------------------------
 
--- Install all servers not yet installed
+-- Install missing servers
 for _, name in pairs(SERVERS) do
     local is_server_found, server = lsp_installer.get_server(name)
 
@@ -43,6 +43,13 @@ lsp_installer.on_server_ready(function(server)
 
     server:setup(options)
 end)
+
+-- Setup server diagnostics
+vim.diagnostic.config({
+    signs = false, -- Disable LSP signs
+    underline = true, -- Underline diagnostics
+    virtual_text = false, -- Hide virtual text diagnostics
+})
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- KEYMAPS ----------------------------------------------
