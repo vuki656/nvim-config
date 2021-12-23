@@ -1,5 +1,5 @@
 --- Sets the given keymap with the given properties
--- @param options - object
+-- @param properties - object
 -- {
 --     modes - modes when the keymap can trigger
 --     key - key that triggers the keymap
@@ -25,7 +25,7 @@ function apply_keymap(properties)
 end
 
 --- Sets the given keymap or list of keymaps with the given properties
--- @param options - object
+-- @param properties - object
 -- {
 --     modes - modes when the keymap can trigger
 --     key - key that triggers the keymap

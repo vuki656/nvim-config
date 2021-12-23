@@ -1,5 +1,5 @@
 --- Sets the given sign with the given properties
--- @param options - object
+-- @param properties - object
 -- {
 --     name - sign group name
 --     sign - sign string
@@ -12,7 +12,7 @@ function apply_sign(properties)
 end
 
 --- Sets the given sign or list of signs with the given properties
--- @param options - object
+-- @param properties - object
 -- {
 --     name - sign group name
 --     sign - sign string
