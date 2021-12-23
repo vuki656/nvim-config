@@ -1,5 +1,7 @@
 local set_highlight = require("utils.set-highlight")
+local set_sign = require("utils.set-sign")
 local colors = require("utils.colors")
+local LSP_ICONS = require("lsp.utils.icons")
 
 local background = colors.background
 local background_light = colors.background_light
@@ -13,6 +15,15 @@ local green = colors.green
 local grey = colors.grey
 local grey_light = colors.grey_light
 local grey_lighter = colors.grey_lighter
+
+set_sign({
+    list = {
+        { name = "DiagnosticSignError", sign = LSP_ICONS.ERROR, highlight_group = "DiagnosticSignError" },
+        { name = "DiagnosticSignWarn", sign = LSP_ICONS.WARNING, highlight_group = "DiagnosticSignWarn" },
+        { name = "DiagnosticSignInfo", sign = LSP_ICONS.INFO, highlight_group = "DiagnosticSignInfo" },
+        { name = "DiagnosticSignHint", sign = LSP_ICONS.HINT, highlight_group = "DiagnosticSignHint" },
+    },
+})
 
 set_highlight({
     list = {
@@ -41,6 +52,20 @@ set_highlight({
         { group = "Label", foreground = red },
         { group = "Question", foreground = green, background = background },
         { group = "SpecialKey", foreground = orange, background = background },
+
+        -- Diagnostics
+        { group = "DiagnosticUnderlineError", foreground = colors.red },
+        { group = "DiagnosticUnderlineWarning", foreground = colors.yellow },
+        { group = "DiagnosticUnderlineInformation", foreground = colors.blue },
+        { group = "DiagnosticUnderlineHint", foreground = colors.orange },
+        { group = "DiagnosticFloatingError", foreground = colors.red },
+        { group = "DiagnosticFloatingWarn", foreground = colors.yellow },
+        { group = "DiagnosticFloatingInfo", foreground = colors.blue },
+        { group = "DiagnosticFloatingHint", foreground = colors.orange },
+        { group = "DiagnosticError", foreground = colors.red },
+        { group = "DiagnosticWarn", foreground = colors.yellow },
+        { group = "DiagnosticInfo", foreground = colors.blue },
+        { group = "DiagnosticHint", foreground = colors.orange },
 
         -- Documentation
         { group = "Statement", foreground = purple },
