@@ -6,9 +6,9 @@ local toggleterm = require("toggleterm")
 
 local set_keymap = require("utils.set-keymap")
 
-require("utils.keymaps.toggle-git-window")
-require("utils.keymaps.toggle-docker-window")
-require("utils.keymaps.toggle-terminal-window")
+require("plugins.terminal.keymaps.toggle-git-window")
+require("plugins.terminal.keymaps.toggle-docker-window")
+require("plugins.terminal.keymaps.toggle-terminal-window")
 
 ------------------------------------------------------------------------------------------
 ------------------------------------ SETUP -----------------------------------------------

@@ -6,7 +6,7 @@ local colors = require("utils.colors")
 local set_highlight = require("utils.set-highlight")
 local set_keymap = require("utils.set-keymap")
 
-require("utils.keymaps.collapse-tree")
+require("plugins.file-tree.keymaps.collapse-tree")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- CONFIG -----------------------------------------------
