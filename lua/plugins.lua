@@ -59,7 +59,10 @@ return require("packer").startup(function(use)
         "hrsh7th/nvim-cmp",
         config = load_file("completion"),
         requires = {
-            "onsails/lspkind-nvim",
+            {
+                "onsails/lspkind-nvim",
+                config = load_file("completion-icons"),
+            },
             "hrsh7th/cmp-nvim-lsp",
             "hrsh7th/cmp-buffer",
             "hrsh7th/cmp-path",
@@ -118,10 +121,6 @@ return require("packer").startup(function(use)
         config = load_file("treesitter"),
     })
     use(FINDER)
-    use({
-        "onsails/lspkind-nvim",
-        config = load_file("completion-icons"),
-    })
     use({
         "lukas-reineke/indent-blankline.nvim",
         config = load_file("indent-line"),
