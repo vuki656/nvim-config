@@ -1,5 +1,5 @@
 --- Sets the given highlight group with the given colors
--- @param options - object
+-- @param properties - object
 -- {
 --     group - string representing the highlight group
 --     background - background color
@@ -26,7 +26,7 @@ function apply_highlight(properties)
 end
 
 --- Sets the given highlight group or list of groups with the given colors
--- @param options - object
+-- @param properties - object
 -- {
 --     group - string representing the highlight group
 --     background - background color

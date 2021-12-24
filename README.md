@@ -6,15 +6,10 @@
 
     ├── lua                                 # Source code
     │   ├── lsp                             # Language server related configuration files
-    │   │   ├── utils                       # Language server related utility files
-    │   │   └── xxx.lua                     # Language server configuration for a specific language
     │   ├── plugins                         # Plugin configuration files
     │   ├── utils                           # Shared project utilities
-    │   │   ├── keymaps                     # More complex keymaps
-    │   │   ├── set-highlight.lua           # Highlight setting utility
-    │   │   └── set-keymap.lua              # Keymap setting utility
+    │   ├── keymaps                         # Editor keymaps
     │   ├── colorscheme.lua                 # Editor color configuration
-    │   ├── keymaps.lua                     # Editor keymaps
     │   ├── plugins.lua                     # Installed plugins
     │   └── settings.lua                    # Editor settings
     ├── spell                               # Custom dictionary word database
