@@ -173,7 +173,10 @@ return require("packer").startup(function(use)
         cmd = "CodeActionMenu",
         config = load_file("action-menu"),
     })
-    use("williamboman/nvim-lsp-installer")
+    use({
+        "williamboman/nvim-lsp-installer",
+        config = load_file("lsp-installer"),
+    })
     use("windwp/nvim-ts-autotag")
     use({
         "windwp/nvim-autopairs",
