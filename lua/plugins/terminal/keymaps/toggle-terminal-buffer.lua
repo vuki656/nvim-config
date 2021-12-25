@@ -14,6 +14,6 @@ local terminal = Terminal:new({
     hidden = true,
 })
 
-function _G.toggle_terminal_window()
+function _G.toggle_terminal_buffer()
     terminal:toggle()
 end

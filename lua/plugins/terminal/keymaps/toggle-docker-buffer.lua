@@ -1,7 +1,7 @@
 local Terminal = require("toggleterm.terminal").Terminal
 
-local lazy_git = Terminal:new({
-    cmd = "lazygit",
+local docker = Terminal:new({
+    cmd = "lazydocker",
     dir = "git_dir",
     direction = "float",
     float_opts = {
@@ -9,16 +9,20 @@ local lazy_git = Terminal:new({
     },
     on_open = function(terminal)
         vim.cmd("startinsert!")
-        vim.api.nvim_buf_set_keymap(terminal.bufnr, "n", "q", ":close<CR>", { noremap = true, silent = true })
+
+        vim.api.nvim_buf_set_keymap(terminal.bufnr, "n", "q", ":close<CR>", {
+            noremap = true,
+            silent = true,
+        })
     end,
     on_close = function()
         vim.cmd(":NvimTreeRefresh")
         vim.cmd(":Gitsigns refresh")
         vim.cmd(":e")
     end,
-    hidden = false,
+    hidden = true,
 })
 
-function _G.toggle_git_window()
-    lazy_git:toggle()
+function _G.toggle_docker_buffer()
+    docker:toggle()
 end

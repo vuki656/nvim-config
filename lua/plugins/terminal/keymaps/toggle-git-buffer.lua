@@ -1,7 +1,7 @@
 local Terminal = require("toggleterm.terminal").Terminal
 
-local docker = Terminal:new({
-    cmd = "lazydocker",
+local lazy_git = Terminal:new({
+    cmd = "lazygit",
     dir = "git_dir",
     direction = "float",
     float_opts = {
@@ -16,9 +16,9 @@ local docker = Terminal:new({
         vim.cmd(":Gitsigns refresh")
         vim.cmd(":e")
     end,
-    hidden = true,
+    hidden = false,
 })
 
-function _G.toggle_docker_window()
-    docker:toggle()
+function _G.toggle_git_buffer()
+    lazy_git:toggle()
 end

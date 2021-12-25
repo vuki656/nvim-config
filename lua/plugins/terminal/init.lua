@@ -6,9 +6,9 @@ local toggleterm = require("toggleterm")
 
 local set_keymap = require("utils.set-keymap")
 
-require("plugins.terminal.keymaps.toggle-git-window")
-require("plugins.terminal.keymaps.toggle-docker-window")
-require("plugins.terminal.keymaps.toggle-terminal-window")
+require("plugins.terminal.keymaps.toggle-git-buffer")
+require("plugins.terminal.keymaps.toggle-docker-buffer")
+require("plugins.terminal.keymaps.toggle-terminal-buffer")
 
 ------------------------------------------------------------------------------------------
 ------------------------------------ SETUP -----------------------------------------------
@@ -26,17 +26,17 @@ set_keymap({
     list = {
         {
             key = "<LEADER>lg",
-            actions = "<CMD>lua toggle_git_window()<CR>",
+            actions = "<CMD>lua toggle_git_buffer()<CR>",
             description = "Open a floating buffer with lazygit",
         },
         {
             key = "<LEADER>ld",
-            actions = "<CMD>lua toggle_docker_window()<CR>",
+            actions = "<CMD>lua toggle_docker_buffer()<CR>",
             description = "Open a floating buffer with lazydocker",
         },
         {
             key = "<LEADER>tm",
-            actions = "<CMD>lua toggle_terminal_window()<CR>",
+            actions = "<CMD>lua toggle_terminal_buffer()<CR>",
             description = "Open a floating buffer with a blank terminal",
         },
     },
