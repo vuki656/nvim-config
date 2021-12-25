@@ -16,5 +16,6 @@ indent_blankline.setup({
         "packer",
         "code-action-menu-menu",
         "lsp-installer",
+        "toggleterm"
     },
 })
