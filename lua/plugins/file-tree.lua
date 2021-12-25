@@ -6,8 +6,6 @@ local colors = require("utils.colors")
 local set_highlight = require("utils.set-highlight")
 local set_keymap = require("utils.set-keymap")
 
-require("plugins.file-tree.keymaps.collapse-tree")
-
 ------------------------------------------------------------------------------------------
 ----------------------------------- CONFIG -----------------------------------------------
 ------------------------------------------------------------------------------------------
@@ -98,13 +96,13 @@ set_keymap({
         },
         {
             key = "<LEADER>tk",
-            actions = "<CMD>lua collapse_tree()<CR>",
+            actions = "<CMD>lua require('nvim-tree.lib').collapse_all()<CR>",
             description = "Collapse all tree nodes",
         },
         {
             key = "<LEADER>tp",
             actions = {
-                "<CMD>lua collapse_tree()<CR>",
+                "<CMD>lua require('nvim-tree.lib').collapse_all()<CR>",
                 "<CMD>NvimTreeOpen<CR>",
                 "<CMD>NvimTreeFindFile<CR>",
             },
