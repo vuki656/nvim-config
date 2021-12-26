@@ -134,15 +134,6 @@ return require("packer").startup(function(use)
         config = load_file("auto-save"),
     })
     use({
-        "pwntester/octo.nvim",
-        config = load_file("github-integration"),
-        requires = {
-            FINDER,
-            UTILS,
-            ICONS,
-        },
-    })
-    use({
         "rcarriga/nvim-notify",
         config = load_file("notifications"),
     })
