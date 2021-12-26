@@ -67,6 +67,11 @@ set_highlight({
         { group = "DiagnosticInfo", foreground = blue },
         { group = "DiagnosticHint", foreground = orange },
 
+        -- Git
+        { group = "diffAdded", foreground = green },
+        { group = "diffRemoved", foreground = red },
+        { group = "diffLine", foreground = blue },
+
         -- Documentation
         { group = "Statement", foreground = purple },
         { group = "PreProc", foreground = grey },
