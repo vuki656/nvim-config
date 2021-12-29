@@ -73,7 +73,7 @@ set_highlight({
         { group = "diffLine", foreground = blue },
 
         -- Documentation
-        { group = "Statement", foreground = purple },
+        { group = "Statement", foreground = purple, options = "NONE" },
         { group = "PreProc", foreground = grey },
         { group = "Identifier", foreground = red },
         { group = "HelpExample", foreground = orange },
