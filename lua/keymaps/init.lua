@@ -1,4 +1,5 @@
 local set_keymap = require("utils.set-keymap")
+local set_terminal_keymap = require("utils.set-terminal-keymap")
 
 require("keymaps.custom.print-word")
 
@@ -230,9 +231,6 @@ set_keymap({
 ----------------------------------- MISC -------------------------------------------------
 ------------------------------------------------------------------------------------------
 
--- Go to normal mode with ESC in terminal
-vim.cmd(":tnoremap <C-i> <C-\\><C-n>")
-
 set_keymap({
     list = {
         {
@@ -256,4 +254,14 @@ set_keymap({
             description = "Recreate spell database file",
         },
     },
+})
+
+------------------------------------------------------------------------------------------
+----------------------------------- TERMINAL ---------------------------------------------
+------------------------------------------------------------------------------------------
+
+set_terminal_keymap({
+    key = "gim",
+    actions = "<C-\\><C-n>",
+    description = "Go to normal mode with in terminal",
 })
