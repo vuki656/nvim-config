@@ -231,7 +231,7 @@ set_keymap({
 ------------------------------------------------------------------------------------------
 
 -- Go to normal mode with ESC in terminal
-vim.cmd(":tnoremap <Esc> <C-\\><C-n>")
+vim.cmd(":tnoremap <C-i> <C-\\><C-n>")
 
 set_keymap({
     list = {
