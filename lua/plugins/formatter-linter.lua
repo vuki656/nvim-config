@@ -20,7 +20,7 @@ null_ls.setup({
         -- Formatters
         formatter.stylua,
         formatter.fixjson,
-        formatter.shfmt.with({ args = { "-i=4" } }),
+        formatter.shfmt.with({ extra_args = { "-i=4" } }),
         formatter.eslint_d,
 
         -- Diagnostics
