@@ -28,10 +28,12 @@ null_ls.setup({
         diagnostics.hadolint,
         diagnostics.yamllint,
         diagnostics.eslint_d,
+        diagnostics.shellcheck,
 
         -- Code Actions
         actions.eslint_d,
         actions.gitsigns,
+        actions.shellcheck,
 
         -- If eslint config exists don't use prettier for js/ts files
         null_ls_helpers.conditional(function(utils)
