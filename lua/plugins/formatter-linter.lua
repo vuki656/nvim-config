@@ -3,7 +3,7 @@
 -- Link: https://github.com/jose-elias-alvarez/null-ls.nvim
 
 local null_ls = require("null-ls")
-local null_ls_helpers = require("null-ls.helpers")
+local conditional = require("null-ls.utils").make_conditional_utils()
 
 local set_keymap = require("utils.set-keymap")
 
@@ -15,6 +15,8 @@ local formatter = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 local actions = null_ls.builtins.code_actions
 
+local has_eslint = conditional.root_has_file(".eslintrc.js") or conditional.root_has_file(".eslintrc.json")
+
 null_ls.setup({
     sources = {
         -- Formatters
@@ -22,6 +24,44 @@ null_ls.setup({
         formatter.fixjson,
         formatter.shfmt.with({ extra_args = { "-i=4" } }),
         formatter.eslint_d,
+        formatter.prettier.with({
+            condition = function()
+                return has_eslint
+            end,
+            filetypes = {
+                "vue",
+                "css",
+                "html",
+                "yaml",
+                "markdown",
+                "json",
+            },
+            args = {
+                "--stdin-filepath",
+                "$FILENAME",
+            },
+        }),
+        formatter.prettier.with({
+            condition = function()
+                return not has_eslint
+            end,
+            filetypes = {
+                "vue",
+                "css",
+                "html",
+                "yaml",
+                "markdown",
+                "json",
+                "javascript",
+                "javascriptreact",
+                "typescript",
+                "typescriptreact",
+            },
+            args = {
+                "--stdin-filepath",
+                "$FILENAME",
+            },
+        }),
 
         -- Diagnostics
         diagnostics.shellcheck,
@@ -34,47 +74,6 @@ null_ls.setup({
         actions.eslint_d,
         actions.gitsigns,
         actions.shellcheck,
-
-        -- If eslint config exists don't use prettier for js/ts files
-        null_ls_helpers.conditional(function(utils)
-            local has_eslint = utils.root_has_file(".eslintrc.js") or utils.root_has_file(".eslintrc.json")
-
-            if has_eslint then
-                return formatter.prettier.with({
-                    filetypes = {
-                        "vue",
-                        "css",
-                        "html",
-                        "yaml",
-                        "markdown",
-                        "json",
-                    },
-                    args = {
-                        "--stdin-filepath",
-                        "$FILENAME",
-                    },
-                })
-            else
-                return formatter.prettier.with({
-                    filetypes = {
-                        "vue",
-                        "css",
-                        "html",
-                        "yaml",
-                        "markdown",
-                        "json",
-                        "javascript",
-                        "javascriptreact",
-                        "typescript",
-                        "typescriptreact",
-                    },
-                    args = {
-                        "--stdin-filepath",
-                        "$FILENAME",
-                    },
-                })
-            end
-        end),
     },
 })
 
