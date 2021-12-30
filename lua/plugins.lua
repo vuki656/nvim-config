@@ -152,7 +152,7 @@ return require("packer").startup(function(use)
     })
     use({
         "vuki656/package-info.nvim",
-        config = load_file("package-info"),
+        config = load_file("js-package-manager"),
         requires = { "muniftanjim/nui.nvim" },
     })
     use({
