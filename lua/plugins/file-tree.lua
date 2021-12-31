@@ -96,11 +96,6 @@ set_keymap({
         },
         {
             key = "<LEADER>tk",
-            actions = "<CMD>lua require('nvim-tree.lib').collapse_all()<CR>",
-            description = "Collapse all tree nodes",
-        },
-        {
-            key = "<LEADER>tp",
             actions = {
                 "<CMD>lua require('nvim-tree.lib').collapse_all()<CR>",
                 "<CMD>NvimTreeOpen<CR>",
