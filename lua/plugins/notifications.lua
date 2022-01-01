@@ -13,7 +13,7 @@ local set_highlight = require("utils.set-highlight")
 
 notify.setup({
     stages = "fade",
-    timeout = 1000,
+    timeout = 500,
 })
 
 -- Pipe all vim.notify notifications to notify plugin
