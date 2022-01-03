@@ -4,7 +4,7 @@ local colors = require("utils.colors")
 
 return {
     provider = function()
-        return package_info.get_status()
+        return " " .. package_info.get_status()
     end,
     hl = {
         fg = colors.white,
