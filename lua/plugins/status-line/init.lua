@@ -7,7 +7,6 @@ local feline = require("feline")
 local repository_name = require("plugins.status-line.components.repository-name")
 local git_branch = require("plugins.status-line.components.git-branch")
 local file_name = require("plugins.status-line.components.file-name")
-local blank_space = require("plugins.status-line.components.blank-space")
 local diagnostics = require("plugins.status-line.components.diagnostics")
 local git_diff = require("plugins.status-line.components.git-diff")
 local time = require("plugins.status-line.components.time")
@@ -25,16 +24,13 @@ feline.setup({
                 repository_name,
                 git_branch,
                 file_name,
-                blank_space,
                 diagnostics.errors,
                 diagnostics.hints,
                 diagnostics.info,
                 diagnostics.warnings,
-                blank_space,
                 git_diff.added,
                 git_diff.removed,
                 git_diff.changed,
-                blank_space,
                 package_info_status,
             },
             { time },
