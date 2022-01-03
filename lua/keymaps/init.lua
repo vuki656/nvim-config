@@ -216,12 +216,12 @@ set_keymap({
         },
         {
             key = "]d",
-            actions = "<CMD>lua vim.lsp.diagnostic.goto_next()<CR>",
+            actions = "<CMD>lua vim.diagnostic.goto_next()<CR>",
             description = "Go to next diagnostic in current buffer",
         },
         {
             key = "[d",
-            actions = "<CMD>lua vim.lsp.diagnostic.goto_prev()<CR>",
+            actions = "<CMD>lua vim.diagnostic.goto_prev()<CR>",
             description = "Go to previous diagnostic in current buffer",
         },
     },
