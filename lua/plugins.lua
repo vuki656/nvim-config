@@ -148,7 +148,7 @@ return require("packer").startup(function(use)
         config = load_file("word-highlighter"),
     })
     use({
-        "vuki656/package-info.nvim",
+        "~/Projects/package-info.nvim",
         config = load_file("js-package-manager"),
         requires = { "muniftanjim/nui.nvim" },
     })

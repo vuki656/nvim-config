@@ -10,6 +10,26 @@ local icons = require("nvim-web-devicons")
 
 icons.setup({
     override = {
+        [".bashrc"] = {
+            icon = "",
+            color = "#a5afbe",
+            name = "Bashrc",
+        },
+        [".bash_profile"] = {
+            icon = "",
+            color = "#a5afbe",
+            name = "BashProfile",
+        },
+        [".bash_functions"] = {
+            icon = "",
+            color = "#a5afbe",
+            name = "BashFunctions",
+        },
+        [".bash_aliases"] = {
+            icon = "",
+            color = "#a5afbe",
+            name = "BashAliases",
+        },
         ["yarn.lock"] = {
             icon = "",
             color = "#cc3534",
