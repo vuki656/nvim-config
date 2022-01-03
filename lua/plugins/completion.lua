@@ -3,12 +3,17 @@
 -- Link: https://github.com/hrsh7th/nvim-cmp
 
 local cmp = require("cmp")
-local minsnip = require("minsnip")
-local lspkind = require("lspkind")
+local snippets = require("luasnip")
+local icons = require("lspkind")
 local buffer = require("cmp_buffer")
 
 local colors = require("utils.colors")
 local set_highlight = require("utils.set-highlight")
+
+local has_words_before = function()
+    local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+    return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+end
 
 --------------------------------------------------------------------------------------------
 ------------------------------------- SETUP ------------------------------------------------
@@ -18,22 +23,41 @@ local set_highlight = require("utils.set-highlight")
 vim.o.completeopt = "menuone,noselect"
 
 cmp.setup({
+    snippet = {
+        expand = function(args)
+            snippets.lsp_expand(args.body)
+        end,
+    },
     mapping = {
         ["<C-SPACE>"] = cmp.mapping.complete(),
         ["<CR>"] = cmp.mapping.confirm({
             behavior = cmp.ConfirmBehavior.Replace,
             select = true,
         }),
-        ["<Tab>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "s" }),
-        ["<S-Tab>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "s" }),
+        ["<Tab>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+                cmp.select_next_item()
+            elseif snippets.expand_or_jumpable() then
+                snippets.expand_or_jump()
+            elseif has_words_before() then
+                cmp.complete()
+            else
+                fallback()
+            end
+        end, { "i", "s" }),
+
+        ["<S-Tab>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+                cmp.select_prev_item()
+            elseif snippets.jumpable(-1) then
+                snippets.jump(-1)
+            else
+                fallback()
+            end
+        end, { "i", "s" }),
     },
     formatting = {
-        format = lspkind.cmp_format(),
-    },
-    snippet = {
-        expand = function(args)
-            minsnip.expand_anonymous(args.body)
-        end,
+        format = icons.cmp_format(),
     },
     sources = {
         {
@@ -48,10 +72,6 @@ cmp.setup({
                     return vim.api.nvim_list_bufs()
                 end,
             },
-        },
-        {
-            name = "minsnip",
-            max_item_count = 1,
         },
         {
             name = "path",

@@ -63,16 +63,13 @@ return require("packer").startup(function(use)
                 "onsails/lspkind-nvim",
                 config = load_file("completion-icons"),
             },
+            "L3MON4D3/LuaSnip",
             "hrsh7th/cmp-nvim-lsp",
             "hrsh7th/cmp-buffer",
             "hrsh7th/cmp-path",
             "hrsh7th/cmp-nvim-lua",
             "hrsh7th/cmp-cmdline",
         },
-    })
-    use({
-        "jose-elias-alvarez/minsnip.nvim",
-        config = load_file("snippets"),
     })
     use({
         "iamcco/markdown-preview.nvim",
