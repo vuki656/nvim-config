@@ -34,6 +34,7 @@ set_highlight({
         { group = "Type", foreground = orange },
         { group = "Operator", foreground = white },
         { group = "CursorLine", background = grey_lighter },
+        { group = "Todo", background = blue, foreground = background },
         { group = "CursorLineNr", foreground = white },
         { group = "Normal", background = background },
         { group = "StatusLineNC", foreground = background },
