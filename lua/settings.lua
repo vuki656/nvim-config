@@ -106,6 +106,12 @@ vim.cmd([[
     
     " Don't continue comment when adding a new line above/under comment 
     autocmd BufNewFile,BufRead * setlocal formatoptions-=ro
+
+    " Disable old file detection 
+    let g:do_filetype_lua = 1
+
+    " Enable new experimental file detection
+    let g:did_load_filetypes = 0
 ]])
 
 -- Ignore capitalized word misspelling
