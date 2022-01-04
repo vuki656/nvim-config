@@ -5,12 +5,7 @@ local formatter = null_ls.builtins.formatting
 
 local has_eslint = conditional.root_has_file(".eslintrc.js") or conditional.root_has_file(".eslintrc.json")
 
-local M = {}
-
-M.with_eslint = formatter.prettier.with({
-    condition = function()
-        return has_eslint
-    end,
+local M = {
     filetypes = {
         "vue",
         "css",
@@ -23,28 +18,27 @@ M.with_eslint = formatter.prettier.with({
         "--stdin-filepath",
         "$FILENAME",
     },
+}
+
+M.with_eslint = formatter.prettier.with({
+    condition = function()
+        return has_eslint
+    end,
+    filetypes = M.filetypes,
+    args = M.args,
 })
 
 M.standalone = formatter.prettier.with({
     condition = function()
         return not has_eslint
     end,
-    filetypes = {
-        "vue",
-        "css",
-        "html",
-        "yaml",
-        "markdown",
-        "json",
+    filetypes = vim.tbl_deep_extend("force", {}, M.filetypes, {
         "javascript",
         "javascriptreact",
         "typescript",
         "typescriptreact",
-    },
-    args = {
-        "--stdin-filepath",
-        "$FILENAME",
-    },
+    }),
+    args = M.args,
 })
 
 return M
