@@ -12,7 +12,7 @@ local lazy_git = Terminal:new({
         vim.api.nvim_buf_set_keymap(terminal.bufnr, "n", "q", ":close<CR>", { noremap = true, silent = true })
     end,
     on_close = function()
-        vim.fn.timer_start(80, function()
+        vim.fn.timer_start(20, function()
             vim.cmd(":NvimTreeRefresh")
             vim.cmd(":Gitsigns refresh")
             vim.cmd(":e")

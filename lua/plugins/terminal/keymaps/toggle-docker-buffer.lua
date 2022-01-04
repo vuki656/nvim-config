@@ -16,7 +16,7 @@ local docker = Terminal:new({
         })
     end,
     on_close = function()
-        vim.fn.timer_start(80, function()
+        vim.fn.timer_start(20, function()
             vim.cmd(":NvimTreeRefresh")
             vim.cmd(":Gitsigns refresh")
             vim.cmd(":e")
