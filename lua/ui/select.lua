@@ -5,7 +5,6 @@ return function()
     local select_ui = nil
 
     vim.ui.select = function(items, opts, on_choice)
-        print(vim.inspect(items))
         if select_ui then
             -- ensure single ui.select operation
             vim.api.nvim_err_writeln("busy: another select is pending!")
@@ -41,10 +40,18 @@ return function()
 
         local max_width = vim.api.nvim_win_get_width(0)
 
+        -- TODO: add mappings to execute action by number
+        -- TODO: disable bracket pair highlighting
+        -- TODO: make cursor fixed
+        -- TODO: highlight the whole line
+        -- TODO: PR for null-ls to get the code action author plugin
         local menu_items = {}
         for index, item in ipairs(items) do
             item.index = index
             local item_text = string.sub(format_item(item), 0, max_width - 2)
+
+            item_text = "[" .. index .. "] " .. item_text
+
             table.insert(menu_items, Menu.item(item_text, item))
         end
 
