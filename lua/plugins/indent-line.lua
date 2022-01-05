@@ -18,5 +18,6 @@ indent_blankline.setup({
         "lsp-installer",
         "toggleterm",
         "help",
+        "null-ls-info",
     },
 })

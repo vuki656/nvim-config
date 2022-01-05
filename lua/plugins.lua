@@ -1,29 +1,5 @@
 local load_file = require("utils.load-plugin-file")
 
-------------------------------------------------------------------------------------------
------------------------------------ SHARED -----------------------------------------------
-------------------------------------------------------------------------------------------
-
-UTILS = { "nvim-lua/plenary.nvim" }
-
-ICONS = {
-    "kyazdani42/nvim-web-devicons",
-    config = load_file("icons"),
-}
-
-FINDER = {
-    "nvim-telescope/telescope.nvim",
-    config = load_file("finder"),
-    requires = {
-        UTILS,
-        { "nvim-telescope/telescope-fzy-native.nvim" },
-    },
-}
-
-------------------------------------------------------------------------------------------
------------------------------------ UNIQUE -----------------------------------------------
-------------------------------------------------------------------------------------------
-
 return require("packer").startup(function(use)
     use({
         "akinsho/nvim-toggleterm.lua",
@@ -44,7 +20,7 @@ return require("packer").startup(function(use)
     use({
         "feline-nvim/feline.nvim",
         config = load_file("status-line"),
-        requires = ICONS,
+        requires = { "kyazdani42/nvim-web-devicons" },
     })
     use({
         "folke/todo-comments.nvim",
@@ -53,7 +29,7 @@ return require("packer").startup(function(use)
     use({
         "goolord/alpha-nvim",
         config = load_file("start-screen"),
-        requires = ICONS,
+        requires = { "kyazdani42/nvim-web-devicons" },
     })
     use({
         "hrsh7th/nvim-cmp",
@@ -63,7 +39,7 @@ return require("packer").startup(function(use)
                 "onsails/lspkind-nvim",
                 config = load_file("completion-icons"),
             },
-            "L3MON4D3/LuaSnip",
+            "l3mon4d3/LuaSnip",
             "hrsh7th/cmp-nvim-lsp",
             "hrsh7th/cmp-buffer",
             "hrsh7th/cmp-path",
@@ -79,7 +55,7 @@ return require("packer").startup(function(use)
     use({
         "jose-elias-alvarez/null-ls.nvim",
         config = load_file("formatter-linter"),
-        requires = UTILS,
+        requires = { "nvim-lua/plenary.nvim" },
     })
     use({
         "kazhala/close-buffers.nvim",
@@ -89,17 +65,20 @@ return require("packer").startup(function(use)
         "karb94/neoscroll.nvim",
         config = load_file("scrollbar"),
     })
-    use(ICONS)
+    use({
+        "kyazdani42/nvim-web-devicons",
+        config = load_file("icons"),
+    })
     use({
         "kyazdani42/nvim-tree.lua",
         after = "nvim-web-devicons",
         config = load_file("file-tree"),
-        requires = ICONS,
+        requires = { "kyazdani42/nvim-web-devicons" },
     })
     use({
         "lewis6991/gitsigns.nvim",
         config = load_file("git-status"),
-        requires = UTILS,
+        requires = { "nvim-lua/plenary.nvim" },
     })
     use("lewis6991/impatient.nvim")
     use({
@@ -112,12 +91,21 @@ return require("packer").startup(function(use)
         requires = { "joosepalviste/nvim-ts-context-commentstring" },
     })
     use("neovim/nvim-lspconfig")
-    use("nvim-treesitter/nvim-treesitter")
     use({
-        "nvim-treesitter/playground",
-        config = load_file("treesitter"),
+        "nvim-treesitter/nvim-treesitter",
+        config = load_file("parser"),
+        requires = {
+            "nvim-treesitter/playground",
+        },
     })
-    use(FINDER)
+    use({
+        "nvim-telescope/telescope.nvim",
+        config = load_file("finder"),
+        requires = {
+            { "nvim-lua/plenary.nvim" },
+            { "nvim-telescope/telescope-fzy-native.nvim" },
+        },
+    })
     use({
         "lukas-reineke/indent-blankline.nvim",
         config = load_file("indent-line"),
@@ -137,7 +125,7 @@ return require("packer").startup(function(use)
     use({
         "ruifm/gitlinker.nvim",
         config = load_file("git-linker"),
-        requires = UTILS,
+        requires = { "nvim-lua/plenary.nvim" },
     })
     use({
         "theprimeagen/harpoon",
@@ -155,11 +143,6 @@ return require("packer").startup(function(use)
     use({
         "wbthomason/packer.nvim",
         config = load_file("plugin-manager"),
-    })
-    use({
-        "weilbith/nvim-code-action-menu",
-        cmd = "CodeActionMenu",
-        config = load_file("action-menu"),
     })
     use({
         "williamboman/nvim-lsp-installer",

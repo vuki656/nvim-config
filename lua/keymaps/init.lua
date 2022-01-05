@@ -211,7 +211,7 @@ set_keymap({
         },
         {
             key = "ga",
-            actions = "<CMD>CodeActionMenu<CR>",
+            actions = "<CMD>lua vim.lsp.buf.code_action()<CR>",
             description = "Display code action list menu in floating buffer",
         },
         {

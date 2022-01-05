@@ -2,10 +2,6 @@ local Menu = require("nui.menu")
 local event = require("nui.utils.autocmd").event
 
 return function()
-    -- TODO: fix
-    -- Remove select if calling from visual mode
-    -- vim.cmd(":<ESC>")
-
     local select_ui = nil
 
     vim.ui.select = function(items, opts, on_choice)
