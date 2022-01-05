@@ -5,6 +5,7 @@ return function()
     local select_ui = nil
 
     vim.ui.select = function(items, opts, on_choice)
+        print(vim.inspect(items))
         if select_ui then
             -- ensure single ui.select operation
             vim.api.nvim_err_writeln("busy: another select is pending!")
@@ -50,6 +51,9 @@ return function()
         select_ui = Menu({
             relative = relative,
             position = position,
+            size = {
+                width = "35",
+            },
             border = {
                 style = "rounded",
                 highlight = "Normal",
