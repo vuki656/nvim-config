@@ -253,6 +253,11 @@ set_keymap({
             actions = "<CMD>mkspell ./spell/en.utf-8.add<CR>",
             description = "Recreate spell database file",
         },
+        {
+            key = "<LEADER>mm",
+            actions = "<CMD>messages<CR>",
+            description = "See neovim log",
+        },
     },
 })
 
