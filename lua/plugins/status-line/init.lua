@@ -11,6 +11,7 @@ local diagnostics = require("plugins.status-line.components.diagnostics")
 local git_diff = require("plugins.status-line.components.git-diff")
 local time = require("plugins.status-line.components.time")
 local package_info_status = require("plugins.status-line.components.package-info-status")
+local formatter_linter_status = require("plugins.status-line.components.formatter-linter-status")
 local inactive_section = require("plugins.status-line.components.inactive-section")
 
 ------------------------------------------------------------------------------------------
@@ -32,6 +33,7 @@ feline.setup({
                 git_diff.removed,
                 git_diff.changed,
                 package_info_status,
+                formatter_linter_status,
             },
             { time },
         },
