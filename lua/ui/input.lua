@@ -1,60 +1,94 @@
 local Input = require("nui.input")
 local event = require("nui.utils.autocmd").event
 
-return function()
+local M = {
+    ui = nil,
+}
+
+--- Clean up after submit/exit
+-- @param value: string - new value to set
+M.__on_done = function(value)
+    if M.ui then
+        M.ui:unmount()
+    end
+
+    M.on_confirm(value)
+
+    M.ui = nil
+end
+
+--- Generates the NUI input
+-- @return Input
+M.__generate_ui = function()
+    local title = M.options.prompt or "Choose Option"
+
+    M.ui = Input({
+        relative = "cursor",
+        position = {
+            row = 1,
+            col = 0,
+        },
+        size = { width = 35 },
+        border = {
+            style = "rounded",
+            highlight = "Normal",
+            text = {
+                top = " " .. title .. " ",
+                top_align = "center",
+            },
+        },
+        win_options = { winhighlight = "Normal:Normal" },
+    }, {
+        default_value = M.options.default,
+        on_close = function()
+            M.__on_done(nil)
+        end,
+        on_submit = function(value)
+            M.__on_done(value)
+        end,
+    })
+
+    M.ui:mount()
+end
+
+--- Sets up the keymaps for the input
+M.__setup_keymaps = function()
+    local options = { noremap = true, nowait = true }
+
+    -- Cancel and unmount on buffer leave
+    M.ui:on(event.BufLeave, function()
+        M.__on_done(nil)
+    end, { once = true })
+
+    -- Exit with Esc
+    M.ui:map("n", "<Esc>", function()
+        M.__on_done(nil)
+    end, options)
+
+    -- Exit with q
+    M.ui:map("n", "q", function()
+        M.__on_done(nil)
+    end, options)
+end
+
+M.setup = function()
     local input_ui = nil
 
     vim.ui.input = function(options, on_confirm)
+        M = vim.tbl_deep_extend("force", M, {
+            options = options,
+            on_confirm = on_confirm,
+        })
+
         if input_ui then
             vim.api.nvim_err_writeln("UI BUSY: Another input is pending!")
 
             return
         end
 
-        local function on_done(value)
-            if input_ui then
-                input_ui:unmount()
-            end
-
-            on_confirm(value)
-
-            input_ui = nil
-        end
-
-        input_ui = Input({
-            relative = "cursor",
-            position = {
-                row = 1,
-                col = 0,
-            },
-            size = { width = 35 },
-            border = {
-                style = "rounded",
-                highlight = "Normal",
-                text = {
-                    top = options.prompt or "[Input]",
-                    top_align = "left",
-                },
-            },
-            win_options = { winhighlight = "Normal:Normal" },
-        }, {
-            default_value = options.default,
-            on_close = function()
-                on_done(nil)
-            end,
-            on_submit = function(value)
-                on_done(value)
-            end,
-        })
-
-        input_ui:mount()
-
-        input_ui:on(event.BufLeave, function()
-            on_done(nil)
-        end, { once = true })
-
-        input_ui:map("n", "<Esc>", function()
-            on_done(nil)
-        end, { noremap = true, nowait = true })
+        M.__generate_ui()
+        M.__setup_keymaps()
     end
 end
+
+return M
