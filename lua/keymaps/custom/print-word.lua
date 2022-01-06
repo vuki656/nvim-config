@@ -1,11 +1,36 @@
 local set_keymap = require("utils.set-keymap")
 
-set_keymap({
-    key = "<LEADER>wp",
-    actions = "<CMD>lua print_word()<CR>",
-    description = "Take the word under cursor and put it into a print statement on the line below",
-})
+------------------------------------------------------------------------------------------
+----------------------------------- SETUP ------------------------------------------------
+------------------------------------------------------------------------------------------
 
+--- Handles printing for lua files
+-- @param current_line_number: number - line where to place the print statement
+-- @param current_word: string - word to put in the print statement
+function print_lua(current_line_number, current_word)
+    vim.api.nvim_buf_set_lines(
+        0,
+        tonumber(current_line_number),
+        tonumber(current_line_number),
+        false,
+        { "print(vim.inspect(" .. current_word .. "))" }
+    )
+end
+
+--- Handles printing for js files
+-- @param current_line_number: number - line where to place the print statement
+-- @param current_word: string - word to put in the print statement
+function print_js(current_line_number, current_word)
+    vim.api.nvim_buf_set_lines(
+        0,
+        tonumber(current_line_number),
+        tonumber(current_line_number),
+        false,
+        { "console.log('" .. tostring(current_word) .. ": ', " .. current_word .. ")" }
+    )
+end
+
+--- Put the word you are on in a print statement based on the language
 function print_word()
     local filetype = vim.bo.filetype
 
@@ -25,22 +50,12 @@ function print_word()
     end
 end
 
-function print_lua(current_line_number, current_word)
-    vim.api.nvim_buf_set_lines(
-        0,
-        tonumber(current_line_number),
-        tonumber(current_line_number),
-        false,
-        { "print(vim.inspect(" .. current_word .. "))" }
-    )
-end
+------------------------------------------------------------------------------------------
+----------------------------------- KEYMAPS ----------------------------------------------
+------------------------------------------------------------------------------------------
 
-function print_js(current_line_number, current_word)
-    vim.api.nvim_buf_set_lines(
-        0,
-        tonumber(current_line_number),
-        tonumber(current_line_number),
-        false,
-        { "console.log('" .. tostring(current_word) .. ": ', " .. current_word .. ")" }
-    )
-end
+set_keymap({
+    key = "<LEADER>wp",
+    actions = print_word,
+    description = "Take the word under cursor and put it into a print statement on the line below",
+})

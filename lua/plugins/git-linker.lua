@@ -18,6 +18,6 @@ git_linker.setup()
 
 set_keymap({
     key = "<LEADER>gl",
-    actions = "<CMD>lua require('gitlinker').get_buf_range_url(mode, user_opts)<CR>",
+    actions = git_linker.get_buf_range_url,
     description = "Get a repository link to the currently opened buffer",
 })

@@ -21,6 +21,6 @@ local lazy_git = Terminal:new({
     hidden = false,
 })
 
-function _G.toggle_git_buffer()
+return function()
     lazy_git:toggle()
 end

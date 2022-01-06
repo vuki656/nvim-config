@@ -12,12 +12,16 @@ set_keymap({
     list = {
         {
             key = "<LEADER>pas",
-            actions = "<CMD>PackerSync<CR>",
+            actions = function()
+                vim.cmd("PackerSync")
+            end,
             description = "Validate/Install all plugins",
         },
         {
             key = "<LEADER>pal",
-            actions = "<CMD>PackerStatus<CR>",
+            actions = function()
+                vim.cmd("PackerStatus")
+            end,
             description = "List all installed plugins",
         },
     },

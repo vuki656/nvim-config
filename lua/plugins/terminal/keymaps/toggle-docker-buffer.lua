@@ -25,6 +25,6 @@ local docker = Terminal:new({
     hidden = true,
 })
 
-function _G.toggle_docker_buffer()
+return function()
     docker:toggle()
 end

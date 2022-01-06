@@ -10,6 +10,8 @@ local set_keymap = require("utils.set-keymap")
 
 set_keymap({
     key = "<LEADER>mp",
-    actions = "<CMD>MarkdownPreviewToggle<CR>",
+    actions = function()
+        vim.cmd("MarkdownPreviewToggle")
+    end,
     description = "Toggle markdown preview in browse",
 })

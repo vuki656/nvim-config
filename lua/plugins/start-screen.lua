@@ -19,6 +19,8 @@ alpha.setup(opts)
 
 set_keymap({
     key = "<LEADER>b",
-    actions = "<CMD>Alpha<CR>",
+    actions = function()
+        vim.cmd("Alpha")
+    end,
     description = "Open start screen",
 })

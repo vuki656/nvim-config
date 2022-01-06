@@ -14,10 +14,10 @@ local M = {
 -- @return text: string - text to base the icon off of
 M.__get_icon = function(text)
     local git_icons = {
-        ["Blame line"] = "",
-        ["Preview hunk"] = "",
-        ["Stage hunk"] = "",
-        ["Reset hunk"] = "",
+        ["Blame line"] = "",
+        ["Preview hunk"] = "",
+        ["Stage hunk"] = "",
+        ["Reset hunk"] = "",
         ["Select hunk"] = "",
     }
 

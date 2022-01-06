@@ -28,18 +28,18 @@ set_keymap({
     list = {
         {
             key = "<LEADER>uo",
-            actions = {
-                "<CMD>NvimTreeClose<CR>",
-                "<CMD>UndotreeToggle<CR>",
-            },
+            actions = function()
+                vim.cmd("NvimTreeClose")
+                vim.cmd("UndotreeToggle")
+            end,
             description = "Open undotree",
         },
         {
             key = "<LEADER>uc",
-            actions = {
-                "<CMD>UndotreeToggle<CR>",
-                "<CMD>NvimTreeOpen<CR>",
-            },
+            actions = function()
+                vim.cmd("UndotreeToggle")
+                vim.cmd("NvimTreeOpen")
+            end,
             description = "Close undotree",
         },
     },

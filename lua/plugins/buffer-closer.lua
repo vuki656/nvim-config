@@ -20,6 +20,8 @@ close_buffers.setup({
 
 set_keymap({
     key = "<LEADER>ki",
-    actions = "<CMD>lua require('close_buffers').delete({ type = 'hidden' })<CR>",
+    actions = function()
+        close_buffers.delete({ type = "hidden" })
+    end,
     description = "Delete/kill all inactive buffers",
 })

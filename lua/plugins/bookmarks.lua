@@ -3,6 +3,8 @@
 -- Link: https://github.com/ThePrimeagen/harpoon
 
 local harpoon = require("harpoon")
+local harpoon_ui = require("harpoon.ui")
+local harpoon_mark = require("harpoon.mark")
 
 local set_keymap = require("utils.set-keymap")
 
@@ -21,21 +23,27 @@ harpoon.setup({
 ----------------------------------- KEYMAPS ----------------------------------------------
 ------------------------------------------------------------------------------------------
 
+-- Map 1 to 5 for file navigation
+for index = 0, 5 do
+    set_keymap({
+        key = "<LEADER>" .. index,
+        actions = function()
+            harpoon_ui.nav_file(index)
+        end,
+        description = "Map super + " .. index .. " for file navigation",
+    })
+end
+
 set_keymap({
     list = {
-        { key = "<LEADER>1", actions = '<CMD>lua require("harpoon.ui").nav_file(1)<CR>' },
-        { key = "<LEADER>2", actions = '<CMD>lua require("harpoon.ui").nav_file(2)<CR>' },
-        { key = "<LEADER>3", actions = '<CMD>lua require("harpoon.ui").nav_file(3)<CR>' },
-        { key = "<LEADER>4", actions = '<CMD>lua require("harpoon.ui").nav_file(4)<CR>' },
-        { key = "<LEADER>5", actions = '<CMD>lua require("harpoon.ui").nav_file(5)<CR>' },
         {
             key = "<LEADER>ms",
-            actions = '<CMD>lua require("harpoon.ui").toggle_quick_menu()<CR>',
+            actions = harpoon_ui.toggle_quick_menu,
             description = "Open marked files list",
         },
         {
             key = "<LEADER>mf",
-            actions = '<CMD>lua require("harpoon.mark").add_file()<CR>',
+            actions = harpoon_mark.add_file,
             description = "Mark currently opened buffer",
         },
     },

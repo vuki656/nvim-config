@@ -46,6 +46,6 @@ null_ls.setup({
 
 set_keymap({
     key = "<LEADER>f",
-    actions = "<CMD>lua vim.lsp.buf.formatting()<CR>",
+    actions = vim.lsp.buf.formatting,
     description = "Run formatter and format code",
 })

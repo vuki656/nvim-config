@@ -18,6 +18,8 @@ todo_comments.setup({ signs = false })
 
 set_keymap({
     key = "<LEADER>pt",
-    actions = "<CMD>TodoTelescope<CR>",
+    actions = function()
+        vim.cmd("TodoTelescope")
+    end,
     description = "Open TODOs in telescope picker",
 })

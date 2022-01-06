@@ -78,29 +78,33 @@ set_keymap({
     list = {
         {
             key = "<C-n>",
-            actions = "<CMD>NvimTreeToggle<CR>",
+            actions = function()
+                vim.cmd("NvimTreeToggle")
+            end,
             description = "Toggle file tree",
         },
         {
             key = "<LEADER>to",
-            actions = {
-                "<CMD>NvimTreeOpen<CR>",
-                "<CMD>NvimTreeFindFile<CR>",
-            },
+            actions = function()
+                vim.cmd("NvimTreeOpen")
+                vim.cmd("NvimTreeFindFile")
+            end,
             description = "Find opened file in tree",
         },
         {
             key = "<LEADER>tr",
-            actions = "<CMD>NvimTreeRefresh<CR>",
+            actions = function()
+                vim.cmd("NvimTreeRefresh")
+            end,
             description = "Refresh tree (git, nodes...)",
         },
         {
             key = "<LEADER>tk",
-            actions = {
-                "<CMD>lua require('nvim-tree.lib').collapse_all()<CR>",
-                "<CMD>NvimTreeOpen<CR>",
-                "<CMD>NvimTreeFindFile<CR>",
-            },
+            actions = function()
+                require("nvim-tree.lib").collapse_all()
+                vim.cmd("NvimTreeOpen")
+                vim.cmd("NvimTreeFindFile")
+            end,
             description = "Collapse all tree nodes and focus opened buffer",
         },
     },

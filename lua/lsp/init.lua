@@ -57,6 +57,8 @@ vim.diagnostic.config({
 
 set_keymap({
     key = "<LEADER>ls",
-    actions = "<CMD>LspInstallInfo<CR>",
+    actions = function()
+        vim.cmd("LspInstallInfo")
+    end,
     description = "Open lsp installer popup buffer",
 })

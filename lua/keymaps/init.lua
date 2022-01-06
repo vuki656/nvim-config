@@ -55,7 +55,9 @@ set_keymap({
         },
         {
             key = "<BS>",
-            actions = "<CMD>nohlsearch<CR>",
+            actions = function()
+                vim.cmd("nohlsearch")
+            end,
             description = "Clear search highlight",
         },
         {
@@ -137,7 +139,7 @@ set_keymap({
             description = "Remove the line above",
         },
         {
-            key = "F",
+            key = "M",
             actions = "mzJ`z",
             description = "Fold line by line and keep current position",
         },
@@ -162,11 +164,11 @@ set_keymap({
         },
         {
             key = "zf",
-            actions = {
-                "z=1<CR>",
-                "<CMD>w<CR>",
-                "<CMD>e<CR>",
-            },
+            actions = function()
+                vim.cmd("z=1")
+                vim.cm("w")
+                vim.cm("e")
+            end,
             description = "Apply the first misspell suggestion",
         },
         {
@@ -176,13 +178,13 @@ set_keymap({
         },
         {
             key = "lf",
-            actions = {
-                "[s",
-                "z=1<CR>",
-                "<CMD>w<CR>",
-                "<CMD>e<CR>",
-                "A",
-            },
+            actions = function()
+                vim.cm("[s")
+                vim.cm("z=1")
+                vim.cm("w")
+                vim.cm("e")
+                vim.cm("A")
+            end,
             description = "Go to first misspell, fix it and go back to the end of line in insert mode",
         },
     },
@@ -196,32 +198,34 @@ set_keymap({
     list = {
         {
             key = "L",
-            actions = "<CMD>lua vim.lsp.buf.hover()<CR>",
+            actions = vim.lsp.buf.hover,
             description = "Show variable documentation in floating buffer",
         },
         {
             key = "<LEADER>rn",
-            actions = "<CMD>lua vim.lsp.buf.rename()<CR>",
+            actions = vim.lsp.buf.rename,
             description = "Rename variable",
         },
         {
-            key = "I",
-            actions = "<CMD>lua vim.diagnostic.open_float(0, { scope='line' })<CR>",
+            key = "H",
+            actions = function()
+                vim.diagnostic.open_float(0, { scope = "line" })
+            end,
             description = "Show diagnostic in a floating buffer",
         },
         {
             key = "ga",
-            actions = "<CMD>lua vim.lsp.buf.code_action()<CR>",
+            actions = vim.lsp.buf.code_action,
             description = "Display code action list menu in floating buffer",
         },
         {
             key = "]d",
-            actions = "<CMD>lua vim.diagnostic.goto_next()<CR>",
+            actions = vim.diagnostic.goto_next,
             description = "Go to next diagnostic in current buffer",
         },
         {
             key = "[d",
-            actions = "<CMD>lua vim.diagnostic.goto_prev()<CR>",
+            actions = vim.diagnostic.goto_prev,
             description = "Go to previous diagnostic in current buffer",
         },
     },
@@ -240,22 +244,30 @@ set_keymap({
         },
         {
             key = "<LEADER>rs",
-            actions = "<CMD>luafile %<CR>",
+            actions = function()
+                vim.cmd("luafile %")
+            end,
             description = "Resource current lua buffer",
         },
         {
             key = "<LEADER>sw",
-            actions = "<CMD>set wrap<CR>",
+            actions = function()
+                vim.cmd("set wrap")
+            end,
             description = "Enable wrapping in the buffer",
         },
         {
             key = "<LEADER>sr",
-            actions = "<CMD>mkspell ./spell/en.utf-8.add<CR>",
+            actions = function()
+                vim.cmd("mkspell ./spell/en.utf-8.add")
+            end,
             description = "Recreate spell database file",
         },
         {
             key = "<LEADER>mm",
-            actions = "<CMD>messages<CR>",
+            actions = function()
+                vim.cmd("messages")
+            end,
             description = "See neovim log",
         },
     },

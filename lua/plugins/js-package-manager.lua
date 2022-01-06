@@ -23,32 +23,34 @@ set_keymap({
     list = {
         {
             key = "<LEADER>ns",
-            actions = "<CMD>PackageInfoShowForce<CR>",
-            description = "Show package versions",
+            actions = function()
+                package_info.show({ force = true })
+            end,
+            description = "Show latest package versions",
         },
         {
             key = "<LEADER>nc",
-            actions = "<CMD>PackageInfoHide<CR>",
+            actions = package_info.hide,
             description = "Hide package versions",
         },
         {
             key = "<LEADER>nu",
-            actions = "<CMD>PackageInfoUpdate<CR>",
+            actions = package_info.update,
             description = "Update package on current line",
         },
         {
             key = "<LEADER>nd",
-            actions = "<CMD>PackageInfoDelete<CR>",
+            actions = package_info.delete,
             description = "Delete package on current line",
         },
         {
             key = "<LEADER>ni",
-            actions = "<CMD>PackageInfoInstall<CR>",
+            actions = package_info.install,
             description = "Install a new package",
         },
         {
             key = "<LEADER>np",
-            actions = "<CMD>PackageInfoChangeVersion<CR>",
+            actions = package_info.change_version,
             description = "Install a different package version",
         },
     },
