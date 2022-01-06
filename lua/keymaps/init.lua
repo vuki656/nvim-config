@@ -127,17 +127,17 @@ set_keymap({
             description = "Highlight the whole line",
         },
         {
-            key = "dJ",
+            key = "J",
             actions = "jddk",
             description = "Remove the line below",
         },
         {
-            key = "dK",
+            key = "K",
             actions = "kdd",
             description = "Remove the line above",
         },
         {
-            key = "J",
+            key = "F",
             actions = "mzJ`z",
             description = "Fold line by line and keep current position",
         },
@@ -205,7 +205,7 @@ set_keymap({
             description = "Rename variable",
         },
         {
-            key = "K",
+            key = "I",
             actions = "<CMD>lua vim.diagnostic.open_float(0, { scope='line' })<CR>",
             description = "Show diagnostic in a floating buffer",
         },
