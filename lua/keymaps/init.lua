@@ -164,6 +164,7 @@ set_keymap({
             actions = "[s",
             description = "Go to previous misspelled word",
         },
+        -- FIXME:
         {
             key = "zf",
             actions = function()

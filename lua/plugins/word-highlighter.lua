@@ -13,4 +13,5 @@ vim.g.Illuminate_ftblacklist = {
     "alpha",
     "qf",
     "help",
+    "refactoring-menu",
 }

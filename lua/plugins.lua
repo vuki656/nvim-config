@@ -133,6 +133,14 @@ return require("packer").startup(function(use)
         config = load_file("bookmarks"),
     })
     use({
+        "theprimeagen/refactoring.nvim",
+        config = load_file("refactoring"),
+        requires = {
+            { "nvim-lua/plenary.nvim" },
+            { "nvim-treesitter/nvim-treesitter" },
+        },
+    })
+    use({
         "rrethy/vim-illuminate",
         config = load_file("word-highlighter"),
     })
