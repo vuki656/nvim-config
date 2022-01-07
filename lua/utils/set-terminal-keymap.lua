@@ -1,3 +1,5 @@
+local keymap_preview = require("ui.keymap-preview")
+
 --- Sets the given terminal keymap
 -- @param properties - object
 -- {
@@ -15,6 +17,11 @@ local function apply_terminal_keymap(properties)
     else
         action = properties.actions
     end
+
+    keymap_preview.add({
+        key = properties.key,
+        description = properties.description,
+    })
 
     vim.cmd(":tnoremap " .. properties.key .. " " .. action)
 end

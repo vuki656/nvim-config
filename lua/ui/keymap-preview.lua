@@ -19,10 +19,10 @@ M.add = function(properties)
     local modes = ""
 
     -- Map modes to [m,i] template
-    if vim.tbl_count(properties.modes) == 1 then
+    if vim.tbl_count(properties.modes or {}) == 1 then
         modes = properties.modes[1]
     else
-        for index, mode in ipairs(properties.modes) do
+        for index, mode in ipairs(properties.modes or {}) do
             if index == 1 then
                 modes = mode
             else
@@ -31,7 +31,12 @@ M.add = function(properties)
         end
     end
 
-    local line_text = "[" .. modes .. "] " .. properties.key .. " - " .. properties.description
+    -- If no mode is set don't put brackets
+    if modes ~= "" then
+        modes = "[" .. modes .. "] "
+    end
+
+    local line_text = modes .. properties.key .. " - " .. properties.description
 
     table.insert(M.keymaps, line_text)
 end
