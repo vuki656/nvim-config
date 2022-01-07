@@ -16,6 +16,7 @@ scrollbar.setup({
         "alpha",
         "docker-term",
         "git-term",
+        "",
     },
     handle = {
         color = colors.background_light,
