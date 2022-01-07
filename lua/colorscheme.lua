@@ -66,7 +66,6 @@ set_highlight({
         { group = "Delimiter", foreground = red, background = blue },
         { group = "Debug", foreground = red, background = blue },
         { group = "Underlined", foreground = red, background = blue },
-        { group = "Ignore", foreground = red, background = blue },
         { group = "Conceal", foreground = green, background = blue },
 
         -- Editor
@@ -76,6 +75,7 @@ set_highlight({
         { group = "SpecialComment", foreground = orange },
         { group = "Constant", foreground = green },
         { group = "Type", foreground = orange },
+        { group = "Ignore", foreground = red },
         { group = "Number", foreground = orange },
         { group = "Operator", foreground = white },
         { group = "String", foreground = red },
