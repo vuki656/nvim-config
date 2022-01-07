@@ -19,10 +19,10 @@ scrollbar.setup({
         color = colors.background_light,
     },
     marks = {
-        Error = { color = colors.red },
-        Warn = { color = colors.orange },
-        Info = { color = colors.blue },
-        Hint = { color = colors.yellow },
-        Misc = { color = colors.green },
+        Error = { text = { "▀" }, color = colors.red },
+        Warn = { text = { "▀" }, color = colors.orange },
+        Info = { text = { "▀" }, color = colors.blue },
+        Hint = { text = { "▀" }, color = colors.yellow },
+        Misc = { text = { "▀" }, color = colors.green },
     },
 })
