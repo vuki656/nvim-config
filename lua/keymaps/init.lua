@@ -267,9 +267,7 @@ set_keymap({
         },
         {
             key = "<LEADER>mm",
-            actions = function()
-                vim.cmd("messages")
-            end,
+            actions = "<CMD>messages<CR>",
             description = "See neovim log",
         },
         {
