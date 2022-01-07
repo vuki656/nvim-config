@@ -179,7 +179,7 @@ set_keymap({
             description = "Open the misspell suggestion list",
         },
         {
-            key = "lf",
+            key = "<LEADER>lf",
             actions = function()
                 vim.api.nvim_input("[s")
                 vim.api.nvim_input("z=1<CR>")
@@ -205,7 +205,10 @@ set_keymap({
         },
         {
             key = "<LEADER>rn",
-            actions = vim.lsp.buf.rename,
+            actions = function()
+                vim.api.nvim_input("l")
+                vim.lsp.buf.rename()
+            end,
             description = "Rename variable",
         },
         {
