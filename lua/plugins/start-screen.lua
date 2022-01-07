@@ -3,7 +3,7 @@
 -- Link: https://github.com/goolord/alpha-nvim
 
 local alpha = require("alpha")
-local opts = require("alpha.themes.startify").opts
+local startify_theme = require("alpha.themes.startify")
 
 local set_keymap = require("utils.set-keymap")
 
@@ -11,7 +11,19 @@ local set_keymap = require("utils.set-keymap")
 ------------------------------------- SETUP ------------------------------------------------
 --------------------------------------------------------------------------------------------
 
-alpha.setup(opts)
+startify_theme.opts.layout = {
+    { type = "padding", val = 1 },
+    startify_theme.section.header,
+    { type = "padding", val = 2 },
+    startify_theme.section.top_buttons,
+    startify_theme.section.mru_cwd,
+    startify_theme.section.mru,
+    { type = "padding", val = 1 },
+    startify_theme.section.bottom_buttons,
+    startify_theme.section.footer,
+}
+
+alpha.setup(startify_theme.opts)
 
 --------------------------------------------------------------------------------------------
 ------------------------------------- KEYMAPS ----------------------------------------------
