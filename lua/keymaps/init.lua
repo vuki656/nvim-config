@@ -1,6 +1,8 @@
 local set_keymap = require("utils.set-keymap")
 local set_terminal_keymap = require("utils.set-terminal-keymap")
 
+local keymap_preview = require("ui.keymap-preview")
+
 require("keymaps.custom.print-word")
 
 ------------------------------------------------------------------------------------------
@@ -80,25 +82,25 @@ set_keymap({
 set_keymap({
     list = {
         {
-            modes = "i",
+            modes = { "i" },
             key = "jj",
             actions = "<ESC>",
             description = "Go to normal mode",
         },
         {
-            modes = "i",
+            modes = { "i" },
             key = "jk",
             actions = "<ESC>",
             description = "Go to normal mode",
         },
         {
-            modes = "i",
+            modes = { "i" },
             key = "kj",
             actions = "<ESC>",
             description = "Go to normal mode",
         },
         {
-            modes = "i",
+            modes = { "i" },
             key = "kk",
             actions = "<ESC>",
             description = "Go to normal mode",
@@ -269,6 +271,11 @@ set_keymap({
                 vim.cmd("messages")
             end,
             description = "See neovim log",
+        },
+        {
+            key = "<LEADER>km",
+            actions = keymap_preview.toggle,
+            description = "Toggle keymap previewer",
         },
     },
 })
