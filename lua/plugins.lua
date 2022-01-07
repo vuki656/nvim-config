@@ -14,7 +14,7 @@ return require("packer").startup(function(use)
         config = load_file("profiler"),
     })
     use({
-        "dstein64/nvim-scrollview",
+        "petertriho/nvim-scrollbar",
         config = load_file("smooth-scroll"),
     })
     use({
