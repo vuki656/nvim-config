@@ -9,6 +9,8 @@ local lazy_git = Terminal:new({
     },
     on_open = function(terminal)
         vim.cmd("startinsert!")
+        vim.cmd("set filetype=git-term")
+
         vim.api.nvim_buf_set_keymap(terminal.bufnr, "n", "q", ":close<CR>", { noremap = true, silent = true })
     end,
     on_close = function()

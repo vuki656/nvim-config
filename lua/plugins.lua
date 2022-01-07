@@ -15,7 +15,7 @@ return require("packer").startup(function(use)
     })
     use({
         "petertriho/nvim-scrollbar",
-        config = load_file("smooth-scroll"),
+        config = load_file("scrollbar"),
     })
     use({
         "feline-nvim/feline.nvim",
@@ -64,7 +64,7 @@ return require("packer").startup(function(use)
     })
     use({
         "karb94/neoscroll.nvim",
-        config = load_file("scrollbar"),
+        config = load_file("smooth-scroll"),
     })
     use({
         "kyazdani42/nvim-web-devicons",
