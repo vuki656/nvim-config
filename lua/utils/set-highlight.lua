@@ -5,7 +5,7 @@
 --     background - background color
 --     foreground - foreground color
 -- }
-function apply_highlight(properties)
+local function apply_highlight(properties)
     local background = ""
     local foreground = ""
     local gui = ""

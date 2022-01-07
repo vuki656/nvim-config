@@ -7,7 +7,7 @@ local set_keymap = require("utils.set-keymap")
 --- Handles printing for lua files
 -- @param current_line_number: number - line where to place the print statement
 -- @param current_word: string - word to put in the print statement
-function print_lua(current_line_number, current_word)
+local function print_lua(current_line_number, current_word)
     vim.api.nvim_buf_set_lines(
         0,
         tonumber(current_line_number),
@@ -20,7 +20,7 @@ end
 --- Handles printing for js files
 -- @param current_line_number: number - line where to place the print statement
 -- @param current_word: string - word to put in the print statement
-function print_js(current_line_number, current_word)
+local function print_js(current_line_number, current_word)
     vim.api.nvim_buf_set_lines(
         0,
         tonumber(current_line_number),
@@ -31,7 +31,7 @@ function print_js(current_line_number, current_word)
 end
 
 --- Put the word you are on in a print statement based on the language
-function print_word()
+local function print_word()
     local filetype = vim.bo.filetype
 
     local current_word = vim.fn.expand("<cword>")

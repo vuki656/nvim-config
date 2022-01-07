@@ -5,7 +5,7 @@
 --     sign - sign string
 --     highlight_group - highlight group to be applied to the sing
 -- }
-function apply_sign(properties)
+local function apply_sign(properties)
     vim.cmd(
         "sign define " .. properties.name .. " text=" .. properties.sign .. " texthl=" .. properties.highlight_group
     )

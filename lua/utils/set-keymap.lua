@@ -8,7 +8,7 @@ local keymap_preview = require("ui.keymap-preview")
 --     actions - action/s that gets fired on key press
 --     options -- options to be applied for the keymap
 -- }
-function apply_keymap(properties)
+local function apply_keymap(properties)
     local modes = properties.modes or { "n" }
     local options = properties.options or { noremap = true, silent = true }
 

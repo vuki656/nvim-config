@@ -4,7 +4,7 @@
 --     key - key that triggers the terminal keymap
 --     actions - action that gets fired on key press
 -- }
-function apply_terminal_keymap(properties)
+local function apply_terminal_keymap(properties)
     local action = ""
 
     -- If there is a list of actions, concatenate them into a single string
