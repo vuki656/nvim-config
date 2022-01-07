@@ -43,12 +43,12 @@ require("nvim-tree").setup({
     filters = {
         custom = { ".git" },
     },
-    update_cwd = true,
-    update_focused_file = {
-        enable = true,
-        update_cwd = true,
-    },
 })
+
+-- Manual tree open on startup since built in is broken
+vim.cmd("NvimTreeToggle")
+vim.api.nvim_input("<C-l>")
+vim.api.nvim_input("<SPACE>b")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- COLORS -----------------------------------------------
