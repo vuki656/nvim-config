@@ -167,9 +167,9 @@ set_keymap({
         {
             key = "zf",
             actions = function()
-                vim.cmd("z=1")
-                vim.cm("w")
-                vim.cm("e")
+                vim.api.nvim_input("z=1<CR>")
+                vim.cmd("w")
+                vim.cmd("e")
             end,
             description = "Apply the first misspell suggestion",
         },
@@ -181,11 +181,11 @@ set_keymap({
         {
             key = "lf",
             actions = function()
-                vim.cm("[s")
-                vim.cm("z=1")
-                vim.cm("w")
-                vim.cm("e")
-                vim.cm("A")
+                vim.api.nvim_input("[s")
+                vim.api.nvim_input("z=1<CR>")
+                vim.cmd("w")
+                vim.cmd("e")
+                vim.api.nvim_input("A")
             end,
             description = "Go to first misspell, fix it and go back to the end of line in insert mode",
         },
