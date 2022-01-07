@@ -154,6 +154,7 @@ set_highlight({
         { group = "TSType", foreground = yellow },
         { group = "TSVariable", foreground = white },
         { group = "TSNamespace", foreground = white },
+        { group = "TSURI", foreground = blue, options = "undercurl" },
         { group = "TSConstructor", foreground = yellow },
         { group = "TSParameter", foreground = orange },
         { group = "TSProperty", foreground = red },
