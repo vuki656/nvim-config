@@ -1,4 +1,4 @@
--- Name: Scrolbar
+-- Name: Scrollbar
 -- Description: Scrollbar with diagnostics
 -- Link: https://github.com/petertriho/nvim-scrollbar
 
