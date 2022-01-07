@@ -261,7 +261,7 @@ set_keymap({
         {
             key = "<LEADER>sr",
             actions = function()
-                vim.cmd("mkspell ./spell/en.utf-8.add")
+                vim.cmd("mkspell! ./spell/en.utf-8.add")
             end,
             description = "Recreate spell database file",
         },
