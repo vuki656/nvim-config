@@ -29,6 +29,7 @@ return require("packer").startup(function(use)
     })
     use({
         "goolord/alpha-nvim",
+        after = "nvim-tree.lua",
         config = load_file("start-screen"),
         requires = { "kyazdani42/nvim-web-devicons" },
     })
