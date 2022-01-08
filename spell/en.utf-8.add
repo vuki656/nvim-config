@@ -1793,3 +1793,10 @@ getreg
 stopinsert
 ciw
 sl
+luacheck
+taplo
+truthy
+falsy
+lua51
+luacheckrc
+rawget

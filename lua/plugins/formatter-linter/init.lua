@@ -21,8 +21,8 @@ null_ls.setup({
         -- Formatters
         formatter.stylua,
         formatter.fixjson,
-        formatter.shfmt.with({ extra_args = { "-i=4" } }),
         formatter.eslint_d,
+        formatter.shfmt.with({ extra_args = { "-i=4" } }),
         prettier.standalone,
         prettier.with_eslint,
 
@@ -32,6 +32,7 @@ null_ls.setup({
         diagnostics.yamllint,
         diagnostics.eslint_d,
         diagnostics.shellcheck,
+        diagnostics.luacheck,
 
         -- Code Actions
         actions.eslint_d,

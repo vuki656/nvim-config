@@ -107,6 +107,9 @@ vim.cmd([[
     " Don't continue comment when adding a new line above/under comment 
     autocmd BufNewFile,BufRead * setlocal formatoptions-=ro
 
+    " Detect .luacheckrc as a luafile
+    autocmd BufNewFile,BufRead *.luacheckrc set filetype=lua
+
     " Disable old file detection 
     let g:do_filetype_lua = 1
 

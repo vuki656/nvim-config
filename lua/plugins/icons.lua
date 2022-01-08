@@ -115,6 +115,11 @@ icons.setup({
             color = "#9575cd",
             name = "Lua",
         },
+        [".luacheckrc"] = {
+            icon = "",
+            color = "#9575cd",
+            name = "Lua",
+        },
         ["Dockerfile"] = {
             icon = "",
             color = "#1e9cef",
