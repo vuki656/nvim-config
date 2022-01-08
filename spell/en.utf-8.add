@@ -1801,3 +1801,8 @@ lua51
 luacheckrc
 rawget
 LspProgressUpdate
+luassert
+luacov
+winid
+extmarks
+lnum

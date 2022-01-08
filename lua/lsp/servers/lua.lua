@@ -16,6 +16,7 @@ return function(default_options, server_name)
                         "it",
                         "awesome",
                         "client",
+                        "before_each",
                         "mouse",
                         "screen",
                         "root",

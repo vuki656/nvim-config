@@ -14,10 +14,11 @@ return require("packer").startup(function(use)
         config = load_file("profiler"),
     })
     -- FIXME: removes terminal cursor color
-    use({
-        "petertriho/nvim-scrollbar",
-        config = load_file("scrollbar"),
-    })
+    -- FIXME: messes up telescope
+    -- use({
+    --     "petertriho/nvim-scrollbar",
+    --     config = load_file("scrollbar"),
+    -- })
     use({
         "feline-nvim/feline.nvim",
         config = load_file("status-line"),
