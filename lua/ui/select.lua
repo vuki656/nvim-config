@@ -10,6 +10,29 @@ local M = {
     menu_width = 35,
 }
 
+--- Setup generic select for use with editor
+-- @return nil
+M.setup = function()
+    vim.ui.select = function(items, options, on_confirm)
+        M = vim.tbl_deep_extend("force", M, {
+            items = items,
+            options = options,
+            on_confirm = on_confirm,
+        })
+
+        if M.ui then
+            vim.api.nvim_err_writeln("UI BUSY: Another select is pending!")
+
+            return
+        end
+
+        local menu_items = M.__generate_menu_items()
+
+        M.__generate_ui(menu_items)
+        M.__setup_keymaps(menu_items)
+    end
+end
+
 --- Returns the approbate icon based on menu item text
 -- @return text: string - text to base the icon off of
 M.__get_icon = function(text)
@@ -141,27 +164,6 @@ M.__on_done = function(item, index)
 
     M.ui = nil
     M.menu_width = 35
-end
-
-M.setup = function()
-    vim.ui.select = function(items, options, on_confirm)
-        M = vim.tbl_deep_extend("force", M, {
-            items = items,
-            options = options,
-            on_confirm = on_confirm,
-        })
-
-        if M.ui then
-            vim.api.nvim_err_writeln("UI BUSY: Another select is pending!")
-
-            return
-        end
-
-        local menu_items = M.__generate_menu_items()
-
-        M.__generate_ui(menu_items)
-        M.__setup_keymaps(menu_items)
-    end
 end
 
 return M

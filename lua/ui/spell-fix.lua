@@ -5,6 +5,17 @@ local M = {
     menu_items = {},
 }
 
+--- Setup and display spell fix select
+-- @return nil
+M.display = function()
+    local selected_word = vim.fn.expand("<cword>")
+    local suggestions = vim.fn.spellsuggest(selected_word)
+
+    M.__generate_menu_items(suggestions)
+    M.__generate_ui()
+    M.__setup_keymaps()
+end
+
 --- Replace the word under cursor with selected word
 -- @param suggestion: list[] - word suggestions
 -- @return nil
@@ -73,17 +84,6 @@ M.__generate_ui = function()
     ui:mount()
 
     M.ui = ui
-end
-
---- Setup and display spell fix select
--- @return nil
-M.display = function()
-    local selected_word = vim.fn.expand("<cword>")
-    local suggestions = vim.fn.spellsuggest(selected_word)
-
-    M.__generate_menu_items(suggestions)
-    M.__generate_ui()
-    M.__setup_keymaps()
 end
 
 return M

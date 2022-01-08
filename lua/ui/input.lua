@@ -5,6 +5,28 @@ local M = {
     ui = nil,
 }
 
+--- Setup generic input for use with the editor
+-- @return nil
+M.setup = function()
+    local input_ui = nil
+
+    vim.ui.input = function(options, on_confirm)
+        M = vim.tbl_deep_extend("force", M, {
+            options = options,
+            on_confirm = on_confirm,
+        })
+
+        if input_ui then
+            vim.api.nvim_err_writeln("UI BUSY: Another input is pending!")
+
+            return
+        end
+
+        M.__generate_ui()
+        M.__setup_keymaps()
+    end
+end
+
 --- Clean up after submit/exit
 -- @param value: string - new value to set
 M.__on_done = function(value)
@@ -69,26 +91,6 @@ M.__setup_keymaps = function()
     M.ui:map("n", "q", function()
         M.__on_done(nil)
     end, options)
-end
-
-M.setup = function()
-    local input_ui = nil
-
-    vim.ui.input = function(options, on_confirm)
-        M = vim.tbl_deep_extend("force", M, {
-            options = options,
-            on_confirm = on_confirm,
-        })
-
-        if input_ui then
-            vim.api.nvim_err_writeln("UI BUSY: Another input is pending!")
-
-            return
-        end
-
-        M.__generate_ui()
-        M.__setup_keymaps()
-    end
 end
 
 return M

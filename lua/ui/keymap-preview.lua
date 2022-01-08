@@ -7,6 +7,22 @@ M = {
     keymaps = {},
 }
 
+--- Display the keymap preview
+-- @return nil
+M.toggle = function()
+    local options = theme.get_dropdown({})
+
+    local config = {
+        prompt_title = "Custom Keymaps",
+        sorter = conf.generic_sorter(options),
+        finder = finders.new_table({
+            results = M.keymaps,
+        }),
+    }
+
+    pickers.new(options, config):find()
+end
+
 --- Add a new keymap to the list
 -- @param properties: table
 -- {
@@ -39,22 +55,6 @@ M.add = function(properties)
     local line_text = modes .. properties.key .. " - " .. properties.description
 
     table.insert(M.keymaps, line_text)
-end
-
---- Display the keymap preview
--- @return nil
-M.toggle = function()
-    local options = theme.get_dropdown({})
-
-    local config = {
-        prompt_title = "Custom Keymaps",
-        sorter = conf.generic_sorter(options),
-        finder = finders.new_table({
-            results = M.keymaps,
-        }),
-    }
-
-    pickers.new(options, config):find()
 end
 
 return M
