@@ -57,7 +57,6 @@ return require("packer").startup(function(use)
     use({
         "jose-elias-alvarez/null-ls.nvim",
         config = load_file("formatter-linter"),
-        branch = "progress-notifications",
         requires = { "nvim-lua/plenary.nvim" },
     })
     use({
