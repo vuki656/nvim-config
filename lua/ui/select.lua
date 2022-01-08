@@ -112,7 +112,6 @@ M.__generate_ui = function(menu_items)
             },
         },
         win_options = {
-            -- NOTE: can set custom options here
             winhighlight = "Normal:Normal",
         },
     }, {

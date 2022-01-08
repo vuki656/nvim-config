@@ -18,7 +18,7 @@ M.__on_done = function(value)
 end
 
 --- Generates the NUI input
--- @return Input
+-- @return nil
 M.__generate_ui = function()
     local title = M.options.prompt or "Choose Option"
 
