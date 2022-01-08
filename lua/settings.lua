@@ -103,14 +103,14 @@ vim.cmd([[
 
     " Spell file location
     set spellfile=$HOME/.config/nvim/spell/en.utf-8.add
-    
-    " Don't continue comment when adding a new line above/under comment 
+
+    " Don't continue comment when adding a new line above/under comment
     autocmd BufNewFile,BufRead * setlocal formatoptions-=ro
 
     " Detect .luacheckrc as a luafile
     autocmd BufNewFile,BufRead *.luacheckrc set filetype=lua
 
-    " Disable old file detection 
+    " Disable old file detection
     let g:do_filetype_lua = 1
 
     " Enable new experimental file detection

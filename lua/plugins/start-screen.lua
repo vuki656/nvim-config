@@ -27,7 +27,7 @@ alpha.setup(startify_theme.opts)
 
 -- Manual tree open on startup since built in is broken
 -- only open on empty buffer
-function open_start_screen()
+local function open_start_screen()
     vim.cmd("NvimTreeToggle")
     vim.api.nvim_input("<C-l>")
 

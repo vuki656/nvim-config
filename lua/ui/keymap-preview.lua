@@ -3,7 +3,7 @@ local finders = require("telescope.finders")
 local theme = require("telescope.themes")
 local conf = require("telescope.config").values
 
-M = {
+local M = {
     keymaps = {},
 }
 

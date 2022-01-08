@@ -139,6 +139,7 @@ set_highlight({
         { group = "TSConstant", foreground = orange },
         { group = "TSNumber", foreground = orange },
         { group = "TSString", foreground = green },
+        { group = "TSStringSpecial", foreground = green },
         { group = "TSFuncMacro", foreground = red },
         { group = "TSMethod", foreground = blue },
         { group = "TSField", foreground = red },

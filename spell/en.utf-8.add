@@ -1800,3 +1800,4 @@ falsy
 lua51
 luacheckrc
 rawget
+LspProgressUpdate
