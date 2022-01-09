@@ -84,7 +84,7 @@ set_highlight({
         { group = "MoreMsg", foreground = orange, background = background },
         { group = "CursorLineNr", foreground = white },
         { group = "Normal", background = background },
-        { group = "StatusLine", foreground = white, background = background },
+        { group = "StatusLine", foreground = background_light, background = background },
         { group = "StatusLineNC", foreground = background },
         { group = "SignColumn", background = background },
         { group = "EndOfBuffer", foreground = background },
