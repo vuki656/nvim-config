@@ -12,12 +12,21 @@ return {
     provider = function()
         if not vim.tbl_isempty(lsp_statuses or {}) then
             local status = lsp_statuses[1]
+            local message = status.title
 
             if status.done then
                 return ""
             end
 
-            return "  " .. "[" .. status.name .. "] " .. status.title
+            if status.title == "diagnostics" then
+                message = "Analizing"
+            end
+
+            if status.title == "formatting" then
+                message = "Formatting"
+            end
+
+            return "  " .. "[" .. status.name .. "] " .. message
         end
 
         return ""
