@@ -1,4 +1,5 @@
 local colors = require("utils.colors")
+local loading = require("ui.loading")
 
 local lsp_statuses = nil
 
@@ -14,7 +15,13 @@ return {
             local status = lsp_statuses[1]
             local message = status.title
 
+            if not loading.state.is_running then
+                loading.start()
+            end
+
             if status.done then
+                loading.stop()
+
                 return ""
             end
 
@@ -30,7 +37,7 @@ return {
                 message = "Starting"
             end
 
-            return "  " .. "[" .. status.name .. "] " .. message
+            return "  " .. "[" .. status.name .. "] " .. message .. " " .. loading.state.current_spinner
         end
 
         return ""

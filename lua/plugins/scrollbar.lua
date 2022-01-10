@@ -16,6 +16,7 @@ scrollbar.setup({
         "alpha",
         "docker-term",
         "git-term",
+        "TelescopePropmt",
         "",
     },
     handle = {
