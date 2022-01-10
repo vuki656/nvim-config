@@ -10,6 +10,10 @@ return require("packer").startup(function(use)
         config = load_file("project-manager"),
     })
     use({
+        "chentau/marks.nvim",
+        config = load_file("marks"),
+    })
+    use({
         "dstein64/vim-startuptime",
         config = load_file("profiler"),
     })
