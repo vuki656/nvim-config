@@ -26,6 +26,10 @@ return {
                 message = "Formatting"
             end
 
+            if status.title == "diagnostics_on_open" then
+                message = "Starting"
+            end
+
             return "  " .. "[" .. status.name .. "] " .. message
         end
 
