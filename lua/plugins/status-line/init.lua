@@ -9,7 +9,6 @@ local git_branch = require("plugins.status-line.components.git-branch")
 local file_name = require("plugins.status-line.components.file-name")
 local diagnostics = require("plugins.status-line.components.diagnostics")
 local git_diff = require("plugins.status-line.components.git-diff")
-local time = require("plugins.status-line.components.time")
 local package_info_status = require("plugins.status-line.components.package-info-status")
 local lsp_status = require("plugins.status-line.components.lsp-status")
 local inactive_section = require("plugins.status-line.components.inactive-section")
@@ -35,7 +34,7 @@ feline.setup({
                 package_info_status,
                 lsp_status,
             },
-            { time },
+            {},
         },
         inactive = { { inactive_section } },
     },
