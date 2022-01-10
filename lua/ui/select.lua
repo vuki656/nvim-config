@@ -52,6 +52,10 @@ M.__get_icon = function(text)
         return ""
     end
 
+    if string.find(string.lower(text), "import") then
+        return ""
+    end
+
     return ""
 end
 
