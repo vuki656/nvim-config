@@ -37,6 +37,10 @@ return {
                 message = "Starting"
             end
 
+            if status.title == "code_action" then
+                message = "Getting Actions"
+            end
+
             return "  " .. "[" .. status.name .. "] " .. message .. " " .. loading.state.current_spinner
         end
 
