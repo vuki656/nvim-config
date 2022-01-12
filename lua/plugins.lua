@@ -101,9 +101,8 @@ return require("packer").startup(function(use)
     use({
         "nvim-treesitter/nvim-treesitter",
         config = load_file("parser"),
-        requires = {
-            "nvim-treesitter/playground",
-        },
+        run = ":TSUpdate all",
+        requires = { "nvim-treesitter/playground" },
     })
     use({
         "nvim-telescope/telescope.nvim",
