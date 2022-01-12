@@ -26,7 +26,7 @@ return require("packer").startup(function(use)
     use({
         "feline-nvim/feline.nvim",
         config = load_file("status-line"),
-        requires = { "kyazdani42/nvim-web-devicons" },
+        requires = "kyazdani42/nvim-web-devicons",
     })
     use({
         "folke/todo-comments.nvim",
@@ -36,7 +36,7 @@ return require("packer").startup(function(use)
         "goolord/alpha-nvim",
         after = "nvim-tree.lua",
         config = load_file("start-screen"),
-        requires = { "kyazdani42/nvim-web-devicons" },
+        requires = "kyazdani42/nvim-web-devicons",
     })
     use({
         "hrsh7th/nvim-cmp",
@@ -62,7 +62,7 @@ return require("packer").startup(function(use)
     use({
         "jose-elias-alvarez/null-ls.nvim",
         config = load_file("formatter-linter"),
-        requires = { "nvim-lua/plenary.nvim" },
+        requires = "nvim-lua/plenary.nvim",
     })
     use({
         "kazhala/close-buffers.nvim",
@@ -80,12 +80,12 @@ return require("packer").startup(function(use)
         "kyazdani42/nvim-tree.lua",
         after = "nvim-web-devicons",
         config = load_file("file-tree"),
-        requires = { "kyazdani42/nvim-web-devicons" },
+        requires = "kyazdani42/nvim-web-devicons",
     })
     use({
         "lewis6991/gitsigns.nvim",
         config = load_file("git-status"),
-        requires = { "nvim-lua/plenary.nvim" },
+        requires = "nvim-lua/plenary.nvim",
     })
     use("lewis6991/impatient.nvim")
     use({
@@ -95,14 +95,14 @@ return require("packer").startup(function(use)
     use({
         "numtostr/comment.nvim",
         config = load_file("commenting"),
-        requires = { "joosepalviste/nvim-ts-context-commentstring" },
+        requires = "joosepalviste/nvim-ts-context-commentstring",
     })
     use("neovim/nvim-lspconfig")
     use({
         "nvim-treesitter/nvim-treesitter",
         config = load_file("parser"),
         run = ":TSUpdate all",
-        requires = { "nvim-treesitter/playground" },
+        requires = "nvim-treesitter/playground",
     })
     use({
         "nvim-telescope/telescope.nvim",
@@ -131,7 +131,7 @@ return require("packer").startup(function(use)
     use({
         "ruifm/gitlinker.nvim",
         config = load_file("git-linker"),
-        requires = { "nvim-lua/plenary.nvim" },
+        requires = "nvim-lua/plenary.nvim",
     })
     use({
         "rishabhrd/nvim-cheat.sh",
@@ -149,7 +149,7 @@ return require("packer").startup(function(use)
     use({
         "vuki656/package-info.nvim",
         config = load_file("js-package-manager"),
-        requires = { "muniftanjim/nui.nvim" },
+        requires =  "muniftanjim/nui.nvim" ,
     })
     use({
         "wbthomason/packer.nvim",
