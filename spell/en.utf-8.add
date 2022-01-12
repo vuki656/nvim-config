@@ -1130,7 +1130,6 @@ dep
 #ersins
 gmatch
 gsub
-dependancies
 #ackge
 SDKs
 BASEDIR
