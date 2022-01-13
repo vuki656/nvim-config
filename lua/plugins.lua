@@ -149,12 +149,13 @@ return require("packer").startup(function(use)
     use({
         "vuki656/package-info.nvim",
         config = load_file("js-package-manager"),
-        requires =  "muniftanjim/nui.nvim" ,
+        requires = "muniftanjim/nui.nvim",
     })
     use({
         "wbthomason/packer.nvim",
         config = load_file("plugin-manager"),
     })
+    use("wellle/targets.vim")
     use({
         "williamboman/nvim-lsp-installer",
         config = load_file("lsp-installer"),
