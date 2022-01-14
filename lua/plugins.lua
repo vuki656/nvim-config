@@ -146,6 +146,7 @@ return require("packer").startup(function(use)
         "rrethy/vim-illuminate",
         config = load_file("word-highlighter"),
     })
+    use("muniftanjim/nui.nvim")
     use({
         "vuki656/package-info.nvim",
         config = load_file("js-package-manager"),
