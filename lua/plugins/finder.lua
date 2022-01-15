@@ -77,4 +77,9 @@ set_keymap({
 ----------------------------------- COLORS -----------------------------------------------
 ------------------------------------------------------------------------------------------
 
-set_highlight({ group = "TelescopePromptCounter", foreground = colors.orange })
+set_highlight({
+    list = {
+        { group = "TelescopePromptCounter", foreground = colors.orange },
+        { group = "TelescopeResultsLineNr", foreground = colors.white },
+    },
+})
