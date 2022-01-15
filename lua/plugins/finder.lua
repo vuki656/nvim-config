@@ -61,6 +61,11 @@ set_keymap({
             description = "Find variable definitions/implementations in project",
         },
         {
+            key = "<LEADER>hl",
+            actions = actions.highlights,
+            description = "See all registered highlight groups",
+        },
+        {
             key = "<LEADER>gh",
             actions = actions.help_tags,
             description = "Find in manual pages",
