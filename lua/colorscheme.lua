@@ -66,7 +66,7 @@ set_highlight({
         { group = "Boolean", foreground = purple },
         { group = "Character", foreground = purple },
         { group = "Conditional", foreground = red },
-        { group = "Directory", foreground = white, background = background },
+        { group = "Directory", foreground = blue, background = background },
         { group = "Type", foreground = orange },
         { group = "Float", foreground = blue },
         { group = "Ignore", foreground = red },
