@@ -148,7 +148,7 @@ return require("packer").startup(function(use)
     })
     use("muniftanjim/nui.nvim")
     use({
-        "~/Projects/package-info.nvim",
+        "vuki656/package-info.nvim",
         config = load_file("js-package-manager"),
         requires = "muniftanjim/nui.nvim",
     })

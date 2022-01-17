@@ -26,7 +26,17 @@ null_ls.setup({
 
         diagnostics.shellcheck,
         diagnostics.hadolint,
-        diagnostics.yamllint,
+        diagnostics.yamllint.with({
+            extra_args = {
+                "-d",
+                [[{
+                    rules: {
+                        line-length: { max: 140 },
+                        document-start: { present: false }
+                    }
+                }]],
+            },
+        }),
         diagnostics.eslint_d,
         diagnostics.shellcheck,
         diagnostics.luacheck,
