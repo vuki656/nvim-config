@@ -15,12 +15,10 @@ local filetypes = {
 }
 
 if not has_eslint then
-    filetypes = vim.tbl_deep_extend("force", {}, filetypes, {
-        "javascript",
-        "javascriptreact",
-        "typescript",
-        "typescriptreact",
-    })
+    table.insert(filetypes, "javascript")
+    table.insert(filetypes, "javascriptreact")
+    table.insert(filetypes, "typescript")
+    table.insert(filetypes, "typescriptreact")
 end
 
 return formatter.prettier.with({
