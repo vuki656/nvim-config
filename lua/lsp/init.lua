@@ -12,6 +12,7 @@ local setup_lua_server = require("lsp.servers.lua")
 local setup_json_server = require("lsp.servers.json")
 local setup_typescript_server = require("lsp.servers.typescript")
 local setup_yaml_server = require("lsp.servers.yaml")
+local setup_html_server = require("lsp.servers.html")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- SETUP ------------------------------------------------
@@ -40,6 +41,7 @@ lsp_installer.on_server_ready(function(server)
     options = setup_lua_server(options, server.name)
     options = setup_typescript_server(options, server.name)
     options = setup_yaml_server(options, server.name)
+    options = setup_html_server(options, server.name)
 
     server:setup(options)
 end)
