@@ -1,6 +1,8 @@
 local Terminal = require("toggleterm.terminal").Terminal
 local Menu = require("nui.menu")
 
+local reset = require("plugins.terminal.keymaps.reset")
+
 return function()
     local menu_width = 35
 
@@ -82,9 +84,12 @@ return function()
                 })
                 :toggle()
 
-            vim.fn.timer_start(200, function()
+            vim.defer_fn(function()
                 terminal:send("yarn " .. item.command, false)
-            end)
+            end, 400)
+        end,
+        on_close = function()
+            reset()
         end,
     })
 

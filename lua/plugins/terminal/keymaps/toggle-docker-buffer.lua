@@ -1,5 +1,7 @@
 local Terminal = require("toggleterm.terminal").Terminal
 
+local reset = require("plugins.terminal.keymaps.reset")
+
 local docker = Terminal:new({
     cmd = "lazydocker",
     dir = "git_dir",
@@ -17,11 +19,7 @@ local docker = Terminal:new({
         })
     end,
     on_close = function()
-        vim.fn.timer_start(20, function()
-            vim.cmd(":NvimTreeRefresh")
-            vim.cmd(":Gitsigns refresh")
-            vim.cmd(":e")
-        end)
+        reset()
     end,
     hidden = true,
 })
