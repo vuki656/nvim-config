@@ -36,6 +36,11 @@ telescope.load_extension("fzy_native")
 set_keymap({
     list = {
         {
+            key = "<LEADER>pg",
+            actions = actions.git_status,
+            description = "Find changed git lines in project",
+        },
+        {
             key = "<LEADER>pf",
             actions = actions.find_files,
             description = "Find git files in project",
