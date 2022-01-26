@@ -6,7 +6,7 @@ local null_ls = require("null-ls")
 
 local set_keymap = require("utils.set-keymap")
 
-local prettier = require("plugins.formatter-linter.configs.prettier")
+local formatter_prettier = require("plugins.formatter-linter.configs.prettier")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- SETUP ------------------------------------------------
@@ -18,23 +18,29 @@ local actions = null_ls.builtins.code_actions
 
 null_ls.setup({
     sources = {
-        -- Formatters
         formatter.stylua,
         formatter.fixjson,
         formatter.eslint_d,
         formatter.shfmt.with({ extra_args = { "-i=4" } }),
-        prettier.standalone,
-        prettier.with_eslint,
+        formatter_prettier,
 
-        -- Diagnostics
         diagnostics.shellcheck,
         diagnostics.hadolint,
-        diagnostics.yamllint,
+        diagnostics.yamllint.with({
+            extra_args = {
+                "-d",
+                [[{
+                    rules: {
+                        line-length: { max: 140 },
+                        document-start: { present: false }
+                    }
+                }]],
+            },
+        }),
         diagnostics.eslint_d,
         diagnostics.shellcheck,
         diagnostics.luacheck,
 
-        -- Code Actions
         actions.eslint_d,
         actions.gitsigns,
         actions.shellcheck,

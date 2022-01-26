@@ -12,7 +12,7 @@ local set_keymap = require("utils.set-keymap")
 --------------------------------------------------------------------------------------------
 
 -- Custom layout
-startify_theme.opts.layout = {
+startify_theme.config.layout = {
     { type = "padding", val = 1 },
     startify_theme.section.header,
     { type = "padding", val = 2 },
@@ -23,7 +23,7 @@ startify_theme.opts.layout = {
     startify_theme.section.footer,
 }
 
-alpha.setup(startify_theme.opts)
+alpha.setup(startify_theme.config)
 
 -- Manual tree open on startup since built in is broken
 -- only open on empty buffer

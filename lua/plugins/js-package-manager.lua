@@ -23,9 +23,7 @@ set_keymap({
     list = {
         {
             key = "<LEADER>ns",
-            actions = function()
-                package_info.show({ force = true })
-            end,
+            actions = package_info.show,
             description = "Show latest package versions",
         },
         {

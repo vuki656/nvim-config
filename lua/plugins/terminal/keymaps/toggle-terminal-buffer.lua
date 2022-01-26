@@ -1,5 +1,7 @@
 local Terminal = require("toggleterm.terminal").Terminal
 
+local reset = require("plugins.terminal.keymaps.reset")
+
 local terminal = Terminal:new({
     dir = "git_dir",
     direction = "float",
@@ -7,11 +9,7 @@ local terminal = Terminal:new({
         border = "single",
     },
     on_close = function()
-        vim.fn.timer_start(20, function()
-            vim.cmd(":NvimTreeRefresh")
-            vim.cmd(":Gitsigns refresh")
-            vim.cmd(":e")
-        end)
+        reset()
     end,
     hidden = true,
 })

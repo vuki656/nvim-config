@@ -36,6 +36,11 @@ telescope.load_extension("fzy_native")
 set_keymap({
     list = {
         {
+            key = "<LEADER>pg",
+            actions = actions.git_status,
+            description = "Find changed git lines in project",
+        },
+        {
             key = "<LEADER>pf",
             actions = actions.find_files,
             description = "Find git files in project",
@@ -61,6 +66,11 @@ set_keymap({
             description = "Find variable definitions/implementations in project",
         },
         {
+            key = "<LEADER>hl",
+            actions = actions.highlights,
+            description = "See all registered highlight groups",
+        },
+        {
             key = "<LEADER>gh",
             actions = actions.help_tags,
             description = "Find in manual pages",
@@ -72,4 +82,9 @@ set_keymap({
 ----------------------------------- COLORS -----------------------------------------------
 ------------------------------------------------------------------------------------------
 
-set_highlight({ group = "TelescopePromptCounter", foreground = colors.orange })
+set_highlight({
+    list = {
+        { group = "TelescopePromptCounter", foreground = colors.orange },
+        { group = "TelescopeResultsLineNr", foreground = colors.white },
+    },
+})

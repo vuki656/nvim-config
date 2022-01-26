@@ -21,6 +21,8 @@ return function(default_options, server_name)
                         "mouse",
                         "screen",
                         "root",
+                        "table",
+                        "string",
                     },
                     disable = { "lowercase-global" },
                 },

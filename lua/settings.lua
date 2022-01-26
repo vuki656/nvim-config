@@ -115,6 +115,9 @@ vim.cmd([[
 
     " Enable new experimental file detection
     let g:did_load_filetypes = 0
+
+    " Open docs in a vertical split
+    autocmd FileType help wincmd L
 ]])
 
 -- Ignore capitalized word misspelling
