@@ -23,7 +23,7 @@ return function()
 
     -- Create items for the menu
     for command, script in pairs(scripts) do
-        local left_side = "[" .. command .. "] "
+        local left_side = '"' .. command .. '" || '
 
         local text = left_side .. script
 
@@ -45,8 +45,8 @@ return function()
         table.insert(menu_items, Menu.item(item))
     end
 
-    if menu_width > 80 then
-        menu_width = 80
+    if menu_width > 100 then
+        menu_width = 100
     end
 
     local menu = Menu({
