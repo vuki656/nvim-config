@@ -149,6 +149,7 @@ set_highlight({
         { group = "TSKeywordFunction", foreground = red },
         { group = "TSTitle", foreground = red },
         { group = "TSConditional", foreground = purple },
+        { group = "TSLiteral", foreground = green },
         { group = "TSRepeat", foreground = purple },
         { group = "TSKeyword", foreground = purple },
         { group = "TSFunction", foreground = blue },
