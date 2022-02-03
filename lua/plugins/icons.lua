@@ -130,6 +130,11 @@ icons.setup({
             color = "#1e9cef",
             name = "Docker",
         },
+        ["docker-compose.yaml"] = {
+            icon = "",
+            color = "#1e9cef",
+            name = "Docker",
+        },
         [".yml"] = {
             icon = "",
             color = "#ffca28",
