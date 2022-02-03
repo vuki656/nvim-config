@@ -9,4 +9,5 @@ return {
     ["TYPESCRIPT"] = "tsserver",
     ["VIM"] = "vimls",
     ["YAML"] = "yamlls",
+    ["PRISMA"] = "prismals",
 }
