@@ -108,12 +108,6 @@ set_keymap({
             description = "Go to normal mode",
         },
         {
-            modes = { "v" },
-            key = "p",
-            actions = '"0p',
-            description = "Don't delete clipboard content after first paste in visual mode",
-        },
-        {
             key = "gj",
             actions = "o<ESC>'[k",
             description = "Insert empty line below",
