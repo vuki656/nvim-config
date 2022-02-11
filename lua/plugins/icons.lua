@@ -140,6 +140,11 @@ icons.setup({
             color = "#1e9cef",
             name = "Docker",
         },
+        ["Dockerfile.migrations"] = {
+            icon = "",
+            color = "#1e9cef",
+            name = "Docker",
+        },
         [".yml"] = {
             icon = "",
             color = "#ffca28",
