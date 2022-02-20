@@ -6,6 +6,9 @@ return function(default_options, server_name)
     end
 
     local options = {
+        on_attach = function(client)
+            client.resolved_capabilities.document_formatting = false
+        end,
         settings = {
             Lua = {
                 diagnostics = {
