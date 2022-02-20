@@ -17,7 +17,6 @@ return require("packer").startup(function(use)
         "dstein64/vim-startuptime",
         config = load_file("profiler"),
     })
-    -- FIXME: messes up telescope
     use({
         "petertriho/nvim-scrollbar",
         config = load_file("scrollbar"),
