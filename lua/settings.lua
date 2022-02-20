@@ -96,7 +96,6 @@ vim.opt.spelloptions = "camel"
 ------------------------------------ MISC ------------------------------------------------
 ------------------------------------------------------------------------------------------
 
--- TODO: convert to lua
 vim.cmd([[
     " Enable syntax
     syntax on
@@ -110,10 +109,10 @@ vim.cmd([[
     " Detect .luacheckrc as a luafile
     autocmd BufNewFile,BufRead *.luacheckrc set filetype=lua
 
-    " Disable old file detection
+    " Enable new experimental file detection
     let g:do_filetype_lua = 1
 
-    " Enable new experimental file detection
+    " Disable old file detection
     let g:did_load_filetypes = 0
 
     " Open docs in a vertical split

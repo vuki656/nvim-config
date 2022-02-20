@@ -1,6 +1,3 @@
--- TODO: disable bracket pair highlighting
--- TODO: highlight the whole line
-
 local Menu = require("nui.menu")
 
 local event = require("nui.utils.autocmd").event
