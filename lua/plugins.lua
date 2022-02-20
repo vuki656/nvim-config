@@ -22,10 +22,6 @@ return require("packer").startup(function(use)
         "petertriho/nvim-scrollbar",
         config = load_file("scrollbar"),
     })
-    -- use({
-    --     "dstein64/nvim-scrollview",
-    --     config = load_file("scrollbar"),
-    -- })
     use({
         "feline-nvim/feline.nvim",
         config = load_file("status-line"),
