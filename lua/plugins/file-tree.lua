@@ -81,7 +81,6 @@ set_keymap({
         {
             key = "<LEADER>to",
             actions = function()
-                vim.cmd("NvimTreeOpen")
                 vim.cmd("NvimTreeFindFile")
             end,
             description = "Find opened file in tree",
@@ -97,7 +96,6 @@ set_keymap({
             key = "<LEADER>tk",
             actions = function()
                 require("nvim-tree.lib").collapse_all()
-                vim.cmd("NvimTreeOpen")
                 vim.cmd("NvimTreeFindFile")
             end,
             description = "Collapse all tree nodes and focus opened buffer",
