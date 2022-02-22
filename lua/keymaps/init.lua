@@ -6,7 +6,6 @@ local spell_fix = require("ui.spell-fix")
 
 local print_word = require("keymaps.custom.print.word")
 local print_selection = require("keymaps.custom.print.selection")
-
 ------------------------------------------------------------------------------------------
 ----------------------------------- NAVIGATION -------------------------------------------
 ------------------------------------------------------------------------------------------
