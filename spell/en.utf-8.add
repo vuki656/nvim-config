@@ -1882,3 +1882,6 @@ const's
 typegraphql
 amazonaws
 eu
+serializers
+serializer
+mixin
