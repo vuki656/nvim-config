@@ -12,7 +12,12 @@ local set_keymap = require("utils.set-keymap")
 
 treesitter_configs.setup({
     ensure_installed = "all",
-    highlight = { enable = true },
+    highlight = {
+        enable = true,
+        disable = function(_, bufnr)
+            return vim.api.nvim_buf_line_count(bufnr) > 10000
+        end,
+    },
     autotag = { enable = true },
     indent = { enable = true },
     incremental_selection = {
