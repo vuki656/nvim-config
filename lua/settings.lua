@@ -117,6 +117,9 @@ vim.cmd([[
 
     " Open docs in a vertical split
     autocmd FileType help wincmd L
+	
+    " Speeds up macros
+    set lazyredraw
 ]])
 
 -- Ignore capitalized word misspelling
