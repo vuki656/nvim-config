@@ -52,6 +52,7 @@ return require("packer").startup(function(use)
             "hrsh7th/cmp-cmdline",
         },
     })
+    use("jose-elias-alvarez/nvim-lsp-ts-utils")
     use({
         "iamcco/markdown-preview.nvim",
         config = load_file("markdown-preview"),

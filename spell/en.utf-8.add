@@ -1897,3 +1897,7 @@ privatekey
 SHA1
 tmpdir
 nocheck
+#signee
+C2
+PF0
+arraybuffer
