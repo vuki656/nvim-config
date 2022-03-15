@@ -21,6 +21,7 @@ null_ls.setup({
         formatter.stylua,
         formatter.fixjson,
         formatter.eslint_d,
+        formatter.shellharden,
         formatter.shfmt.with({ extra_args = { "-i=4" } }),
         formatter_prettier,
 
