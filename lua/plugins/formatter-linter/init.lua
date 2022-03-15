@@ -40,6 +40,7 @@ null_ls.setup({
         diagnostics.eslint_d,
         diagnostics.shellcheck,
         diagnostics.luacheck,
+        diagnostics.actionlint,
 
         actions.eslint_d,
         actions.gitsigns,
