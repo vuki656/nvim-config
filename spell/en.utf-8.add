@@ -1892,3 +1892,8 @@ Allows
 
 mhassan1
 allows
+servlet
+privatekey
+SHA1
+tmpdir
+nocheck
