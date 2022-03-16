@@ -21,6 +21,7 @@ null_ls.setup({
         formatter.stylua,
         formatter.fixjson,
         formatter.eslint_d,
+        formatter.shellharden,
         formatter.shfmt.with({ extra_args = { "-i=4" } }),
         formatter_prettier,
 
@@ -40,6 +41,7 @@ null_ls.setup({
         diagnostics.eslint_d,
         diagnostics.shellcheck,
         diagnostics.luacheck,
+        diagnostics.actionlint,
 
         actions.eslint_d,
         actions.gitsigns,
