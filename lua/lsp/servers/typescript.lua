@@ -23,14 +23,14 @@ return function(default_options, server_name)
             set_keymap({
                 list = {
                     {
-                        key = "<LEADER>tim",
+                        key = "<LEADER>tfi",
                         actions = function()
                             vim.cmd("TSLspImportAll")
                         end,
                         description = "Import all missing typescript types",
                     },
                     {
-                        key = "<LEADER>trf",
+                        key = "<LEADER>tfr",
                         actions = function()
                             vim.cmd("TSLspRenameFile")
                         end,
