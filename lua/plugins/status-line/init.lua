@@ -11,7 +11,6 @@ local diagnostics = require("plugins.status-line.components.diagnostics")
 local git_diff = require("plugins.status-line.components.git-diff")
 local package_info_status = require("plugins.status-line.components.package-info-status")
 local lsp_status = require("plugins.status-line.components.lsp-status")
-local inactive_section = require("plugins.status-line.components.inactive-section")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- SETUP ------------------------------------------------
@@ -36,16 +35,8 @@ feline.setup({
             },
             {},
         },
-        inactive = { { inactive_section } },
     },
     force_inactive = {
-        filetypes = {
-            "NvimTree",
-            "packer",
-            "alpha",
-            "qf",
-            "help",
-        },
         buftypes = { "terminal" },
         bufnames = {},
     },
