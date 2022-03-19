@@ -92,6 +92,9 @@ vim.opt.spellsuggest = "7"
 -- Support camel case spelling
 vim.opt.spelloptions = "camel"
 
+-- Use only one global statusline
+vim.opt.laststatus = 3
+
 ------------------------------------------------------------------------------------------
 ------------------------------------ MISC ------------------------------------------------
 ------------------------------------------------------------------------------------------
@@ -117,7 +120,7 @@ vim.cmd([[
 
     " Open docs in a vertical split
     autocmd FileType help wincmd L
-	
+
     " Speeds up macros
     set lazyredraw
 
