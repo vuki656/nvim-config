@@ -1,18 +1,18 @@
 local colors = require("utils.colors")
 local loading = require("ui.loading")
 
-local lsp_statuses = nil
+local lsp_status = nil
 
-vim.cmd("autocmd User LspProgressUpdate lua set_lsp_status()")
-
-function _G.set_lsp_status()
-    lsp_statuses = vim.lsp.util.get_progress_messages()
-end
+vim.api.nvim_create_autocmd("User", {
+    callback = function()
+        lsp_status = vim.lsp.util.get_progress_messages()
+    end,
+})
 
 return {
     provider = function()
-        if not vim.tbl_isempty(lsp_statuses or {}) then
-            local status = lsp_statuses[1]
+        if not vim.tbl_isempty(lsp_status or {}) then
+            local status = lsp_status[1]
             local message = status.title
 
             if not loading.state.is_running then

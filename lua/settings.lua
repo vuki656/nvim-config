@@ -95,6 +95,25 @@ vim.opt.spelloptions = "camel"
 -- Use only one global statusline
 vim.opt.laststatus = 3
 
+-- Don't redraw screen when using macros (performance increase)
+vim.opt.lazyredraw = true
+
+------------------------------------------------------------------------------------------
+------------------------------------ AUTO COMMANDS ---------------------------------------
+------------------------------------------------------------------------------------------
+
+-- Open docs in a vertical split
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "help",
+    command = "wincmd L",
+})
+
+-- Detect .luacheckrc as a luafile
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+    pattern = "*.luacheckrc",
+    command = "set filetype=lua",
+})
+
 ------------------------------------------------------------------------------------------
 ------------------------------------ MISC ------------------------------------------------
 ------------------------------------------------------------------------------------------
@@ -109,26 +128,20 @@ vim.cmd([[
     " Don't continue comment when adding a new line above/under comment
     autocmd BufNewFile,BufRead * setlocal formatoptions-=ro
 
-    " Detect .luacheckrc as a luafile
-    autocmd BufNewFile,BufRead *.luacheckrc set filetype=lua
-
     " Enable new experimental file detection
     let g:do_filetype_lua = 1
 
     " Disable old file detection
     let g:did_load_filetypes = 0
 
-    " Open docs in a vertical split
-    autocmd FileType help wincmd L
-
-    " Speeds up macros
-    set lazyredraw
-
     " Disable unused providers
     let g:loaded_perl_provider=0
     let g:loaded_ruby_provider=0
     let g:loaded_python3_provider=0
     let g:loaded_node_provider=0
+
+    " Fix cursor hold
+    let g:cursorhold_updatetime = 100
 ]])
 
 -- Ignore capitalized word misspelling
@@ -139,6 +152,3 @@ vim.cmd([[
 
     autocmd BufRead,BufNewFile * :call IgnoreCamelCaseSpell()
 ]])
-
--- Fix cursor hold
-vim.cmd("let g:cursorhold_updatetime = 100")
