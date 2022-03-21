@@ -10,7 +10,7 @@ local icons = require("nvim-web-devicons")
 
 icons.setup({
     override = {
-        ["schema.prisma"] = {
+        ["prisma"] = {
             icon = "謁",
             color = "#5c6370",
             name = "Prisma",
