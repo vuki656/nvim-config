@@ -41,7 +41,8 @@ null_ls.setup({
         diagnostics.eslint_d,
         diagnostics.shellcheck,
         diagnostics.luacheck,
-        diagnostics.actionlint,
+        -- FIXME: tries to lint all yaml, should only be on github yaml files
+        -- diagnostics.actionlint,
 
         actions.eslint_d,
         actions.gitsigns,
