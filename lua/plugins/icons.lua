@@ -65,6 +65,11 @@ icons.setup({
             color = "#e79627",
             name = "EnvLocal",
         },
+        [".env.ci"] = {
+            icon = "﬛",
+            color = "#e79627",
+            name = "EnvLocal",
+        },
         [".babelrc"] = {
             icon = "",
             color = "#e79627",
