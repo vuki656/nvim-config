@@ -3,6 +3,7 @@ local event = require("nui.utils.autocmd").event
 
 local M = {
     ui = nil,
+    input_width = 35,
 }
 
 --- Setup generic input for use with the editor
@@ -11,6 +12,11 @@ M.setup = function()
     local input_ui = nil
 
     vim.ui.input = function(options, on_confirm)
+        -- Makes sure the width can fit the item text
+        if string.len(options.default) > M.input_width then
+            M.input_width = string.len(options.default) + 1
+        end
+
         M = vim.tbl_deep_extend("force", M, {
             options = options,
             on_confirm = on_confirm,
@@ -45,12 +51,9 @@ M.__generate_ui = function()
     local title = M.options.prompt or "Choose Option"
 
     M.ui = Input({
-        relative = "cursor",
-        position = {
-            row = 1,
-            col = 0,
-        },
-        size = { width = 35 },
+        relative = "editor",
+        position = "50%",
+        size = { width = M.input_width },
         border = {
             style = "rounded",
             highlight = "Normal",
