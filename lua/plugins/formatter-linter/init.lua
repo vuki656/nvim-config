@@ -3,6 +3,7 @@
 -- Link: https://github.com/jose-elias-alvarez/null-ls.nvim
 
 local null_ls = require("null-ls")
+local conditional = require("null-ls.utils").make_conditional_utils()
 
 local set_keymap = require("utils.set-keymap")
 
@@ -40,6 +41,11 @@ null_ls.setup({
         diagnostics.eslint_d,
         diagnostics.shellcheck,
         diagnostics.luacheck,
+        diagnostics.cspell.with({
+            condition = function()
+                return conditional.root_has_file("cspell.config.json")
+            end,
+        }),
         -- FIXME: tries to lint all yaml, should only be on github yaml files
         -- diagnostics.actionlint,
 

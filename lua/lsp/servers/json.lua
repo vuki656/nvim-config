@@ -13,6 +13,10 @@ return function(default_options, server_name)
             json = {
                 schemas = {
                     {
+                        fileMatch = { "cspell.config.json" },
+                        url = "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/packages/cspell-types/cspell.schema.json",
+                    },
+                    {
                         fileMatch = { "*.migration.json" },
                         url = "https://json.schemastore.org/liquibase-3.2.json",
                     },
