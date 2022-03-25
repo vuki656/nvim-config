@@ -17,10 +17,10 @@ return require("packer").startup(function(use)
         "dstein64/vim-startuptime",
         config = load_file("profiler"),
     })
-    use({
-        "petertriho/nvim-scrollbar",
-        config = load_file("scrollbar"),
-    })
+    -- use({
+    --     "petertriho/nvim-scrollbar",
+    --     config = load_file("scrollbar"),
+    -- })
     use({
         "feline-nvim/feline.nvim",
         config = load_file("status-line"),
