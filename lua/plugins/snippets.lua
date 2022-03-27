@@ -24,7 +24,24 @@ luasnip.config.set_config({
 ------------------------------------------------------------------------------------------
 
 luasnip.add_snippets("typescript", {
+    -- Export all from
     create_snippet("ea", format("export * from './{}'", { insert_node(1) })),
+
+    -- Arrow function
+    create_snippet(
+        "ar",
+        format(
+            [[
+({}) => {{
+    {}
+}}
+    ]],
+            {
+                insert_node(1),
+                insert_node(0),
+            }
+        )
+    ),
 })
 
 ------------------------------------------------------------------------------------------
