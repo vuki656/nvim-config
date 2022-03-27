@@ -44,7 +44,10 @@ return require("packer").startup(function(use)
                 "onsails/lspkind-nvim",
                 config = load_file("completion-icons"),
             },
-            "l3mon4d3/LuaSnip",
+            {
+                "l3mon4d3/LuaSnip",
+                config = load_file("snippets"),
+            },
             "hrsh7th/cmp-nvim-lsp",
             "hrsh7th/cmp-buffer",
             "hrsh7th/cmp-path",
