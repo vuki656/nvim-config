@@ -17,10 +17,10 @@ return require("packer").startup(function(use)
         "dstein64/vim-startuptime",
         config = load_file("profiler"),
     })
-    -- use({
-    --     "petertriho/nvim-scrollbar",
-    --     config = load_file("scrollbar"),
-    -- })
+    use({
+        "petertriho/nvim-scrollbar",
+        config = load_file("scrollbar"),
+    })
     use({
         "feline-nvim/feline.nvim",
         config = load_file("status-line"),
@@ -44,12 +44,16 @@ return require("packer").startup(function(use)
                 "onsails/lspkind-nvim",
                 config = load_file("completion-icons"),
             },
-            "l3mon4d3/LuaSnip",
+            {
+                "l3mon4d3/LuaSnip",
+                config = load_file("snippets"),
+            },
             "hrsh7th/cmp-nvim-lsp",
             "hrsh7th/cmp-buffer",
             "hrsh7th/cmp-path",
             "hrsh7th/cmp-nvim-lua",
             "hrsh7th/cmp-cmdline",
+            "saadparwaiz1/cmp_luasnip",
         },
     })
     use("jose-elias-alvarez/nvim-lsp-ts-utils")

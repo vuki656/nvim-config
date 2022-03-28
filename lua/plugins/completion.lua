@@ -38,8 +38,6 @@ cmp.setup({
         ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
-            elseif snippets.expand_or_jumpable() then
-                snippets.expand_or_jump()
             elseif has_words_before() then
                 cmp.complete()
             else
@@ -49,8 +47,6 @@ cmp.setup({
         ["<S-Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
-            elseif snippets.jumpable(-1) then
-                snippets.jump(-1)
             else
                 fallback()
             end
@@ -60,6 +56,10 @@ cmp.setup({
         format = icons.cmp_format(),
     },
     sources = {
+        {
+            name = "luasnip",
+            max_item_count = 2,
+        },
         {
             name = "nvim_lsp",
             max_item_count = 50,
