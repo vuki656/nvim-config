@@ -10,4 +10,6 @@ return {
     ["VIM"] = "vimls",
     ["YAML"] = "yamlls",
     ["PRISMA"] = "prismals",
+    ["XML"] = "lemminx",
+    ["TOML"] = "taplo",
 }
