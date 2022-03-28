@@ -1925,7 +1925,6 @@ laststatus
 wfxr
 cspell
 streetsidesoftware
-usefull/!
 nspname
 pininfarina
 todo's
@@ -1936,3 +1935,8 @@ VINArgs
 VINType
 c2pf0
 lemminx
+dockerfiles
+ensurepip
+ubuntu1
+ossp
+peric
