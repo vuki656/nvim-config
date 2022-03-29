@@ -9,6 +9,7 @@ return require("packer").startup(function(use)
         "ahmedkhalf/project.nvim",
         config = load_file("project-manager"),
     })
+    use("b0o/schemastore.nvim")
     use({
         "chentau/marks.nvim",
         config = load_file("marks"),

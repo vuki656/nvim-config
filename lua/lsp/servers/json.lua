@@ -1,3 +1,5 @@
+local schemastore = require("schemastore")
+
 local SERVERS = require("lsp.utils.servers")
 
 return function(default_options, server_name)
@@ -11,44 +13,12 @@ return function(default_options, server_name)
         end,
         settings = {
             json = {
-                schemas = {
-                    {
-                        fileMatch = { "cspell.config.json" },
-                        url = "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/packages/cspell-types/cspell.schema.json",
-                    },
+                schemas = vim.list_extend({
                     {
                         fileMatch = { "*.migration.json" },
                         url = "https://json.schemastore.org/liquibase-3.2.json",
                     },
-                    {
-                        fileMatch = { "package.json" },
-                        url = "https://json.schemastore.org/package.json",
-                    },
-                    {
-                        fileMatch = { "tsconfig*.json" },
-                        url = "https://json.schemastore.org/tsconfig.json",
-                    },
-                    {
-                        fileMatch = { ".prettier*", "prettier.config.json" },
-                        url = "https://json.schemastore.org/prettierrc.json",
-                    },
-                    {
-                        fileMatch = { ".eslint*" },
-                        url = "https://json.schemastore.org/eslintrc.json",
-                    },
-                    {
-                        fileMatch = { ".babel*" },
-                        url = "https://json.schemastore.org/babelrc.json",
-                    },
-                    {
-                        fileMatch = { "now.json", "vercel.json" },
-                        url = "https://json.schemastore.org/now.json",
-                    },
-                    {
-                        fileMatch = { "nodemon.json" },
-                        url = "https://json.schemastore.org/nodemon.json",
-                    },
-                },
+                }, schemastore.json.schemas()),
             },
         },
     }
