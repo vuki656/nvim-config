@@ -29,29 +29,24 @@ return function(default_options, server_name)
                         url = "https://json.schemastore.org/tsconfig.json",
                     },
                     {
-                        fileMatch = { ".prettierrc", ".prettierrc.json", "prettier.config.json" },
+                        fileMatch = { ".prettier*", "prettier.config.json" },
                         url = "https://json.schemastore.org/prettierrc.json",
                     },
                     {
-                        fileMatch = { ".eslintrc", ".eslintrc.json" },
+                        fileMatch = { ".eslint*" },
                         url = "https://json.schemastore.org/eslintrc.json",
                     },
                     {
-                        fileMatch = { ".babelrc", ".babelrc.json", "babel.config.json" },
+                        fileMatch = { ".babel*" },
                         url = "https://json.schemastore.org/babelrc.json",
                     },
                     {
                         fileMatch = { "now.json", "vercel.json" },
                         url = "https://json.schemastore.org/now.json",
                     },
-
                     {
-                        fileMatch = { "nest-cli.json" },
-                        url = "https://json.schemastore.org/nest-cli.json",
-                    },
-                    {
-                        fileMatch = { "markdownlint.json" },
-                        url = "https://json.schemastore.org/markdownlint.json",
+                        fileMatch = { "nodemon.json" },
+                        url = "https://json.schemastore.org/nodemon.json",
                     },
                 },
             },

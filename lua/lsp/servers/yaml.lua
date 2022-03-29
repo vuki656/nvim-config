@@ -9,14 +9,15 @@ return function(default_options, server_name)
 
     local options = {
         schemas = {
-            ["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] = {
-                "docker-compose*." .. extension,
-            },
-            ["http://json.schemastore.org/github-workflow.json"] = ".github/workflows/*." .. extension,
-            ["http://json.schemastore.org/github-action.json"] = ".github/action." .. extension,
-            ["https://bitbucket.org/atlassianlabs/atlascode/raw/main/resources/schemas/pipelines-schema.json"] = "bitbucket-pipelines."
+            ["https://json.schemastore.org/github-workflow.json"] = ".github/ISSUE_TEMPLATE/**/*" .. extension,
+            ["https://json.schemastore.org/github-funding.json"] = "FUNDING" .. extension,
+            ["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] = "docker-compose*"
                 .. extension,
-            ["https://yarnpkg.com/configuration/yarnrc.json"] = ".yarnrc." .. extension,
+            ["http://json.schemastore.org/github-workflow.json"] = ".github/workflows/**/*" .. extension,
+            ["http://json.schemastore.org/github-action.json"] = ".github/action" .. extension,
+            ["https://bitbucket.org/atlassianlabs/atlascode/raw/main/resources/schemas/pipelines-schema.json"] = "bitbucket-pipelines"
+                .. extension,
+            ["https://yarnpkg.com/configuration/yarnrc.json"] = ".yarnrc" .. extension,
         },
     }
 
