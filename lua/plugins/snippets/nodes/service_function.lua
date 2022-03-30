@@ -1,0 +1,23 @@
+local luasnip = require("luasnip")
+local format = require("luasnip.extras.fmt").fmt
+local repeat_node = require("luasnip.extras").rep
+
+local create_snippet = luasnip.snippet
+local insert_node = luasnip.insert_node
+
+return create_snippet(
+    "sfn",
+    format(
+        [[
+public async {}(input: {}Input): Promise<{}Payload> {{
+    {}
+}}
+    ]],
+        {
+            insert_node(1),
+            insert_node(2),
+            repeat_node(2),
+            insert_node(3),
+        }
+    )
+)

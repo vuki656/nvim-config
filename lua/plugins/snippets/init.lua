@@ -3,13 +3,15 @@
 -- Link: https://github.com/l3mon4d3/LuaSnip
 
 local luasnip = require("luasnip")
-local format = require("luasnip.extras.fmt").fmt
-local repeat_node = require("luasnip.extras").rep
-
-local create_snippet = luasnip.snippet
-local insert_node = luasnip.insert_node
 
 local set_keymap = require("utils.set-keymap")
+
+local console_log_snippet = require("plugins.snippets.nodes.console_log")
+local export_all_snippet = require("plugins.snippets.nodes.export_all")
+local service_function_snippet = require("plugins.snippets.nodes.service_function")
+local resolver_query_snippet = require("plugins.snippets.nodes.resolver_query")
+local resolver_mutation_snippet = require("plugins.snippets.nodes.resolver_mutation")
+local arrow_function_snippet = require("plugins.snippets.nodes.arrow_function")
 
 ------------------------------------------------------------------------------------------
 ------------------------------------ SETUP -----------------------------------------------
@@ -25,27 +27,30 @@ luasnip.config.set_config({
 ------------------------------------------------------------------------------------------
 
 luasnip.add_snippets("typescript", {
-    -- Log
-    create_snippet("clg", format("console.log('{}', {})", { repeat_node(1), insert_node(1) })),
+    console_log_snippet,
+    export_all_snippet,
+    arrow_function_snippet,
+    service_function_snippet,
+    resolver_mutation_snippet,
+    resolver_query_snippet,
+})
 
-    -- Export all from
-    create_snippet("ea", format("export * from './{}'", { insert_node(1) })),
+luasnip.add_snippets("typescriptreact", {
+    console_log_snippet,
+    export_all_snippet,
+    arrow_function_snippet,
+})
 
-    -- Arrow function
-    create_snippet(
-        "ar",
-        format(
-            [[
-({}) => {{
-    {}
-}}
-    ]],
-            {
-                insert_node(1),
-                insert_node(0),
-            }
-        )
-    ),
+luasnip.add_snippets("javascript", {
+    console_log_snippet,
+    export_all_snippet,
+    arrow_function_snippet,
+})
+
+luasnip.add_snippets("javascriptreact", {
+    console_log_snippet,
+    export_all_snippet,
+    arrow_function_snippet,
 })
 
 ------------------------------------------------------------------------------------------
