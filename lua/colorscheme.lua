@@ -136,7 +136,7 @@ set_highlight({
         { group = "healthSuccess", foreground = green },
 
         -- Treesitter
-        { group = "TSException", foreground = red },
+        { group = "TSException", foreground = purple },
         { group = "TSFuncBuiltin", foreground = blue },
         { group = "TSConstant", foreground = orange },
         { group = "TSStringEscape", foreground = orange },
