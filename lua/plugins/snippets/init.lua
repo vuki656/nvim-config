@@ -9,9 +9,15 @@ local set_keymap = require("utils.set-keymap")
 local console_log_snippet = require("plugins.snippets.nodes.console_log")
 local export_all_snippet = require("plugins.snippets.nodes.export_all")
 local service_function_snippet = require("plugins.snippets.nodes.service_function")
+local arrow_function_snippet = require("plugins.snippets.nodes.arrow_function")
+
+-- Typegraphql
 local resolver_query_snippet = require("plugins.snippets.nodes.resolver_query")
 local resolver_mutation_snippet = require("plugins.snippets.nodes.resolver_mutation")
-local arrow_function_snippet = require("plugins.snippets.nodes.arrow_function")
+local resolver_args_snippet = require("plugins.snippets.nodes.resolver_args")
+local resolver_input_snippet = require("plugins.snippets.nodes.resolver_input")
+local resolver_payload_snippet = require("plugins.snippets.nodes.resolver_payload")
+local resolver_type_snippet = require("plugins.snippets.nodes.resolver_type")
 
 ------------------------------------------------------------------------------------------
 ------------------------------------ SETUP -----------------------------------------------
@@ -31,8 +37,14 @@ luasnip.add_snippets("typescript", {
     export_all_snippet,
     arrow_function_snippet,
     service_function_snippet,
+
+    -- Typegraphql
     resolver_mutation_snippet,
     resolver_query_snippet,
+    resolver_args_snippet,
+    resolver_input_snippet,
+    resolver_payload_snippet,
+    resolver_type_snippet,
 })
 
 luasnip.add_snippets("typescriptreact", {
