@@ -7,6 +7,7 @@ local luasnip = require("luasnip")
 local set_keymap = require("utils.set-keymap")
 
 local console_log_snippet = require("plugins.snippets.nodes.console_log")
+local console_log_stringify_snippet = require("plugins.snippets.nodes.console_log_stringify")
 local export_all_snippet = require("plugins.snippets.nodes.export_all")
 local service_function_snippet = require("plugins.snippets.nodes.service_function")
 local arrow_function_snippet = require("plugins.snippets.nodes.arrow_function")
@@ -34,6 +35,7 @@ luasnip.config.set_config({
 
 luasnip.add_snippets("typescript", {
     console_log_snippet,
+    console_log_stringify_snippet,
     export_all_snippet,
     arrow_function_snippet,
     service_function_snippet,
@@ -49,18 +51,21 @@ luasnip.add_snippets("typescript", {
 
 luasnip.add_snippets("typescriptreact", {
     console_log_snippet,
+    console_log_stringify_snippet,
     export_all_snippet,
     arrow_function_snippet,
 })
 
 luasnip.add_snippets("javascript", {
     console_log_snippet,
+    console_log_stringify_snippet,
     export_all_snippet,
     arrow_function_snippet,
 })
 
 luasnip.add_snippets("javascriptreact", {
     console_log_snippet,
+    console_log_stringify_snippet,
     export_all_snippet,
     arrow_function_snippet,
 })

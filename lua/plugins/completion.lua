@@ -60,6 +60,7 @@ cmp.setup({
             name = "nvim_lsp",
             max_item_count = 50,
         },
+        { name = "luasnip" },
         {
             name = "buffer",
             max_item_count = 15,
