@@ -6,29 +6,30 @@ local create_snippet = luasnip.snippet
 local insert_node = luasnip.insert_node
 
 return create_snippet(
-    "rpa",
+    "rfcp",
     format(
         [[
-import {{
-    Field,
-    ObjectType,
-}} from 'type-graphql'
+import type {{ FunctionComponent }} from 'react'
 
-import {{ {}Type }} from '../types'
+import type {{ {}Props }} from './{}.props'
 
-@ObjectType('{}Payload')
-export class {}Payload {{
-    @Field(() => {}Type)
-    public {}: {}Type
+export const {}: FunctionComponent<{}Props> = (props) => {{
+    const {{
+        {}
+    }} = props
+
+    return (
+        {}
+    )
 }}
     ]],
         {
             insert_node(1),
+            repeat_node(1),
+            repeat_node(1),
+            repeat_node(1),
             insert_node(2),
-            repeat_node(2),
-            repeat_node(1),
             insert_node(3),
-            repeat_node(1),
         }
     )
 )

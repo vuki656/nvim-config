@@ -5,7 +5,6 @@ local repeat_node = require("luasnip.extras").rep
 local create_snippet = luasnip.snippet
 local insert_node = luasnip.insert_node
 
--- Resolver mutation
 return create_snippet(
     "rty",
     format(
