@@ -25,6 +25,8 @@ return formatter.prettier.with({
     filetypes = filetypes,
     args = {
         "--stdin-filepath",
+        "--tab-width=4",
+        "--config-precedence=prefer-file",
         "$FILENAME",
     },
 })
