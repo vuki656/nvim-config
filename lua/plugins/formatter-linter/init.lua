@@ -65,5 +65,5 @@ null_ls.setup({
 set_keymap({
     key = "<LEADER>f",
     actions = vim.lsp.buf.formatting,
-    description = "Run formatter and format code",
+    description = "Format code",
 })
