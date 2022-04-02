@@ -46,8 +46,11 @@ null_ls.setup({
                 return conditional.root_has_file("cspell.config.json")
             end,
         }),
-        -- FIXME: tries to lint all yaml, should only be on github yaml files
-        -- diagnostics.actionlint,
+        diagnostics.actionlint.with({
+            runtime_condition = function(params)
+                return params.bufname:find(vim.pesc(".github/workflows")) ~= nil
+            end,
+        }),
 
         actions.eslint_d,
         actions.gitsigns,
