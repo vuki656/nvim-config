@@ -20,6 +20,9 @@ local resolver_input_snippet = require("plugins.snippets.nodes.resolver_input")
 local resolver_payload_snippet = require("plugins.snippets.nodes.resolver_payload")
 local resolver_type_snippet = require("plugins.snippets.nodes.resolver_type")
 
+-- React
+local react_element = require("plugins.snippets.nodes.react_element")
+
 ------------------------------------------------------------------------------------------
 ------------------------------------ SETUP -----------------------------------------------
 ------------------------------------------------------------------------------------------
@@ -54,6 +57,7 @@ luasnip.add_snippets("typescriptreact", {
     console_log_stringify_snippet,
     export_all_snippet,
     arrow_function_snippet,
+    react_element,
 })
 
 luasnip.add_snippets("javascript", {
@@ -68,6 +72,7 @@ luasnip.add_snippets("javascriptreact", {
     console_log_stringify_snippet,
     export_all_snippet,
     arrow_function_snippet,
+    react_element,
 })
 
 ------------------------------------------------------------------------------------------
