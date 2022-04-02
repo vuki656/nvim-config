@@ -6,11 +6,13 @@ local luasnip = require("luasnip")
 
 local set_keymap = require("utils.set-keymap")
 
+-- JS/TS
 local console_log_snippet = require("plugins.snippets.nodes.console_log")
 local console_log_stringify_snippet = require("plugins.snippets.nodes.console_log_stringify")
 local export_all_snippet = require("plugins.snippets.nodes.export_all")
 local service_function_snippet = require("plugins.snippets.nodes.service_function")
 local arrow_function_snippet = require("plugins.snippets.nodes.arrow_function")
+local arrow_function_full_snippet = require("plugins.snippets.nodes.arrow_function_full")
 local type_snippet = require("plugins.snippets.nodes.type")
 
 -- Typegraphql
@@ -45,6 +47,7 @@ luasnip.add_snippets("typescript", {
     console_log_stringify_snippet,
     export_all_snippet,
     arrow_function_snippet,
+    arrow_function_full_snippet,
     service_function_snippet,
     type_snippet,
 
@@ -63,6 +66,7 @@ luasnip.add_snippets("typescriptreact", {
     console_log_stringify_snippet,
     export_all_snippet,
     arrow_function_snippet,
+    arrow_function_full_snippet,
     type_snippet,
 
     -- React
@@ -77,6 +81,7 @@ luasnip.add_snippets("javascript", {
     console_log_stringify_snippet,
     export_all_snippet,
     arrow_function_snippet,
+    arrow_function_full_snippet,
     type_snippet,
 })
 
@@ -86,6 +91,7 @@ luasnip.add_snippets("javascriptreact", {
     console_log_stringify_snippet,
     export_all_snippet,
     arrow_function_snippet,
+    arrow_function_full_snippet,
     type_snippet,
 
     -- React
