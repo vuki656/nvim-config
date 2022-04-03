@@ -26,7 +26,7 @@ return {
             end
 
             if status.title == "diagnostics" then
-                message = "Analizing"
+                message = "Analyzing"
             end
 
             if status.title == "formatting" then
