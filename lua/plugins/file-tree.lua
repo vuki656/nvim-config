@@ -30,7 +30,11 @@ vim.g.nvim_tree_icons = {
 }
 
 -- Set where git appears
-vim.g.nvim_tree_show_icons = { git = 0, folders = 1, files = 1 }
+vim.g.nvim_tree_show_icons = {
+    git = 0,
+    folders = 1,
+    files = 1,
+}
 
 -- Don't highlight any files
 vim.g.nvim_tree_special_files = {}
