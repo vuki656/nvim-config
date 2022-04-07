@@ -50,12 +50,6 @@ vim.opt.termguicolors = true
 -- Enable changing buffers without saving
 vim.opt.hidden = true
 
--- Scroll offset
-vim.opt.scrolloff = 15
-
--- Scroll amount
-vim.opt.scroll = 15
-
 -- Ignore case when searching
 vim.opt.ignorecase = true
 
@@ -97,6 +91,12 @@ vim.opt.laststatus = 3
 
 -- Don't redraw screen when using macros (performance increase)
 vim.opt.lazyredraw = true
+
+-- Scroll offset
+vim.opt.scrolloff = 15
+
+-- Scroll amount
+vim.opt.scroll = 15
 
 ------------------------------------------------------------------------------------------
 ------------------------------------ AUTO COMMANDS ---------------------------------------
