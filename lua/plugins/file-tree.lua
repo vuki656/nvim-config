@@ -10,9 +10,6 @@ local set_keymap = require("utils.set-keymap")
 ----------------------------------- CONFIG -----------------------------------------------
 ------------------------------------------------------------------------------------------
 
--- Display indent markers
-vim.g.nvim_tree_indent_markers = 1
-
 -- Display git status in file names
 vim.g.nvim_tree_git_hl = 1
 
@@ -39,10 +36,14 @@ vim.g.nvim_tree_show_icons = {
 -- Don't highlight any files
 vim.g.nvim_tree_special_files = {}
 
--- NOTE: Has to be imported here because of the compatibility with the old config
 require("nvim-tree").setup({
     view = {
         width = 40,
+    },
+    renderer = {
+        indent_markers = {
+            enable = true,
+        },
     },
 })
 
