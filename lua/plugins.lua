@@ -139,11 +139,6 @@ return require("packer").startup(function(use)
         requires = "nvim-lua/plenary.nvim",
     })
     use({
-        "rishabhrd/nvim-cheat.sh",
-        config = load_file("cheatsheat"),
-        requires = "RishabhRD/popfix",
-    })
-    use({
         "theprimeagen/harpoon",
         config = load_file("bookmarks"),
     })
