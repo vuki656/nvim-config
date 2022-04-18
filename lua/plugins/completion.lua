@@ -56,9 +56,7 @@ cmp.setup({
         format = icons.cmp_format(),
     },
     sources = {
-        {
-            name = "nvim_lsp",
-        },
+        { name = "nvim_lsp" },
         { name = "luasnip" },
         {
             name = "buffer",
@@ -92,6 +90,7 @@ cmp.setup.cmdline(":", {
     sources = {
         { name = "cmdline" },
     },
+    mapping = cmp.mapping.preset.cmdline(),
 })
 
 -- Buffer source for search
@@ -99,6 +98,7 @@ cmp.setup.cmdline("/", {
     sources = {
         { name = "buffer" },
     },
+    mapping = cmp.mapping.preset.cmdline(),
 })
 
 --------------------------------------------------------------------------------------------
