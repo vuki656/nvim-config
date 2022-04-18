@@ -42,7 +42,7 @@ return require("packer").startup(function(use)
         config = load_file("completion"),
         requires = {
             {
-                "onsails/lspkind-nvim",
+                "onsails/lspkind.nvim",
                 config = load_file("completion-icons"),
             },
             {
