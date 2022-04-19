@@ -19,5 +19,6 @@ indent_blankline.setup({
         "toggleterm",
         "help",
         "null-ls-info",
+        "",
     },
 })
