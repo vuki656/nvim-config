@@ -15,7 +15,7 @@ treesitter_configs.setup({
     highlight = {
         enable = true,
         disable = function(_, bufnr)
-            return vim.api.nvim_buf_line_count(bufnr) > 10000
+            return vim.api.nvim_buf_line_count(bufnr) > 5000
         end,
     },
     autotag = { enable = true },
