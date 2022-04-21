@@ -38,7 +38,7 @@ vim.g.nvim_tree_special_files = {}
 
 require("nvim-tree").setup({
     view = {
-        width = 50,
+        width = 60,
     },
     renderer = {
         indent_markers = {
