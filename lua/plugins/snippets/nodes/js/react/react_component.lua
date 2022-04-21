@@ -8,9 +8,9 @@ return create_snippet(
     "rfc",
     format(
         [[
-import type {{ FunctionComponent }} from 'react'
+import * as React from 'react'
 
-export const {}: FunctionComponent = () => {{
+export const {}: React.FunctionComponent = () => {{
     return (
         {}
     )
