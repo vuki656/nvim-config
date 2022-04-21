@@ -18,6 +18,7 @@ local diagnostics = null_ls.builtins.diagnostics
 local actions = null_ls.builtins.code_actions
 
 null_ls.setup({
+    default_timeout = 20000,
     sources = {
         formatter.stylua,
         formatter.fixjson,
