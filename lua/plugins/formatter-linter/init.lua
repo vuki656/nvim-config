@@ -17,10 +17,8 @@ local formatter = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 local actions = null_ls.builtins.code_actions
 
-local TIMEOUT = 20000
-
 null_ls.setup({
-    default_timeout = TIMEOUT,
+    default_timeout = 20000,
     sources = {
         formatter.stylua,
         formatter.fixjson,
