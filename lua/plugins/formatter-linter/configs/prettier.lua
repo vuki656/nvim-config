@@ -12,6 +12,7 @@ local filetypes = {
     "yaml",
     "markdown",
     "json",
+    "graphql",
 }
 
 if not has_eslint then
