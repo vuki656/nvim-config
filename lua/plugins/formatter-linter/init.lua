@@ -26,7 +26,7 @@ null_ls.setup({
         formatter.shfmt.with({ extra_args = { "-i=4" } }),
         formatter_prettier,
 
-        diagnostics.shellcheck,
+        diagnostics.shellcheck.with({ extra_args = { "-e SC2034" } }),
         diagnostics.hadolint,
         diagnostics.yamllint.with({
             extra_args = {
@@ -40,7 +40,6 @@ null_ls.setup({
             },
         }),
         diagnostics.eslint_d,
-        diagnostics.shellcheck,
         diagnostics.luacheck,
         diagnostics.cspell.with({
             condition = function()
