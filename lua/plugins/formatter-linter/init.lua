@@ -22,7 +22,7 @@ null_ls.setup({
     sources = {
         formatter.stylua,
         formatter.fixjson,
-        formatter.eslint_d,
+        formatter.eslint_d.with({ extra_args = { "--cache" } }),
         formatter.shfmt.with({ extra_args = { "-i=4" } }),
         formatter_prettier,
 
