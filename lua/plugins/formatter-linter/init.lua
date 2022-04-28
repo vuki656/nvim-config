@@ -53,7 +53,6 @@ null_ls.setup({
         }),
 
         actions.eslint_d,
-        actions.gitsigns,
         actions.shellcheck,
     },
 })
