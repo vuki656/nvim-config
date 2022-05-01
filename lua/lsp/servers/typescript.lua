@@ -5,10 +5,11 @@ local capabilities = require("lsp.utils.capabilities")
 
 typescript.setup({
     disable_formatting = true,
-    debug = true,
     server = {
         capabilities = capabilities,
-        on_attach = function()
+        on_attach = function(client)
+            client.server_capabilities.document_formatting = false
+
             set_keymap({
                 list = {
                     {
