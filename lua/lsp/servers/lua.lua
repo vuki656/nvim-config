@@ -1,37 +1,32 @@
-local SERVERS = require("lsp.utils.servers")
+local lsp = require("lspconfig")
 
-return function(default_options, server_name)
-    if server_name ~= SERVERS.LUA then
-        return default_options
-    end
+local capabilities = require("lsp.utils.capabilities")
 
-    local options = {
-        on_attach = function(client)
-            client.resolved_capabilities.document_formatting = false
-        end,
-        settings = {
-            Lua = {
-                diagnostics = {
-                    enable = true,
-                    globals = {
-                        "vim",
-                        "describe",
-                        "it",
-                        "awesome",
-                        "client",
-                        "before_each",
-                        "after_each",
-                        "mouse",
-                        "screen",
-                        "root",
-                        "table",
-                        "string",
-                    },
-                    disable = { "lowercase-global" },
+lsp.sumneko_lua.setup({
+    capabilities = capabilities,
+    on_attach = function(client)
+        client.server_capabilities.document_formatting = false
+    end,
+    settings = {
+        Lua = {
+            diagnostics = {
+                enable = true,
+                globals = {
+                    "vim",
+                    "describe",
+                    "it",
+                    "awesome",
+                    "client",
+                    "before_each",
+                    "after_each",
+                    "mouse",
+                    "screen",
+                    "root",
+                    "table",
+                    "string",
                 },
+                disable = { "lowercase-global" },
             },
         },
-    }
-
-    return vim.tbl_deep_extend("force", {}, default_options, options)
-end
+    },
+})

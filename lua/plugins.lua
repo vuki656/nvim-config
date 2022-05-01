@@ -159,10 +159,7 @@ return require("packer").startup(function(use)
         config = load_file("plugin-manager"),
     })
     use("wellle/targets.vim")
-    use({
-        "williamboman/nvim-lsp-installer",
-        config = load_file("lsp-installer"),
-    })
+    use("williamboman/nvim-lsp-installer")
     use("windwp/nvim-ts-autotag")
     use({
         "windwp/nvim-autopairs",

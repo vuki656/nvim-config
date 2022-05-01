@@ -1,15 +1,10 @@
-local SERVERS = require("lsp.utils.servers")
+local lsp = require("lspconfig")
 
-return function(default_options, server_name)
-    if server_name ~= SERVERS.YAML then
-        return default_options
-    end
+local capabilities = require("lsp.utils.capabilities")
 
-    local options = {
-        schemaStore = {
-            enable = true,
-        },
-    }
-
-    return vim.tbl_deep_extend("force", {}, default_options, options)
-end
+lsp.yamlls.setup({
+    capabilities = capabilities,
+    schemaStore = {
+        enable = true,
+    },
+})

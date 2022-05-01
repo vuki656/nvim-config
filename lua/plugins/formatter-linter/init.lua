@@ -63,6 +63,8 @@ null_ls.setup({
 
 set_keymap({
     key = "<LEADER>f",
-    actions = vim.lsp.buf.formatting,
+    actions = function()
+        vim.lsp.buf.format({ async = true })
+    end,
     description = "Format code",
 })

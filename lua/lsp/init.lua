@@ -4,47 +4,26 @@
 
 local lsp_installer = require("nvim-lsp-installer")
 
-local capabilities = require("lsp.utils.capabilities")
 local set_keymap = require("utils.set-keymap")
-local SERVERS = require("lsp.utils.servers")
-
-local setup_lua_server = require("lsp.servers.lua")
-local setup_json_server = require("lsp.servers.json")
-local setup_typescript_server = require("lsp.servers.typescript")
-local setup_yaml_server = require("lsp.servers.yaml")
-local setup_html_server = require("lsp.servers.html")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- SETUP ------------------------------------------------
 ------------------------------------------------------------------------------------------
 
--- Install missing servers
-for _, name in pairs(SERVERS) do
-    local is_server_found, server = lsp_installer.get_server(name)
+-- Setup preparation for lsp servers to be configured
+lsp_installer.setup({
+    automatic_installation = true,
+    ui = {
+        icons = {
+            server_installed = "",
+            server_pending = "",
+            server_uninstalled = "",
+        },
+    },
+})
 
-    if is_server_found then
-        if not server:is_installed() then
-            print("Installing LSP: " .. name)
-
-            server:install()
-        end
-    end
-end
-
--- Setup each server individually
-lsp_installer.on_server_ready(function(server)
-    local options = {
-        capabilities = capabilities,
-    }
-
-    options = setup_json_server(options, server.name)
-    options = setup_lua_server(options, server.name)
-    options = setup_typescript_server(options, server.name)
-    options = setup_yaml_server(options, server.name)
-    options = setup_html_server(options, server.name)
-
-    server:setup(options)
-end)
+-- Has to be after lsp_installer as it prepares the server before they can be started
+require("lsp.servers")
 
 -- Setup server diagnostics
 vim.diagnostic.config({
