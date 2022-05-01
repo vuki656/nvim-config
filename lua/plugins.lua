@@ -58,7 +58,7 @@ return require("packer").startup(function(use)
             "saadparwaiz1/cmp_luasnip",
         },
     })
-    use("jose-elias-alvarez/nvim-lsp-ts-utils")
+    use("jose-elias-alvarez/typescript.nvim")
     use({
         "iamcco/markdown-preview.nvim",
         config = load_file("markdown-preview"),
