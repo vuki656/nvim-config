@@ -1,3 +1,5 @@
+local lsp_utils = require("lspconfig.util")
+
 local typescript = require("typescript")
 
 local set_keymap = require("utils.set-keymap")
@@ -7,6 +9,7 @@ typescript.setup({
     disable_formatting = true,
     server = {
         capabilities = capabilities,
+        root_dir = lsp_utils.root_pattern(".git"),
         on_attach = function(client)
             client.server_capabilities.document_formatting = false
 
