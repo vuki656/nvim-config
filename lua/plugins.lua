@@ -25,7 +25,6 @@ return require("packer").startup(function(use)
     use({
         "feline-nvim/feline.nvim",
         config = load_file("status-line"),
-        branch = "develop",
         requires = "kyazdani42/nvim-web-devicons",
     })
     use({
