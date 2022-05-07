@@ -297,5 +297,5 @@ set_keymap({
 set_terminal_keymap({
     key = "gim",
     actions = "<C-\\><C-n>",
-    description = "Go to normal mode in terminal",
+    description = "Go to insert mode in terminal",
 })
