@@ -206,10 +206,7 @@ set_keymap({
         },
         {
             key = "<LEADER>rn",
-            actions = function()
-                vim.api.nvim_input("l")
-                vim.lsp.buf.rename()
-            end,
+            actions = vim.lsp.buf.rename,
             description = "Rename variable",
         },
         {
