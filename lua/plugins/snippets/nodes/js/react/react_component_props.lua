@@ -11,7 +11,7 @@ return create_snippet(
         [[
 import * as React from 'react'
 
-import type {{ {}Props }} from './{}.props'
+import type {{ {}Props }} from './{}.types'
 
 export const {}: React.FunctionComponent<{}Props> = (props) => {{
     const {{
