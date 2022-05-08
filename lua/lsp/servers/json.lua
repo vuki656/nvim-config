@@ -15,6 +15,10 @@ lsp.jsonls.setup({
                     fileMatch = { "*.migration.json" },
                     url = "https://json.schemastore.org/liquibase-3.2.json",
                 },
+                {
+                    fileMatch = { "turbo.json" },
+                    url = "https://turborepo.org/schema.json",
+                },
             }, schemastore.json.schemas()),
         },
     },
