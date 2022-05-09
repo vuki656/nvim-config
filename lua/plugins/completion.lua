@@ -75,12 +75,12 @@ cmp.setup({
             name = "nvim_lua",
             max_item_count = 20,
         },
-        sorting = {
-            comparators = {
-                function(...)
-                    return buffer:compare_locality(...)
-                end,
-            },
+    },
+    sorting = {
+        comparators = {
+            function(...)
+                return buffer:compare_locality(...)
+            end,
         },
     },
 })
