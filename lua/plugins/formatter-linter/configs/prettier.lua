@@ -1,8 +1,6 @@
 local null_ls = require("null-ls")
 local conditional = require("null-ls.utils").make_conditional_utils()
 
-local formatter = null_ls.builtins.formatting
-
 local has_eslint = conditional.root_has_file(".eslintrc.js") or conditional.root_has_file(".eslintrc.json")
 
 local filetypes = {
@@ -22,7 +20,7 @@ if not has_eslint then
     table.insert(filetypes, "typescriptreact")
 end
 
-return formatter.prettier.with({
+local formatter = null_ls.builtins.formatting.prettier.with({
     filetypes = filetypes,
     args = {
         "--stdin-filepath",
@@ -31,3 +29,7 @@ return formatter.prettier.with({
         "$FILENAME",
     },
 })
+
+return {
+    formatter = formatter
+}

@@ -7,7 +7,8 @@ local conditional = require("null-ls.utils").make_conditional_utils()
 
 local set_keymap = require("utils.set-keymap")
 
-local formatter_prettier = require("plugins.formatter-linter.configs.prettier")
+local prettier = require("plugins.formatter-linter.configs.prettier")
+local eslint = require("plugins.formatter-linter.configs.eslint")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- SETUP ------------------------------------------------
@@ -22,9 +23,9 @@ null_ls.setup({
     sources = {
         formatter.stylua,
         formatter.fixjson,
-        formatter.eslint_d.with({ extra_args = { "--cache" } }),
         formatter.shfmt.with({ extra_args = { "-i=4" } }),
-        formatter_prettier,
+        prettier.formatter,
+        eslint.formatter,
 
         diagnostics.shellcheck.with({ extra_args = { "-e SC2034" } }),
         diagnostics.hadolint,
@@ -39,7 +40,7 @@ null_ls.setup({
                 }]],
             },
         }),
-        diagnostics.eslint_d,
+        eslint.diagnostics,
         diagnostics.luacheck,
         diagnostics.cspell.with({
             condition = function()
