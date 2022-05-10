@@ -45,6 +45,11 @@ icons.setup({
             color = "#cc3534",
             name = "PackageJson",
         },
+        ["package-lock.json"] = {
+            icon = "",
+            color = "#cc3534",
+            name = "PackageLockJson",
+        },
         [".npmrc"] = {
             icon = "",
             color = "#cc3534",
