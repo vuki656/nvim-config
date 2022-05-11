@@ -76,13 +76,14 @@ cmp.setup({
             max_item_count = 20,
         },
     },
-    sorting = {
-        comparators = {
-            function(...)
-                return buffer:compare_locality(...)
-            end,
-        },
-    },
+    -- It shouldn't mix all the categories
+    -- sorting = {
+    --     comparators = {
+    --         function(...)
+    --             return buffer:compare_locality(...)
+    --         end,
+    --     },
+    -- },
 })
 
 -- Command source for commands
