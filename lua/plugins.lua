@@ -59,9 +59,8 @@ return require("packer").startup(function(use)
     })
     use("jose-elias-alvarez/typescript.nvim")
     use({
-        "iamcco/markdown-preview.nvim",
+        "davidgranstrom/nvim-markdown-preview",
         config = load_file("markdown-preview"),
-        run = [[sh -c 'cd app && rm yarn.lock && yarn install']],
     })
     use({
         "jose-elias-alvarez/null-ls.nvim",
