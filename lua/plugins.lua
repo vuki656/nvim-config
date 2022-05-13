@@ -11,7 +11,7 @@ return require("packer").startup(function(use)
     })
     use("b0o/schemastore.nvim")
     use({
-        "chentau/marks.nvim",
+        "chentoast/marks.nvim",
         config = load_file("marks"),
     })
     use({
