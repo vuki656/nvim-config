@@ -16,7 +16,7 @@ import {{
 
 import {{ BaseType }} from '#shared/type-graphql-types'
 
-@ObjectType('{}Type')
+@ObjectType()
 export class {}Type extends BaseType {{
     @Field(() => {})
     public {}: {}
@@ -24,7 +24,6 @@ export class {}Type extends BaseType {{
     ]],
         {
             insert_node(1),
-            repeat_node(1),
             insert_node(2),
             insert_node(3),
             insert_node(4),

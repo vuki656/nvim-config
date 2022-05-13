@@ -15,7 +15,7 @@ import {{
     InputType,
 }} from 'type-graphql'
 
-@InputType('{}Input')
+@InputType()
 export class {}Input {{
     @Field(() => {})
     public {}: {}
@@ -23,7 +23,6 @@ export class {}Input {{
     ]],
         {
             insert_node(1),
-            repeat_node(1),
             insert_node(2),
             insert_node(3),
             insert_node(4),

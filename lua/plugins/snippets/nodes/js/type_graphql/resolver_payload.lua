@@ -16,7 +16,7 @@ import {{
 
 import {{ {}Type }} from '../types'
 
-@ObjectType('{}Payload')
+@ObjectType()
 export class {}Payload {{
     @Field(() => {}Type)
     public {}: {}Type
@@ -25,7 +25,6 @@ export class {}Payload {{
         {
             insert_node(1),
             insert_node(2),
-            repeat_node(2),
             repeat_node(1),
             insert_node(3),
             repeat_node(1),
