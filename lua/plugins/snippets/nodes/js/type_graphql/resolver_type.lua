@@ -1,12 +1,11 @@
 local luasnip = require("luasnip")
 local format = require("luasnip.extras.fmt").fmt
-local repeat_node = require("luasnip.extras").rep
 
 local create_snippet = luasnip.snippet
 local insert_node = luasnip.insert_node
 
 return create_snippet(
-    "rty",
+    "ret",
     format(
         [[
 import {{
@@ -16,7 +15,7 @@ import {{
 
 import {{ BaseType }} from '#shared/type-graphql-types'
 
-@ObjectType()
+@ObjectType({{ implements: BaseType }})
 export class {}Type extends BaseType {{
     @Field(() => {})
     public {}: {}

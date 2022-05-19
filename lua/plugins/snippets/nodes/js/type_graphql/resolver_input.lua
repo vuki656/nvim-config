@@ -5,7 +5,7 @@ local create_snippet = luasnip.snippet
 local insert_node = luasnip.insert_node
 
 return create_snippet(
-    "rin",
+    "rei",
     format(
         [[
 import {{
