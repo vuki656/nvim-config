@@ -10,6 +10,7 @@ lsp.jsonls.setup({
     end,
     settings = {
         json = {
+            validate = { enable = true },
             schemas = vim.list_extend({
                 {
                     fileMatch = { "*.migration.json" },
