@@ -94,7 +94,7 @@ set_highlight({
         { group = "PMenuSbar", background = grey_light },
         { group = "PmenuSel", background = green, foreground = background },
         { group = "LineNr", background = background, foreground = grey },
-        { group = "VertSplit", background = background_light, foreground = background },
+        { group = "WinSeparator", background = background, foreground = grey_light },
         { group = "Visual", background = grey_light },
         { group = "MatchParen", foreground = red, background = background },
         { group = "ErrorMsg", foreground = red, background = background },
