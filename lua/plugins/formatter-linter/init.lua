@@ -40,7 +40,7 @@ null_ls.setup({
                 }]],
             },
         }),
-        eslint.diagnostics,
+        -- eslint.diagnostics,
         diagnostics.luacheck,
         diagnostics.cspell.with({
             condition = function()
