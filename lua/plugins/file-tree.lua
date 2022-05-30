@@ -10,22 +10,6 @@ local set_keymap = require("utils.set-keymap")
 ----------------------------------- CONFIG -----------------------------------------------
 ------------------------------------------------------------------------------------------
 
--- Display git status in file names
-vim.g.nvim_tree_git_hl = 1
-
--- Custom icons
-vim.g.nvim_tree_icons = {
-    default = "",
-    symlink = "",
-    folder = {
-        default = "",
-        open = "ﱮ",
-        empty_open = "ﱮ",
-        empty = "",
-        symlink = "",
-    },
-}
-
 -- Set where git appears
 vim.g.nvim_tree_show_icons = {
     git = 0,
@@ -33,14 +17,14 @@ vim.g.nvim_tree_show_icons = {
     files = 1,
 }
 
--- Don't highlight any files
-vim.g.nvim_tree_special_files = {}
-
 require("nvim-tree").setup({
     view = {
         width = 60,
     },
+    respect_buf_cwd = true,
     renderer = {
+        special_files = {},
+        highlight_git = true,
         indent_markers = {
             enable = true,
         },
