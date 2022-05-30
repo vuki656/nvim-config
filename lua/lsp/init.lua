@@ -12,6 +12,7 @@ local set_keymap = require("utils.set-keymap")
 
 -- Setup preparation for lsp servers to be configured
 lsp_installer.setup({
+    automatic_installation = true,
     ui = {
         icons = {
             server_installed = "",
