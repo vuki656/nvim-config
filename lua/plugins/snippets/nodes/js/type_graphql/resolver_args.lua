@@ -10,7 +10,6 @@ return create_snippet(
         [[
 import {{
     Field,
-    ID,
     InputType,
 }} from 'type-graphql'
 
