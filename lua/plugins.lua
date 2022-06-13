@@ -74,6 +74,7 @@ return require("packer").startup({
         })
         use({
             "karb94/neoscroll.nvim",
+            commit = "6fca0bd5899e91d3e2deab30172d298b87ba5a38",
             config = load_file("smooth-scroll"),
         })
         use({
