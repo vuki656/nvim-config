@@ -150,7 +150,6 @@ return require("packer").startup({
         use("muniftanjim/nui.nvim")
         use({
             "vuki656/package-info.nvim",
-            branch = "ref/reorganize-code",
             config = load_file("js-package-manager"),
             requires = "muniftanjim/nui.nvim",
         })
