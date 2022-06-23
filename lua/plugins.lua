@@ -115,7 +115,10 @@ return require("packer").startup({
             config = load_file("finder"),
             requires = {
                 { "nvim-lua/plenary.nvim" },
-                { "nvim-telescope/telescope-fzy-native.nvim" },
+                {
+                    "nvim-telescope/telescope-fzf-native.nvim",
+                    run = "make",
+                },
             },
         })
         use({
