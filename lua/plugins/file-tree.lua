@@ -10,13 +10,6 @@ local set_keymap = require("utils.set-keymap")
 ----------------------------------- CONFIG -----------------------------------------------
 ------------------------------------------------------------------------------------------
 
--- Set where git appears
-vim.g.nvim_tree_show_icons = {
-    git = 0,
-    folders = 1,
-    files = 1,
-}
-
 require("nvim-tree").setup({
     view = {
         width = 60,
@@ -25,12 +18,20 @@ require("nvim-tree").setup({
     renderer = {
         special_files = {},
         highlight_git = true,
+        icons = {
+            show = {
+                git = false,
+                folders = true,
+                files = true,
+            },
+        },
         indent_markers = {
             enable = true,
         },
     },
     git = {
         ignore = false,
+        show_on_dirs = false,
     },
     sort_by = "case_sensitive",
 })
