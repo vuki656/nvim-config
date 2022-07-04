@@ -21,8 +21,8 @@ require("nvim-tree").setup({
         icons = {
             show = {
                 git = false,
-                folders = true,
-                files = true,
+                folder = true,
+                file = true,
             },
         },
         indent_markers = {
