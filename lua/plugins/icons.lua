@@ -10,11 +10,6 @@ local icons = require("nvim-web-devicons")
 
 icons.setup({
     override = {
-        ["prisma"] = {
-            icon = "謁",
-            color = "#5c6370",
-            name = "Prisma",
-        },
         [".bashrc"] = {
             icon = "",
             color = "#a5afbe",
@@ -34,11 +29,6 @@ icons.setup({
             icon = "",
             color = "#a5afbe",
             name = "BashAliases",
-        },
-        ["yarn.lock"] = {
-            icon = "",
-            color = "#cc3534",
-            name = "YarnLock",
         },
         ["package.json"] = {
             icon = "",
