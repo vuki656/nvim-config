@@ -168,6 +168,13 @@ return require("packer").startup({
         })
         use("wellle/targets.vim")
         use("williamboman/nvim-lsp-installer")
+        use({
+            "williamboman/mason.nvim",
+            branch = "alpha",
+            config = function()
+                require("mason").setup({})
+            end,
+        })
         use("windwp/nvim-ts-autotag")
         use({
             "windwp/nvim-autopairs",
