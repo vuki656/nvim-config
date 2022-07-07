@@ -31,5 +31,5 @@ local formatter = null_ls.builtins.formatting.prettier.with({
 })
 
 return {
-    formatter = formatter
+    formatter = formatter,
 }
