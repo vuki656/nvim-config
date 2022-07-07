@@ -4,19 +4,17 @@ local Menu = require("nui.menu")
 local reset = require("plugins.terminal.keymaps.reset")
 
 local function on_submit(item)
-    local terminal = Terminal
-        :new({
-            dir = "git_dir",
-            direction = "float",
-            float_opts = {
-                border = "single",
-            },
-            on_open = function()
-                vim.cmd("startinsert!")
-            end,
-            hidden = false,
-        })
-        :toggle()
+    local terminal = Terminal:new({
+        dir = "git_dir",
+        direction = "float",
+        float_opts = {
+            border = "single",
+        },
+        on_open = function()
+            vim.cmd("startinsert!")
+        end,
+        hidden = false,
+    }):toggle()
 
     vim.defer_fn(function()
         terminal:send("yarn " .. item.command, false)
