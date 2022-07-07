@@ -128,12 +128,6 @@ vim.cmd([[
     " Don't continue comment when adding a new line above/under comment
     autocmd BufNewFile,BufRead * setlocal formatoptions-=ro
 
-    " Enable new experimental file detection
-    let g:do_filetype_lua = 1
-
-    " Disable old file detection
-    let g:did_load_filetypes = 0
-
     " Disable unused providers
     let g:loaded_perl_provider=0
     let g:loaded_ruby_provider=0
