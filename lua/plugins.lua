@@ -77,8 +77,7 @@ return require("packer").startup({
             config = load_file("buffer-closer"),
         })
         use({
-            "karb94/neoscroll.nvim",
-            commit = "6fca0bd5899e91d3e2deab30172d298b87ba5a38",
+            "declancm/cinnamon.nvim",
             config = load_file("smooth-scroll"),
         })
         use({

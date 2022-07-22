@@ -1,13 +1,11 @@
--- Name: Neoscroll
+-- Name: Cinnamon
 -- Description: Smoother scrolling
--- Link: https://github.com/karb94/neoscroll
+-- Link: https://github.com/declancm/cinnamon.nvim
 
-local neoscroll = require("neoscroll")
+local cinnamon = require("cinnamon").setup()
 
 ------------------------------------------------------------------------------------------
 ------------------------------------ SETUP -----------------------------------------------
 ------------------------------------------------------------------------------------------
 
-neoscroll.setup({
-    easing_function = "sine",
-})
+cinnamon.setup()
