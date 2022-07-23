@@ -171,7 +171,7 @@ return require("packer").startup({
             "williamboman/mason.nvim",
             branch = "alpha",
             config = function()
-                require("mason").setup({})
+                require("mason").setup()
             end,
         })
         use("windwp/nvim-ts-autotag")
