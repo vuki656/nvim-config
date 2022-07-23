@@ -12,7 +12,7 @@ local set_keymap = require("utils.set-keymap")
 
 require("nvim-tree").setup({
     view = {
-        width = 60,
+        width = 40,
     },
     respect_buf_cwd = true,
     renderer = {
