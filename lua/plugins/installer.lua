@@ -1,24 +1,45 @@
--- Name: Nvim LSP Installer
--- Description: Language server installer
--- Link: https://github.com/williamboman/nvim-lsp-installer
-
-local lsp_installer = require("nvim-lsp-installer")
+-- Name: Mason
+-- Description: Neovim everything installer
+-- Link: https://github.com/williamboman/mason.nvim
 
 local set_keymap = require("utils.set-keymap")
+
+local installer = require("mason")
+local installer_lsp = require("mason-lspconfig")
+local installer_tools = require("mason-tool-installer")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- SETUP ------------------------------------------------
 ------------------------------------------------------------------------------------------
 
--- Setup preparation for lsp servers to be configured
-lsp_installer.setup({
-    automatic_installation = true,
+installer.setup({
     ui = {
         icons = {
-            server_installed = "",
-            server_pending = "",
-            server_uninstalled = "",
+            package_installed = "",
+            package_pending = "",
+            package_uninstalled = "",
         },
+    },
+})
+
+installer_lsp.setup({
+    automatic_installation = true,
+})
+
+-- Not supported at the moment:
+-- fixjson
+-- actionlint
+installer_tools.setup({
+    ensure_installed = {
+        "stylua",
+        "shfmt",
+        "prettier",
+        "eslint_d",
+        "shellcheck",
+        "hadolint",
+        "yamllint",
+        "luacheck",
+        "cspell",
     },
 })
 

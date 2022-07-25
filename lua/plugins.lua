@@ -166,13 +166,14 @@ return require("packer").startup({
             config = load_file("plugin-manager"),
         })
         use("wellle/targets.vim")
-        use("williamboman/nvim-lsp-installer")
         use({
             "williamboman/mason.nvim",
-            branch = "alpha",
-            config = function()
-                require("mason").setup()
-            end,
+            config = load_file("installer"),
+            branch = "main",
+            requires = {
+                { "williamboman/mason-lspconfig.nvim" },
+                { "whoissethdaniel/mason-tool-installer.nvim" },
+            },
         })
         use("windwp/nvim-ts-autotag")
         use({
