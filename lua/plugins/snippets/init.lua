@@ -28,6 +28,9 @@ local react_element_snippet = require("plugins.snippets.nodes.js.react.react_ele
 local react_component_snippet = require("plugins.snippets.nodes.js.react.react_component")
 local react_component_props_snippet = require("plugins.snippets.nodes.js.react.react_component_props")
 
+-- Jest
+local jest_suite = require("plugins.snippets.nodes.js.jest.suite")
+
 ------------------------------------------------------------------------------------------
 ------------------------------------ SETUP -----------------------------------------------
 ------------------------------------------------------------------------------------------
@@ -50,6 +53,7 @@ luasnip.add_snippets("typescript", {
     arrow_function_full_snippet,
     service_function_snippet,
     type_snippet,
+    jest_suite,
 
     -- Typegraphql
     resolver_mutation_snippet,
@@ -83,6 +87,9 @@ luasnip.add_snippets("javascript", {
     arrow_function_snippet,
     arrow_function_full_snippet,
     type_snippet,
+
+    -- Jest
+    jest_suite
 })
 
 luasnip.add_snippets("javascriptreact", {
