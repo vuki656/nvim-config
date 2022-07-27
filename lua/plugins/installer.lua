@@ -28,7 +28,6 @@ installer_lsp.setup({
 
 -- Not supported at the moment:
 -- fixjson
--- actionlint
 installer_tools.setup({
     ensure_installed = {
         "stylua",
@@ -40,6 +39,7 @@ installer_tools.setup({
         "yamllint",
         "luacheck",
         "cspell",
+        "actionlint",
     },
 })
 
@@ -60,7 +60,7 @@ vim.diagnostic.config({
 set_keymap({
     key = "<LEADER>ls",
     actions = function()
-        vim.cmd("LspInstallInfo")
+        vim.cmd("Mason")
     end,
     description = "Open lsp installer popup buffer",
 })

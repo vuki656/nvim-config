@@ -89,7 +89,7 @@ luasnip.add_snippets("javascript", {
     type_snippet,
 
     -- Jest
-    jest_suite
+    jest_suite,
 })
 
 luasnip.add_snippets("javascriptreact", {

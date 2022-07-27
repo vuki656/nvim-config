@@ -1,4 +1,3 @@
-
 local luasnip = require("luasnip")
 local format = require("luasnip.extras.fmt").fmt
 local lambda = require("luasnip.extras").lambda
@@ -34,9 +33,9 @@ describe('{} resolver', () => {{
         {
             insert_node(1),
             repeat_node(1),
-		    lambda(lambda._1:lower(), 1),
+            lambda(lambda._1:lower(), 1),
             repeat_node(1),
-		    lambda(lambda._1:lower(), 1),
+            lambda(lambda._1:lower(), 1),
             repeat_node(1),
         }
     )
