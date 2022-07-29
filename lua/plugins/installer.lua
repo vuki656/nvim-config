@@ -26,8 +26,6 @@ installer_lsp.setup({
     automatic_installation = true,
 })
 
--- Not supported at the moment:
--- fixjson
 installer_tools.setup({
     ensure_installed = {
         "stylua",
@@ -40,6 +38,7 @@ installer_tools.setup({
         "luacheck",
         "cspell",
         "actionlint",
+        "fixjson",
     },
 })
 
