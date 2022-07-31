@@ -135,7 +135,7 @@ return require("packer").startup({
             config = load_file("doc-highlighter"),
         })
         use({
-            "pocco81/autosave.nvim",
+            "pocco81/auto-save.nvim",
             config = load_file("auto-save"),
         })
         use({
