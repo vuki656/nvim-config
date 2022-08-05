@@ -136,6 +136,7 @@ return require("packer").startup({
         })
         use({
             "pocco81/auto-save.nvim",
+            commit = "8df684bcb3c5fff8fa9a772952763fc3f6eb75ad",
             config = load_file("auto-save"),
         })
         use({
