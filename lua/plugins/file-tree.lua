@@ -13,6 +13,11 @@ local set_keymap = require("utils.set-keymap")
 require("nvim-tree").setup({
     view = {
         width = 40,
+        mappings = {
+            list = {
+                { key = "d", action = "trash" },
+            },
+        },
     },
     respect_buf_cwd = true,
     renderer = {
