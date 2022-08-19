@@ -23,8 +23,8 @@ harpoon.setup({
 ----------------------------------- KEYMAPS ----------------------------------------------
 ------------------------------------------------------------------------------------------
 
--- Map 1 to 5 for file navigation
-for index = 0, 5 do
+-- Map 1 to 9 for file navigation
+for index = 0, 9 do
     set_keymap({
         key = "<LEADER>" .. index,
         actions = function()
