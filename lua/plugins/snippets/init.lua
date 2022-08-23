@@ -31,6 +31,10 @@ local react_component_props_snippet = require("plugins.snippets.nodes.js.react.r
 -- Jest
 local jest_suite = require("plugins.snippets.nodes.js.jest.suite")
 
+-- Cypress
+local cypress_function = require("plugins.snippets.nodes.js.cypress.function")
+
+
 ------------------------------------------------------------------------------------------
 ------------------------------------ SETUP -----------------------------------------------
 ------------------------------------------------------------------------------------------
@@ -62,6 +66,9 @@ luasnip.add_snippets("typescript", {
     resolver_input_snippet,
     resolver_payload_snippet,
     resolver_type_snippet,
+
+    -- Cypress
+    cypress_function
 })
 
 luasnip.add_snippets("typescriptreact", {
