@@ -37,6 +37,11 @@ return require("packer").startup({
             config = load_file("todo-comments"),
         })
         use({
+            "samodostal/image.nvim",
+            requires = { "nvim-lua/plenary.nvim" },
+            config = load_file("image-viewer")
+        })
+        use({
             "goolord/alpha-nvim",
             after = "nvim-tree.lua",
             config = load_file("start-screen"),
