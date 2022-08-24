@@ -33,7 +33,7 @@ return require("packer").startup({
             requires = "kyazdani42/nvim-web-devicons",
         })
         use({
-            "folke/todo-comments.nvim",
+            "b4mbus/todo-comments.nvim",
             config = load_file("todo-comments"),
         })
         use({
