@@ -28,6 +28,7 @@ require("nvim-tree").setup({
                 git = false,
                 folder = true,
                 file = true,
+                folder_arrow = false,
             },
         },
         indent_markers = {
