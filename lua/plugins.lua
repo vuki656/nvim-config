@@ -99,7 +99,6 @@ return require("packer").startup({
         use({
             "lewis6991/gitsigns.nvim",
             config = load_file("git-status"),
-            commit = "4861666b58f525456f6cf68319e4fc6703b5ee65",
             requires = "nvim-lua/plenary.nvim",
         })
         use("lewis6991/impatient.nvim")
