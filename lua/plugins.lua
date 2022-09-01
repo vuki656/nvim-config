@@ -134,7 +134,6 @@ return require("packer").startup({
         })
         use({
             "lukas-reineke/headlines.nvim",
-            commit = "f71ba8448c611e786f1406e7aa70659b243e2cfa",
             config = load_file("doc-highlighter"),
         })
         use({
