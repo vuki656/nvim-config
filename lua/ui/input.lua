@@ -13,7 +13,7 @@ M.setup = function()
 
     vim.ui.input = function(options, on_confirm)
         -- Makes sure the width can fit the item text
-        if string.len(options.default) > M.input_width then
+        if string.len(options.default or "") > M.input_width then
             M.input_width = string.len(options.default) + 1
         end
 
