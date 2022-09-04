@@ -8,7 +8,7 @@ return create_snippet(
     "cfn",
     format(
         [[
-    public {}(): Cypress.Chainable {{
+    public {}() {{
         return this
             .elements
             .{}()
