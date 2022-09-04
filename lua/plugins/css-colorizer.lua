@@ -1,5 +1,7 @@
 -- Name: Colorizer
 -- Description: CSS Hex Colorizer
--- Link: https://github.com/norcalli/nvim-colorizer.lua
+-- Link: https://github.com/NvChad/nvim-colorizer.lua
 
-require("colorizer").setup()
+local colorizer = require("colorizer")
+
+colorizer.setup()

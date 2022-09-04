@@ -16,7 +16,7 @@ return require("packer").startup({
             config = load_file("marks"),
         })
         use({
-            "norcalli/nvim-colorizer.lua",
+            "NvChad/nvim-colorizer.lua",
             config = load_file("css-colorizer"),
         })
         use({
@@ -39,7 +39,7 @@ return require("packer").startup({
         use({
             "samodostal/image.nvim",
             requires = { "nvim-lua/plenary.nvim" },
-            config = load_file("image-viewer")
+            config = load_file("image-viewer"),
         })
         use({
             "goolord/alpha-nvim",
