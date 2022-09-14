@@ -28,6 +28,11 @@ local react_element_snippet = require("plugins.snippets.nodes.js.react.react_ele
 local react_component_snippet = require("plugins.snippets.nodes.js.react.react_component")
 local react_component_props_snippet = require("plugins.snippets.nodes.js.react.react_component_props")
 
+-- Styled Components
+local styled_component = require("plugins.snippets.nodes.js.styled_components.styled_component")
+local styled_component_props = require("plugins.snippets.nodes.js.styled_components.styled_component_props")
+local styled_component_import = require("plugins.snippets.nodes.js.styled_components.styled_component_import")
+
 -- Jest
 local jest_suite = require("plugins.snippets.nodes.js.jest.suite")
 
@@ -68,7 +73,12 @@ luasnip.add_snippets("typescript", {
     resolver_type_snippet,
 
     -- Cypress
-    cypress_function
+    cypress_function,
+
+    -- Styled Components
+    styled_component,
+    styled_component_props,
+    styled_component_import
 })
 
 luasnip.add_snippets("typescriptreact", {
@@ -97,6 +107,11 @@ luasnip.add_snippets("javascript", {
 
     -- Jest
     jest_suite,
+
+    -- Styled Components
+    styled_component,
+    styled_component_props,
+    styled_component_import
 })
 
 luasnip.add_snippets("javascriptreact", {

@@ -56,8 +56,8 @@ cmp.setup({
         format = icons.cmp_format(),
     },
     sources = {
-        { name = "nvim_lsp" },
         { name = "luasnip" },
+        { name = "nvim_lsp" },
         {
             name = "buffer",
             max_item_count = 15,
