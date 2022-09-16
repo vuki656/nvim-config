@@ -19,7 +19,7 @@ export class {}Input {{
     @Field(() => {})
     public {}: {}
 }}
-    ]],
+    ]]   ,
         {
             insert_node(1),
             insert_node(2),

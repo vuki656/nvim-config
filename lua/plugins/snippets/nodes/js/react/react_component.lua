@@ -15,7 +15,7 @@ export const {}: React.FunctionComponent = () => {{
         {}
     )
 }}
-    ]],
+    ]]   ,
         {
             insert_node(1),
             insert_node(2),

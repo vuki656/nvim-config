@@ -29,7 +29,7 @@ describe('{} resolver', () => {{
         await wipeDatabase()
     }})
 }})
-    ]],
+    ]]   ,
         {
             insert_node(1),
             repeat_node(1),

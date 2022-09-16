@@ -21,7 +21,7 @@ export class {}Payload {{
     @Field(() => {}Type)
     public {}: {}Type
 }}
-    ]],
+    ]]   ,
         {
             insert_node(1),
             insert_node(2),

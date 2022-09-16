@@ -5,7 +5,6 @@
 local cmp = require("cmp")
 local snippets = require("luasnip")
 local icons = require("lspkind")
-local buffer = require("cmp_buffer")
 
 local colors = require("utils.colors")
 local set_highlight = require("utils.set-highlight")

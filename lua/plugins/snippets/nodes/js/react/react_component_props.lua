@@ -22,7 +22,7 @@ export const {}: React.FunctionComponent<{}Props> = (props) => {{
         {}
     )
 }}
-    ]],
+    ]]   ,
         {
             insert_node(1),
             repeat_node(1),

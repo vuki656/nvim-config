@@ -16,7 +16,7 @@ public async {}(
 ): Promise<{} | null> {{
     return this.service.{}(args)
 }}
-    ]],
+    ]]   ,
         {
             insert_node(1),
             insert_node(2),

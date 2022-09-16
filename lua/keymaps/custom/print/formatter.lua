@@ -16,8 +16,7 @@ return function(text)
 
     if filetype == "lua" then
         insert_print_statement({ "print(vim.inspect(" .. text .. "))" })
-    elseif
-        filetype == "javascript"
+    elseif filetype == "javascript"
         or filetype == "typescript"
         or filetype == "typescriptreact"
         or filetype == "javascriptreact"

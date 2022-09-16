@@ -39,7 +39,6 @@ local jest_suite = require("plugins.snippets.nodes.js.jest.suite")
 -- Cypress
 local cypress_function = require("plugins.snippets.nodes.js.cypress.function")
 
-
 ------------------------------------------------------------------------------------------
 ------------------------------------ SETUP -----------------------------------------------
 ------------------------------------------------------------------------------------------
@@ -78,43 +77,10 @@ luasnip.add_snippets("typescript", {
     -- Styled Components
     styled_component,
     styled_component_props,
-    styled_component_import
+    styled_component_import,
 })
 
 luasnip.add_snippets("typescriptreact", {
-    -- Generic JS/TS
-    console_log_snippet,
-    console_log_stringify_snippet,
-    export_all_snippet,
-    arrow_function_snippet,
-    arrow_function_full_snippet,
-    type_snippet,
-
-    -- React
-    react_element_snippet,
-    react_component_snippet,
-    react_component_props_snippet,
-})
-
-luasnip.add_snippets("javascript", {
-    -- Generic JS/TS
-    console_log_snippet,
-    console_log_stringify_snippet,
-    export_all_snippet,
-    arrow_function_snippet,
-    arrow_function_full_snippet,
-    type_snippet,
-
-    -- Jest
-    jest_suite,
-
-    -- Styled Components
-    styled_component,
-    styled_component_props,
-    styled_component_import
-})
-
-luasnip.add_snippets("javascriptreact", {
     -- Generic JS/TS
     console_log_snippet,
     console_log_stringify_snippet,
