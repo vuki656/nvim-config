@@ -94,9 +94,9 @@ git_signs.setup({
 
 set_highlight({
     list = {
-        { group = "GitSignsAdd", foreground = colors.green },
-        { group = "GitSignsChange", foreground = colors.orange },
-        { group = "GitSignsDelete", foreground = colors.red },
+        { group = "GitSignsAddPreview", foreground = colors.green },
+        { group = "GitSignsChangePreview", foreground = colors.orange },
+        { group = "GitSignsDeletePreview", foreground = colors.red },
         { group = "GitSignsCurrentLineBlame", foreground = colors.grey, background = colors.grey_lighter },
     },
 })
