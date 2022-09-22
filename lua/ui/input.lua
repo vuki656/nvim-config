@@ -12,21 +12,27 @@ M.setup = function()
     local input_ui = nil
 
     vim.ui.input = function(options, on_confirm)
-        -- Makes sure the width can fit the item text
-        if string.len(options.default or "") > M.input_width then
-            M.input_width = string.len(options.default) + 1
-        end
-
-        M = vim.tbl_deep_extend("force", M, {
-            options = options,
-            on_confirm = on_confirm,
-        })
-
         if input_ui then
             vim.api.nvim_err_writeln("UI BUSY: Another input is pending!")
 
             return
         end
+
+        local text_width = string.len(options.default or "") or 0
+
+        -- Makes sure the width can fit the item text
+        if text_width > M.input_width then
+            M.input_width = text_width + 10
+        end
+
+        M = vim.tbl_deep_extend("force", M, {
+            options = {
+                completion = options.completion or "",
+                default = options.default or "",
+                prompt = options.prompt,
+            },
+            on_confirm = on_confirm,
+        })
 
         M.__generate_ui()
         M.__setup_keymaps()
@@ -43,6 +49,7 @@ M.__on_done = function(value)
     M.on_confirm(value)
 
     M.ui = nil
+    M.input_width = 35
 end
 
 --- Generates the NUI input
