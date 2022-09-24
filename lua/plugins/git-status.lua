@@ -6,7 +6,6 @@ local git_signs = require("gitsigns")
 
 local colors = require("utils.colors")
 local set_highlight = require("utils.set-highlight")
-local set_keymap = require("utils.set-keymap")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- SETUP ------------------------------------------------
@@ -94,8 +93,10 @@ git_signs.setup({
 
 set_highlight({
     list = {
+        { group = "GitSignsAdd", foreground = colors.green },
+        { group = "GitSignsChange", foreground = colors.orange },
+        { group = "GitSignsDelete", foreground = colors.red },
         { group = "GitSignsAddPreview", foreground = colors.green },
-        { group = "GitSignsChangePreview", foreground = colors.orange },
         { group = "GitSignsDeletePreview", foreground = colors.red },
         { group = "GitSignsCurrentLineBlame", foreground = colors.grey, background = colors.grey_lighter },
     },
