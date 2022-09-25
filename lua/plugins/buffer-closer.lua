@@ -1,6 +1,6 @@
 -- Name: Close Buffers
 -- Description: Kill inactive buffers
--- Link: https://github.com/numToStr/Comment.nvim
+-- Link: https://github.com/kazhala/close-buffers.nvim
 
 local close_buffers = require("close_buffers")
 
