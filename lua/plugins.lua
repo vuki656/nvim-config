@@ -48,6 +48,15 @@ return require("packer").startup({
             requires = "kyazdani42/nvim-web-devicons",
         })
         use({
+            "nvim-neo-tree/neo-tree.nvim",
+            branch = "v2.x",
+            requires = {
+                "nvim-lua/plenary.nvim",
+                "kyazdani42/nvim-web-devicons",
+                "MunifTanjim/nui.nvim",
+            },
+        })
+        use({
             "hrsh7th/nvim-cmp",
             config = load_file("completion"),
             requires = {

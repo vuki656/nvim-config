@@ -3,7 +3,6 @@ return function()
         local view = vim.fn.winsaveview()
         local buffer_name = vim.fn.bufname()
 
-        vim.cmd(":NvimTreeRefresh")
         vim.cmd(":Gitsigns refresh")
 
         if buffer_name ~= "" then
