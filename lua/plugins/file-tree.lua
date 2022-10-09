@@ -26,13 +26,15 @@ file_tree.setup({
                 conflict = "",
             },
         },
-        window = {
-            filesystem = {
-                filtered_items = {
-                    use_libuv_file_watcher = true,
-                },
-            },
+    },
+    window = {
+        width = 60,
+    },
+    filesystem = {
+        filtered_items = {
+            hide_dotfiles = false,
         },
+        use_libuv_file_watcher = true,
     },
 })
 
@@ -46,6 +48,7 @@ set_highlight({
         { group = "NeoTreeDirectoryName", foreground = colors.white },
         { group = "NeoTreeGitModified", foreground = colors.orange },
         { group = "NeoTreeTitleBar", foreground = colors.white },
+        { group = "NeoTreeGitAdded", foreground = colors.green },
     },
 })
 
