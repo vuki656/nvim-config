@@ -115,6 +115,10 @@ return require("packer").startup({
         })
         use("neovim/nvim-lspconfig")
         use({
+            "nguyenvukhang/nvim-toggler",
+            config = load_file("toggler"),
+        })
+        use({
             "nvim-treesitter/nvim-treesitter",
             config = load_file("parser"),
             run = ":TSUpdate all",
