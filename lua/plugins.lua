@@ -30,7 +30,7 @@ return require("packer").startup({
         use({
             "feline-nvim/feline.nvim",
             config = load_file("status-line"),
-            requires = "kyazdani42/nvim-web-devicons",
+            requires = "nvim-tree/nvim-web-devicons",
         })
         use({
             "folke/todo-comments.nvim",
@@ -43,18 +43,15 @@ return require("packer").startup({
         })
         use({
             "goolord/alpha-nvim",
+            after = "nvim-tree.lua",
             config = load_file("start-screen"),
-            requires = "kyazdani42/nvim-web-devicons",
+            requires = "nvim-tree/nvim-web-devicons",
         })
         use({
-            "nvim-neo-tree/neo-tree.nvim",
-            branch = "v2.x",
+            "nvim-tree/nvim-tree.lua",
+            after = "nvim-web-devicons",
             config = load_file("file-tree"),
-            requires = {
-                "nvim-lua/plenary.nvim",
-                "kyazdani42/nvim-web-devicons",
-                "MunifTanjim/nui.nvim",
-            },
+            requires = "nvim-tree/nvim-web-devicons",
         })
         use({
             "hrsh7th/nvim-cmp",
@@ -95,7 +92,7 @@ return require("packer").startup({
             config = load_file("smooth-scroll"),
         })
         use({
-            "kyazdani42/nvim-web-devicons",
+            "nvim-tree/nvim-web-devicons",
             config = load_file("icons"),
         })
         use({

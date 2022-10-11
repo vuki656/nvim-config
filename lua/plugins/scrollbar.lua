@@ -11,7 +11,7 @@ local colors = require("utils.colors")
 
 -- Don't display in following filetypes
 vim.g.scrollview_excluded_filetypes = {
-    "neo-tree",
+    "NvimTree",
     "alpha",
 }
 

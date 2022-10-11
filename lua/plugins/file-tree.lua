@@ -1,54 +1,65 @@
--- Name: Neo tree
+-- Name: Nvim Tree
 -- Description: File tree
--- Link: https://github.com/nvim-neo-tree/neo-tree.nvim
+-- Link: https://github.com/nvim-tree/nvim-tree.lua
 
-local file_tree = require("neo-tree")
-
-local set_keymap = require("utils.set-keymap")
 local colors = require("utils.colors")
 local set_highlight = require("utils.set-highlight")
+local set_keymap = require("utils.set-keymap")
+
 ------------------------------------------------------------------------------------------
------------------------------------ SETUP ------------------------------------------------
+----------------------------------- CONFIG -----------------------------------------------
 ------------------------------------------------------------------------------------------
 
-file_tree.setup({
-    default_component_configs = {
-        git_status = {
-            symbols = {
-                added = "",
-                modified = "",
-                deleted = "",
-                renamed = "",
-                untracked = "",
-                ignored = "",
-                unstaged = "",
-                staged = "",
-                conflict = "",
+require("nvim-tree").setup({
+    view = {
+        width = 40,
+        mappings = {
+            list = {
+                { key = "d", action = "trash" },
             },
         },
     },
-    window = {
-        width = 60,
-    },
-    filesystem = {
-        filtered_items = {
-            hide_dotfiles = false,
+    respect_buf_cwd = true,
+    renderer = {
+        special_files = {},
+        highlight_git = true,
+        icons = {
+            show = {
+                git = false,
+                folder = true,
+                file = true,
+                folder_arrow = false,
+            },
         },
-        use_libuv_file_watcher = true,
+        indent_markers = {
+            enable = true,
+        },
     },
+    git = {
+        ignore = false,
+        show_on_dirs = false,
+    },
+    sort_by = "case_sensitive",
 })
 
 ------------------------------------------------------------------------------------------
------------------------------------ HIGHLIGHTS -------------------------------------------
+----------------------------------- COLORS -----------------------------------------------
 ------------------------------------------------------------------------------------------
 
 set_highlight({
     list = {
-        { group = "NeoTreeDirectoryIcon", foreground = colors.white },
-        { group = "NeoTreeDirectoryName", foreground = colors.white },
-        { group = "NeoTreeGitModified", foreground = colors.orange },
-        { group = "NeoTreeTitleBar", foreground = colors.white },
-        { group = "NeoTreeGitAdded", foreground = colors.green },
+        { group = "NvimTreeGitNew", foreground = colors.green },
+        { group = "NvimTreeGitRenamed", foreground = colors.yellow },
+        { group = "NvimTreeGitDirty", foreground = colors.yellow },
+        { group = "NvimTreeIndentMarker", foreground = colors.transparent },
+        { group = "NvimTreeFolderName", foreground = colors.white },
+        { group = "NvimTreeEmptyFolderName", foreground = colors.white },
+        { group = "NvimTreeFolderIcon", foreground = colors.white },
+        { group = "NvimTreeWinSeparator", foreground = colors.background_light },
+        { group = "NvimTreeOpenedFolderName", foreground = colors.white },
+        { group = "NvimTreeRootFolder", foreground = colors.grey },
+        { group = "NvimTreeExecFile", foreground = colors.red },
+        { group = "NvimTreeImageFile", foreground = colors.red },
     },
 })
 
@@ -61,33 +72,31 @@ set_keymap({
         {
             key = "<C-n>",
             actions = function()
-                vim.cmd("NeoTreeShowToggle")
+                vim.cmd("NvimTreeToggle")
             end,
             description = "Toggle file tree",
         },
         {
             key = "<LEADER>to",
             actions = function()
-                vim.cmd.Neotree("reveal")
+                vim.cmd("NvimTreeFindFile")
             end,
             description = "Find opened file in tree",
         },
         {
+            key = "<LEADER>tr",
+            actions = function()
+                vim.cmd("NvimTreeRefresh")
+            end,
+            description = "Refresh tree (git, nodes...)",
+        },
+        {
             key = "<LEADER>tk",
             actions = function()
-                vim.cmd.Neotree("focus")
-                vim.api.nvim_input("C")
-                vim.api.nvim_input("C")
-                vim.api.nvim_input("C")
-                vim.api.nvim_input("C")
-                vim.api.nvim_input("C")
-                vim.api.nvim_input("C")
-                vim.api.nvim_input("C")
-                vim.api.nvim_input("C")
-                vim.api.nvim_input("C")
-                vim.api.nvim_input("C")
+                require("nvim-tree.lib").collapse_all()
+                vim.cmd("NvimTreeFindFile")
             end,
-            description = "Collapse all tree nodes",
+            description = "Collapse all tree nodes and focus opened buffer",
         },
     },
 })

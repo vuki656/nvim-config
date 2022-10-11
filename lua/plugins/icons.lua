@@ -1,6 +1,6 @@
 -- Name: Dev Icons
 -- Description: Custom file icons
--- Link: https://github.com/kyazdani42/nvim-web-devicons
+-- Link: https://github.com/nvim-tree/nvim-web-devicons
 
 local icons = require("nvim-web-devicons")
 
