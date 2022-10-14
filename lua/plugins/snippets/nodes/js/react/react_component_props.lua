@@ -9,11 +9,9 @@ return create_snippet(
     "rfcp",
     format(
         [[
-import * as React from 'react'
-
 import type {{ {}Props }} from './{}.types'
 
-export const {}: React.FunctionComponent<{}Props> = (props) => {{
+export const {} = (props: {}Props) => {{
     const {{
         {}
     }} = props
