@@ -2,6 +2,8 @@
 -- Description: File tree
 -- Link: https://github.com/nvim-tree/nvim-tree.lua
 
+local tree = require("nvim-tree")
+
 local colors = require("utils.colors")
 local set_highlight = require("utils.set-highlight")
 local set_keymap = require("utils.set-keymap")
@@ -10,7 +12,7 @@ local set_keymap = require("utils.set-keymap")
 ----------------------------------- CONFIG -----------------------------------------------
 ------------------------------------------------------------------------------------------
 
-require("nvim-tree").setup({
+tree.setup({
     view = {
         width = 40,
         mappings = {
@@ -37,7 +39,7 @@ require("nvim-tree").setup({
     },
     git = {
         ignore = false,
-        show_on_dirs = false,
+        show_on_dirs = true,
     },
     sort_by = "case_sensitive",
 })
