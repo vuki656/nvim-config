@@ -12,7 +12,7 @@ return create_snippet(
 public async {}(input: {}Input): Promise<{}Payload> {{
     {}
 }}
-    ]]   ,
+    ]],
         {
             insert_node(1),
             insert_node(2),

@@ -13,7 +13,7 @@ export const {} = () => {{
         {}
     )
 }}
-    ]]   ,
+    ]],
         {
             insert_node(1),
             insert_node(2),

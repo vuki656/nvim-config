@@ -8,7 +8,7 @@ return create_snippet(
     format(
         [[
 import styled from 'styled-components'
-    ]]   ,
+    ]],
         {}
     )
 )

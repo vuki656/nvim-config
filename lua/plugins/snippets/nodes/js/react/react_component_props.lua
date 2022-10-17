@@ -20,7 +20,7 @@ export const {} = (props: {}Props) => {{
         {}
     )
 }}
-    ]]   ,
+    ]],
         {
             insert_node(1),
             repeat_node(1),

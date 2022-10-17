@@ -16,7 +16,7 @@ public async {}(
 ): Promise<{}Payload> {{
     return this.service.{}(input)
 }}
-    ]]   ,
+    ]],
         {
             insert_node(1),
             insert_node(2),

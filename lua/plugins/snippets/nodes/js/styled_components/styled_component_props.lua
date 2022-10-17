@@ -11,7 +11,7 @@ return create_snippet(
 export const {} = styled.div((props) => ({{
 {}
 }}))
-    ]]   ,
+    ]],
         {
             insert_node(1),
             insert_node(2),

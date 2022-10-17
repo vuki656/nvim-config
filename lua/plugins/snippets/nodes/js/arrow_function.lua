@@ -11,7 +11,7 @@ return create_snippet(
 ({}) => {{
     {}
 }}
-    ]]   ,
+    ]],
         {
             insert_node(1),
             insert_node(0),

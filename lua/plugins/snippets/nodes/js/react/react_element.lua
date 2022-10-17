@@ -10,7 +10,7 @@ return create_snippet(
     format(
         [[
 <{}>{}</{}>
-    ]]   ,
+    ]],
         {
             insert_node(1),
             insert_node(2),
