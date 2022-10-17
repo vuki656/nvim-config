@@ -15,10 +15,10 @@ return require("packer").startup({
             "chentoast/marks.nvim",
             config = load_file("marks"),
         })
-        use({
-            "dstein64/vim-startuptime",
-            config = load_file("profiler"),
-        })
+        -- use({
+        --     "dstein64/vim-startuptime",
+        --     config = load_file("profiler"),
+        -- })
         use({
             "dstein64/nvim-scrollview",
             config = load_file("scrollbar"),
