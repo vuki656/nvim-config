@@ -16,10 +16,6 @@ return require("packer").startup({
             config = load_file("marks"),
         })
         use({
-            "NvChad/nvim-colorizer.lua",
-            config = load_file("css-colorizer"),
-        })
-        use({
             "dstein64/vim-startuptime",
             config = load_file("profiler"),
         })
