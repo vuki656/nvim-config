@@ -132,6 +132,7 @@ return require("packer").startup({
             "lukas-reineke/headlines.nvim",
             commit = "4656ed3e4ba8e3e2551fe21f8803ef6953a8d657",
             config = load_file("doc-highlighter"),
+            ft = { "markdown" },
         })
         use({
             "pocco81/auto-save.nvim",
