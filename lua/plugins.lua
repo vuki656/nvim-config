@@ -79,10 +79,6 @@ return require("packer").startup({
             config = load_file("buffer-closer"),
         })
         use({
-            "declancm/cinnamon.nvim",
-            config = load_file("smooth-scroll"),
-        })
-        use({
             "nvim-tree/nvim-web-devicons",
             config = load_file("icons"),
         })
