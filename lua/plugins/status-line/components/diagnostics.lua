@@ -33,7 +33,7 @@ return {
             return lsp.diagnostics_exist("Hint")
         end,
         hl = {
-            fg = colors.blue,
+            fg = colors.yellow,
             bg = colors.background,
         },
     },

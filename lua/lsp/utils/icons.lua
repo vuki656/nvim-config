@@ -2,5 +2,5 @@ return {
     ["ERROR"] = "",
     ["WARNING"] = "",
     ["INFO"] = "",
-    ["HINT"] = "",
+    ["HINT"] = "",
 }
