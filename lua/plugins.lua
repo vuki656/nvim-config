@@ -97,6 +97,11 @@ return require("packer").startup({
             config = load_file("commenting"),
             requires = "joosepalviste/nvim-ts-context-commentstring",
         })
+        use({
+            "narutoxy/silicon.lua",
+            config = load_file("screenshot"),
+            requires = { "nvim-lua/plenary.nvim" },
+        })
         use("neovim/nvim-lspconfig")
         use({
             "nguyenvukhang/nvim-toggler",
