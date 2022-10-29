@@ -10,9 +10,7 @@ local set_keymap = require("utils.set-keymap")
 ------------------------------------ SETUP -----------------------------------------------
 ------------------------------------------------------------------------------------------
 
-silicon.setup({
-    theme = "TwoDark",
-})
+silicon.setup({ theme = "TwoDark" })
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- KEYMAPS ----------------------------------------------
@@ -22,7 +20,7 @@ set_keymap({
     modes = { "n" },
     key = "<LEADER>ss",
     actions = function()
-        silicon.visualise(false, true)
+        silicon.visualise_api({ to_clip = true })
     end,
     description = "Screenshot yanked/copied code",
 })
