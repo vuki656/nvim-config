@@ -6,6 +6,7 @@ local has_eslint = conditional.root_has_file(".eslintrc.js") or conditional.root
 local filetypes = {
     "vue",
     "css",
+    "scss",
     "html",
     "yaml",
     "markdown",
