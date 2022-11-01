@@ -1,6 +1,6 @@
 -- Name: Auto Save
 -- Description: Auto save buffer
--- Link: https://github.com/nvim-zh/auto-save.nvim
+-- Link: https://github.com/Pocco81/auto-save.nvim
 
 local autosave = require("auto-save")
 

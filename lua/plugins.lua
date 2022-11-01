@@ -137,7 +137,7 @@ return require("packer").startup({
             ft = { "markdown" },
         })
         use({
-            "nvim-zh/auto-save.nvim",
+            "Pocco81/auto-save.nvim",
             config = load_file("auto-save"),
         })
         use({
