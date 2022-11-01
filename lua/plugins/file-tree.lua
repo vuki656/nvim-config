@@ -42,6 +42,9 @@ tree.setup({
         show_on_dirs = true,
     },
     sort_by = "case_sensitive",
+    notify = {
+        threshold = vim.log.levels.ERROR,
+    },
 })
 
 ------------------------------------------------------------------------------------------
