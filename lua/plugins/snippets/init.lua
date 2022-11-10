@@ -52,7 +52,7 @@ luasnip.config.set_config({
 ------------------------------------ SNIPPETS --------------------------------------------
 ------------------------------------------------------------------------------------------
 
-luasnip.add_snippets("typescript", {
+local js_ts_snippets = {
     -- Generic JS/TS
     console_log_snippet,
     console_log_stringify_snippet,
@@ -78,9 +78,9 @@ luasnip.add_snippets("typescript", {
     styled_component,
     styled_component_props,
     styled_component_import,
-})
+}
 
-luasnip.add_snippets("typescriptreact", {
+local js_ts_react_snippets = {
     -- Generic JS/TS
     console_log_snippet,
     console_log_stringify_snippet,
@@ -93,7 +93,12 @@ luasnip.add_snippets("typescriptreact", {
     react_element_snippet,
     react_component_snippet,
     react_component_props_snippet,
-})
+}
+
+luasnip.add_snippets("typescript", js_ts_snippets)
+luasnip.add_snippets("javascript", js_ts_snippets)
+luasnip.add_snippets("typescriptreact", js_ts_react_snippets)
+luasnip.add_snippets("javascriptreact", js_ts_react_snippets)
 
 ------------------------------------------------------------------------------------------
 ------------------------------------ KEYMAPS ---------------------------------------------
