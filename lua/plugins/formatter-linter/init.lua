@@ -29,6 +29,7 @@ null_ls.setup({
 
         diagnostics.shellcheck.with({ extra_args = { "-e SC2034" } }),
         diagnostics.hadolint,
+        diagnostics.stylelint,
         diagnostics.yamllint.with({
             extra_args = {
                 "-d",

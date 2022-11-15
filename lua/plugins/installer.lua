@@ -39,6 +39,7 @@ installer_tools.setup({
         "cspell",
         "actionlint",
         "fixjson",
+        "stylelint-lsp"
     },
 })
 
