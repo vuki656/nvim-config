@@ -45,7 +45,9 @@ null_ls.setup({
         diagnostics.luacheck,
         diagnostics.cspell.with({
             condition = function()
-                return conditional.root_has_file("cspell.config.json") or conditional.root_has_file(".cspell.json")
+                return conditional.root_has_file("cspell.config.json")
+                    or conditional.root_has_file(".cspell.json")
+                    or conditional.root_has_file(".cspellrc.js")
             end,
         }),
         diagnostics.actionlint.with({
