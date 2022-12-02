@@ -42,7 +42,11 @@ set_keymap({
         },
         {
             key = "<LEADER>pf",
-            actions = actions.find_files,
+            actions = function()
+                actions.find_files({
+                    hidden = true,
+                })
+            end,
             description = "Find git files in project",
         },
         {
