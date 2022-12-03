@@ -24,8 +24,10 @@ end
 local formatter = null_ls.builtins.formatting.prettier.with({
     filetypes = filetypes,
     args = {
-        "--stdin-filepath",
         "--tab-width=4",
+        "--print-width=130",
+        "--no-semi",
+        "--stdin-filepath",
         "--config-precedence=prefer-file",
         "$FILENAME",
     },
