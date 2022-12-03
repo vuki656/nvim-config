@@ -27,9 +27,10 @@ null_ls.setup({
         prettier.formatter,
         eslint.formatter,
 
-        diagnostics.shellcheck.with({ extra_args = { "-e SC2034" } }),
+        diagnostics.shellcheck,
         diagnostics.hadolint,
         diagnostics.stylelint,
+        diagnostics.dotenv_linter,
         diagnostics.yamllint.with({
             extra_args = {
                 "-d",
@@ -68,9 +69,21 @@ null_ls.setup({
 ------------------------------------------------------------------------------------------
 
 set_keymap({
-    key = "<LEADER>f",
-    actions = function()
-        vim.lsp.buf.format({ async = true })
-    end,
-    description = "Format code",
+    list = {
+        {
+            key = "<LEADER>f",
+            actions = function()
+                vim.lsp.buf.format({ async = true })
+            end,
+            description = "Format code",
+        },
+        {
+            key = "<LEADER>dff",
+            actions = function()
+                vim.cmd("! dotenv-linter fix --no-backup %")
+                vim.api.nvim_input("<CR>")
+            end,
+            description = "Format env files",
+        },
+    },
 })
