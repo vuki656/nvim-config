@@ -14,6 +14,7 @@ local installer_tools = require("mason-tool-installer")
 
 installer.setup({
     ui = {
+        border = "single",
         icons = {
             package_installed = "",
             package_pending = "",
@@ -39,7 +40,7 @@ installer_tools.setup({
         "cspell",
         "actionlint",
         "fixjson",
-        "stylelint-lsp"
+        "stylelint-lsp",
     },
 })
 
