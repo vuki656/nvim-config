@@ -71,19 +71,27 @@ null_ls.setup({
 set_keymap({
     list = {
         {
-            key = "<LEADER>f",
+            key = "<LEADER>ff",
             actions = function()
                 vim.lsp.buf.format({ async = true })
             end,
             description = "Format code",
         },
         {
-            key = "<LEADER>dff",
+            key = "<LEADER>fd",
             actions = function()
                 vim.cmd("! dotenv-linter fix --no-backup %")
                 vim.api.nvim_input("<CR>")
             end,
             description = "Format env files",
+        },
+        {
+            key = "<LEADER>fs",
+            actions = function()
+                vim.cmd("! stylelint --fix %")
+                vim.api.nvim_input("<CR>")
+            end,
+            description = "Format css files with stylelint",
         },
     },
 })
