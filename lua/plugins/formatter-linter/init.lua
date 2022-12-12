@@ -71,7 +71,7 @@ null_ls.setup({
 set_keymap({
     list = {
         {
-            key = "<LEADER>ff",
+            key = "<LEADER>fp",
             actions = function()
                 vim.lsp.buf.format({ async = true })
             end,
