@@ -2,6 +2,10 @@ local load_file = require("utils.load-plugin-file")
 
 return require("packer").startup({
     function(use)
+        -- use({
+        --     "dstein64/vim-startuptime",
+        --     config = load_file("profiler"),
+        -- })
         use({
             "akinsho/nvim-toggleterm.lua",
             config = load_file("terminal"),
@@ -15,10 +19,6 @@ return require("packer").startup({
             "chentoast/marks.nvim",
             config = load_file("marks"),
         })
-        -- use({
-        --     "dstein64/vim-startuptime",
-        --     config = load_file("profiler"),
-        -- })
         use({
             "dstein64/nvim-scrollview",
             config = load_file("scrollbar"),
