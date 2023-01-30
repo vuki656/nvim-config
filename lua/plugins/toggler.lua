@@ -11,5 +11,6 @@ local toggler = require("nvim-toggler")
 toggler.setup({
     inverses = {
         ["&&"] = "||",
+        ["dark"] = "light",
     },
 })
