@@ -60,7 +60,6 @@ null_ls.setup({
         actions.eslint_d,
         actions.shellcheck,
         actions.gitsigns,
-        actions.cspell,
     },
 })
 
