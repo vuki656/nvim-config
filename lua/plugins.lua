@@ -30,7 +30,6 @@ return require("packer").startup({
         })
         use({
             "folke/todo-comments.nvim",
-            commit = "61240662fd9ffa4a546db57abcc50b97f6fab27b",
             config = load_file("todo-comments"),
         })
         use({
