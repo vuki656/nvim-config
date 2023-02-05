@@ -111,7 +111,6 @@ return require("packer").startup({
             "nvim-treesitter/nvim-treesitter",
             config = load_file("parser"),
             run = ":TSUpdate all",
-            commit = "4cccb6f494eb255b32a290d37c35ca12584c74d0",
             requires = "nvim-treesitter/playground",
         })
         use({
