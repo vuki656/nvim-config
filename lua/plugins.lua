@@ -64,15 +64,7 @@ return require("packer").startup({
                 "saadparwaiz1/cmp_luasnip",
             },
         })
-        use({
-            "jose-elias-alvarez/typescript.nvim",
-            ft = {
-                "javascript",
-                "javascriptreact",
-                "typescript",
-                "typescriptreact",
-            },
-        })
+        use("jose-elias-alvarez/typescript.nvim")
         use({
             "davidgranstrom/nvim-markdown-preview",
             config = load_file("markdown-preview"),
