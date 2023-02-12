@@ -46,22 +46,27 @@ icons.setup({
             name = "PackageJson",
         },
         [".env"] = {
-            icon = "﬛",
+            icon = "",
             color = "#e79627",
             name = "Env",
         },
         [".env.example"] = {
-            icon = "﬛",
+            icon = "",
             color = "#e79627",
             name = "EnvExample",
         },
         [".env.local"] = {
-            icon = "﬛",
+            icon = "",
             color = "#e79627",
             name = "EnvLocal",
         },
         [".env.ci"] = {
-            icon = "﬛",
+            icon = "",
+            color = "#e79627",
+            name = "EnvLocal",
+        },
+        [".env.test"] = {
+            icon = "",
             color = "#e79627",
             name = "EnvLocal",
         },

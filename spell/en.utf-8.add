@@ -10,7 +10,6 @@ guifg
 dockerls
 graphql
 jsonls
-sumneko
 os
 getenv
 JIT
