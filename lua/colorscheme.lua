@@ -149,6 +149,7 @@ set_highlight({
         { group = "@type.qualifier", foreground = purple },
         { group = "@type", foreground = yellow },
         { group = "@variable", foreground = white },
+        { group = "@variable.builtin", foreground = purple },
         { group = "@constructor", foreground = yellow, background = background },
         { group = "@parameter", foreground = orange },
         { group = "@property", foreground = red },
