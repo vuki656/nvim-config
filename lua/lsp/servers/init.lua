@@ -1,6 +1,7 @@
 require("lsp.servers.bash")
 require("lsp.servers.css")
 require("lsp.servers.docker")
+require("lsp.servers.docker-compose")
 require("lsp.servers.graphql")
 require("lsp.servers.html")
 require("lsp.servers.json")
