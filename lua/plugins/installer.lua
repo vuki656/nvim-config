@@ -41,6 +41,7 @@ installer_tools.setup({
         "actionlint",
         "fixjson",
         "stylelint-lsp",
+        "docker-compose-language-service",
     },
 })
 
