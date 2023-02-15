@@ -50,6 +50,11 @@ set_keymap({
             description = "Find git files in project",
         },
         {
+            key = "<LEADER>pc",
+            actions = actions.registers,
+            description = "Find copied text",
+        },
+        {
             key = "<LEADER>ps",
             actions = actions.live_grep,
             description = "Find text in project",
