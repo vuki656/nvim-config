@@ -51,7 +51,6 @@ git_signs.setup({
         delay = 300,
     },
     on_attach = function(buffer_number)
-        -- TODO: cleanup
         local plugin = package.loaded.gitsigns
 
         local function map(mode, key, action, options)
@@ -61,29 +60,9 @@ git_signs.setup({
             vim.keymap.set(mode, key, action, options)
         end
 
-        -- Navigation
-        map("n", "]c", ":Gitsigns next_hunk<CR>")
-        map("n", "[c", ":Gitsigns prev_hunk<CR>")
-
-        -- Actions
-        map({ "n", "v" }, "<leader>hs", plugin.stage_hunk)
-        map({ "n", "v" }, "<leader>hr", plugin.reset_hunk)
-        map("n", "<leader>hS", plugin.stage_buffer)
-        map("n", "<leader>hu", plugin.undo_stage_hunk)
-        map("n", "<leader>hR", plugin.reset_buffer)
-        map("n", "<leader>hp", plugin.preview_hunk)
-        map("n", "<leader>tb", plugin.toggle_current_line_blame)
-        map("n", "<leader>hd", plugin.diffthis)
-        map("n", "<leader>td", plugin.toggle_deleted)
-        map("n", "<leader>hD", function()
-            plugin.diffthis("~")
-        end)
-        map("n", "<leader>hb", function()
-            plugin.blame_line({ full = true })
-        end)
-
-        -- Text object
-        map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>")
+        map("n", "]c", plugin.next_hunk)
+        map("n", "[c", plugin.prev_hunk)
+        map("n", "<LEADER>hR", plugin.reset_buffer)
     end,
 })
 
