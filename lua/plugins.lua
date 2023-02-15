@@ -2,14 +2,14 @@ local load_file = require("utils.load-plugin-file")
 
 return require("packer").startup({
     function(use)
-        use({
-            "David-Kunz/jester",
-            config = load_file("jest-runner"),
-        })
         -- use({
         --     "dstein64/vim-startuptime",
         --     config = load_file("profiler"),
         -- })
+        use({
+            "david-kunz/jester",
+            config = load_file("jest-runner"),
+        })
         use({
             "akinsho/nvim-toggleterm.lua",
             config = load_file("terminal"),
@@ -57,7 +57,7 @@ return require("packer").startup({
                     config = load_file("completion-icons"),
                 },
                 {
-                    "l3mon4d3/LuaSnip",
+                    "l3mon4d3/luasnip",
                     config = load_file("snippets"),
                 },
                 "hrsh7th/cmp-nvim-lsp",
@@ -115,7 +115,7 @@ return require("packer").startup({
         use({
             "nvim-treesitter/nvim-treesitter",
             config = load_file("parser"),
-            run = ":TSUpdate all",
+            run = ":tsupdate all",
             requires = "nvim-treesitter/playground",
         })
         use({
@@ -140,7 +140,7 @@ return require("packer").startup({
             ft = { "markdown" },
         })
         use({
-            "Pocco81/auto-save.nvim",
+            "pocco81/auto-save.nvim",
             config = load_file("auto-save"),
         })
         use({
