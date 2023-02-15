@@ -17,6 +17,7 @@ local toggle_script_runner_buffer = require("plugins.terminal.keymaps.toggle-scr
 
 toggleterm.setup({
     shade_terminals = false,
+    direction = 'float',
 })
 
 ------------------------------------------------------------------------------------------

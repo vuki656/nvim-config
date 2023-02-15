@@ -2,6 +2,10 @@ local load_file = require("utils.load-plugin-file")
 
 return require("packer").startup({
     function(use)
+        use({
+            "David-Kunz/jester",
+            config = load_file("jest-runner"),
+        })
         -- use({
         --     "dstein64/vim-startuptime",
         --     config = load_file("profiler"),
