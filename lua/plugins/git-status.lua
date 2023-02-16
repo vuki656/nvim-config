@@ -64,6 +64,7 @@ git_signs.setup({
         map("n", "[c", plugin.prev_hunk)
         map("n", "<LEADER>hR", plugin.reset_buffer)
         map("n", "<LEADER>hr", plugin.reset_hunk)
+        map("n", "<LEADER>hp", plugin.preview_hunk)
     end,
 })
 
