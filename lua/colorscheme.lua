@@ -72,7 +72,12 @@ set_highlight({
         { group = "Structure", foreground = orange },
         { group = "Underlined", foreground = white },
         { group = "Number", foreground = orange },
-        { group = "TabLine", foreground = white, background = background, options = "NONE" },
+        {
+            group = "TabLine",
+            foreground = white,
+            background = background,
+            options = "NONE",
+        },
         { group = "TabLineSel", foreground = red, background = background },
         { group = "Operator", foreground = white },
         { group = "String", foreground = red },
@@ -164,5 +169,6 @@ set_highlight({
         { group = "@text.reference", foreground = orange },
         { group = "@text.todo.unchecked", foreground = red },
         { group = "@text.todo.checked", foreground = green },
+        { group = "@storageclass.lifetime ", foreground = purple },
     },
 })
