@@ -115,7 +115,7 @@ return require("packer").startup({
         use({
             "nvim-treesitter/nvim-treesitter",
             config = load_file("parser"),
-            run = ":tsupdate",
+            run = ":TSUpdate",
             requires = "nvim-treesitter/playground",
         })
         use({
