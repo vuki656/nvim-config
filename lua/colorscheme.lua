@@ -158,7 +158,7 @@ set_highlight({
         { group = "@constructor", foreground = yellow, background = background },
         { group = "@parameter", foreground = orange },
         { group = "@property", foreground = red },
-        { group = "@punctuation.bracket", foreground = white },
+        { group = "@punctuation.bracket", foreground = red },
         { group = "@punctuation.delimiter", foreground = orange },
         { group = "@tag", foreground = red },
         { group = "@tag.delimiter", foreground = white },
