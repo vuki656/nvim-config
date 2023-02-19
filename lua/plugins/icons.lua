@@ -126,27 +126,27 @@ icons.setup({
             name = "Lua",
         },
         ["Dockerfile"] = {
-            icon = "",
+            icon = "󰡨",
             color = "#1e9cef",
             name = "Docker",
         },
         [".dockerignore"] = {
-            icon = "",
+            icon = "󰡨",
             color = "#1e9cef",
             name = "Docker",
         },
         ["docker-compose.yaml"] = {
-            icon = "",
+            icon = "󰡨",
             color = "#1e9cef",
             name = "Docker",
         },
         ["Dockerfile.migrations"] = {
-            icon = "",
+            icon = "󰡨",
             color = "#1e9cef",
             name = "Docker",
         },
         ["Dockerfile.tests"] = {
-            icon = "",
+            icon = "󰡨",
             color = "#1e9cef",
             name = "Docker",
         },
