@@ -160,6 +160,7 @@ set_highlight({
         { group = "@property", foreground = red },
         { group = "@punctuation.bracket", foreground = red },
         { group = "@punctuation.delimiter", foreground = orange },
+        { group = "@repeat", foreground = purple },
         { group = "@tag", foreground = red },
         { group = "@tag.delimiter", foreground = white },
         { group = "@tag.attribute", foreground = red },
