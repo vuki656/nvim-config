@@ -27,6 +27,7 @@ installer_lsp.setup({
     automatic_installation = true,
 })
 
+-- TODO: add everything that's installed
 installer_tools.setup({
     ensure_installed = {
         "stylua",
@@ -35,6 +36,7 @@ installer_tools.setup({
         "eslint_d",
         "shellcheck",
         "hadolint",
+        "cssmodules-language-server",
         "yamllint",
         "luacheck",
         "cspell",
