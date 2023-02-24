@@ -9,6 +9,7 @@ local set_keymap = require("utils.set-keymap")
 
 local prettier = require("plugins.formatter-linter.configs.prettier")
 local eslint = require("plugins.formatter-linter.configs.eslint")
+local typescript = require("typescript.extensions.null-ls.code-actions")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- SETUP ------------------------------------------------
@@ -60,6 +61,9 @@ null_ls.setup({
         actions.eslint_d,
         actions.shellcheck,
         actions.gitsigns,
+
+        -- LS
+        typescript,
     },
 })
 
