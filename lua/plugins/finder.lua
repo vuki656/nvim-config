@@ -71,8 +71,13 @@ set_keymap({
         },
         {
             key = "<LEADER>pi",
+            actions = actions.lsp_implementations,
+            description = "Find variable implementations in project",
+        },
+        {
+            key = "<LEADER>pd",
             actions = actions.lsp_definitions,
-            description = "Find variable definitions/implementations in project",
+            description = "Find variable definitions in project",
         },
         {
             key = "<LEADER>hl",
