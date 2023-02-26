@@ -44,10 +44,10 @@ set_highlight({
         { group = "TabLineFill", foreground = red, background = orange },
         { group = "Tag", foreground = red, background = blue },
         { group = "Debug", foreground = red, background = blue },
-        { group = "conceal", foreground = green, background = blue },
 
         -- Editor
         { group = "StorageClass", foreground = red },
+        { group = "conceal", foreground = orange, background = "NONE" },
         { group = "bold", foreground = red },
         { group = "Search", foreground = background, background = orange },
         { group = "Function", foreground = blue },
