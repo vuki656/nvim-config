@@ -171,5 +171,6 @@ set_highlight({
         { group = "@text.todo.unchecked", foreground = red },
         { group = "@text.todo.checked", foreground = green },
         { group = "@storageclass.lifetime ", foreground = purple },
+        { group = "@namespace", foreground = yellow },
     },
 })
