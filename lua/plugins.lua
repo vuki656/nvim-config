@@ -105,6 +105,7 @@ return require("packer").startup({
         use({
             "narutoxy/silicon.lua",
             config = load_file("screenshot"),
+            commit = "3223d26456f728870cacab91662d03bbace6e354",
             requires = { "nvim-lua/plenary.nvim" },
         })
         use("neovim/nvim-lspconfig")
