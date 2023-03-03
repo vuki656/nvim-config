@@ -165,6 +165,11 @@ icons.setup({
             color = "#7963e6",
             name = "Graphql",
         },
+        ["graphql"] = {
+            icon = "爵",
+            color = "#7963e6",
+            name = "Graphql",
+        },
         ["gql"] = {
             icon = "爵",
             color = "#7963e6",
