@@ -156,7 +156,6 @@ return require("packer").startup({
         use({
             "theprimeagen/harpoon",
             config = load_file("bookmarks"),
-            commit = "e4a91c481bd7952fe316a7bb5ce9ec6792f64f81",
         })
         use({
             "rrethy/vim-illuminate",
