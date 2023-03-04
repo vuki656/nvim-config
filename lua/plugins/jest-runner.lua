@@ -12,7 +12,7 @@ local set_keymap = require("utils.set-keymap")
 
 jester.setup({
     terminal_cmd = "ToggleTerm",
-    path_to_jest_run = "./node_modules/.bin/jest",
+    path_to_jest_run = "yarn jest",
 })
 
 ------------------------------------------------------------------------------------------
