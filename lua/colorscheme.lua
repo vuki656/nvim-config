@@ -142,7 +142,7 @@ set_highlight({
 
         -- Treesitter
         { group = "@exception", foreground = purple },
-        { group = "@constant", foreground = orange },
+        { group = "@constant", foreground = white },
         { group = "@constant.builtin", foreground = purple },
         { group = "@number", foreground = orange },
         { group = "@string", foreground = green },
