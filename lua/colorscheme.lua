@@ -164,6 +164,7 @@ set_highlight({
         { group = "@tag", foreground = red },
         { group = "@tag.delimiter", foreground = white },
         { group = "@tag.attribute", foreground = red },
+        { group = "@attribute", foreground = purple },
         { group = "@text.title", foreground = red },
         { group = "@text.uri", foreground = blue },
         { group = "@text.literal", foreground = green },
