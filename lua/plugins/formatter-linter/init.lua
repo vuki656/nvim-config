@@ -2,13 +2,13 @@
 -- Description: Proxy for linters/formatters
 -- Link: https://github.com/jose-elias-alvarez/null-ls.nvim
 
-local null_ls = require("null-ls")
 local conditional = require("null-ls.utils").make_conditional_utils()
+local null_ls = require("null-ls")
 
 local set_keymap = require("utils.set-keymap")
 
-local prettier = require("plugins.formatter-linter.configs.prettier")
 local eslint = require("plugins.formatter-linter.configs.eslint")
+local prettier = require("plugins.formatter-linter.configs.prettier")
 local typescript = require("typescript.extensions.null-ls.code-actions")
 
 ------------------------------------------------------------------------------------------

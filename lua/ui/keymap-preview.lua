@@ -1,5 +1,5 @@
-local pickers = require("telescope.pickers")
 local finders = require("telescope.finders")
+local pickers = require("telescope.pickers")
 local theme = require("telescope.themes")
 local conf = require("telescope.config").values
 

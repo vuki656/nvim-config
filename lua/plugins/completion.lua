@@ -3,8 +3,8 @@
 -- Link: https://github.com/hrsh7th/nvim-cmp
 
 local cmp = require("cmp")
-local snippets = require("luasnip")
 local icons = require("lspkind")
+local snippets = require("luasnip")
 
 local colors = require("utils.colors")
 local set_highlight = require("utils.set-highlight")

@@ -4,8 +4,8 @@
 
 local headlines = require("headlines")
 
-local set_highlight = require("utils.set-highlight")
 local colors = require("utils.colors")
+local set_highlight = require("utils.set-highlight")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- SETUP ------------------------------------------------

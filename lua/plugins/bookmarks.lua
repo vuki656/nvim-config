@@ -3,8 +3,8 @@
 -- Link: https://github.com/ThePrimeagen/harpoon
 
 local harpoon = require("harpoon")
-local harpoon_ui = require("harpoon.ui")
 local harpoon_mark = require("harpoon.mark")
+local harpoon_ui = require("harpoon.ui")
 
 local set_keymap = require("utils.set-keymap")
 

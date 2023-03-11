@@ -1,6 +1,6 @@
 local lsp = require("lspconfig")
-
 local schemastore = require("schemastore")
+
 local capabilities = require("lsp.utils.capabilities")
 
 lsp.jsonls.setup({

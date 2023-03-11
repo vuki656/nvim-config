@@ -7,31 +7,31 @@ local luasnip = require("luasnip")
 local set_keymap = require("utils.set-keymap")
 
 -- JS/TS
+local arrow_function_full_snippet = require("plugins.snippets.nodes.js.arrow_function_full")
+local arrow_function_snippet = require("plugins.snippets.nodes.js.arrow_function")
 local console_log_snippet = require("plugins.snippets.nodes.js.console_log")
 local console_log_stringify_snippet = require("plugins.snippets.nodes.js.console_log_stringify")
 local export_all_snippet = require("plugins.snippets.nodes.js.export_all")
 local service_function_snippet = require("plugins.snippets.nodes.js.service_function")
-local arrow_function_snippet = require("plugins.snippets.nodes.js.arrow_function")
-local arrow_function_full_snippet = require("plugins.snippets.nodes.js.arrow_function_full")
 local type_snippet = require("plugins.snippets.nodes.js.type")
 
 -- Typegraphql
-local resolver_query_snippet = require("plugins.snippets.nodes.js.type_graphql.resolver_query")
-local resolver_mutation_snippet = require("plugins.snippets.nodes.js.type_graphql.resolver_mutation")
 local resolver_args_snippet = require("plugins.snippets.nodes.js.type_graphql.resolver_args")
 local resolver_input_snippet = require("plugins.snippets.nodes.js.type_graphql.resolver_input")
+local resolver_mutation_snippet = require("plugins.snippets.nodes.js.type_graphql.resolver_mutation")
 local resolver_payload_snippet = require("plugins.snippets.nodes.js.type_graphql.resolver_payload")
+local resolver_query_snippet = require("plugins.snippets.nodes.js.type_graphql.resolver_query")
 local resolver_type_snippet = require("plugins.snippets.nodes.js.type_graphql.resolver_type")
 
 -- React
-local react_element_snippet = require("plugins.snippets.nodes.js.react.react_element")
-local react_component_snippet = require("plugins.snippets.nodes.js.react.react_component")
 local react_component_props_snippet = require("plugins.snippets.nodes.js.react.react_component_props")
+local react_component_snippet = require("plugins.snippets.nodes.js.react.react_component")
+local react_element_snippet = require("plugins.snippets.nodes.js.react.react_element")
 
 -- Styled Components
 local styled_component = require("plugins.snippets.nodes.js.styled_components.styled_component")
-local styled_component_props = require("plugins.snippets.nodes.js.styled_components.styled_component_props")
 local styled_component_import = require("plugins.snippets.nodes.js.styled_components.styled_component_import")
+local styled_component_props = require("plugins.snippets.nodes.js.styled_components.styled_component_props")
 
 -- Jest
 local jest_suite = require("plugins.snippets.nodes.js.jest.suite")

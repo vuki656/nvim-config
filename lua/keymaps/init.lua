@@ -1,11 +1,10 @@
+local keymap_preview = require("ui.keymap-preview")
+local print_selection = require("keymaps.custom.print.selection")
+local print_word = require("keymaps.custom.print.word")
 local set_keymap = require("utils.set-keymap")
 local set_terminal_keymap = require("utils.set-terminal-keymap")
-
-local keymap_preview = require("ui.keymap-preview")
 local spell_fix = require("ui.spell-fix")
 
-local print_word = require("keymaps.custom.print.word")
-local print_selection = require("keymaps.custom.print.selection")
 ------------------------------------------------------------------------------------------
 ----------------------------------- NAVIGATION -------------------------------------------
 ------------------------------------------------------------------------------------------

@@ -2,12 +2,12 @@
 -- Description: Everything finder
 -- Link: https://github.com/nvim-telescope/telescope.nvim
 
-local telescope = require("telescope")
 local actions = require("telescope.builtin")
+local telescope = require("telescope")
 
+local colors = require("utils.colors")
 local set_highlight = require("utils.set-highlight")
 local set_keymap = require("utils.set-keymap")
-local colors = require("utils.colors")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- SETUP ------------------------------------------------

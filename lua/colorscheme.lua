@@ -1,7 +1,8 @@
+local LSP_ICONS = require("lsp.utils.icons")
+
+local colors = require("utils.colors")
 local set_highlight = require("utils.set-highlight")
 local set_sign = require("utils.set-sign")
-local colors = require("utils.colors")
-local LSP_ICONS = require("lsp.utils.icons")
 
 local background = colors.background
 local background_light = colors.background_light

@@ -1,5 +1,5 @@
-local null_ls = require("null-ls")
 local conditional = require("null-ls.utils").make_conditional_utils()
+local null_ls = require("null-ls")
 
 local has_eslint = conditional.root_has_file(".eslintrc.js") or conditional.root_has_file(".eslintrc.json")
 

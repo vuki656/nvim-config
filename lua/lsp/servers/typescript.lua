@@ -1,9 +1,8 @@
 local lsp_utils = require("lspconfig.util")
-
 local typescript = require("typescript")
 
-local set_keymap = require("utils.set-keymap")
 local capabilities = require("lsp.utils.capabilities")
+local set_keymap = require("utils.set-keymap")
 
 typescript.setup({
     disable_formatting = true,
