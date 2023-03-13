@@ -2109,3 +2109,5 @@ cuid2
 devDependencies
 packageManager
 typeDefs
+prometheus
+grafana
