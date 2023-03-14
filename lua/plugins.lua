@@ -46,6 +46,7 @@ return require("packer").startup({
             "nvim-tree/nvim-tree.lua",
             after = "nvim-web-devicons",
             config = load_file("file-tree"),
+            commit = "9c97e6449b0b0269bd44e1fd4857184dfa57bb4c",
             requires = "nvim-tree/nvim-web-devicons",
         })
         use({
