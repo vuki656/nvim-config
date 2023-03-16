@@ -45,13 +45,13 @@ null_ls.setup({
         }),
         -- eslint.diagnostics,
         diagnostics.luacheck,
-        diagnostics.cspell.with({
-            condition = function()
-                return conditional.root_has_file("cspell.config.json")
-                    or conditional.root_has_file(".cspell.json")
-                    or conditional.root_has_file(".cspellrc.js")
-            end,
-        }),
+        -- diagnostics.cspell.with({
+        --     condition = function()
+        --         return conditional.root_has_file("cspell.config.json")
+        --             or conditional.root_has_file(".cspell.json")
+        --             or conditional.root_has_file(".cspellrc.js")
+        --     end,
+        -- }),
         diagnostics.actionlint.with({
             runtime_condition = function(params)
                 return params.bufname:find(vim.pesc(".github/workflows")) ~= nil
