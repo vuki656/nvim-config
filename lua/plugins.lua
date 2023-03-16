@@ -28,14 +28,18 @@ return require("packer").startup({
             config = load_file("scrollbar"),
         })
         use({
+            "echasnovski/mini.splitjoin",
+            config = load_file("split-join"),
+        })
+        use({
             "feline-nvim/feline.nvim",
             config = load_file("status-line"),
             requires = "nvim-tree/nvim-web-devicons",
         })
-        use({
-            "folke/todo-comments.nvim",
-            config = load_file("todo-comments"),
-        })
+        -- use({
+        --     "folke/todo-comments.nvim",
+        --     config = load_file("todo-comments"),
+        -- })
         use({
             "goolord/alpha-nvim",
             after = "nvim-tree.lua",
