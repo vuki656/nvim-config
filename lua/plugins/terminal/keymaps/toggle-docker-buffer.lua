@@ -7,7 +7,7 @@ local docker = Terminal:new({
     dir = "git_dir",
     direction = "float",
     float_opts = {
-        border = "single",
+        border = "none",
         width = function()
             return math.floor(vim.o.columns * 0.99)
         end,
