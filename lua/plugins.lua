@@ -32,7 +32,7 @@ return require("packer").startup({
             config = load_file("split-join"),
         })
         use({
-            "feline-nvim/feline.nvim",
+            "freddiehaddad/feline.nvim",
             config = load_file("status-line"),
             requires = "nvim-tree/nvim-web-devicons",
         })
