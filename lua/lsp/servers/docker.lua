@@ -4,4 +4,7 @@ local capabilities = require("lsp.utils.capabilities")
 
 lsp.dockerls.setup({
     capabilities = capabilities,
+    on_attach = function(client)
+        client.server_capabilities.document_formatting = false
+    end,
 })
