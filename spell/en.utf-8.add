@@ -2117,3 +2117,6 @@ Hotfix
 lifecycles
 typesafe
 OTEL
+multistream
+promtail
+loki
