@@ -35,7 +35,6 @@ set_highlight({
         { group = "Folded", foreground = red, background = blue },
         { group = "FoldColumn", foreground = red, background = blue },
         { group = "Italic", foreground = red, background = blue },
-        { group = "NonText", foreground = red, background = blue },
         { group = "VisualNOS", foreground = red, background = blue },
         { group = "TooLong", foreground = red, background = blue },
         { group = "WildMenu", foreground = red, background = blue },
@@ -47,6 +46,7 @@ set_highlight({
         { group = "Debug", foreground = red, background = blue },
 
         -- Editor
+        { group = "NonText", foreground = background_light, background = "NONE" },
         { group = "StorageClass", foreground = red },
         { group = "conceal", foreground = orange, background = "NONE" },
         { group = "bold", foreground = red },
