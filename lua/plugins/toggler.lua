@@ -13,6 +13,7 @@ toggler.setup({
         ["&&"] = "||",
         ["dark"] = "light",
         ["async"] = "await",
+        ["asc"] = "desc",
         ["public"] = "private",
         ["`"] = "'",
     },
