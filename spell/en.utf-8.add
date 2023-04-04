@@ -2121,3 +2121,4 @@ multistream
 promtail
 loki
 datamodel
+tablename
