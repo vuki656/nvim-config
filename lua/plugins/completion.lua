@@ -77,8 +77,8 @@ cmp.setup({
     },
     sorting = {
         comparators = {
-            cmp.config.compare.score,
             cmp.config.compare.offset,
+            cmp.config.compare.score,
         },
     },
 })
