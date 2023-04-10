@@ -2122,3 +2122,5 @@ promtail
 loki
 datamodel
 tablename
+otlp
+grpc
