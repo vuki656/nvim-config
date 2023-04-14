@@ -37,7 +37,7 @@ treesitter_configs.setup({
 set_keymap({
     key = "<LEADER>ts",
     actions = function()
-        vim.cmd("TSHighlightCapturesUnderCursor")
+        vim.cmd(":Inspect")
     end,
     description = "Get the treesitter highlight group of variable under the cursor",
 })
