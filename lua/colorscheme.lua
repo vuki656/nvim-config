@@ -56,7 +56,7 @@ set_highlight({
         { group = "Comment", foreground = grey },
         { group = "Title", foreground = red },
         { group = "Include", foreground = blue },
-        { group = "Typedef", foreground = purple },
+        { group = "Typedef", foreground = yellow },
         { group = "SpecialChar", foreground = orange, background = background },
         { group = "Macro", foreground = orange, background = background },
         { group = "Repeat", foreground = blue, background = background },
@@ -67,10 +67,10 @@ set_highlight({
         { group = "Character", foreground = purple },
         { group = "Conditional", foreground = red },
         { group = "Directory", foreground = blue, background = background },
-        { group = "Type", foreground = orange },
+        { group = "Type", foreground = yellow, options = "NONE" },
         { group = "Float", foreground = blue },
         { group = "Ignore", foreground = red },
-        { group = "Structure", foreground = orange },
+        { group = "Structure", foreground = yellow },
         { group = "Underlined", foreground = white },
         { group = "Number", foreground = orange },
         {
@@ -84,6 +84,7 @@ set_highlight({
         { group = "String", foreground = red },
         { group = "CursorLine", background = grey_lighter },
         { group = "Delimiter", foreground = orange },
+        { group = "Identifier", foreground = white },
         { group = "Todo", background = blue, foreground = background },
         { group = "IncSearch", foreground = "NONE", background = "NONE" },
         { group = "MoreMsg", foreground = orange, background = background },
@@ -133,7 +134,6 @@ set_highlight({
         -- Documentation
         { group = "Statement", foreground = purple, options = "NONE" },
         { group = "PreProc", foreground = grey },
-        { group = "Identifier", foreground = red },
         { group = "HelpExample", foreground = orange },
         { group = "Special", foreground = blue },
         { group = "helpSectionDelim", foreground = grey_light },
@@ -174,5 +174,9 @@ set_highlight({
         { group = "@text.todo.checked", foreground = green },
         { group = "@storageclass.lifetime ", foreground = purple },
         { group = "@namespace", foreground = yellow },
+
+        -- LSP Semantic Highlighting
+        { group = "@lsp.type.parameter", foreground = orange },
+        { group = "@lsp.type.property", foreground = red },
     },
 })

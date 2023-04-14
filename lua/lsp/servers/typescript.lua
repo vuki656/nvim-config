@@ -11,7 +11,6 @@ typescript.setup({
         root_dir = lsp_utils.root_pattern(".git"),
         on_attach = function(client)
             client.server_capabilities.document_formatting = false
-            client.server_capabilities.semanticTokensProvider = nil
 
             set_keymap({
                 list = {
