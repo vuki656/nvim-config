@@ -154,8 +154,8 @@ set_highlight({
         { group = "@type.builtin", foreground = purple },
         { group = "@type.qualifier", foreground = purple },
         { group = "@type", foreground = yellow },
-        { group = "@variable", foreground = white },
         { group = "@variable.builtin", foreground = purple },
+        { group = "@field", foreground = red },
         { group = "@constructor", foreground = yellow, background = background },
         { group = "@parameter", foreground = orange },
         { group = "@property", foreground = red },
@@ -174,10 +174,6 @@ set_highlight({
         { group = "@text.todo.checked", foreground = green },
         { group = "@storageclass.lifetime ", foreground = purple },
         { group = "@namespace", foreground = yellow },
-
-        -- LSP Semantic Highlighting
-        { group = "@lsp.type.parameter", foreground = orange },
-        { group = "@lsp.type.property", foreground = red },
 
         -- Plugins
         { group = "packerHash", foreground = red },
