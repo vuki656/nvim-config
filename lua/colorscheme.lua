@@ -178,5 +178,8 @@ set_highlight({
         -- LSP Semantic Highlighting
         { group = "@lsp.type.parameter", foreground = orange },
         { group = "@lsp.type.property", foreground = red },
+
+        -- Plugins
+        { group = "packerHash", foreground = red },
     },
 })
