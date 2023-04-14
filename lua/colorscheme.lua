@@ -42,7 +42,6 @@ set_highlight({
         { group = "Define", foreground = red, background = blue },
         { group = "PreCondit", foreground = red, background = blue },
         { group = "TabLineFill", foreground = red, background = orange },
-        { group = "Tag", foreground = red, background = blue },
         { group = "Debug", foreground = red, background = blue },
 
         -- Editor
@@ -51,6 +50,7 @@ set_highlight({
         { group = "conceal", foreground = orange, background = "NONE" },
         { group = "bold", foreground = red },
         { group = "Search", foreground = background, background = orange },
+        { group = "Tag", foreground = white },
         { group = "Function", foreground = blue },
         { group = "Exception", foreground = white },
         { group = "Comment", foreground = grey },
