@@ -113,7 +113,7 @@ set_highlight({
         { group = "SpecialKey", foreground = orange, background = background },
 
         -- Diagnostics
-		{ group = "DiagnosticUnderlineError", foreground = red, options = "bold,underdotted" },
+		{ group = "DiagnosticUnderlineError", foreground = red, options = "bold,undercurl" },
         { group = "DiagnosticUnderlineWarning", foreground = yellow },
         { group = "DiagnosticUnderlineInformation", foreground = blue },
         { group = "DiagnosticUnderlineHint", foreground = orange },
