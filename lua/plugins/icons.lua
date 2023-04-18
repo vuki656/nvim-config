@@ -3,6 +3,7 @@
 -- Link: https://github.com/nvim-tree/nvim-web-devicons
 
 local icons = require("nvim-web-devicons")
+local colors = require("utils.colors")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- SETUP ------------------------------------------------
@@ -10,6 +11,11 @@ local icons = require("nvim-web-devicons")
 
 icons.setup({
     override = {
+        ["proto"] = {
+            icon = "󰿘",
+            color = colors.yellow,
+            name = "Proto",
+        },
         [".bashrc"] = {
             icon = "",
             color = "#a5afbe",
