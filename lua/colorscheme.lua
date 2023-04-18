@@ -156,7 +156,7 @@ set_highlight({
         { group = "@type", foreground = yellow },
         { group = "@variable.builtin", foreground = purple },
         { group = "@field", foreground = red },
-        { group = "@constructor", foreground = yellow, background = background },
+        { group = "@constructor", foreground = purple },
         { group = "@parameter", foreground = orange },
         { group = "@property", foreground = red },
         { group = "@punctuation.bracket", foreground = red },
