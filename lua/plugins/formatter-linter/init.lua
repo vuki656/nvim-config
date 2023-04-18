@@ -24,6 +24,7 @@ null_ls.setup({
     sources = {
         formatter.stylua,
         formatter.fixjson,
+        formatter.protolint,
         formatter.shfmt.with({ extra_args = { "-i=4" } }),
         prettier.formatter,
         eslint.formatter,
@@ -31,6 +32,7 @@ null_ls.setup({
         diagnostics.shellcheck,
         diagnostics.hadolint,
         diagnostics.stylelint,
+        diagnostics.protolint,
         diagnostics.dotenv_linter,
         diagnostics.yamllint.with({
             extra_args = {

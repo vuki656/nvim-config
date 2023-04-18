@@ -28,7 +28,6 @@ local formatter = null_ls.builtins.formatting.prettier.with({
         "--print-width=130",
         "--no-semi",
         "--stdin-filepath",
-        "--config-precedence=prefer-file",
         "$FILENAME",
     },
 })

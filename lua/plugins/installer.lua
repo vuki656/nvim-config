@@ -29,6 +29,8 @@ installer_lsp.setup({
 
 installer_tools.setup({
     ensure_installed = {
+        "buf-language-server",
+        "protolint",
         "actionlint",
         "bash-language-server",
         "cspell",

@@ -2124,3 +2124,7 @@ datamodel
 tablename
 otlp
 grpc
+protolint
+bufls
+protoc
+protobuf
