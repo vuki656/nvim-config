@@ -27,6 +27,7 @@ return require("packer").startup({
             "dstein64/nvim-scrollview",
             config = load_file("scrollbar"),
         })
+        use("davidosomething/format-ts-errors.nvim")
         use({
             "echasnovski/mini.splitjoin",
             config = load_file("split-join"),
