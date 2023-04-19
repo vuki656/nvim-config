@@ -113,7 +113,7 @@ set_highlight({
         { group = "SpecialKey", foreground = orange, background = background },
 
         -- Diagnostics
-		{ group = "DiagnosticUnderlineError", foreground = red, options = "bold,undercurl" },
+        { group = "DiagnosticUnderlineError", foreground = red, options = "bold,undercurl" },
         { group = "DiagnosticUnderlineWarning", foreground = yellow },
         { group = "DiagnosticUnderlineInformation", foreground = blue },
         { group = "DiagnosticUnderlineHint", foreground = orange },
@@ -175,7 +175,6 @@ set_highlight({
         { group = "@storageclass.lifetime ", foreground = purple },
         { group = "@namespace", foreground = yellow },
 
-        -- Plugins
         { group = "packerHash", foreground = red },
     },
 })
