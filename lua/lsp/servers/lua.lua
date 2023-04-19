@@ -10,6 +10,9 @@ lsp.lua_ls.setup({
     end,
     settings = {
         Lua = {
+            format = {
+                enable = false,
+            },
             diagnostics = {
                 enable = true,
                 globals = {
