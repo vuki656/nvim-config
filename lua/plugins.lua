@@ -98,7 +98,6 @@ return require("packer").startup({
             config = load_file("git-status"),
             requires = "nvim-lua/plenary.nvim",
         })
-        use("lewis6991/impatient.nvim")
         use({
             "mbbill/undotree",
             config = load_file("undo-tree"),
