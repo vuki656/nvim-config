@@ -40,12 +40,12 @@ set_highlight({
         { group = "WildMenu", foreground = red, background = blue },
         { group = "Repeat", foreground = red, background = blue },
         { group = "Define", foreground = red, background = blue },
-        { group = "PreCondit", foreground = red, background = blue },
         { group = "TabLineFill", foreground = red, background = orange },
         { group = "Debug", foreground = red, background = blue },
 
         -- Editor
         { group = "NonText", foreground = background_light, background = "NONE" },
+        { group = "PreCondit", foreground = blue },
         { group = "StorageClass", foreground = red },
         { group = "conceal", foreground = orange, background = "NONE" },
         { group = "bold", foreground = red },
