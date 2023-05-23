@@ -14,6 +14,7 @@ toggler.setup({
         ["dark"] = "light",
         ["async"] = "await",
         ["void"] = "await",
+        ["in"] = "out",
         ["asc"] = "desc",
         ["public"] = "private",
         ["`"] = "'",
