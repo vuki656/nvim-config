@@ -12,7 +12,6 @@ toggler.setup({
     inverses = {
         ["&&"] = "||",
         ["dark"] = "light",
-        ["async"] = "await",
         ["void"] = "await",
         ["in"] = "out",
         ["asc"] = "desc",
