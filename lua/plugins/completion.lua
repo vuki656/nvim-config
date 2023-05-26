@@ -59,21 +59,14 @@ cmp.setup({
         { name = "luasnip" },
         {
             name = "buffer",
-            max_item_count = 15,
             option = {
                 get_bufnrs = function()
                     return vim.api.nvim_list_bufs()
                 end,
             },
         },
-        {
-            name = "path",
-            max_item_count = 15,
-        },
-        {
-            name = "nvim_lua",
-            max_item_count = 20,
-        },
+        { name = "path" },
+        { name = "nvim_lua" },
     },
     sorting = {
         comparators = {
