@@ -7,6 +7,8 @@ local luasnip = require("luasnip")
 local set_keymap = require("utils.set-keymap")
 
 -- JS/TS
+local arrow_function_async_snippet = require("plugins.snippets.nodes.js.arrow_function_async")
+local arrow_function_full_async_snippet = require("plugins.snippets.nodes.js.arrow_function_full_async")
 local arrow_function_full_snippet = require("plugins.snippets.nodes.js.arrow_function_full")
 local arrow_function_snippet = require("plugins.snippets.nodes.js.arrow_function")
 local console_log_snippet = require("plugins.snippets.nodes.js.console_log")
@@ -58,6 +60,8 @@ local js_ts_snippets = {
     console_log_stringify_snippet,
     export_all_snippet,
     arrow_function_snippet,
+    arrow_function_async_snippet,
+    arrow_function_full_async_snippet,
     arrow_function_full_snippet,
     service_function_snippet,
     type_snippet,
