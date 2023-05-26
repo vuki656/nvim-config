@@ -13,6 +13,7 @@ toggler.setup({
         ["&&"] = "||",
         ["dark"] = "light",
         ["void"] = "await",
+        ["producer"] = "consumer",
         ["in"] = "out",
         ["asc"] = "desc",
         ["public"] = "private",
