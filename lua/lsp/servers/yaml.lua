@@ -10,10 +10,10 @@ lsp.yamlls.setup({
     end,
     settings = {
         yaml = {
-            schemaStore = {
-                enable = false,
-            },
             schemas = require("schemastore").yaml.schemas(),
         },
+    },
+    schemaStore = {
+        enable = true,
     },
 })
