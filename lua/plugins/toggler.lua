@@ -17,6 +17,7 @@ toggler.setup({
         ["mutation"] = "query",
         ["in"] = "out",
         ["asc"] = "desc",
+        ["Asc"] = "Desc",
         ["public"] = "private",
         ["`"] = "'",
     },
