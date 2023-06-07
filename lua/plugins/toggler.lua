@@ -14,6 +14,7 @@ toggler.setup({
         ["dark"] = "light",
         ["void"] = "await",
         ["producer"] = "consumer",
+        ["mutation"] = "query",
         ["in"] = "out",
         ["asc"] = "desc",
         ["public"] = "private",
