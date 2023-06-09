@@ -11,6 +11,11 @@ return require("packer").startup({
             config = load_file("terminal"),
         })
         use({
+            "akinsho/git-conflict.nvim",
+            tag = "*",
+            config = load_file('git-conflict')
+        })
+        use({
             "ahmedkhalf/project.nvim",
             config = load_file("project-manager"),
         })
@@ -165,7 +170,7 @@ return require("packer").startup({
         })
         use({
             "yorickpeterse/nvim-pqf",
-            config = load_file("better-quickfix")
+            config = load_file("better-quickfix"),
         })
         use({
             "wbthomason/packer.nvim",
