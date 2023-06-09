@@ -2,10 +2,6 @@ local load_file = require("utils.load-plugin-file")
 
 return require("packer").startup({
     function(use)
-        -- use({
-        --     "dstein64/vim-startuptime",
-        --     config = load_file("profiler"),
-        -- })
         use({
             "david-kunz/jester",
             config = load_file("jest-runner"),
@@ -168,6 +164,10 @@ return require("packer").startup({
             requires = "muniftanjim/nui.nvim",
         })
         use({
+            "yorickpeterse/nvim-pqf",
+            config = load_file("better-quickfix")
+        })
+        use({
             "wbthomason/packer.nvim",
             config = load_file("plugin-manager"),
         })
@@ -187,5 +187,9 @@ return require("packer").startup({
             after = "nvim-cmp",
             config = load_file("auto-pairs"),
         })
+        -- use({
+        --     "dstein64/vim-startuptime",
+        --     config = load_file("profiler"),
+        -- })
     end,
 })
