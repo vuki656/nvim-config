@@ -6,6 +6,7 @@ local set_sign = require("utils.set-sign")
 
 local background = colors.background
 local background_light = colors.background_light
+local black = colors.yellow
 local purple = colors.purple
 local red = colors.red
 local white = colors.white
@@ -127,9 +128,9 @@ set_highlight({
         { group = "DiagnosticHint", foreground = orange },
 
         -- Git
-        { group = "diffAdded", foreground = green },
-        { group = "diffRemoved", foreground = red },
-        { group = "diffLine", foreground = blue },
+        { group = "DiffChange", foreground = blue, background = background_light },
+        { group = "DiffDelete", foreground = red, background = background_light },
+        { group = "DiffAdd", foreground = green, background = background_light },
 
         -- Documentation
         { group = "Statement", foreground = purple, options = "NONE" },

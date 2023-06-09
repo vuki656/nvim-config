@@ -1,4 +1,5 @@
 return {
+    black = "#000000",
     transparent = "#333840",
     background = "#282c34",
     background_light = "#3C4048",
