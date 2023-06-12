@@ -131,6 +131,7 @@ set_highlight({
         { group = "DiffDelete", foreground = red, background = background_light },
         { group = "DiffAdd", foreground = green, background = background_light },
         { group = "DiffText", background = background_light },
+        { group = "diffRemoved", foreground = red },
 
         -- Documentation
         { group = "Statement", foreground = purple, options = "NONE" },
