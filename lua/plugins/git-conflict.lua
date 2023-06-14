@@ -27,35 +27,35 @@ set_keymap({
             actions = function()
                 vim.cmd("GitConflictChooseTheirs")
             end,
-            description = "Merge their change",
+            description = "Git conflict - Merge their change",
         },
         {
             key = "<LEADER>gmb",
             actions = function()
                 vim.cmd("GitConflictChooseBoth")
             end,
-            description = "Merge both changes",
+            description = "Git conflict - Merge both changes",
         },
         {
             key = "<LEADER>gmo",
             actions = function()
                 vim.cmd("GitConflictChooseOurs")
             end,
-            description = "Merge our change",
+            description = "Git conflict - Merge our change",
         },
         {
             key = "<LEADER>gmn",
             actions = function()
                 vim.cmd("GitConflictNextConflict")
             end,
-            description = "Go to next conflict",
+            description = "Git conflict - Go to next conflict",
         },
         {
             key = "<LEADER>gmp",
             actions = function()
                 vim.cmd("GitConflictPrevConflict")
             end,
-            description = "Go to next conflict",
+            description = "Git conflict - Go to next conflict",
         },
     },
 })
