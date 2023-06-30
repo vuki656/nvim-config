@@ -16,6 +16,7 @@ toggler.setup({
         ["producer"] = "consumer",
         ["mutation"] = "query",
         ["null"] = "undefined",
+        ["let"] = "const",
         ["in"] = "out",
         ["background"] = "foreground",
         ["asc"] = "desc",
