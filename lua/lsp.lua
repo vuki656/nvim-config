@@ -8,9 +8,17 @@ local set_keymap = require("utils.set-keymap")
 local ts_error_formatter = require("format-ts-errors")
 local typescript = require("typescript")
 
+------------------------------------------------------------------------------------------
+----------------------------------- UTILS ------------------------------------------------
+------------------------------------------------------------------------------------------
+
 local default_on_attach = function(client)
     client.server_capabilities.semanticTokensProvider = nil
 end
+
+------------------------------------------------------------------------------------------
+----------------------------------- SETUP ------------------------------------------------
+------------------------------------------------------------------------------------------
 
 -- Setup server diagnostics
 vim.diagnostic.config({
@@ -30,14 +38,22 @@ mason_lspconfig.setup_handlers({
     end,
 })
 
+------------------------------------------------------------------------------------------
+----------------------------------- CUSTOM ------------------------------------------------
+------------------------------------------------------------------------------------------
+
 lsp.cssmodules_ls.setup({
     on_attach = function(client)
         default_on_attach(client)
+
         client.server_capabilities.definitionProvider = false
     end,
 })
 
 lsp.jsonls.setup({
+    on_attach = function(client)
+        default_on_attach(client)
+    end,
     settings = {
         json = {
             validate = {
@@ -62,6 +78,9 @@ lsp.jsonls.setup({
 })
 
 lsp.lua_ls.setup({
+    on_attach = function(client)
+        default_on_attach(client)
+    end,
     settings = {
         Lua = {
             format = {
@@ -90,6 +109,9 @@ lsp.lua_ls.setup({
 })
 
 lsp.yamlls.setup({
+    on_attach = function(client)
+        default_on_attach(client)
+    end,
     settings = {
         yaml = {
             schemas = require("schemastore").yaml.schemas(),
