@@ -10,8 +10,6 @@ local typescript = require("typescript.extensions.null-ls.code-actions")
 ----------------------------------- SETUP ------------------------------------------------
 ------------------------------------------------------------------------------------------
 
-local formatter = null_ls.builtins.formatting
-local diagnostics = null_ls.builtins.diagnostics
 local actions = null_ls.builtins.code_actions
 
 null_ls.setup({
