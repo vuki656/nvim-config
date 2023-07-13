@@ -1,5 +1,3 @@
-local keymap_preview = require("ui.keymap-preview")
-
 --- Sets the given keymap with the given properties
 -- @param properties - object
 -- {
@@ -10,13 +8,7 @@ local keymap_preview = require("ui.keymap-preview")
 -- }
 local function apply_keymap(properties)
     local modes = properties.modes or { "n" }
-    local options = properties.options or { noremap = true, silent = true }
-
-    keymap_preview.add({
-        key = properties.key,
-        description = properties.description,
-        modes = modes,
-    })
+    local options = properties.options or { noremap = true, silent = true, desc = properties.description }
 
     vim.keymap.set(modes, properties.key, properties.actions, options)
 end

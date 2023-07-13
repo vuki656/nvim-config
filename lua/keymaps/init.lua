@@ -1,4 +1,3 @@
-local keymap_preview = require("ui.keymap-preview")
 local print_selection = require("keymaps.custom.print.selection")
 local print_word = require("keymaps.custom.print.word")
 local set_keymap = require("utils.set-keymap")
@@ -290,7 +289,9 @@ set_keymap({
         },
         {
             key = "<LEADER>km",
-            actions = keymap_preview.toggle,
+            actions = function()
+                vim.cmd("Telescope keymaps")
+            end,
             description = "Toggle keymap previewer",
         },
     },
