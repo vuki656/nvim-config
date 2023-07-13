@@ -98,7 +98,7 @@ set_keymap({
         {
             key = "<LEADER>tk",
             actions = function()
-                require("nvim-tree.lib").collapse_all()
+                vim.cmd("NvimTreeCollapse")
                 vim.cmd("NvimTreeFindFile")
             end,
             description = "Collapse all tree nodes and focus opened buffer",
