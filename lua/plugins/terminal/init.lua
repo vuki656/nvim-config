@@ -2,6 +2,8 @@
 -- Description: Builtin terminal navigator
 -- Link: https://github.com/akinsho/nvim-toggleterm.lua
 
+print("hi")
+
 local toggleterm = require("toggleterm")
 
 local set_keymap = require("utils.set-keymap")
