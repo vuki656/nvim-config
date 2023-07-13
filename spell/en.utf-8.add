@@ -2168,3 +2168,4 @@ int64
 postpack
 lexing
 pubsub
+listchars

@@ -4,6 +4,9 @@
 
 local indent_blankline = require("indent_blankline")
 
+local colors = require("utils.colors")
+local set_highlight = require("utils.set-highlight")
+
 ------------------------------------------------------------------------------------------
 ----------------------------------- SETUP ------------------------------------------------
 ------------------------------------------------------------------------------------------
@@ -16,12 +19,23 @@ indent_blankline.setup({
     filetype_exclude = {
         "NvimTree",
         "alpha",
-        "packer",
+        "lazy",
         "code-action-menu-menu",
         "lsp-installer",
         "toggleterm",
         "help",
         "null-ls-info",
         "",
+    },
+})
+
+------------------------------------------------------------------------------------------
+----------------------------------- COLORS -----------------------------------------------
+------------------------------------------------------------------------------------------
+
+set_highlight({
+    list = {
+        { group = "IndentBlanklineChar", foreground = colors.grey_light },
+        { group = "IndentBlanklineSpaceChar", foreground = colors.grey_light },
     },
 })

@@ -54,6 +54,7 @@ tree.setup({
 set_highlight({
     list = {
         { group = "NvimTreeGitNew", foreground = colors.green },
+        { group = "NvimTreeGitStaged", foreground = colors.green },
         { group = "NvimTreeGitRenamed", foreground = colors.yellow },
         { group = "NvimTreeGitDirty", foreground = colors.yellow },
         { group = "NvimTreeIndentMarker", foreground = colors.transparent },
