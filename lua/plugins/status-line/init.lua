@@ -11,6 +11,7 @@ local git_diff = require("plugins.status-line.components.git-diff")
 local lsp_status = require("plugins.status-line.components.lsp-status")
 local package_info_status = require("plugins.status-line.components.package-info-status")
 local repository_name = require("plugins.status-line.components.repository-name")
+local updates = require("plugins.status-line.components.updates")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- SETUP ------------------------------------------------
@@ -33,7 +34,9 @@ feline.setup({
                 package_info_status,
                 lsp_status,
             },
-            {},
+            {
+                updates
+            },
         },
     },
     force_inactive = {

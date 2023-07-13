@@ -43,4 +43,7 @@ return {
     ui = {
         border = "single",
     },
+    checker = {
+        enabled = true,
+    },
 }
