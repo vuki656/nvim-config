@@ -117,7 +117,7 @@ set_keymap({
         {
             key = "<LEADER>fp",
             actions = function()
-                vim.cmd("Format")
+                vim.cmd("FormatWriteLock")
             end,
             description = "Format code",
         },
