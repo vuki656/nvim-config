@@ -1,11 +1,11 @@
 local lsp = require("feline.providers.lsp")
 
-local LSP_ICONS = require("lsp.utils.icons")
+local ICONS = require("utils.icons")
 local colors = require("utils.colors")
 
 return {
     errors = {
-        icon = " " .. LSP_ICONS.ERROR .. " ",
+        icon = " " .. ICONS.ERROR .. " ",
         provider = "diagnostic_errors",
         enabled = function()
             return lsp.diagnostics_exist("Error")
@@ -16,7 +16,7 @@ return {
         },
     },
     warnings = {
-        icon = " " .. LSP_ICONS.WARNING .. " ",
+        icon = " " .. ICONS.WARNING .. " ",
         provider = "diagnostic_warnings",
         enabled = function()
             return lsp.diagnostics_exist("Warn")
@@ -27,7 +27,7 @@ return {
         },
     },
     hints = {
-        icon = " " .. LSP_ICONS.HINT .. " ",
+        icon = " " .. ICONS.HINT .. " ",
         provider = "diagnostic_hints",
         enabled = function()
             return lsp.diagnostics_exist("Hint")
@@ -38,7 +38,7 @@ return {
         },
     },
     info = {
-        icon = " " .. LSP_ICONS.INFO .. " ",
+        icon = " " .. ICONS.INFO .. " ",
         provider = "diagnostic_info",
         enabled = function()
             return lsp.diagnostics_exist("Info")

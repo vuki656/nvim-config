@@ -62,16 +62,6 @@ installer_tools.setup({
     },
 })
 
--- Has to be after lsp_installer as it prepares the server before they can be started
-require("lsp.servers")
-
--- Setup server diagnostics
-vim.diagnostic.config({
-    signs = false, -- Disable LSP signs
-    underline = true, -- Underline diagnostics
-    virtual_text = false, -- Hide virtual text diagnostics
-})
-
 ------------------------------------------------------------------------------------------
 ----------------------------------- KEYMAPS ----------------------------------------------
 ------------------------------------------------------------------------------------------

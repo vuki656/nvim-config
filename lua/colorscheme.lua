@@ -1,4 +1,4 @@
-local LSP_ICONS = require("lsp.utils.icons")
+local ICONS = require("utils.icons")
 
 local colors = require("utils.colors")
 local set_highlight = require("utils.set-highlight")
@@ -19,10 +19,10 @@ local grey_lighter = colors.grey_lighter
 
 set_sign({
     list = {
-        { name = "DiagnosticSignError", sign = LSP_ICONS.ERROR, highlight_group = "DiagnosticSignError" },
-        { name = "DiagnosticSignWarn", sign = LSP_ICONS.WARNING, highlight_group = "DiagnosticSignWarn" },
-        { name = "DiagnosticSignInfo", sign = LSP_ICONS.INFO, highlight_group = "DiagnosticSignInfo" },
-        { name = "DiagnosticSignHint", sign = LSP_ICONS.HINT, highlight_group = "DiagnosticSignHint" },
+        { name = "DiagnosticSignError", sign = ICONS.ERROR, highlight_group = "DiagnosticSignError" },
+        { name = "DiagnosticSignWarn", sign = ICONS.WARNING, highlight_group = "DiagnosticSignWarn" },
+        { name = "DiagnosticSignInfo", sign = ICONS.INFO, highlight_group = "DiagnosticSignInfo" },
+        { name = "DiagnosticSignHint", sign = ICONS.HINT, highlight_group = "DiagnosticSignHint" },
     },
 })
 
