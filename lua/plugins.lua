@@ -1,20 +1,9 @@
-local path = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-
-if not vim.loop.fs_stat(path) then
-    vim.fn.system({
-        "git",
-        "clone",
-        "--filter=blob:none",
-        "https://github.com/folke/lazy.nvim.git",
-        "--branch=stable",
-        path,
-    })
-end
-
-vim.opt.rtp:prepend(path)
+local config = require("plugins.plugin-manager")
 
 require("lazy").setup({
-    { "nvim-lua/plenary.nvim" },
+    {
+        "nvim-lua/plenary.nvim",
+    },
     {
         "nvim-telescope/telescope.nvim",
         config = function()
@@ -28,7 +17,9 @@ require("lazy").setup({
             },
         },
     },
-    { "muniftanjim/nui.nvim" },
+    {
+        "muniftanjim/nui.nvim",
+    },
     {
         "nvim-treesitter/nvim-treesitter",
         config = function()
@@ -44,7 +35,10 @@ require("lazy").setup({
         config = function()
             require("plugins.jest-runner")
         end,
-        ft = { "javascript", "typescript" },
+        ft = {
+            "javascript",
+            "typescript",
+        },
     },
     {
         "akinsho/nvim-toggleterm.lua",
@@ -57,7 +51,9 @@ require("lazy").setup({
         config = function()
             require("plugins.commenting")
         end,
-        dependencies = "joosepalviste/nvim-ts-context-commentstring",
+        dependencies = {
+            "joosepalviste/nvim-ts-context-commentstring",
+        },
     },
     {
         "akinsho/git-conflict.nvim",
@@ -71,7 +67,9 @@ require("lazy").setup({
             require("plugins.project-manager")
         end,
     },
-    { "b0o/schemastore.nvim" },
+    {
+        "b0o/schemastore.nvim",
+    },
     {
         "chentoast/marks.nvim",
         config = function()
@@ -84,7 +82,6 @@ require("lazy").setup({
             require("plugins.scrollbar")
         end,
     },
-    { "davidosomething/format-ts-errors.nvim" },
     {
         "echasnovski/mini.splitjoin",
         config = function()
@@ -98,36 +95,50 @@ require("lazy").setup({
         end,
         dependencies = {
             "nvim-tree/nvim-web-devicons",
-            {
-                "vuki656/package-info.nvim",
-                config = function()
-                    require("plugins.js-package-manager")
-                end,
-                dependencies = "muniftanjim/nui.nvim",
-            },
+        },
+    },
+    {
+        "vuki656/package-info.nvim",
+        config = function()
+            require("plugins.js-package-manager")
+        end,
+        ft = {
+            "json",
+            "javascript",
+            "javascriptreact",
+            "typescript",
+            "typescriptreact",
+        },
+        dependencies = {
+            "muniftanjim/nui.nvim",
         },
     },
     {
         "folke/todo-comments.nvim",
-        dependencies = { "nvim-lua/plenary.nvim" },
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+        },
         config = function()
             require("plugins.todo")
         end,
-        enabled = false,
     },
     {
         "goolord/alpha-nvim",
         config = function()
             require("plugins.start-screen")
         end,
-        dependencies = "nvim-tree/nvim-web-devicons",
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+        },
     },
     {
         "nvim-tree/nvim-tree.lua",
         config = function()
             require("plugins.file-tree")
         end,
-        dependencies = { "nvim-tree/nvim-web-devicons" },
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+        },
     },
     {
         "hrsh7th/nvim-cmp",
@@ -147,34 +158,46 @@ require("lazy").setup({
                     require("plugins.snippets")
                 end,
             },
-            "hrsh7th/cmp-nvim-lsp",
-            "hrsh7th/cmp-buffer",
-            "hrsh7th/cmp-path",
-            "hrsh7th/cmp-nvim-lua",
-            "hrsh7th/cmp-cmdline",
-            "saadparwaiz1/cmp_luasnip",
             {
                 "windwp/nvim-autopairs",
                 config = function()
                     require("plugins.auto-pairs")
                 end,
             },
+            "hrsh7th/cmp-nvim-lsp",
+            "hrsh7th/cmp-buffer",
+            "hrsh7th/cmp-path",
+            "hrsh7th/cmp-nvim-lua",
+            "hrsh7th/cmp-cmdline",
+            "saadparwaiz1/cmp_luasnip",
         },
     },
-    { "jose-elias-alvarez/typescript.nvim" },
+    {
+        "jose-elias-alvarez/typescript.nvim",
+        ft = {
+            "javascript",
+            "javascriptreact",
+            "typescript",
+            "typescriptreact",
+        },
+    },
     {
         "davidgranstrom/nvim-markdown-preview",
         config = function()
             require("plugins.markdown-preview")
         end,
-        ft = { "markdown" },
+        ft = {
+            "markdown",
+        },
     },
     {
         "jose-elias-alvarez/null-ls.nvim",
         config = function()
             require("plugins.formatter-linter")
         end,
-        dependencies = "nvim-lua/plenary.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+        },
     },
     {
         "kazhala/close-buffers.nvim",
@@ -189,11 +212,17 @@ require("lazy").setup({
         end,
     },
     {
+        "folke/lazy.nvim",
+        config = function() end,
+    },
+    {
         "lewis6991/gitsigns.nvim",
         config = function()
             require("plugins.git-status")
         end,
-        dependencies = "nvim-lua/plenary.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+        },
     },
     {
         "mbbill/undotree",
@@ -206,7 +235,9 @@ require("lazy").setup({
         config = function()
             require("plugins.commenting")
         end,
-        dependencies = "joosepalviste/nvim-ts-context-commentstring",
+        dependencies = {
+            "joosepalviste/nvim-ts-context-commentstring",
+        },
     },
     {
         "nguyenvukhang/nvim-toggler",
@@ -219,8 +250,10 @@ require("lazy").setup({
         config = function()
             require("plugins.parser")
         end,
-        run = ":TSUpdate",
-        dependencies = "nvim-treesitter/playground",
+        build = ":TSUpdate",
+        dependencies = {
+            "nvim-treesitter/playground",
+        },
     },
     {
         "nvim-telescope/telescope.nvim",
@@ -228,10 +261,10 @@ require("lazy").setup({
             require("plugins.finder")
         end,
         dependencies = {
-            { "nvim-lua/plenary.nvim" },
+            "nvim-lua/plenary.nvim",
             {
                 "nvim-telescope/telescope-fzf-native.nvim",
-                run = "make",
+                build = "make",
             },
         },
     },
@@ -247,7 +280,9 @@ require("lazy").setup({
         config = function()
             require("plugins.doc-highlighter")
         end,
-        ft = { "markdown" },
+        ft = {
+            "markdown",
+        },
     },
     {
         "pocco81/auto-save.nvim",
@@ -266,7 +301,9 @@ require("lazy").setup({
         config = function()
             require("plugins.git-linker")
         end,
-        dependencies = "nvim-lua/plenary.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+        },
     },
     {
         "theprimeagen/harpoon",
@@ -287,7 +324,9 @@ require("lazy").setup({
             require("plugins.better-quickfix")
         end,
     },
-    { "wellle/targets.vim" },
+    {
+        "wellle/targets.vim",
+    },
     {
         "williamboman/mason.nvim",
         config = function()
@@ -295,10 +334,21 @@ require("lazy").setup({
         end,
         branch = "main",
         dependencies = {
-            { "williamboman/mason-lspconfig.nvim" },
-            { "whoissethdaniel/mason-tool-installer.nvim" },
-            { "neovim/nvim-lspconfig" },
+            {
+                "davidosomething/format-ts-errors.nvim",
+                ft = {
+                    "javascript",
+                    "javascriptreact",
+                    "typescript",
+                    "typescriptreact",
+                },
+            },
+            "williamboman/mason-lspconfig.nvim",
+            "whoissethdaniel/mason-tool-installer.nvim",
+            "neovim/nvim-lspconfig",
         },
     },
-    { "windwp/nvim-ts-autotag" },
-})
+    {
+        "windwp/nvim-ts-autotag",
+    },
+}, config)
