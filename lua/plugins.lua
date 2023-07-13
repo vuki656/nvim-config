@@ -2,6 +2,12 @@ local config = require("plugins.plugin-manager")
 
 require("lazy").setup({
     {
+        "mhartington/formatter.nvim",
+        config = function()
+            require("plugins.formatter")
+        end,
+    },
+    {
         "nvim-lua/plenary.nvim",
     },
     {

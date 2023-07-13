@@ -11,6 +11,7 @@
   "comment.nvim": { "branch": "master", "commit": "176e85eeb63f1a5970d6b88f1725039d85ca0055" },
   "feline.nvim": { "branch": "main", "commit": "c32c2ffcee38f14e157582552fa9ee41c24452d2" },
   "format-ts-errors.nvim": { "branch": "main", "commit": "95a2455fc3691bef6f2aad57ffded99e898c0955" },
+  "formatter.nvim": { "branch": "master", "commit": "9bf2e7e294b00bac87c6123c889828ee08dc9b46" },
   "git-conflict.nvim": { "branch": "main", "commit": "3c89812a83ac749b8851a473863958325a1cd57c" },
   "gitlinker.nvim": { "branch": "master", "commit": "cc59f732f3d043b626c8702cb725c82e54d35c25" },
   "gitsigns.nvim": { "branch": "main", "commit": "5a04466685008f29c71fa5ec25d421deb1c83fea" },

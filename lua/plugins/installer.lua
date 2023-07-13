@@ -53,6 +53,7 @@ installer_tools.setup({
         "shellcheck",
         "shfmt",
         "stylelint-lsp",
+        "stylelint",
         "stylua",
         "taplo",
         "typescript-language-server",

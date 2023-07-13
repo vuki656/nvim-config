@@ -8,7 +8,7 @@ local lint = require("lint")
 ----------------------------------- SETUP ------------------------------------------------
 ------------------------------------------------------------------------------------------
 
-vim.api.nvim_create_autocmd({ "BufWritePost", "BufEnter" }, {
+vim.api.nvim_create_autocmd({ "BufWritePost" }, {
     callback = function()
         lint.try_lint()
     end,
@@ -28,17 +28,8 @@ lint.linters_by_ft = {
     sh = {
         "shellcheck",
     },
-    scss = {
-        "stylelint",
-    },
-    less = {
-        "stylelint",
-    },
     css = {
-        "stylelint",
-    },
-    sass = {
-        "stylelint",
+        "stylelint-lsp",
     },
     yaml = {
         "yamllint",
