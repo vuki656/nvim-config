@@ -17,8 +17,18 @@ notify.setup({
     render = "minimal",
 })
 
--- Pipe all vim.notify notifications to notify plugin
-vim.notify = notify
+local banned_messages = { "No information available" }
+
+-- Pipe all vim.notify notifications to notify plugin but ignore some
+vim.notify = function(message, ...)
+    for _, banned in ipairs(banned_messages) do
+        if message == banned then
+            return
+        end
+    end
+
+    return notify(message, ...)
+end
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- COLORS -----------------------------------------------
