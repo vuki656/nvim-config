@@ -18,6 +18,12 @@ require("lazy").setup({
         },
     },
     {
+        "mfussenegger/nvim-lint",
+        config = function()
+            require("plugins.linter")
+        end,
+    },
+    {
         "muniftanjim/nui.nvim",
     },
     {

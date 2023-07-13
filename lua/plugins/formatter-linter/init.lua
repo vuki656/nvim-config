@@ -29,36 +29,8 @@ null_ls.setup({
         prettier.formatter,
         eslint.formatter,
 
-        diagnostics.shellcheck,
-        diagnostics.hadolint,
-        diagnostics.stylelint,
         diagnostics.protolint,
         diagnostics.dotenv_linter,
-        diagnostics.yamllint.with({
-            extra_args = {
-                "-d",
-                [[{
-                    rules: {
-                        line-length: { max: 140 },
-                        document-start: { present: false }
-                    }
-                }]],
-            },
-        }),
-        -- eslint.diagnostics,
-        diagnostics.luacheck,
-        -- diagnostics.cspell.with({
-        --     condition = function()
-        --         return conditional.root_has_file("cspell.config.json")
-        --             or conditional.root_has_file(".cspell.json")
-        --             or conditional.root_has_file(".cspellrc.js")
-        --     end,
-        -- }),
-        diagnostics.actionlint.with({
-            runtime_condition = function(params)
-                return params.bufname:find(vim.pesc(".github/workflows")) ~= nil
-            end,
-        }),
 
         actions.eslint_d,
         actions.shellcheck,
