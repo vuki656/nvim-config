@@ -11,7 +11,7 @@ local set_keymap = require("utils.set-keymap")
 ------------------------------------------------------------------------------------------
 
 treesitter_configs.setup({
-    -- ensure_installed = "all",
+    ensure_installed = "all",
     highlight = {
         enable = true,
         disable = function(_, bufnr)
