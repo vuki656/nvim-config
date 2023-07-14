@@ -2,6 +2,28 @@ local config = require("plugins.plugin-manager")
 
 require("lazy").setup({
     {
+        "pmizio/typescript-tools.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "neovim/nvim-lspconfig",
+            {
+                "antosha417/nvim-lsp-file-operations",
+                dependencies = {
+                    "nvim-lua/plenary.nvim",
+                },
+            },
+            {
+                "davidosomething/format-ts-errors.nvim",
+                ft = {
+                    "javascript",
+                    "javascriptreact",
+                    "typescript",
+                    "typescriptreact",
+                },
+            },
+        },
+    },
+    {
         "mhartington/formatter.nvim",
         config = function()
             require("plugins.formatter")
@@ -166,30 +188,12 @@ require("lazy").setup({
         },
     },
     {
-        "jose-elias-alvarez/typescript.nvim",
-        ft = {
-            "javascript",
-            "javascriptreact",
-            "typescript",
-            "typescriptreact",
-        },
-    },
-    {
         "davidgranstrom/nvim-markdown-preview",
         config = function()
             require("plugins.markdown-preview")
         end,
         ft = {
             "markdown",
-        },
-    },
-    {
-        "jose-elias-alvarez/null-ls.nvim",
-        config = function()
-            require("plugins.formatter-linter")
-        end,
-        dependencies = {
-            "nvim-lua/plenary.nvim",
         },
     },
     {
@@ -205,7 +209,7 @@ require("lazy").setup({
         end,
     },
     {
-        "folke/lazy.nvim"
+        "folke/lazy.nvim",
     },
     {
         "lewis6991/gitsigns.nvim",
@@ -242,7 +246,6 @@ require("lazy").setup({
         config = function()
             require("plugins.parser")
         end,
-        build = ":TSUpdate",
         dependencies = {
             "nvim-treesitter/playground",
         },
@@ -313,15 +316,6 @@ require("lazy").setup({
         end,
         branch = "main",
         dependencies = {
-            {
-                "davidosomething/format-ts-errors.nvim",
-                ft = {
-                    "javascript",
-                    "javascriptreact",
-                    "typescript",
-                    "typescriptreact",
-                },
-            },
             "williamboman/mason-lspconfig.nvim",
             "whoissethdaniel/mason-tool-installer.nvim",
             "neovim/nvim-lspconfig",
