@@ -2,6 +2,12 @@ local config = require("plugins.plugin-manager")
 
 require("lazy").setup({
     {
+        "tzachar/highlight-undo.nvim",
+        config = function()
+            require("plugins.highlight-undo")
+        end,
+    },
+    {
         "pmizio/typescript-tools.nvim",
         dependencies = {
             "nvim-lua/plenary.nvim",
