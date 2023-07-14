@@ -49,15 +49,6 @@ require("lazy").setup({
         end,
     },
     {
-        "numtostr/comment.nvim",
-        config = function()
-            require("plugins.commenting")
-        end,
-        dependencies = {
-            "joosepalviste/nvim-ts-context-commentstring",
-        },
-    },
-    {
         "akinsho/git-conflict.nvim",
         config = function()
             require("plugins.git-conflict")
@@ -214,8 +205,7 @@ require("lazy").setup({
         end,
     },
     {
-        "folke/lazy.nvim",
-        config = function() end,
+        "folke/lazy.nvim"
     },
     {
         "lewis6991/gitsigns.nvim",
@@ -255,19 +245,6 @@ require("lazy").setup({
         -- build = ":TSUpdate",
         dependencies = {
             "nvim-treesitter/playground",
-        },
-    },
-    {
-        "nvim-telescope/telescope.nvim",
-        config = function()
-            require("plugins.finder")
-        end,
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            {
-                "nvim-telescope/telescope-fzf-native.nvim",
-                build = "make",
-            },
         },
     },
     {
