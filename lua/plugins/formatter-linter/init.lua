@@ -15,7 +15,7 @@ local actions = null_ls.builtins.code_actions
 null_ls.setup({
     default_timeout = 20000,
     sources = {
-        actions.eslint_d,
+        -- actions.eslint_d,
         actions.shellcheck,
         actions.gitsigns,
 

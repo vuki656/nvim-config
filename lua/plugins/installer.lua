@@ -39,6 +39,7 @@ installer_tools.setup({
         "docker-compose-language-service",
         "dockerfile-language-server",
         "eslint_d",
+        "eslint-lsp",
         "fixjson",
         "graphql-language-service-cli",
         "hadolint",

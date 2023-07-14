@@ -51,9 +51,7 @@ lsp.cssmodules_ls.setup({
 })
 
 lsp.jsonls.setup({
-    on_attach = function(client)
-        default_on_attach(client)
-    end,
+    on_attach = default_on_attach,
     settings = {
         json = {
             validate = {
@@ -78,9 +76,7 @@ lsp.jsonls.setup({
 })
 
 lsp.lua_ls.setup({
-    on_attach = function(client)
-        default_on_attach(client)
-    end,
+    on_attach = default_on_attach,
     settings = {
         Lua = {
             format = {
@@ -109,9 +105,7 @@ lsp.lua_ls.setup({
 })
 
 lsp.yamlls.setup({
-    on_attach = function(client)
-        default_on_attach(client)
-    end,
+    on_attach = default_on_attach,
     settings = {
         yaml = {
             schemas = require("schemastore").yaml.schemas(),
