@@ -38,7 +38,7 @@
   "nvim-pqf": { "branch": "main", "commit": "90c7e33245e807eea85fadc6360a1d053406bc2c" },
   "nvim-scrollview": { "branch": "main", "commit": "dbd17a6de65c3a149fe5ace10fee311fd8251b06" },
   "nvim-toggler": { "branch": "main", "commit": "c10828c333a91bcb1dbdae9131ced799158c16b0" },
-  "nvim-toggleterm.lua": { "branch": "main", "commit": "83aa231fa414a5dcb72aed97437446a6ca5a81f2" },
+  "nvim-toggleterm.lua": { "branch": "main", "commit": "1f5b551a0bd165d0c90cc35fef08b07b9dfb06e1" },
   "nvim-tree.lua": { "branch": "master", "commit": "a708bd2413d467929b5019ec1bce7b1f428438bc" },
   "nvim-treesitter": { "branch": "master", "commit": "39f10b0b14184f746a0c9e7475c5ea81a9a812f6" },
   "nvim-ts-autotag": { "branch": "main", "commit": "6be1192965df35f94b8ea6d323354f7dc7a557e4" },
