@@ -252,7 +252,7 @@ require("lazy").setup({
         config = function()
             require("plugins.parser")
         end,
-        build = ":TSUpdate",
+        -- build = ":TSUpdate",
         dependencies = {
             "nvim-treesitter/playground",
         },
