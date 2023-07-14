@@ -33,16 +33,6 @@ require("lazy").setup({
         "muniftanjim/nui.nvim",
     },
     {
-        "nvim-treesitter/nvim-treesitter",
-        config = function()
-            require("plugins.parser")
-        end,
-        build = ":TSUpdate",
-        dependencies = {
-            "nvim-treesitter/playground",
-        },
-    },
-    {
         "david-kunz/jester",
         config = function()
             require("plugins.jest-runner")
