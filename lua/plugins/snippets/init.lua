@@ -17,14 +17,6 @@ local export_all_snippet = require("plugins.snippets.nodes.js.export_all")
 local service_function_snippet = require("plugins.snippets.nodes.js.service_function")
 local type_snippet = require("plugins.snippets.nodes.js.type")
 
--- Typegraphql
-local resolver_args_snippet = require("plugins.snippets.nodes.js.type_graphql.resolver_args")
-local resolver_input_snippet = require("plugins.snippets.nodes.js.type_graphql.resolver_input")
-local resolver_mutation_snippet = require("plugins.snippets.nodes.js.type_graphql.resolver_mutation")
-local resolver_payload_snippet = require("plugins.snippets.nodes.js.type_graphql.resolver_payload")
-local resolver_query_snippet = require("plugins.snippets.nodes.js.type_graphql.resolver_query")
-local resolver_type_snippet = require("plugins.snippets.nodes.js.type_graphql.resolver_type")
-
 -- React
 local react_component_props_snippet = require("plugins.snippets.nodes.js.react.react_component_props")
 local react_component_snippet = require("plugins.snippets.nodes.js.react.react_component")
@@ -66,14 +58,6 @@ local js_ts_snippets = {
     service_function_snippet,
     type_snippet,
     jest_suite,
-
-    -- Typegraphql
-    resolver_mutation_snippet,
-    resolver_query_snippet,
-    resolver_args_snippet,
-    resolver_input_snippet,
-    resolver_payload_snippet,
-    resolver_type_snippet,
 
     -- Cypress
     cypress_function,
