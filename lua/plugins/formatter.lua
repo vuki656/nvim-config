@@ -78,6 +78,10 @@ end
 
 formatter.setup({
     filetype = {
+        jsonc = {
+            fixjson,
+            prettier,
+        },
         json = {
             fixjson,
             prettier,
