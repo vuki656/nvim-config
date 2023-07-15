@@ -39,7 +39,6 @@ installer_lsp.setup({
         "prismals",
         "stylelint_lsp",
         "taplo",
-        "tsserver",
         "vimls",
         "yamlls",
         "eslint",

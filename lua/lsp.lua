@@ -90,49 +90,49 @@ mason_lspconfig.setup_handlers({
             },
         })
     end,
-    ["tsserver"] = function()
-        typescript.setup({
-            capabilities = lsp_capabilities,
-            root_dir = lsp_utils.root_pattern(".git"),
-            handlers = {
-                ["textDocument/publishDiagnostics"] = function(_, result, context, config)
-                    if result.diagnostics == nil then
-                        return
-                    end
+})
 
-                    local ids = 1
+-- This is separate as it handles the whole thing itself, no lsp
+typescript.setup({
+    capabilities = lsp_capabilities,
+    root_dir = lsp_utils.root_pattern(".git"),
+    handlers = {
+        ["textDocument/publishDiagnostics"] = function(_, result, context, config)
+            if result.diagnostics == nil then
+                return
+            end
 
-                    while ids <= #result.diagnostics do
-                        local entry = result.diagnostics[ids]
+            local ids = 1
 
-                        local formatter = ts_error_formatter[entry.code]
+            while ids <= #result.diagnostics do
+                local entry = result.diagnostics[ids]
 
-                        entry.message = formatter and formatter(entry.message) or entry.message
+                local formatter = ts_error_formatter[entry.code]
 
-                        ids = ids + 1
-                    end
+                entry.message = formatter and formatter(entry.message) or entry.message
 
-                    vim.lsp.diagnostic.on_publish_diagnostics(_, result, context, config)
-                end,
-            },
-            on_attach = function(client)
-                default_on_attach(client)
+                ids = ids + 1
+            end
 
-                set_keymap({
-                    list = {
-                        {
-                            key = "<LEADER>tfi",
-                            actions = function()
-                                vim.cmd("TSToolsAddMissingImports")
-                            end,
-                            description = "Import all missing typescript types",
-                        },
-                    },
-                })
-            end,
-            settings = {
-                separate_diagnostic_server = true,
+            vim.lsp.diagnostic.on_publish_diagnostics(_, result, context, config)
+        end,
+    },
+    on_attach = function(client)
+        default_on_attach(client)
+
+        set_keymap({
+            list = {
+                {
+                    key = "<LEADER>tfi",
+                    actions = function()
+                        vim.cmd("TSToolsAddMissingImports")
+                    end,
+                    description = "Import all missing typescript types",
+                },
             },
         })
     end,
+    settings = {
+        separate_diagnostic_server = true,
+    },
 })
