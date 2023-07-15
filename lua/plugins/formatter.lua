@@ -3,6 +3,7 @@
 -- Link: https://github.com/mhartington/formatter.nvim
 
 local formatter = require("formatter")
+local formatter_utils = require "formatter.util"
 
 local set_keymap = require("utils.set-keymap")
 
@@ -11,10 +12,22 @@ local set_keymap = require("utils.set-keymap")
 ------------------------------------------------------------------------------------------
 
 local fixjson = require("formatter.filetypes.json").fixjson
-local prettier = require("formatter.filetypes.json").prettier
 local eslint = require("formatter.defaults.eslint_d")
 local stylua = require("formatter.filetypes.lua").stylua
 local shfmt = require("formatter.filetypes.sh").shfmt
+
+local prettier = function()
+    return {
+        exe = "prettier",
+        args = {
+            "--stdin-filepath",
+            formatter_utils.escape_path(formatter_utils.get_current_buffer_file_path()),
+            "--tab-width 4"
+        },
+        stdin = true,
+        try_node_modules = true,
+    }
+end
 
 local javascript = function()
     if vim.loop.fs_stat(".eslintrc.js") == nil then
