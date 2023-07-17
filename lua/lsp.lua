@@ -14,7 +14,9 @@ local typescript = require("typescript-tools")
 ------------------------------------------------------------------------------------------
 
 local default_on_attach = function(client)
-    client.server_capabilities.semanticTokensProvider = nil
+    if client.server_capabilities.semanticTokensProvider then
+        client.server_capabilities.semanticTokensProvider = nil
+    end
 end
 
 ------------------------------------------------------------------------------------------
