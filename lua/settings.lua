@@ -94,7 +94,7 @@ vim.opt.spelloptions = "camel"
 vim.opt.laststatus = 3
 
 -- Don't redraw screen when using macros (performance increase)
-vim.opt.lazyredraw = true
+-- vim.opt.lazyredraw = true
 
 -- Scroll offset
 vim.opt.scrolloff = 15
