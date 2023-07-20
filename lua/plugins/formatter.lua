@@ -122,6 +122,9 @@ formatter.setup({
             shfmt,
             dotenv,
         },
+        liquid = {
+            prettier
+        }
     },
 })
 
