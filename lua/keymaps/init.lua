@@ -2,7 +2,6 @@ local print_selection = require("keymaps.custom.print.selection")
 local print_word = require("keymaps.custom.print.word")
 local set_keymap = require("utils.set-keymap")
 local set_terminal_keymap = require("utils.set-terminal-keymap")
-local spell_fix = require("ui.spell-fix")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- NAVIGATION -------------------------------------------
@@ -171,11 +170,6 @@ set_keymap({
                 vim.cmd("e")
             end,
             description = "Apply the first misspell suggestion",
-        },
-        {
-            key = "zl",
-            actions = spell_fix.display,
-            description = "Open the misspell suggestion list",
         },
         {
             key = "<LEADER>lf",

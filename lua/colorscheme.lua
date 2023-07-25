@@ -1,4 +1,4 @@
-local LSP_ICONS = require("lsp.utils.icons")
+local ICONS = require("utils.icons")
 
 local colors = require("utils.colors")
 local set_highlight = require("utils.set-highlight")
@@ -19,10 +19,10 @@ local grey_lighter = colors.grey_lighter
 
 set_sign({
     list = {
-        { name = "DiagnosticSignError", sign = LSP_ICONS.ERROR, highlight_group = "DiagnosticSignError" },
-        { name = "DiagnosticSignWarn", sign = LSP_ICONS.WARNING, highlight_group = "DiagnosticSignWarn" },
-        { name = "DiagnosticSignInfo", sign = LSP_ICONS.INFO, highlight_group = "DiagnosticSignInfo" },
-        { name = "DiagnosticSignHint", sign = LSP_ICONS.HINT, highlight_group = "DiagnosticSignHint" },
+        { name = "DiagnosticSignError", sign = ICONS.ERROR, highlight_group = "DiagnosticSignError" },
+        { name = "DiagnosticSignWarn", sign = ICONS.WARNING, highlight_group = "DiagnosticSignWarn" },
+        { name = "DiagnosticSignInfo", sign = ICONS.INFO, highlight_group = "DiagnosticSignInfo" },
+        { name = "DiagnosticSignHint", sign = ICONS.HINT, highlight_group = "DiagnosticSignHint" },
     },
 })
 
@@ -34,11 +34,9 @@ set_highlight({
         { group = "CursorColumn", foreground = red, background = blue },
         { group = "Folded", foreground = red, background = blue },
         { group = "FoldColumn", foreground = red, background = blue },
-        { group = "Italic", foreground = red, background = blue },
         { group = "VisualNOS", foreground = red, background = blue },
         { group = "TooLong", foreground = red, background = blue },
         { group = "WildMenu", foreground = red, background = blue },
-        { group = "Repeat", foreground = red, background = blue },
         { group = "Define", foreground = red, background = blue },
         { group = "TabLineFill", foreground = red, background = orange },
         { group = "Debug", foreground = red, background = blue },
@@ -46,6 +44,8 @@ set_highlight({
         -- Editor
         { group = "NonText", foreground = background_light, background = "NONE" },
         { group = "PreCondit", foreground = blue },
+        { group = "Repeat", foreground = purple },
+        { group = "Italic", foreground = red, background = background },
         { group = "StorageClass", foreground = red },
         { group = "conceal", foreground = orange, background = "NONE" },
         { group = "bold", foreground = red },
@@ -59,13 +59,12 @@ set_highlight({
         { group = "Typedef", foreground = yellow },
         { group = "SpecialChar", foreground = orange, background = background },
         { group = "Macro", foreground = orange, background = background },
-        { group = "Repeat", foreground = blue, background = background },
         { group = "SpecialComment", foreground = orange },
         { group = "Constant", foreground = green },
         { group = "Keyword", foreground = purple },
         { group = "Boolean", foreground = purple },
         { group = "Character", foreground = purple },
-        { group = "Conditional", foreground = red },
+        { group = "Conditional", foreground = purple },
         { group = "Directory", foreground = blue, background = background },
         { group = "Type", foreground = yellow, options = "NONE" },
         { group = "Float", foreground = blue },
@@ -81,7 +80,7 @@ set_highlight({
         },
         { group = "TabLineSel", foreground = red, background = background },
         { group = "Operator", foreground = white },
-        { group = "String", foreground = red },
+        { group = "String", foreground = green },
         { group = "CursorLine", background = grey_lighter },
         { group = "Delimiter", foreground = orange },
         { group = "Identifier", foreground = white },
@@ -178,6 +177,8 @@ set_highlight({
         { group = "@storageclass.lifetime ", foreground = purple },
         { group = "@namespace", foreground = yellow },
 
-        { group = "packerHash", foreground = red },
+        -- HTML
+        { group = "htmlTagName", foreground = yellow },
+        { group = "htmlArg", foreground = red },
     },
 })

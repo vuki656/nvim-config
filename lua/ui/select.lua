@@ -33,18 +33,6 @@ end
 --- Returns the approbate icon based on menu item text
 -- @return text: string - text to base the icon off of
 M.__get_icon = function(text)
-    local git_icons = {
-        ["Blame line"] = "",
-        ["Preview hunk"] = "",
-        ["Stage hunk"] = "",
-        ["Reset hunk"] = "",
-        ["Select hunk"] = "",
-    }
-
-    if git_icons[text] then
-        return git_icons[text]
-    end
-
     if string.find(string.lower(text), "eslint") then
         return ""
     end

@@ -15,6 +15,7 @@ toggler.setup({
         ["void"] = "await",
         ["producer"] = "consumer",
         ["mutation"] = "query",
+        ["AND"] = "OR",
         ["null"] = "undefined",
         ["let"] = "const",
         ["in"] = "out",

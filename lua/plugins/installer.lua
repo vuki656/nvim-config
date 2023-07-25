@@ -25,51 +25,44 @@ installer.setup({
 
 installer_lsp.setup({
     automatic_installation = true,
+    ensure_installed = {
+        "bufls",
+        "bashls",
+        "cssls",
+        "cssmodules_ls",
+        "docker_compose_language_service",
+        "dockerls",
+        "html",
+        "jsonls",
+        "lemminx",
+        "lua_ls",
+        "prismals",
+        "stylelint_lsp",
+        "taplo",
+        "vimls",
+        "yamlls",
+        -- "eslint",
+        "graphql",
+    },
 })
 
 installer_tools.setup({
     ensure_installed = {
-        "buf-language-server",
         "protolint",
         "actionlint",
-        "bash-language-server",
         "cspell",
-        "css-lsp",
-        "cssmodules-language-server",
-        "docker-compose-language-service",
-        "dockerfile-language-server",
         "eslint_d",
         "fixjson",
-        "graphql-language-service-cli",
         "hadolint",
-        "html-lsp",
-        "json-lsp",
-        "lemminx",
-        "lua-language-server",
         "luacheck",
         "prettier",
-        "prisma-language-server",
         "rust-analyzer",
         "shellcheck",
         "shfmt",
-        "stylelint-lsp",
+        "stylelint",
         "stylua",
-        "taplo",
-        "typescript-language-server",
-        "vim-language-server",
-        "yaml-language-server",
         "yamllint",
     },
-})
-
--- Has to be after lsp_installer as it prepares the server before they can be started
-require("lsp.servers")
-
--- Setup server diagnostics
-vim.diagnostic.config({
-    signs = false, -- Disable LSP signs
-    underline = true, -- Underline diagnostics
-    virtual_text = false, -- Hide virtual text diagnostics
 })
 
 ------------------------------------------------------------------------------------------

@@ -1,7 +1,8 @@
 vim.loader.enable()
 
-require("plugins")
 require("settings")
+require("plugins")
+require("lsp")
 require("keymaps")
 require("colorscheme")
 require("ui")

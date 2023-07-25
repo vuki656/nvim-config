@@ -20,7 +20,7 @@ illuminate.configure({
     delay = 400,
     filetypes_denylist = {
         "NvimTree",
-        "packer",
+        "lazy",
         "alpha",
         "qf",
         "help",

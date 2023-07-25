@@ -2,6 +2,10 @@
 ----------------------------------- GLOBAL -----------------------------------------------
 ------------------------------------------------------------------------------------------
 
+-- Disable native file tree
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 -- Set leader
 vim.g.mapleader = " "
 
@@ -90,7 +94,7 @@ vim.opt.spelloptions = "camel"
 vim.opt.laststatus = 3
 
 -- Don't redraw screen when using macros (performance increase)
-vim.opt.lazyredraw = true
+-- vim.opt.lazyredraw = true
 
 -- Scroll offset
 vim.opt.scrolloff = 15
@@ -115,6 +119,12 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
     pattern = "*.luacheckrc",
     command = "set filetype=lua",
+})
+
+-- Detect env files
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+    pattern = ".env*",
+    command = "set filetype=sh",
 })
 
 ------------------------------------------------------------------------------------------
