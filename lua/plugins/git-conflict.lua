@@ -73,10 +73,18 @@ set_highlight({
             options = "bold",
         },
         {
+            group = "GitConflictIncoming",
+            background = colors.background,
+        },
+        {
             group = "GitConflictCurrentLabel",
             background = colors.green,
             foreground = colors.background,
             options = "bold",
+        },
+        {
+            group = "GitConflictCurrent",
+            background = colors.background,
         },
         {
             group = "GitConflictAncestorLabel",
