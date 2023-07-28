@@ -288,6 +288,11 @@ set_keymap({
             end,
             description = "Toggle keymap previewer",
         },
+        {
+            key = "q:",
+            actions = "<NOP>",
+            description = "Disable q:",
+        },
     },
 })
 
