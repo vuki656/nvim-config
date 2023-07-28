@@ -2,6 +2,8 @@
 -- Description: Nvim plugin manager
 -- Link: https://github.com/folke/lazy.nvim
 
+local colors = require("utils.colors")
+local set_highlight = require("utils.set-highlight")
 local set_keymap = require("utils.set-keymap")
 
 ------------------------------------------------------------------------------------------
@@ -33,6 +35,18 @@ set_keymap({
         vim.cmd("Lazy")
     end,
     description = "Open Lazy package/plugin manager",
+})
+
+------------------------------------------------------------------------------------------
+----------------------------------- COLORS -----------------------------------------------
+------------------------------------------------------------------------------------------
+
+set_highlight({
+    list = {
+        { group = "LazyCommitType", foreground = colors.white },
+        { group = "LazyCommitScope", foreground = colors.white },
+        { group = "LazyDimmed", foreground = colors.white },
+    },
 })
 
 ------------------------------------------------------------------------------------------

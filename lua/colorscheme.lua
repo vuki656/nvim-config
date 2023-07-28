@@ -48,7 +48,7 @@ set_highlight({
         { group = "Italic", foreground = red, background = background },
         { group = "StorageClass", foreground = red },
         { group = "conceal", foreground = orange, background = "NONE" },
-        { group = "bold", foreground = red },
+        -- { group = "bold", foreground = red },
         { group = "Search", foreground = background, background = orange },
         { group = "Tag", foreground = white },
         { group = "Function", foreground = blue },
