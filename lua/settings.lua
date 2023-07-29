@@ -127,6 +127,11 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
     command = "set filetype=sh",
 })
 
+-- Detect mdx files
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+    pattern = "*.mdx",
+    command = "set filetype=markdown",
+})
 ------------------------------------------------------------------------------------------
 ------------------------------------ MISC ------------------------------------------------
 ------------------------------------------------------------------------------------------
