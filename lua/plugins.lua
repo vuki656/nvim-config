@@ -2,6 +2,12 @@ local config = require("plugins.plugin-manager")
 
 require("lazy").setup({
     {
+        "folke/zen-mode.nvim",
+        config = function()
+            require("plugins.focus")
+        end,
+    },
+    {
         "MunifTanjim/nui.nvim",
     },
     {
