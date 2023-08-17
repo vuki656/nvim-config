@@ -60,10 +60,16 @@ return function()
 
     local menu_items = {}
     for index, item in ipairs(items) do
+        local text = item.text
+
+        if index < 10 then
+            text = " " .. text
+        end
+
         table.insert(
             menu_items,
             Menu.item({
-                text = "[" .. index .. "] " .. item.text,
+                text = "[" .. index .. "] " .. text,
                 command = item.command,
             })
         )
