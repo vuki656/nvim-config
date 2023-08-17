@@ -166,13 +166,8 @@ icons.setup({
             color = "#ffca28",
             name = "Yaml",
         },
-        ["schema.graphql"] = {
-            icon = "爵",
-            color = "#7963e6",
-            name = "Graphql",
-        },
         ["graphql"] = {
-            icon = "爵",
+            icon = "󰡷",
             color = "#7963e6",
             name = "Graphql",
         },
