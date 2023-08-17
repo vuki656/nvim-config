@@ -124,6 +124,9 @@ formatter.setup({
         },
         liquid = {
             prettier
+        },
+        prisma = {
+            prettier
         }
     },
 })
