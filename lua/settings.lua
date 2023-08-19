@@ -115,23 +115,24 @@ vim.api.nvim_create_autocmd("FileType", {
     command = "wincmd L",
 })
 
--- Detect .luacheckrc as a luafile
-vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
-    pattern = "*.luacheckrc",
-    command = "set filetype=lua",
+------------------------------------------------------------------------------------------
+------------------------------------ FILETYPES -------------------------------------------
+------------------------------------------------------------------------------------------
+
+vim.filetype.add({
+    pattern = {
+        ["%.env%.[%w_.-]+"] = "dotenv",
+    },
+    extension = {
+        env = "dotenv",
+        luacheckrc = "lua",
+        mdx = "markdown",
+    },
+    filename = {
+        [".env"] = "dotenv",
+    },
 })
 
--- Detect env files
-vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
-    pattern = ".env*",
-    command = "set filetype=sh",
-})
-
--- Detect mdx files
-vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
-    pattern = "*.mdx",
-    command = "set filetype=markdown",
-})
 ------------------------------------------------------------------------------------------
 ------------------------------------ MISC ------------------------------------------------
 ------------------------------------------------------------------------------------------

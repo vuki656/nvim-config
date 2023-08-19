@@ -120,13 +120,15 @@ formatter.setup({
         },
         sh = {
             shfmt,
-            dotenv,
         },
         liquid = {
             prettier
         },
         prisma = {
             prettier
+        },
+        dotenv = {
+            dotenv,
         }
     },
 })
