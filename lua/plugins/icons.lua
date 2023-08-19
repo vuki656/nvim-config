@@ -36,16 +36,6 @@ icons.setup({
             color = "#a5afbe",
             name = "BashAliases",
         },
-        ["package.json"] = {
-            icon = "",
-            color = "#cc3534",
-            name = "PackageJson",
-        },
-        ["package-lock.json"] = {
-            icon = "",
-            color = "#cc3534",
-            name = "PackageLockJson",
-        },
         [".npmrc"] = {
             icon = "",
             color = "#cc3534",
@@ -131,48 +121,13 @@ icons.setup({
             color = "#9575cd",
             name = "Lua",
         },
-        ["Dockerfile"] = {
-            icon = "󰡨",
-            color = "#1e9cef",
-            name = "Docker",
-        },
-        [".dockerignore"] = {
-            icon = "󰡨",
-            color = "#1e9cef",
-            name = "Docker",
-        },
-        ["docker-compose.yaml"] = {
-            icon = "󰡨",
-            color = "#1e9cef",
-            name = "Docker",
-        },
-        ["Dockerfile.migrations"] = {
-            icon = "󰡨",
-            color = "#1e9cef",
-            name = "Docker",
-        },
-        ["Dockerfile.tests"] = {
-            icon = "󰡨",
-            color = "#1e9cef",
-            name = "Docker",
-        },
-        [".yml"] = {
-            icon = "",
-            color = "#ffca28",
-            name = "Yml",
-        },
-        [".yaml"] = {
-            icon = "",
-            color = "#ffca28",
-            name = "Yaml",
-        },
         ["graphql"] = {
             icon = "󰡷",
             color = "#7963e6",
             name = "Graphql",
         },
         ["gql"] = {
-            icon = "爵",
+            icon = "󰡷",
             color = "#7963e6",
             name = "Graphql",
         },
