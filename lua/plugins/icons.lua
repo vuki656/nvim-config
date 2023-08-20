@@ -2,8 +2,8 @@
 -- Description: Custom file icons
 -- Link: https://github.com/nvim-tree/nvim-web-devicons
 
-local icons = require("nvim-web-devicons")
 local colors = require("utils.colors")
+local icons = require("nvim-web-devicons")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- SETUP ------------------------------------------------
@@ -96,8 +96,13 @@ icons.setup({
             color = "#a5afbe",
             name = "IndexTs",
         },
+        [".eslintrc.js"] = {
+            icon = "󰱺",
+            color = "#7963e6",
+            name = "EslintRc",
+        },
         [".eslintrc.json"] = {
-            icon = "",
+            icon = "󰱺",
             color = "#7963e6",
             name = "EslintRc",
         },
