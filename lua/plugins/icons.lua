@@ -61,6 +61,11 @@ icons.setup({
             color = "#e79627",
             name = "EnvLocal",
         },
+        ["test.integration.ts"] = {
+            icon = "󰂔",
+            color = "#e79627",
+            name = "TSTest",
+        },
         [".env.test"] = {
             icon = "",
             color = "#e79627",
