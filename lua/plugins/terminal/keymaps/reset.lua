@@ -7,7 +7,7 @@ return function()
         vim.cmd(":Gitsigns refresh")
 
         if buffer_name ~= "" then
-            vim.cmd(":e")
+            -- vim.cmd(":e")
             vim.fn.winrestview(view)
         end
     end, 20)
