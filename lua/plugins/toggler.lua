@@ -22,6 +22,7 @@ toggler.setup({
         ["background"] = "foreground",
         ["asc"] = "desc",
         ["Asc"] = "Desc",
+        ["ASC"] = "DESC",
         ["public"] = "private",
         ["`"] = "'",
     },
