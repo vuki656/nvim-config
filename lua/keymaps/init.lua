@@ -202,6 +202,11 @@ set_keymap({
             description = "Rename variable",
         },
         {
+            key = "<LEADER>fl",
+            actions = vim.lsp.buf.format,
+            description = "Format with LSP",
+        },
+        {
             key = "H",
             actions = function()
                 vim.diagnostic.open_float(0, { scope = "line" })
