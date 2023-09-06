@@ -3,7 +3,7 @@
 -- Link: https://github.com/mhartington/formatter.nvim
 
 local formatter = require("formatter")
-local formatter_utils = require "formatter.util"
+local formatter_utils = require("formatter.util")
 
 local set_keymap = require("utils.set-keymap")
 
@@ -22,7 +22,8 @@ local prettier = function()
         args = {
             "--stdin-filepath",
             formatter_utils.escape_path(formatter_utils.get_current_buffer_file_path()),
-            "--tab-width 4"
+            "--tab-width 4",
+            "--ignore-path=''",
         },
         stdin = true,
         try_node_modules = true,
@@ -122,14 +123,14 @@ formatter.setup({
             shfmt,
         },
         liquid = {
-            prettier
+            prettier,
         },
         prisma = {
-            prettier
+            prettier,
         },
         dotenv = {
             dotenv,
-        }
+        },
     },
 })
 

@@ -2212,3 +2212,4 @@ hset
 timestampz
 crons
 text30
+passthrough
