@@ -13,12 +13,6 @@ local typescript = require("typescript-tools")
 ----------------------------------- UTILS ------------------------------------------------
 ------------------------------------------------------------------------------------------
 
-local default_on_attach = function(client)
-    if client.server_capabilities and client.server_capabilities.semanticTokensProvider then
-        client.server_capabilities.semanticTokensProvider = nil
-    end
-end
-
 ------------------------------------------------------------------------------------------
 ----------------------------------- SETUP ------------------------------------------------
 ------------------------------------------------------------------------------------------
@@ -36,17 +30,12 @@ mason_lspconfig.setup_handlers({
     function(server_name)
         lsp_config[server_name].setup({
             capabilities = lsp_capabilities,
-            on_attach = function(client)
-                default_on_attach(client)
-            end,
         })
     end,
     ["cssmodules_ls"] = function()
         lsp.cssmodules_ls.setup({
             capabilities = lsp_capabilities,
             on_attach = function(client)
-                default_on_attach(client)
-
                 client.server_capabilities.definitionProvider = false
             end,
         })
@@ -54,7 +43,6 @@ mason_lspconfig.setup_handlers({
     ["jsonls"] = function()
         lsp.jsonls.setup({
             capabilities = lsp_capabilities,
-            on_attach = default_on_attach,
             settings = {
                 json = {
                     validate = {
@@ -81,7 +69,6 @@ mason_lspconfig.setup_handlers({
     ["yamlls"] = function()
         lsp.yamlls.setup({
             capabilities = lsp_capabilities,
-            on_attach = default_on_attach,
             settings = {
                 yaml = {
                     schemas = require("schemastore").yaml.schemas(),
@@ -119,9 +106,7 @@ typescript.setup({
             vim.lsp.diagnostic.on_publish_diagnostics(_, result, context, config)
         end,
     },
-    on_attach = function(client)
-        default_on_attach(client)
-
+    on_attach = function()
         set_keymap({
             list = {
                 {
@@ -142,6 +127,7 @@ typescript.setup({
 vim.api.nvim_create_autocmd("LspAttach", {
     callback = function(args)
         local client = vim.lsp.get_client_by_id(args.data.client_id)
+
         client.server_capabilities.semanticTokensProvider = nil
     end,
 })
