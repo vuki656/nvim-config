@@ -62,6 +62,7 @@ installer_tools.setup({
         "stylelint",
         "stylua",
         "yamllint",
+        "black"
     },
 })
 
