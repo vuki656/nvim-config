@@ -41,8 +41,8 @@ installer_lsp.setup({
         "taplo",
         "vimls",
         "yamlls",
-        -- "eslint",
         "graphql",
+        "pyright"
     },
 })
 
