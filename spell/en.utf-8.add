@@ -2213,3 +2213,5 @@ timestampz
 crons
 text30
 passthrough
+mut
+i32

@@ -23,5 +23,7 @@ return function(text)
         or filetype == "javascriptreact"
     then
         insert_print_statement({ "console.log('" .. tostring(text) .. ": ', " .. text .. ")" })
+    elseif filetype == "rust" then
+        insert_print_statement({ 'println!("{}", ' .. tostring(text) .. ");" })
     end
 end
