@@ -26,4 +26,6 @@ return function(text)
     elseif filetype == "rust" then
         insert_print_statement({ 'println!("{}", ' .. tostring(text) .. ");" })
     end
+
+    vim.api.nvim_input("j==")
 end
