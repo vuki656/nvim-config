@@ -42,7 +42,8 @@ installer_lsp.setup({
         "vimls",
         "yamlls",
         "graphql",
-        "pyright"
+        "pyright",
+        "groovyls",
     },
 })
 
@@ -62,7 +63,7 @@ installer_tools.setup({
         "stylelint",
         "stylua",
         "yamllint",
-        "black"
+        "black",
     },
 })
 

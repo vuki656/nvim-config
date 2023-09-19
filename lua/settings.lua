@@ -124,6 +124,7 @@ vim.filetype.add({
     },
     filename = {
         [".env"] = "dotenv",
+        ["Jenkinsfile"] = "groovy",
     },
 })
 
