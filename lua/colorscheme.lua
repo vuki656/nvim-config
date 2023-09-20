@@ -37,12 +37,12 @@ set_highlight({
         { group = "VisualNOS", foreground = red, background = blue },
         { group = "TooLong", foreground = red, background = blue },
         { group = "WildMenu", foreground = red, background = blue },
-        { group = "Define", foreground = red, background = blue },
         { group = "TabLineFill", foreground = red, background = orange },
         { group = "Debug", foreground = red, background = blue },
 
         -- Editor
         { group = "NonText", foreground = background_light, background = "NONE" },
+        { group = "Define", foreground = red, background = "NONE" },
         { group = "PreCondit", foreground = blue },
         { group = "Repeat", foreground = purple },
         { group = "Italic", foreground = red, background = background },
