@@ -15,7 +15,6 @@ local fixjson = require("formatter.filetypes.json").fixjson
 local eslint = require("formatter.defaults.eslint_d")
 local stylua = require("formatter.filetypes.lua").stylua
 local shfmt = require("formatter.filetypes.sh").shfmt
-local black = require("formatter.filetypes.python").black
 
 local prettier = function()
     return {
@@ -71,6 +70,14 @@ local dotenv = function()
         },
         stdin = false,
         ignore_exitcode = true,
+    }
+end
+
+local black = function()
+    return {
+        exe = "black",
+        args = { "-l", "120", "-q", "-" },
+        stdin = true,
     }
 end
 
