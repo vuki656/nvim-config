@@ -2,6 +2,15 @@ local config = require("plugins.plugin-manager")
 
 require("lazy").setup({
     {
+        "nvim-pack/nvim-spectre",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+        },
+        config = function()
+            require("plugins.replace")
+        end,
+    },
+    {
         "folke/zen-mode.nvim",
         config = function()
             require("plugins.focus")
