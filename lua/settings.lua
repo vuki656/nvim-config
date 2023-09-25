@@ -116,6 +116,7 @@ vim.opt.showmode = false
 vim.filetype.add({
     pattern = {
         ["%.env%.[%w_.-]+"] = "dotenv",
+        [".gitconfig.*"] = "gitconfig",
     },
     extension = {
         env = "dotenv",
