@@ -2236,3 +2236,8 @@ diff3
 lfs
 checkwinsize
 histappend
+B64
+mosquitto
+mqttx
+dockerconf
+tldr
