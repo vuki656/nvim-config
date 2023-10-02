@@ -114,7 +114,7 @@ typescript.setup({
                     actions = function()
                         vim.cmd("TSToolsAddMissingImports")
                     end,
-                    description = "Import all missing typescript types",
+                    description = "Add missing imports",
                 },
             },
         })
