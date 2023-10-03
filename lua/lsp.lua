@@ -121,6 +121,9 @@ typescript.setup({
     end,
     settings = {
         separate_diagnostic_server = true,
+        tsserver_file_preferences = {
+            quotePreference = "single",
+        },
     },
 })
 
