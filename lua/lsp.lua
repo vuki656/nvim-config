@@ -121,6 +121,10 @@ typescript.setup({
     end,
     settings = {
         separate_diagnostic_server = true,
+        expose_as_code_action = {
+            "add_missing_imports",
+            "remove_unused_imports",
+        },
         tsserver_file_preferences = {
             quotePreference = "single",
         },
