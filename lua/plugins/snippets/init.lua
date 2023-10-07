@@ -13,6 +13,7 @@ local arrow_function_full_async_snippet = require("plugins.snippets.nodes.js.arr
 local arrow_function_full_snippet = require("plugins.snippets.nodes.js.arrow_function_full")
 local arrow_function_snippet = require("plugins.snippets.nodes.js.arrow_function")
 local console_log_snippet = require("plugins.snippets.nodes.js.console_log")
+local console_log_separator_snippet = require("plugins.snippets.nodes.js.console_log_separator")
 local export_all_snippet = require("plugins.snippets.nodes.js.export_all")
 local type_snippet = require("plugins.snippets.nodes.js.type")
 
@@ -37,6 +38,7 @@ luasnip.config.set_config({
 local js_ts_snippets = {
     -- Generic JS/TS
     console_log_snippet,
+    console_log_separator_snippet,
     export_all_snippet,
     arrow_function_snippet,
     arrow_function_async_snippet,
