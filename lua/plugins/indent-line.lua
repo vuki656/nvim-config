@@ -2,7 +2,7 @@
 -- Description: Indent guidelines
 -- Link: https://github.com/lukas-reineke/indent-blankline.nvim
 
-local indent_blankline = require("indent_blankline")
+local indent_blankline = require("ibl")
 
 local colors = require("utils.colors")
 local set_highlight = require("utils.set-highlight")
@@ -15,16 +15,23 @@ vim.opt.list = true
 vim.opt.listchars:append("space:⋅")
 
 indent_blankline.setup({
-    char = "▏",
-    filetype_exclude = {
-        "NvimTree",
-        "alpha",
-        "lazy",
-        "code-action-menu-menu",
-        "lsp-installer",
-        "toggleterm",
-        "help",
-        "",
+    scope = {
+        enabled = false,
+    },
+    indent = {
+        char = "▏",
+    },
+    exclude = {
+        filetypes = {
+            "NvimTree",
+            "alpha",
+            "lazy",
+            "code-action-menu-menu",
+            "lsp-installer",
+            "toggleterm",
+            "help",
+            "",
+        },
     },
 })
 
