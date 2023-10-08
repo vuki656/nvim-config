@@ -2245,3 +2245,17 @@ flatpak
 mozilla
 flameshot
 chevrotain
+asin
+acos
+atan
+sinh
+tanh
+LOG10
+log10
+LOG2
+ceil
+log2
+SUBRULE2
+VCU
+PCU
+ACU
