@@ -316,7 +316,6 @@ require("lazy").setup({
         config = function()
             require("plugins.bookmarks")
         end,
-        commit = "21d0d1b",
     },
     {
         "rrethy/vim-illuminate",
