@@ -36,6 +36,11 @@ icons.setup({
             color = "#a5afbe",
             name = "BashAliases",
         },
+        ["package-lock.json"] = {
+            icon = "",
+            color = "#cc3534",
+            name = "PackageLock",
+        },
         [".npmrc"] = {
             icon = "",
             color = "#cc3534",
