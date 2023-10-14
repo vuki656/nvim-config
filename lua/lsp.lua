@@ -116,6 +116,13 @@ typescript.setup({
                     end,
                     description = "Add missing imports",
                 },
+                {
+                    key = "<LEADER>tfr",
+                    actions = function()
+                        vim.cmd("TSToolsRenameFile")
+                    end,
+                    description = "Rename JS file",
+                },
             },
         })
     end,
