@@ -30,7 +30,7 @@ alpha.setup(startify_theme.config)
 --------------------------------------------------------------------------------------------
 
 set_keymap({
-    key = "<LEADER>b",
+    key = "<LEADER>bb",
     actions = function()
         vim.cmd("Alpha")
     end,
