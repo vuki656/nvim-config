@@ -137,22 +137,6 @@ require("lazy").setup({
         },
     },
     {
-        "vuki656/package-info.nvim",
-        config = function()
-            require("plugins.js-package-manager")
-        end,
-        ft = {
-            "json",
-            "javascript",
-            "javascriptreact",
-            "typescript",
-            "typescriptreact",
-        },
-        -- dependencies = {
-        --     "muniftanjim/nui.nvim",
-        -- },
-    },
-    {
         "folke/todo-comments.nvim",
         dependencies = {
             "nvim-lua/plenary.nvim",
