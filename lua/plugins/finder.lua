@@ -23,6 +23,7 @@ telescope.setup({
             ".next",
             ".idea",
             ".yarn",
+            ".git/",
         },
     },
 })
