@@ -49,6 +49,7 @@ installer_lsp.setup({
 
 installer_tools.setup({
     ensure_installed = {
+        -- Tools
         "protolint",
         "actionlint",
         "cspell",
@@ -64,6 +65,9 @@ installer_tools.setup({
         "stylua",
         "yamllint",
         "black",
+
+        -- Debuggers
+        "js-debug-adapter",
     },
 })
 

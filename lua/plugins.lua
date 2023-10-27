@@ -57,6 +57,15 @@ require("lazy").setup({
         "nvim-lua/plenary.nvim",
     },
     {
+        "mfussenegger/nvim-dap",
+        config = function()
+            require("plugins.debugger")
+        end,
+        dependencies = {
+            "rcarriga/nvim-dap-ui",
+        },
+    },
+    {
         "nvim-telescope/telescope.nvim",
         config = function()
             require("plugins.finder")
@@ -136,22 +145,22 @@ require("lazy").setup({
             "nvim-tree/nvim-web-devicons",
         },
     },
-    {
-        "vuki656/package-info.nvim",
-        config = function()
-            require("plugins.js-package-manager")
-        end,
-        ft = {
-            "json",
-            "javascript",
-            "javascriptreact",
-            "typescript",
-            "typescriptreact",
-        },
-        -- dependencies = {
-        --     "muniftanjim/nui.nvim",
-        -- },
-    },
+    -- {
+    --     "vuki656/package-info.nvim",
+    --     config = function()
+    --         require("plugins.js-package-manager")
+    --     end,
+    --     ft = {
+    --         "json",
+    --         "javascript",
+    --         "javascriptreact",
+    --         "typescript",
+    --         "typescriptreact",
+    --     },
+    --     -- dependencies = {
+    --     --     "muniftanjim/nui.nvim",
+    --     -- },
+    -- },
     {
         "folke/todo-comments.nvim",
         dependencies = {
