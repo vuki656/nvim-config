@@ -41,6 +41,11 @@ set_keymap({
             description = "Find changed git lines in project",
         },
         {
+            key = "<LEADER>bc",
+            actions = actions.git_bcommits,
+            description = "Browse buffer commits",
+        },
+        {
             key = "<LEADER>pf",
             actions = function()
                 actions.find_files({
