@@ -14,6 +14,7 @@ toggler.setup({
         ["dark"] = "light",
         ["void"] = "await",
         ["producer"] = "consumer",
+        ["pick"] = "squash",
         ["mutation"] = "query",
         ["AND"] = "OR",
         ["null"] = "undefined",
