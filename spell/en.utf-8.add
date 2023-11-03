@@ -2270,3 +2270,6 @@ utf8
 timescaledb
 hypertable
 hypertables
+auth0
+passwordless
+sso
