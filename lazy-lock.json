@@ -9,6 +9,7 @@
   "cmp-path": { "branch": "main", "commit": "91ff86cd9c29299a64f968ebb45846c485725f23" },
   "cmp_luasnip": { "branch": "master", "commit": "05a9ab28b53f71d1aece421ef32fee2cb857a843" },
   "comment.nvim": { "branch": "master", "commit": "0236521ea582747b58869cb72f70ccfa967d2e89" },
+  "debugprint.nvim": { "branch": "main", "commit": "936ef4bdcbcdbaf9037c7355c90f4776cf4eb06e" },
   "feline.nvim": { "branch": "main", "commit": "025db63b04ca0b22473871e532d90bf0d8bc1031" },
   "format-ts-errors.nvim": { "branch": "main", "commit": "95a2455fc3691bef6f2aad57ffded99e898c0955" },
   "formatter.nvim": { "branch": "master", "commit": "34dcdfa0c75df667743b2a50dd99c84a557376f0" },

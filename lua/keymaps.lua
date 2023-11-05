@@ -1,5 +1,3 @@
-local print_selection = require("keymaps.custom.print.selection")
-local print_word = require("keymaps.custom.print.word")
 local set_keymap = require("utils.set-keymap")
 local set_terminal_keymap = require("utils.set-terminal-keymap")
 
@@ -244,17 +242,6 @@ set_keymap({
 
 set_keymap({
     list = {
-        {
-            key = "<LEADER>wp",
-            actions = print_word,
-            description = "Take the word under cursor and put it into a print statement on the line below",
-        },
-        {
-            modes = { "v" },
-            key = "<LEADER>wp",
-            actions = print_selection,
-            description = "Take the highlighted text and put it into a print statement on the line below",
-        },
         {
             key = "<LEADER>cw",
             actions = "g<C-g>",

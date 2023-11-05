@@ -2,6 +2,12 @@ local config = require("plugins.plugin-manager")
 
 require("lazy").setup({
     {
+        "andrewferrier/debugprint.nvim",
+        config = function()
+            require("plugins.print")
+        end,
+    },
+    {
         "nvim-pack/nvim-spectre",
         dependencies = {
             "nvim-lua/plenary.nvim",
