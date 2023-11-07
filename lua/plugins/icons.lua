@@ -11,6 +11,11 @@ local icons = require("nvim-web-devicons")
 
 icons.setup({
     override = {
+        ["jenkinsfile"] = {
+            icon = "󰟥",
+            color = "#e1363a",
+            name = "Jenkins",
+        },
         ["proto"] = {
             icon = "󰿘",
             color = colors.yellow,

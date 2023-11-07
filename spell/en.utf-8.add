@@ -2275,3 +2275,5 @@ passwordless
 sso
 debugprint
 andrewferrier
+jsonb
+jenkinsfile
