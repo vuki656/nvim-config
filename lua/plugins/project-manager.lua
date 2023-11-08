@@ -9,5 +9,9 @@ local project = require("project_nvim")
 ------------------------------------------------------------------------------------------
 
 project.setup({
-    patterns = { ".git", "yarn.lock" },
+    patterns = {
+        ".git",
+        "yarn.lock",
+    },
+    manual_mode = true,
 })
