@@ -51,7 +51,7 @@ tree.setup({
     view = {
         width = 60,
     },
-    respect_buf_cwd = true,
+    respect_buf_cwd = false,
     renderer = {
         special_files = {},
         highlight_git = true,
