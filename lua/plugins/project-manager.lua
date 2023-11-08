@@ -14,4 +14,5 @@ project.setup({
         "yarn.lock",
     },
     manual_mode = true,
+    show_hidden = true,
 })
