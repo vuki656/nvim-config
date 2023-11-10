@@ -64,6 +64,7 @@ installer_tools.setup({
         "stylua",
         "yamllint",
         "black",
+        "sqlfluff"
     },
 })
 
