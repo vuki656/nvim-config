@@ -60,9 +60,6 @@ require("lazy").setup({
         end,
     },
     {
-        "nvim-lua/plenary.nvim",
-    },
-    {
         "nvim-telescope/telescope.nvim",
         config = function()
             require("plugins.finder")
