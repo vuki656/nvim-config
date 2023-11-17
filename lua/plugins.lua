@@ -78,9 +78,6 @@ require("lazy").setup({
             require("plugins.linter")
         end,
     },
-    -- {
-    --     "muniftanjim/nui.nvim",
-    -- },
     {
         "david-kunz/jester",
         config = function()
