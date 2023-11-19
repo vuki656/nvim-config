@@ -41,7 +41,7 @@ return {
                 message = "Getting Actions"
             end
 
-            return "  " .. "[" .. status.name .. "] " .. message .. " " .. loading.state.current_spinner
+            return "   " .. "[" .. status.name .. "] " .. message .. " " .. loading.state.current_spinner
         end
 
         return ""
