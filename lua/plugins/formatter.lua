@@ -23,6 +23,7 @@ local prettier = function()
             "--stdin-filepath",
             formatter_utils.escape_path(formatter_utils.get_current_buffer_file_path()),
             "--tab-width 4",
+            "--no-semi",
             "--ignore-path=''",
         },
         stdin = true,
