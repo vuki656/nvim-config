@@ -15,6 +15,7 @@ local fixjson = require("formatter.filetypes.json").fixjson
 local eslint = require("formatter.defaults.eslint_d")
 local stylua = require("formatter.filetypes.lua").stylua
 local shfmt = require("formatter.filetypes.sh").shfmt
+local buf = require("formatter.filetypes.proto").buf_format
 
 local prettier = function()
     return {
@@ -126,7 +127,7 @@ formatter.setup({
             stylua,
         },
         proto = {
-            protolint,
+            buf,
         },
         sh = {
             shfmt,
