@@ -18,8 +18,12 @@ treesitter_configs.setup({
             return vim.api.nvim_buf_line_count(bufnr) > 10000
         end,
     },
-    autotag = { enable = true },
-    indent = { enable = true },
+    autotag = {
+        enable = false,
+    },
+    indent = {
+        enable = true,
+    },
     incremental_selection = {
         enable = true,
         keymaps = {
