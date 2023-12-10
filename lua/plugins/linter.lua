@@ -29,7 +29,7 @@ lint.linters_by_ft = {
         "shellcheck",
     },
     css = {
-        "stylelint-lsp",
+        "stylelint",
     },
     yaml = {
         "yamllint",
