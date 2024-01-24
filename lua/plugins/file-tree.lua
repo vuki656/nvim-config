@@ -87,7 +87,7 @@ set_highlight({
         { group = "NvimTreeGitStaged", foreground = colors.green },
         { group = "NvimTreeGitRenamed", foreground = colors.yellow },
         { group = "NvimTreeGitFileDirtyHl", foreground = colors.yellow },
-        { group = "NvimTreeGitDeleted", foreground = colors.red },
+        { group = "NvimTreeGitFolderDeletedHl", foreground = colors.red },
         { group = "NvimTreeIndentMarker", foreground = colors.transparent },
         { group = "NvimTreeFolderName", foreground = colors.white },
         { group = "NvimTreeEmptyFolderName", foreground = colors.white },
