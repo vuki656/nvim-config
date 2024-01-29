@@ -148,6 +148,7 @@ set_highlight({
         { group = "@constant.builtin", foreground = purple },
         { group = "@number", foreground = orange },
         { group = "@string", foreground = green },
+        { group = "@string.special.url.comment", foreground = blue },
         { group = "@function.method", foreground = blue },
         { group = "@keyword.conditional", foreground = purple },
         { group = "@keyword.storage.lifetime ", foreground = purple },
