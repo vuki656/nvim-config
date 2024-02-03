@@ -169,6 +169,7 @@ set_highlight({
         { group = "@tag", foreground = red },
         { group = "@tag.delimiter", foreground = white },
         { group = "@tag.attribute", foreground = red },
+        { group = "@tag.tsx", foreground = yellow },
         { group = "@attribute", foreground = yellow },
         { group = "@markup.heading", foreground = red },
         { group = "@markup.link.url", foreground = blue },
