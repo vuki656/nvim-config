@@ -12,6 +12,18 @@ local spectre = require("spectre")
 spectre.setup({
     open_cmd = "new",
     live_update = false,
+    find_engine = {
+        ["rg"] = {
+            args = {
+                "--color=never",
+                "--no-heading",
+                "--with-filename",
+                "--line-number",
+                "--column",
+                "--hidden",
+            },
+        },
+    },
 })
 
 --------------------------------------------------------------------------------------------

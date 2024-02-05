@@ -14,6 +14,13 @@ local set_keymap = require("utils.set-keymap")
 ------------------------------------------------------------------------------------------
 
 telescope.setup({
+    pickers = {
+        live_grep = {
+            additional_args = function()
+                return { "--hidden" }
+            end,
+        },
+    },
     defaults = {
         path_display = { "tail" },
         file_ignore_patterns = {
