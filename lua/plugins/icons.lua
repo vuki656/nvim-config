@@ -98,6 +98,16 @@ icons.setup({
             color = "#ffcb6b",
             name = "Js",
         },
+        ["cjs"] = {
+            icon = "",
+            color = "#ffcb6b",
+            name = "Js",
+        },
+        ["mjs"] = {
+            icon = "",
+            color = "#ffcb6b",
+            name = "Js",
+        },
         ["ts"] = {
             icon = "ﯤ",
             color = "#497eb9",
