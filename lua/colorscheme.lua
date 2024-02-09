@@ -178,6 +178,7 @@ set_highlight({
         { group = "@comment.todo.unchecked", foreground = red },
         { group = "@comment.todo.checked", foreground = green },
         { group = "@module", foreground = yellow },
+        { group = "@text.literal.markdown_inline", foreground = green },
 
         -- HTML
         { group = "htmlTagName", foreground = yellow },
