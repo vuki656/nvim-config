@@ -122,7 +122,12 @@ copilot.setup({
     filetypes = {
         ["*"] = true,
         sh = function()
-            if string.match(vim.fs.basename(vim.api.nvim_buf_get_name(0)), "^%.env.*") then
+            local buffer = vim.fs.basename(vim.api.nvim_buf_get_name(0))
+
+            local is_env = string.match(buffer, "^%.env.*")
+            local is_keys = buffer == ".bash_keys"
+
+            if is_env or is_keys then
                 return false
             end
             return true
