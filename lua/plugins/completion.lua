@@ -108,3 +108,16 @@ cmp.setup.cmdline("/", {
 --------------------------------------------------------------------------------------------
 
 set_highlight({ group = "CmpItemKindDefault", foreground = colors.blue })
+
+vim.api.nvim_set_hl(0, "CmpItemAbbrDeprecated", { strikethrough = true, fg = colors.red })
+vim.api.nvim_set_hl(0, "CmpItemAbbrMatch", { fg = colors.red })
+vim.api.nvim_set_hl(0, "CmpItemKindVariable", { fg = colors.orange })
+vim.api.nvim_set_hl(0, "CmpItemKindInterface", { fg = colors.purple })
+vim.api.nvim_set_hl(0, "CmpItemKindText", { fg = colors.white })
+vim.api.nvim_set_hl(0, "CmpItemKindFunction", { fg = colors.blue })
+vim.api.nvim_set_hl(0, "CmpItemKindClass", { fg = colors.yellow })
+vim.api.nvim_set_hl(0, "CmpItemKindConstant", { fg = colors.green })
+vim.api.nvim_set_hl(0, "CmpItemKindField", { fg = colors.orange })
+vim.api.nvim_set_hl(0, "CmpItemKindMethod", { fg = colors.blue })
+vim.api.nvim_set_hl(0, "CmpItemKindKeyword", { fg = colors.white })
+vim.api.nvim_set_hl(0, "CmpItemKindProperty", { fg = colors.red })
