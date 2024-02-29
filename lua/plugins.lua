@@ -2,6 +2,17 @@ local config = require("plugins.plugin-manager")
 
 require("lazy").setup({
     {
+        "zbirenbaum/copilot.lua",
+        cmd = "Copilot",
+        event = "InsertEnter",
+        config = function()
+            require("copilot").setup({})
+        end,
+        dependencies = {
+            "zbirenbaum/copilot-cmp",
+        },
+    },
+    {
         "andrewferrier/debugprint.nvim",
         config = function()
             require("plugins.print")
