@@ -2,17 +2,6 @@ local config = require("plugins.plugin-manager")
 
 require("lazy").setup({
     {
-        "zbirenbaum/copilot.lua",
-        cmd = "Copilot",
-        event = "InsertEnter",
-        config = function()
-            require("copilot").setup({})
-        end,
-        dependencies = {
-            "zbirenbaum/copilot-cmp",
-        },
-    },
-    {
         "andrewferrier/debugprint.nvim",
         config = function()
             require("plugins.print")
@@ -197,6 +186,14 @@ require("lazy").setup({
                 config = function()
                     require("plugins.auto-pairs")
                 end,
+            },
+            {
+                "zbirenbaum/copilot.lua",
+                cmd = "Copilot",
+                event = "InsertEnter",
+                dependencies = {
+                    "zbirenbaum/copilot-cmp",
+                },
             },
             "hrsh7th/cmp-nvim-lsp",
             "hrsh7th/cmp-buffer",

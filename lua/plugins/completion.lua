@@ -9,6 +9,9 @@ local snippets = require("luasnip")
 local colors = require("utils.colors")
 local set_highlight = require("utils.set-highlight")
 
+local copilot = require("copilot")
+local copilot_cmp = require("copilot_cmp")
+
 local has_words_before = function()
     local line, column = unpack(vim.api.nvim_win_get_cursor(0))
 
@@ -19,10 +22,20 @@ end
 ------------------------------------- SETUP ------------------------------------------------
 --------------------------------------------------------------------------------------------
 
+-- Exeter setup for icons
+icons.init({
+    symbol_map = {
+        Copilot = "",
+    },
+})
+
 -- Fix tabbing
 vim.o.completeopt = "menuone,noselect"
 
 cmp.setup({
+    experimental = {
+        ghost_text = true,
+    },
     window = {
         completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered(),
@@ -61,6 +74,7 @@ cmp.setup({
         format = icons.cmp_format(),
     },
     sources = {
+        { name = "copilot" },
         { name = "nvim_lsp" },
         { name = "luasnip" },
         {
@@ -76,13 +90,13 @@ cmp.setup({
     },
     sorting = {
         comparators = {
-            -- cmp.config.compare.offset,
-            -- cmp.config.compare.exact,
-            -- cmp.config.compare.score,
-            -- cmp.config.compare.kind,
-            -- cmp.config.compare.sort_text,
-            -- cmp.config.compare.length,
-            -- cmp.config.compare.order,
+            cmp.config.compare.offset,
+            cmp.config.compare.exact,
+            cmp.config.compare.score,
+            cmp.config.compare.kind,
+            cmp.config.compare.sort_text,
+            cmp.config.compare.length,
+            cmp.config.compare.order,
         },
     },
 })
@@ -103,6 +117,20 @@ cmp.setup.cmdline("/", {
     mapping = cmp.mapping.preset.cmdline(),
 })
 
+-- Copilot
+copilot.setup({
+    filetypes = {
+        ["*"] = true,
+        sh = function()
+            if string.match(vim.fs.basename(vim.api.nvim_buf_get_name(0)), "^%.env.*") then
+                return false
+            end
+            return true
+        end,
+    },
+})
+copilot_cmp.setup()
+
 --------------------------------------------------------------------------------------------
 ------------------------------------- COLORS -----------------------------------------------
 --------------------------------------------------------------------------------------------
@@ -119,5 +147,6 @@ vim.api.nvim_set_hl(0, "CmpItemKindClass", { fg = colors.yellow })
 vim.api.nvim_set_hl(0, "CmpItemKindConstant", { fg = colors.green })
 vim.api.nvim_set_hl(0, "CmpItemKindField", { fg = colors.orange })
 vim.api.nvim_set_hl(0, "CmpItemKindMethod", { fg = colors.blue })
-vim.api.nvim_set_hl(0, "CmpItemKindKeyword", { fg = colors.white })
+vim.api.nvim_set_hl(0, "CmpItemKindKeyword", { fg = colors.purple })
 vim.api.nvim_set_hl(0, "CmpItemKindProperty", { fg = colors.red })
+vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = colors.orange })
