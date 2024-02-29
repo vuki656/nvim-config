@@ -23,6 +23,10 @@ end
 vim.o.completeopt = "menuone,noselect"
 
 cmp.setup({
+    window = {
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
+    },
     snippet = {
         expand = function(args)
             snippets.lsp_expand(args.body)
@@ -50,6 +54,8 @@ cmp.setup({
                 fallback()
             end
         end, { "i", "s" }),
+        ["<C-b>"] = cmp.mapping.scroll_docs(4),
+        ["<C-f>"] = cmp.mapping.scroll_docs(-4),
     },
     formatting = {
         format = icons.cmp_format(),
