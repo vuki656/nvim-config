@@ -119,6 +119,12 @@ cmp.setup.cmdline("/", {
 
 -- Copilot
 copilot.setup({
+    suggestion = {
+        enabled = false,
+    },
+    panel = {
+        enabled = false,
+    },
     filetypes = {
         ["*"] = true,
         sh = function()
