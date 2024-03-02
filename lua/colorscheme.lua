@@ -171,6 +171,7 @@ set_highlight({
         { group = "@tag.attribute", foreground = red },
         { group = "@tag.tsx", foreground = yellow },
         { group = "@attribute", foreground = yellow },
+        { group = "@attribute.graphql", foreground = purple },
         { group = "@markup.heading", foreground = red },
         { group = "@markup.link.url", foreground = blue },
         { group = "@markup.raw", foreground = green },
