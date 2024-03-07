@@ -12,6 +12,8 @@ local toggler = require("nvim-toggler")
 toggler.setup({
     inverses = {
         ["&&"] = "||",
+        ["on"] = "off",
+        ["ON"] = "OFF",
         ["dark"] = "light",
         ["void"] = "await",
         ["disconnected"] = "connected",

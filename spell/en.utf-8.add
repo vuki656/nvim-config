@@ -2310,3 +2310,12 @@ strikethrough
 
 octokit
 mimetype
+spdlog
+cout
+ethernet
+strdup
+nullptr
+strtok
+strchr
+asio
+nullopt
