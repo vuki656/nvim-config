@@ -2319,3 +2319,4 @@ strtok
 strchr
 asio
 nullopt
+cerbos
