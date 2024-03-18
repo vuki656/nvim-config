@@ -11,6 +11,16 @@ local icons = require("nvim-web-devicons")
 
 icons.setup({
     override = {
+        [".prettierignore"] = {
+            icon = "󰬗",
+            color = colors.red,
+            name = "prettier_ignore",
+        },
+        [".prettierrc.js"] = {
+            icon = "󰬗",
+            color = colors.red,
+            name = "prettier_js",
+        },
         ["jenkinsfile"] = {
             icon = "󰟥",
             color = "#e1363a",
