@@ -75,7 +75,8 @@ mason_lspconfig.setup_handlers({
                 },
             },
             schemaStore = {
-                enable = true,
+                enable = false,
+                url = "",
             },
         })
     end,
