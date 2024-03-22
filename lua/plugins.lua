@@ -187,14 +187,6 @@ require("lazy").setup({
                     require("plugins.auto-pairs")
                 end,
             },
-            {
-                "zbirenbaum/copilot.lua",
-                cmd = "Copilot",
-                event = "InsertEnter",
-                dependencies = {
-                    "zbirenbaum/copilot-cmp",
-                },
-            },
             "hrsh7th/cmp-nvim-lsp",
             "hrsh7th/cmp-buffer",
             "hrsh7th/cmp-path",

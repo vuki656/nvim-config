@@ -9,9 +9,6 @@ local snippets = require("luasnip")
 local colors = require("utils.colors")
 local set_highlight = require("utils.set-highlight")
 
-local copilot = require("copilot")
-local copilot_cmp = require("copilot_cmp")
-
 local has_words_before = function()
     local line, column = unpack(vim.api.nvim_win_get_cursor(0))
 
@@ -21,13 +18,6 @@ end
 --------------------------------------------------------------------------------------------
 ------------------------------------- SETUP ------------------------------------------------
 --------------------------------------------------------------------------------------------
-
--- Exeter setup for icons
-icons.init({
-    symbol_map = {
-        Copilot = "",
-    },
-})
 
 -- Fix tabbing
 vim.o.completeopt = "menuone,noselect"
@@ -74,7 +64,6 @@ cmp.setup({
         format = icons.cmp_format(),
     },
     sources = {
-        { name = "copilot" },
         { name = "nvim_lsp" },
         { name = "luasnip" },
         {
@@ -117,31 +106,6 @@ cmp.setup.cmdline("/", {
     mapping = cmp.mapping.preset.cmdline(),
 })
 
--- Copilot
-copilot.setup({
-    suggestion = {
-        enabled = false,
-    },
-    panel = {
-        enabled = false,
-    },
-    filetypes = {
-        ["*"] = true,
-        sh = function()
-            local buffer = vim.fs.basename(vim.api.nvim_buf_get_name(0))
-
-            local is_env = string.match(buffer, "^%.env.*")
-            local is_keys = buffer == ".bash_keys"
-
-            if is_env or is_keys then
-                return false
-            end
-            return true
-        end,
-    },
-})
-copilot_cmp.setup()
-
 --------------------------------------------------------------------------------------------
 ------------------------------------- COLORS -----------------------------------------------
 --------------------------------------------------------------------------------------------
@@ -160,4 +124,3 @@ vim.api.nvim_set_hl(0, "CmpItemKindField", { fg = colors.orange })
 vim.api.nvim_set_hl(0, "CmpItemKindMethod", { fg = colors.blue })
 vim.api.nvim_set_hl(0, "CmpItemKindKeyword", { fg = colors.purple })
 vim.api.nvim_set_hl(0, "CmpItemKindProperty", { fg = colors.red })
-vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = colors.orange })
