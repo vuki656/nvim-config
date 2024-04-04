@@ -64,6 +64,7 @@ cmp.setup({
         format = icons.cmp_format(),
     },
     sources = {
+        { name = "vim-dadbod-completion" },
         { name = "nvim_lsp" },
         { name = "luasnip" },
         {

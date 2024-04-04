@@ -2,6 +2,29 @@ local config = require("plugins.plugin-manager")
 
 require("lazy").setup({
     {
+        "kristijanhusak/vim-dadbod-ui",
+        dependencies = {
+            {
+                "tpope/vim-dadbod",
+                lazy = true,
+            },
+            {
+                "kristijanhusak/vim-dadbod-completion",
+                ft = { "sql", "mysql", "plsql" },
+                lazy = true,
+            },
+        },
+        cmd = {
+            "DBUI",
+            "DBUIToggle",
+            "DBUIAddConnection",
+            "DBUIFindBuffer",
+        },
+        config = function()
+            require("plugins.database")
+        end,
+    },
+    {
         "andrewferrier/debugprint.nvim",
         config = function()
             require("plugins.print")
