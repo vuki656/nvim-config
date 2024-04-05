@@ -89,6 +89,9 @@ end
 
 formatter.setup({
     filetype = {
+        html = {
+            prettier,
+        },
         jsonc = {
             fixjson,
             prettier,
