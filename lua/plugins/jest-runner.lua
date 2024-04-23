@@ -45,6 +45,8 @@ vim.api.nvim_create_autocmd({ "BufEnter" }, {
         if string.find(file_name, ".integration.test.ts") then
             configure_jest("jest.integration.config.ts")
         end
+
+        configure_jest("jest.config.ts")
     end,
 })
 
