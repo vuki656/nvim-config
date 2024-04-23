@@ -12,12 +12,12 @@ local set_keymap = require("utils.set-keymap")
 
 local default_options = {
     terminal_cmd = "ToggleTerm",
-    path_to_jest_run = "yarn jest",
+    path_to_jest_run = "bun jest",
 }
 
 local configure_jest = function(file_name)
     local new_config = vim.tbl_deep_extend("force", default_options, {
-        path_to_jest_run = "yarn jest --config " .. file_name,
+        path_to_jest_run = "bun jest --config " .. file_name,
     })
 
     jester.setup(new_config)
