@@ -81,13 +81,7 @@ icons.setup({
             color = "#e79627",
             name = "EnvLocal",
         },
-        ["test.unit.ts"] = {
-            icon = "",
-            color = "#e79627",
-            cterm_color = "74",
-            name = "TestTs",
-        },
-        ["test.integration.ts"] = {
+        ["*.test.ts"] = {
             icon = "",
             color = "#e79627",
             cterm_color = "74",
