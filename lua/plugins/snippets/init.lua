@@ -51,6 +51,7 @@ local js_ts_snippets = {
 local js_ts_react_snippets = {
     -- Generic JS/TS
     console_log_snippet,
+    console_log_separator_snippet,
     export_all_snippet,
     arrow_function_snippet,
     arrow_function_full_snippet,
