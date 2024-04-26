@@ -2351,3 +2351,5 @@ nx
 vitest
 v8
 lng
+corepack
+treeshake
