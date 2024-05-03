@@ -16,8 +16,16 @@ local function on_submit(item)
         hidden = false,
     }):toggle()
 
+    local npm_lock = io.open("package-lock.json", "r")
+
+    local command = "yarn"
+
+    if npm_lock ~= nil then
+        command = "npm run "
+    end
+
     vim.defer_fn(function()
-        terminal:send("yarn " .. item.command, false)
+        terminal:send(command .. item.command, false)
     end, 400)
 end
 
