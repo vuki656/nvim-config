@@ -44,6 +44,7 @@ installer_lsp.setup({
         "graphql",
         "pyright",
         "groovyls",
+        "vtsls"
     },
 })
 

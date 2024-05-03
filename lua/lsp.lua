@@ -80,6 +80,27 @@ mason_lspconfig.setup_handlers({
             },
         })
     end,
+    ["vtsls"] = function()
+        lsp.vtsls.setup({
+            filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+            settings = {
+                vtsls = {
+                    -- autoUseWorkspaceTsdk = true,
+                    tsserver = {
+                        globalPlugins = {
+                            {
+                                name = "@vue/typescript-plugin",
+                                location = "/home/domagoj/.nvm/versions/node/v20.10.0/lib/node_modules/@vue/typescript-plugin/index.js",
+                                languages = { "vue" },
+                                configNamespace = "typescript",
+                                enableForWorkspaceTypeScriptVersions = true,
+                            },
+                        },
+                    },
+                },
+            },
+        })
+    end,
 })
 
 -- This is separate as it handles the whole thing itself, no lsp
