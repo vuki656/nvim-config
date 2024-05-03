@@ -18,7 +18,7 @@ local function on_submit(item)
 
     local npm_lock = io.open("package-lock.json", "r")
 
-    local command = "yarn"
+    local command = "yarn "
 
     if npm_lock ~= nil then
         command = "npm run "
