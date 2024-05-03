@@ -141,6 +141,9 @@ formatter.setup({
         prisma = {
             prettier,
         },
+        vue = {
+            prettier,
+        },
         dotenv = {
             dotenv,
         },
