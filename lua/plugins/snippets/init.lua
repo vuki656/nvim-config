@@ -65,6 +65,7 @@ local js_ts_react_snippets = {
 
 luasnip.add_snippets("typescript", js_ts_snippets)
 luasnip.add_snippets("javascript", js_ts_snippets)
+luasnip.add_snippets("vue", js_ts_snippets)
 luasnip.add_snippets("typescriptreact", js_ts_react_snippets)
 luasnip.add_snippets("javascriptreact", js_ts_react_snippets)
 
