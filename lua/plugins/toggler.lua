@@ -19,6 +19,7 @@ toggler.setup({
         ["disconnected"] = "connected",
         ["producer"] = "consumer",
         ["pick"] = "squash",
+        ["row"] = "column",
         ["mutation"] = "query",
         ["AND"] = "OR",
         ["null"] = "undefined",
