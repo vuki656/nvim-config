@@ -205,6 +205,14 @@ set_keymap({
             description = "Format with LSP",
         },
         {
+            key = "<LEADER>f0",
+            actions = function()
+                vim.cmd("! npx prettier --print-width=80 --write %")
+                vim.api.nvim_input("<CR>")
+            end,
+            description = "Format with Prettier",
+        },
+        {
             key = "H",
             actions = function()
                 vim.diagnostic.open_float(0, { scope = "line" })
