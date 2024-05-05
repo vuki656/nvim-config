@@ -21,6 +21,7 @@ local type_snippet = require("plugins.snippets.nodes.js.type")
 local react_component_props_snippet = require("plugins.snippets.nodes.js.react.react_component_props")
 local react_component_snippet = require("plugins.snippets.nodes.js.react.react_component")
 local react_element_snippet = require("plugins.snippets.nodes.js.react.react_element")
+local react_props_snippet = require("plugins.snippets.nodes.js.react.react_props")
 
 ------------------------------------------------------------------------------------------
 ------------------------------------ SETUP -----------------------------------------------
@@ -61,6 +62,7 @@ local js_ts_react_snippets = {
     react_element_snippet,
     react_component_snippet,
     react_component_props_snippet,
+    react_props_snippet,
 }
 
 luasnip.add_snippets("typescript", js_ts_snippets)
