@@ -82,10 +82,9 @@ mason_lspconfig.setup_handlers({
     end,
     ["vtsls"] = function()
         lsp.vtsls.setup({
-            filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+            filetypes = { "vue" },
             settings = {
                 vtsls = {
-                    -- autoUseWorkspaceTsdk = true,
                     tsserver = {
                         globalPlugins = {
                             {
