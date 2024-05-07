@@ -7,14 +7,14 @@ local luasnip = require("luasnip")
 local set_keymap = require("utils.set-keymap")
 
 -- JS/TS
-local function_snippet = require("plugins.snippets.nodes.js.function")
 local arrow_function_async_snippet = require("plugins.snippets.nodes.js.arrow_function_async")
 local arrow_function_full_async_snippet = require("plugins.snippets.nodes.js.arrow_function_full_async")
 local arrow_function_full_snippet = require("plugins.snippets.nodes.js.arrow_function_full")
 local arrow_function_snippet = require("plugins.snippets.nodes.js.arrow_function")
-local console_log_snippet = require("plugins.snippets.nodes.js.console_log")
 local console_log_separator_snippet = require("plugins.snippets.nodes.js.console_log_separator")
+local console_log_snippet = require("plugins.snippets.nodes.js.console_log")
 local export_all_snippet = require("plugins.snippets.nodes.js.export_all")
+local function_snippet = require("plugins.snippets.nodes.js.function")
 local type_snippet = require("plugins.snippets.nodes.js.type")
 
 -- React
@@ -22,6 +22,9 @@ local react_component_props_snippet = require("plugins.snippets.nodes.js.react.r
 local react_component_snippet = require("plugins.snippets.nodes.js.react.react_component")
 local react_element_snippet = require("plugins.snippets.nodes.js.react.react_element")
 local react_props_snippet = require("plugins.snippets.nodes.js.react.react_props")
+
+-- CSS
+local css_center_snippet = require("plugins.snippets.css.center")
 
 ------------------------------------------------------------------------------------------
 ------------------------------------ SETUP -----------------------------------------------
@@ -46,7 +49,7 @@ local js_ts_snippets = {
     arrow_function_full_async_snippet,
     arrow_function_full_snippet,
     type_snippet,
-    function_snippet
+    function_snippet,
 }
 
 local js_ts_react_snippets = {
@@ -65,11 +68,16 @@ local js_ts_react_snippets = {
     react_props_snippet,
 }
 
+local css_snippets = {
+    css_center_snippet,
+}
+
 luasnip.add_snippets("typescript", js_ts_snippets)
 luasnip.add_snippets("javascript", js_ts_snippets)
 luasnip.add_snippets("vue", js_ts_snippets)
 luasnip.add_snippets("typescriptreact", js_ts_react_snippets)
 luasnip.add_snippets("javascriptreact", js_ts_react_snippets)
+luasnip.add_snippets("css", css_snippets)
 
 ------------------------------------------------------------------------------------------
 ------------------------------------ KEYMAPS ---------------------------------------------
