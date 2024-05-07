@@ -26,6 +26,10 @@ vim.diagnostic.config({
     virtual_text = false,
 })
 
+-- NOTE: workaround until this is merged https://github.com/williamboman/mason-lspconfig.nvim/pull/399
+-- TODO: add to auto install after above PR
+lsp.css_variables.setup({})
+
 mason_lspconfig.setup_handlers({
     function(server_name)
         lsp_config[server_name].setup({
