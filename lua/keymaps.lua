@@ -207,15 +207,7 @@ set_keymap({
         {
             key = "<LEADER>f0",
             actions = function()
-                vim.cmd("! npx prettier --print-width=80 --write %")
-                vim.api.nvim_input("<CR>")
-            end,
-            description = "Format with Prettier",
-        },
-        {
-            key = "<LEADER>f9",
-            actions = function()
-                vim.cmd("! npx prettier --config-precedence=prefer-file --write %")
+                vim.cmd("! npx prettier --config-precedence=prefer-file --print-width=80 --write %")
                 vim.api.nvim_input("<CR>")
             end,
             description = "Format with Prettier",
