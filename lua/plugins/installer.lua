@@ -45,7 +45,8 @@ installer_lsp.setup({
         "pyright",
         "groovyls",
         "vtsls",
-        "tailwindcss"
+        "tailwindcss",
+        "css_variables"
     },
 })
 
