@@ -159,6 +159,7 @@ set_highlight({
         { group = "@function", foreground = blue },
         { group = "@type.builtin", foreground = purple },
         { group = "@type", foreground = yellow },
+        { group = "@variable", foreground = white },
         { group = "@variable.builtin", foreground = purple },
         { group = "@variable.member", foreground = red },
         { group = "@constructor", foreground = yellow, background = background },
