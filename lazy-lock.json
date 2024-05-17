@@ -11,6 +11,7 @@
   "comment.nvim": { "branch": "master", "commit": "0236521ea582747b58869cb72f70ccfa967d2e89" },
   "debugprint.nvim": { "branch": "main", "commit": "94d7d988c1d7dcb2f4c55d01d54bdb95c597639c" },
   "feline.nvim": { "branch": "main", "commit": "b43be71ebc3ff0e451a627b47751fd7747dc15fb" },
+  "fidget.nvim": { "branch": "main", "commit": "1ba38e4cbb24683973e00c2e36f53ae64da38ef5" },
   "format-ts-errors.nvim": { "branch": "main", "commit": "5dca66563baa9ccfff820b7ba97a2836d2421f7f" },
   "formatter.nvim": { "branch": "master", "commit": "ad246d34ce7a32f752071ed81b09b94e6b127fad" },
   "git-conflict.nvim": { "branch": "main", "commit": "4c8e252b87d54d944c1e56bfb477f78b6fdaf661" },

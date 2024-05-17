@@ -25,6 +25,12 @@ require("lazy").setup({
         end,
     },
     {
+        "j-hui/fidget.nvim",
+        config = function()
+            require("plugins.lsp-status")
+        end,
+    },
+    {
         "andrewferrier/debugprint.nvim",
         config = function()
             require("plugins.print")
