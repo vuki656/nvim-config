@@ -60,6 +60,7 @@ set_highlight({
         { group = "SpecialChar", foreground = orange, background = background },
         { group = "Macro", foreground = orange, background = background },
         { group = "SpecialComment", foreground = orange },
+        { group = "Quote", foreground = orange },
         { group = "Constant", foreground = green },
         { group = "Keyword", foreground = purple },
         { group = "Boolean", foreground = purple },
