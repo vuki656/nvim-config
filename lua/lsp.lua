@@ -89,7 +89,7 @@ mason_lspconfig.setup_handlers({
                         globalPlugins = {
                             {
                                 name = "@vue/typescript-plugin",
-                                location = "/home/domagoj/.nvm/versions/node/v20.10.0/lib/node_modules/@vue/typescript-plugin/index.js",
+                                location = "/home/domagoj/.nvm/versions/node/v22.3.0/lib/node_modules/@vue/typescript-plugin/index.js",
                                 languages = { "vue" },
                                 configNamespace = "typescript",
                                 enableForWorkspaceTypeScriptVersions = true,
