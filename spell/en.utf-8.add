@@ -2386,3 +2386,6 @@ frameguard
 filterlabs
 toastify
 preprocess
+hypernyms
+hyponyms
+ollama
