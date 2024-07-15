@@ -2392,3 +2392,5 @@ ollama
 subsegment
 mailto
 gloock
+tfidf
+retriable
