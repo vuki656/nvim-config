@@ -25,6 +25,7 @@ local react_element_snippet = require("plugins.snippets.nodes.js.react.react_ele
 local react_import_styles = require("plugins.snippets.nodes.js.react.react_import_styles")
 local react_next_router = require("plugins.snippets.nodes.js.react.react_next_router")
 local react_props_snippet = require("plugins.snippets.nodes.js.react.react_props")
+local react_component_files_oil = require("plugins.snippets.nodes.js.react.react_component_files_oil")
 
 -- CSS
 local css_center_snippet = require("plugins.snippets.css.center")
@@ -78,12 +79,17 @@ local css_snippets = {
     css_center_snippet,
 }
 
+local oil_snippets = {
+    react_component_files_oil
+}
+
 luasnip.add_snippets("typescript", js_ts_snippets)
 luasnip.add_snippets("javascript", js_ts_snippets)
 luasnip.add_snippets("vue", js_ts_snippets)
 luasnip.add_snippets("typescriptreact", js_ts_react_snippets)
 luasnip.add_snippets("javascriptreact", js_ts_react_snippets)
 luasnip.add_snippets("css", css_snippets)
+luasnip.add_snippets("oil", oil_snippets)
 
 ------------------------------------------------------------------------------------------
 ------------------------------------ KEYMAPS ---------------------------------------------
