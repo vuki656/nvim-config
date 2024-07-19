@@ -2,6 +2,13 @@ local config = require("plugins.plugin-manager")
 
 require("lazy").setup({
     {
+        "stevearc/oil.nvim",
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        config = function()
+            require("plugins.file-tree-2")
+        end,
+    },
+    {
         "j-hui/fidget.nvim",
         config = function()
             require("plugins.lsp-status")
