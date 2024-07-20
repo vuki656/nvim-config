@@ -26,6 +26,7 @@ local prettier = function()
             "--tab-width 4",
             "--no-semi",
             "--ignore-path=''",
+            "--file-override",
         },
         stdin = true,
         try_node_modules = true,
@@ -149,6 +150,9 @@ formatter.setup({
         },
         python = {
             black,
+        },
+        xml = {
+            prettier,
         },
     },
 })
