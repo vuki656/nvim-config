@@ -25,7 +25,6 @@ telescope.setup({
         path_display = { "tail" },
         file_ignore_patterns = {
             "package-lock.json",
-            "node_modules",
             "yarn.lock",
             ".next",
             ".idea",
