@@ -11,10 +11,13 @@ return create_snippet(
         [[
 {}/{}.tsx
 {}/{}.types.ts
+{}/{}.module.css
 {}/index.ts
     ]],
         {
             insert_node(1),
+            repeat_node(1),
+            repeat_node(1),
             repeat_node(1),
             repeat_node(1),
             repeat_node(1),
