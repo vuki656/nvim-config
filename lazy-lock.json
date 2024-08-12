@@ -22,6 +22,7 @@
   "highlight-undo.nvim": { "branch": "main", "commit": "1ea1c79372d7d93c88fd97543880927b7635e3d2" },
   "indent-blankline.nvim": { "branch": "master", "commit": "3fe94b8034dd5241cb882bb73847303b58857ecf" },
   "jester": { "branch": "main", "commit": "424b96970ac49da7b1298502e03143a8f11d5bcf" },
+  "kulala.nvim": { "branch": "main", "commit": "c73fbf0d8204d8c559cf744b3e8f7cc90e2a5d3f" },
   "lazy.nvim": { "branch": "main", "commit": "077102c5bfc578693f12377846d427f49bc50076" },
   "lspkind.nvim": { "branch": "master", "commit": "cff4ae321a91ee3473a92ea1a8c637e3a9510aec" },
   "luasnip": { "branch": "master", "commit": "b84eeb3641b08324287587b426ec974b888390d9" },

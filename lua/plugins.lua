@@ -2,6 +2,12 @@ local config = require("plugins.plugin-manager")
 
 require("lazy").setup({
     {
+        "mistweaverco/kulala.nvim",
+        config = function()
+            require("plugins.http")
+        end,
+    },
+    {
         "stevearc/oil.nvim",
         dependencies = { "nvim-tree/nvim-web-devicons" },
         config = function()

@@ -122,7 +122,8 @@ vim.filetype.add({
         env = "dotenv",
         luacheckrc = "lua",
         mdx = "markdown",
-        ["map"] = "json",
+        map = "json",
+        http = "http",
     },
     filename = {
         [".env"] = "dotenv",
