@@ -46,7 +46,7 @@ installer_lsp.setup({
         "groovyls",
         "vtsls",
         "tailwindcss",
-        "css_variables"
+        "css_variables",
     },
 })
 
@@ -68,7 +68,7 @@ installer_tools.setup({
         "yamllint",
         "black",
         "sqlfluff",
-        "buf"
+        "buf",
     },
 })
 

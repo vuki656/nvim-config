@@ -19,13 +19,13 @@ local logger_snippet = require("plugins.snippets.nodes.js.logger")
 local type_snippet = require("plugins.snippets.nodes.js.type")
 
 -- React
+local react_component_files_oil = require("plugins.snippets.nodes.js.react.react_component_files_oil")
 local react_component_props_snippet = require("plugins.snippets.nodes.js.react.react_component_props")
 local react_component_snippet = require("plugins.snippets.nodes.js.react.react_component")
 local react_element_snippet = require("plugins.snippets.nodes.js.react.react_element")
 local react_import_styles = require("plugins.snippets.nodes.js.react.react_import_styles")
 local react_next_router = require("plugins.snippets.nodes.js.react.react_next_router")
 local react_props_snippet = require("plugins.snippets.nodes.js.react.react_props")
-local react_component_files_oil = require("plugins.snippets.nodes.js.react.react_component_files_oil")
 
 -- CSS
 local css_center_snippet = require("plugins.snippets.css.center")
@@ -80,7 +80,7 @@ local css_snippets = {
 }
 
 local oil_snippets = {
-    react_component_files_oil
+    react_component_files_oil,
 }
 
 luasnip.add_snippets("typescript", js_ts_snippets)

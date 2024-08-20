@@ -2,7 +2,7 @@
 -- Description: Better quick fix list
 -- Link: https://github.com/yorickpeterse/nvim-pqf
 
-local list = require('pqf')
+local list = require("pqf")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- SETUP ------------------------------------------------

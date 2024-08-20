@@ -31,7 +31,7 @@ feline.setup({
                 git_diff.changed,
             },
             {
-                updates
+                updates,
             },
         },
     },
