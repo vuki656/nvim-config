@@ -24,6 +24,7 @@ git_signs.setup({
     signs = signs,
     signs_staged = signs,
     current_line_blame = true,
+    max_file_length = 10000,
     current_line_blame_opts = {
         virt_text = true,
         virt_text_pos = "eol",
