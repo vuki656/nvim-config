@@ -11,45 +11,18 @@ local set_highlight = require("utils.set-highlight")
 ----------------------------------- SETUP ------------------------------------------------
 ------------------------------------------------------------------------------------------
 
+local signs = {
+    add = { text = "█" },
+    change = { text = "█" },
+    delete = { text = "█" },
+    topdelete = { text = "█" },
+    changedelete = { text = "█" },
+    untracked = { text = "█" },
+}
+
 git_signs.setup({
-    signs = {
-        add = {
-            hl = "GitSignsAdd",
-            text = "█",
-            numhl = "GitSignsAddNr",
-            linehl = "GitSignsAddLn",
-        },
-        untracked = {
-            hl = "GitSignsAdd",
-            text = "█",
-            numhl = "GitSignsAddNr",
-            linehl = "GitSignsAddLn",
-        },
-        change = {
-            hl = "GitSignsChange",
-            text = "█",
-            numhl = "GitSignsChangeNr",
-            linehl = "GitSignsChangeLn",
-        },
-        delete = {
-            hl = "GitSignsDelete",
-            text = "█",
-            numhl = "GitSignsDeleteNr",
-            linehl = "GitSignsDeleteLn",
-        },
-        topdelete = {
-            hl = "GitSignsDelete",
-            text = "█",
-            numhl = "GitSignsDeleteNr",
-            linehl = "GitSignsDeleteLn",
-        },
-        changedelete = {
-            hl = "GitSignsChange",
-            text = "█",
-            numhl = "GitSignsChangeNr",
-            linehl = "GitSignsChangeLn",
-        },
-    },
+    signs = signs,
+    signs_staged = signs,
     current_line_blame = true,
     current_line_blame_opts = {
         virt_text = true,
