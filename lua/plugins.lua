@@ -183,7 +183,7 @@ require("lazy").setup({
         },
     },
     {
-        "hrsh7th/nvim-cmp",
+        "yioneko/nvim-cmp",
         config = function()
             require("plugins.completion")
         end,
