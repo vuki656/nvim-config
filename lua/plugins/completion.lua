@@ -23,6 +23,12 @@ end
 vim.o.completeopt = "menuone,noselect"
 
 cmp.setup({
+    opts = {
+        performance = {
+            debounce = 0, -- default is 60ms
+            throttle = 0, -- default is 30ms
+        },
+    },
     experimental = {
         ghost_text = true,
     },
