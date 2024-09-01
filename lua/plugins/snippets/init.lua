@@ -11,9 +11,11 @@ local arrow_function_async_snippet = require("plugins.snippets.nodes.js.arrow_fu
 local arrow_function_full_async_snippet = require("plugins.snippets.nodes.js.arrow_function_full_async")
 local arrow_function_full_snippet = require("plugins.snippets.nodes.js.arrow_function_full")
 local arrow_function_snippet = require("plugins.snippets.nodes.js.arrow_function")
+local async_function_snippet = require("plugins.snippets.nodes.js.async-function")
 local console_log_separator_snippet = require("plugins.snippets.nodes.js.console_log_separator")
 local console_log_snippet = require("plugins.snippets.nodes.js.console_log")
 local export_all_snippet = require("plugins.snippets.nodes.js.export_all")
+local export_async_function_snippet = require("plugins.snippets.nodes.js.export-async-function")
 local function_snippet = require("plugins.snippets.nodes.js.function")
 local logger_snippet = require("plugins.snippets.nodes.js.logger")
 local type_snippet = require("plugins.snippets.nodes.js.type")
@@ -54,6 +56,8 @@ local js_ts_snippets = {
     arrow_function_full_snippet,
     type_snippet,
     function_snippet,
+    export_async_function_snippet,
+    async_function_snippet,
     logger_snippet,
 }
 
