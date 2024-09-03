@@ -2,6 +2,9 @@ local config = require("plugins.plugin-manager")
 
 require("lazy").setup({
     {
+        "github/copilot.vim",
+    },
+    {
         "mistweaverco/kulala.nvim",
         config = function()
             require("plugins.http")
