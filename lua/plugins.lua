@@ -2,6 +2,19 @@ local config = require("plugins.plugin-manager")
 
 require("lazy").setup({
     {
+        "nvim-neotest/neotest",
+        dependencies = {
+            "nvim-neotest/nvim-nio",
+            "nvim-lua/plenary.nvim",
+            "antoinemadec/FixCursorHold.nvim",
+            "nvim-treesitter/nvim-treesitter",
+            "marilari88/neotest-vitest",
+        },
+        config = function()
+            require("plugins.test-runner")
+        end,
+    },
+    {
         "github/copilot.vim",
         config = function()
             vim.g.copilot_no_tab_map = true
@@ -107,16 +120,6 @@ require("lazy").setup({
         config = function()
             require("plugins.linter")
         end,
-    },
-    {
-        "david-kunz/jester",
-        config = function()
-            require("plugins.jest-runner")
-        end,
-        ft = {
-            "javascript",
-            "typescript",
-        },
     },
     {
         "akinsho/nvim-toggleterm.lua",
