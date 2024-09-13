@@ -17,10 +17,6 @@ local set_keymap = require("utils.set-keymap")
 -- TODO: setup everything (it has per project setup)
 -- TODO: closest only test
 neotest.setup({
-    quickfix = {
-        enabled = true,
-        open = true,
-    },
     adapters = {
         require("neotest-vitest"),
     },
