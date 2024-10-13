@@ -49,7 +49,7 @@ end
 tree.setup({
     on_attach = on_attach,
     view = {
-        width = 40,
+        width = 60,
     },
     respect_buf_cwd = false,
     renderer = {
