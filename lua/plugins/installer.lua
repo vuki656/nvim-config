@@ -47,6 +47,7 @@ installer_lsp.setup({
         "vtsls",
         "tailwindcss",
         "css_variables",
+        "terraformls"
     },
 })
 
