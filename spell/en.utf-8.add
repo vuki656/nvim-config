@@ -2416,3 +2416,10 @@ transliterator
 licensedpaths
 knip
 unregister
+cloudfront
+cognito
+apigateway
+authtype
+arn
+mpegurl
+vnd
