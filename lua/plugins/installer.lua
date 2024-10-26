@@ -45,7 +45,6 @@ installer_lsp.setup({
         "pyright",
         "groovyls",
         "vtsls",
-        "tailwindcss",
         "css_variables",
         "terraformls"
     },
