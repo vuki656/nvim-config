@@ -139,7 +139,7 @@ set_highlight({
         { group = "PreProc", foreground = grey },
         { group = "HelpExample", foreground = orange },
         { group = "Special", foreground = purple },
-        { group = "helpSectionDelim", foreground = grey_light },
+        { group = "helpSectionDelim", foreground = orange },
         { group = "helpHeader", foreground = blue },
         { group = "helpCommand", foreground = blue },
         { group = "healthSuccess", foreground = green },
