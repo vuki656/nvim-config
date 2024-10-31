@@ -17,6 +17,11 @@ local typescript = require("typescript-tools")
 ----------------------------------- SETUP ------------------------------------------------
 ------------------------------------------------------------------------------------------
 
+ts_error_formatter.setup({
+    add_markdown = false,
+    start_indent_level = 0,
+})
+
 -- Allows for auto update of imports when file rename done in nvim tree
 lsp_file_operations.setup()
 
