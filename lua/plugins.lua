@@ -64,12 +64,6 @@ require("lazy").setup({
         "MunifTanjim/nui.nvim",
     },
     {
-        "tzachar/highlight-undo.nvim",
-        config = function()
-            require("plugins.highlight-undo")
-        end,
-    },
-    {
         "pmizio/typescript-tools.nvim",
         dependencies = {
             "nvim-lua/plenary.nvim",
