@@ -15,7 +15,7 @@ notify.setup({
     stages = "fade",
     timeout = 500,
     render = "minimal",
-    top_down = false
+    top_down = false,
 })
 
 local banned_messages = { "No information available" }

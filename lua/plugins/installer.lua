@@ -48,7 +48,7 @@ installer_lsp.setup({
         "groovyls",
         "vtsls",
         "css_variables",
-        "terraformls"
+        "terraformls",
     },
 })
 

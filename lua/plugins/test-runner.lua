@@ -40,7 +40,7 @@ set_keymap({
         },
         {
             key = "<LEADER>jrf",
-            actions = function ()
+            actions = function()
                 vim.cmd("Neotest run file")
             end,
             description = "Run file",
