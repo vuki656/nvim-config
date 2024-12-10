@@ -75,6 +75,9 @@ tree.setup({
     notify = {
         threshold = vim.log.levels.ERROR,
     },
+    trash = {
+        cmd = "trash-put ",
+    },
 })
 
 ------------------------------------------------------------------------------------------
