@@ -14,6 +14,9 @@ local set_keymap = require("utils.set-keymap")
 ------------------------------------------------------------------------------------------
 
 telescope.setup({
+    extensions = {
+        fzf = {},
+    },
     pickers = {
         live_grep = {
             additional_args = function()
