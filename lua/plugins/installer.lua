@@ -26,9 +26,7 @@ installer.setup({
 installer_lsp.setup({
     automatic_installation = true,
     ensure_installed = {
-        -- TODO: install when supported by mason as other one is deprecated
-        -- "buf_ls",
-        "bufls",
+        "buf_ls",
         "bashls",
         "cssls",
         "cssmodules_ls",
