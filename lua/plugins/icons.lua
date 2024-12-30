@@ -122,6 +122,11 @@ icons.setup({
             color = "#a5afbe",
             name = "IndexTs",
         },
+        [".eslintrc.cjs"] = {
+            icon = "󰱺",
+            color = "#7963e6",
+            name = "EslintRc",
+        },
         [".eslintrc.js"] = {
             icon = "󰱺",
             color = "#7963e6",
