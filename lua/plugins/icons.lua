@@ -162,10 +162,5 @@ icons.setup({
             color = "#267ff6",
             name = "BitbucketPipeline",
         },
-        [".nvmrc"] = {
-            icon = "",
-            color = "#72b823",
-            name = "Nvmrc",
-        },
     },
 })
