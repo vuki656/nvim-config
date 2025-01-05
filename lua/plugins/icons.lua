@@ -73,7 +73,7 @@ icons.setup({
         },
         ["*.test.ts"] = {
             icon = "",
-            color = "#e79627",
+            color = colors.orange,
             cterm_color = "74",
             name = "TestTs",
         },
