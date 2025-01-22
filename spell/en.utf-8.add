@@ -2478,3 +2478,4 @@ RSASSA
 ECDSA
 keyid
 typedef
+gofmt

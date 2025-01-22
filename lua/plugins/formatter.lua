@@ -16,6 +16,7 @@ local eslint = require("formatter.defaults.eslint_d")
 local stylua = require("formatter.filetypes.lua").stylua
 local shfmt = require("formatter.filetypes.sh").shfmt
 local buf = require("formatter.filetypes.proto").buf_format
+local gofmt = require("formatter.filetypes.go").gofmt
 
 local prettier = function()
     return {
@@ -153,6 +154,9 @@ formatter.setup({
         },
         xml = {
             prettier,
+        },
+        go = {
+            gofmt,
         },
     },
 })
