@@ -32,6 +32,20 @@ set_keymap({
             actions = "<C-w>k",
             description = "Navigate to the buffer above",
         },
+        {
+            key = "<LEADER>qp",
+            actions = function()
+                vim.cmd("cp")
+            end,
+            description = "Navigate to previous quickfix item",
+        },
+        {
+            key = "<LEADER>qn",
+            actions = function()
+                vim.cmd("cn")
+            end,
+            description = "Navigate to next quickfix item",
+        },
     },
 })
 
