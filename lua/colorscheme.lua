@@ -186,6 +186,8 @@ set_highlight({
         { group = "@comment.todo.checked", foreground = green },
         { group = "@module", foreground = yellow },
         { group = "@text.literal.markdown_inline", foreground = green },
+        { group = "@bash.argumentFlag", foreground = green },
+        { group = "@bash.specialKeyword", foreground = blue },
 
         -- HTML
         { group = "htmlTagName", foreground = yellow },
