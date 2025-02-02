@@ -1,6 +1,6 @@
 -- Name: Feline
 -- Description: Status line
--- Link: https://github.com/freddiehaddad/feline.nvim
+-- Link: https://github.com/vuki656/feline.nvim
 
 local feline = require("feline")
 

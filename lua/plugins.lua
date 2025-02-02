@@ -151,7 +151,7 @@ require("lazy").setup({
         end,
     },
     {
-        "freddiehaddad/feline.nvim",
+        "vuki656/feline.nvim",
         config = function()
             require("plugins.status-line")
         end,
