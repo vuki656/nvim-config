@@ -2,6 +2,34 @@ local config = require("plugins.plugin-manager")
 
 require("lazy").setup({
     {
+        "yetone/avante.nvim",
+        event = "VeryLazy",
+        lazy = false,
+        opts = {
+            provider = "copilot",
+        },
+        build = "make",
+        dependencies = {
+            "stevearc/dressing.nvim",
+            "nvim-lua/plenary.nvim",
+            "MunifTanjim/nui.nvim",
+            "zbirenbaum/copilot.lua",
+            {
+                "MeanderingProgrammer/render-markdown.nvim",
+                opts = {
+                    file_types = {
+                        "markdown",
+                        "Avante",
+                    },
+                },
+                ft = {
+                    "markdown",
+                    "Avante",
+                },
+            },
+        },
+    },
+    {
         "nvim-neotest/neotest",
         dependencies = {
             "nvim-neotest/nvim-nio",
@@ -118,7 +146,7 @@ require("lazy").setup({
     },
     {
         "akinsho/git-conflict.nvim",
-        tag = 'v2.1.0',
+        tag = "v2.1.0",
         config = function()
             require("plugins.git-conflict")
         end,
