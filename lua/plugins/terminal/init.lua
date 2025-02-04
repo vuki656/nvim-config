@@ -24,13 +24,15 @@ toggleterm.setup({
 ----------------------------------- KEYMAPS ----------------------------------------------
 ------------------------------------------------------------------------------------------
 
+vim.keymap.set(
+    "n",
+    "<leader>lg",
+    ":!tmux new-window -c " .. vim.fn.getcwd() .. " -- lazygit <CR><CR>",
+    { silent = true }
+)
+
 set_keymap({
     list = {
-        {
-            key = "<LEADER>lg",
-            actions = toggle_git_buffer,
-            description = "Open a floating buffer with lazygit",
-        },
         {
             key = "<LEADER>ld",
             actions = toggle_docker_buffer,
