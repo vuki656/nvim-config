@@ -94,7 +94,8 @@ mason_lspconfig.setup_handlers({
                         globalPlugins = {
                             {
                                 name = "@vue/typescript-plugin",
-                                location = "/home/domagoj/.nvm/versions/node/v22.3.0/lib/node_modules/@vue/typescript-plugin/index.js",
+                                location = vim.fn.stdpath("data")
+                                    .. "/mason/packages/vue-language-server/node_modules/@vue/language-server",
                                 languages = { "vue" },
                                 configNamespace = "typescript",
                                 enableForWorkspaceTypeScriptVersions = true,
@@ -155,7 +156,7 @@ typescript.setup({
     settings = {
         separate_diagnostic_server = true,
         tsserver_file_preferences = {
-            quotePreference = "single",
+            quotePreference = "double",
         },
     },
 })
