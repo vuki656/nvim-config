@@ -65,7 +65,6 @@ require("lazy").setup({
     },
     {
         "pmizio/typescript-tools.nvim",
-        branch = "fix-code-action-with-edit",
         dependencies = {
             "nvim-lua/plenary.nvim",
             "neovim/nvim-lspconfig",
