@@ -59,7 +59,7 @@ local js_ts_snippets = {
     export_async_function_snippet,
     async_function_snippet,
     logger_snippet,
-    react_import_styles
+    react_import_styles,
 }
 
 local js_ts_react_snippets = {
