@@ -274,10 +274,12 @@ require("lazy").setup({
     },
     {
         "nvim-treesitter/nvim-treesitter",
-        branch = "main",
         config = function()
             require("plugins.parser")
         end,
+        dependencies = {
+            "nvim-treesitter/playground",
+        },
     },
     {
         "lukas-reineke/indent-blankline.nvim",
