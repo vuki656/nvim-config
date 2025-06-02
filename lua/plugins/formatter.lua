@@ -27,7 +27,7 @@ local prettier = function()
             "--tab-width 4",
             "--no-semi",
             "--ignore-path=''",
-            "--file-override",
+            "--config-precedence=file-override",
         },
         stdin = true,
         try_node_modules = true,
