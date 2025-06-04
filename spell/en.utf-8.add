@@ -2517,3 +2517,8 @@ devtools
 unshift
 oas
 datepicker
+subtree
+contenteditable
+crossorigin
+doctype
+vitejs
