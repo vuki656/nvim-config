@@ -31,82 +31,99 @@ vim.diagnostic.config({
     virtual_text = false,
 })
 
-mason_lspconfig.setup_handlers({
-    function(server_name)
-        lsp_config[server_name].setup({
-            capabilities = lsp_capabilities,
-        })
-    end,
-    ["cssmodules_ls"] = function()
-        lsp.cssmodules_ls.setup({
-            capabilities = lsp_capabilities,
-            on_attach = function(client)
-                client.server_capabilities.definitionProvider = false
-            end,
-        })
-    end,
-    ["jsonls"] = function()
-        lsp.jsonls.setup({
-            capabilities = lsp_capabilities,
-            settings = {
-                json = {
-                    validate = {
-                        enable = true,
-                    },
-                    schemas = vim.list_extend({
-                        {
-                            fileMatch = { "master.json" },
-                            url = "https://json.schemastore.org/liquibase-3.2.json",
-                        },
-                        {
-                            fileMatch = { "*.migration.json" },
-                            url = "https://json.schemastore.org/liquibase-3.2.json",
-                        },
-                        {
-                            fileMatch = { "turbo.json" },
-                            url = "https://turborepo.org/schema.json",
-                        },
-                    }, schemastore.json.schemas()),
-                },
-            },
-        })
-    end,
-    ["yamlls"] = function()
-        lsp.yamlls.setup({
-            capabilities = lsp_capabilities,
-            settings = {
-                yaml = {
-                    schemas = require("schemastore").yaml.schemas(),
-                },
-            },
-            schemaStore = {
-                enable = false,
-                url = "",
-            },
-        })
-    end,
-    ["vtsls"] = function()
-        lsp.vtsls.setup({
-            filetypes = { "vue" },
-            settings = {
-                vtsls = {
-                    tsserver = {
-                        globalPlugins = {
-                            {
-                                name = "@vue/typescript-plugin",
-                                location = vim.fn.stdpath("data")
-                                    .. "/mason/packages/vue-language-server/node_modules/@vue/language-server",
-                                languages = { "vue" },
-                                configNamespace = "typescript",
-                                enableForWorkspaceTypeScriptVersions = true,
-                            },
-                        },
-                    },
-                },
-            },
-        })
+vim.lsp.config("cssmodules_ls", {
+    capabilities = lsp_capabilities,
+    on_attach = function(client)
+        client.server_capabilities.definitionProvider = false
     end,
 })
+
+vim.lsp.config("jsonls", {
+    capabilities = lsp_capabilities,
+    settings = {
+        json = {
+            validate = {
+                enable = true,
+            },
+            schemas = vim.list_extend({
+                {
+                    fileMatch = { "master.json" },
+                    url = "https://json.schemastore.org/liquibase-3.2.json",
+                },
+                {
+                    fileMatch = { "*.migration.json" },
+                    url = "https://json.schemastore.org/liquibase-3.2.json",
+                },
+                {
+                    fileMatch = { "turbo.json" },
+                    url = "https://turborepo.org/schema.json",
+                },
+            }, schemastore.json.schemas()),
+        },
+    },
+})
+
+vim.lsp.config("yamlls", {
+    capabilities = lsp_capabilities,
+    settings = {
+        yaml = {
+            schemas = require("schemastore").yaml.schemas(),
+        },
+    },
+    schemaStore = {
+        enable = false,
+        url = "",
+    },
+})
+
+vim.lsp.config("vtsls", {
+    capabilities = lsp_capabilities,
+    filetypes = { "vue" },
+    settings = {
+        vtsls = {
+            tsserver = {
+                globalPlugins = {
+                    {
+                        name = "@vue/typescript-plugin",
+                        location = vim.fn.stdpath("data")
+                            .. "/mason/packages/vue-language-server/node_modules/@vue/language-server",
+                        languages = { "vue" },
+                        configNamespace = "typescript",
+                        enableForWorkspaceTypeScriptVersions = true,
+                    },
+                },
+            },
+        },
+    },
+})
+
+local DEFAULT_SERVERS = {
+    "buf_ls",
+    "bashls",
+    "cssls",
+    "docker_compose_language_service",
+    "dockerls",
+    "html",
+    "lemminx",
+    "lua_ls",
+    "prismals",
+    "stylelint_lsp",
+    "taplo",
+    "vimls",
+    "graphql",
+    "pyright",
+    "groovyls",
+    "css_variables",
+    "terraformls",
+    "gopls",
+    "tailwindcss",
+}
+
+for _, server in ipairs(DEFAULT_SERVERS) do
+    vim.lsp.config(server, {
+        capabilities = lsp_capabilities,
+    })
+end
 
 -- This is separate as it handles the whole thing itself, no lsp
 typescript.setup({

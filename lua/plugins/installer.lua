@@ -1,6 +1,6 @@
 -- Name: Mason
 -- Description: Neovim everything installer
--- Link: https://github.com/williamboman/mason.nvim
+-- Link: https://github.com/mason-org/mason.nvim
 
 local set_keymap = require("utils.set-keymap")
 
@@ -24,7 +24,6 @@ installer.setup({
 })
 
 installer_lsp.setup({
-    automatic_installation = true,
     ensure_installed = {
         "buf_ls",
         "bashls",
@@ -50,6 +49,7 @@ installer_lsp.setup({
         "gopls",
         "tailwindcss",
     },
+    automatic_enable = true,
 })
 
 installer_tools.setup({

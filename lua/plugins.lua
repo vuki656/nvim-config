@@ -340,13 +340,12 @@ require("lazy").setup({
         "wellle/targets.vim",
     },
     {
-        "williamboman/mason.nvim",
+        "mason-org/mason.nvim",
         config = function()
             require("plugins.installer")
         end,
-        branch = "main",
         dependencies = {
-            "williamboman/mason-lspconfig.nvim",
+            "mason-org/mason-lspconfig.nvim",
             "whoissethdaniel/mason-tool-installer.nvim",
             "neovim/nvim-lspconfig",
         },
