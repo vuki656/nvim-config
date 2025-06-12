@@ -48,6 +48,7 @@ installer_lsp.setup({
         "terraformls",
         "gopls",
         "tailwindcss",
+        "vue_ls"
     },
     automatic_enable = true,
 })
