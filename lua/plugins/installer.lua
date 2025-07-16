@@ -48,7 +48,7 @@ installer_lsp.setup({
         "terraformls",
         "gopls",
         "tailwindcss",
-        "vue_ls"
+        "vue_ls",
     },
     automatic_enable = true,
 })
@@ -62,7 +62,7 @@ installer_tools.setup({
         "fixjson",
         "hadolint",
         "luacheck",
-        "prettier",
+        { "prettier", version = "3.6.0" },
         "rust-analyzer",
         "shellcheck",
         "shfmt",
