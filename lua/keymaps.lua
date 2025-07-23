@@ -222,7 +222,7 @@ set_keymap({
             key = "<LEADER>f0",
             actions = function()
                 vim.cmd(
-                    "! npx prettier --config-precedence=prefer-file --no-semi --tab-width 4 --print-width=80 --write %"
+                    '!npx prettier --config-precedence=prefer-file --no-semi --tab-width 4 --print-width=80 --write "%"'
                 )
                 vim.api.nvim_input("<CR>")
             end,
