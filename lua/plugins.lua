@@ -2,6 +2,12 @@ local config = require("plugins.plugin-manager")
 
 require("lazy").setup({
     {
+        "karb94/neoscroll.nvim",
+        config = function()
+            require("plugins.scrollspeed")
+        end,
+    },
+    {
         "nvim-neotest/neotest",
         dependencies = {
             "nvim-neotest/nvim-nio",
