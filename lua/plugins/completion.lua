@@ -70,18 +70,19 @@ cmp.setup({
         format = icons.cmp_format(),
     },
     sources = {
-        { name = "nvim_lsp" },
-        { name = "luasnip" },
+        { name = "nvim_lsp", max_item_count = 10 },
+        { name = "luasnip", max_item_count = 10 },
         {
             name = "buffer",
+            max_item_count = 10,
             option = {
                 get_bufnrs = function()
                     return vim.api.nvim_list_bufs()
                 end,
             },
         },
-        { name = "path" },
-        { name = "nvim_lua" },
+        { name = "path", max_item_count = 10 },
+        { name = "nvim_lua", max_item_count = 10 },
     },
     sorting = {
         comparators = {
