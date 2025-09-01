@@ -70,7 +70,7 @@ cmp.setup({
         format = icons.cmp_format(),
     },
     sources = {
-        { name = "nvim_lsp", max_item_count = 10 },
+        { name = "nvim_lsp" },
         { name = "luasnip", max_item_count = 10 },
         {
             name = "buffer",
