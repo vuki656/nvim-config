@@ -1,6 +1,6 @@
 -- Name: Split Join
 -- Description: Allows splitting or joining line with args
--- Link: https://github.com/echasnovski/mini.splitjoin
+-- Link: https://github.com/nvim-mini/mini.splitjoin
 
 local split_join = require("mini.splitjoin")
 

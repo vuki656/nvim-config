@@ -151,7 +151,7 @@ require("lazy").setup({
         end,
     },
     {
-        "echasnovski/mini.splitjoin",
+        "nvim-mini/mini.splitjoin",
         config = function()
             require("plugins.split-join")
         end,
