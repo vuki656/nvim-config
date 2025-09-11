@@ -67,6 +67,7 @@ installer_tools.setup({
         "shellcheck",
         "shfmt",
         "stylelint",
+        "terraform",
         "stylua",
         "yamllint",
         "black",
