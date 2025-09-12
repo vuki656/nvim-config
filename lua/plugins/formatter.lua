@@ -170,7 +170,7 @@ set_keymap({
         {
             key = "<LEADER>fp",
             actions = function()
-                vim.cmd("FormatWriteLock")
+                vim.lsp.buf.format({ async = true })
             end,
             description = "Format code",
         },
