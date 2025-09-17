@@ -73,6 +73,7 @@ installer_tools.setup({
         "black",
         "sqlfluff",
         "buf",
+        "tflint"
     },
 })
 
