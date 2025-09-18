@@ -30,6 +30,7 @@ toggler.setup({
         ["Asc"] = "Desc",
         ["ASC"] = "DESC",
         ["public"] = "private",
+        ["auto"] = "hidden",
         ["Yes"] = "No",
         ["`"] = "'",
     },
