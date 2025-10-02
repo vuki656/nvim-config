@@ -62,7 +62,7 @@ installer_tools.setup({
         "fixjson",
         "hadolint",
         "luacheck",
-        { "prettier", version = "3.6.0" },
+        "prettier",
         "rust-analyzer",
         "shellcheck",
         "shfmt",
