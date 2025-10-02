@@ -47,14 +47,6 @@ vim.lsp.config("jsonls", {
             },
             schemas = vim.list_extend({
                 {
-                    fileMatch = { "master.json" },
-                    url = "https://json.schemastore.org/liquibase-3.2.json",
-                },
-                {
-                    fileMatch = { "*.migration.json" },
-                    url = "https://json.schemastore.org/liquibase-3.2.json",
-                },
-                {
                     fileMatch = { "turbo.json" },
                     url = "https://turborepo.org/schema.json",
                 },
