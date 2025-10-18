@@ -2541,3 +2541,10 @@ cidr
 jsonencode
 CLOUDWATCH
 cloudwatch
+ebs
+vcpus
+ec
+ECS
+awslogs
+ecs
+xvda
