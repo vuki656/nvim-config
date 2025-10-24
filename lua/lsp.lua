@@ -174,3 +174,33 @@ vim.api.nvim_create_autocmd("LspAttach", {
         client.server_capabilities.semanticTokensProvider = nil
     end,
 })
+
+-- Override default LspRestart to work with new LSP setup config
+vim.api.nvim_create_user_command("LspRestart", function(kwargs)
+    local name = kwargs.fargs[1]
+
+    for _, client in ipairs(vim.lsp.get_clients({ name = name })) do
+        local bufs = vim.lsp.get_buffers_by_client_id(client.id)
+
+        client:stop()
+
+        vim.wait(30000, function()
+            return vim.lsp.get_client_by_id(client.id) == nil
+        end)
+
+        local client_id = vim.lsp.start(client.config, { attach = false })
+
+        if client_id then
+            for _, buf in ipairs(bufs) do
+                vim.lsp.buf_attach_client(buf, client_id)
+            end
+        end
+    end
+end, {
+    nargs = "?",
+    complete = function()
+        return vim.tbl_map(function(client)
+            return client.name
+        end, vim.lsp.get_clients())
+    end,
+})
