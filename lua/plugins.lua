@@ -71,6 +71,7 @@ require("lazy").setup({
     },
     {
         "pmizio/typescript-tools.nvim",
+        commit = "bf11d98ad5736e1cbc1082ca9a03196d45c701f1",
         dependencies = {
             "nvim-lua/plenary.nvim",
             "neovim/nvim-lspconfig",
