@@ -2556,3 +2556,5 @@ seekable
 mousedown
 dvh
 rgba
+Location
+memoization
