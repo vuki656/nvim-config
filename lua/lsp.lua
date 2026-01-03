@@ -65,26 +65,26 @@ vim.lsp.config("yamlls", {
     },
 })
 
-vim.lsp.config("vtsls", {
-    capabilities = lsp_capabilities,
-    filetypes = { "vue" },
-    settings = {
-        vtsls = {
-            tsserver = {
-                globalPlugins = {
-                    {
-                        name = "@vue/typescript-plugin",
-                        location = vim.fn.stdpath("data")
-                            .. "/mason/packages/vue-language-server/node_modules/@vue/language-server",
-                        languages = { "vue" },
-                        configNamespace = "typescript",
-                        enableForWorkspaceTypeScriptVersions = true,
-                    },
-                },
-            },
-        },
-    },
-})
+-- vim.lsp.config("vtsls", {
+--     capabilities = lsp_capabilities,
+--     filetypes = { "vue" },
+--     settings = {
+--         vtsls = {
+--             tsserver = {
+--                 globalPlugins = {
+--                     {
+--                         name = "@vue/typescript-plugin",
+--                         location = vim.fn.stdpath("data")
+--                             .. "/mason/packages/vue-language-server/node_modules/@vue/language-server",
+--                         languages = { "vue" },
+--                         configNamespace = "typescript",
+--                         enableForWorkspaceTypeScriptVersions = true,
+--                     },
+--                 },
+--             },
+--         },
+--     },
+-- })
 
 local DEFAULT_SERVERS = {
     "buf_ls",
