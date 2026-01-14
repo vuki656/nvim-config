@@ -4,7 +4,7 @@ local lsp_utils = require("lspconfig.util")
 local schemastore = require("schemastore")
 local set_keymap = require("utils.set-keymap")
 local ts_error_formatter = require("format-ts-errors")
-local typescript = require("typescript-tools")
+-- local typescript = require("typescript-tools")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- UTILS ------------------------------------------------
@@ -106,6 +106,7 @@ local DEFAULT_SERVERS = {
     "terraformls",
     "gopls",
     "tailwindcss",
+    "tsgo",
 }
 
 for _, server in ipairs(DEFAULT_SERVERS) do
@@ -115,50 +116,50 @@ for _, server in ipairs(DEFAULT_SERVERS) do
 end
 
 -- This is separate as it handles the whole thing itself, no lsp
-typescript.setup({
-    capabilities = lsp_capabilities,
-    root_dir = lsp_utils.root_pattern(".git"),
-    handlers = {
-        ["textDocument/publishDiagnostics"] = function(_, result, context, config)
-            if result.diagnostics == nil then
-                return
-            end
-
-            local ids = 1
-
-            while ids <= #result.diagnostics do
-                local entry = result.diagnostics[ids]
-
-                local formatter = ts_error_formatter[entry.code]
-
-                entry.message = formatter and formatter(entry.message) or entry.message
-
-                ids = ids + 1
-            end
-
-            vim.lsp.diagnostic.on_publish_diagnostics(_, result, context, config)
-        end,
-    },
-    on_attach = function()
-        set_keymap({
-            list = {
-                {
-                    key = "<LEADER>tfi",
-                    actions = function()
-                        vim.cmd("TSToolsAddMissingImports")
-                    end,
-                    description = "Add missing imports",
-                },
-            },
-        })
-    end,
-    settings = {
-        separate_diagnostic_server = true,
-        tsserver_file_preferences = {
-            quotePreference = "double",
-        },
-    },
-})
+-- typescript.setup({
+--     capabilities = lsp_capabilities,
+--     root_dir = lsp_utils.root_pattern(".git"),
+--     handlers = {
+--         ["textDocument/publishDiagnostics"] = function(_, result, context, config)
+--             if result.diagnostics == nil then
+--                 return
+--             end
+--
+--             local ids = 1
+--
+--             while ids <= #result.diagnostics do
+--                 local entry = result.diagnostics[ids]
+--
+--                 local formatter = ts_error_formatter[entry.code]
+--
+--                 entry.message = formatter and formatter(entry.message) or entry.message
+--
+--                 ids = ids + 1
+--             end
+--
+--             vim.lsp.diagnostic.on_publish_diagnostics(_, result, context, config)
+--         end,
+--     },
+--     on_attach = function()
+--         set_keymap({
+--             list = {
+--                 {
+--                     key = "<LEADER>tfi",
+--                     actions = function()
+--                         vim.cmd("TSToolsAddMissingImports")
+--                     end,
+--                     description = "Add missing imports",
+--                 },
+--             },
+--         })
+--     end,
+--     settings = {
+--         separate_diagnostic_server = true,
+--         tsserver_file_preferences = {
+--             quotePreference = "double",
+--         },
+--     },
+-- })
 
 vim.api.nvim_create_autocmd("LspAttach", {
     callback = function(args)

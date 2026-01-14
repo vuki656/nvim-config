@@ -49,6 +49,7 @@ installer_lsp.setup({
         "gopls",
         "tailwindcss",
         "vue_ls",
+        "tsgo"
     },
     automatic_enable = true,
 })
