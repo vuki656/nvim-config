@@ -2,6 +2,11 @@
 ----------------------------------- GLOBAL -----------------------------------------------
 ------------------------------------------------------------------------------------------
 
+-- Folding
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99
+vim.opt.foldenable = true
+
 -- Disable native file tree
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1

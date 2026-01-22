@@ -2,6 +2,14 @@ local config = require("plugins.plugin-manager")
 
 require("lazy").setup({
     {
+        "kevinhwang91/nvim-ufo",
+        dependencies = { "kevinhwang91/promise-async" },
+        event = "VeryLazy",
+        config = function()
+            require("plugins.fold")
+        end,
+    },
+    {
         "karb94/neoscroll.nvim",
         config = function()
             require("plugins.scrollspeed")

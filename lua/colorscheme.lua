@@ -28,17 +28,17 @@ set_sign({
 
 set_highlight({
     list = {
-        { group = "CursorIM", foreground = red, background = blue },
-        { group = "ColorColumn", foreground = red, background = blue },
-        { group = "Cursor", foreground = red, background = blue },
-        { group = "CursorColumn", foreground = red, background = blue },
-        { group = "Folded", foreground = red, background = blue },
-        { group = "FoldColumn", foreground = red, background = blue },
-        { group = "VisualNOS", foreground = red, background = blue },
-        { group = "TooLong", foreground = red, background = blue },
-        { group = "WildMenu", foreground = red, background = blue },
-        { group = "TabLineFill", foreground = red, background = orange },
-        { group = "Debug", foreground = red, background = blue },
+        { group = "CursorIM", foreground = white, background = grey },
+        { group = "ColorColumn", background = background_light },
+        { group = "Cursor", foreground = background, background = white },
+        { group = "CursorColumn", background = grey_lighter },
+        { group = "Folded", foreground = grey, background = grey_lighter },
+        { group = "FoldColumn", foreground = grey, background = background },
+        { group = "VisualNOS", background = grey_light },
+        { group = "TooLong", foreground = red },
+        { group = "WildMenu", foreground = background, background = green },
+        { group = "TabLineFill", background = background },
+        { group = "Debug", foreground = orange },
 
         -- Editor
         { group = "NonText", foreground = background_light, background = "NONE" },
