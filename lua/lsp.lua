@@ -28,6 +28,11 @@ vim.diagnostic.config({
     virtual_text = false,
 })
 
+vim.lsp.config("angularls", {
+    capabilities = lsp_capabilities,
+    root_dir = lsp_utils.root_pattern("angular.json"),
+})
+
 vim.lsp.config("cssmodules_ls", {
     capabilities = lsp_capabilities,
     on_attach = function(client)
@@ -86,28 +91,45 @@ vim.lsp.config("yamlls", {
 --     },
 -- })
 
-local DEFAULT_SERVERS = {
-    "buf_ls",
+local M = {}
+
+M.servers = {
+    "angularls",
     "bashls",
+    "buf_ls",
+    "css_variables",
     "cssls",
+    "cssmodules_ls",
     "docker_compose_language_service",
     "dockerls",
+    "gopls",
+    "graphql",
+    "groovyls",
     "html",
+    "jsonls",
     "lemminx",
     "lua_ls",
     "prismals",
-    "stylelint_lsp",
-    "taplo",
-    "vimls",
-    "graphql",
     "pyright",
-    "groovyls",
-    "css_variables",
-    "terraformls",
-    "gopls",
+    "stylelint_lsp",
     "tailwindcss",
+    "taplo",
+    "terraformls",
     "tsgo",
+    "vimls",
+    "yamlls",
 }
+
+local SERVERS_WITH_CUSTOM_CONFIG = {
+    "angularls",
+    "cssmodules_ls",
+    "jsonls",
+    "yamlls",
+}
+
+local DEFAULT_SERVERS = vim.tbl_filter(function(server)
+    return not vim.tbl_contains(SERVERS_WITH_CUSTOM_CONFIG, server)
+end, M.servers)
 
 for _, server in ipairs(DEFAULT_SERVERS) do
     vim.lsp.config(server, {
@@ -198,3 +220,5 @@ end, {
         end, vim.lsp.get_clients())
     end,
 })
+
+return M

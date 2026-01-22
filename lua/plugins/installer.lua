@@ -2,6 +2,7 @@
 -- Description: Neovim everything installer
 -- Link: https://github.com/mason-org/mason.nvim
 
+local lsp = require("lsp")
 local set_keymap = require("utils.set-keymap")
 
 local installer = require("mason")
@@ -24,31 +25,7 @@ installer.setup({
 })
 
 installer_lsp.setup({
-    ensure_installed = {
-        "buf_ls",
-        "bashls",
-        "cssls",
-        "cssmodules_ls",
-        "docker_compose_language_service",
-        "dockerls",
-        "html",
-        "jsonls",
-        "lemminx",
-        "lua_ls",
-        "prismals",
-        "stylelint_lsp",
-        "taplo",
-        "vimls",
-        "yamlls",
-        "graphql",
-        "pyright",
-        "groovyls",
-        "css_variables",
-        "terraformls",
-        "gopls",
-        "tailwindcss",
-        "tsgo",
-    },
+    ensure_installed = lsp.servers,
     automatic_enable = {
         exclude = {
             "tailwindcss",
