@@ -43,15 +43,19 @@ installer_lsp.setup({
         "graphql",
         "pyright",
         "groovyls",
-        -- "vtsls",
         "css_variables",
         "terraformls",
         "gopls",
         "tailwindcss",
-        "vue_ls",
-        "tsgo"
+        "tsgo",
     },
-    automatic_enable = true,
+    automatic_enable = {
+        exclude = {
+            "tailwindcss",
+            "vtsls",
+            "vue_ls",
+        },
+    },
 })
 
 installer_tools.setup({
@@ -74,7 +78,7 @@ installer_tools.setup({
         "black",
         "sqlfluff",
         "buf",
-        "tflint"
+        "tflint",
     },
 })
 
