@@ -2,6 +2,16 @@ local config = require("plugins.plugin-manager")
 
 require("lazy").setup({
     {
+        "georgeguimaraes/review.nvim",
+        dependencies = {
+            "esmuellert/codediff.nvim",
+            "MunifTanjim/nui.nvim",
+        },
+        config = function()
+            require("plugins.review")
+        end,
+    },
+    {
         "kevinhwang91/nvim-ufo",
         dependencies = { "kevinhwang91/promise-async" },
         event = "VeryLazy",
