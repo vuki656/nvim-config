@@ -62,11 +62,11 @@ vim.lsp.config("yamlls", {
     settings = {
         yaml = {
             schemas = require("schemastore").yaml.schemas(),
+            schemaStore = {
+                enable = false,
+                url = "",
+            },
         },
-    },
-    schemaStore = {
-        enable = false,
-        url = "",
     },
 })
 
