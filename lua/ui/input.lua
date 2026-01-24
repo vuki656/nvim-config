@@ -81,6 +81,15 @@ M.__generate_ui = function()
     })
 
     M.ui:mount()
+
+    -- nui.input opens in normal mode by default, schedule insert mode
+    -- after mount to allow immediate typing (e.g., LSP rename)
+    vim.schedule(function()
+        if M.ui and M.ui.winid and vim.api.nvim_win_is_valid(M.ui.winid) then
+            vim.api.nvim_set_current_win(M.ui.winid)
+            vim.cmd("startinsert!")
+        end
+    end)
 end
 
 --- Sets up the keymaps for the input
