@@ -3,6 +3,7 @@
 -- Link: https://github.com/goolord/alpha-nvim
 
 local alpha = require("alpha")
+local nvim_tree_api = require("nvim-tree.api")
 local startify_theme = require("alpha.themes.startify")
 
 local set_keymap = require("utils.set-keymap")
@@ -24,6 +25,17 @@ startify_theme.config.layout = {
 }
 
 alpha.setup(startify_theme.config)
+
+-- Open NvimTree alongside Alpha on startup, keeping focus on Alpha
+vim.api.nvim_create_autocmd("User", {
+    pattern = "AlphaReady",
+    callback = function()
+        nvim_tree_api.tree.open()
+
+        -- Return focus to Alpha
+        vim.cmd("wincmd p")
+    end,
+})
 
 --------------------------------------------------------------------------------------------
 ------------------------------------- KEYMAPS ----------------------------------------------
