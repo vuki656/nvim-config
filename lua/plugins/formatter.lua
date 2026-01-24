@@ -1,188 +1,73 @@
--- Name: Formatter
+-- Name: Conform
 -- Description: Formatter
--- Link: https://github.com/mhartington/formatter.nvim
+-- Link: https://github.com/stevearc/conform.nvim
 
-local formatter = require("formatter")
-local formatter_utils = require("formatter.util")
-
+local conform = require("conform")
 local set_keymap = require("utils.set-keymap")
-
-------------------------------------------------------------------------------------------
------------------------------------ UTILS -----------------------------------------------
-------------------------------------------------------------------------------------------
-
-local fixjson = require("formatter.filetypes.json").fixjson
-local eslint = require("formatter.defaults.eslint_d")
-local stylua = require("formatter.filetypes.lua").stylua
-local shfmt = require("formatter.filetypes.sh").shfmt
-local buf = require("formatter.filetypes.proto").buf_format
-local gofmt = require("formatter.filetypes.go").gofmt
-
-local prettier = function()
-    return {
-        exe = "prettier",
-        args = {
-            "--stdin-filepath",
-            formatter_utils.escape_path(formatter_utils.get_current_buffer_file_path()),
-            "--tab-width 4",
-            "--no-semi",
-            "--ignore-path=''",
-            "--config-precedence=file-override",
-        },
-        stdin = true,
-        try_node_modules = true,
-    }
-end
-
-local javascript = function()
-    if vim.loop.fs_stat(".eslintrc.js") == nil then
-        return prettier()
-    end
-
-    return eslint()
-end
-
-local protolint = function()
-    return {
-        exe = "protolint",
-        args = {
-            "lint",
-            "--fix",
-        },
-        ignore_exitcode = true,
-        stdin = false,
-    }
-end
-
-local stylelint = function()
-    return {
-        exe = "stylelint",
-        args = {
-            "--fix",
-        },
-        stdin = false,
-        try_node_modules = true,
-    }
-end
-
-local dotenv = function()
-    return {
-        exe = "dotenv-linter",
-        args = {
-            "fix",
-            "--no-backup",
-        },
-        stdin = false,
-        ignore_exitcode = true,
-    }
-end
-
-local black = function()
-    return {
-        exe = "black",
-        args = { "-l", "120", "-q", "-" },
-        stdin = true,
-    }
-end
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- SETUP ------------------------------------------------
 ------------------------------------------------------------------------------------------
 
-formatter.setup({
-    filetype = {
-        html = {
-            prettier,
+conform.setup({
+    formatters_by_ft = {
+        html = { "prettier" },
+        yaml = { "prettier" },
+        markdown = { "prettier" },
+        xml = { "prettier" },
+        vue = { "prettier" },
+        prisma = { "prettier" },
+        liquid = { "prettier" },
+        json = { "fixjson", "prettier" },
+        jsonc = { "fixjson", "prettier" },
+        graphql = { "prettier" },
+        css = { "stylelint", "prettier" },
+        javascript = { "prettier" },
+        typescript = { "prettier" },
+        javascriptreact = { "prettier" },
+        typescriptreact = { "prettier" },
+        lua = { "stylua" },
+        proto = { "buf" },
+        sh = { "shfmt" },
+        python = { "black" },
+        go = { "gofmt" },
+    },
+
+    formatters = {
+        prettier = {
+            prepend_args = {
+                "--stdin-filepath",
+                "$FILENAME",
+                "--tab-width",
+                "4",
+                "--no-semi",
+                "--ignore-path=''",
+                "--config-precedence=file-override",
+            },
         },
-        jsonc = {
-            fixjson,
-            prettier,
+        black = {
+            prepend_args = { "-l", "120", "-q" },
         },
-        json = {
-            fixjson,
-            prettier,
-        },
-        yaml = {
-            prettier,
-        },
-        typescript = {
-            javascript,
-        },
-        javascript = {
-            javascript,
-        },
-        javascriptreact = {
-            javascript,
-        },
-        typescriptreact = {
-            javascript,
-        },
-        graphql = {
-            prettier,
-            eslint,
-        },
-        css = {
-            stylelint,
-            prettier,
-        },
-        markdown = {
-            prettier,
-        },
-        lua = {
-            stylua,
-        },
-        proto = {
-            buf,
-        },
-        sh = {
-            shfmt,
-        },
-        liquid = {
-            prettier,
-        },
-        prisma = {
-            prettier,
-        },
-        vue = {
-            prettier,
-        },
-        dotenv = {
-            dotenv,
-        },
-        python = {
-            black,
-        },
-        xml = {
-            prettier,
-        },
-        go = {
-            gofmt,
+        stylelint = {
+            args = { "--fix", "$FILENAME" },
+            stdin = false,
         },
     },
+    default_format_opts = {
+        timeout_ms = 1000,
+        lsp_format = "fallback",
+    },
+    notify_on_error = true,
 })
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- KEYMAPS ----------------------------------------------
 ------------------------------------------------------------------------------------------
 
-local function smart_format()
-    local ft = vim.bo.filetype
-    local formatter_config = require("formatter.config")
-    local filetype_config = formatter_config.values.filetype[ft]
-
-    if filetype_config and #filetype_config > 0 then
-        vim.cmd("Format")
-    else
-        vim.lsp.buf.format({ async = true })
-    end
-end
-
 set_keymap({
-    list = {
-        {
-            key = "<LEADER>fp",
-            actions = smart_format,
-            description = "Format code (formatter.nvim or LSP fallback)",
-        },
-    },
+    key = "<LEADER>fp",
+    actions = function()
+        conform.format({ async = true })
+    end,
+    description = "Format code",
 })

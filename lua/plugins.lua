@@ -117,7 +117,7 @@ require("lazy").setup({
         },
     },
     {
-        "mhartington/formatter.nvim",
+        "stevearc/conform.nvim",
         config = function()
             require("plugins.formatter")
         end,
