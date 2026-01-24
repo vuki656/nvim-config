@@ -9,6 +9,7 @@ local lint = require("lint")
 ------------------------------------------------------------------------------------------
 
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+    group = vim.api.nvim_create_augroup("LintOnSave", { clear = true }),
     callback = function()
         lint.try_lint()
     end,

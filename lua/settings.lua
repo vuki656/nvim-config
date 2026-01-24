@@ -140,34 +140,38 @@ vim.filetype.add({
 ------------------------------------ MISC ------------------------------------------------
 ------------------------------------------------------------------------------------------
 
-vim.cmd([[
-    " Enable syntax
-    syntax on
+-- Enable syntax
+vim.cmd("syntax on")
 
-    " Spell file location
-    set spellfile=$HOME/.config/nvim/spell/en.utf-8.add
+-- Spell file location
+vim.opt.spellfile = vim.fn.expand("$HOME/.config/nvim/spell/en.utf-8.add")
 
-    " Don't continue comment when adding a new line above/under comment
-    autocmd BufNewFile,BufRead * setlocal formatoptions-=ro
+-- Don't continue comment when adding a new line above/under comment
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+    group = vim.api.nvim_create_augroup("DisableAutoComment", { clear = true }),
+    pattern = "*",
+    callback = function()
+        vim.opt_local.formatoptions:remove({ "r", "o" })
+    end,
+})
 
-    " Disable unused providers
-    let g:loaded_perl_provider=0
-    let g:loaded_ruby_provider=0
-    let g:loaded_python3_provider=0
-    let g:loaded_node_provider=0
+-- Disable unused providers
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_ruby_provider = 0
+vim.g.loaded_python3_provider = 0
+vim.g.loaded_node_provider = 0
 
-    " Fix cursor hold
-    let g:cursorhold_updatetime = 100
-]])
+-- Fix cursor hold
+vim.g.cursorhold_updatetime = 100
 
 -- Ignore capitalized word misspelling
-vim.cmd([[
-    fun! IgnoreCamelCaseSpell()
-        syn match myExCapitalWords +\<\w*[A-Z]\K*\>+ contains=@NoSpell
-    endfun
-
-    autocmd BufRead,BufNewFile * :call IgnoreCamelCaseSpell()
-]])
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+    group = vim.api.nvim_create_augroup("IgnoreCamelCaseSpell", { clear = true }),
+    pattern = "*",
+    callback = function()
+        vim.cmd([[syn match myExCapitalWords +\<\w*[A-Z]\K*\>+ contains=@NoSpell]])
+    end,
+})
 
 -- Supposed to fix lag. Taken from: https://github.com/akinsho/toggleterm.nvim/issues/610#issuecomment-2477464323
 vim.api.nvim_create_augroup("disable_folding_toggleterm", { clear = true })
@@ -175,7 +179,7 @@ vim.api.nvim_create_autocmd("FileType", {
     group = "disable_folding_toggleterm",
     pattern = "toggleterm",
     callback = function(event)
-        vim.api.nvim_buf_set_option(event.buf, "foldmethod", "manual")
-        vim.api.nvim_buf_set_option(event.buf, "foldtext", "foldtext()")
+        vim.api.nvim_set_option_value("foldmethod", "manual", { buf = event.buf })
+        vim.api.nvim_set_option_value("foldtext", "foldtext()", { buf = event.buf })
     end,
 })

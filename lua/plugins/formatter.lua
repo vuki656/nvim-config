@@ -122,8 +122,8 @@ formatter.setup({
             eslint,
         },
         css = {
-            prettier,
             stylelint,
+            prettier,
         },
         markdown = {
             prettier,
@@ -165,14 +165,24 @@ formatter.setup({
 ----------------------------------- KEYMAPS ----------------------------------------------
 ------------------------------------------------------------------------------------------
 
+local function smart_format()
+    local ft = vim.bo.filetype
+    local formatter_config = require("formatter.config")
+    local filetype_config = formatter_config.values.filetype[ft]
+
+    if filetype_config and #filetype_config > 0 then
+        vim.cmd("Format")
+    else
+        vim.lsp.buf.format({ async = true })
+    end
+end
+
 set_keymap({
     list = {
         {
             key = "<LEADER>fp",
-            actions = function()
-                vim.lsp.buf.format({ async = true })
-            end,
-            description = "Format code",
+            actions = smart_format,
+            description = "Format code (formatter.nvim or LSP fallback)",
         },
     },
 })

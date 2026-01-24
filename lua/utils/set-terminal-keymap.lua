@@ -8,7 +8,7 @@ local function apply_terminal_keymap(properties)
     local action = ""
 
     -- If there is a list of actions, concatenate them into a single string
-    if type(properties.actions) ~= "string" and table.getn(properties.actions) ~= 0 then
+    if type(properties.actions) ~= "string" and #properties.actions ~= 0 then
         for _, value in ipairs(properties.actions) do
             action = action .. " " .. value
         end
@@ -16,7 +16,7 @@ local function apply_terminal_keymap(properties)
         action = properties.actions
     end
 
-    vim.cmd(":tnoremap " .. properties.key .. " " .. action)
+    vim.keymap.set("t", properties.key, action, { desc = properties.description })
 end
 
 --- Sets the given terminal keymap or list of terminal keymaps

@@ -3,6 +3,7 @@ local config = require("plugins.plugin-manager")
 require("lazy").setup({
     {
         "georgeguimaraes/review.nvim",
+        event = "VeryLazy",
         dependencies = {
             "esmuellert/codediff.nvim",
             "MunifTanjim/nui.nvim",
@@ -27,6 +28,7 @@ require("lazy").setup({
     },
     {
         "nvim-neotest/neotest",
+        event = "VeryLazy",
         dependencies = {
             "nvim-neotest/nvim-nio",
             "nvim-lua/plenary.nvim",
@@ -46,6 +48,7 @@ require("lazy").setup({
     },
     {
         "mistweaverco/kulala.nvim",
+        ft = "http",
         config = function()
             require("plugins.http")
         end,
@@ -65,12 +68,14 @@ require("lazy").setup({
     },
     {
         "andrewferrier/debugprint.nvim",
+        event = "VeryLazy",
         config = function()
             require("plugins.print")
         end,
     },
     {
         "nvim-pack/nvim-spectre",
+        event = "VeryLazy",
         dependencies = {
             "nvim-lua/plenary.nvim",
         },
@@ -80,6 +85,7 @@ require("lazy").setup({
     },
     {
         "folke/zen-mode.nvim",
+        event = "VeryLazy",
         config = function()
             require("plugins.focus")
         end,
@@ -137,6 +143,7 @@ require("lazy").setup({
     },
     {
         "akinsho/nvim-toggleterm.lua",
+        event = "VeryLazy",
         config = function()
             require("plugins.terminal")
         end,
@@ -144,6 +151,7 @@ require("lazy").setup({
     {
         "akinsho/git-conflict.nvim",
         tag = "v2.1.0",
+        event = "VeryLazy",
         config = function()
             require("plugins.git-conflict")
         end,
@@ -159,6 +167,7 @@ require("lazy").setup({
     },
     {
         "chentoast/marks.nvim",
+        event = "VeryLazy",
         config = function()
             require("plugins.marks")
         end,
@@ -171,6 +180,7 @@ require("lazy").setup({
     },
     {
         "nvim-mini/mini.splitjoin",
+        event = "VeryLazy",
         config = function()
             require("plugins.split-join")
         end,
@@ -186,6 +196,7 @@ require("lazy").setup({
     },
     {
         "folke/todo-comments.nvim",
+        event = "VeryLazy",
         dependencies = {
             "nvim-lua/plenary.nvim",
         },
@@ -254,6 +265,7 @@ require("lazy").setup({
     },
     {
         "kazhala/close-buffers.nvim",
+        event = "VeryLazy",
         config = function()
             require("plugins.buffer-closer")
         end,
@@ -278,6 +290,7 @@ require("lazy").setup({
     },
     {
         "mbbill/undotree",
+        event = "VeryLazy",
         config = function()
             require("plugins.undo-tree")
         end,
@@ -293,6 +306,7 @@ require("lazy").setup({
     },
     {
         "nguyenvukhang/nvim-toggler",
+        event = "VeryLazy",
         config = function()
             require("plugins.toggler")
         end,
@@ -316,7 +330,7 @@ require("lazy").setup({
         "lukas-reineke/headlines.nvim",
         commit = "4656ed3e4ba8e3e2551fe21f8803ef6953a8d657",
         config = function()
-            -- require("plugins.doc-highlighter")
+            require("plugins.doc-highlighter")
         end,
         ft = {
             "markdown",
@@ -336,6 +350,7 @@ require("lazy").setup({
     },
     {
         "ruifm/gitlinker.nvim",
+        event = "VeryLazy",
         config = function()
             require("plugins.git-linker")
         end,
@@ -374,8 +389,5 @@ require("lazy").setup({
             "whoissethdaniel/mason-tool-installer.nvim",
             "neovim/nvim-lspconfig",
         },
-    },
-    {
-        "windwp/nvim-ts-autotag",
     },
 }, config)

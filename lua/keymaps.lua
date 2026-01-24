@@ -35,14 +35,14 @@ set_keymap({
         {
             key = "<LEADER>qp",
             actions = function()
-                vim.cmd("cp")
+                vim.cmd.cprevious()
             end,
             description = "Navigate to previous quickfix item",
         },
         {
             key = "<LEADER>qn",
             actions = function()
-                vim.cmd("cn")
+                vim.cmd.cnext()
             end,
             description = "Navigate to next quickfix item",
         },
@@ -68,7 +68,7 @@ set_keymap({
         {
             key = "<BS>",
             actions = function()
-                vim.cmd("nohlsearch")
+                vim.cmd.nohlsearch()
             end,
             description = "Clear search highlight",
         },
@@ -212,11 +212,6 @@ set_keymap({
             key = "<LEADER>rn",
             actions = vim.lsp.buf.rename,
             description = "Rename variable",
-        },
-        {
-            key = "<LEADER>fl",
-            actions = vim.lsp.buf.format,
-            description = "Format with LSP",
         },
         {
             key = "<LEADER>f0",

@@ -28,6 +28,7 @@ alpha.setup(startify_theme.config)
 
 -- Open NvimTree alongside Alpha on startup, keeping focus on Alpha
 vim.api.nvim_create_autocmd("User", {
+    group = vim.api.nvim_create_augroup("AlphaOpenTree", { clear = true }),
     pattern = "AlphaReady",
     callback = function()
         nvim_tree_api.tree.open()
