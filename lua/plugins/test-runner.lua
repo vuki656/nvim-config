@@ -200,6 +200,13 @@ set_keymap({
             actions = neotest.output_panel.toggle,
             description = "Toggle output panel",
         },
+        {
+            key = "<LEADER>jrd",
+            actions = function()
+                neotest.run.run({ strategy = "dap" })
+            end,
+            description = "Debug closest test",
+        },
     },
 })
 

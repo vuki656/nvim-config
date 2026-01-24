@@ -42,6 +42,19 @@ require("lazy").setup({
         end,
     },
     {
+        "mfussenegger/nvim-dap",
+        event = "VeryLazy",
+        dependencies = {
+            "rcarriga/nvim-dap-ui",
+            "nvim-neotest/nvim-nio",
+            "theHamsta/nvim-dap-virtual-text",
+            "jay-babu/mason-nvim-dap.nvim",
+        },
+        config = function()
+            require("plugins.debugger")
+        end,
+    },
+    {
         "github/copilot.vim",
         config = function()
             require("plugins.copilot")

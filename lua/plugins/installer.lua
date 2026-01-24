@@ -37,6 +37,7 @@ installer_lsp.setup({
 
 installer_tools.setup({
     ensure_installed = {
+        "js-debug-adapter",
         "protolint",
         "actionlint",
         "cspell",
