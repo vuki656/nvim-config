@@ -35,6 +35,7 @@ require("lazy").setup({
             "antoinemadec/FixCursorHold.nvim",
             "nvim-treesitter/nvim-treesitter",
             "marilari88/neotest-vitest",
+            "nvim-neotest/neotest-jest",
         },
         config = function()
             require("plugins.test-runner")
