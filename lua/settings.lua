@@ -178,8 +178,8 @@ vim.api.nvim_create_augroup("disable_folding_toggleterm", { clear = true })
 vim.api.nvim_create_autocmd("FileType", {
     group = "disable_folding_toggleterm",
     pattern = "toggleterm",
-    callback = function(event)
-        vim.api.nvim_set_option_value("foldmethod", "manual", { buf = event.buf })
-        vim.api.nvim_set_option_value("foldtext", "foldtext()", { buf = event.buf })
+    callback = function()
+        vim.wo.foldmethod = "manual"
+        vim.wo.foldtext = "foldtext()"
     end,
 })
