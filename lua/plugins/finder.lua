@@ -30,7 +30,7 @@ telescope.setup({
                 ["<C-f>"] = require("telescope.actions").to_fuzzy_refine,
             },
         },
-        path_display = { "tail" },
+        path_display = { "filename_first" },
         file_ignore_patterns = {
             "package-lock.json",
             "yarn.lock",
