@@ -18,7 +18,7 @@ autosave.setup({
     condition = function(buf)
         local utils = require("auto-save.utils.data")
         local is_modifiable = vim.fn.getbufvar(buf, "&modifiable") == 1
-        local is_allowed_buffer = utils.not_in(vim.fn.getbufvar(buf, "&filetype"), { "oil" })
+        local is_allowed_buffer = utils.not_in(vim.fn.getbufvar(buf, "&filetype"), { "oil", "harpoon" })
 
         if is_modifiable and is_allowed_buffer then
             return true

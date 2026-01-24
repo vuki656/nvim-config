@@ -358,6 +358,8 @@ require("lazy").setup({
     },
     {
         "theprimeagen/harpoon",
+        branch = "harpoon2",
+        dependencies = { "nvim-lua/plenary.nvim" },
         config = function()
             require("plugins.bookmarks")
         end,
