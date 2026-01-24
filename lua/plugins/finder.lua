@@ -25,6 +25,11 @@ telescope.setup({
         },
     },
     defaults = {
+        mappings = {
+            i = {
+                ["<C-f>"] = require("telescope.actions").to_fuzzy_refine,
+            },
+        },
         path_display = { "tail" },
         file_ignore_patterns = {
             "package-lock.json",
