@@ -3,3 +3,5 @@ local custom_select_ui = require("ui.select")
 
 custom_select_ui.setup()
 custom_input_ui.setup()
+
+require("plugins.search-replace")
