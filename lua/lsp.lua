@@ -104,7 +104,6 @@ M.servers = {
     "dockerls",
     "gopls",
     "graphql",
-    "groovyls",
     "html",
     "jsonls",
     "lemminx",
