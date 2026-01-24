@@ -143,7 +143,6 @@ require("lazy").setup({
     },
     {
         "akinsho/nvim-toggleterm.lua",
-        event = "VeryLazy",
         config = function()
             require("plugins.terminal")
         end,
