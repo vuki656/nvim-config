@@ -1,1 +1,0 @@
-- [ ] Script runner find closest package json to pick scripts from in monorepo and execute there
