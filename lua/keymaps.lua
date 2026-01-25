@@ -245,13 +245,6 @@ set_keymap({
             actions = vim.diagnostic.goto_prev,
             description = "Go to previous diagnostic in current buffer",
         },
-        -- {
-        --     key = "<LEADER>lre",
-        --     actions = function()
-        --         vim.cmd("LspRestart")
-        --     end,
-        --     description = "Restart LSP server",
-        -- },
     },
 })
 
