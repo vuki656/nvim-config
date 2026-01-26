@@ -4,7 +4,7 @@ require("lazy").setup({
     {
         "vuki656/review.nvim",
         -- dir = "~/Projects/personal/review.nvim",
-        config = true
+        config = true,
     },
     {
         "kevinhwang91/nvim-ufo",

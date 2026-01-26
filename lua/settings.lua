@@ -173,6 +173,15 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
     end,
 })
 
+-- Enable wrap for markdown files
+vim.api.nvim_create_autocmd("FileType", {
+    group = vim.api.nvim_create_augroup("MarkdownWrap", { clear = true }),
+    pattern = "markdown",
+    callback = function()
+        vim.opt_local.wrap = true
+    end,
+})
+
 -- Supposed to fix lag. Taken from: https://github.com/akinsho/toggleterm.nvim/issues/610#issuecomment-2477464323
 vim.api.nvim_create_augroup("disable_folding_toggleterm", { clear = true })
 vim.api.nvim_create_autocmd("FileType", {
