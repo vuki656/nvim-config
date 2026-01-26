@@ -84,7 +84,7 @@ vim.opt.wrap = false
 vim.opt.spell = true
 
 -- Spelling language
-vim.opt.spelllang = "en"
+vim.opt.spelllang = "en,hr"
 
 -- Don't check if line starts with capital letter
 vim.opt.spellcapcheck = ""
