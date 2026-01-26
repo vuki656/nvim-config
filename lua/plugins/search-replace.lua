@@ -1,6 +1,6 @@
 local Input = require("nui.input")
-local Popup = require("nui.popup")
 local Layout = require("nui.layout")
+local Popup = require("nui.popup")
 
 local set_keymap = require("utils.set-keymap")
 
@@ -559,11 +559,7 @@ set_keymap({
             modes = { "v" },
             key = "<Leader>sr",
             actions = function()
-                vim.api.nvim_feedkeys(
-                    vim.api.nvim_replace_termcodes("<Esc>", true, false, true),
-                    "n",
-                    false
-                )
+                vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "n", false)
 
                 vim.defer_fn(function()
                     M.open({ visual = true })

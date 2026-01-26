@@ -1,8 +1,8 @@
 local Terminal = require("toggleterm.terminal").Terminal
 local Menu = require("nui.menu")
 
-local reset = require("plugins.terminal.keymaps.reset")
 local colors = require("utils.colors")
+local reset = require("plugins.terminal.keymaps.reset")
 
 local RECENT_SCRIPTS_FILE = vim.fn.stdpath("data") .. "/script-runner-recent.json"
 local FAVORITES_FILE = vim.fn.stdpath("data") .. "/script-runner-favorites.json"
@@ -613,7 +613,10 @@ local function open_menu(package_dir, git_root, restore_cursor_command)
             if not added_scripts_separator then
                 added_scripts_separator = true
                 if #menu_items > 0 then
-                    table.insert(menu_items, Menu.separator(" " .. group_title .. " ", { char = "═", text_align = "left" }))
+                    table.insert(
+                        menu_items,
+                        Menu.separator(" " .. group_title .. " ", { char = "═", text_align = "left" })
+                    )
                 else
                     table.insert(menu_items, Menu.separator(" " .. group_title, { text_align = "left" }))
                 end
