@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "Bash(nvim:*)",
-      "Bash(echo:*)"
+      "Bash(echo:*)",
+      "Bash(luacheck:*)",
+      "Bash(/home/vuki/.local/share/nvim/mason/packages/luacheck/bin/luacheck:*)"
     ]
   }
 }

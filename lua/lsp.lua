@@ -2,7 +2,6 @@ local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
 local lsp_file_operations = require("lsp-file-operations")
 local lsp_utils = require("lspconfig.util")
 local schemastore = require("schemastore")
-local set_keymap = require("utils.set-keymap")
 local ts_error_formatter = require("format-ts-errors")
 -- local typescript = require("typescript-tools")
 

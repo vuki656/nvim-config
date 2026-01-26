@@ -20,5 +20,6 @@ std = {
         "string",
         "require",
         "math",
+        "package",
     },
 }

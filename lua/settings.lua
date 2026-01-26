@@ -180,8 +180,18 @@ vim.api.nvim_create_autocmd("FileType", {
     callback = function()
         vim.opt_local.wrap = true
 
-        vim.keymap.set({ "n", "v" }, "j", "gj", { buffer = true, noremap = true, silent = true, desc = "Move down by visual line" })
-        vim.keymap.set({ "n", "v" }, "k", "gk", { buffer = true, noremap = true, silent = true, desc = "Move up by visual line" })
+        vim.keymap.set(
+            { "n", "v" },
+            "j",
+            "gj",
+            { buffer = true, noremap = true, silent = true, desc = "Move down by visual line" }
+        )
+        vim.keymap.set(
+            { "n", "v" },
+            "k",
+            "gk",
+            { buffer = true, noremap = true, silent = true, desc = "Move up by visual line" }
+        )
     end,
 })
 

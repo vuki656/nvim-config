@@ -204,7 +204,7 @@ local function apply_menu_highlights(bufnr, icon_colors, underline_rows, group_t
             local sep_start, sep_end = line:find(" │ ")
             if sep_start and icon_colors[row] then
                 local icon_color = icon_colors[row]
-                local is_favorite = underline_rows and underline_rows[row]
+                local is_fav = underline_rows and underline_rows[row]
 
                 -- Find positions: " icon command   │ script"
                 local content_start = line:match("^%s*()") or 1
@@ -224,7 +224,7 @@ local function apply_menu_highlights(bufnr, icon_colors, underline_rows, group_t
                 })
 
                 -- Command name (white, underline if favorite)
-                if is_favorite then
+                if is_fav then
                     vim.api.nvim_buf_set_extmark(bufnr, ns_id, row, cmd_start - 1, {
                         end_col = cmd_end,
                         hl_group = "ScriptRunnerScriptUnderline",
@@ -252,7 +252,7 @@ local function apply_menu_highlights(bufnr, icon_colors, underline_rows, group_t
             local at_start, at_end = line:find(" @ ")
             if at_start and icon_colors[row] then
                 local icon_color = icon_colors[row]
-                local is_favorite = underline_rows and underline_rows[row]
+                local is_fav = underline_rows and underline_rows[row]
 
                 local content_start = line:match("^%s*()") or 1
                 local icon_end = content_start + #(line:match("^%s*([^ ]+)") or "")
@@ -266,7 +266,7 @@ local function apply_menu_highlights(bufnr, icon_colors, underline_rows, group_t
                 })
 
                 -- Command name (white, underline if favorite)
-                if is_favorite then
+                if is_fav then
                     vim.api.nvim_buf_set_extmark(bufnr, ns_id, row, cmd_start - 1, {
                         end_col = cmd_end,
                         hl_group = "ScriptRunnerScriptUnderline",

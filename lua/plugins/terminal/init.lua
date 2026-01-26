@@ -7,7 +7,6 @@ local toggleterm = require("toggleterm")
 local set_keymap = require("utils.set-keymap")
 
 local toggle_docker_buffer = require("plugins.terminal.keymaps.toggle-docker-buffer")
-local toggle_git_buffer = require("plugins.terminal.keymaps.toggle-git-buffer")
 local toggle_script_runner_buffer = require("plugins.terminal.keymaps.toggle-script-runner-buffer")
 local toggle_terminal_buffer = require("plugins.terminal.keymaps.toggle-terminal-buffer")
 
