@@ -70,6 +70,17 @@ vim.lsp.config("yamlls", {
     },
 })
 
+vim.lsp.config("lua_ls", {
+    capabilities = lsp_capabilities,
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = { "vim" },
+            },
+        },
+    },
+})
+
 -- vim.lsp.config("vtsls", {
 --     capabilities = lsp_capabilities,
 --     filetypes = { "vue" },
@@ -123,6 +134,7 @@ local SERVERS_WITH_CUSTOM_CONFIG = {
     "angularls",
     "cssmodules_ls",
     "jsonls",
+    "lua_ls",
     "yamlls",
 }
 

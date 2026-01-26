@@ -12,7 +12,6 @@ local set_keymap = require("utils.set-keymap")
 ----------------------------------- CONFIG -----------------------------------------------
 ------------------------------------------------------------------------------------------
 
--- TODO: clean up
 local function on_attach(bufnr)
     local api = require("nvim-tree.api")
 

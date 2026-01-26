@@ -8,7 +8,6 @@ local toggler = require("nvim-toggler")
 ----------------------------------- SETUP ------------------------------------------------
 ------------------------------------------------------------------------------------------
 
--- TODO: how to ignore subwords and only treat whole words, open an issue
 toggler.setup({
     inverses = {
         ["&&"] = "||",
