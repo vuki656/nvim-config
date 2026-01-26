@@ -2,6 +2,14 @@ local config = require("plugins.plugin-manager")
 
 require("lazy").setup({
     {
+        "OXY2DEV/markview.nvim",
+        lazy = false,
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        config = function()
+            require("plugins.doc-highlighter")
+        end,
+    },
+    {
         "vuki656/review.nvim",
         -- dir = "~/Projects/personal/review.nvim",
         config = true,
@@ -262,15 +270,6 @@ require("lazy").setup({
         },
     },
     {
-        "davidgranstrom/nvim-markdown-preview",
-        config = function()
-            require("plugins.markdown-preview")
-        end,
-        ft = {
-            "markdown",
-        },
-    },
-    {
         "kazhala/close-buffers.nvim",
         event = "VeryLazy",
         config = function()
@@ -332,15 +331,6 @@ require("lazy").setup({
         config = function()
             require("plugins.indent-line")
         end,
-    },
-    {
-        "lukas-reineke/headlines.nvim",
-        config = function()
-            require("plugins.doc-highlighter")
-        end,
-        ft = {
-            "markdown",
-        },
     },
     {
         "pocco81/auto-save.nvim",

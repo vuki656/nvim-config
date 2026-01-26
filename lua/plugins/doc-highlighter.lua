@@ -1,26 +1,15 @@
--- Name: Headlines
--- Description: Highlights sections in documentation files
--- Link: https://github.com/lukas-reineke/headlines.nvim
+-- Name: Markview
+-- Description: Markdown preview
+-- Link: https://github.com/OXY2DEV/markview.nvim
 
-local headlines = require("headlines")
-
-local colors = require("utils.colors")
-local set_highlight = require("utils.set-highlight")
+local markview = require("markview")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- SETUP ------------------------------------------------
 ------------------------------------------------------------------------------------------
 
--- Doc files header highlights
-headlines.setup({})
-
---------------------------------------------------------------------------------------------
-------------------------------------- COLORS -----------------------------------------------
---------------------------------------------------------------------------------------------
-
-set_highlight({
-    list = {
-        { group = "Codeblock", background = colors.grey_lighter },
-        { group = "Headline", background = colors.grey_lighter },
+markview.setup({
+    icons = {
+        provider = "devicons",
     },
 })
