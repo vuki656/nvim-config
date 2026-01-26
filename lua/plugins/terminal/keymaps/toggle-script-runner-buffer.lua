@@ -341,6 +341,11 @@ end
 
 -- Add a script to recent scripts
 local function add_to_recent(git_root, command, package_dir)
+    -- Don't save invalid entries
+    if not command or not package_dir then
+        return
+    end
+
     local data = load_recent_scripts()
     if not data[git_root] then
         data[git_root] = { scripts = {} }
@@ -379,6 +384,11 @@ local function get_recent_scripts(git_root)
 
     local valid_scripts = {}
     for _, script in ipairs(data[git_root].scripts) do
+        -- Skip invalid entries (missing required fields)
+        if not script.package_dir or not script.command then
+            goto continue
+        end
+
         local package_json_path = script.package_dir .. "/package.json"
         local file = io.open(package_json_path, "r")
         if file then
@@ -389,6 +399,8 @@ local function get_recent_scripts(git_root)
                 table.insert(valid_scripts, script)
             end
         end
+
+        ::continue::
     end
 
     return valid_scripts
@@ -680,6 +692,11 @@ local function open_menu(package_dir, git_root, restore_cursor_command)
             submit = { "<CR>" },
         },
         on_submit = function(item)
+            -- Ignore separators/borders (they don't have command or package_dir)
+            if not item.command or not item.package_dir then
+                return
+            end
+
             if item.is_go_up then
                 open_menu(item.parent_dir, git_root)
             else
