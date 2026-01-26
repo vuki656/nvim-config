@@ -152,6 +152,10 @@ neotest.setup({
 
                 return "npm test --"
             end,
+            jestConfigFile = function(file_path)
+                local _, config_file = find_nearest_config(file_path, jest_prefixes)
+                return config_file or "jest.config.js"
+            end,
             cwd = function(file_path)
                 local dir = find_nearest_config(file_path, jest_prefixes)
                 return dir or vim.fn.getcwd()
