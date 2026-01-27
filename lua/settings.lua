@@ -195,6 +195,20 @@ vim.api.nvim_create_autocmd("FileType", {
     end,
 })
 
+-- Re-render markview on window resize to fix wrap width
+vim.api.nvim_create_autocmd("WinResized", {
+    group = vim.api.nvim_create_augroup("MarkviewRerender", { clear = true }),
+    callback = function()
+        for _, win in ipairs(vim.v.event.windows) do
+            local buf = vim.api.nvim_win_get_buf(win)
+            if vim.bo[buf].filetype == "markdown" then
+                vim.cmd("Markview render")
+                return
+            end
+        end
+    end,
+})
+
 -- Supposed to fix lag. Taken from: https://github.com/akinsho/toggleterm.nvim/issues/610#issuecomment-2477464323
 vim.api.nvim_create_augroup("disable_folding_toggleterm", { clear = true })
 vim.api.nvim_create_autocmd("FileType", {

@@ -4,7 +4,8 @@
       "Bash(nvim:*)",
       "Bash(echo:*)",
       "Bash(luacheck:*)",
-      "Bash(/home/vuki/.local/share/nvim/mason/packages/luacheck/bin/luacheck:*)"
+      "Bash(/home/vuki/.local/share/nvim/mason/packages/luacheck/bin/luacheck:*)",
+      "Bash(git show:*)"
     ]
   }
 }
