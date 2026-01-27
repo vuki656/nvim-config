@@ -173,10 +173,10 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
     end,
 })
 
--- Enable wrap for markdown files
+-- Enable wrap for markdown and text files
 vim.api.nvim_create_autocmd("FileType", {
     group = vim.api.nvim_create_augroup("MarkdownWrap", { clear = true }),
-    pattern = "markdown",
+    pattern = { "markdown", "text" },
     callback = function()
         vim.opt_local.wrap = true
 
