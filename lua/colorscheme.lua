@@ -94,7 +94,7 @@ set_highlight({
         { group = "StatusLineNC", foreground = background },
         { group = "SignColumn", background = background },
         { group = "EndOfBuffer", foreground = background },
-        { group = "SpellBad", options = "undercurl,bold" },
+        { group = "SpellBad", special = grey, options = "underline" },
         { group = "ModeMsg", foreground = white },
         { group = "NormalFloat", foreground = white, background = background },
         { group = "FloatBorder", foreground = grey, background = background },
