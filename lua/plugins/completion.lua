@@ -97,6 +97,12 @@ cmp.setup({
 
 -- Command source for commands
 cmp.setup.cmdline(":", {
+    window = {
+        completion = {
+            border = "rounded",
+            winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
+        },
+    },
     sources = {
         { name = "cmdline" },
     },
@@ -105,6 +111,12 @@ cmp.setup.cmdline(":", {
 
 -- Buffer source for search
 cmp.setup.cmdline("/", {
+    window = {
+        completion = {
+            border = "rounded",
+            winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
+        },
+    },
     sources = {
         { name = "buffer" },
     },
