@@ -1,5 +1,6 @@
 local set_keymap = require("utils.set-keymap")
 local set_terminal_keymap = require("utils.set-terminal-keymap")
+local keymaps_utils = require("keymaps-utils")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- NAVIGATION -------------------------------------------
@@ -232,7 +233,8 @@ set_keymap({
         {
             key = "H",
             actions = function()
-                vim.diagnostic.open_float(0, { scope = "line" })
+                local bufnr = vim.diagnostic.open_float(0, keymaps_utils.get_diagnostic_float_opts())
+                keymaps_utils.highlight_diagnostic_inline_code(bufnr)
             end,
             description = "Show diagnostic in a floating buffer",
         },
@@ -243,12 +245,16 @@ set_keymap({
         },
         {
             key = "]d",
-            actions = vim.diagnostic.goto_next,
+            actions = function()
+                keymaps_utils.goto_diagnostic("next")
+            end,
             description = "Go to next diagnostic in current buffer",
         },
         {
             key = "[d",
-            actions = vim.diagnostic.goto_prev,
+            actions = function()
+                keymaps_utils.goto_diagnostic("prev")
+            end,
             description = "Go to previous diagnostic in current buffer",
         },
     },
