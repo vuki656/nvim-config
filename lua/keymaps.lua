@@ -205,7 +205,9 @@ set_keymap({
     list = {
         {
             key = "L",
-            actions = vim.lsp.buf.hover,
+            actions = function()
+                vim.lsp.buf.hover({ border = "rounded" })
+            end,
             description = "Show variable documentation in floating buffer",
         },
         {

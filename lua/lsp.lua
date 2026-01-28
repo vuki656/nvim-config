@@ -25,6 +25,9 @@ vim.diagnostic.config({
     signs = false,
     underline = true,
     virtual_text = false,
+    float = {
+        border = "rounded",
+    },
 })
 
 vim.lsp.config("angularls", {
