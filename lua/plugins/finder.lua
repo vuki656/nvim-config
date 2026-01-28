@@ -20,7 +20,7 @@ telescope.setup({
     pickers = {
         live_grep = {
             additional_args = function()
-                return { "--hidden" }
+                return { "--hidden", "--smart-case", "--trim", "--max-columns=200" }
             end,
         },
     },
