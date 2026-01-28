@@ -8,6 +8,7 @@
 local function apply_highlight(properties)
     local background = ""
     local foreground = ""
+    local special = ""
     local gui = ""
 
     if properties.background ~= nil then
@@ -18,11 +19,15 @@ local function apply_highlight(properties)
         foreground = " guifg=" .. properties.foreground .. " "
     end
 
+    if properties.special ~= nil then
+        special = " guisp=" .. properties.special .. " "
+    end
+
     if properties.options ~= nil then
         gui = " gui=" .. properties.options .. " "
     end
 
-    vim.cmd("highlight! " .. properties.group .. background .. foreground .. gui)
+    vim.cmd("highlight! " .. properties.group .. background .. foreground .. special .. gui)
 end
 
 --- Sets the given highlight group or list of groups with the given colors

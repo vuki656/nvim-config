@@ -116,10 +116,10 @@ set_highlight({
         { group = "SpecialKey", foreground = orange, background = background },
 
         -- Diagnostics
-        { group = "DiagnosticUnderlineError", foreground = red, options = "bold,undercurl" },
-        { group = "DiagnosticUnderlineWarning", foreground = yellow },
-        { group = "DiagnosticUnderlineInformation", foreground = blue },
-        { group = "DiagnosticUnderlineHint", foreground = orange },
+        { group = "DiagnosticUnderlineError", special = red, options = "undercurl" },
+        { group = "DiagnosticUnderlineWarning", special = yellow, options = "undercurl" },
+        { group = "DiagnosticUnderlineInformation", special = blue, options = "undercurl" },
+        { group = "DiagnosticUnderlineHint", special = orange, options = "undercurl" },
         { group = "DiagnosticFloatingError", foreground = red },
         { group = "DiagnosticFloatingWarn", foreground = yellow },
         { group = "DiagnosticFloatingInfo", foreground = blue },
