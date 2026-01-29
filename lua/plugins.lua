@@ -10,8 +10,8 @@ require("lazy").setup({
         end,
     },
     {
-        "vuki656/review.nvim",
-        -- dir = "~/Projects/personal/review.nvim",
+        -- "vuki656/review.nvim",
+        dir = "~/Projects/personal/review.nvim",
         config = true,
     },
     {

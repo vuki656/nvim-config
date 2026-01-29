@@ -2576,3 +2576,5 @@ setqflist
 Markview
 markview
 pubgrounds
+connectionstatechange
+icecandidate

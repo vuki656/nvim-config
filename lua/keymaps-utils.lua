@@ -54,39 +54,58 @@ function M.highlight_diagnostic_inline_code(bufnr)
 
     local ns = vim.api.nvim_create_namespace("diagnostic_inline_code")
     local lines = vim.api.nvim_buf_get_lines(bufnr, 0, -1, false)
+    local full_text = table.concat(lines, "\n")
+    local patterns = { "'[^']+'", "`[^`]+`" }
 
-    for line_idx, line in ipairs(lines) do
+    for _, pattern in ipairs(patterns) do
         local start_pos = 1
         while true do
-            local quote_start, quote_end = line:find("'[^']+'", start_pos)
-            if not quote_start then
+            local match_start, match_end = full_text:find(pattern, start_pos)
+            if not match_start then
                 break
             end
 
-            local code = line:sub(quote_start + 1, quote_end - 1)
+            local content = full_text:sub(match_start + 1, match_end - 1)
+            local is_path = content:match("^/") or content:match("^%./") or content:match("^%.%./")
+            local highlight = is_path and "DiagnosticInlinePath" or "DiagnosticInlineCode"
 
-            local ok, parser = pcall(vim.treesitter.get_string_parser, code, "typescript")
-            if ok and parser then
-                local trees = parser:parse()
-                if trees and #trees > 0 then
-                    local query = vim.treesitter.query.get("typescript", "highlights")
-                    if query then
-                        for id, node in query:iter_captures(trees[1]:root(), code) do
-                            local capture_name = query.captures[id]
-                            local _, start_col, _, end_col = node:range()
+            local start_line, start_col = M._offset_to_line_col(lines, match_start - 1)
+            local end_line, end_col = M._offset_to_line_col(lines, match_end)
 
-                            vim.api.nvim_buf_set_extmark(bufnr, ns, line_idx - 1, quote_start + start_col, {
-                                end_col = quote_start + end_col,
-                                hl_group = "@" .. capture_name .. ".typescript",
-                            })
-                        end
-                    end
+            if start_line == end_line then
+                vim.api.nvim_buf_set_extmark(bufnr, ns, start_line, start_col, {
+                    end_col = end_col,
+                    hl_group = highlight,
+                })
+            else
+                for highlight_line = start_line, end_line do
+                    local hl_start = highlight_line == start_line and start_col or 0
+                    local hl_end = highlight_line == end_line and end_col or #lines[highlight_line + 1]
+
+                    vim.api.nvim_buf_set_extmark(bufnr, ns, highlight_line, hl_start, {
+                        end_col = hl_end,
+                        hl_group = highlight,
+                    })
                 end
             end
 
-            start_pos = quote_end + 1
+            start_pos = match_end + 1
         end
     end
+end
+
+function M._offset_to_line_col(lines, offset)
+    local remaining = offset
+
+    for line_idx, line in ipairs(lines) do
+        local line_len = #line + 1
+        if remaining < line_len then
+            return line_idx - 1, remaining
+        end
+        remaining = remaining - line_len
+    end
+
+    return #lines - 1, #lines[#lines]
 end
 
 return M
