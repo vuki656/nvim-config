@@ -12,7 +12,9 @@ require("lazy").setup({
     {
         -- "vuki656/review.nvim",
         dir = "~/Projects/personal/review.nvim",
-        config = true,
+        config = function()
+            require("plugins.review")
+        end,
     },
     {
         "kevinhwang91/nvim-ufo",
