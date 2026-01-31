@@ -9,9 +9,9 @@ local keymaps_utils = require("keymaps-utils")
 set_keymap({
     list = {
         {
-            key = "<LEADER>ro",
+            key = "<LEADER>ob",
             actions = "<C-^>",
-            description = "Rotate between last 2 opened buffers",
+            description = "[Vim] Switch to previous buffer",
         },
         {
             key = "<C-h>",
@@ -32,20 +32,6 @@ set_keymap({
             key = "<C-k>",
             actions = "<C-w>k",
             description = "Navigate to the buffer above",
-        },
-        {
-            key = "<LEADER>qp",
-            actions = function()
-                vim.cmd.cprevious()
-            end,
-            description = "Navigate to previous quickfix item",
-        },
-        {
-            key = "<LEADER>qn",
-            actions = function()
-                vim.cmd.cnext()
-            end,
-            description = "Navigate to next quickfix item",
         },
     },
 })
@@ -127,11 +113,6 @@ set_keymap({
             description = "Insert empty line above",
         },
         {
-            key = "<LEADER>d",
-            actions = "<S-s><ESC>",
-            description = "Delete everything on the line",
-        },
-        {
             key = "V",
             actions = "v$",
             description = "Highlight until the end of the line",
@@ -184,17 +165,6 @@ set_keymap({
             end,
             description = "Apply the first misspell suggestion",
         },
-        {
-            key = "<LEADER>lf",
-            actions = function()
-                vim.api.nvim_input("[s")
-                vim.api.nvim_input("z=1<CR>")
-                vim.cmd("w")
-                vim.cmd("e")
-                vim.api.nvim_input("A")
-            end,
-            description = "Go to first misspell, fix it and go back to the end of line in insert mode",
-        },
     },
 })
 
@@ -212,23 +182,9 @@ set_keymap({
             description = "Show variable documentation in floating buffer",
         },
         {
-            key = "<LEADER>rn",
+            key = "<LEADER>lr",
             actions = vim.lsp.buf.rename,
-            description = "Rename variable",
-        },
-        {
-            key = "<LEADER>f0",
-            actions = function()
-                local cmd = "silent !prettier"
-                    .. " --config-precedence=prefer-file"
-                    .. " --ignore-path /dev/null"
-                    .. " --no-semi --tab-width 4"
-                    .. ' --print-width=80 --write "%"'
-
-                vim.cmd(cmd)
-                vim.cmd("e")
-            end,
-            description = "Format with Prettier",
+            description = "[LSP] Rename variable under cursor",
         },
         {
             key = "H",
@@ -244,18 +200,32 @@ set_keymap({
             description = "Display code action list menu in floating buffer",
         },
         {
-            key = "]d",
+            key = "<LEADER>ln",
             actions = function()
                 keymaps_utils.goto_diagnostic("next")
             end,
-            description = "Go to next diagnostic in current buffer",
+            description = "[LSP] Go to next diagnostic",
         },
         {
-            key = "[d",
+            key = "<LEADER>lp",
             actions = function()
                 keymaps_utils.goto_diagnostic("prev")
             end,
-            description = "Go to previous diagnostic in current buffer",
+            description = "[LSP] Go to previous diagnostic",
+        },
+        {
+            key = "<LEADER>lj",
+            actions = function()
+                vim.cmd.cnext()
+            end,
+            description = "[Vim] Go to next quickfix item",
+        },
+        {
+            key = "<LEADER>lk",
+            actions = function()
+                vim.cmd.cprevious()
+            end,
+            description = "[Vim] Go to previous quickfix item",
         },
     },
 })
@@ -267,42 +237,16 @@ set_keymap({
 set_keymap({
     list = {
         {
-            key = "<LEADER>cw",
-            actions = "g<C-g>",
-            description = "Display word count in current buffer",
-        },
-        {
-            key = "<LEADER>rs",
-            actions = function()
-                vim.cmd("luafile %")
-            end,
-            description = "Resource current lua buffer",
-        },
-        {
-            key = "<LEADER>sw",
-            actions = function()
-                vim.cmd("set wrap")
-            end,
-            description = "Enable wrapping in the buffer",
-        },
-        {
-            key = "<LEADER>sr",
-            actions = function()
-                vim.cmd("mkspell! ./spell/en.utf-8.add")
-            end,
-            description = "Recreate spell database file",
-        },
-        {
-            key = "<LEADER>mm",
+            key = "<LEADER>um",
             actions = "<CMD>messages<CR>",
-            description = "See neovim log",
+            description = "[Vim] Show neovim messages log",
         },
         {
-            key = "<LEADER>km",
+            key = "<LEADER>ok",
             actions = function()
                 vim.cmd("Telescope keymaps")
             end,
-            description = "Toggle keymap previewer",
+            description = "[Telescope] Open keymaps picker",
         },
         {
             key = "q:",

@@ -12,7 +12,7 @@ local zen_mode = require("zen-mode")
 set_keymap({
     list = {
         {
-            key = "<LEADER>fm",
+            key = "<LEADER>oz",
             actions = function()
                 zen_mode.toggle({
                     window = {
@@ -20,7 +20,7 @@ set_keymap({
                     },
                 })
             end,
-            description = "Toggle zen mode",
+            description = "[ZenMode] Toggle zen/focus mode",
         },
     },
 })

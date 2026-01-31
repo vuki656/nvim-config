@@ -34,5 +34,5 @@ set_keymap({
     actions = function()
         vim.cmd("TodoTelescope")
     end,
-    description = "Open TODOs in telescope picker",
+    description = "[Telescope] Find TODOs in project",
 })

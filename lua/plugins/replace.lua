@@ -31,9 +31,9 @@ spectre.setup({
 --------------------------------------------------------------------------------------------
 
 set_keymap({
-    key = "<LEADER>rp",
+    key = "<LEADER>pw",
     actions = function()
         spectre.toggle()
     end,
-    description = "Toggle global replace (spectre)",
+    description = "[Spectre] Project-wide search and replace",
 })

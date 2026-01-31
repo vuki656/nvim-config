@@ -23,39 +23,39 @@ git_conflict.setup({
 set_keymap({
     list = {
         {
-            key = "<LEADER>gmt",
+            key = "<LEADER>ht",
             actions = function()
                 vim.cmd("GitConflictChooseTheirs")
             end,
-            description = "Git conflict - Merge their change",
+            description = "[GitConflict] Accept their changes",
         },
         {
-            key = "<LEADER>gmb",
+            key = "<LEADER>ha",
             actions = function()
                 vim.cmd("GitConflictChooseBoth")
             end,
-            description = "Git conflict - Merge both changes",
+            description = "[GitConflict] Accept both/all changes",
         },
         {
-            key = "<LEADER>gmo",
+            key = "<LEADER>ho",
             actions = function()
                 vim.cmd("GitConflictChooseOurs")
             end,
-            description = "Git conflict - Merge our change",
+            description = "[GitConflict] Accept our changes",
         },
         {
-            key = "<LEADER>gmn",
+            key = "<LEADER>hj",
             actions = function()
                 vim.cmd("GitConflictNextConflict")
             end,
-            description = "Git conflict - Go to next conflict",
+            description = "[GitConflict] Go to next conflict",
         },
         {
-            key = "<LEADER>gmp",
+            key = "<LEADER>hk",
             actions = function()
                 vim.cmd("GitConflictPrevConflict")
             end,
-            description = "Git conflict - Go to next conflict",
+            description = "[GitConflict] Go to previous conflict",
         },
     },
 })

@@ -375,6 +375,13 @@ require("lazy").setup({
         end,
     },
     {
+        "folke/which-key.nvim",
+        event = "VeryLazy",
+        config = function()
+            require("plugins.which-key")
+        end,
+    },
+    {
         "wellle/targets.vim",
     },
     {

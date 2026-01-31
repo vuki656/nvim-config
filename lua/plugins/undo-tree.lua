@@ -25,22 +25,17 @@ vim.g.undotree_SetFocusWhenToggle = 1
 ------------------------------------------------------------------------------------------
 
 set_keymap({
-    list = {
-        {
-            key = "<LEADER>uo",
-            actions = function()
-                vim.cmd("NvimTreeClose")
-                vim.cmd("UndotreeToggle")
-            end,
-            description = "Open undotree",
-        },
-        {
-            key = "<LEADER>uc",
-            actions = function()
-                vim.cmd("UndotreeToggle")
-                vim.cmd("NvimTreeOpen")
-            end,
-            description = "Close undotree",
-        },
-    },
+    key = "<LEADER>ou",
+    actions = function()
+        local undotree_open = vim.fn.undotree().seq_cur ~= nil and vim.g.undotree_isopen == 1
+
+        if undotree_open then
+            vim.cmd("UndotreeToggle")
+            vim.cmd("NvimTreeOpen")
+        else
+            vim.cmd("NvimTreeClose")
+            vim.cmd("UndotreeToggle")
+        end
+    end,
+    description = "[UndoTree] Toggle undo tree",
 })

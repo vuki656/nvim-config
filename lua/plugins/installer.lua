@@ -69,5 +69,5 @@ set_keymap({
     actions = function()
         vim.cmd("Mason")
     end,
-    description = "Open lsp installer popup buffer",
+    description = "[Mason] Open LSP installer",
 })

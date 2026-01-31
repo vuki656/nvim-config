@@ -171,45 +171,45 @@ neotest.setup({
 set_keymap({
     list = {
         {
-            key = "<LEADER>jro",
-            actions = neotest.summary.toggle,
-            description = "Open neotest summary",
+            key = "<F13>",
+            actions = neotest.run.run,
+            description = "[Neotest] Run closest test",
         },
         {
-            key = "<LEADER>jrr",
-            actions = neotest.run.run_last,
-            description = "Run last test",
-        },
-        {
-            key = "<LEADER>jrf",
+            key = "<F14>",
             actions = function()
                 neotest.run.run(vim.fn.expand("%"))
             end,
-            description = "Run file",
+            description = "[Neotest] Run current file",
         },
         {
-            key = "<LEADER>jrt",
-            actions = neotest.run.run,
-            description = "Run closest test",
+            key = "<F15>",
+            actions = neotest.run.run_last,
+            description = "[Neotest] Run again (last test)",
         },
         {
-            key = "<LEADER>jrl",
+            key = "<F16>",
+            actions = neotest.summary.toggle,
+            description = "[Neotest] Open test summary",
+        },
+        {
+            key = "<F17>",
             actions = function()
                 neotest.output.open({ enter = true })
             end,
-            description = "Open test output",
+            description = "[Neotest] Show test errors/output",
         },
         {
-            key = "<LEADER>jrp",
+            key = "<F18>",
             actions = neotest.output_panel.toggle,
-            description = "Toggle output panel",
+            description = "[Neotest] Toggle output panel",
         },
         {
-            key = "<LEADER>jrd",
+            key = "<F19>",
             actions = function()
                 neotest.run.run({ strategy = "dap" })
             end,
-            description = "Debug closest test",
+            description = "[Neotest] Debug closest test",
         },
     },
 })

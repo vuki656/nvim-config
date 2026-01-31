@@ -65,9 +65,9 @@ conform.setup({
 ------------------------------------------------------------------------------------------
 
 set_keymap({
-    key = "<LEADER>fp",
+    key = "<LEADER>lf",
     actions = function()
         conform.format({ async = true })
     end,
-    description = "Format code",
+    description = "[Conform] Format current buffer",
 })

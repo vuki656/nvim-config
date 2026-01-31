@@ -549,15 +549,15 @@ set_keymap({
     list = {
         {
             modes = { "n" },
-            key = "<Leader>sr",
+            key = "<Leader>or",
             actions = function()
                 M.open()
             end,
-            description = "Search and replace",
+            description = "[SearchReplace] Open search and replace",
         },
         {
             modes = { "v" },
-            key = "<Leader>sr",
+            key = "<Leader>or",
             actions = function()
                 vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "n", false)
 
@@ -565,7 +565,7 @@ set_keymap({
                     M.open({ visual = true })
                 end, 10)
             end,
-            description = "Search and replace in selection",
+            description = "[SearchReplace] Open search and replace in selection",
         },
     },
 })

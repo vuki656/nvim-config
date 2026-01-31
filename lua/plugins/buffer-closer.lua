@@ -19,9 +19,9 @@ close_buffers.setup({
 ------------------------------------------------------------------------------------------
 
 set_keymap({
-    key = "<LEADER>ki",
+    key = "<LEADER>kb",
     actions = function()
         close_buffers.delete({ type = "hidden" })
     end,
-    description = "Delete/kill all inactive buffers",
+    description = "[BufClose] Kill all inactive buffers",
 })

@@ -43,9 +43,9 @@ vim.api.nvim_create_autocmd("User", {
 --------------------------------------------------------------------------------------------
 
 set_keymap({
-    key = "<LEADER>bb",
+    key = "<LEADER>os",
     actions = function()
         vim.cmd("Alpha")
     end,
-    description = "Open start screen",
+    description = "[Alpha] Open start screen",
 })

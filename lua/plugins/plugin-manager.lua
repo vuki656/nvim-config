@@ -34,7 +34,7 @@ set_keymap({
     actions = function()
         vim.cmd("Lazy")
     end,
-    description = "Open Lazy package/plugin manager",
+    description = "[Lazy] Open plugin manager",
 })
 
 ------------------------------------------------------------------------------------------

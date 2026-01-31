@@ -53,12 +53,12 @@ set_keymap({
         {
             key = "<LEADER>pg",
             actions = actions.git_status,
-            description = "Find changed git lines in project",
+            description = "[Telescope] Find changed git files",
         },
         {
-            key = "<LEADER>bc",
+            key = "<LEADER>pc",
             actions = actions.git_bcommits,
-            description = "Browse buffer commits",
+            description = "[Telescope] Browse buffer commits",
         },
         {
             key = "<LEADER>pf",
@@ -67,42 +67,32 @@ set_keymap({
                     hidden = true,
                 })
             end,
-            description = "Find git files in project",
+            description = "[Telescope] Find files in project",
         },
         {
             key = "<LEADER>ps",
             actions = actions.live_grep,
-            description = "Find text in project",
-        },
-        {
-            key = "<LEADER>pad",
-            actions = actions.diagnostics,
-            description = "Find project diagnostics (errors, warnings...)",
+            description = "[Telescope] Search text in project",
         },
         {
             key = "<LEADER>pr",
             actions = actions.lsp_references,
-            description = "Find variable references in project",
+            description = "[Telescope] Find LSP references",
         },
         {
             key = "<LEADER>pi",
             actions = actions.lsp_implementations,
-            description = "Find variable implementations in project",
+            description = "[Telescope] Find LSP implementations",
         },
         {
             key = "<LEADER>pd",
             actions = actions.lsp_definitions,
-            description = "Find variable definitions in project",
+            description = "[Telescope] Find LSP definitions",
         },
         {
-            key = "<LEADER>hl",
-            actions = actions.highlights,
-            description = "See all registered highlight groups",
-        },
-        {
-            key = "<LEADER>gh",
+            key = "<LEADER>pa",
             actions = actions.help_tags,
-            description = "Find in manual pages",
+            description = "[Telescope] Find in help pages",
         },
     },
 })

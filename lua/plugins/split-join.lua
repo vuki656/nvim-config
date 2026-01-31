@@ -21,5 +21,5 @@ set_keymap({
     actions = function()
         split_join.toggle()
     end,
-    description = "Toggle args single/multi line",
+    description = "[SplitJoin] Toggle args single/multi line",
 })

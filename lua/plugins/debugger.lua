@@ -212,59 +212,29 @@ dap.configurations.typescriptreact = js_configs
 set_keymap({
     list = {
         {
-            key = "<LEADER>db",
+            key = "<LEADER>ib",
             actions = dap.toggle_breakpoint,
-            description = "Toggle breakpoint",
+            description = "[DAP] Toggle breakpoint",
         },
         {
-            key = "<LEADER>dB",
-            actions = function()
-                dap.set_breakpoint(vim.fn.input("Breakpoint condition: "))
-            end,
-            description = "Set conditional breakpoint",
-        },
-        {
-            key = "<LEADER>dc",
+            key = "<LEADER>ic",
             actions = dap.continue,
-            description = "Start/Continue debugging",
+            description = "[DAP] Start/continue debugging",
         },
         {
-            key = "<LEADER>dq",
+            key = "<LEADER>iq",
             actions = dap.terminate,
-            description = "Terminate debug session",
+            description = "[DAP] Terminate debug session",
         },
         {
-            key = "<LEADER>dn",
+            key = "<LEADER>in",
             actions = dap.step_over,
-            description = "Step over",
+            description = "[DAP] Step over (next line)",
         },
         {
-            key = "<LEADER>di",
+            key = "<LEADER>is",
             actions = dap.step_into,
-            description = "Step into",
-        },
-        {
-            key = "<LEADER>do",
-            actions = dap.step_out,
-            description = "Step out",
-        },
-        {
-            key = "<LEADER>du",
-            actions = dapui.toggle,
-            description = "Toggle DAP UI",
-        },
-        {
-            key = "<LEADER>de",
-            actions = dapui.eval,
-            modes = { "n", "v" },
-            description = "Evaluate expression",
-        },
-        {
-            key = "<LEADER>dh",
-            actions = function()
-                require("dap.ui.widgets").hover()
-            end,
-            description = "Hover variable",
+            description = "[DAP] Step into function",
         },
     },
 })

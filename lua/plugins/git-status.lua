@@ -40,11 +40,11 @@ git_signs.setup({
             vim.keymap.set(mode, key, action, options)
         end
 
-        map("n", "]c", plugin.next_hunk)
-        map("n", "[c", plugin.prev_hunk)
-        map("n", "<LEADER>hR", plugin.reset_buffer)
-        map("n", "<LEADER>hr", plugin.reset_hunk)
-        map("n", "<LEADER>hp", plugin.preview_hunk)
+        map("n", "<LEADER>hn", plugin.next_hunk, { desc = "[Gitsigns] Go to next hunk" })
+        map("n", "<LEADER>hp", plugin.prev_hunk, { desc = "[Gitsigns] Go to previous hunk" })
+        map("n", "<LEADER>hb", plugin.reset_buffer, { desc = "[Gitsigns] Reset entire buffer to git state" })
+        map("n", "<LEADER>hr", plugin.reset_hunk, { desc = "[Gitsigns] Reset current hunk" })
+        map("n", "<LEADER>hv", plugin.preview_hunk, { desc = "[Gitsigns] Preview hunk diff" })
     end,
 })
 

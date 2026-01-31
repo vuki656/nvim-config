@@ -27,7 +27,7 @@ for index = 1, 9 do
         actions = function()
             harpoon:list():select(index)
         end,
-        description = "Jump to harpoon file " .. index,
+        description = "[Harpoon] Jump to marked file slot " .. index,
     })
 end
 
@@ -41,14 +41,14 @@ set_keymap({
                     title_pos = "center",
                 })
             end,
-            description = "Open marked files list",
+            description = "[Harpoon] Open marked files list",
         },
         {
             key = "<LEADER>mf",
             actions = function()
                 harpoon:list():add()
             end,
-            description = "Mark currently opened buffer",
+            description = "[Harpoon] Mark current file",
         },
     },
 })

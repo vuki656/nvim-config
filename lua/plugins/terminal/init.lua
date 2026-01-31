@@ -27,7 +27,7 @@ vim.keymap.set(
     "n",
     "<leader>lg",
     ":!tmux new-window -c " .. vim.fn.getcwd() .. " -- lazygit <CR><CR>",
-    { silent = true }
+    { silent = true, desc = "[Terminal] Open lazygit in tmux" }
 )
 
 set_keymap({
@@ -35,17 +35,17 @@ set_keymap({
         {
             key = "<LEADER>ld",
             actions = toggle_docker_buffer,
-            description = "Open a floating buffer with lazydocker",
+            description = "[Terminal] Open lazydocker",
         },
         {
-            key = "<LEADER>tm",
+            key = "<LEADER>ot",
             actions = toggle_terminal_buffer,
-            description = "Open a floating buffer with a blank terminal",
+            description = "[Terminal] Open floating terminal",
         },
         {
-            key = "<LEADER>ras",
+            key = "<LEADER>le",
             actions = toggle_script_runner_buffer,
-            description = "Choose a package.json script to run",
+            description = "[Terminal] Run package.json script",
         },
     },
 })
