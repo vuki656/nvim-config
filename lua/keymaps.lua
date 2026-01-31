@@ -1,6 +1,6 @@
+local keymaps_utils = require("keymaps-utils")
 local set_keymap = require("utils.set-keymap")
 local set_terminal_keymap = require("utils.set-terminal-keymap")
-local keymaps_utils = require("keymaps-utils")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- NAVIGATION -------------------------------------------
@@ -9,7 +9,7 @@ local keymaps_utils = require("keymaps-utils")
 set_keymap({
     list = {
         {
-            key = "<LEADER>ob",
+            key = "<LEADER>ro",
             actions = "<C-^>",
             description = "[Vim] Switch to previous buffer",
         },

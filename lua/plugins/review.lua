@@ -2,8 +2,8 @@
 -- Description: Code review tool
 -- Link: https://github.com/vuki656/review.nvim
 
-local review = require("review")
 local quick_comments = require("review.quick_comments")
+local review = require("review")
 
 local set_keymap = require("utils.set-keymap")
 
