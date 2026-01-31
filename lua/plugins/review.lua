@@ -20,7 +20,7 @@ review.setup()
 set_keymap({
     list = {
         {
-            key = "<LEADER>ov",
+            key = "<LEADER>or",
             actions = review.toggle,
             description = "[Review] Toggle review panel",
         },

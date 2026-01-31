@@ -43,7 +43,7 @@ vim.api.nvim_create_autocmd("User", {
 --------------------------------------------------------------------------------------------
 
 set_keymap({
-    key = "<LEADER>os",
+    key = "<LEADER>oh",
     actions = function()
         vim.cmd("Alpha")
     end,

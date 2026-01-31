@@ -549,7 +549,7 @@ set_keymap({
     list = {
         {
             modes = { "n" },
-            key = "<Leader>or",
+            key = "<Leader>os",
             actions = function()
                 M.open()
             end,
@@ -557,7 +557,7 @@ set_keymap({
         },
         {
             modes = { "v" },
-            key = "<Leader>or",
+            key = "<Leader>os",
             actions = function()
                 vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "n", false)
 

@@ -17,7 +17,7 @@ git_linker.setup()
 ------------------------------------------------------------------------------------------
 
 set_keymap({
-    key = "<LEADER>hc",
+    key = "<LEADER>gl",
     actions = git_linker.get_buf_range_url,
     description = "[GitLinker] Copy git permalink to clipboard",
 })
