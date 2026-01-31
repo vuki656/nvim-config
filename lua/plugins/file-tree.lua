@@ -116,11 +116,26 @@ set_keymap({
             description = "[NvimTree] Toggle file tree",
         },
         {
-            key = "<LEADER>of",
+            key = "<LEADER>to",
             actions = function()
                 vim.cmd("NvimTreeFindFile")
             end,
-            description = "[NvimTree] Find current file in tree",
+            description = "[NvimTree] Find opened file in tree",
+        },
+        {
+            key = "<LEADER>tr",
+            actions = function()
+                vim.cmd("NvimTreeRefresh")
+            end,
+            description = "[NvimTree] Refresh tree",
+        },
+        {
+            key = "<LEADER>tk",
+            actions = function()
+                vim.cmd("NvimTreeCollapse")
+                vim.cmd("NvimTreeFindFile")
+            end,
+            description = "[NvimTree] Collapse tree and find opened file",
         },
     },
 })
