@@ -5,6 +5,7 @@ local set_highlight = require("utils.set-highlight")
 local set_sign = require("utils.set-sign")
 
 local background = colors.background
+local background_dark = colors.background_dark
 local background_light = colors.background_light
 local purple = colors.purple
 local red = colors.red
@@ -194,6 +195,9 @@ set_highlight({
         { group = "@text.literal.markdown_inline", foreground = green },
         { group = "@bash.argumentFlag", foreground = green },
         { group = "@bash.specialKeyword", foreground = blue },
+
+        -- Markview
+        { group = "MarkviewCode", background = background_dark },
 
         -- HTML
         { group = "htmlTagName", foreground = yellow },
