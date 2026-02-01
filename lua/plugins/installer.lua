@@ -54,6 +54,7 @@ installer_tools.setup({
         "stylua",
         "yamllint",
         "black",
+        "isort",
         "sqlfluff",
         "buf",
         "tflint",

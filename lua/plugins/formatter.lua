@@ -30,7 +30,9 @@ conform.setup({
         lua = { "stylua" },
         proto = { "buf" },
         sh = { "shfmt" },
-        python = { "black" },
+        sql = { "sqlfluff" },
+        toml = { "taplo" },
+        python = { "isort", "black" },
         go = { "gofmt" },
     },
 
@@ -58,7 +60,7 @@ conform.setup({
         timeout_ms = 1000,
         lsp_format = "fallback",
     },
-    notify_on_error = true,
+    notify_on_error = false,
 })
 
 ------------------------------------------------------------------------------------------
