@@ -3,6 +3,7 @@
 -- Link: https://github.com/stevearc/conform.nvim
 
 local conform = require("conform")
+local fidget_progress = require("fidget.progress")
 local set_keymap = require("utils.set-keymap")
 
 ------------------------------------------------------------------------------------------
@@ -67,7 +68,20 @@ conform.setup({
 set_keymap({
     key = "<LEADER>lf",
     actions = function()
-        conform.format({ async = true })
+        local handle = fidget_progress.handle.create({
+            title = "Formatting",
+            lsp_client = { name = "conform" },
+        })
+
+        conform.format({ async = true }, function(error)
+            if error then
+                handle.message = "Failed"
+            else
+                handle.message = "Done"
+            end
+
+            handle:finish()
+        end)
     end,
     description = "[Conform] Format current buffer",
 })
