@@ -1,17 +1,13 @@
-local colors = require("utils.colors")
-
 return {
-    provider = "file_info",
-    hl = {
-        fg = colors.white,
-        bg = colors.background,
-    },
-    left_sep = {
-        {
-            str = " ",
-            hl = {
-                bg = colors.background,
-            },
-        },
-    },
+    render = function()
+        local name = vim.fn.expand("%:t")
+
+        if name == "" then
+            return ""
+        end
+
+        local modified = vim.bo.modified and " [+]" or ""
+
+        return "%#StatusLineFileName# " .. name .. modified
+    end,
 }

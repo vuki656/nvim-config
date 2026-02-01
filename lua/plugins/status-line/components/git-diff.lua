@@ -1,26 +1,25 @@
-local colors = require("utils.colors")
-
 return {
-    added = {
-        provider = "git_diff_added",
-        hl = {
-            fg = colors.green,
-            bg = colors.background,
-        },
-    },
-    changed = {
-        icon = "  ",
-        provider = "git_diff_changed",
-        hl = {
-            fg = colors.orange,
-            bg = colors.background,
-        },
-    },
-    removed = {
-        provider = "git_diff_removed",
-        hl = {
-            fg = colors.red,
-            bg = colors.background,
-        },
-    },
+    render = function()
+        local status = vim.b.gitsigns_status_dict
+
+        if not status then
+            return ""
+        end
+
+        local result = ""
+
+        if (status.added or 0) > 0 then
+            result = result .. "%#StatusLineGitAdded# +" .. status.added
+        end
+
+        if (status.removed or 0) > 0 then
+            result = result .. "%#StatusLineGitRemoved# -" .. status.removed
+        end
+
+        if (status.changed or 0) > 0 then
+            result = result .. "%#StatusLineGitChanged#  " .. status.changed
+        end
+
+        return result
+    end,
 }

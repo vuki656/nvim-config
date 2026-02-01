@@ -182,13 +182,11 @@ require("lazy").setup({
         end,
     },
     {
-        "vuki656/feline.nvim",
+        dir = vim.fn.stdpath("config") .. "/lua/plugins/status-line",
+        event = "VeryLazy",
         config = function()
             require("plugins.status-line")
         end,
-        dependencies = {
-            "nvim-tree/nvim-web-devicons",
-        },
     },
     {
         "folke/todo-comments.nvim",

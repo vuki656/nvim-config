@@ -1,14 +1,11 @@
 local lazy = require("lazy.status")
 
-local colors = require("utils.colors")
-
 return {
-    provider = function()
-        return " " .. lazy.updates() .. " "
+    render = function()
+        if not lazy.has_updates() then
+            return ""
+        end
+
+        return "%#StatusLineUpdates# " .. lazy.updates() .. " "
     end,
-    enabled = lazy.has_updates,
-    hl = {
-        fg = colors.background,
-        bg = colors.green,
-    },
 }
