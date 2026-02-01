@@ -20,17 +20,11 @@ vim.opt.clipboard = "unnamedplus"
 -- Highlight line you are on
 vim.opt.cursorline = true
 
--- Enables search results as you type
-vim.opt.incsearch = true
-
 -- Enables smart indenting
 vim.opt.smartindent = true
 
 -- Time after the buffer is saved
 vim.opt.updatetime = 300
-
--- Enables moues scroll
-vim.opt.mouse = "a"
 
 -- Disables swap files
 vim.opt.swapfile = false
@@ -52,12 +46,6 @@ vim.opt.splitright = true
 
 -- Prefer opening new buffers below
 vim.opt.splitbelow = true
-
--- Enable nvim set colors
-vim.opt.termguicolors = true
-
--- Enable changing buffers without saving
-vim.opt.hidden = true
 
 -- Ignore case when searching
 vim.opt.ignorecase = true
@@ -114,6 +102,23 @@ vim.opt.showmode = false
 ------------------------------------ AUTO COMMANDS ---------------------------------------
 ------------------------------------------------------------------------------------------
 
+-- Auto save modifiable buffers when leaving insert mode or changing text
+vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
+    group = vim.api.nvim_create_augroup("AutoSave", { clear = true }),
+    callback = function(event)
+        local buf = event.buf
+        local excluded = { "oil", "harpoon" }
+
+        if
+            vim.bo[buf].modifiable
+            and vim.bo[buf].buftype == ""
+            and not vim.tbl_contains(excluded, vim.bo[buf].filetype)
+        then
+            vim.cmd("silent! write")
+        end
+    end,
+})
+
 ------------------------------------------------------------------------------------------
 ------------------------------------ FILETYPES -------------------------------------------
 ------------------------------------------------------------------------------------------
@@ -140,9 +145,6 @@ vim.filetype.add({
 ------------------------------------ MISC ------------------------------------------------
 ------------------------------------------------------------------------------------------
 
--- Enable syntax
-vim.cmd("syntax on")
-
 -- Spell file location
 vim.opt.spellfile = vim.fn.expand("$HOME/.config/nvim/spell/en.utf-8.add")
 
@@ -160,9 +162,6 @@ vim.g.loaded_perl_provider = 0
 vim.g.loaded_ruby_provider = 0
 vim.g.loaded_python3_provider = 0
 vim.g.loaded_node_provider = 0
-
--- Fix cursor hold
-vim.g.cursorhold_updatetime = 100
 
 -- Ignore capitalized word misspelling
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {

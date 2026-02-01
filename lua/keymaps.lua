@@ -1,4 +1,4 @@
-local keymaps_utils = require("keymaps-utils")
+local keymaps_utils = require("utils.keymaps")
 local set_keymap = require("utils.set-keymap")
 local set_terminal_keymap = require("utils.set-terminal-keymap")
 

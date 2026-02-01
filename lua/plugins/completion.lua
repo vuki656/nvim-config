@@ -3,8 +3,10 @@
 -- Link: https://github.com/hrsh7th/nvim-cmp
 
 local cmp = require("cmp")
-local icons = require("lspkind")
+local lspkind = require("lspkind")
 local snippets = require("luasnip")
+
+lspkind.init()
 
 local colors = require("utils.colors")
 local set_highlight = require("utils.set-highlight")
@@ -65,7 +67,7 @@ cmp.setup({
         ["<C-f>"] = cmp.mapping.scroll_docs(-4),
     },
     formatting = {
-        format = icons.cmp_format(),
+        format = lspkind.cmp_format(),
     },
     sources = {
         { name = "nvim_lsp" },
@@ -127,17 +129,20 @@ cmp.setup.cmdline("/", {
 ------------------------------------- COLORS -----------------------------------------------
 --------------------------------------------------------------------------------------------
 
-set_highlight({ group = "CmpItemKindDefault", foreground = colors.blue })
-
-vim.api.nvim_set_hl(0, "CmpItemAbbrDeprecated", { strikethrough = true, fg = colors.red })
-vim.api.nvim_set_hl(0, "CmpItemAbbrMatch", { fg = colors.red })
-vim.api.nvim_set_hl(0, "CmpItemKindVariable", { fg = colors.orange })
-vim.api.nvim_set_hl(0, "CmpItemKindInterface", { fg = colors.purple })
-vim.api.nvim_set_hl(0, "CmpItemKindText", { fg = colors.white })
-vim.api.nvim_set_hl(0, "CmpItemKindFunction", { fg = colors.blue })
-vim.api.nvim_set_hl(0, "CmpItemKindClass", { fg = colors.yellow })
-vim.api.nvim_set_hl(0, "CmpItemKindConstant", { fg = colors.green })
-vim.api.nvim_set_hl(0, "CmpItemKindField", { fg = colors.orange })
-vim.api.nvim_set_hl(0, "CmpItemKindMethod", { fg = colors.blue })
-vim.api.nvim_set_hl(0, "CmpItemKindKeyword", { fg = colors.purple })
-vim.api.nvim_set_hl(0, "CmpItemKindProperty", { fg = colors.red })
+set_highlight({
+    list = {
+        { group = "CmpItemKindDefault", foreground = colors.blue },
+        { group = "CmpItemAbbrDeprecated", foreground = colors.red, options = "strikethrough" },
+        { group = "CmpItemAbbrMatch", foreground = colors.red },
+        { group = "CmpItemKindVariable", foreground = colors.orange },
+        { group = "CmpItemKindInterface", foreground = colors.purple },
+        { group = "CmpItemKindText", foreground = colors.white },
+        { group = "CmpItemKindFunction", foreground = colors.blue },
+        { group = "CmpItemKindClass", foreground = colors.yellow },
+        { group = "CmpItemKindConstant", foreground = colors.green },
+        { group = "CmpItemKindField", foreground = colors.orange },
+        { group = "CmpItemKindMethod", foreground = colors.blue },
+        { group = "CmpItemKindKeyword", foreground = colors.purple },
+        { group = "CmpItemKindProperty", foreground = colors.red },
+    },
+})

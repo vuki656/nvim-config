@@ -36,7 +36,6 @@ require("lazy").setup({
         dependencies = {
             "nvim-neotest/nvim-nio",
             "nvim-lua/plenary.nvim",
-            "antoinemadec/FixCursorHold.nvim",
             "nvim-treesitter/nvim-treesitter",
             "marilari88/neotest-vitest",
             "nvim-neotest/neotest-jest",
@@ -75,7 +74,7 @@ require("lazy").setup({
         "stevearc/oil.nvim",
         dependencies = { "nvim-tree/nvim-web-devicons" },
         config = function()
-            require("plugins.file-tree-2")
+            require("plugins.file-explorer")
         end,
     },
     {
@@ -92,11 +91,8 @@ require("lazy").setup({
         end,
     },
     {
-        "nvim-pack/nvim-spectre",
+        "MagicDuck/grug-far.nvim",
         event = "VeryLazy",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-        },
         config = function()
             require("plugins.replace")
         end,
@@ -112,26 +108,9 @@ require("lazy").setup({
         "MunifTanjim/nui.nvim",
     },
     {
-        "pmizio/typescript-tools.nvim",
-        commit = "bf11d98ad5736e1cbc1082ca9a03196d45c701f1",
+        "antosha417/nvim-lsp-file-operations",
         dependencies = {
             "nvim-lua/plenary.nvim",
-            "neovim/nvim-lspconfig",
-            {
-                "antosha417/nvim-lsp-file-operations",
-                dependencies = {
-                    "nvim-lua/plenary.nvim",
-                },
-            },
-            {
-                "davidosomething/format-ts-errors.nvim",
-                ft = {
-                    "javascript",
-                    "javascriptreact",
-                    "typescript",
-                    "typescriptreact",
-                },
-            },
         },
     },
     {
@@ -245,12 +224,7 @@ require("lazy").setup({
             require("plugins.completion")
         end,
         dependencies = {
-            {
-                "onsails/lspkind.nvim",
-                config = function()
-                    require("plugins.completion-icons")
-                end,
-            },
+            "onsails/lspkind.nvim",
             {
                 "l3mon4d3/luasnip",
                 config = function()
@@ -304,15 +278,6 @@ require("lazy").setup({
         end,
     },
     {
-        "numtostr/comment.nvim",
-        config = function()
-            require("plugins.commenting")
-        end,
-        dependencies = {
-            "joosepalviste/nvim-ts-context-commentstring",
-        },
-    },
-    {
         "nguyenvukhang/nvim-toggler",
         event = "VeryLazy",
         config = function()
@@ -324,20 +289,11 @@ require("lazy").setup({
         config = function()
             require("plugins.parser")
         end,
-        dependencies = {
-            "nvim-treesitter/playground",
-        },
     },
     {
         "lukas-reineke/indent-blankline.nvim",
         config = function()
             require("plugins.indent-line")
-        end,
-    },
-    {
-        "pocco81/auto-save.nvim",
-        config = function()
-            require("plugins.auto-save")
         end,
     },
     {

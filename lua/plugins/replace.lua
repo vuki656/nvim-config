@@ -1,29 +1,16 @@
--- Name: Spectre
+-- Name: Grug Far
 -- Description: Global search and replace
--- Link: https://github.com/nvim-pack/nvim-spectre
+-- Link: https://github.com/MagicDuck/grug-far.nvim
 
+local grug_far = require("grug-far")
 local set_keymap = require("utils.set-keymap")
-local spectre = require("spectre")
 
 ------------------------------------------------------------------------------------------
 ------------------------------------ SETUP -----------------------------------------------
 ------------------------------------------------------------------------------------------
 
-spectre.setup({
-    open_cmd = "new",
-    live_update = false,
-    find_engine = {
-        ["rg"] = {
-            args = {
-                "--color=never",
-                "--no-heading",
-                "--with-filename",
-                "--line-number",
-                "--column",
-                "--hidden",
-            },
-        },
-    },
+grug_far.setup({
+    windowCreationCommand = "split",
 })
 
 --------------------------------------------------------------------------------------------
@@ -33,7 +20,7 @@ spectre.setup({
 set_keymap({
     key = "<LEADER>pw",
     actions = function()
-        spectre.toggle()
+        grug_far.open()
     end,
-    description = "[Spectre] Project-wide search and replace",
+    description = "[Grug Far] Project-wide search and replace",
 })
