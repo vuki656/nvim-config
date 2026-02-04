@@ -2,6 +2,22 @@ local config = require("plugins.plugin-manager")
 
 require("lazy").setup({
     {
+        dir = "~/Projects/personal/driver.nvim",
+        keys = {
+            { "<leader>cc", desc = "Toggle Driver chat" },
+            { "<leader>cs", desc = "Quick send to Driver" },
+        },
+        opts = {
+            process = {
+                permission_mode = "bypassPermissions",
+            },
+            ui = {
+                width = 80,
+                position = "right",
+            },
+        },
+    },
+    {
         "OXY2DEV/markview.nvim",
         lazy = false,
         dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -284,6 +300,7 @@ require("lazy").setup({
     },
     {
         "nvim-treesitter/nvim-treesitter",
+        branch = "master",
         config = function()
             require("plugins.parser")
         end,
