@@ -12,6 +12,7 @@ local set_keymap = require("utils.set-keymap")
 
 treesitter_configs.setup({
     ensure_installed = "all",
+    ignore_install = { "ipkg" },
     highlight = {
         enable = true,
         disable = function(_, bufnr)
