@@ -36,6 +36,10 @@ lint.linters_by_ft = {
         "yamllint",
         "actionlint",
     },
+    php = {
+        "phpstan",
+        "phpcs",
+    },
     sql = {
         "sqlfluff",
     },

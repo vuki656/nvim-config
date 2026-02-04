@@ -58,6 +58,9 @@ installer_tools.setup({
         "sqlfluff",
         "buf",
         "tflint",
+        "php-cs-fixer",
+        "phpstan",
+        "phpcs",
     },
 })
 

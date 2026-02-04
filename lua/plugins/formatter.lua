@@ -34,6 +34,8 @@ conform.setup({
         toml = { "taplo" },
         python = { "isort", "black" },
         go = { "gofmt" },
+        php = { "php_cs_fixer" },
+        twig = { "prettier" },
     },
 
     formatters = {

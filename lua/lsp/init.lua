@@ -30,6 +30,7 @@ M.servers = {
     "jsonls",
     "lemminx",
     "lua_ls",
+    "phpactor",
     "prismals",
     "pyright",
     "stylelint_lsp",
@@ -37,6 +38,7 @@ M.servers = {
     "taplo",
     "terraformls",
     "tsgo",
+    "twiggy_language_server",
     "vimls",
     "yamlls",
 }
