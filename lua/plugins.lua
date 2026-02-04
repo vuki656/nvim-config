@@ -169,12 +169,6 @@ require("lazy").setup({
         end,
     },
     {
-        "ahmedkhalf/project.nvim",
-        config = function()
-            require("plugins.project-manager")
-        end,
-    },
-    {
         "b0o/schemastore.nvim",
     },
     {
