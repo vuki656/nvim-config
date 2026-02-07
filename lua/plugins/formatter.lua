@@ -36,6 +36,7 @@ conform.setup({
         go = { "gofmt" },
         php = { "php_cs_fixer" },
         twig = { "prettier" },
+        dotenv = { "trim_leading_whitespace", "trim_whitespace", "trim_newlines" },
     },
 
     formatters = {
@@ -56,6 +57,11 @@ conform.setup({
         stylelint = {
             args = { "--fix", "$FILENAME" },
             stdin = false,
+        },
+        trim_leading_whitespace = {
+            command = "sed",
+            args = { "s/^[[:space:]]*//" },
+            stdin = true,
         },
     },
     default_format_opts = {
