@@ -24,7 +24,10 @@ conform.setup({
         graphql = { "prettier" },
         css = { "stylelint", "prettier" },
         javascript = { "prettier" },
-        typescript = { "prettier" },
+        typescript = {
+            "prettier",
+            -- "eslint_d"
+        },
         javascriptreact = { "prettier" },
         typescriptreact = { "prettier" },
         lua = { "stylua" },
