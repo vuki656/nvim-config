@@ -38,12 +38,12 @@ set_keymap({
             description = "[Terminal] Open lazydocker",
         },
         {
-            key = "<LEADER>ot",
+            key = "<LEADER>tm",
             actions = toggle_terminal_buffer,
             description = "[Terminal] Open floating terminal",
         },
         {
-            key = "<LEADER>le",
+            key = "<LEADER>ras",
             actions = toggle_script_runner_buffer,
             description = "[Terminal] Run package.json script",
         },
