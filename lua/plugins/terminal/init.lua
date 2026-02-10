@@ -38,7 +38,7 @@ set_keymap({
             description = "[Terminal] Open lazydocker",
         },
         {
-            key = "<LEADER>tm",
+            key = "<LEADER>ot",
             actions = toggle_terminal_buffer,
             description = "[Terminal] Open floating terminal",
         },

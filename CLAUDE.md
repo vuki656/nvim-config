@@ -38,7 +38,7 @@ Each plugin has its own file in `lua/plugins/` that handles setup, keymaps, and 
 | `<Leader>fp` | Format file (formatter.nvim or LSP) |
 | `<Leader>lg` | Open lazygit in tmux |
 | `<Leader>ld` | Open lazydocker |
-| `<Leader>tm` | Open floating terminal |
+| `<Leader>ot` | Open floating terminal |
 | `<Leader>ls` | Open Mason installer |
 | `<Leader>lre` | Restart LSP |
 | `L` | Hover documentation |
