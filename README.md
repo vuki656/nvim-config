@@ -14,7 +14,3 @@
     │   └── settings.lua                    # Editor settings
     ├── spell                               # Custom dictionary word database
     └── init.lua                            # Project entry file from where everything is initialized
-
-## Notes
-
--   When changing node version with `nvm`, all global `NPM` packages have to be reinstalled.
