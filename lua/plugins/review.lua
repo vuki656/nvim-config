@@ -30,9 +30,14 @@ set_keymap({
             description = "[Review] Toggle comment panel",
         },
         {
-            key = "<LEADER>lc",
+            key = "<LEADER>la",
             actions = quick_comments.add,
             description = "[Review] Add quick comment",
+        },
+        {
+            key = "<LEADER>lc",
+            actions = quick_comments.copy,
+            description = "[Review] Copy quick comments",
         },
     },
 })
