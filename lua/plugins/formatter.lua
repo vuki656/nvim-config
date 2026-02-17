@@ -45,13 +45,11 @@ conform.setup({
     formatters = {
         prettier = {
             prepend_args = {
-                "--stdin-filepath",
-                "$FILENAME",
                 "--tab-width",
                 "4",
                 "--no-semi",
                 "--ignore-path=''",
-                "--config-precedence=file-override",
+                "--config-precedence=prefer-file",
             },
         },
         black = {
