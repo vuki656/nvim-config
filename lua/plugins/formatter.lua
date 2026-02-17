@@ -24,10 +24,7 @@ conform.setup({
         graphql = { "prettier" },
         css = { "stylelint", "prettier" },
         javascript = { "prettier" },
-        typescript = {
-            "prettier",
-            -- "eslint_d"
-        },
+        typescript = { "prettier" },
         javascriptreact = { "prettier" },
         typescriptreact = { "prettier" },
         lua = { "stylua" },
@@ -77,22 +74,46 @@ conform.setup({
 ------------------------------------------------------------------------------------------
 
 set_keymap({
-    key = "<LEADER>lf",
-    actions = function()
-        local handle = fidget_progress.handle.create({
-            title = "Formatting",
-            lsp_client = { name = "conform" },
-        })
+    list = {
+        {
+            key = "<LEADER>lf",
+            actions = function()
+                local handle = fidget_progress.handle.create({
+                    title = "Formatting",
+                    lsp_client = { name = "conform" },
+                })
 
-        conform.format({ async = true }, function(error)
-            if error then
-                handle.message = "Failed"
-            else
-                handle.message = "Done"
-            end
+                conform.format({ async = true }, function(error)
+                    if error then
+                        handle.message = "Failed"
+                    else
+                        handle.message = "Done"
+                    end
 
-            handle:finish()
-        end)
-    end,
-    description = "[Conform] Format current buffer",
+                    handle:finish()
+                end)
+            end,
+            description = "[Conform] Format current buffer",
+        },
+        {
+            key = "<LEADER>le",
+            actions = function()
+                local handle = fidget_progress.handle.create({
+                    title = "Formatting (eslint)",
+                    lsp_client = { name = "conform" },
+                })
+
+                conform.format({ async = true, formatters = { "eslint_d" } }, function(error)
+                    if error then
+                        handle.message = "Failed"
+                    else
+                        handle.message = "Done"
+                    end
+
+                    handle:finish()
+                end)
+            end,
+            description = "[Conform] Format with eslint_d",
+        },
+    },
 })
