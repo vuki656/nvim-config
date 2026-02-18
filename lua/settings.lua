@@ -92,10 +92,7 @@ vim.opt.laststatus = 3
 -- Scroll offset
 vim.opt.scrolloff = 15
 
--- Scroll amount
-vim.opt.scroll = 15
-
--- Scroll amount
+-- Hide mode indicator
 vim.opt.showmode = false
 
 ------------------------------------------------------------------------------------------
