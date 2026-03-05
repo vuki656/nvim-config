@@ -11,6 +11,10 @@ local set_keymap = require("utils.set-keymap")
 
 grug_far.setup({
     windowCreationCommand = "split",
+    keymaps = {
+        replace = { n = "<Leader>ra" },
+        applyNext = { n = "<Leader>rn" },
+    },
 })
 
 --------------------------------------------------------------------------------------------
