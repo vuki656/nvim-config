@@ -22,7 +22,6 @@ Each plugin has its own file in `lua/plugins/` following a consistent structure:
 
 ### Local/Dev Plugins
 Two plugins loaded from local paths:
-- `~/Projects/personal/driver.nvim` - AI chat plugin
 - `~/Projects/personal/review.nvim` - Code review plugin
 
 ## Key Keymaps (Leader = Space)
