@@ -2,9 +2,7 @@ local config = require("plugins.plugin-manager")
 
 require("lazy").setup({
     {
-        "OXY2DEV/markview.nvim",
-        lazy = false,
-        dependencies = { "nvim-tree/nvim-web-devicons" },
+        dir = "~/Projects/personal/markdown.nvim",
         config = function()
             require("plugins.doc-highlighter")
         end,

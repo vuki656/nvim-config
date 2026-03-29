@@ -1,15 +1,11 @@
--- Name: Markview
--- Description: Markdown preview
--- Link: https://github.com/OXY2DEV/markview.nvim
+-- Name: markdown.nvim
+-- Description: Pretty markdown preview in a split
+-- Link: https://github.com/vuki656/markdown.nvim
 
-local markview = require("markview")
+local markdown = require("markdown")
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- SETUP ------------------------------------------------
 ------------------------------------------------------------------------------------------
 
-markview.setup({
-    icons = {
-        provider = "devicons",
-    },
-})
+markdown.setup()
