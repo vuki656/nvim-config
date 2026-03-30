@@ -93,7 +93,9 @@ vim.o.statusline = "%!v:lua.require('plugins.status-line').render()"
 vim.api.nvim_create_autocmd({ "DiagnosticChanged", "BufEnter", "User" }, {
     pattern = { "*", "*", "GitSignsUpdate" },
     callback = function()
-        vim.cmd("redrawstatus")
+        vim.schedule(function()
+            vim.cmd("redrawstatus")
+        end)
     end,
 })
 
