@@ -762,13 +762,7 @@ local function open_menu(package_dir, git_root, restore_cursor_command)
             local was_favorite = is_favorite(git_root, item.command, item.package_dir)
             toggle_favorite(git_root, item.command, item.package_dir)
             menu:unmount()
-            if was_favorite then
-                -- Unfavoriting from Favorites section - stay at same row
-                open_menu(package_dir, git_root, row)
-            else
-                -- Adding favorite - find in Scripts section
-                open_menu(package_dir, git_root, item.command)
-            end
+            open_menu(package_dir, git_root, row)
         end
     end, { noremap = true, nowait = true })
 
