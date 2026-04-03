@@ -33,7 +33,6 @@ M.servers = {
     "phpactor",
     "prismals",
     "pyright",
-    "stylelint_lsp",
     "tailwindcss",
     "taplo",
     "terraformls",
