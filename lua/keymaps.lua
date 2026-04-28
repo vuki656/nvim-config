@@ -121,6 +121,11 @@ set_keymap({
             description = "Insert empty line above",
         },
         {
+            key = "<LEADER>d",
+            actions = "<S-s><ESC>",
+            description = "Delete everything on the line",
+        },
+        {
             key = "V",
             actions = "v$",
             description = "Highlight until the end of the line",
