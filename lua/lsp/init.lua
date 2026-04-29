@@ -48,22 +48,13 @@ for _, server in ipairs(M.servers) do
     vim.lsp.config(server, config)
 end
 
-vim.api.nvim_create_autocmd("BufEnter", {
-    group = vim.api.nvim_create_augroup("TsgoRefreshDiagnostics", { clear = true }),
-    callback = function(event)
-        local clients = vim.lsp.get_clients({ bufnr = event.buf, name = "tsgo" })
+vim.opt.autoread = true
 
-        if #clients == 0 then
-            return
-        end
-
-        local params = {
-            textDocument = vim.lsp.util.make_text_document_params(event.buf),
-            contentChanges = {},
-        }
-
-        for _, client in ipairs(clients) do
-            client:notify("textDocument/didChange", params)
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "TermLeave" }, {
+    group = vim.api.nvim_create_augroup("AutoReloadChangedFiles", { clear = true }),
+    callback = function()
+        if vim.fn.mode() ~= "c" then
+            vim.cmd.checktime()
         end
     end,
 })
