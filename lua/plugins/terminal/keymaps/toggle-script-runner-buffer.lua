@@ -436,13 +436,23 @@ local function on_submit(item, git_root)
         hidden = false,
     }):toggle()
 
+    local pnpm_lock = io.open(item.package_dir .. "/pnpm-lock.yaml", "r")
     local npm_lock = io.open(item.package_dir .. "/package-lock.json", "r")
 
     local command = "yarn "
 
+    if pnpm_lock ~= nil then
+        command = "pnpm run "
+    elseif npm_lock ~= nil then
+        command = "npm run "
+    end
+
+    if pnpm_lock ~= nil then
+        pnpm_lock:close()
+    end
+
     if npm_lock ~= nil then
         npm_lock:close()
-        command = "npm run "
     end
 
     vim.defer_fn(function()
