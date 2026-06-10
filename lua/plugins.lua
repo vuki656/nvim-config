@@ -15,6 +15,17 @@ require("lazy").setup({
         end,
     },
     {
+        dir = "~/Projects/personal/claude-memory",
+        cmd = "ClaudeMemory",
+        keys = "<leader>cm",
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+        },
+        config = function()
+            require("claude-memory").setup()
+        end,
+    },
+    {
         "kevinhwang91/nvim-ufo",
         dependencies = { "kevinhwang91/promise-async" },
         event = "VeryLazy",
