@@ -63,15 +63,25 @@ set_keymap({
         {
             key = "<LEADER>pf",
             actions = function()
-                actions.find_files({
-                    hidden = true,
-                })
+                if vim.loop.cwd() == vim.fn.expand("~") then
+                    actions.git_files()
+                else
+                    actions.find_files({
+                        hidden = true,
+                    })
+                end
             end,
             description = "[Telescope] Find files in project",
         },
         {
             key = "<LEADER>ps",
-            actions = actions.live_grep,
+            actions = function()
+                if vim.loop.cwd() == vim.fn.expand("~") then
+                    actions.live_grep({ search_dirs = vim.fn.systemlist("git ls-files") })
+                else
+                    actions.live_grep()
+                end
+            end,
             description = "[Telescope] Search text in project",
         },
         {
