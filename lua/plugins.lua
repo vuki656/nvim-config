@@ -73,13 +73,6 @@ require("lazy").setup({
         end,
     },
     {
-        "mistweaverco/kulala.nvim",
-        ft = "http",
-        config = function()
-            require("plugins.http")
-        end,
-    },
-    {
         "stevearc/oil.nvim",
         dependencies = { "nvim-tree/nvim-web-devicons" },
         config = function()
