@@ -40,6 +40,7 @@ M.servers = {
     "twiggy_language_server",
     "vimls",
     "yamlls",
+    "ty"
 }
 
 for _, server in ipairs(M.servers) do

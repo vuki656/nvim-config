@@ -53,14 +53,14 @@ installer_tools.setup({
         "terraform",
         "stylua",
         "yamllint",
-        "black",
-        "isort",
         "sqlfluff",
         "buf",
         "tflint",
         "php-cs-fixer",
         "phpstan",
         "phpcs",
+        "ruff",
+        "uv",
     },
 })
 

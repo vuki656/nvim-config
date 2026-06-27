@@ -32,7 +32,7 @@ conform.setup({
         sh = { "shfmt" },
         sql = { "sqlfluff" },
         toml = { "taplo" },
-        python = { "isort", "black" },
+        python = { "ruff" },
         go = { "gofmt" },
         php = { "php_cs_fixer" },
         twig = { "prettier" },
