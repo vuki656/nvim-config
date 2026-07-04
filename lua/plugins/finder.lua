@@ -34,9 +34,9 @@ telescope.setup({
         file_ignore_patterns = {
             "package-lock.json",
             "yarn.lock",
-            ".next",
-            ".idea",
-            ".yarn",
+            "%.next/",
+            "%.idea/",
+            "%.yarn/",
             ".git/",
         },
     },
