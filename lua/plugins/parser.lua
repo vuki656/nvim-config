@@ -2,37 +2,43 @@
 -- Description: Treesitter proxy for nvim
 -- Link: https://github.com/nvim-treesitter/nvim-treesitter
 
-local treesitter_configs = require("nvim-treesitter.configs")
-
 local set_keymap = require("utils.set-keymap")
+
+local MAX_HIGHLIGHT_LINES = 10000
 
 ------------------------------------------------------------------------------------------
 ----------------------------------- SETUP ------------------------------------------------
 ------------------------------------------------------------------------------------------
 
-treesitter_configs.setup({
-    ensure_installed = "all",
-    ignore_install = { "ipkg" },
-    highlight = {
-        enable = true,
-        disable = function(_, bufnr)
-            return vim.api.nvim_buf_line_count(bufnr) > 10000
-        end,
-    },
-    autotag = {
-        enable = false,
-    },
-    indent = {
-        enable = true,
-    },
-    incremental_selection = {
-        enable = true,
-        keymaps = {
-            init_selection = "<C-w>",
-            node_incremental = "<C-w>",
-            node_decremental = "<C-e>",
-        },
-    },
+require("nvim-treesitter").install("all")
+
+local function enable_treesitter(event)
+    local buffer = event.buf
+
+    if vim.api.nvim_buf_line_count(buffer) > MAX_HIGHLIGHT_LINES then
+        return
+    end
+
+    local language = vim.treesitter.language.get_lang(vim.bo[buffer].filetype)
+
+    if not language then
+        return
+    end
+
+    local ok, parser_added = pcall(vim.treesitter.language.add, language)
+
+    if not ok or not parser_added then
+        return
+    end
+
+    vim.treesitter.start(buffer, language)
+
+    vim.bo[buffer].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+end
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "*",
+    callback = enable_treesitter,
 })
 
 --------------------------------------------------------------------------------------------
@@ -42,7 +48,7 @@ treesitter_configs.setup({
 set_keymap({
     key = "<LEADER>ut",
     actions = function()
-        vim.cmd(":TSHighlightCapturesUnderCursor")
+        vim.cmd(":Inspect")
     end,
     description = "[Treesitter] Inspect highlight group under cursor",
 })
