@@ -26,6 +26,12 @@ require("lazy").setup({
         end,
     },
     {
+        dir = "~/Projects/personal/skills.nvim",
+        config = function()
+            require("plugins.skills")
+        end,
+    },
+    {
         "kevinhwang91/nvim-ufo",
         dependencies = { "kevinhwang91/promise-async" },
         event = "VeryLazy",
