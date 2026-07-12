@@ -36,7 +36,7 @@ conform.setup({
         go = { "gofmt" },
         php = { "php_cs_fixer" },
         twig = { "prettier" },
-        dotenv = { "trim_leading_whitespace", "trim_whitespace", "trim_newlines" },
+        env = { "trim_leading_whitespace", "trim_whitespace", "trim_newlines" },
     },
 
     formatters = {

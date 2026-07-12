@@ -122,18 +122,15 @@ vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
 
 vim.filetype.add({
     pattern = {
-        ["%.env%.[%w_.-]+"] = "dotenv",
         [".gitconfig.*"] = "gitconfig",
     },
     extension = {
-        env = "dotenv",
         luacheckrc = "lua",
         mdx = "markdown",
         map = "json",
         http = "http",
     },
     filename = {
-        [".env"] = "dotenv",
         ["Jenkinsfile"] = "groovy",
     },
 })

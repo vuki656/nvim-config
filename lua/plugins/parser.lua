@@ -12,6 +12,8 @@ local MAX_HIGHLIGHT_LINES = 10000
 
 require("nvim-treesitter").install("all")
 
+vim.treesitter.language.register("bash", "env")
+
 local function enable_treesitter(event)
     local buffer = event.buf
 

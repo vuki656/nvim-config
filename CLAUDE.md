@@ -72,6 +72,6 @@ TypeScript uses `tsgo` (native TS LSP). Semantic tokens are disabled globally vi
 - **Auto-save**: Buffers auto-save on InsertLeave and TextChanged (excludes oil and harpoon filetypes)
 - **Markdown/text**: Line wrapping enabled, `j`/`k` mapped to visual line movement
 - **Spellcheck**: Enabled globally (en, hr), camelCase-aware, capitalized words ignored
-- **Custom filetypes**: `.env*` → dotenv, `.mdx` → markdown, `.http` → http, `.map` → json, `Jenkinsfile` → groovy, `.luacheckrc` → lua, `.gitconfig.*` → gitconfig
+- **Custom filetypes**: `.mdx` → markdown, `.http` → http, `.map` → json, `Jenkinsfile` → groovy, `.luacheckrc` → lua, `.gitconfig.*` → gitconfig. `.env*` files use Neovim's built-in `env` filetype with the bash treesitter parser registered for highlighting
 - **Colorscheme**: Custom One Dark defined entirely in `lua/colorscheme.lua`
 - When changing Node version with nvm, global NPM packages (prettier, eslint_d, etc.) must be reinstalled
