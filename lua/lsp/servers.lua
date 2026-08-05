@@ -40,6 +40,15 @@ return {
             },
         },
     },
+    tsgo = {
+        capabilities = vim.tbl_deep_extend("force", lsp_capabilities, {
+            workspace = {
+                didChangeWatchedFiles = {
+                    dynamicRegistration = true,
+                },
+            },
+        }),
+    },
     lua_ls = {
         capabilities = lsp_capabilities,
         settings = {
