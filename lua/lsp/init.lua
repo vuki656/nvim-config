@@ -51,20 +51,89 @@ end
 
 vim.opt.autoread = true
 
-vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "TermLeave" }, {
-    group = vim.api.nvim_create_augroup("AutoReloadChangedFiles", { clear = true }),
-    callback = function()
-        if vim.fn.mode() == "c" then
-            return
-        end
+local last_sync = 0
+local marker_dir = vim.fn.stdpath("state") .. "/external-sync"
 
-        for _, buffer in ipairs(vim.api.nvim_list_bufs()) do
-            if vim.api.nvim_buf_is_loaded(buffer) and vim.bo[buffer].buftype == "" then
-                vim.cmd("checktime " .. buffer)
+vim.fn.mkdir(marker_dir, "p")
+
+local function changed_file_events(root)
+    local marker = vim.fs.joinpath(marker_dir, (root:gsub("[^%w]", "-")))
+    local stamp = marker .. ".stamp"
+
+    vim.fn.writefile({}, stamp)
+
+    local events = {}
+
+    if vim.uv.fs_stat(marker) then
+        local paths = vim.fn.systemlist(
+            "find " .. vim.fn.shellescape(root)
+                .. " \\( -name node_modules -o -name .git -o -name .next -o -name dist \\)"
+                .. " -prune -o -type f -newer " .. vim.fn.shellescape(marker) .. " -print"
+        )
+
+        for _, path in ipairs(paths) do
+            table.insert(events, { uri = vim.uri_from_fname(path), type = 1 })
+        end
+    end
+
+    vim.uv.fs_rename(stamp, marker)
+
+    return events
+end
+
+local function sync_watched_files()
+    local events = {}
+    local synced_roots = {}
+
+    for _, client in ipairs(vim.lsp.get_clients()) do
+        local root = client.root_dir and (vim.fs.root(client.root_dir, ".git") or client.root_dir)
+
+        if root and not synced_roots[root] then
+            synced_roots[root] = true
+            vim.list_extend(events, changed_file_events(root))
+        end
+    end
+
+    if #events == 0 then
+        return
+    end
+
+    for _, client in ipairs(vim.lsp.get_clients()) do
+        client:notify("workspace/didChangeWatchedFiles", { changes = events })
+    end
+end
+
+local function sync_external_state()
+    if vim.fn.mode() == "c" then
+        return
+    end
+
+    for _, buffer in ipairs(vim.api.nvim_list_bufs()) do
+        local name = vim.api.nvim_buf_get_name(buffer)
+
+        if vim.api.nvim_buf_is_loaded(buffer) and vim.bo[buffer].buftype == "" and name:sub(1, 1) == "/" then
+            if vim.uv.fs_stat(name) then
+                vim.api.nvim_buf_call(buffer, function()
+                    vim.cmd("silent! checktime")
+                end)
+            elseif not vim.bo[buffer].modified and vim.fn.bufwinid(buffer) == -1 then
+                pcall(vim.api.nvim_buf_delete, buffer, {})
             end
         end
-    end,
+    end
+
+    if vim.uv.now() - last_sync > 2000 then
+        last_sync = vim.uv.now()
+        sync_watched_files()
+    end
+end
+
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "TermLeave" }, {
+    group = vim.api.nvim_create_augroup("AutoReloadChangedFiles", { clear = true }),
+    callback = sync_external_state,
 })
+
+vim.uv.new_timer():start(3000, 3000, vim.schedule_wrap(sync_external_state))
 
 vim.api.nvim_create_autocmd("LspAttach", {
     group = vim.api.nvim_create_augroup("LspDisableSemanticTokens", { clear = true }),
