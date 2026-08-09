@@ -10,8 +10,14 @@ local lint = require("lint")
 
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
     group = vim.api.nvim_create_augroup("LintOnSave", { clear = true }),
-    callback = function()
+    callback = function(event)
         lint.try_lint()
+
+        local path = vim.api.nvim_buf_get_name(event.buf)
+
+        if path:match("/%.github/workflows/") and vim.bo[event.buf].filetype == "yaml" then
+            lint.try_lint("actionlint")
+        end
     end,
 })
 
@@ -34,7 +40,6 @@ lint.linters_by_ft = {
     },
     yaml = {
         "yamllint",
-        "actionlint",
     },
     php = {
         "phpstan",
