@@ -3,6 +3,7 @@
 -- Link: https://github.com/mason-org/mason.nvim
 
 local lsp = require("lsp")
+local get_mason_registry = require("utils.get-mason-registry")
 local set_keymap = require("utils.set-keymap")
 
 local installer = require("mason")
@@ -14,6 +15,7 @@ local installer_tools = require("mason-tool-installer")
 ------------------------------------------------------------------------------------------
 
 installer.setup({
+    registries = { get_mason_registry() },
     ui = {
         border = "single",
         icons = {
