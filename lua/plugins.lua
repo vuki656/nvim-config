@@ -1,6 +1,7 @@
 local config = require("plugins.plugin-manager")
+local pin_plugin_commits = require("utils.pin-plugin-commits")
 
-require("lazy").setup({
+require("lazy").setup(pin_plugin_commits({
     {
         dir = "~/Projects/personal/markdown.nvim",
         config = function()
@@ -356,4 +357,4 @@ require("lazy").setup({
             "neovim/nvim-lspconfig",
         },
     },
-}, config)
+}), config)
