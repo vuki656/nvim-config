@@ -51,7 +51,6 @@ end
 
 vim.opt.autoread = true
 
-local last_sync = 0
 local marker_dir = vim.fn.stdpath("state") .. "/external-sync"
 
 vim.fn.mkdir(marker_dir, "p")
@@ -122,16 +121,8 @@ local function sync_external_state()
         end
     end
 
-    if vim.uv.now() - last_sync > 2000 then
-        last_sync = vim.uv.now()
-        sync_watched_files()
-    end
+    sync_watched_files()
 end
-
-vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "TermLeave" }, {
-    group = vim.api.nvim_create_augroup("AutoReloadChangedFiles", { clear = true }),
-    callback = sync_external_state,
-})
 
 vim.uv.new_timer():start(3000, 3000, vim.schedule_wrap(sync_external_state))
 
