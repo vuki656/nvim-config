@@ -54,8 +54,14 @@ vim.opt.autoread = true
 vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "TermLeave" }, {
     group = vim.api.nvim_create_augroup("AutoReloadChangedFiles", { clear = true }),
     callback = function()
-        if vim.fn.mode() ~= "c" then
-            vim.cmd.checktime()
+        if vim.fn.mode() == "c" then
+            return
+        end
+
+        for _, buffer in ipairs(vim.api.nvim_list_bufs()) do
+            if vim.api.nvim_buf_is_loaded(buffer) and vim.bo[buffer].buftype == "" then
+                vim.cmd("checktime " .. buffer)
+            end
         end
     end,
 })
