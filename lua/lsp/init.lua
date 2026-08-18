@@ -40,7 +40,7 @@ M.servers = {
     "twiggy_language_server",
     "vimls",
     "yamlls",
-    "ty"
+    "ty",
 }
 
 for _, server in ipairs(M.servers) do
@@ -65,9 +65,12 @@ local function changed_file_events(root)
 
     if vim.uv.fs_stat(marker) then
         local paths = vim.fn.systemlist(
-            "find " .. vim.fn.shellescape(root)
+            "find "
+                .. vim.fn.shellescape(root)
                 .. " \\( -name node_modules -o -name .git -o -name .next -o -name dist \\)"
-                .. " -prune -o -type f -newer " .. vim.fn.shellescape(marker) .. " -print"
+                .. " -prune -o -type f -newer "
+                .. vim.fn.shellescape(marker)
+                .. " -print"
         )
 
         for _, path in ipairs(paths) do

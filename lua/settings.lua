@@ -188,7 +188,6 @@ vim.api.nvim_create_autocmd("FileType", {
     end,
 })
 
-
 -- Supposed to fix lag. Taken from: https://github.com/akinsho/toggleterm.nvim/issues/610#issuecomment-2477464323
 vim.api.nvim_create_augroup("disable_folding_toggleterm", { clear = true })
 vim.api.nvim_create_autocmd("FileType", {

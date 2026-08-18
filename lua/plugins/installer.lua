@@ -2,8 +2,8 @@
 -- Description: Neovim everything installer
 -- Link: https://github.com/mason-org/mason.nvim
 
-local lsp = require("lsp")
 local get_mason_registry = require("utils.get-mason-registry")
+local lsp = require("lsp")
 local set_keymap = require("utils.set-keymap")
 
 local installer = require("mason")
