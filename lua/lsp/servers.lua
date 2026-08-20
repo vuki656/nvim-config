@@ -40,7 +40,8 @@ return {
             },
         },
     },
-    tsgo = {
+    tsc = {
+        cmd = { vim.fn.stdpath("data") .. "/mason/bin/tsc", "--lsp", "--stdio" },
         capabilities = vim.tbl_deep_extend("force", lsp_capabilities, {
             workspace = {
                 didChangeWatchedFiles = {

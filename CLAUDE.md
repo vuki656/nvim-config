@@ -48,7 +48,7 @@ LSP servers defined in `lua/lsp/init.lua`, custom server configs in `lua/lsp/ser
 
 Servers with custom config: angularls, cssmodules_ls, jsonls, yamlls, lua_ls
 
-TypeScript uses `tsgo` (native TS LSP). Semantic tokens are disabled globally via LspAttach autocmd. Custom `:LspRestart` command supports named server restart.
+TypeScript uses `tsc` (native TS LSP). Semantic tokens are disabled globally via LspAttach autocmd. Custom `:LspRestart` command supports named server restart.
 
 ## Formatting & Linting
 

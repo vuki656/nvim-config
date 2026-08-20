@@ -36,7 +36,7 @@ M.servers = {
     "tailwindcss",
     "taplo",
     "terraformls",
-    "tsgo",
+    "tsc",
     "twiggy_language_server",
     "vimls",
     "yamlls",
