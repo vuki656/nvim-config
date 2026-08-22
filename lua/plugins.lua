@@ -4,31 +4,19 @@ local pin_plugin_commits = require("utils.pin-plugin-commits")
 require("lazy").setup(
     pin_plugin_commits({
         {
-            dir = "~/Projects/personal/markdown.nvim",
+            "vuki656/markdown.nvim",
             config = function()
                 require("plugins.doc-highlighter")
             end,
         },
         {
-            -- "vuki656/review.nvim",
-            dir = "~/Projects/personal/review.nvim",
+            "vuki656/review.nvim",
             config = function()
                 require("plugins.review")
             end,
         },
         {
-            dir = "~/Projects/personal/claude-memory",
-            cmd = "ClaudeMemory",
-            keys = "<leader>cm",
-            dependencies = {
-                "nvim-tree/nvim-web-devicons",
-            },
-            config = function()
-                require("claude-memory").setup()
-            end,
-        },
-        {
-            dir = "~/Projects/personal/skills.nvim",
+            "vuki656/skills.nvim",
             config = function()
                 require("plugins.skills")
             end,

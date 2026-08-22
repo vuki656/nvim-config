@@ -60,4 +60,9 @@ return {
     checker = {
         enabled = true,
     },
+    dev = {
+        path = "~/Projects/personal",
+        patterns = { "vuki656" },
+        fallback = true,
+    },
 }
