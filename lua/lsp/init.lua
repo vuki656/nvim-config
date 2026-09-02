@@ -90,7 +90,7 @@ local function sync_watched_files()
     for _, client in ipairs(vim.lsp.get_clients()) do
         local root = client.root_dir and (vim.fs.root(client.root_dir, ".git") or client.root_dir)
 
-        if root and not synced_roots[root] then
+        if root and root ~= vim.uv.os_homedir() and not synced_roots[root] then
             synced_roots[root] = true
             vim.list_extend(events, changed_file_events(root))
         end
