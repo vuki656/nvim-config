@@ -16,6 +16,12 @@ require("lazy").setup(
             end,
         },
         {
+            "vuki656/pointer.nvim",
+            config = function()
+                require("plugins.pointer")
+            end,
+        },
+        {
             "vuki656/skills.nvim",
             config = function()
                 require("plugins.skills")
