@@ -84,6 +84,7 @@ set_highlight({
         { group = "Operator", foreground = white },
         { group = "String", foreground = green },
         { group = "CursorLine", background = grey_lighter },
+        { group = "ReviewSelected", background = grey_light },
         { group = "Delimiter", foreground = orange },
         { group = "Identifier", foreground = white },
         { group = "Todo", background = blue, foreground = background },
