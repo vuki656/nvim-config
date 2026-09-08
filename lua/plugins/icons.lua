@@ -77,6 +77,18 @@ icons.setup({
             cterm_color = "74",
             name = "TestTs",
         },
+        ["e2e.ts"] = {
+            icon = "󰙨",
+            color = colors.green,
+            cterm_color = "114",
+            name = "E2eTs",
+        },
+        ["docx.ts"] = {
+            icon = "󰈬",
+            color = "#2b579a",
+            cterm_color = "25",
+            name = "DocxTs",
+        },
         [".env.test"] = {
             icon = "",
             color = "#e79627",
