@@ -11,17 +11,15 @@ local M = {
 -- @return nil
 M.setup = function()
     vim.ui.select = function(items, options, on_confirm)
-        M = vim.tbl_deep_extend("force", M, {
-            items = items,
-            options = options,
-            on_confirm = on_confirm,
-        })
-
         if M.ui then
             vim.api.nvim_err_writeln("UI BUSY: Another select is pending!")
 
             return
         end
+
+        M.items = items
+        M.options = options or {}
+        M.on_confirm = on_confirm
 
         local menu_items = M.__generate_menu_items()
 
@@ -50,7 +48,8 @@ M.__generate_menu_items = function()
     local menu_items = {}
 
     for index, item in ipairs(M.items) do
-        local text = M.options.format_item(item) or tostring(item)
+        local format_item = M.options.format_item or tostring
+        local text = format_item(item) or tostring(item)
         local icon = M.__get_icon(text) .. "  "
 
         local line = "[" .. index .. "] " .. icon .. text
@@ -61,7 +60,7 @@ M.__generate_menu_items = function()
             M.menu_width = string.len(line) + 1
         end
 
-        table.insert(menu_items, Menu.item(line, item))
+        table.insert(menu_items, Menu.item(line, { value = item, index = index }))
     end
 
     return menu_items
@@ -75,7 +74,7 @@ M.__setup_keymaps = function(menu_items)
     -- Map menu items so they can be selected by number
     for index, value in ipairs(menu_items) do
         M.ui:map("n", tostring(index), function()
-            M.__on_done(value, index)
+            M.__on_done(value.value, index)
         end, options)
     end
 
@@ -132,7 +131,7 @@ M.__generate_ui = function(menu_items)
             M.__on_done(nil, nil)
         end,
         on_submit = function(item)
-            M.__on_done(item, item.index)
+            M.__on_done(item.value, item.index)
         end,
     })
 
