@@ -32,7 +32,6 @@ M.servers = {
     "lua_ls",
     "phpactor",
     "prismals",
-    "pyright",
     "tailwindcss",
     "taplo",
     "terraformls",
