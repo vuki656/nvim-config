@@ -50,57 +50,132 @@ end
 
 vim.opt.autoread = true
 
+local ignored_dot_dirs_cache = {}
+
+local function ignored_dot_dirs(root)
+    if ignored_dot_dirs_cache[root] then
+        return ignored_dot_dirs_cache[root]
+    end
+
+    local names = {}
+
+    for name, type in vim.fs.dir(root) do
+        if type == "directory" and name:sub(1, 1) == "." and name ~= ".git" then
+            table.insert(names, name)
+        end
+    end
+
+    local ignored = {}
+
+    if #names > 0 then
+        local result = vim.system(vim.list_extend({ "git", "-C", root, "check-ignore" }, names), { text = true }):wait()
+
+        ignored = vim.split(result.stdout or "", "\n", { trimempty = true })
+    end
+
+    ignored_dot_dirs_cache[root] = ignored
+
+    return ignored
+end
+
+local watch = require("vim._watch")
+local watchfiles = require("vim.lsp._watchfiles")
+
+if watchfiles._watchfunc == watch.inotify then
+    watchfiles._watchfunc = function(path, opts, callback)
+        local ignored = ignored_dot_dirs(path)
+
+        if #ignored == 0 then
+            return watch.inotify(path, opts, callback)
+        end
+
+        local system = vim.system
+
+        vim.system = function(cmd, ...)
+            for _, name in ipairs(ignored) do
+                table.insert(cmd, #cmd, "@" .. vim.fs.joinpath(path, name))
+            end
+
+            return system(cmd, ...)
+        end
+
+        local ok, cancel = pcall(watch.inotify, path, opts, callback)
+
+        vim.system = system
+
+        if not ok then
+            error(cancel)
+        end
+
+        return cancel
+    end
+end
+
 local marker_dir = vim.fn.stdpath("state") .. "/external-sync"
 
 vim.fn.mkdir(marker_dir, "p")
 
-local function changed_file_events(root)
+local running_syncs = {}
+
+local function changed_file_events(root, on_events)
     local marker = vim.fs.joinpath(marker_dir, (root:gsub("[^%w]", "-")))
     local stamp = marker .. ".stamp"
 
     vim.fn.writefile({}, stamp)
 
-    local events = {}
-
-    if vim.uv.fs_stat(marker) then
-        local paths = vim.fn.systemlist(
-            "find "
-                .. vim.fn.shellescape(root)
-                .. " \\( -name node_modules -o -name .git -o -name .next -o -name dist \\)"
-                .. " -prune -o -type f -newer "
-                .. vim.fn.shellescape(marker)
-                .. " -print"
-        )
-
-        for _, path in ipairs(paths) do
-            table.insert(events, { uri = vim.uri_from_fname(path), type = 1 })
-        end
+    if not vim.uv.fs_stat(marker) then
+        vim.uv.fs_rename(stamp, marker)
+        return
     end
 
-    vim.uv.fs_rename(stamp, marker)
+    local cmd = { "find", root, "(", "-name", "node_modules", "-o", "-name", ".git", "-o", "-name", ".next" }
 
-    return events
+    vim.list_extend(cmd, { "-o", "-name", "dist" })
+
+    for _, name in ipairs(ignored_dot_dirs(root)) do
+        vim.list_extend(cmd, { "-o", "-path", vim.fs.joinpath(root, name) })
+    end
+
+    vim.list_extend(cmd, { ")", "-prune", "-o", "-type", "f", "-newer", marker, "-print" })
+
+    running_syncs[root] = true
+
+    vim.system(
+        cmd,
+        { text = true },
+        vim.schedule_wrap(function(result)
+            running_syncs[root] = nil
+            vim.uv.fs_rename(stamp, marker)
+
+            local events = {}
+
+            for _, path in ipairs(vim.split(result.stdout or "", "\n", { trimempty = true })) do
+                table.insert(events, { uri = vim.uri_from_fname(path), type = 1 })
+            end
+
+            if #events > 0 then
+                on_events(events)
+            end
+        end)
+    )
+end
+
+local function notify_watched_files(events)
+    for _, client in ipairs(vim.lsp.get_clients()) do
+        client:notify("workspace/didChangeWatchedFiles", { changes = events })
+    end
 end
 
 local function sync_watched_files()
-    local events = {}
     local synced_roots = {}
 
     for _, client in ipairs(vim.lsp.get_clients()) do
         local root = client.root_dir and (vim.fs.root(client.root_dir, ".git") or client.root_dir)
 
-        if root and root ~= vim.uv.os_homedir() and not synced_roots[root] then
+        if root and root ~= vim.uv.os_homedir() and not synced_roots[root] and not running_syncs[root] then
             synced_roots[root] = true
-            vim.list_extend(events, changed_file_events(root))
+            changed_file_events(root, notify_watched_files)
         end
-    end
-
-    if #events == 0 then
-        return
-    end
-
-    for _, client in ipairs(vim.lsp.get_clients()) do
-        client:notify("workspace/didChangeWatchedFiles", { changes = events })
     end
 end
 
